@@ -1,0 +1,351 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 748,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "Center",
+      "field_ref": [
+        "field",
+        "Center",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "Center",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1062,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 26.2106
+          }
+        }
+      }
+    },
+    {
+      "display_name": "period",
+      "field_ref": [
+        "field",
+        "period",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "period",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 9,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 12.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Product Rating (PR)",
+      "field_ref": [
+        "field",
+        "Product Rating (PR)",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "Product Rating (PR)",
+      "semantic_type": "type/Score",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 102,
+          "nil%": 0.0558
+        },
+        "type": {
+          "type/Number": {
+            "min": 1.5,
+            "q1": 3.635328475065153,
+            "q3": 3.858256637761305,
+            "max": 4.0,
+            "sd": 0.16570101509297183,
+            "avg": 3.7261194662147847
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "PR BY CENTER",
+  "last_used_at": "2026-04-16T12:31:31.03024Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 148024433,
+      "cardId": 56868,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 5.01m. Optimize Query to reduce execution time."
+        }
+      ],
+      "queryHash": "9471c8e093a451556ee2157e7a0daaef2eca6aa19f5d072e9c1c6f36cf8668d5",
+      "executionStartTime": "2026-04-14T00:07:01.739+0000",
+      "tables": [
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim"
+      ],
+      "archive": false
+    }
+  ],
+  "creator_id": 3486,
+  "moderation_reviews": [],
+  "updated_at": "2025-10-25T22:05:14.86461Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "report_start_date": {
+          "id": "098cdbaa-b56d-bc69-08cf-12b62dc7c9c8",
+          "name": "report_start_date",
+          "display-name": "Report start date",
+          "type": "date"
+        },
+        "report_end_date": {
+          "id": "c72a0417-83b9-0a2b-132e-baab379ccde5",
+          "name": "report_end_date",
+          "display-name": "Report end date",
+          "type": "date"
+        },
+        "city_name": {
+          "id": "c1583755-6a95-f8b6-acd5-6391b1c45937",
+          "name": "city_name",
+          "display-name": "City name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712462,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_service_id": {
+          "id": "12ffc59d-35e8-4fb1-80c5-54454bcc5e66",
+          "name": "center_service_id",
+          "display-name": "Center service",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712476,
+            null
+          ],
+          "widget-type": "number/="
+        },
+        "service_type": {
+          "id": "6d1c843e-8042-96db-2d9c-0f1845a26f91",
+          "name": "service_type",
+          "display-name": "Service type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712473,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "ownership_type": {
+          "id": "3245166f-8ae9-2c95-7764-6f027716c129",
+          "name": "ownership_type",
+          "display-name": "Ownership type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712485,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "business_line": {
+          "id": "56a8d206-ddfb-8a62-c321-6e32e801b1de",
+          "name": "business_line",
+          "display-name": "Business line",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712478,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_name": {
+          "id": "34690ad4-b635-e555-3b9c-ec10ff1440b1",
+          "name": "center_name",
+          "display-name": "Center name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712482,
+            null
+          ],
+          "widget-type": "string/="
+        }
+      },
+      "query": "WITH bt_data AS (\n    -- Monthly Metrics for Centers\n    SELECT \n        CONCAT(CAST(cd.center_service_id AS VARCHAR), ' - ', cd.center_name) AS \"Center\",\n        DATE_TRUNC('month', bf.booking_date) AS period,\n        'M' AS period_type,\n        SUM(bf.rating_value) AS total_rating_value,  -- Sum of rating values\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings -- Count of ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE 1=1\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.booking_date BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND bf.attendance_time IS NOT NULL\n    GROUP BY \n        CONCAT(CAST(cd.center_service_id AS VARCHAR), ' - ', cd.center_name),\n        DATE_TRUNC('month', bf.booking_date)\n\n    UNION ALL\n\n    -- Quarterly Metrics for Centers\n    SELECT \n        CONCAT(CAST(cd.center_service_id AS VARCHAR), ' - ', cd.center_name) AS \"Center\",\n        DATE_TRUNC('quarter', bf.booking_date) AS period,\n        'Q' AS period_type,\n        SUM(bf.rating_value) AS total_rating_value,  -- Sum of rating values\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings -- Count of ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE 1=1\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.booking_date BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND bf.attendance_time IS NOT NULL\n    GROUP BY \n        CONCAT(CAST(cd.center_service_id AS VARCHAR), ' - ', cd.center_name),\n        DATE_TRUNC('quarter', bf.booking_date)\n)\nSELECT \n    bt.\"Center\",\n    CONCAT(bt.period_type, '-', CAST(CAST(bt.period AS DATE) AS VARCHAR)) AS period,  -- Format period for quarters and months\n    ROUND(bt.total_rating_value * 1.00 / NULLIF(bt.total_ratings, 0), 2) AS \"Product Rating (PR)\" -- Calculate Product Rating\nFROM bt_data bt\nORDER BY \n    bt.period_type DESC,\n    bt.period,\n    bt.\"Center\"\n    "
+    }
+  },
+  "id": 56868,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "zt3MFifnU2j3Kw0AGMh-A",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "period",
+    "table.cell_column": "Product Rating (PR)",
+    "table.pivot": true
+  },
+  "metabase_version": null,
+  "parameters": [
+    {
+      "id": "098cdbaa-b56d-bc69-08cf-12b62dc7c9c8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_start_date"
+        ]
+      ],
+      "name": "Report start date",
+      "slug": "report_start_date"
+    },
+    {
+      "id": "c72a0417-83b9-0a2b-132e-baab379ccde5",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_end_date"
+        ]
+      ],
+      "name": "Report end date",
+      "slug": "report_end_date"
+    },
+    {
+      "id": "c1583755-6a95-f8b6-acd5-6391b1c45937",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "city_name"
+        ]
+      ],
+      "name": "City name",
+      "slug": "city_name"
+    },
+    {
+      "id": "12ffc59d-35e8-4fb1-80c5-54454bcc5e66",
+      "type": "number/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_service_id"
+        ]
+      ],
+      "name": "Center service",
+      "slug": "center_service_id"
+    },
+    {
+      "id": "6d1c843e-8042-96db-2d9c-0f1845a26f91",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service type",
+      "slug": "service_type"
+    },
+    {
+      "id": "3245166f-8ae9-2c95-7764-6f027716c129",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "ownership_type"
+        ]
+      ],
+      "name": "Ownership type",
+      "slug": "ownership_type"
+    },
+    {
+      "id": "56a8d206-ddfb-8a62-c321-6e32e801b1de",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "business_line"
+        ]
+      ],
+      "name": "Business line",
+      "slug": "business_line"
+    },
+    {
+      "id": "34690ad4-b635-e555-3b9c-ec10ff1440b1",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_name"
+        ]
+      ],
+      "name": "Center name",
+      "slug": "center_name"
+    }
+  ],
+  "created_at": "2024-12-16T05:39:24.510746Z",
+  "public_uuid": null
+}

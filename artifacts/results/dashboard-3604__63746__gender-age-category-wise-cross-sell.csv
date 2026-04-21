@@ -1,0 +1,33 @@
+gender,age,category,user_count,total_gmv
+NO-GENDER,NO-AGE,Indoor Equipment,304,5170021.93
+male,31-40,Indoor Equipment,157,3511648.5900000003
+male,21-30,Indoor Equipment,138,2285465.52
+female,31-40,Indoor Equipment,92,1005543.25
+female,21-30,Indoor Equipment,77,882084.7600000001
+male,41-50,Indoor Equipment,39,594484.81
+NO-GENDER,NO-AGE,Indoor_Equipment-Strength,45,419320.01
+male,50+,Indoor Equipment,13,337197.1
+male,NO-AGE,Indoor Equipment,17,308829.0
+male,21-30,Indoor_Equipment-Strength,21,279441.11
+male,31-40,Indoor_Equipment-Strength,35,243021.56
+female,41-50,Indoor Equipment,20,207677.68
+NO-GENDER,21-30,Indoor Equipment,14,181186.29
+female,NO-AGE,Indoor Equipment,11,159187.0
+female,31-40,Indoor_Equipment-Strength,24,117061.05
+male,41-50,Indoor_Equipment-Strength,10,72751.35999999999
+female,50+,Indoor Equipment,6,63768.93
+NO-GENDER,21-30,Indoor_Equipment-Strength,3,41634.479999999996
+male,NO-AGE,Indoor_Equipment-Strength,4,33116.3
+NO-GENDER,31-40,Indoor Equipment,4,30096.0
+female,21-30,Indoor_Equipment-Strength,7,26488.71
+female,0-10,Indoor_Equipment-Strength,1,23999.0
+female,41-50,Indoor_Equipment-Strength,3,20211.8
+male,11-20,Indoor Equipment,1,16499.0
+male,50+,Indoor_Equipment-Strength,2,16011.35
+NO-GENDER,41-50,Indoor Equipment,1,12999.0
+male,0-10,Indoor Equipment,1,12999.0
+female,NO-AGE,Indoor_Equipment-Strength,3,12997.0
+NO-GENDER,31-40,Indoor_Equipment-Strength,1,11199.0
+female,0-10,Indoor Equipment,2,11088.3
+female,11-20,Indoor Equipment,1,8749.0
+undisclosed,21-30,Indoor Equipment,1,5599.0

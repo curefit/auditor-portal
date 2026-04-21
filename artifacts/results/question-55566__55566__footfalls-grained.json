@@ -1,0 +1,429 @@
+{
+  "card_id": 55566,
+  "card_name": "#Footfalls - Grained",
+  "parameters": [
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Start_Date"
+        ]
+      ],
+      "value": "2023-01-01"
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "End_Date"
+        ]
+      ],
+      "value": "2024-11-12"
+    },
+    {
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "grain"
+        ]
+      ],
+      "value": "quarter"
+    }
+  ],
+  "query_response": {
+    "database_id": 39,
+    "started_at": "2026-04-17T06:23:02.791949Z",
+    "via": [
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Error preprocessing query in clojure.lang.AFunction$1@637cc3f0: Cannot run the query: missing required parameters: #{\"gx_class_cuts\"}",
+        "stacktrace": [
+          "--> query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:178)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "qp",
+        "ex-data": {
+          "fn": "clojure.lang.AFunction$1@637cc3f0",
+          "query": {
+            "constraints": {
+              "max-results": 10000,
+              "max-results-bare-rows": 5000
+            },
+            "lib/type": "mbql/query",
+            "lib/metadata": "metabase.lib.metadata.invocation_tracker.InvocationTracker@4d60bf8b",
+            "stages": [
+              {
+                "lib/type": "mbql.stage/native",
+                "template-tags": {
+                  "Start_Date": {
+                    "id": "b0643689-d3c4-6e8c-9608-7163a12aa058",
+                    "name": "Start_Date",
+                    "display-name": "Start date",
+                    "type": "date"
+                  },
+                  "End_Date": {
+                    "id": "243de1c7-e5f0-40c9-f6c1-0f9b98dcfa9e",
+                    "name": "End_Date",
+                    "display-name": "End date",
+                    "type": "date"
+                  },
+                  "grain": {
+                    "id": "124c15bd-157b-26af-f4e4-edb17b50089b",
+                    "name": "grain",
+                    "display-name": "Grain",
+                    "type": "text"
+                  },
+                  "gx_class_cuts": {
+                    "type": "text",
+                    "name": "gx_class_cuts",
+                    "id": "1e3ea311-d0e2-4980-8cf6-f89bcd76fcff",
+                    "display-name": "Gx Class Cuts"
+                  }
+                },
+                "native": "with base as \n    (\n    Select\n        -- dwh_fitness_mart.membership_dim.business_line,\n        Date_Trunc({{grain}}, Class_date) as \"Grain\",\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        dwh_fitness_mart.booking_fact.service_type,\n        CASE WHEN {{gx_class_cuts}} = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\n                 \n        COUNT(DISTINCT booking_key) as footfalls\n        \n    From dwh_fitness_mart.membership_dim\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\n            and \n                coalesce(booking_type,'xx') != 'TRIAL'\n                and Date(class_date) between {{Start_Date}} and {{End_Date}}\n                and attendance_time IS NOT NULL\n                and date(class_date) >= date '1900-01-01'\n    Where\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\n        and dwh_fitness_mart.membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\n        and membership_type = 'PAID'\n        and Date(class_date) between {{Start_Date}} and {{End_Date}}\n    Group by\n        1,2,3,4\n) \n    \n    -- select ' overall',month, null, sum(footfalls) footfalls\n    -- from base\n    -- group by 1,2\n    -- union all\nselect * from base \nOrder by\n    1,2,3\n    "
+              }
+            ],
+            "middleware": {
+              "js-int-to-string?": true,
+              "ignore-cached-results?": false,
+              "process-viz-settings?": false,
+              "userland-query?": true
+            },
+            "cache-strategy": {
+              "multiplier": 10,
+              "min-duration-ms": 60000,
+              "type": "ttl",
+              "avg-execution-ms": 0,
+              "invalidated-at": "2026-04-16T18:23:02.787622Z"
+            },
+            "viz-settings": {
+              "graph.dimensions": [
+                "Week"
+              ],
+              "graph.show_values": true,
+              "graph.show_trendline": true,
+              "table.pivot_column": "MonthActiveMemberships",
+              "table.cell_column": "Memberships",
+              "column_settings": {
+                "[\"name\",\"%\"]": {
+                  "number_style": "percent"
+                },
+                "[\"name\",\"weeklyActiveMemberships\"]": {
+                  "number_style": "percent"
+                }
+              },
+              "graph.metrics": [
+                "weeklyActiveMemberships",
+                "AvgActivityPerActiveMember"
+              ]
+            },
+            "lib.convert/converted?": true,
+            "info": {
+              "executed-by": 3570,
+              "context": "question",
+              "card-id": 55566,
+              "card-name": "#Footfalls - Grained",
+              "visualization-settings": {
+                "graph.dimensions": [
+                  "Week"
+                ],
+                "graph.show_values": true,
+                "graph.show_trendline": true,
+                "table.pivot_column": "MonthActiveMemberships",
+                "table.cell_column": "Memberships",
+                "column_settings": {
+                  "[\"name\",\"%\"]": {
+                    "number_style": "percent"
+                  },
+                  "[\"name\",\"weeklyActiveMemberships\"]": {
+                    "number_style": "percent"
+                  }
+                },
+                "graph.metrics": [
+                  "weeklyActiveMemberships",
+                  "AvgActivityPerActiveMember"
+                ]
+              },
+              "query-hash": "0x95FF1D4C"
+            },
+            "database": 39,
+            "parameters": [
+              {
+                "value": "2023-01-01",
+                "type": "date/single",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "Start_Date"
+                  ]
+                ]
+              },
+              {
+                "value": "2024-11-12",
+                "type": "date/single",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "End_Date"
+                  ]
+                ]
+              },
+              {
+                "value": "quarter",
+                "type": "category",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "grain"
+                  ]
+                ]
+              }
+            ]
+          },
+          "type": "qp"
+        }
+      }
+    ],
+    "action_id": null,
+    "error_type": "missing-required-parameter",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 0,
+        "invalidated-at": "2026-04-16T18:23:02.787622Z"
+      },
+      "native": {
+        "template-tags": {
+          "Start_Date": {
+            "id": "b0643689-d3c4-6e8c-9608-7163a12aa058",
+            "name": "Start_Date",
+            "display-name": "Start date",
+            "type": "date"
+          },
+          "End_Date": {
+            "id": "243de1c7-e5f0-40c9-f6c1-0f9b98dcfa9e",
+            "name": "End_Date",
+            "display-name": "End date",
+            "type": "date"
+          },
+          "grain": {
+            "id": "124c15bd-157b-26af-f4e4-edb17b50089b",
+            "name": "grain",
+            "display-name": "Grain",
+            "type": "text"
+          },
+          "gx_class_cuts": {
+            "type": "text",
+            "name": "gx_class_cuts",
+            "id": "1e3ea311-d0e2-4980-8cf6-f89bcd76fcff",
+            "display-name": "Gx Class Cuts"
+          }
+        },
+        "query": "with base as \n    (\n    Select\n        -- dwh_fitness_mart.membership_dim.business_line,\n        Date_Trunc({{grain}}, Class_date) as \"Grain\",\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        dwh_fitness_mart.booking_fact.service_type,\n        CASE WHEN {{gx_class_cuts}} = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\n                 \n        COUNT(DISTINCT booking_key) as footfalls\n        \n    From dwh_fitness_mart.membership_dim\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\n            and \n                coalesce(booking_type,'xx') != 'TRIAL'\n                and Date(class_date) between {{Start_Date}} and {{End_Date}}\n                and attendance_time IS NOT NULL\n                and date(class_date) >= date '1900-01-01'\n    Where\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\n        and dwh_fitness_mart.membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\n        and membership_type = 'PAID'\n        and Date(class_date) between {{Start_Date}} and {{End_Date}}\n    Group by\n        1,2,3,4\n) \n    \n    -- select ' overall',month, null, sum(footfalls) footfalls\n    -- from base\n    -- group by 1,2\n    -- union all\nselect * from base \nOrder by\n    1,2,3\n    "
+      },
+      "viz-settings": {
+        "graph.dimensions": [
+          "Week"
+        ],
+        "graph.show_values": true,
+        "graph.show_trendline": true,
+        "table.pivot_column": "MonthActiveMemberships",
+        "table.cell_column": "Memberships",
+        "column_settings": {
+          "[\"name\",\"%\"]": {
+            "number_style": "percent"
+          },
+          "[\"name\",\"weeklyActiveMemberships\"]": {
+            "number_style": "percent"
+          }
+        },
+        "graph.metrics": [
+          "weeklyActiveMemberships",
+          "AvgActivityPerActiveMember"
+        ]
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "Start_Date"
+            ]
+          ],
+          "value": "2023-01-01"
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "End_Date"
+            ]
+          ],
+          "value": "2024-11-12"
+        },
+        {
+          "type": "category",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "grain"
+            ]
+          ],
+          "value": "quarter"
+        }
+      ]
+    },
+    "status": "failed",
+    "class": "class clojure.lang.ExceptionInfo",
+    "stacktrace": [
+      "--> driver.sql.parameters.substitute$substitute.invokeStatic(substitute.clj:98)",
+      "driver.sql.parameters.substitute$substitute.invoke(substitute.clj:78)",
+      "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:59)",
+      "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
+      "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
+      "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
+      "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
+      "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
+      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
+      "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
+      "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
+      "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
+      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
+      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
+      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
+      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+      "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
+      "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
+      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
+      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
+      "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
+      "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
+      "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
+      "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
+      "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+      "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+      "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+      "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+      "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+      "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+      "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+      "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+      "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+      "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+      "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+      "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+      "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+      "driver$do_with_driver.invokeStatic(driver.clj:106)",
+      "driver$do_with_driver.invoke(driver.clj:101)",
+      "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+      "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+      "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+      "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+      "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+      "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+      "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+      "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+      "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+      "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+      "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+      "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+      "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+      "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+      "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+    ],
+    "card_id": 55566,
+    "context": "question",
+    "error": "Cannot run the query: missing required parameters: #{\"gx_class_cuts\"}",
+    "row_count": 0,
+    "running_time": 0,
+    "ex-data": {
+      "type": "missing-required-parameter",
+      "missing": [
+        "gx_class_cuts"
+      ]
+    },
+    "data": {
+      "rows": [],
+      "cols": []
+    }
+  }
+}

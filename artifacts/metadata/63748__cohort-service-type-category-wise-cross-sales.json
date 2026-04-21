@@ -1,0 +1,299 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 496,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "cohort",
+      "field_ref": [
+        "field",
+        "cohort",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "cohort",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 20,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 12.093109869646183
+          }
+        }
+      }
+    },
+    {
+      "display_name": "majority_service",
+      "field_ref": [
+        "field",
+        "majority_service",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "majority_service",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 6,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.735567970204841
+          }
+        }
+      }
+    },
+    {
+      "display_name": "category",
+      "field_ref": [
+        "field",
+        "category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "category",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 14,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 14.543761638733706
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 484,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 4773.075126475975,
+            "q3": 135417.93688258197,
+            "max": 10816443.0,
+            "sd": 872536.3743343017,
+            "avg": 273010.45623836125
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5745,
+  "query_type": "native",
+  "name": "Cohort__Service_Type_Category Wise Cross Sales",
+  "last_used_at": "2026-04-14T06:44:53.781782Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:07:39.609936Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_order_date": {
+          "type": "date",
+          "name": "start_order_date",
+          "id": "627dfbfd-c2ed-4abd-9025-4e93595897a6",
+          "display-name": "Start Order Date",
+          "default": "2024-01-01"
+        },
+        "end_order_date": {
+          "type": "date",
+          "name": "end_order_date",
+          "id": "d39aeab0-0f09-4e13-b67a-363a8f210b50",
+          "display-name": "End Order Date",
+          "default": "2025-05-31"
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "0e36eac8-f069-47c9-994c-f025761efd8a",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "cohort": {
+          "type": "dimension",
+          "name": "cohort",
+          "id": "fbf0f711-7da3-4460-a3ff-d68b2a94897d",
+          "display-name": "Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "service_type": {
+          "type": "dimension",
+          "name": "service_type",
+          "id": "66872aa4-9d10-4072-8ed5-619c3bc7ee82",
+          "display-name": "Service Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535349,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "SELECT cohort, majority_service, category, ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member = 1\n      AND is_cancelled = 0\n      AND order_date >= DATE('2018-01-01')\n     [[AND {{service_type}}]]\n     [[AND {{cohort}}]]\n     [[AND {{category}}]]\n     [[AND order_date BETWEEN {{start_order_date}} AND {{end_order_date}}]]\nGROUP BY 1,2,3\nORDER BY 1, 2, 4 DESC"
+    }
+  },
+  "id": 63748,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "iBYQkzWR4r7gXG-EL9ZP1",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.dimensions": [
+      "cohort"
+    ],
+    "table.pivot_column": "cohort",
+    "table.cell_column": "total_gmv",
+    "graph.metrics": [
+      "total_gmv"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "627dfbfd-c2ed-4abd-9025-4e93595897a6",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_order_date"
+        ]
+      ],
+      "name": "Start Order Date",
+      "slug": "start_order_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "d39aeab0-0f09-4e13-b67a-363a8f210b50",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_order_date"
+        ]
+      ],
+      "name": "End Order Date",
+      "slug": "end_order_date",
+      "default": "2025-05-31"
+    },
+    {
+      "id": "0e36eac8-f069-47c9-994c-f025761efd8a",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    },
+    {
+      "id": "fbf0f711-7da3-4460-a3ff-d68b2a94897d",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "name": "Cohort",
+      "slug": "cohort"
+    },
+    {
+      "id": "66872aa4-9d10-4072-8ed5-619c3bc7ee82",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service Type",
+      "slug": "service_type"
+    }
+  ],
+  "created_at": "2025-07-13T05:58:17.089892Z",
+  "public_uuid": null
+}

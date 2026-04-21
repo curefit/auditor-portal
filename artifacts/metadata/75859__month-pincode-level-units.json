@@ -1,0 +1,476 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 402,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "month",
+      "field_ref": [
+        "field",
+        "month",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 34,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2022-01-01",
+            "latest": "2024-10-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "pincode",
+      "field_ref": [
+        "field",
+        "pincode",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "pincode",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 763,
+          "nil%": 0.0004
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.9982
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_amount",
+      "field_ref": [
+        "field",
+        "total_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4624,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -236325137.0,
+            "q1": -108606.2212983591,
+            "q3": 831597.3487274628,
+            "max": 140222045.0,
+            "sd": 8062004.25131452,
+            "avg": 1598077.4398
+          }
+        }
+      }
+    },
+    {
+      "display_name": "base_amount",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "base_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4620,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -206184302.0,
+            "q1": -186054.5776031477,
+            "q3": 684393.4479315432,
+            "max": 124432943.0,
+            "sd": 7056396.65100984,
+            "avg": 1390544.2256
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_nlc",
+      "field_ref": [
+        "field",
+        "total_nlc",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_nlc",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4622,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -3893957573.0,
+            "q1": -2736083.566449182,
+            "q3": 9834410.5519129,
+            "max": 34315718688.0,
+            "sd": 640968842.6074983,
+            "avg": 33705555.5456
+          }
+        }
+      }
+    },
+    {
+      "display_name": "units",
+      "field_ref": [
+        "field",
+        "units",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "units",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1160,
+          "nil%": 0.0002
+        },
+        "type": {
+          "type/Number": {
+            "min": -137243.0,
+            "q1": -154.2771781521467,
+            "q3": 581.3820146017047,
+            "max": 291625.0,
+            "sd": 9530.392556229604,
+            "avg": 1042.8824384876975
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm",
+      "field_ref": [
+        "field",
+        "gm",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4615,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -34308432302.0,
+            "q1": -10009694.993697729,
+            "q3": 3552518.3088436415,
+            "max": 3891579197.0,
+            "sd": 640730506.4386765,
+            "avg": -32315011.32
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm_percent",
+      "field_ref": [
+        "field",
+        "gm_percent",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm_percent",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4531,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -19399.0,
+            "q1": -5.946480092429475,
+            "q3": 8.67935438218133,
+            "max": 8871.76923076923,
+            "sd": 636.1966242648476,
+            "avg": -28.972635467452054
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "Month_Pincode Level  Units",
+  "last_used_at": "2026-04-16T12:12:21.889749Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-24T04:53:21.976945Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_date": {
+          "type": "date",
+          "name": "start_date",
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "display-name": "Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "end_date": {
+          "type": "date",
+          "name": "end_date",
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "display-name": "End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535274,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "sub_category": {
+          "type": "dimension",
+          "name": "sub_category",
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "display-name": "Sub Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9615855,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "article_type": {
+          "type": "dimension",
+          "name": "article_type",
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "display-name": "Article Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535281,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "#75683-raw-data": {
+          "type": "card",
+          "name": "#75683-raw-data",
+          "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+          "display-name": "#75683 Raw Data",
+          "card-id": 75683
+        },
+        "consider_purchase": {
+          "type": "text",
+          "name": "consider_purchase",
+          "id": "e55bcd1c-0895-4f8a-99ba-d145d899bbfa",
+          "display-name": "Consider Purchase"
+        }
+      },
+      "query": "SELECT \n    DATE_TRUNC('MONTH', DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS month, bill_to_pincode AS pincode, ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    ROUND(SUM(nlc)) AS total_nlc,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n    (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n[[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\nGROUP BY 1, 2\nORDER BY 1, 2\n\n\n"
+    }
+  },
+  "id": 75859,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "yUtUNeUW3T21LtCZZNer_",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "business_unit",
+    "table.cell_column": "unique_id",
+    "pie.metric": "total_amount",
+    "pie.dimension": [
+      "month"
+    ],
+    "column_settings": {
+      "[\"name\",\"gm_percent\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "Start Date",
+      "slug": "start_date"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "End Date",
+      "slug": "end_date"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "Sub Category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "Article Type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "e55bcd1c-0895-4f8a-99ba-d145d899bbfa",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "Consider Purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-02-12T06:01:09.30911Z",
+  "public_uuid": null
+}

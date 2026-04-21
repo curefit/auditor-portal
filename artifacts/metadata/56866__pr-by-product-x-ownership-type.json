@@ -1,0 +1,351 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 279,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "Product X Ownership",
+      "field_ref": [
+        "field",
+        "Product X Ownership",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "Product X Ownership",
+      "semantic_type": "type/Owner",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 8,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 12.583333333333334
+          }
+        }
+      }
+    },
+    {
+      "display_name": "period",
+      "field_ref": [
+        "field",
+        "period",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "period",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 60,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 12.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Product Rating (PR)",
+      "field_ref": [
+        "field",
+        "Product Rating (PR)",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "Product Rating (PR)",
+      "semantic_type": "type/Score",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 44,
+          "nil%": 0.0462962962962963
+        },
+        "type": {
+          "type/Number": {
+            "min": 3.47,
+            "q1": 3.628847397722397,
+            "q3": 3.854373034571759,
+            "max": 3.91,
+            "sd": 0.11603072031202093,
+            "avg": 3.7122330097087373
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "PR BY PRODUCT x OWNERSHIP TYPE",
+  "last_used_at": "2026-04-16T12:31:31.036238Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 148022927,
+      "cardId": 56866,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 1.38m. Optimize Query to reduce execution time."
+        }
+      ],
+      "queryHash": "70b89fb6c6851a19559f613ef8877d56a58c9f2a3f7c8ea3dcd770ee503277bd",
+      "executionStartTime": "2026-04-13T15:32:11.268+0000",
+      "tables": [
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim"
+      ],
+      "archive": false
+    }
+  ],
+  "creator_id": 3486,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-11T03:30:17.887771Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "report_start_date": {
+          "id": "6fa478fd-9d3e-646e-1843-fb622232b656",
+          "name": "report_start_date",
+          "display-name": "Report start date",
+          "type": "date"
+        },
+        "report_end_date": {
+          "id": "9bf1854b-55c3-b976-32f4-70ec3539a3d9",
+          "name": "report_end_date",
+          "display-name": "Report end date",
+          "type": "date"
+        },
+        "city_name": {
+          "id": "7e63b4f2-5008-06cd-a994-cdb97fd70e6e",
+          "name": "city_name",
+          "display-name": "City name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712462,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_service_id": {
+          "id": "bc15793a-649d-74ed-383f-a0004a0bc165",
+          "name": "center_service_id",
+          "display-name": "Center service",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712476,
+            null
+          ],
+          "widget-type": "number/="
+        },
+        "service_type": {
+          "id": "d169d770-462c-c005-e7b6-7338c8976f6f",
+          "name": "service_type",
+          "display-name": "Service type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712473,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "ownership_type": {
+          "id": "8bb805db-2e1c-b2db-9313-463a784f5ba9",
+          "name": "ownership_type",
+          "display-name": "Ownership type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712485,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "business_line": {
+          "id": "d4fd6e0a-4cbf-b659-6cde-9f6e86ea105c",
+          "name": "business_line",
+          "display-name": "Business line",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712478,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_name": {
+          "id": "15b93527-7983-73a4-d12c-a6d22ed02946",
+          "name": "center_name",
+          "display-name": "Center name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712482,
+            null
+          ],
+          "widget-type": "string/="
+        }
+      },
+      "query": "WITH bt_data AS (\n    -- Monthly Metrics for Product x Ownership Type\n    SELECT \n        CONCAT(cd.center_type, ' - ', cd.ownership_type) AS \"Product X Ownership\",\n        DATE_TRUNC('month', bf.booking_date) AS period,\n        'M' AS period_type,\n        SUM(bf.rating_value) AS total_rating_value,  -- Sum of rating values\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings -- Count of ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.booking_date BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND bf.attendance_time IS NOT NULL\n        AND bf.class_date >= date('2022-01-01')\n        AND cd.center_type IN ('GYM', 'GX', 'SPORTS')\n    GROUP BY \n        CONCAT(cd.center_type, ' - ', cd.ownership_type),\n        DATE_TRUNC('month', bf.booking_date)\n\n    UNION ALL\n\n    -- Quarterly Metrics for Product x Ownership Type\n    SELECT \n        CONCAT(cd.center_type, ' - ', cd.ownership_type) AS \"Product X Ownership\",\n        DATE_TRUNC('quarter', bf.booking_date) AS period,\n        'Q' AS period_type,\n        SUM(bf.rating_value) AS total_rating_value,  -- Sum of rating values\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings -- Count of ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.booking_date BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND bf.attendance_time IS NOT NULL\n        AND bf.class_date >= date('2022-01-01')\n        AND cd.center_type IN ('GYM', 'GX', 'SPORTS')\n    GROUP BY \n        CONCAT(cd.center_type, ' - ', cd.ownership_type),\n        DATE_TRUNC('quarter', bf.booking_date)\n)\n\nSELECT \n    bt.\"Product X Ownership\",\n    CONCAT(bt.period_type, '-', CAST(CAST(bt.period AS DATE) AS VARCHAR)) AS period,  -- Format period for quarters and months\n    ROUND(bt.total_rating_value * 1.00 / NULLIF(bt.total_ratings, 0), 2) AS \"Product Rating (PR)\" -- Calculate Product Rating\nFROM bt_data bt\nORDER BY \n    bt.period_type DESC,\n    bt.period,\n    bt.\"Product X Ownership\""
+    }
+  },
+  "id": 56866,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "6aAMIL4vCDKanFMZEwge2",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "period",
+    "table.cell_column": "Product Rating (PR)",
+    "table.pivot": true
+  },
+  "metabase_version": null,
+  "parameters": [
+    {
+      "id": "6fa478fd-9d3e-646e-1843-fb622232b656",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_start_date"
+        ]
+      ],
+      "name": "Report start date",
+      "slug": "report_start_date"
+    },
+    {
+      "id": "9bf1854b-55c3-b976-32f4-70ec3539a3d9",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_end_date"
+        ]
+      ],
+      "name": "Report end date",
+      "slug": "report_end_date"
+    },
+    {
+      "id": "7e63b4f2-5008-06cd-a994-cdb97fd70e6e",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "city_name"
+        ]
+      ],
+      "name": "City name",
+      "slug": "city_name"
+    },
+    {
+      "id": "bc15793a-649d-74ed-383f-a0004a0bc165",
+      "type": "number/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_service_id"
+        ]
+      ],
+      "name": "Center service",
+      "slug": "center_service_id"
+    },
+    {
+      "id": "d169d770-462c-c005-e7b6-7338c8976f6f",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service type",
+      "slug": "service_type"
+    },
+    {
+      "id": "8bb805db-2e1c-b2db-9313-463a784f5ba9",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "ownership_type"
+        ]
+      ],
+      "name": "Ownership type",
+      "slug": "ownership_type"
+    },
+    {
+      "id": "d4fd6e0a-4cbf-b659-6cde-9f6e86ea105c",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "business_line"
+        ]
+      ],
+      "name": "Business line",
+      "slug": "business_line"
+    },
+    {
+      "id": "15b93527-7983-73a4-d12c-a6d22ed02946",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_name"
+        ]
+      ],
+      "name": "Center name",
+      "slug": "center_name"
+    }
+  ],
+  "created_at": "2024-12-16T05:37:57.876234Z",
+  "public_uuid": null
+}

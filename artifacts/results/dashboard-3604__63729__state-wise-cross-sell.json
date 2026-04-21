@@ -1,0 +1,378 @@
+{
+  "card_id": 63729,
+  "card_name": "State Wise Cross Sell",
+  "parameters": [
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_order_date"
+        ]
+      ],
+      "value": "2026-01-01"
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_order_date"
+        ]
+      ],
+      "value": "2026-01-31"
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "Karnataka",
+          16634318.0
+        ],
+        [
+          "KARNATAKA",
+          7271997.0
+        ],
+        [
+          "Telangana",
+          6070432.0
+        ],
+        [
+          "Maharashtra",
+          4490517.0
+        ],
+        [
+          "TELANGANA",
+          2749335.0
+        ],
+        [
+          "Delhi",
+          2507227.0
+        ],
+        [
+          "Uttar Pradesh",
+          2131394.0
+        ],
+        [
+          "Haryana",
+          1945642.0
+        ],
+        [
+          "Tamil Nadu",
+          1491276.0
+        ],
+        [
+          "MAHARASHTRA",
+          1163077.0
+        ],
+        [
+          "Andhra Pradesh",
+          1126554.0
+        ],
+        [
+          "DELHI",
+          636273.0
+        ],
+        [
+          "Madhya Pradesh",
+          399977.0
+        ],
+        [
+          "Gujarat",
+          386366.0
+        ],
+        [
+          "Odisha",
+          344411.0
+        ],
+        [
+          "West Bengal",
+          318874.0
+        ],
+        [
+          "Rajasthan",
+          309966.0
+        ],
+        [
+          "Kerala",
+          243119.0
+        ],
+        [
+          "Punjab",
+          193877.0
+        ],
+        [
+          "Jharkhand",
+          148974.0
+        ],
+        [
+          "Bihar",
+          125495.0
+        ],
+        [
+          "UTTAR PRADESH",
+          110312.0
+        ],
+        [
+          "Meghalaya",
+          109738.0
+        ],
+        [
+          "Assam",
+          109238.0
+        ],
+        [
+          "Uttarakhand",
+          87539.0
+        ],
+        [
+          "Jammu & Kashmir",
+          66238.0
+        ],
+        [
+          "Chhattisgarh",
+          64632.0
+        ],
+        [
+          "Goa",
+          61466.0
+        ],
+        [
+          "Chandigarh",
+          48664.0
+        ],
+        [
+          "Tripura",
+          38818.0
+        ],
+        [
+          "Puducherry",
+          35864.0
+        ],
+        [
+          "Dadra and Nagar Haveli and Daman and Diu",
+          13105.0
+        ],
+        [
+          "Himachal Pradesh",
+          10544.0
+        ],
+        [
+          "Sikkim",
+          2818.0
+        ],
+        [
+          "Mizoram",
+          2349.0
+        ],
+        [
+          "Ladakh",
+          1839.0
+        ],
+        [
+          "Arunachal Pradesh",
+          1818.0
+        ],
+        [
+          "Manipur",
+          1747.0
+        ],
+        [
+          "Nagaland",
+          1699.0
+        ],
+        [
+          "Andaman & Nicobar Islands",
+          1355.0
+        ]
+      ],
+      "cols": [
+        {
+          "display_name": "state_name",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "state_name",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "name": "state_name",
+          "base_type": "type/Text",
+          "database_type": "varchar",
+          "effective_type": "type/Text"
+        },
+        {
+          "display_name": "total_gmv",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_gmv",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "name": "total_gmv",
+          "base_type": "type/Float",
+          "database_type": "double",
+          "effective_type": "type/Float"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2026-01-01",
+          "2026-01-31"
+        ],
+        "query": "SELECT state_name, ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member = 1\n      AND is_cancelled = 0\n     AND order_date BETWEEN ? AND ?\nGROUP BY state_name\nORDER BY 2 DESC"
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "display_name": "state_name",
+            "field_ref": [
+              "field",
+              "state_name",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "name": "state_name",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 40,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 10.3
+                }
+              }
+            }
+          },
+          {
+            "display_name": "total_gmv",
+            "field_ref": [
+              "field",
+              "total_gmv",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "base_type": "type/Float",
+            "effective_type": "type/Float",
+            "name": "total_gmv",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 40,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 1355.0,
+                  "q1": 37341.0,
+                  "q3": 1144815.5,
+                  "max": 16634318.0,
+                  "sd": 2989909.765375836,
+                  "avg": 1286472.1
+                }
+              }
+            }
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-04-17T06:41:39.349645Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 0,
+        "invalidated-at": "2026-04-16T18:41:39.345716Z"
+      },
+      "native": {
+        "template-tags": {
+          "start_order_date": {
+            "type": "date",
+            "name": "start_order_date",
+            "id": "2e0a2fbe-1f18-4393-b61a-9f3a55be1445",
+            "display-name": "Start Order Date",
+            "default": "2024-01-01"
+          },
+          "end_order_date": {
+            "type": "date",
+            "name": "end_order_date",
+            "id": "71249ea1-539a-49e4-a261-40cc2c34095e",
+            "display-name": "End Order Date",
+            "default": "2025-05-31"
+          }
+        },
+        "query": "SELECT state_name, ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member = 1\n      AND is_cancelled = 0\n     [[AND order_date BETWEEN {{start_order_date}} AND {{end_order_date}}]]\nGROUP BY state_name\nORDER BY 2 DESC"
+      },
+      "viz-settings": {
+        "table.column_widths": [
+          158
+        ],
+        "table.cell_column": "total_gmv"
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "start_order_date"
+            ]
+          ],
+          "value": "2026-01-01"
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "end_order_date"
+            ]
+          ],
+          "value": "2026-01-31"
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 40,
+    "running_time": 1193
+  }
+}

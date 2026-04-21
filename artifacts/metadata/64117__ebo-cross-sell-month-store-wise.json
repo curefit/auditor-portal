@@ -1,0 +1,237 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 308,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "month",
+      "field_ref": [
+        "field",
+        "month",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2026-01-01",
+            "latest": "2026-03-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "store_name",
+      "field_ref": [
+        "field",
+        "store_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "store_name",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 29,
+          "nil%": 0.01265822784810127
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 24.088607594936708
+          }
+        }
+      }
+    },
+    {
+      "display_name": "order_count",
+      "field_ref": [
+        "field",
+        "order_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "order_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 72,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 9.0,
+            "q1": 82.8125,
+            "q3": 199.75,
+            "max": 525.0,
+            "sd": 116.78312694728942,
+            "avg": 165.13924050632912
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 79,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 15778.0,
+            "q1": 207940.6666666667,
+            "q3": 520940.4375,
+            "max": 1260173.0,
+            "sd": 273241.62163053534,
+            "avg": 398311.56962025317
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5860,
+  "query_type": "native",
+  "name": "EBO Cross Sell - Month_Store Wise",
+  "last_used_at": "2026-04-16T10:15:15.846005Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:28:32.413139Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "57c35d74-0bf4-479d-999d-e4e799db55d7",
+          "display-name": "Order Start Date"
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "d44f856e-3ff0-4036-83b8-de6604e449de",
+          "display-name": "Order End Date"
+        },
+        "store_name": {
+          "type": "dimension",
+          "name": "store_name",
+          "id": "1fa6ce10-1511-4e4a-8983-8be122c1191c",
+          "display-name": "Store Name",
+          "default": null,
+          "dimension": [
+            "field",
+            9535355,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "SELECT DATE_TRUNC('MONTH',order_date) AS month, store_name, COUNT(DISTINCT order_id) AS order_count, ROUND(SUM(gmv)) AS total_gmv\nFROM \ndwh_fitness_metrics.cross_sell_orders\nWHERE channel = 'EBO'\nAND is_fs_member = 1\nAND is_cancelled = 0\n[[AND {{store_name}}]]\n[[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\nGROUP BY 1,2\nORDER BY 4 DESC\n"
+    }
+  },
+  "id": 64117,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "lkzcbV5vnsBQXASOn0VV2",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.column_widths": [
+      null,
+      223
+    ],
+    "table.pivot_column": "month",
+    "table.cell_column": "order_count"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "57c35d74-0bf4-479d-999d-e4e799db55d7",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date"
+    },
+    {
+      "id": "d44f856e-3ff0-4036-83b8-de6604e449de",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date"
+    },
+    {
+      "id": "1fa6ce10-1511-4e4a-8983-8be122c1191c",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "store_name"
+        ]
+      ],
+      "name": "Store Name",
+      "slug": "store_name"
+    }
+  ],
+  "created_at": "2025-07-18T04:12:10.869048Z",
+  "public_uuid": null
+}

@@ -1,0 +1,222 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 277,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "year",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "year",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "style_id_count",
+      "field_ref": [
+        "field",
+        "style_id_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "style_id_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1328.0,
+            "q1": 1511.5,
+            "q3": 2131.5,
+            "max": 2539.0,
+            "sd": 511.16109658958464,
+            "avg": 1821.5
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "New Launch Style Id",
+  "last_used_at": "2026-04-16T12:12:21.877296Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-04-16T12:02:22.194894Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535274,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "sub_category": {
+          "type": "dimension",
+          "name": "sub_category",
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "display-name": "Sub Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9615855,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "article_type": {
+          "type": "dimension",
+          "name": "article_type",
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "display-name": "Article Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535281,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "#75683-raw-data": {
+          "type": "card",
+          "name": "#75683-raw-data",
+          "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+          "display-name": "#75683 Raw Data",
+          "card-id": 75683
+        }
+      },
+      "query": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM {{#75683-raw-data}}\n    WHERE 1 = 1\n        [[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n        [[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n        [[ AND bus_sub_category IN (SELECT bus_sub_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key\n\n"
+    }
+  },
+  "id": 75894,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "Cg_AtRx0hRBxOhpLWwIFy",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "business_unit",
+    "table.cell_column": "unique_id",
+    "pie.metric": "total_amount",
+    "pie.dimension": [
+      "month"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "Sub Category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "Article Type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    }
+  ],
+  "created_at": "2026-02-12T08:40:31.790076Z",
+  "public_uuid": null
+}

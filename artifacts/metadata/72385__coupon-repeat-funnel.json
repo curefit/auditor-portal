@@ -1,0 +1,249 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 91,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "category",
+      "field_ref": [
+        "field",
+        "category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "category",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 11.285714285714286
+          }
+        }
+      }
+    },
+    {
+      "display_name": "user_count",
+      "field_ref": [
+        "field",
+        "user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 190.0,
+            "q1": 337.25,
+            "q3": 1014.25,
+            "max": 1435.0,
+            "sd": 451.47145667303954,
+            "avg": 744.8571428571429
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6271,
+  "query_type": "native",
+  "name": "Coupon Repeat Funnel",
+  "last_used_at": "2026-04-16T10:15:14.608432Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-12-04T11:43:13.185845Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "cf4c9c39-a4ff-4ef7-9af2-7732092e3752",
+          "display-name": "Order Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "db821aae-bd25-4624-8f6c-2c83bd5bbea7",
+          "display-name": "Order End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "coupon_code": {
+          "type": "dimension",
+          "name": "coupon_code",
+          "id": "d70545ac-6a7a-418b-b7f2-fb05d7eafee0",
+          "display-name": "Coupon Code",
+          "default": null,
+          "dimension": [
+            "field",
+            9535358,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "is_freebie_order": {
+          "type": "dimension",
+          "name": "is_freebie_order",
+          "id": "3610cf1f-9a17-4cf2-b44c-69a0ed6cdaf2",
+          "display-name": "Is Freebie Order",
+          "default": null,
+          "dimension": [
+            "field",
+            9535354,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "WITH freebie_data AS (\n    SELECT *\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE order_date >= DATE('2018-01-01')\n    [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n    AND {{coupon_code}}\n    AND {{is_freebie_order}}\n),\n\nfreebie_user_date AS \n(   \n    SELECT user_id AS min_user_id, MIN(order_timestamp) AS min_order_timestamp\n    FROM \n    freebie_data\n    GROUP BY 1\n),\n\norder_data_freebie_users AS (\n    SELECT *\n    FROM dwh_fitness_metrics.cross_sell_orders nc\n    JOIN freebie_user_date fbd ON nc.user_id = fbd.min_user_id\n         AND nc.order_timestamp > fbd.min_order_timestamp\n    WHERE order_date > DATE('2018-01-01')\n),\n\nshopify_event_data AS\n(\n    SELECT event_userid AS event_userid, event_eventparams_weborigin AS event_source, ts_date AS event_date, event_eventparams_pagecategory, event_eventparams_csproductid\n    FROM pk_d2c_cultstore.PAGE_VIEW pv\n    JOIN freebie_user_date fbd ON pv.event_userid = fbd.min_user_id\n         AND DATE(pv.ts_date) > DATE(fbd.min_order_timestamp)\n    WHERE pv.ts_date > DATE('2018-01-01')\n),\n\nshopify_home_page_view AS\n(   \n    SELECT DISTINCT event_userid \n    FROM shopify_event_data\n    WHERE event_eventparams_pagecategory = 'homepage'\n),\n\nshopify_plp_page_view AS\n(\n    SELECT DISTINCT event_userid \n    FROM shopify_event_data sd\n    WHERE event_eventparams_pagecategory = 'collection page'\n),\n\nshopify_pdp_page_view AS \n(\n    SELECT DISTINCT event_userid\n    FROM shopify_event_data sd\n    WHERE event_eventparams_pagecategory = 'product page' \n),\n\nshopify_atc AS \n(\n  SELECT DISTINCT event_userid\n  FROM pk_d2c_cultstore.atc atc\n  JOIN freebie_user_date fbd ON atc.event_userid = fbd.min_user_id\n         AND DATE(atc.ts_date) > DATE(fbd.min_order_timestamp)\n   WHERE atc.ts_date > DATE('2018-01-01')\n),\n\nshopify_checkout AS \n(\n  SELECT DISTINCT event_userid\n  FROM pk_d2c_cultstore.checkout_clicked ic\n  JOIN freebie_user_date fbd ON ic.event_userid = fbd.min_user_id\n         AND DATE(ic.ts_date) > DATE(fbd.min_order_timestamp)\n  WHERE ic.ts_date > DATE('2018-01-01')\n),\n\ncustom_event_data AS\n(   \n    SELECT user_userid AS event_userid, ts_date AS event_date, event_eventparams_weborigin AS event_source, event_eventparams_page_category, event_eventparams_productid\n    FROM  pk_curefit_app_events.web_cultsport_page_view wcpv\n    JOIN freebie_user_date fbd ON wcpv.user_userid = fbd.min_user_id\n         AND DATE(wcpv.ts_date) > DATE(fbd.min_order_timestamp)\n    WHERE wcpv.ts_date > DATE('2018-01-01')\n),\n\ncustom_home_page_view AS\n(\n    SELECT DISTINCT event_userid \n    FROM custom_event_data\n    WHERE event_eventparams_page_category = 'HOME'\n),\n\ncustom_plp_page_view AS\n(\n    SELECT DISTINCT event_userid\n    FROM custom_event_data ce\n    WHERE event_eventparams_page_category = 'PLP'\n),\n\ncustom_pdp_page_view AS\n(\n    SELECT DISTINCT event_userid\n    FROM custom_event_data ce\n    WHERE event_eventparams_page_category = 'PDP'\n),\n\ncustom_atc AS \n(\n    SELECT DISTINCT user_userid AS event_userid\n    FROM \"pk_cultsport_app_events\".\"web_cultsport_gearaddtocartclicked\" wcatc\n    JOIN freebie_user_date fbd ON wcatc.user_userid = fbd.min_user_id\n         AND DATE(wcatc.ts_date) > DATE(fbd.min_order_timestamp)\n    WHERE wcatc.ts_date > DATE('2018-01-01')\n),\n\ncustom_checkout AS \n(\n    SELECT userid AS event_userid\n    FROM  pk_cultsport_app_events_backend.cultsportcartcheckoutitem_backend wcchc\n    JOIN freebie_user_date fbd ON wcchc.userid = fbd.min_user_id\n         AND DATE(wcchc.event_time) > DATE(fbd.min_order_timestamp)\n    WHERE wcchc.event_time_date > DATE('2018-01-01')\n),\n\nhome_page_view_combined AS \n(\n    SELECT * FROM shopify_home_page_view\n    \n    UNION ALL\n    \n    SELECT * FROM custom_home_page_view\n),\n\nplp_page_view_combined AS \n(\n    SELECT * FROM shopify_plp_page_view\n    \n    UNION ALL\n    \n    SELECT * FROM custom_plp_page_view\n),\n\npdp_page_view_combined AS \n(\n    SELECT * FROM shopify_pdp_page_view\n    \n    UNION ALL\n    \n    SELECT * FROM custom_pdp_page_view\n),\n\natc_combined AS \n(\n    SELECT * FROM shopify_atc\n    \n    UNION ALL \n    \n    SELECT * FROM custom_atc\n),\n\ncheckout_combined AS \n(\n\n    SELECT * FROM shopify_checkout\n    \n    UNION ALL \n    \n    SELECT * FROM custom_checkout\n\n)\n\n\nSELECT 'FreeBie People' AS category, COUNT(DISTINCT user_id) AS user_count\nFROM freebie_data\n\nUNION ALL\n\nSELECT 'Home Page View' AS category, COUNT(DISTINCT event_userid) AS user_count\nFROM home_page_view_combined\n\nUNION ALL\n\nSELECT 'Plp Page View' AS category, COUNT(DISTINCT event_userid) AS user_count\nFROM plp_page_view_combined\n\nUNION ALL\n\nSELECT 'Pdp Page View' AS category, COUNT(DISTINCT event_userid) AS user_count\nFROM pdp_page_view_combined\n\nUNION ALL\n\nSELECT 'ATC' AS category, COUNT(DISTINCT event_userid) AS user_count\nFROM atc_combined\n\nUNION ALL \n\nSELECT 'Checkout Clicked' AS category, COUNT(DISTINCT event_userid) AS user_count\nFROM checkout_combined\n\nUNION ALL\n\nSELECT 'Orders' AS category, COUNT(DISTINCT user_id) AS user_count\nFROM order_data_freebie_users\nWHERE is_freebie_order = 0 \n"
+    }
+  },
+  "id": 72385,
+  "parameter_mappings": [],
+  "display": "funnel",
+  "archived_directly": false,
+  "entity_id": "U-5io7HeS3H9WQjKI0pHN",
+  "collection_preview": true,
+  "visualization_settings": {
+    "funnel.rows": [
+      {
+        "key": "FreeBie People",
+        "name": "FreeBie People",
+        "enabled": true
+      },
+      {
+        "key": "Home Page View",
+        "name": "Home Page View",
+        "enabled": true
+      },
+      {
+        "key": "Plp Page View",
+        "name": "Plp Page View",
+        "enabled": true
+      },
+      {
+        "key": "Pdp Page View",
+        "name": "Pdp Page View",
+        "enabled": true
+      },
+      {
+        "key": "ATC",
+        "name": "ATC",
+        "enabled": true
+      },
+      {
+        "key": "Checkout Clicked",
+        "name": "Checkout Clicked",
+        "enabled": true
+      },
+      {
+        "key": "Orders",
+        "name": "Orders",
+        "enabled": true
+      }
+    ],
+    "funnel.order_dimension": "category"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "cf4c9c39-a4ff-4ef7-9af2-7732092e3752",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date"
+    },
+    {
+      "id": "db821aae-bd25-4624-8f6c-2c83bd5bbea7",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date"
+    },
+    {
+      "id": "d70545ac-6a7a-418b-b7f2-fb05d7eafee0",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "coupon_code"
+        ]
+      ],
+      "name": "Coupon Code",
+      "slug": "coupon_code",
+      "options": {
+        "case-sensitive": false
+      }
+    },
+    {
+      "id": "3610cf1f-9a17-4cf2-b44c-69a0ed6cdaf2",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "is_freebie_order"
+        ]
+      ],
+      "name": "Is Freebie Order",
+      "slug": "is_freebie_order"
+    }
+  ],
+  "created_at": "2025-12-04T11:43:13.185845Z",
+  "public_uuid": null
+}

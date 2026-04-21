@@ -1,0 +1,505 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 338,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "month",
+      "field_ref": [
+        "field",
+        "month",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 36,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2022-01-01",
+            "latest": "2024-12-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_customer_name",
+      "field_ref": [
+        "field",
+        "bill_to_customer_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_customer_name",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 979,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 20.9024
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_customer_number",
+      "field_ref": [
+        "field",
+        "bill_to_customer_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_customer_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 982,
+          "nil%": 0.001
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.9582
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_amount",
+      "field_ref": [
+        "field",
+        "total_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4488,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -236325137.0,
+            "q1": -381354.6722317189,
+            "q3": 763314.3396860638,
+            "max": 426399572.0,
+            "sd": 15908622.195836032,
+            "avg": 1777524.7334
+          }
+        }
+      }
+    },
+    {
+      "display_name": "base_amount",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "base_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4476,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -206184302.0,
+            "q1": -295279.77703751763,
+            "q3": 1091200.8100726218,
+            "max": 373494439.0,
+            "sd": 13863433.10818868,
+            "avg": 1547887.985
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_nlc",
+      "field_ref": [
+        "field",
+        "total_nlc",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_nlc",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4483,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -3893957573.0,
+            "q1": -8859803.12271355,
+            "q3": 8027745.3968571015,
+            "max": 39435067674.0,
+            "sd": 708415210.0370728,
+            "avg": 35367591.5656
+          }
+        }
+      }
+    },
+    {
+      "display_name": "units",
+      "field_ref": [
+        "field",
+        "units",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "units",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 671,
+          "nil%": 0.0002
+        },
+        "type": {
+          "type/Number": {
+            "min": -137243.0,
+            "q1": -745.2979306000625,
+            "q3": 415.01134659107413,
+            "max": 318595.96,
+            "sd": 12245.509298004106,
+            "avg": 1137.624376875375
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm",
+      "field_ref": [
+        "field",
+        "gm",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4480,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -39382954393.0,
+            "q1": -5691554.559602233,
+            "q3": 3777833.341947291,
+            "max": 3891579197.0,
+            "sd": 706650552.8523697,
+            "avg": -33819703.5806
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm_percent",
+      "field_ref": [
+        "field",
+        "gm_percent",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm_percent",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4355,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -19399.0,
+            "q1": -2.694299572608661,
+            "q3": 4.014025452651516,
+            "max": 39721.035294117646,
+            "sd": 892.9115262474465,
+            "avg": -18.65948104502362
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "Month_Bill to Customer Name Level Amount and Units -",
+  "last_used_at": "2026-04-16T12:12:21.877296Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-26T12:38:57.259668Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_date": {
+          "type": "date",
+          "name": "start_date",
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "display-name": "Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "end_date": {
+          "type": "date",
+          "name": "end_date",
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "display-name": "End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535274,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "sub_category": {
+          "type": "dimension",
+          "name": "sub_category",
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "display-name": "Sub Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9615855,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "article_type": {
+          "type": "dimension",
+          "name": "article_type",
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "display-name": "Article Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535281,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "#75683-raw-data": {
+          "type": "card",
+          "name": "#75683-raw-data",
+          "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+          "display-name": "#75683 Raw Data",
+          "card-id": 75683
+        },
+        "consider_purchase": {
+          "type": "text",
+          "name": "consider_purchase",
+          "id": "7ee4ff86-7fe5-4557-b174-23d8f13b1b5f",
+          "display-name": "Consider Purchase"
+        }
+      },
+      "query": "SELECT \n    DATE_TRUNC('MONTH', DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS month, bill_to_customer_name, bill_to_customer_number, ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    ROUND(SUM(nlc)) AS total_nlc,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n    (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n[[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\nGROUP BY 1, 2, 3\nORDER BY 1, 2, 3\n\n\n"
+    }
+  },
+  "id": 75910,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "b0Ta7FXLPtNAeBIgWWZGo",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "business_unit",
+    "table.cell_column": "unique_id",
+    "pie.metric": "total_amount",
+    "pie.dimension": [
+      "month"
+    ],
+    "column_settings": {
+      "[\"name\",\"gm_percent\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "Start Date",
+      "slug": "start_date"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "End Date",
+      "slug": "end_date"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "Sub Category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "Article Type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "7ee4ff86-7fe5-4557-b174-23d8f13b1b5f",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "Consider Purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-02-12T11:04:00.885329Z",
+  "public_uuid": null
+}

@@ -1,0 +1,624 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 219,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "manual_channel_type",
+      "field_ref": [
+        "field",
+        "manual_channel_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "manual_channel_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 12,
+          "nil%": 0.04965357967667436
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.438799076212471
+          }
+        }
+      }
+    },
+    {
+      "display_name": "account_channel_type",
+      "field_ref": [
+        "field",
+        "account_channel_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "account_channel_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 25,
+          "nil%": 0.04965357967667436
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.405311778290993
+          }
+        }
+      }
+    },
+    {
+      "display_name": "business_category",
+      "field_ref": [
+        "field",
+        "business_category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "business_category",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 99,
+          "nil%": 0.01732101616628176
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 16.772517321016167
+          }
+        }
+      }
+    },
+    {
+      "display_name": "year",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "year",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_amount",
+      "field_ref": [
+        "field",
+        "total_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 806,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -61462147.0,
+            "q1": -1114591.3670894923,
+            "q3": 2247173.9444973897,
+            "max": 993727607.0,
+            "sd": 79440225.39279938,
+            "avg": 17684306.244803697
+          }
+        }
+      }
+    },
+    {
+      "display_name": "base_amount",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "base_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 803,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -52266457.0,
+            "q1": -158750.86484272382,
+            "q3": 1665476.8662045037,
+            "max": 844309762.0,
+            "sd": 69437203.44852069,
+            "avg": 15553777.62817552
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_nlc",
+      "field_ref": [
+        "field",
+        "total_nlc",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_nlc",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 819,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -3071165808.0,
+            "q1": -2465058.9839406554,
+            "q3": 14743277.75170081,
+            "max": 19720944230.0,
+            "sd": 1066121098.6474216,
+            "avg": 170490300.15935335
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_units",
+      "field_ref": [
+        "field",
+        "total_units",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_units",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 475,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -43307.0,
+            "q1": -165.7714085986429,
+            "q3": 2199.9271977948483,
+            "max": 892637.0,
+            "sd": 58632.2859949922,
+            "avg": 12127.366812933027
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm",
+      "field_ref": [
+        "field",
+        "gm",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 838,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -19718387465.0,
+            "q1": -8547391.573387356,
+            "q3": 7592819.091524362,
+            "max": 3069492566.0,
+            "sd": 1059334966.8736087,
+            "avg": -154936522.53117782
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm_percent",
+      "field_ref": [
+        "field",
+        "gm_percent",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm_percent",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 749,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -30522.956395348836,
+            "q1": -7.4606197346905505,
+            "q3": 3.3677910637287045,
+            "max": 963.4993249103857,
+            "sd": 1703.454414227644,
+            "avg": -186.55352363800895
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_unique_sku_code",
+      "field_ref": [
+        "field",
+        "total_unique_sku_code",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "total_unique_sku_code",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 186,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 2.053645887515238,
+            "q3": 26.345243685037282,
+            "max": 13768.0,
+            "sd": 906.1856246352334,
+            "avg": 167.4838337182448
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_unique_styleid",
+      "field_ref": [
+        "field",
+        "total_unique_styleid",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "total_unique_styleid",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 133,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 0.9575510438338654,
+            "q3": 6.814542132667829,
+            "max": 3116.0,
+            "sd": 222.30626220872696,
+            "avg": 48.236720554272516
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_unique_pincode",
+      "field_ref": [
+        "field",
+        "total_unique_pincode",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "total_unique_pincode",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 74,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 1.2153480266206718,
+            "q3": 7.97273903347368,
+            "max": 592.0,
+            "sd": 45.39787146569132,
+            "avg": 12.618937644341802
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "Financial Year Wise Summary -  Category and Channel Wise",
+  "last_used_at": "2026-04-16T12:12:36.032773Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-04-16T12:02:45.851875Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "e0ba2a99-e9b4-4ef8-90b3-14d194946cda",
+          "display-name": "Category",
+          "dimension": [
+            "field",
+            9535274,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "sub_category": {
+          "type": "dimension",
+          "name": "sub_category",
+          "id": "9928500f-d7cb-4a4c-9c89-d7a0e3be07c0",
+          "display-name": "Sub Category",
+          "dimension": [
+            "field",
+            9615855,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "article_type": {
+          "type": "dimension",
+          "name": "article_type",
+          "id": "1482ca98-6ed8-447a-94a1-b8280ca5bbab",
+          "display-name": "Article Type",
+          "dimension": [
+            "field",
+            9535281,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "#75683-raw-data": {
+          "type": "card",
+          "name": "#75683-raw-data",
+          "id": "4c7d34f4-c4ff-4848-872f-ac43cbd3efe0",
+          "card-id": 75683,
+          "display-name": "#75683 Raw Data"
+        },
+        "consider_purchase": {
+          "type": "text",
+          "name": "consider_purchase",
+          "id": "eb403b3b-1c95-444e-b3a2-8dead725ceeb",
+          "display-name": "Consider Purchase"
+        },
+        "year": {
+          "type": "text",
+          "name": "year",
+          "id": "57d57311-671e-401a-86a8-2526499b6d1c",
+          "display-name": "Year"
+        }
+      },
+      "query": "SELECT\n    manual_channel_type,\n    account_channel_type,\n    business_category,\n    year,\n    total_amount,\n    base_amount,\n    total_nlc,\n    total_units,\n    gm,\n    gm_percent,\n    total_unique_sku_code,\n    total_unique_styleid,\n    total_unique_pincode\nFROM (\n    SELECT\n        1 AS sort_key,\n        manual_channel_type,\n        account_channel_type,\n        business_category,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM {{#75683-raw-data}}\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n        [[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n        [[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n        [[ AND bus_sub_category IN (SELECT bus_sub_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n        [[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\n    GROUP BY 1, 2, 3, 4, 5\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        manual_channel_type,\n        account_channel_type,\n        business_category,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM {{#75683-raw-data}}\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n        [[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n        [[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n        [[ AND bus_sub_category IN (SELECT bus_sub_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n        [[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\n    GROUP BY 1, 2, 3, 4, 5\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        manual_channel_type,\n        account_channel_type,\n        business_category,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM {{#75683-raw-data}}\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n        [[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n        [[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n        [[ AND bus_sub_category IN (SELECT bus_sub_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n        [[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\n    GROUP BY 1, 2, 3, 4, 5\n    \n    UNION ALL \n    \n    SELECT\n        5 AS sort_key,\n        manual_channel_type,\n        account_channel_type,\n        business_category,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM {{#75683-raw-data}}\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n        [[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n        [[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n        [[ AND bus_sub_category IN (SELECT bus_sub_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n        [[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\n    GROUP BY 1, 2, 3, 4, 5\n) t\nWHERE 1 = 1\n[[AND year = {{year}}]]\nORDER BY manual_channel_type, account_channel_type, business_category, sort_key"
+    }
+  },
+  "id": 76602,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "7pXeVGH1CNTnGWdSoz1eA",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "year",
+    "table.cell_column": "total_amount",
+    "table.transpose": false,
+    "pie.metric": "base_amount",
+    "pie.dimension": [
+      "business_category"
+    ],
+    "pie.percent_visibility": "off",
+    "column_settings": {
+      "[\"name\",\"gm_percent\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "e0ba2a99-e9b4-4ef8-90b3-14d194946cda",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "9928500f-d7cb-4a4c-9c89-d7a0e3be07c0",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "Sub Category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "1482ca98-6ed8-447a-94a1-b8280ca5bbab",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "Article Type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "eb403b3b-1c95-444e-b3a2-8dead725ceeb",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "Consider Purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "57d57311-671e-401a-86a8-2526499b6d1c",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "year"
+        ]
+      ],
+      "name": "Year",
+      "slug": "year",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "FY23"
+          ],
+          [
+            "FY24"
+          ],
+          [
+            "FY25"
+          ],
+          [
+            "9M FY25"
+          ],
+          [
+            "9M FY26"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-02-26T12:48:35.206991Z",
+  "public_uuid": null
+}

@@ -1,0 +1,311 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 3274,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "gender",
+      "field_ref": [
+        "field",
+        "gender",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "gender",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.5
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 599.0,
+            "q1": 2609767.0,
+            "q3": 8962601.5,
+            "max": 9496189.0,
+            "sd": 4263936.081804805,
+            "avg": 5786184.25
+          }
+        }
+      }
+    },
+    {
+      "display_name": "percentage",
+      "field_ref": [
+        "field",
+        "percentage",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 2.5880613808659827e-05,
+            "q1": 0.11275855068044197,
+            "q3": 0.38724144931955806,
+            "max": 0.4102958266494884,
+            "sd": 0.18422918704173677,
+            "avg": 0.25
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5748,
+  "query_type": "native",
+  "name": "Gender Wise Cross Sell",
+  "last_used_at": "2026-04-16T16:23:02.454469Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:06:24.166177Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+          "display-name": "Order Start Date",
+          "default": "2024-01-01",
+          "widget-type": null
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+          "display-name": "Order End Date",
+          "default": "2025-05-31",
+          "widget-type": null
+        },
+        "source": {
+          "type": "dimension",
+          "name": "source",
+          "id": "7ac73fcd-5957-49f4-b2bb-375e5a3be9c0",
+          "display-name": "Source",
+          "default": null,
+          "dimension": [
+            "field",
+            9535370,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "2783cca9-d06d-48ef-afe6-f1504a41fa0c",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "cohort": {
+          "type": "dimension",
+          "name": "cohort",
+          "id": "30295408-61a5-4598-bad9-a95d7f574d12",
+          "display-name": "Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "service_type": {
+          "type": "dimension",
+          "name": "service_type",
+          "id": "89fe58ae-7695-4dca-bd1d-87ab6a3d9ad4",
+          "display-name": "Service Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535349,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "WITH final_data AS \n(\n    SELECT  gender,\n            COUNT(DISTINCT user_id) AS user_count,\n            ROUND(SUM(gmv)) AS total_gmv\n    FROM  dwh_fitness_metrics.cross_sell_orders\n    WHERE is_fs_member = 1\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n         [[AND {{source}}]]\n         [[AND {{category}}]]\n         [[AND {{cohort}}]]\n         [[AND {{service_type}}]]\n          [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n    GROUP BY 1\n)\n\nSELECT gender, total_gmv, total_gmv * 1.000/SUM(total_gmv) OVER() AS percentage\nFROM \nfinal_data\nORDER BY 2 DESC\n"
+    }
+  },
+  "id": 63743,
+  "parameter_mappings": [],
+  "display": "bar",
+  "archived_directly": false,
+  "entity_id": "ZeAKpGq1bnL7KGYcB1Gha",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.show_values": true,
+    "table.cell_column": "user_count",
+    "graph.label_value_frequency": "all",
+    "graph.metrics": [
+      "total_gmv"
+    ],
+    "graph.tooltip_columns": [
+      "[\"name\",\"percentage\"]"
+    ],
+    "graph.label_value_formatting": "compact",
+    "table.pivot_column": "age",
+    "column_settings": {
+      "[\"name\",\"percentage\"]": {
+        "number_style": "percent"
+      }
+    },
+    "graph.dimensions": [
+      "gender"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date",
+      "default": "2025-05-31"
+    },
+    {
+      "id": "7ac73fcd-5957-49f4-b2bb-375e5a3be9c0",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "source"
+        ]
+      ],
+      "name": "Source",
+      "slug": "source"
+    },
+    {
+      "id": "2783cca9-d06d-48ef-afe6-f1504a41fa0c",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    },
+    {
+      "id": "30295408-61a5-4598-bad9-a95d7f574d12",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "name": "Cohort",
+      "slug": "cohort"
+    },
+    {
+      "id": "89fe58ae-7695-4dca-bd1d-87ab6a3d9ad4",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service Type",
+      "slug": "service_type"
+    }
+  ],
+  "created_at": "2025-07-13T05:58:17.089892Z",
+  "public_uuid": null
+}

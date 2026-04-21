@@ -1,0 +1,292 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 3232,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "cross_sell_vs_1p",
+      "field_ref": [
+        "field",
+        "cross_sell_vs_1p",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "cross_sell_vs_1p",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 11.5
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 23144738.0,
+            "q1": 23144738.0,
+            "q3": 52360876.0,
+            "max": 52360876.0,
+            "sd": 20658929.299881976,
+            "avg": 37752807.0
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5748,
+  "query_type": "native",
+  "name": "Cross Sell VS D2C",
+  "last_used_at": "2026-04-16T16:23:02.443948Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T08:53:44.179333Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "f7ca072f-ad22-42f1-ae3f-ed59503c3dbd",
+          "display-name": "Order Start Date",
+          "default": "2024-01-01"
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "5456cef1-6895-4af3-bea0-d609a8f5b201",
+          "display-name": "Order End Date",
+          "default": "2025-05-31"
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "762d3dc2-6a93-4f48-a675-ba6f212df084",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "source": {
+          "type": "dimension",
+          "name": "source",
+          "id": "3a3a709b-c3d3-4c3c-87d9-ab622ad283a0",
+          "display-name": "Source",
+          "default": null,
+          "widget-type": "string/=",
+          "options": null,
+          "dimension": [
+            "field",
+            9535370,
+            null
+          ]
+        },
+        "cohort": {
+          "type": "dimension",
+          "name": "cohort",
+          "id": "af69b77c-1b1d-488a-a048-0a06e2131504",
+          "display-name": "Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "service_type": {
+          "type": "dimension",
+          "name": "service_type",
+          "id": "f19f07ae-0080-42f4-86b4-7a4fcfb32f67",
+          "display-name": "Service Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535349,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "SELECT 'CROSS-SELL' AS cross_sell_vs_1p, ROUND(SUM(gmv)) AS total_gmv\nFROM \ndwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n     AND is_fs_member= 1\n     AND order_date >= DATE('2018-01-01')\n     AND is_cancelled = 0 \n     [[AND {{source}}]]\n     [[AND {{category}}]]\n     [[AND {{cohort}}]]\n     [[AND {{service_type}}]]\n     [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n\nUNION ALL \n\nSELECT 'NON-FS-MEMBER' AS cross_sell_vs_1p, ROUND(SUM(gmv)) AS total_gmv\nFROM \ndwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n     AND is_fs_member= 0\n     AND is_cancelled = 0\n     AND order_date >= DATE('2018-01-01')\n     [[AND {{source}}]]\n     [[AND {{category}}]]\n     [[AND {{cohort}}]]\n     [[AND {{service_type}}]]\n     [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]] \n"
+    }
+  },
+  "id": 65204,
+  "parameter_mappings": [],
+  "display": "pie",
+  "archived_directly": false,
+  "entity_id": "YMAqD1u4cdpyAVAlJx0Lr",
+  "collection_preview": true,
+  "visualization_settings": {
+    "pie.rows": [
+      {
+        "key": "NON-FS-MEMBER",
+        "name": "NON-FS-MEMBER",
+        "originalName": "NON-FS-MEMBER",
+        "color": "#A989C5",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      },
+      {
+        "key": "CROSS-SELL",
+        "name": "CROSS-SELL",
+        "originalName": "CROSS-SELL",
+        "color": "#51528D",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      }
+    ],
+    "graph.dimensions": [
+      "category",
+      "_col0"
+    ],
+    "graph.series_order_dimension": null,
+    "graph.series_order": null,
+    "stackable.stack_type": "normalized",
+    "graph.metrics": [
+      "total_gmv"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "f7ca072f-ad22-42f1-ae3f-ed59503c3dbd",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "5456cef1-6895-4af3-bea0-d609a8f5b201",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date",
+      "default": "2025-05-31"
+    },
+    {
+      "id": "762d3dc2-6a93-4f48-a675-ba6f212df084",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    },
+    {
+      "id": "3a3a709b-c3d3-4c3c-87d9-ab622ad283a0",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "source"
+        ]
+      ],
+      "name": "Source",
+      "slug": "source"
+    },
+    {
+      "id": "af69b77c-1b1d-488a-a048-0a06e2131504",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "name": "Cohort",
+      "slug": "cohort"
+    },
+    {
+      "id": "f19f07ae-0080-42f4-86b4-7a4fcfb32f67",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service Type",
+      "slug": "service_type"
+    }
+  ],
+  "created_at": "2025-08-04T15:51:47.114895Z",
+  "public_uuid": null
+}

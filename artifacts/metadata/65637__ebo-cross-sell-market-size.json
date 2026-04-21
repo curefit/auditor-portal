@@ -1,0 +1,931 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 324,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "store_name",
+      "field_ref": [
+        "field",
+        "store_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "store_name",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 24.708333333333332
+          }
+        }
+      }
+    },
+    {
+      "display_name": "fs_user_count",
+      "field_ref": [
+        "field",
+        "fs_user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "fs_user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1463.0,
+            "q1": 23489.0,
+            "q3": 61291.5,
+            "max": 144252.0,
+            "sd": 34694.09052526093,
+            "avg": 47140.625
+          }
+        }
+      }
+    },
+    {
+      "display_name": "active_fs_user_count",
+      "field_ref": [
+        "field",
+        "active_fs_user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "active_fs_user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 958.0,
+            "q1": 13772.0,
+            "q3": 36284.0,
+            "max": 75741.0,
+            "sd": 19379.52952042363,
+            "avg": 26195.791666666668
+          }
+        }
+      }
+    },
+    {
+      "display_name": "expired_fs_user_count",
+      "field_ref": [
+        "field",
+        "expired_fs_user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "expired_fs_user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 505.0,
+            "q1": 10983.0,
+            "q3": 25007.5,
+            "max": 68511.0,
+            "sd": 15528.701450978546,
+            "avg": 20944.833333333332
+          }
+        }
+      }
+    },
+    {
+      "display_name": "active_fs_percentage",
+      "field_ref": [
+        "field",
+        "active_fs_percentage",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "active_fs_percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.3555855481727575,
+            "q1": 0.5209552982221348,
+            "q3": 0.5845642373268083,
+            "max": 0.6778306698401904,
+            "sd": 0.07480048777267283,
+            "avg": 0.5465545852599557
+          }
+        }
+      }
+    },
+    {
+      "display_name": "overall_ordered_user",
+      "field_ref": [
+        "field",
+        "overall_ordered_user",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "overall_ordered_user",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 100.0,
+            "q1": 2810.0,
+            "q3": 9918.5,
+            "max": 26023.0,
+            "sd": 6283.829749351949,
+            "avg": 7588.333333333333
+          }
+        }
+      }
+    },
+    {
+      "display_name": "overall_converted_percentage",
+      "field_ref": [
+        "field",
+        "overall_converted_percentage",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "overall_converted_percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.06797506738544475,
+            "q1": 0.1259745340878352,
+            "q3": 0.16850441684255404,
+            "max": 0.20037827910419123,
+            "sd": 0.03450569579054374,
+            "avg": 0.14777072900549626
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ebo_ordered_user",
+      "field_ref": [
+        "field",
+        "ebo_ordered_user",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "ebo_ordered_user",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 12.0,
+            "q1": 390.5,
+            "q3": 1584.0,
+            "max": 5035.0,
+            "sd": 1276.1945576255384,
+            "avg": 1195.125
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ebo_converted_percentage",
+      "field_ref": [
+        "field",
+        "ebo_converted_percentage",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "ebo_converted_percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0078527465318644,
+            "q1": 0.012088357862846934,
+            "q3": 0.029250393940281665,
+            "max": 0.04266403047906786,
+            "sd": 0.01024774556751612,
+            "avg": 0.02122369459928573
+          }
+        }
+      }
+    },
+    {
+      "display_name": "active_ordered_user",
+      "field_ref": [
+        "field",
+        "active_ordered_user",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "active_ordered_user",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 64.0,
+            "q1": 2113.0,
+            "q3": 7085.0,
+            "max": 17121.0,
+            "sd": 4233.332421331067,
+            "avg": 5152.458333333333
+          }
+        }
+      }
+    },
+    {
+      "display_name": "active_user_converted_percentage",
+      "field_ref": [
+        "field",
+        "active_user_converted_percentage",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "active_user_converted_percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.06680584551148225,
+            "q1": 0.1602762404006075,
+            "q3": 0.20665388515544225,
+            "max": 0.2325821632168956,
+            "sd": 0.041498391009282494,
+            "avg": 0.1820933215023185
+          }
+        }
+      }
+    },
+    {
+      "display_name": "expired_ordered_user",
+      "field_ref": [
+        "field",
+        "expired_ordered_user",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "expired_ordered_user",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 36.0,
+            "q1": 950.0,
+            "q3": 2920.5,
+            "max": 8902.0,
+            "sd": 2070.3728358312246,
+            "avg": 2435.875
+          }
+        }
+      }
+    },
+    {
+      "display_name": "expired_user_converted_percentage",
+      "field_ref": [
+        "field",
+        "expired_user_converted_percentage",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "expired_user_converted_percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.04667990919409762,
+            "q1": 0.08637006994008477,
+            "q3": 0.1294530139289024,
+            "max": 0.14708533653846154,
+            "sd": 0.025285273627239015,
+            "avg": 0.10761471697038333
+          }
+        }
+      }
+    },
+    {
+      "display_name": "active_ebo_ordered_user",
+      "field_ref": [
+        "field",
+        "active_ebo_ordered_user",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "active_ebo_ordered_user",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 6.0,
+            "q1": 295.5,
+            "q3": 1312.0,
+            "max": 4116.0,
+            "sd": 1055.0358938533043,
+            "avg": 972.2916666666666
+          }
+        }
+      }
+    },
+    {
+      "display_name": "active_ebo_converted_percentage",
+      "field_ref": [
+        "field",
+        "active_ebo_converted_percentage",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "active_ebo_converted_percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.00410116199589884,
+            "q1": 0.00908313674701778,
+            "q3": 0.02408216977756004,
+            "max": 0.03517755389929911,
+            "sd": 0.009155182843359038,
+            "avg": 0.016881284003514328
+          }
+        }
+      }
+    },
+    {
+      "display_name": "expired_ebo_ordered_user",
+      "field_ref": [
+        "field",
+        "expired_ebo_ordered_user",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "expired_ebo_ordered_user",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 6.0,
+            "q1": 78.5,
+            "q3": 283.5,
+            "max": 919.0,
+            "sd": 222.54314025681023,
+            "avg": 222.83333333333334
+          }
+        }
+      }
+    },
+    {
+      "display_name": "expired_ebo_converted_percentage",
+      "field_ref": [
+        "field",
+        "expired_ebo_converted_percentage",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "expired_ebo_converted_percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.00146636053174863,
+            "q1": 0.003380423155793075,
+            "q3": 0.005159674671372075,
+            "max": 0.00748647657976874,
+            "sd": 0.0013360112994404427,
+            "avg": 0.004342410595771401
+          }
+        }
+      }
+    },
+    {
+      "display_name": "active_overall_gmv",
+      "field_ref": [
+        "field",
+        "active_overall_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "active_overall_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 697371.0,
+            "q1": 17357169.0,
+            "q3": 75201412.5,
+            "max": 233704550.0,
+            "sd": 50953086.36926652,
+            "avg": 51119018.125
+          }
+        }
+      }
+    },
+    {
+      "display_name": "expired_overall_gmv",
+      "field_ref": [
+        "field",
+        "expired_overall_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "expired_overall_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 207763.0,
+            "q1": 4965996.5,
+            "q3": 18785433.5,
+            "max": 53399391.0,
+            "sd": 12096405.558632893,
+            "avg": 13866838.666666666
+          }
+        }
+      }
+    },
+    {
+      "display_name": "active_ebo_gmv",
+      "field_ref": [
+        "field",
+        "active_ebo_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "active_ebo_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 135464.0,
+            "q1": 2044227.0,
+            "q3": 13709703.0,
+            "max": 35639667.0,
+            "sd": 9162124.946671084,
+            "avg": 8625204.666666666
+          }
+        }
+      }
+    },
+    {
+      "display_name": "expired_ebo_gmv",
+      "field_ref": [
+        "field",
+        "expired_ebo_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "expired_ebo_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 22707.0,
+            "q1": 473739.5,
+            "q3": 2026462.0,
+            "max": 4873513.0,
+            "sd": 1258476.8854363565,
+            "avg": 1384758.875
+          }
+        }
+      }
+    },
+    {
+      "display_name": "filtered_center_key",
+      "field_ref": [
+        "field",
+        "filtered_center_key",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "filtered_center_key",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.5416666666666667,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 1541.3333333333333
+          }
+        }
+      }
+    },
+    {
+      "display_name": "filtered_center_name",
+      "field_ref": [
+        "field",
+        "filtered_center_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "filtered_center_name",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.04166666666666667,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 1079.8333333333333
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_filtered_centers",
+      "field_ref": [
+        "field",
+        "total_filtered_centers",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "total_filtered_centers",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 22,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 4.0,
+            "q1": 32.41421356237309,
+            "q3": 55.5,
+            "max": 108.0,
+            "sd": 22.05263795058791,
+            "avg": 45.333333333333336
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5860,
+  "query_type": "native",
+  "name": "EBO -  Cross Sell Market Size",
+  "last_used_at": "2026-04-16T10:15:20.582174Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-05T10:10:23.760836Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "displacement_distance_within": {
+          "type": "number",
+          "name": "displacement_distance_within",
+          "id": "317cd4b6-0d45-477b-9c13-268ed0d90d92",
+          "display-name": "Displacement Distance Within",
+          "default": "5"
+        },
+        "Fs_start_date": {
+          "type": "date",
+          "name": "Fs_start_date",
+          "id": "25fd2976-61c7-486d-b042-862fe75c15d9",
+          "display-name": "Fs Start Date",
+          "default": "2025-01-01"
+        },
+        "Fs_end_date": {
+          "type": "date",
+          "name": "Fs_end_date",
+          "id": "39cc5b90-c451-4e02-abd8-24fc50693e6f",
+          "display-name": "Fs End Date",
+          "default": "2025-10-31"
+        },
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "8662e4eb-cbf7-4461-8033-8835f1968bd2",
+          "display-name": "Order Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "d99d052d-a719-47c1-99e2-08675a12fc5c",
+          "display-name": "Order End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "is_lifetime": {
+          "type": "number",
+          "name": "is_lifetime",
+          "id": "a3b96af8-c194-4bb9-b5be-41a96e57e604",
+          "display-name": "Is Lifetime",
+          "default": "0"
+        }
+      },
+      "query": "WITH center_dim AS \n(\n    SELECT center_key, locality, center_name, latitude, longitude\n    FROM \n    dwh_fitness_mart.center_dim\n    WHERE LOWER(center_name) NOT LIKE '%sport%'\n        AND LOWER(center_name) NOT LIKE '%store%'\n        AND center_type <> 'BREAKAGE'\n        AND center_type <> 'SPORTS'\n),\n\nebo_store AS \n(\n    SELECT store_name, CAST(latitude AS DOUBLE) AS latitude, CAST(longitude AS DOUBLE) AS longitude\n    FROM gs_d2c.default.ebo_store_location\n),\n\nfs_cohorts AS \n(\n    SELECT *\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE 1 = 1\n    [[AND month >= DATE_TRUNC('MONTH',{{Fs_start_date}})]]\n    AND month >= DATE('2018-01-01')\n),\n\nmembership_dim AS \n(\n    SELECT attributed_center_key, user_id\n    FROM \n    (\n        SELECT attributed_center_key, user_id, ROW_NUMBER() OVER(PARTITION BY user_id ORDER BY membership_created_time DESC, membership_key DESC) AS rnk\n        FROM \n        dwh_fitness_mart.membership_dim\n        WHERE business_line IN ('PRO','ELITE')\n              AND membership_created_date < CURRENT_DATE - INTERVAL '1' DAY\n              AND CASE \n                    WHEN {{is_lifetime}} = 1 THEN TRUE\n                    [[ELSE user_id IN (SELECT DISTINCT user_id FROM fs_cohorts WHERE month BETWEEN DATE_TRUNC('MONTH',{{Fs_start_date}}) AND DATE_TRUNC('MONTH',{{Fs_end_date}}))]]\n                  END\n    )\n    WHERE rnk = 1\n),\n\nattributed_users AS \n(\n    SELECT attributed_center_key, user_id\n    FROM \n    membership_dim\n    WHERE attributed_center_key NOT IN (SELECT center_key FROM dwh_fitness_mart.center_dim WHERE center_type = 'BREAKAGE')\n    AND attributed_center_key IS NOT NULL\n),\n\nnon_attributes_users AS \n(\n    SELECT user_id\n    FROM \n    membership_dim\n    WHERE attributed_center_key IN (SELECT center_key FROM dwh_fitness_mart.center_dim WHERE center_type = 'BREAKAGE')\n    OR attributed_center_key IS NULL\n),\n\nbooking_fact AS \n(\n  SELECT *, ROW_NUMBER() OVER(PARTITION BY user_id ORDER BY total_class DESC, latest_class_attended DESC) AS rnk \n  FROM \n    (\n        SELECT nau.user_id, bf.center_key, COUNT(*) total_class, MAX(attendance_time) AS latest_class_attended\n        FROM \n        dwh_fitness_mart.booking_fact bf\n        JOIN non_attributes_users nau ON nau.user_id = bf.user_id\n        WHERE attendance_time IS NOT NULL \n        AND class_date IS NOT NULL \n        GROUP BY 1,2\n    ) t\n),\n\nfiltered_centers AS \n(\n    SELECT cd.center_key, cd.locality, cd.center_name, es.store_name, es.latitude AS ebo_latitude, es.longitude AS ebo_longitude, cd.latitude AS center_latitude, cd.longitude AS center_longitude,\n           great_circle_distance(es.latitude, es.longitude, cd.latitude, cd.longitude) AS distance_km,\n           ROW_NUMBER() OVER(PARTITION BY center_key ORDER BY great_circle_distance(es.latitude, es.longitude, cd.latitude, cd.longitude)) AS rnk\n    FROM \n    center_dim cd\n    JOIN ebo_store es ON great_circle_distance(es.latitude, es.longitude, cd.latitude, cd.longitude) <= {{displacement_distance_within}}\n),\n\nfiltered_booking_fact AS \n(\n    SELECT bf.center_key AS attributed_center_key, bf.user_id\n    FROM \n    booking_fact bf\n    JOIN filtered_centers fc ON fc.center_key = bf.center_key\n    WHERE bf.rnk = 1\n    GROUP BY 1,2\n),\n\ncombined_user AS \n(\n    SELECT * FROM attributed_users\n     \n    UNION ALL \n    \n    SELECT * FROM filtered_booking_fact\n),\n\nfs_cohort_active AS \n(\n    SELECT user_id\n    FROM \n    fs_cohorts\n    WHERE month  = DATE_TRUNC('MONTH',CURRENT_DATE)\n    AND CASE \n            WHEN {{is_lifetime}} = 1 THEN cohort LIKE '%Active%' OR cohort LIKE '%MP%' \n            ELSE user_id IN (SELECT DISTINCT user_id FROM fs_cohorts WHERE (cohort LIKE '%Active%' OR cohort LIKE '%MP%')\n                                                                            [[AND month BETWEEN DATE_TRUNC('MONTH',{{Fs_start_date}}) AND DATE_TRUNC('MONTH',{{Fs_end_date}})]])\n        END\n),\n\nfs_cohort_expired AS \n(\n    SELECT user_id\n    FROM \n    fs_cohorts\n    WHERE month  = DATE_TRUNC('MONTH',CURRENT_DATE)\n    AND CASE \n            WHEN {{is_lifetime}} = 1 THEN cohort LIKE '%Expired%'\n            ELSE user_id NOT IN (SELECT DISTINCT user_id FROM fs_cohorts WHERE (cohort LIKE '%Active%' OR cohort LIKE '%MP%')\n                                                                                [[AND month BETWEEN DATE_TRUNC('MONTH',{{Fs_start_date}}) AND DATE_TRUNC('MONTH',{{Fs_end_date}})]])\n        END\n),\n\ncross_sell_orders AS \n(\n    SELECT DISTINCT channel, user_id\n    FROM \n    dwh_fitness_metrics.cross_sell_orders \n    WHERE 1 = 1\n    [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n    AND order_date > DATE('2018-01-01')\n)\n\n,cross_sell_user_gmv AS \n(\n    SELECT\n        user_id,\n        SUM(gmv) AS overall_gmv,\n        SUM(CASE WHEN channel = 'EBO' THEN gmv ELSE 0 END) AS ebo_gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE 1=1\n      [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n      AND order_date > DATE('2018-01-01')\n    GROUP BY 1\n)\n\nSELECT fc.store_name, \n        COUNT(DISTINCT cu.user_id) AS fs_user_count,\n        COUNT(DISTINCT fsa.user_id) AS active_fs_user_count, COUNT(DISTINCT fse.user_id) AS expired_fs_user_count,\n        COUNT(DISTINCT fsa.user_id) * 1.000/COUNT(DISTINCT cu.user_id) AS active_fs_percentage,\n        COUNT(DISTINCT cso.user_id) AS overall_ordered_user, COUNT(DISTINCT cso.user_id) * 1.000/COUNT(DISTINCT cu.user_id) AS overall_converted_percentage,\n        COUNT(DISTINCT CASE WHEN cso.channel = 'EBO' THEN cso.user_id ELSE NULL END) AS ebo_ordered_user,  COUNT(DISTINCT CASE WHEN cso.channel = 'EBO' THEN cso.user_id ELSE NULL END) * 1.000/COUNT(DISTINCT cu.user_id) AS ebo_converted_percentage,\n        COUNT(DISTINCT csoa.user_id) AS active_ordered_user, COUNT(DISTINCT csoa.user_id) * 1.000/COUNT(DISTINCT fsa.user_id) AS active_user_converted_percentage,\n        COUNT(DISTINCT csoe.user_id) AS expired_ordered_user, COUNT(DISTINCT csoe.user_id) * 1.000/COUNT(DISTINCT fse.user_id) AS expired_user_converted_percentage,\n        COUNT(DISTINCT CASE WHEN csoa.channel = 'EBO' THEN csoa.user_id ELSE NULL END) AS active_ebo_ordered_user,  COUNT(DISTINCT CASE WHEN csoa.channel = 'EBO' THEN csoa.user_id ELSE NULL END) * 1.000/COUNT(DISTINCT cu.user_id) AS active_ebo_converted_percentage,\n        COUNT(DISTINCT CASE WHEN csoe.channel = 'EBO' THEN csoe.user_id ELSE NULL END) AS expired_ebo_ordered_user,  COUNT(DISTINCT CASE WHEN csoe.channel = 'EBO' THEN csoe.user_id ELSE NULL END) * 1.000/COUNT(DISTINCT cu.user_id) AS expired_ebo_converted_percentage,\n        round(SUM(CASE WHEN fsa.user_id IS NOT NULL THEN COALESCE(csg.overall_gmv,0) ELSE 0 END),0) AS active_overall_gmv,\n        round(SUM(CASE WHEN fse.user_id IS NOT NULL THEN COALESCE(csg.overall_gmv,0) ELSE 0 END),0) AS expired_overall_gmv,\n        round(SUM(CASE WHEN fsa.user_id IS NOT NULL THEN COALESCE(csg.ebo_gmv,0) ELSE 0 END),0)     AS active_ebo_gmv,\n        round(SUM(CASE WHEN fse.user_id IS NOT NULL THEN COALESCE(csg.ebo_gmv,0) ELSE 0 END),0)     AS expired_ebo_gmv,\n        ARRAY_AGG(DISTINCT fc.center_key) AS filtered_center_key,\n        ARRAY_AGG(DISTINCT fc.center_name) AS filtered_center_name,\n        COUNT(DISTINCT fc.center_key) AS total_filtered_centers\nFROM\nfiltered_centers fc\nLEFT JOIN combined_user cu ON fc.center_key = cu.attributed_center_key\nLEFT JOIN cross_sell_orders cso ON cu.user_id = cso.user_id\nLEFT JOIN fs_cohort_active fsa ON cu.user_id = fsa.user_id\nLEFT JOIN fs_cohort_expired fse ON cu.user_id = fse.user_id\nLEFT JOIN cross_sell_orders csoa ON fsa.user_id = csoa.user_id\nLEFT JOIN cross_sell_orders csoe ON fse.user_id = csoe.user_id\nLEFT JOIN cross_sell_user_gmv csg ON cu.user_id = csg.user_id\nWHERE fc.rnk = 1\nGROUP BY 1   \nORDER BY 2 DESC\n"
+    }
+  },
+  "id": 65637,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "u6Yp_W0Gd-7agCC3sHV5Z",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "attributed_center_key",
+    "table.cell_column": "ebo_latitude",
+    "column_settings": {
+      "[\"name\",\"active_fs_percentage\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"overall_converted_percentage\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"ebo_converted_percentage\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"active_user_converted_percentage\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"expired_user_converted_percentage\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"active_ebo_converted_percentage\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"expired_ebo_converted_percentage\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "317cd4b6-0d45-477b-9c13-268ed0d90d92",
+      "type": "number/=",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "displacement_distance_within"
+        ]
+      ],
+      "name": "Displacement Distance Within",
+      "slug": "displacement_distance_within",
+      "default": "5"
+    },
+    {
+      "id": "25fd2976-61c7-486d-b042-862fe75c15d9",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Fs_start_date"
+        ]
+      ],
+      "name": "Fs Start Date",
+      "slug": "Fs_start_date",
+      "default": "2025-01-01"
+    },
+    {
+      "id": "39cc5b90-c451-4e02-abd8-24fc50693e6f",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Fs_end_date"
+        ]
+      ],
+      "name": "Fs End Date",
+      "slug": "Fs_end_date",
+      "default": "2025-10-31"
+    },
+    {
+      "id": "8662e4eb-cbf7-4461-8033-8835f1968bd2",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date"
+    },
+    {
+      "id": "d99d052d-a719-47c1-99e2-08675a12fc5c",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date"
+    },
+    {
+      "slug": "is_lifetime",
+      "values_query_type": "list",
+      "default": "0",
+      "name": "Is Lifetime",
+      "type": "number/=",
+      "values_source_type": "static-list",
+      "id": "a3b96af8-c194-4bb9-b5be-41a96e57e604",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "is_lifetime"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2025-08-06T06:27:55.776627Z",
+  "public_uuid": null
+}

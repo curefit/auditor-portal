@@ -1,0 +1,221 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 406,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "gender",
+      "field_ref": [
+        "field",
+        "gender",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "gender",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 5,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.482758620689655
+          }
+        }
+      }
+    },
+    {
+      "display_name": "age",
+      "field_ref": [
+        "field",
+        "age",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "age",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.827586206896552
+          }
+        }
+      }
+    },
+    {
+      "display_name": "user_count",
+      "field_ref": [
+        "field",
+        "user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 27,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1.0,
+            "q1": 7.75,
+            "q3": 939.75,
+            "max": 17982.0,
+            "sd": 3978.340073621071,
+            "avg": 1838.2068965517242
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 29,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 2923.0,
+            "q1": 33488.865,
+            "q3": 2757515.122850001,
+            "max": 49698349.60099998,
+            "sd": 11012546.04537068,
+            "avg": 5055400.54327931
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5745,
+  "query_type": "native",
+  "name": "Gender_Age Wise Cross Sell",
+  "last_used_at": "2026-04-14T06:44:53.804504Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:11:05.434931Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+          "display-name": "Order Start Date",
+          "default": "2024-01-01",
+          "widget-type": null
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+          "display-name": "Order End Date",
+          "default": "2025-05-31",
+          "widget-type": null
+        }
+      },
+      "query": "WITH age_calculated AS \n(\n    SELECT CASE \n            WHEN birthday != 'NO-BIRTHDAY' THEN DATE_DIFF('MONTH',DATE(CAST(birthday AS TIMESTAMP)),CURRENT_DATE)/12 \n            ELSE NULL\n            END AS age, \n            user_id, gender, category, gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE is_fs_member = 1\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n      [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n      \n)\n\nSELECT  gender,\n        CASE     \n                WHEN age IS NULL THEN 'NO-AGE'\n                WHEN CAST(age AS DECIMAL) <= 10 THEN '0-10'\n                WHEN CAST(age AS DECIMAL) > 10 and CAST(age AS DECIMAL) <= 20 THEN '11-20'\n                WHEN CAST(age AS DECIMAL) > 20 and CAST(age AS DECIMAL) <= 30 THEN '21-30'\n                WHEN CAST(age AS DECIMAL) > 30 and CAST(age AS DECIMAL) <= 40 THEN '31-40'\n                WHEN CAST(age AS DECIMAL) > 40 and CAST(age AS DECIMAL) <= 50 THEN '41-50'\n                WHEN CAST(age AS DECIMAL) > 50 THEN '50+'\n            END AS age,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM age_calculated\nGROUP BY 1,2\nORDER BY 3 DESC"
+    }
+  },
+  "id": 63761,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "FmMtJ-R45IH9eqMX3Laqt",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "age",
+    "table.cell_column": "user_count",
+    "graph.dimensions": [
+      "age"
+    ],
+    "graph.metrics": [
+      "user_count"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date",
+      "default": "2025-05-31"
+    }
+  ],
+  "created_at": "2025-07-13T05:58:17.089892Z",
+  "public_uuid": null
+}

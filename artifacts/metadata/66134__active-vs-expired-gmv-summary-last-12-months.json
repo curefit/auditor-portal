@@ -1,0 +1,420 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 2813,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "active_vs_expired",
+      "field_ref": [
+        "field",
+        "active_vs_expired",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "active_vs_expired",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 6.5
+          }
+        }
+      }
+    },
+    {
+      "display_name": "order_date",
+      "field_ref": [
+        "field",
+        "order_date",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "order_date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 13,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 13.076923076923077
+          }
+        }
+      }
+    },
+    {
+      "display_name": "sort_key",
+      "field_ref": [
+        "field",
+        "sort_key",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "sort_key",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 13,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2025-03-01",
+            "latest": "2026-03-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 26,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 8082263.0,
+            "q1": 14845736.0,
+            "q3": 25907532.0,
+            "max": 31960302.0,
+            "sd": 6501449.486718918,
+            "avg": 20084874.615384616
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5748,
+  "query_type": "native",
+  "name": "Active VS Expired GMV  Summary  \u2013 Last 12 Months",
+  "last_used_at": "2026-04-16T16:23:02.443948Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:04:11.348983Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "f8c4a61c-b04c-436a-ba34-56ee37a3a7b7",
+          "display-name": "Order Start Date",
+          "default": "2024-01-01"
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "fc2661b3-bcba-45eb-a4a2-69ef924cb1ef",
+          "display-name": "Order End Date",
+          "default": "2025-05-31"
+        },
+        "date_filter": {
+          "type": "text",
+          "name": "date_filter",
+          "id": "9ce39623-5db2-4981-97c7-d6c8f5cc666d",
+          "display-name": "Date Filter",
+          "default": "Month"
+        },
+        "source": {
+          "type": "dimension",
+          "name": "source",
+          "id": "73e4cf05-dcc4-4531-b340-7d14cc5edf11",
+          "display-name": "Source",
+          "default": null,
+          "dimension": [
+            "field",
+            9535370,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "e98e2dba-0839-4596-9dfe-dab2bbd89824",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "cohort": {
+          "type": "dimension",
+          "name": "cohort",
+          "id": "11c989e6-28be-4a0d-9e24-a6bce9a55581",
+          "display-name": "Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "service_type": {
+          "type": "dimension",
+          "name": "service_type",
+          "id": "3482f231-d516-4621-9836-4471534dbe8a",
+          "display-name": "Service Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535349,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "twelve_month_trend": {
+          "type": "number",
+          "name": "twelve_month_trend",
+          "id": "2e9c3c83-35fe-410d-80e6-f92f88fece5d",
+          "display-name": "Twelve Month Trend",
+          "default": "1",
+          "widget-type": null
+        }
+      },
+      "query": "SELECT 'Active' AS active_vs_expired,\n        CASE \n            WHEN {{date_filter}} = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n            WHEN {{date_filter}} = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n            WHEN {{date_filter}} = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n        END AS order_date,\n        CASE\n            WHEN {{date_filter}} = 'Year' THEN date_trunc('year', order_date)\n            WHEN {{date_filter}} = 'Month' THEN date_trunc('month', order_date)\n            WHEN {{date_filter}} = 'Quarter' THEN date_trunc('quarter', order_date)\n        END AS sort_key,\n        ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member  = 1\n      AND is_cancelled = 0\n      AND cohort NOT LIKE '%Expired%'\n     [[AND {{source}}]]\n     [[AND {{category}}]]\n     [[AND {{cohort}}]]\n     [[AND {{service_type}}]]\n      AND CASE \n            WHEN {{twelve_month_trend}} = 1 THEN order_date BETWEEN DATE_TRUNC('MONTH',CURRENT_DATE) - INTERVAL '13' MONTH AND DATE_TRUNC('MONTH',CURRENT_DATE) - INTERVAL '1' DAY\n            ELSE {{twelve_month_trend}} = 0 [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n          END\nGROUP BY 1,2,3\n\n\nUNION ALL \n\nSELECT 'Expired' AS active_vs_expired,\n        CASE \n            WHEN {{date_filter}} = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n            WHEN {{date_filter}} = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n            WHEN {{date_filter}} = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n        END AS order_date,\n        CASE\n            WHEN {{date_filter}} = 'Year' THEN date_trunc('year', order_date)\n            WHEN {{date_filter}} = 'Month' THEN date_trunc('month', order_date)\n            WHEN {{date_filter}} = 'Quarter' THEN date_trunc('quarter', order_date)\n        END AS sort_key,\n        ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member  = 1\n      AND is_cancelled = 0\n      AND cohort LIKE '%Expired%'\n     [[AND {{source}}]]\n     [[AND {{category}}]]\n     [[AND {{cohort}}]]\n     [[AND {{service_type}}]]\n     AND CASE \n            WHEN {{twelve_month_trend}} = 1 THEN order_date BETWEEN DATE_TRUNC('MONTH',CURRENT_DATE) - INTERVAL '13' MONTH AND DATE_TRUNC('MONTH',CURRENT_DATE) - INTERVAL '1' DAY\n            ELSE {{twelve_month_trend}} = 0 [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n         END\nGROUP BY 1,2,3\n    \nORDER BY 3"
+    }
+  },
+  "id": 66134,
+  "parameter_mappings": [],
+  "display": "bar",
+  "archived_directly": false,
+  "entity_id": "t-gpMsn1TEFWEsKisJ5at",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.show_values": true,
+    "graph.series_order_dimension": "active_vs_expired",
+    "graph.label_value_frequency": "all",
+    "graph.metrics": [
+      "total_gmv"
+    ],
+    "graph.show_stack_values": "all",
+    "graph.label_value_formatting": "compact",
+    "graph.series_order": [
+      {
+        "key": "Expired",
+        "color": "#F2A86F",
+        "enabled": true,
+        "name": "Expired"
+      },
+      {
+        "key": "Active",
+        "color": "#84BB4C",
+        "enabled": true,
+        "name": "Active"
+      }
+    ],
+    "series_settings": {
+      "Active": {
+        "color": "#509EE3"
+      },
+      "Expired": {
+        "color": "#7172AD"
+      }
+    },
+    "graph.dimensions": [
+      "order_date",
+      "active_vs_expired"
+    ],
+    "stackable.stack_type": "stacked"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "f8c4a61c-b04c-436a-ba34-56ee37a3a7b7",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "fc2661b3-bcba-45eb-a4a2-69ef924cb1ef",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date",
+      "default": "2025-05-31"
+    },
+    {
+      "slug": "date_filter",
+      "values_query_type": "list",
+      "default": "Month",
+      "name": "Date Filter",
+      "type": "category",
+      "values_source_type": "static-list",
+      "id": "9ce39623-5db2-4981-97c7-d6c8f5cc666d",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "date_filter"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "Month"
+          ],
+          [
+            "Quarter"
+          ],
+          [
+            "Year"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "73e4cf05-dcc4-4531-b340-7d14cc5edf11",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "source"
+        ]
+      ],
+      "name": "Source",
+      "slug": "source"
+    },
+    {
+      "id": "e98e2dba-0839-4596-9dfe-dab2bbd89824",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    },
+    {
+      "id": "11c989e6-28be-4a0d-9e24-a6bce9a55581",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "name": "Cohort",
+      "slug": "cohort"
+    },
+    {
+      "id": "3482f231-d516-4621-9836-4471534dbe8a",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service Type",
+      "slug": "service_type"
+    },
+    {
+      "slug": "twelve_month_trend",
+      "values_query_type": "list",
+      "default": "1",
+      "name": "Twelve Month Trend",
+      "type": "number/=",
+      "values_source_type": "static-list",
+      "id": "2e9c3c83-35fe-410d-80e6-f92f88fece5d",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "twelve_month_trend"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2025-08-12T13:16:37.337376Z",
+  "public_uuid": null
+}

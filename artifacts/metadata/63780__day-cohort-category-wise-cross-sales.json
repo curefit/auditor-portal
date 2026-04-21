@@ -1,0 +1,386 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 492,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "order_date",
+      "field_ref": [
+        "field",
+        "order_date",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "order_date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 13.630196936542669
+          }
+        }
+      }
+    },
+    {
+      "display_name": "sort_key",
+      "field_ref": [
+        "field",
+        "sort_key",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "sort_key",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2026-01-01",
+            "latest": "2026-03-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "cohort",
+      "field_ref": [
+        "field",
+        "cohort",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "cohort",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 20,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 12.188183807439826
+          }
+        }
+      }
+    },
+    {
+      "display_name": "category",
+      "field_ref": [
+        "field",
+        "category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "category",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 14,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 14.547045951859957
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 427,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 8334.635106725653,
+            "q3": 189044.89577372314,
+            "max": 8898203.0,
+            "sd": 875134.8798970701,
+            "avg": 320802.21881838073
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5745,
+  "query_type": "native",
+  "name": "Day_Cohort_Category Wise Cross Sales",
+  "last_used_at": "2026-04-14T06:44:53.792702Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:08:06.406016Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "0935f814-67c1-4b3b-b20b-e1e71b27d9f6",
+          "display-name": "Order Start Date",
+          "default": "2024-01-01"
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "ca944d1b-7a70-49dd-8667-5c91147ab18f",
+          "display-name": "Order End Date",
+          "default": "2025-05-31"
+        },
+        "date_filter": {
+          "type": "text",
+          "name": "date_filter",
+          "id": "ae40a174-76b5-418f-b705-5bcc37621566",
+          "display-name": "Date Filter",
+          "required": true,
+          "default": "Month"
+        },
+        "cohort": {
+          "type": "dimension",
+          "name": "cohort",
+          "id": "dcb8865b-4017-48d2-bedb-eb7097ee8d84",
+          "display-name": "Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "d61f4e09-7b3d-49f0-8271-a52b2f3c4e23",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "SELECT \n    CASE \n        WHEN {{date_filter}} = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n        WHEN {{date_filter}} = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n        WHEN {{date_filter}} = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n    END AS order_date,\n    CASE\n        WHEN {{date_filter}} = 'Year' THEN date_trunc('year', order_date)\n        WHEN {{date_filter}} = 'Month' THEN date_trunc('month', order_date)\n        WHEN {{date_filter}} = 'Quarter' THEN date_trunc('quarter', order_date)\n    END AS sort_key,\n    cohort,\n    category,\n    ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member= 1\n      AND order_date >= DATE('2018-01-01')\n      AND is_cancelled = 0\n     [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]]\n     [[AND {{cohort}}]]\n     [[AND {{category}}]]\nGROUP BY 1,2,3,4\nORDER BY sort_key, 5 DESC"
+    }
+  },
+  "id": 63780,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "BNKEdX8dC__cIMrmC6RoL",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.columns": [
+      {
+        "name": "order_date",
+        "enabled": true
+      },
+      {
+        "name": "sort_key",
+        "enabled": false
+      },
+      {
+        "name": "cohort",
+        "enabled": true
+      },
+      {
+        "name": "category",
+        "enabled": true
+      },
+      {
+        "name": "total_gmv",
+        "enabled": true
+      }
+    ],
+    "pie.dimension": [
+      "order_date"
+    ],
+    "table.cell_column": "total_gmv",
+    "graph.series_order_dimension": null,
+    "pie.rows": [
+      {
+        "key": "NON-FS-MEMBER",
+        "name": "NON-FS-MEMBER",
+        "originalName": "NON-FS-MEMBER",
+        "color": "#227FD2",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      },
+      {
+        "key": "CROSS-SELL",
+        "name": "CROSS-SELL",
+        "originalName": "CROSS-SELL",
+        "color": "#51528D",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      }
+    ],
+    "graph.metrics": [
+      "total_gmv"
+    ],
+    "graph.series_order": null,
+    "pie.metric": "total_gmv",
+    "table.pivot_column": "cohort",
+    "graph.dimensions": [
+      "order_date"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "0935f814-67c1-4b3b-b20b-e1e71b27d9f6",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "ca944d1b-7a70-49dd-8667-5c91147ab18f",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date",
+      "default": "2025-05-31"
+    },
+    {
+      "slug": "date_filter",
+      "values_query_type": "list",
+      "default": "Month",
+      "name": "Date Filter",
+      "type": "category",
+      "values_source_type": "static-list",
+      "id": "ae40a174-76b5-418f-b705-5bcc37621566",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "date_filter"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "Month"
+          ],
+          [
+            "Quarter"
+          ],
+          [
+            "Year"
+          ]
+        ]
+      },
+      "required": true
+    },
+    {
+      "id": "dcb8865b-4017-48d2-bedb-eb7097ee8d84",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "name": "Cohort",
+      "slug": "cohort"
+    },
+    {
+      "id": "d61f4e09-7b3d-49f0-8271-a52b2f3c4e23",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    }
+  ],
+  "created_at": "2025-07-13T05:58:17.089892Z",
+  "public_uuid": null
+}

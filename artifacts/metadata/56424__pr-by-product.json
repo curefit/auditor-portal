@@ -1,0 +1,360 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 302,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "Service Type",
+      "field_ref": [
+        "field",
+        "Service Type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "Service Type",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 5,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.2
+          }
+        }
+      }
+    },
+    {
+      "display_name": "period",
+      "field_ref": [
+        "field",
+        "period",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "period",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 60,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 12.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Product Rating (PR)",
+      "field_ref": [
+        "field",
+        "Product Rating (PR)",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "Product Rating (PR)",
+      "semantic_type": "type/Score",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 33,
+          "nil%": 0.03333333333333333
+        },
+        "type": {
+          "type/Number": {
+            "min": 3.55,
+            "q1": 3.6625658350974746,
+            "q3": 3.8133602641850093,
+            "max": 3.89,
+            "sd": 0.09249460072537025,
+            "avg": 3.751793103448276
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "PR BY PRODUCT",
+  "last_used_at": "2026-04-13T05:50:39.264881Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 148023052,
+      "cardId": 56424,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 2.54m. Optimize Query to reduce execution time."
+        }
+      ],
+      "queryHash": "56aa151bea50f6eb1ed82a41748766b205d272f51b8bf29a1905c4da18331e79",
+      "executionStartTime": "2026-04-19T10:38:10.920+0000",
+      "tables": [
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim"
+      ],
+      "archive": false
+    }
+  ],
+  "creator_id": 3486,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-27T06:52:49.773876Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "report_start_date": {
+          "id": "5ea166da-ee1c-d1ac-21d4-c5b44d9c214c",
+          "name": "report_start_date",
+          "display-name": "Report start date",
+          "type": "date"
+        },
+        "report_end_date": {
+          "id": "16a1c82f-89a7-34c3-9bde-ad626c890469",
+          "name": "report_end_date",
+          "display-name": "Report end date",
+          "type": "date"
+        },
+        "city_name": {
+          "id": "fd9878eb-5bd7-0461-eb68-e096c2ff4add",
+          "name": "city_name",
+          "display-name": "City name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712462,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_service_id": {
+          "id": "e2f02f90-fc99-2ddb-a53f-9953d23f947b",
+          "name": "center_service_id",
+          "display-name": "Center service",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712476,
+            null
+          ],
+          "widget-type": "number/="
+        },
+        "service_type": {
+          "id": "d40c3934-184b-b8aa-1293-2f116ec74b4e",
+          "name": "service_type",
+          "display-name": "Service type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712473,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "ownership_type": {
+          "id": "87683719-cb80-e3d7-b2b0-f887df278e2b",
+          "name": "ownership_type",
+          "display-name": "Ownership type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712485,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "business_line": {
+          "id": "8ca47b5a-0d43-9bb2-7317-55deb7f5cb00",
+          "name": "business_line",
+          "display-name": "Business line",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712478,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_name": {
+          "id": "5e66e1e2-a92c-0f24-8359-b8876643fe4b",
+          "name": "center_name",
+          "display-name": "Center name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712482,
+            null
+          ],
+          "widget-type": "string/="
+        }
+      },
+      "query": "WITH bt_data AS (\n    -- Monthly Metrics for Individual Service Types\n    SELECT \n        CASE \n            WHEN cd.center_type = 'GX' THEN 'GX'\n            WHEN cd.center_type = 'GYM' THEN 'GYM'\n            WHEN cd.center_type = 'SPORTS' THEN 'PLAY'\n            ELSE 'OTHER'\n        END AS \"Service Type\",\n        DATE_TRUNC('month', bf.attendance_time) AS period,\n        'M' AS period_type,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value,\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.attendance_time BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND cd.center_type IN ('GYM', 'GX', 'SPORTS')\n    GROUP BY \n        CASE \n            WHEN cd.center_type = 'GX' THEN 'GX'\n            WHEN cd.center_type = 'GYM' THEN 'GYM'\n            WHEN cd.center_type = 'SPORTS' THEN 'PLAY'\n            ELSE 'OTHER'\n        END,\n        DATE_TRUNC('month', bf.attendance_time)\n\n    UNION ALL\n\n    -- Quarterly Metrics for Individual Service Types\n    SELECT \n        CASE \n            WHEN cd.center_type = 'GX' THEN 'GX'\n            WHEN cd.center_type = 'GYM' THEN 'GYM'\n            WHEN cd.center_type = 'SPORTS' THEN 'PLAY'\n            ELSE 'OTHER'\n        END AS \"Service Type\",\n        DATE_TRUNC('quarter', bf.attendance_time) AS period,\n        'Q' AS period_type,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value,\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.attendance_time BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND cd.center_type IN ('GYM', 'GX', 'SPORTS')\n    GROUP BY \n        CASE \n            WHEN cd.center_type = 'GX' THEN 'GX'\n            WHEN cd.center_type = 'GYM' THEN 'GYM'\n            WHEN cd.center_type = 'SPORTS' THEN 'PLAY'\n            ELSE 'OTHER'\n        END,\n        DATE_TRUNC('quarter', bf.attendance_time)\n\n    UNION ALL\n\n    -- Monthly Metrics for GX+GYM\n    SELECT \n        'GX+GYM' AS \"Service Type\",\n        DATE_TRUNC('month', bf.attendance_time) AS period,\n        'M' AS period_type,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value,\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.attendance_time BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND cd.center_type IN ('GYM', 'GX')\n    GROUP BY \n        DATE_TRUNC('month', bf.attendance_time)\n\n    UNION ALL\n\n    -- Quarterly Metrics for GX+GYM\n    SELECT \n        'GX+GYM' AS \"Service Type\",\n        DATE_TRUNC('quarter', bf.attendance_time) AS period,\n        'Q' AS period_type,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value,\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.attendance_time BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND cd.center_type IN ('GYM', 'GX')\n    GROUP BY \n        DATE_TRUNC('quarter', bf.attendance_time)\n\n    UNION ALL\n\n    -- Monthly Metrics for GX+GYM+PLAY\n    SELECT \n        'GX+GYM+PLAY' AS \"Service Type\",\n        DATE_TRUNC('month', bf.attendance_time) AS period,\n        'M' AS period_type,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value,\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.attendance_time BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND cd.center_type IN ('GYM', 'GX', 'SPORTS')\n    GROUP BY \n        DATE_TRUNC('month', bf.attendance_time)\n\n    UNION ALL\n\n    -- Quarterly Metrics for GX+GYM+PLAY\n    SELECT \n        'GX+GYM+PLAY' AS \"Service Type\",\n        DATE_TRUNC('quarter', bf.attendance_time) AS period,\n        'Q' AS period_type,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value,\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.attendance_time BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND cd.center_type IN ('GYM', 'GX', 'SPORTS')\n    GROUP BY \n        DATE_TRUNC('quarter', bf.attendance_time)\n)\n\nSELECT \n    bt.\"Service Type\",\n    CONCAT(bt.period_type, '-', DATE_FORMAT(bt.period, '%Y-%m-%d')) AS period,\n    ROUND(bt.total_rating_value * 1.00 / NULLIF(bt.total_ratings, 0), 2) AS \"Product Rating (PR)\"\nFROM bt_data bt\nORDER BY \n    bt.period_type DESC,\n    bt.period,\n    CASE\n        WHEN bt.\"Service Type\" = 'GX' THEN 1\n        WHEN bt.\"Service Type\" = 'GYM' THEN 2\n        WHEN bt.\"Service Type\" = 'PLAY' THEN 3\n        WHEN bt.\"Service Type\" = 'GX+GYM' THEN 4\n        WHEN bt.\"Service Type\" = 'GX+GYM+PLAY' THEN 5\n        ELSE 6\n    END"
+    }
+  },
+  "id": 56424,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "d0jFUyqPXpo8wHlQdDZR5",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "period",
+    "table.cell_column": "Product Rating (PR)",
+    "table.pivot": true,
+    "table.transpose": false
+  },
+  "metabase_version": null,
+  "parameters": [
+    {
+      "id": "5ea166da-ee1c-d1ac-21d4-c5b44d9c214c",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_start_date"
+        ]
+      ],
+      "name": "Report start date",
+      "slug": "report_start_date"
+    },
+    {
+      "id": "16a1c82f-89a7-34c3-9bde-ad626c890469",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_end_date"
+        ]
+      ],
+      "name": "Report end date",
+      "slug": "report_end_date"
+    },
+    {
+      "id": "fd9878eb-5bd7-0461-eb68-e096c2ff4add",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "city_name"
+        ]
+      ],
+      "name": "City name",
+      "slug": "city_name"
+    },
+    {
+      "id": "e2f02f90-fc99-2ddb-a53f-9953d23f947b",
+      "type": "number/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_service_id"
+        ]
+      ],
+      "name": "Center service",
+      "slug": "center_service_id"
+    },
+    {
+      "id": "d40c3934-184b-b8aa-1293-2f116ec74b4e",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service type",
+      "slug": "service_type"
+    },
+    {
+      "id": "87683719-cb80-e3d7-b2b0-f887df278e2b",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "ownership_type"
+        ]
+      ],
+      "name": "Ownership type",
+      "slug": "ownership_type"
+    },
+    {
+      "id": "8ca47b5a-0d43-9bb2-7317-55deb7f5cb00",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "business_line"
+        ]
+      ],
+      "name": "Business line",
+      "slug": "business_line"
+    },
+    {
+      "id": "5e66e1e2-a92c-0f24-8359-b8876643fe4b",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_name"
+        ]
+      ],
+      "name": "Center name",
+      "slug": "center_name"
+    }
+  ],
+  "created_at": "2024-12-05T10:06:46.203009Z",
+  "public_uuid": null
+}

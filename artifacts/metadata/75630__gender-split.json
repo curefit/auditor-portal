@@ -1,0 +1,196 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 9,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "display_name": "gender",
+      "field_ref": [
+        "field",
+        "gender",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "gender",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.25
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 1.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "MEMBERS",
+      "field_ref": [
+        "field",
+        "MEMBERS",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "MEMBERS",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1.0,
+            "q1": 228330.0,
+            "q3": 705254.5,
+            "max": 888378.0,
+            "sd": 364597.3467112956,
+            "avg": 466792.25
+          }
+        }
+      }
+    }
+  ],
+  "creator": {
+    "email": "mkn@curefit.com",
+    "first_name": "Maragatham",
+    "last_login": "2026-04-14T11:53:08.85271Z",
+    "is_qbnewb": false,
+    "is_superuser": true,
+    "id": 1868,
+    "last_name": "K N",
+    "date_joined": "2021-09-13T10:20:46.362151Z",
+    "common_name": "Maragatham K N"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "Gender Split",
+  "last_query_start": "2026-04-15T11:56:37.632549Z",
+  "dashboard_count": 0,
+  "last_used_at": "2026-04-15T11:56:37.639889Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 148739898,
+      "cardId": 75630,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_CUMULATIVE_MEMORY_USAGE"
+          },
+          "message": "Optimize query to reduce memory usage"
+        },
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_PEAK_TASK_MEMORY_USAGE"
+          },
+          "message": "Optimize query to reduce memory usage"
+        }
+      ],
+      "queryHash": "18297e62ff0f7ddff516f2da55001740dc8cc4444a757353a052b0632b7cf3ba",
+      "executionStartTime": "2026-04-21T17:22:36.961+0000",
+      "tables": [
+        "dwh_fitness_mart.membership_dim",
+        "pk_cfuserservice_cultapp.user",
+        "pk_cfuserservice_cultapp.user",
+        "pk_cfprodplatforms_rashi.user_attribute",
+        "pk_curefitprod_cfdb.npsresponses"
+      ],
+      "archive": false
+    }
+  ],
+  "average_query_time": 131895.0,
+  "creator_id": 1868,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-10T07:05:16.663851Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "ed": {
+          "type": "date",
+          "name": "ed",
+          "id": "97db8298-146c-4e43-a596-c892a0f76ac9",
+          "display-name": "Ed",
+          "default": null,
+          "widget-type": null
+        }
+      },
+      "query": "WITH\n  base AS (\n    SELECT\n      --date_trunc('quarter', dd.full_date) AS \"quarter\",\n      m.USER_ID\n    FROM\n      dwh_fitness_mart.membership_dim m\n    --   JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE 1=1\n    -- dd.full_date >= DATE('2025-01-01')\n      AND m.membership_created_date between date('2017-10-01') AND {{ed}}\n      and m.business_line in ('ELITE','PRO','PLAY')\n      and amount_paid>0\n    GROUP BY\n      1\n  )\n, birthday_base as (\n\n\nselect \nuser_id\n,case when birthday between date('1970-01-01') and date_add('year',-18,now()) THEN cast(birthday as varchar) end as birthday\n,coalesce(case when cast(birthday as varchar)='-1' then null else age end,'NA') as age\n,coalesce(gender,'NA') as Gender\n,age_source\n,age_nos\nfrom (with age_onboarding as  (select nrs.userid\n,date_diff('year',date(substr(max(case when  nrs.questionid='onboarding_user_dob_v1' then  nrs.answer end),1,10)),current_date) as age \n,date(substr(max(case when  nrs.questionid='onboarding_user_dob_v1' then  nrs.answer end),1,10)) as birthday\n,substr(max(case when questionid='@Home Guidance_Gender_v1' and lower(trim(answer)) in ('m','f') then lower(trim(answer)) end),1,1) as gender\nfrom pk_curefitprod_cfdb.npsresponses nrs \nwhere 1=1\nand nrs.answer is not null and nrs.answer!=''\n-- filter for onboarding forms \nand nrs.formid='post_pack_purchase_onboarding' and nrs.questionid in ('onboarding_user_dob_v1','@Home Guidance_Gender_v1')\ngroup by 1)\n\n\n, user_age as (select cast(id as varchar) userid\n,case when substr(lower(trim(gender)),1,1) in ('m','f') then substr(lower(trim(gender)),1,1) end as gender\n,date_diff('year',cast(substr(birthday,1,10) as date),current_date) as age\n,cast(substr(birthday,1,10) as date) birthday\nfrom (select id, gender,birthday,row_number() over (partition by id order by updatedat desc) rf \n from pk_cfuserservice_cultapp.User) user where rf=1)\n\n\n, rashi_age as  (select  cast(Userid as varchar) as userid \n,date_diff('year',min(date(from_unixtime(cast(case when Attribute in ('birthday') then value end as double)/1000)+interval '330' minute)),current_date) as age\n,min(date(from_unixtime(cast(case when Attribute in ('birthday') then value end as double)/1000)+interval '330' minute)) as birthday\n, max(case when Attribute in ('Gender','gender','predictedgender') and coalesce(substr(lower(CAST(json_extract(value, '$.gender') AS VARCHAR)),1,1),substr(trim(lower(value)),1,1)) in ('m','f') then coalesce(substr(lower(CAST(json_extract(value, '$.gender') AS VARCHAR)),1,1),substr(trim(lower(value)),1,1)) end) as gender\nfrom\npk_cfprodplatforms_rashi.User_Attribute where  Attribute in (\n 'Gender'\n,'gender'\n, 'birthday'\n) and value !=''\ngroup by 1\n--having min(date(from_unixtime(cast(value as double)/1000)+interval '330' minute)) > date_trunc('year',current_date) - interval '100' year  and min(date(from_unixtime(cast(value as double)/1000)+interval '330' minute))<=date_trunc('year',current_date)\n)\n\n\n\nselect cast(u.id as varchar) as user_id , case when coalesce(ua.age,ra.age,ab.age) is null then 'AGE NA'\nwhen coalesce(ua.age,ra.age,ab.age) between 0 and 20 then '0-20 yrs'\nwhen coalesce(ua.age,ra.age,ab.age) between 20 and 60 then concat(cast(coalesce(ua.age,ra.age,ab.age) as varchar),' yrs')\nwhen coalesce(ua.age,ra.age,ab.age) >60 then '>60 yrs' end age\n,coalesce(ua.age,ra.age,ab.age) as age_nos\n,coalesce(ua.gender,ra.gender,ab.gender,'NA') as gender\n,coalesce(ua.birthday,ra.birthday,ab.birthday) as birthday\n,case when ua.age is not null then 'user_table'\n when ra.age is not null then 'rashi_table'\n when ab.age is not null then 'onboarding_table'\nelse 'no_value' end as age_source\nfrom pk_cfuserservice_cultapp.User u\nleft join user_age ua on ua.userid=cast(u.id as varchar)\nleft join rashi_age ra on  cast(ra.userid as varchar)=cast(u.id as varchar)\nleft join age_onboarding ab on  cast(ab.userid as varchar)=cast(u.id as varchar)\n)\nm\n)\n,GENDER_BASE AS ( \nselect gender,USER_ID\nfrom birthday_base)\n\nSELECT  gender,COUNT(BASE.USER_ID) MEMBERS--,COUNT_IF(UPPER(GENDER)='F') FEMALE_MEMBERS,COUNT_IF(UPPER(GENDER)='M') MALE_MEMBERS\nFROM BASE \nLEFT JOIN GENDER_BASE ON GENDER_BASE.USER_ID = BASE.USER_ID\nGROUP BY 1\norder by 1"
+    }
+  },
+  "id": 75630,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "Oo43A5tUphC3OdIyspj6h",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 1868,
+    "email": "mkn@curefit.com",
+    "first_name": "Maragatham",
+    "last_name": "K N",
+    "timestamp": "2026-02-10T07:05:16.992321Z"
+  },
+  "visualization_settings": {
+    "table.cell_column": "MEMBERS",
+    "table.pivot_column": "gender"
+  },
+  "collection": {
+    "metabase.models.collection.root/is-root?": true,
+    "authority_level": null,
+    "name": "Our analytics",
+    "is_personal": false,
+    "id": "root",
+    "can_write": true
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "97db8298-146c-4e43-a596-c892a0f76ac9",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "ed"
+        ]
+      ],
+      "name": "Ed",
+      "slug": "ed"
+    }
+  ],
+  "created_at": "2026-02-09T07:09:40.477491Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

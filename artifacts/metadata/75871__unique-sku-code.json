@@ -1,0 +1,234 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 387,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "sku_code",
+      "field_ref": [
+        "field",
+        "sku_code",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "sku_code",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4999,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.8074
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "Unique Sku Code",
+  "last_used_at": "2026-04-16T12:12:21.872735Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-12T06:22:42.333107Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_date": {
+          "type": "date",
+          "name": "start_date",
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "display-name": "Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "end_date": {
+          "type": "date",
+          "name": "end_date",
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "display-name": "End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535274,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "sub_category": {
+          "type": "dimension",
+          "name": "sub_category",
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "display-name": "Sub Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9615855,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "article_type": {
+          "type": "dimension",
+          "name": "article_type",
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "display-name": "Article Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535281,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "#75683-raw-data": {
+          "type": "card",
+          "name": "#75683-raw-data",
+          "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+          "display-name": "#75683 Raw Data",
+          "card-id": 75683
+        }
+      },
+      "query": "SELECT DISTINCT item_code AS sku_code\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n\n\n"
+    }
+  },
+  "id": 75871,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "eicQhu83ZAxnVabmR_7Q0",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "business_unit",
+    "table.cell_column": "unique_id",
+    "pie.metric": "total_amount",
+    "pie.dimension": [
+      "month"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "Start Date",
+      "slug": "start_date"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "End Date",
+      "slug": "end_date"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "Sub Category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "Article Type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    }
+  ],
+  "created_at": "2026-02-12T06:22:07.014558Z",
+  "public_uuid": null
+}

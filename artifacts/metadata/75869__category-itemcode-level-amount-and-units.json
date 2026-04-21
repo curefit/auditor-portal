@@ -1,0 +1,479 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 407,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "business_category",
+      "field_ref": [
+        "field",
+        "business_category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "business_category",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 5,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.794
+          }
+        }
+      }
+    },
+    {
+      "display_name": "item_code",
+      "field_ref": [
+        "field",
+        "item_code",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "item_code",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 5000,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.87
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_amount",
+      "field_ref": [
+        "field",
+        "total_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4653,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -41311515.0,
+            "q1": -5037.974005060038,
+            "q3": 80654.95687019825,
+            "max": 128244920.0,
+            "sd": 2121833.4858394684,
+            "avg": 165142.366
+          }
+        }
+      }
+    },
+    {
+      "display_name": "base_amount",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "base_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4621,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -39372015.0,
+            "q1": -1929.6195551388373,
+            "q3": 54197.93250498026,
+            "max": 108680713.0,
+            "sd": 1818642.495675113,
+            "avg": 144915.9476
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_nlc",
+      "field_ref": [
+        "field",
+        "total_nlc",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_nlc",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4152,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -502383.0,
+            "q1": -2430.147143656519,
+            "q3": 70743.83940863595,
+            "max": 707622524.0,
+            "sd": 10076269.831259122,
+            "avg": 268693.9556
+          }
+        }
+      }
+    },
+    {
+      "display_name": "units",
+      "field_ref": [
+        "field",
+        "units",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "units",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 887,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -2564.0,
+            "q1": -10.172801363574536,
+            "q3": 139.2438467825798,
+            "max": 208364.0,
+            "sd": 3638.7629620993807,
+            "avg": 330.60560000000004
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm",
+      "field_ref": [
+        "field",
+        "gm",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4187,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -707609324.0,
+            "q1": -17888.552597688373,
+            "q3": 17347.62175904977,
+            "max": 55893155.0,
+            "sd": 10120720.974952843,
+            "avg": -123778.008
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm_percent",
+      "field_ref": [
+        "field",
+        "gm_percent",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm_percent",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4666,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -53606.76696969697,
+            "q1": -0.12551147968184004,
+            "q3": 0.4053043788967269,
+            "max": 56.05263157894737,
+            "sd": 760.7140222829005,
+            "avg": -11.2397062140485
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "Category_itemcode Level Amount and Units",
+  "last_used_at": "2026-04-16T12:12:21.877296Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-24T05:15:51.419646Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_date": {
+          "type": "date",
+          "name": "start_date",
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "display-name": "Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "end_date": {
+          "type": "date",
+          "name": "end_date",
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "display-name": "End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535274,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "sub_category": {
+          "type": "dimension",
+          "name": "sub_category",
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "display-name": "Sub Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9615855,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "article_type": {
+          "type": "dimension",
+          "name": "article_type",
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "display-name": "Article Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535281,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "#75683-raw-data": {
+          "type": "card",
+          "name": "#75683-raw-data",
+          "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+          "display-name": "#75683 Raw Data",
+          "card-id": 75683
+        },
+        "consider_purchase": {
+          "type": "text",
+          "name": "consider_purchase",
+          "id": "ec026b6c-a81e-4ed0-b480-6107f61990c1",
+          "display-name": "Consider Purchase"
+        }
+      },
+      "query": "SELECT \n  business_category, item_code,\n  ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n  ROUND(SUM(nlc)) AS total_nlc,\n  SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n  ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n  (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n[[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\nGROUP BY 1, 2\nORDER BY 1, 2\n\n\n"
+    }
+  },
+  "id": 75869,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "FV8tUmSS1E19jtA9UInQR",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "business_unit",
+    "table.cell_column": "unique_id",
+    "pie.metric": "total_amount",
+    "pie.dimension": [
+      "month"
+    ],
+    "column_settings": {
+      "[\"name\",\"gm_percent\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "Start Date",
+      "slug": "start_date"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "End Date",
+      "slug": "end_date"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "Sub Category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "Article Type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "ec026b6c-a81e-4ed0-b480-6107f61990c1",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "Consider Purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-02-12T06:20:01.227158Z",
+  "public_uuid": null
+}

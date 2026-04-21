@@ -1,0 +1,449 @@
+{
+  "cache_invalidated_at": null,
+  "description": "The unique user install based on new or re-install. New or re-installed is defined by checking if the user id has installed for the first time in their life or if the same user id has installed before. The same person might use a different phone number & re-install, in such a case it will be considered as a new install. The same user installing using a different device id but same phone number will be considered as a re-install.\n\nThe first logged in normal user id is attributed to that device id",
+  "archived": false,
+  "view_count": 831,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "display_name": "Date",
+      "field_ref": [
+        "field",
+        "Date",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "Date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2026-04-01",
+            "latest": "2026-04-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Install Type - Source",
+      "field_ref": [
+        "field",
+        "Install Type - Source",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "Install Type - Source",
+      "semantic_type": "type/Source",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 15.142857142857142
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Installs",
+      "field_ref": [
+        "field",
+        "Installs",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "Installs",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 6,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 282.7312896931719,
+            "q3": 2118.5,
+            "max": 5022.0,
+            "sd": 1784.190986467109,
+            "avg": 1434.857142857143
+          }
+        }
+      }
+    }
+  ],
+  "creator": {
+    "email": "param.berawala@curefit.com",
+    "first_name": "Param",
+    "last_login": "2026-04-09T05:31:55.171736Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3772,
+    "last_name": "Berawala",
+    "date_joined": "2025-04-03T10:06:18.700974Z",
+    "common_name": "Param Berawala"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5689,
+  "query_type": "native",
+  "name": "# Installs by type & source - Duplicate",
+  "last_query_start": "2026-04-17T06:36:43.201512Z",
+  "dashboard_count": 1,
+  "last_used_at": "2026-04-17T06:36:43.224672Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "average_query_time": 26065.066929133856,
+  "creator_id": 3772,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-03-02T05:25:27.895434Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "Time_Granularity": {
+          "type": "text",
+          "name": "Time_Granularity",
+          "id": "db9c2454-1a06-4e4d-9702-224eec583b96",
+          "display-name": "Time Granularity",
+          "required": true,
+          "default": "Month"
+        },
+        "From": {
+          "type": "date",
+          "name": "From",
+          "id": "e9a5476a-39ac-420f-8f7d-07f7bd9d84dd",
+          "display-name": "From",
+          "default": "2025-07-01",
+          "required": true
+        },
+        "To": {
+          "type": "date",
+          "name": "To",
+          "id": "5926f6b7-e742-45f7-8109-18c2e1b3a530",
+          "display-name": "To",
+          "default": "2025-07-31",
+          "required": true
+        },
+        "City": {
+          "type": "dimension",
+          "name": "City",
+          "id": "95c476a9-18db-4223-9c23-160918290c44",
+          "display-name": "City",
+          "default": null,
+          "dimension": [
+            "field",
+            9443644,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "Campaign": {
+          "type": "dimension",
+          "name": "Campaign",
+          "id": "0988f8f2-6a65-4c73-bf2b-732f7b9e6a39",
+          "display-name": "Campaign",
+          "default": null,
+          "dimension": [
+            "field",
+            9443633,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "Value_Type": {
+          "type": "text",
+          "name": "Value_Type",
+          "id": "b2a4b8bb-5d62-489b-b00f-4414826840af",
+          "display-name": "Value Type",
+          "required": true,
+          "default": "Users"
+        },
+        "OS": {
+          "type": "dimension",
+          "name": "OS",
+          "id": "cda2fef9-e68a-489c-8ec2-de0a4e23b3f1",
+          "display-name": "Os",
+          "default": null,
+          "dimension": [
+            "field",
+            9601913,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "Select\n    \"Date\",\n    \"Install Type - Source\",\n    Case\n        When {{Value_Type}} = 'Users' Then \"Users\"\n        When {{Value_Type}} = 'Devices' Then \"Devices\"\n        When {{Value_Type}} = 'Installs' Then \"Installs\"\n    End as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc ({{Time_Granularity}}, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact \n    WHERE\n      install_date BETWEEN {{From}} AND {{To}}\n      and fitness_membership_type='Non-Member'\n      AND {{City}}\n      AND {{Campaign}}\n      and {{OS}}\n    GROUP BY\n      1,\n      2\n)\n\n\nUNION ALL \n\nSelect\n    \"Date\",\n    'TOTAL',\n    SUM(Case\n        When {{Value_Type}} = 'Users' Then \"Users\"\n        When {{Value_Type}} = 'Devices' Then \"Devices\"\n        When {{Value_Type}} = 'Installs' Then \"Installs\"\n    End ) as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc ({{Time_Granularity}}, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact\n    WHERE\n      install_date BETWEEN {{From}} AND {{To}}\n      and fitness_membership_type='Non-Member'\n      AND {{City}}\n      AND {{Campaign}}\n    GROUP BY\n      1,\n      2\n)\ngroup by 1,2\nORDER BY\n  1 DESC"
+    }
+  },
+  "id": 67337,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "line",
+  "archived_directly": false,
+  "entity_id": "CAvsMBhF9AVoeGqc1JIXv",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3772,
+    "email": "param.berawala@curefit.com",
+    "first_name": "Param",
+    "last_name": "Berawala",
+    "timestamp": "2026-03-02T05:25:28.040968Z"
+  },
+  "visualization_settings": {
+    "graph.dimensions": [
+      "Date",
+      "Install Type - Source"
+    ],
+    "graph.series_order_dimension": "Install Type - Source",
+    "graph.series_order": [
+      {
+        "key": "No Device ID - Paid",
+        "color": "#88BF4D",
+        "enabled": true,
+        "name": "No Device ID - Paid"
+      },
+      {
+        "key": "New - Paid",
+        "color": "#7172AD",
+        "enabled": true,
+        "name": "New - Paid"
+      },
+      {
+        "key": "Re-Install - Paid",
+        "color": "#EF8C8C",
+        "enabled": true,
+        "name": "Re-Install - Paid"
+      },
+      {
+        "key": "No Device ID - Organic",
+        "color": "#98D9D9",
+        "enabled": true,
+        "name": "No Device ID - Organic"
+      },
+      {
+        "key": "New - Organic",
+        "color": "#509EE3",
+        "enabled": true,
+        "name": "New - Organic"
+      },
+      {
+        "key": "Re-Install - Organic",
+        "color": "#A989C5",
+        "enabled": true,
+        "name": "Re-Install - Organic"
+      }
+    ],
+    "graph.show_trendline": false,
+    "graph.show_goal": false,
+    "graph.show_values": true,
+    "graph.metrics": [
+      "Installs"
+    ]
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "slug": "marketing",
+    "archive_operation_id": null,
+    "name": "Marketing",
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 5689,
+    "archived_directly": null,
+    "entity_id": "9V8JjY2TGojQj6gkJKwX6",
+    "location": "/4218/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2025-06-20T04:00:24.289725Z"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "slug": "Time_Granularity",
+      "values_query_type": "list",
+      "default": "Month",
+      "name": "Time Granularity",
+      "type": "category",
+      "values_source_type": "static-list",
+      "id": "db9c2454-1a06-4e4d-9702-224eec583b96",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Time_Granularity"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "Day"
+          ],
+          [
+            "Week"
+          ],
+          [
+            "Month"
+          ],
+          [
+            "Quarter"
+          ],
+          [
+            "Year"
+          ]
+        ]
+      },
+      "required": true
+    },
+    {
+      "id": "e9a5476a-39ac-420f-8f7d-07f7bd9d84dd",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "From"
+        ]
+      ],
+      "name": "From",
+      "slug": "From",
+      "default": "2025-07-01",
+      "required": true
+    },
+    {
+      "id": "5926f6b7-e742-45f7-8109-18c2e1b3a530",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "To"
+        ]
+      ],
+      "name": "To",
+      "slug": "To",
+      "default": "2025-07-31",
+      "required": true
+    },
+    {
+      "id": "95c476a9-18db-4223-9c23-160918290c44",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "City"
+        ]
+      ],
+      "name": "City",
+      "slug": "City",
+      "options": {
+        "case-sensitive": false
+      }
+    },
+    {
+      "id": "0988f8f2-6a65-4c73-bf2b-732f7b9e6a39",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "Campaign"
+        ]
+      ],
+      "name": "Campaign",
+      "slug": "Campaign",
+      "options": {
+        "case-sensitive": false
+      }
+    },
+    {
+      "slug": "Value_Type",
+      "values_query_type": "list",
+      "default": "Users",
+      "name": "Value Type",
+      "type": "category",
+      "values_source_type": "static-list",
+      "id": "b2a4b8bb-5d62-489b-b00f-4414826840af",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Value_Type"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "Users"
+          ],
+          [
+            "Devices"
+          ],
+          [
+            "Installs"
+          ]
+        ]
+      },
+      "required": true
+    },
+    {
+      "id": "cda2fef9-e68a-489c-8ec2-de0a4e23b3f1",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "OS"
+        ]
+      ],
+      "name": "Os",
+      "slug": "OS",
+      "values_query_type": "list"
+    }
+  ],
+  "created_at": "2025-09-04T13:39:27.920584Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

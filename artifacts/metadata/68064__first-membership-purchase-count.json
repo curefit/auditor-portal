@@ -1,0 +1,288 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 187,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "month",
+      "field_ref": [
+        "field",
+        "month",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2025-10-01",
+            "latest": "2026-04-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "user_count",
+      "field_ref": [
+        "field",
+        "user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 14422.0,
+            "q1": 16969.25,
+            "q3": 18938.0,
+            "max": 22525.0,
+            "sd": 2465.916250074392,
+            "avg": 18065.428571428572
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6030,
+  "query_type": "native",
+  "name": "First Membership Purchase Count",
+  "last_used_at": "2026-04-16T10:15:12.182234Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-10-30T05:14:11.06254Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "compare_with_current_month": {
+          "type": "number",
+          "name": "compare_with_current_month",
+          "id": "e4b261ec-6457-4d54-bfa6-84cf1f40383d",
+          "display-name": "Compare With Current Month",
+          "default": "1"
+        },
+        "month_start_date": {
+          "type": "date",
+          "name": "month_start_date",
+          "id": "eebf64bb-6088-4915-9ee5-5c0889f5e7c4",
+          "display-name": "Month Start Date"
+        },
+        "month_end_date": {
+          "type": "date",
+          "name": "month_end_date",
+          "id": "3615af24-4f65-42b3-a425-3925aa42552e",
+          "display-name": "Month End Date"
+        },
+        "no_of_month": {
+          "type": "number",
+          "name": "no_of_month",
+          "id": "c228d6d5-5fe5-4dd1-afeb-d9ac29629ff4",
+          "display-name": "No Of Month",
+          "default": "2"
+        },
+        "compare_with_current_date": {
+          "type": "number",
+          "name": "compare_with_current_date",
+          "id": "2945ed56-a473-4ad1-827d-ebf8464d4747",
+          "display-name": "Compare With Current Date",
+          "default": "1",
+          "required": false
+        },
+        "date_of_month_start_date": {
+          "type": "number",
+          "name": "date_of_month_start_date",
+          "id": "72250b63-dba0-464e-96e4-5254e8418b52",
+          "display-name": "Date Of Month Start Date"
+        },
+        "date_of_month_end_date": {
+          "type": "number",
+          "name": "date_of_month_end_date",
+          "id": "5c50099c-9c79-4e32-93a6-6175d2c4a019",
+          "display-name": "Date Of Month End Date"
+        }
+      },
+      "query": "WITH fs_cohorts AS \n(\n    SELECT *\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE 1 = 1\n    AND month = DATE_TRUNC('MONTH', CURRENT_DATE)\n    AND \n        CASE \n            WHEN {{compare_with_current_month}} = 1 THEN 1 = 1 [[ AND DATE_TRUNC('MONTH',first_membership_created_date) >= DATE_TRUNC('MONTH', CURRENT_DATE - INTERVAL  '1' MONTH * {{no_of_month}}) ]]\n            ELSE 1 = 1 [[ AND DATE_TRUNC('MONTH',first_membership_created_date) BETWEEN DATE_TRUNC('MONTH',{{month_start_date}}) AND DATE_TRUNC('MONTH', {{month_end_date}}) ]]\n        END\n    AND \n        CASE\n            WHEN {{compare_with_current_date}} = 1 THEN DAY(first_membership_created_date) < DAY(CURRENT_DATE)\n            ELSE 1 = 1 [[ AND DAY(first_membership_created_date) BETWEEN {{date_of_month_start_date}} AND {{date_of_month_end_date}} ]]\n        END\n)\n\nSELECT DATE_TRUNC('MONTH',first_membership_created_date) AS month, COUNT(DISTINCT user_id) AS user_count\nFROM \nfs_cohorts\nGROUP BY 1\nORDER BY 1"
+    }
+  },
+  "id": 68064,
+  "parameter_mappings": [],
+  "display": "bar",
+  "archived_directly": false,
+  "entity_id": "5dZlovPhVvS9HAf3wKQ8p",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.tooltip_columns": [
+      "[\"name\",\"total_weekends\"]"
+    ],
+    "graph.series_order": null,
+    "graph.series_order_dimension": null,
+    "graph.dimensions": [
+      "month"
+    ],
+    "series_settings": {
+      "total_gmv": {
+        "color": "#EF8C8C"
+      }
+    },
+    "graph.metrics": [
+      "user_count"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "slug": "compare_with_current_month",
+      "values_query_type": "list",
+      "default": "1",
+      "name": "Compare With Current Month",
+      "type": "number/=",
+      "values_source_type": "static-list",
+      "id": "e4b261ec-6457-4d54-bfa6-84cf1f40383d",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "compare_with_current_month"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "eebf64bb-6088-4915-9ee5-5c0889f5e7c4",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "month_start_date"
+        ]
+      ],
+      "name": "Month Start Date",
+      "slug": "month_start_date"
+    },
+    {
+      "id": "3615af24-4f65-42b3-a425-3925aa42552e",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "month_end_date"
+        ]
+      ],
+      "name": "Month End Date",
+      "slug": "month_end_date"
+    },
+    {
+      "id": "c228d6d5-5fe5-4dd1-afeb-d9ac29629ff4",
+      "type": "number/=",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "no_of_month"
+        ]
+      ],
+      "name": "No Of Month",
+      "slug": "no_of_month",
+      "default": "2"
+    },
+    {
+      "slug": "compare_with_current_date",
+      "values_query_type": "list",
+      "default": "1",
+      "name": "Compare With Current Date",
+      "type": "number/=",
+      "values_source_type": "static-list",
+      "id": "2945ed56-a473-4ad1-827d-ebf8464d4747",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "compare_with_current_date"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      },
+      "required": false
+    },
+    {
+      "id": "72250b63-dba0-464e-96e4-5254e8418b52",
+      "type": "number/=",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "date_of_month_start_date"
+        ]
+      ],
+      "name": "Date Of Month Start Date",
+      "slug": "date_of_month_start_date"
+    },
+    {
+      "id": "5c50099c-9c79-4e32-93a6-6175d2c4a019",
+      "type": "number/=",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "date_of_month_end_date"
+        ]
+      ],
+      "name": "Date Of Month End Date",
+      "slug": "date_of_month_end_date"
+    }
+  ],
+  "created_at": "2025-09-22T08:42:06.707162Z",
+  "public_uuid": null
+}

@@ -1,0 +1,311 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 3262,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "age",
+      "field_ref": [
+        "field",
+        "age",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "age",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.714285714285714
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 119891.0,
+            "q1": 238174.5,
+            "q3": 6298503.5,
+            "max": 8550895.0,
+            "sd": 3563733.1185732014,
+            "avg": 3306391.1428571427
+          }
+        }
+      }
+    },
+    {
+      "display_name": "percentage",
+      "field_ref": [
+        "field",
+        "percentage",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "percentage",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.00518005431731394,
+            "q1": 0.010290654402741566,
+            "q3": 0.2721354417578631,
+            "max": 0.3694530912382763,
+            "sd": 0.15397595421357552,
+            "avg": 0.14285714285714285
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5748,
+  "query_type": "native",
+  "name": "Age Wise Cross Sell",
+  "last_used_at": "2026-04-16T16:23:02.447193Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:06:08.651384Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+          "display-name": "Order Start Date",
+          "default": "2024-01-01",
+          "widget-type": null
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+          "display-name": "Order End Date",
+          "default": "2025-05-31",
+          "widget-type": null
+        },
+        "source": {
+          "type": "dimension",
+          "name": "source",
+          "id": "4eae6079-2f29-4743-8dd4-e4d0082ff650",
+          "display-name": "Source",
+          "default": null,
+          "dimension": [
+            "field",
+            9535370,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "b647aaac-0f00-42a5-9976-808533de19e5",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "cohort": {
+          "type": "dimension",
+          "name": "cohort",
+          "id": "2482efa7-57fe-43c4-976b-b8f14ce0167e",
+          "display-name": "Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "service_type": {
+          "type": "dimension",
+          "name": "service_type",
+          "id": "bd8bb394-5d2d-448f-936d-7f57b117ab2e",
+          "display-name": "Service Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535349,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "WITH age_calculated AS \n(\n    SELECT CASE \n            WHEN birthday != 'NO-BIRTHDAY' THEN DATE_DIFF('MONTH',DATE(CAST(birthday AS TIMESTAMP)),order_date)/12 \n            ELSE NULL\n            END AS age, \n            user_id, category, gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE is_fs_member = 1\n        AND order_date >= DATE('2018-01-01')\n        AND is_cancelled = 0\n      [[AND {{source}}]]\n      [[AND {{category}}]]\n      [[AND {{cohort}}]]\n      [[AND {{service_type}}]]\n      [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n),\n\nfinal_data AS\n(\n    SELECT CASE     WHEN age IS NULL THEN 'NO-AGE'\n                    WHEN CAST(age AS DECIMAL) <= 10 THEN '0-10'\n                    WHEN CAST(age AS DECIMAL) > 10 and CAST(age AS DECIMAL) <= 20 THEN '11-20'\n                    WHEN CAST(age AS DECIMAL) > 20 and CAST(age AS DECIMAL) <= 30 THEN '21-30'\n                    WHEN CAST(age AS DECIMAL) > 30 and CAST(age AS DECIMAL) <= 40 THEN '31-40'\n                    WHEN CAST(age AS DECIMAL) > 40 and CAST(age AS DECIMAL) <= 50 THEN '41-50'\n                    WHEN CAST(age AS DECIMAL) > 50 THEN '50+'\n                END AS age,\n            COUNT(DISTINCT user_id) AS user_count,\n            ROUND(SUM(gmv)) AS total_gmv\n    FROM age_calculated\n    GROUP BY 1\n)\n\nSELECT age, total_gmv, total_gmv * 1.000/SUM(total_gmv) OVER() AS percentage\nFROM \nfinal_data\nORDER BY 2 DESC"
+    }
+  },
+  "id": 63751,
+  "parameter_mappings": [],
+  "display": "bar",
+  "archived_directly": false,
+  "entity_id": "R6HBbRvjydlOiqI7T0LRf",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.show_values": true,
+    "table.cell_column": "user_count",
+    "graph.label_value_frequency": "all",
+    "graph.metrics": [
+      "total_gmv"
+    ],
+    "graph.tooltip_columns": [
+      "[\"name\",\"percentage\"]"
+    ],
+    "graph.label_value_formatting": "compact",
+    "table.pivot_column": "age",
+    "column_settings": {
+      "[\"name\",\"percentage\"]": {
+        "number_style": "percent"
+      }
+    },
+    "graph.dimensions": [
+      "age"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date",
+      "default": "2025-05-31"
+    },
+    {
+      "id": "4eae6079-2f29-4743-8dd4-e4d0082ff650",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "source"
+        ]
+      ],
+      "name": "Source",
+      "slug": "source"
+    },
+    {
+      "id": "b647aaac-0f00-42a5-9976-808533de19e5",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    },
+    {
+      "id": "2482efa7-57fe-43c4-976b-b8f14ce0167e",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "name": "Cohort",
+      "slug": "cohort"
+    },
+    {
+      "id": "bd8bb394-5d2d-448f-936d-7f57b117ab2e",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service Type",
+      "slug": "service_type"
+    }
+  ],
+  "created_at": "2025-07-13T05:58:17.089892Z",
+  "public_uuid": null
+}

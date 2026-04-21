@@ -1,0 +1,139 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 1553,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "month",
+      "field_ref": [
+        "field",
+        "month",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 31,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2018-10-01",
+            "latest": "2026-04-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "user_count",
+      "field_ref": [
+        "field",
+        "user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 31,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 6343.0,
+            "q1": 65248.75,
+            "q3": 267578.25,
+            "max": 437475.0,
+            "sd": 132472.34643400554,
+            "avg": 170247.74193548388
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5748,
+  "query_type": "native",
+  "name": "Quarter Wise Cross Sell User Count",
+  "last_used_at": "2026-04-16T16:22:36.168308Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-04-07T05:14:13.958842Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {},
+      "query": "WITH user_details AS \n(\n    SELECT DISTINCT user_id\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE user_id NOT IN (SELECT user_id FROM gs_d2c.default.cs_dev_users)\n    AND month = DATE_TRUNC('MONTH', CURRENT_DATE)\n),\n\norder_detail AS \n(\n    SELECT user_id, MIN(order_date) AS min_order_date\n    FROM  dwh_fitness_metrics.cross_sell_orders\n    WHERE user_id IN (SELECT DISTINCT user_id FROM user_details)\n    AND order_date >= DATE('2018-01-01')\n    GROUP BY 1\n),\n\nuser_count_details AS\n(\n    SELECT DATE_TRUNC('QUARTER',min_order_date) AS month, COUNT(DISTINCT user_id) AS user_count\n    FROM \n    order_detail\n    GROUP BY 1\n)\n\n\nSELECT month, SUM(user_count) OVER(ORDER BY month) AS user_count \nFROM \nuser_count_details\n"
+    }
+  },
+  "id": 63795,
+  "parameter_mappings": [],
+  "display": "line",
+  "archived_directly": false,
+  "entity_id": "07887lzGtyPErj4ulA0xy",
+  "collection_preview": true,
+  "visualization_settings": {
+    "pie.rows": [
+      {
+        "key": "FITNESS-SERVICE (NON-BUYERS)",
+        "name": "FITNESS-SERVICE (NON-BUYERS)",
+        "originalName": "FITNESS-SERVICE (NON-BUYERS)",
+        "color": "#7172AD",
+        "defaultColor": true,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      },
+      {
+        "key": "D2C",
+        "name": "D2C",
+        "originalName": "D2C",
+        "color": "#E75454",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      }
+    ],
+    "table.column_widths": [
+      172
+    ],
+    "graph.dimensions": [
+      "month"
+    ],
+    "graph.show_values": true,
+    "graph.label_value_frequency": "all",
+    "graph.label_value_formatting": "compact",
+    "graph.metrics": [
+      "user_count"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [],
+  "created_at": "2025-07-13T13:20:02.803106Z",
+  "public_uuid": null
+}

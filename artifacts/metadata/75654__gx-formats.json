@@ -1,0 +1,208 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 7,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "display_name": "Single_format",
+      "field_ref": [
+        "field",
+        "Single_format",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "Single_format",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1090180.0,
+            "q1": 1090180.0,
+            "q3": 1090180.0,
+            "max": 1090180.0,
+            "sd": null,
+            "avg": 1090180.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Multi_format",
+      "field_ref": [
+        "field",
+        "Multi_format",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "Multi_format",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 979704.0,
+            "q1": 979704.0,
+            "q3": 979704.0,
+            "max": 979704.0,
+            "sd": null,
+            "avg": 979704.0
+          }
+        }
+      }
+    }
+  ],
+  "creator": {
+    "email": "mukul.yambal@curefit.com",
+    "first_name": "Mukul",
+    "last_login": "2026-04-06T08:50:45.067276Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3749,
+    "last_name": "Yambal",
+    "date_joined": "2025-03-07T10:30:17.035802Z",
+    "common_name": "Mukul Yambal"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "GX formats",
+  "last_query_start": "2026-04-12T14:16:20.303528Z",
+  "dashboard_count": 0,
+  "last_used_at": "2026-04-12T14:16:20.313501Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 147634468,
+      "cardId": 75654,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 5.28m. Optimize Query to reduce execution time."
+        },
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_CUMULATIVE_MEMORY_USAGE"
+          },
+          "message": "Optimize query to reduce memory usage"
+        },
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_PEAK_TASK_MEMORY_USAGE"
+          },
+          "message": "Optimize query to reduce memory usage"
+        }
+      ],
+      "queryHash": "0e2893d7809f11042e338026e3c52f540d0f94d0b2c6c05b0a2b0f34bdfbb899",
+      "executionStartTime": "2026-04-21T21:20:40.273+0000",
+      "tables": [
+        "dwh_fitness_mart.membership_dim",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.membership_dim",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.workout_dim",
+        "dwh_fitness_mart.employee_dim",
+        "dwh_fitness_mart.center_dim"
+      ],
+      "archive": false
+    }
+  ],
+  "average_query_time": 302198.5,
+  "creator_id": 3749,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-09T10:21:22.545102Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "Last_date": {
+          "type": "date",
+          "name": "Last_date",
+          "id": "b6d3fa4f-a50d-4807-a07e-64f5599d29da",
+          "display-name": "Last Date",
+          "default": "2025-12-31",
+          "widget-type": null
+        }
+      },
+      "query": "\nwith   base as  (\nSELECT\n      date_trunc('quarter', membership_created_date) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city,\n      m.user_id,\n      m.pack_start_date,\n            m.pack_end_date\n    FROM\n      dwh_fitness_mart.membership_dim m\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      AND m.membership_created_date >= date('2017-01-01')\n      and m.business_line in ('ELITE','PRO','PLAY')\n      and amount_paid>2000\n    GROUP BY\n      1,\n      2,\n      3,\n      4,5,6,7\n)\n-- select count(distinct base.user_id) from base\n,\n\nall_sessions_df as (\n      Select\n      distinct\n        bf.membership_key,\n        booking_key as classes,\n        -- Case\n        --   When UPPER(workout_name) like '%DANCE%' Then 400\n        --   When UPPER(workout_name) like '%BURN%' Then 400\n        --   When UPPER(workout_name) like '%BOXING%' Then 350\n        --   When (\n        --     UPPER(workout_name) like '%S&C%'\n        --     or UPPER(workout_name) like '%STRENGTH AND CONDITIONING%'\n        --     or UPPER(workout_name) like '%STRENGTH%'\n        --   ) Then 350\n        --   When UPPER(workout_name) like '%HRX%' Then 300\n        --   Else 250\n        -- End as calorie,\n        class_date,\n        attendance_time,\n        -- Date_Trunc('Week', class_date) Weeks_Active,\n        -- Case\n        --   When extract(\n        --     hour\n        --     From\n        --       attendance_time\n        --   ) <= 12 Then 'Morning'\n        --   Else 'Evening'\n        -- End as slot,\n        -- Case\n        --   When service_type = 'GX' Then 50\n        --   When service_type = 'PLAY' Then 50\n        --   When service_type = 'GYM' Then 90\n        --   Else 70\n        -- End as minutes,\n        -- Extract(\n        --   DOW\n        --   FROM\n        --     class_date\n        -- ) as day_week,\n        Case\n          When UPPER(workout_name) like '%YOGA%' Then 'YOGA'\n          When UPPER(workout_name) like '%BARRE%' Then 'BARRE'\n          When UPPER(workout_name) like '%BOXING%' Then 'BOXING'\n          When UPPER(workout_name) like '%CARDIO%' Then 'CARDIO'\n          When UPPER(workout_name) like '%DANCE%' Then 'DANCE'\n          When UPPER(workout_name) like '%HIIT%' Then 'HIIT'\n          When UPPER(workout_name) like '%BURN%' Then 'BURN'\n          When UPPER(workout_name) like '%HRX%' Then 'HRX'\n          When UPPER(workout_name) like '%GYM%' Then 'GYM'\n          When (\n            UPPER(workout_name) like '%S&C%'\n            or UPPER(workout_name) like '%STRENGTH AND CONDITIONING%'\n            or UPPER(workout_name) like '%STRENGTH%'\n          ) Then 'STRENGTH'\n          When service_type like '%GYM%' Then 'GYM'\n          Else workout_name\n        End as workoutname,\n        service_type,\n        -- e.employee_name as trainername, \n        -- c.center_name, \n        -- c.city_name,\n        class_id\n      from base class_base  join \n        dwh_fitness_mart.booking_fact bf on bf.membership_key=class_base.membership_key \n        --and date(class_date) between pack_start_date and pack_end_date\n        Left join dwh_fitness_mart.workout_dim wd ON bf.workout_key = wd.workout_key\n        Left join dwh_fitness_mart.employee_dim e ON bf.trainer_key = e.employee_key\n        and service_type = ('GX')\n        Left join dwh_fitness_mart.center_dim c on bf.center_key = c.center_key\n      Where\n        class_date between  Date('2017-01-01') \n        and {{Last_date}}\n        and attendance_time is not null\n        and service_type IN ('GX', 'GYM', 'PLAY')\n        -- and Exists (select 1 from (select  user_id from base Union  select  user2 as user_id from usersinSquads) b1 where b1.user_id=bf.user_id\n        \n        \n--         and (EXISTS (SELECT 1 FROM base WHERE base.user_id = bf.user_id)\n--   OR EXISTS (SELECT 1 FROM usersinSquads WHERE usersinSquads.user2 = bf.user_id)\n        -- or user_id in (select distinct user_id from Squads)\n        -- )\n    --   Union All\n    \n    --   Select\n    --     distinct\n    --     userid,\n    --     usersessionid,\n    --     -- Case\n    --     --   When UPPER(packid) like '%DIYLIV01%' Then 400\n    --     --   When UPPER(packid) in ('DIYLIV06', 'DIYLIV04')\n    --     --   or UPPER(packid) in ('DIYPACK018', 'DIYPACK009') Then 350\n    --     --   Else 250\n    --     -- End,\n    --     createddate_date,\n    --     createddate,\n    --     -- Date_Trunc('Week', createddate_date) Weeks_Active,\n    --     -- Case\n    --     --   When extract(\n    --     --     Hour\n    --     --     From\n    --     --       createddate\n    --     --   ) <= 12 Then 'Morning'\n    --     --   Else 'Evening'\n    --     -- End as slot,\n    --     -- Round(((1.0 * user_duration) / 60000), 0) as minutes,\n    --     -- Extract(\n    --     --   DOW\n    --     --   FROM\n    --     --     createddate_date\n    --     -- ) as day_week,\n    --     Case\n    --       When UPPER(packid) LIKE '%DIY%' Then 'DIY'\n    --       When UPPER(packid) LIKE '%LIVE%' Then Split(UPPER(packid), '_') [ 1 ]\n    --       When UPPER(packid) LIKE '%MEDPACK%' Then 'MEDITATION'\n    --       When UPPER(packid) LIKE '%MMPACK%' Then 'MEDITATION'\n    --       When UPPER(packid) LIKE '%SNC%' Then 'STRENGTH'\n    --       Else UPPER(packid)\n    --     End as packid,\n    --     'Live',\n    --     -- trainername, \n    --     -- null as center_name,\n    --     -- selectedcityid as city_name,\n    --     null as classid\n\n    --   from base class_base  join dwh_live.live_bookings\n    --     -- add membership_dim here\n    --   on live_bookings.membership_key=class_base.membership_key and date(createddate_date) between pack_start_date and pack_end_date\n    --   Where\n    --     year(createddate_date) >= year(Date('2017-01-01'))\n    --     and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n    --     and live_bookings.userid_50_percent_completed is not Null\n    --     and UPPER(packid) in (\n    --       'YOGA',\n    --       'STRENGTH',\n    --       'SNC',\n    --       'LIVE_YOGA',\n    --       'LIVE_SNC',\n    --       'LIVE_DANCE',\n    --       'HRX',\n    --       'DANCE',\n    --       'BOXING',\n    --       'CARDIO'\n    --     )\n\n    ),\nUser_classes as(\n  \n          select\n            bs.membership_key,\n            -- Count(Distinct cl.classes) as classes,\n            -- case\n            --   when count(\n            --     case\n            --       when class_date between date_add('day', -30, pack_end_date)\n            --       and pack_end_date then cl.classes\n            --     end\n            --   ) > 0 then True\n            --   else False\n            -- end as last_month_active,\n            -- Sum(calorie) calorie_burnt,\n            -- Count(Distinct class_date) total_woorkout_days,\n            -- Min(class_date) as first_class,\n            -- Max(class_date) as latest_class,\n            -- Sum(minutes) total_minutes_worked,\n            -- nullif(Count(\n            --   Distinct center_name\n            -- ) ,0) as Centers,\n            -- -- nullif(Count(\n            -- --   Distinct cl.city_name\n            -- -- ) ,0) as Cities,\n            -- nullif(Count(\n            --   Distinct Case\n            --     When day_week in (6, 7) Then class_date\n            --   End\n            -- ) ,0) as Weekend_at_cult,\n            -- nullif ( Count(\n            --   Distinct Case\n            --     When day_week in (6, 7) Then DATE_TRUNC('week', class_date)\n            --   End\n            -- ),0) as DISTINCT_Weekend_at_cult,\n            nullif(Count(Distinct workoutname),0) as formats,\n            case\n              when Count(Distinct workoutname) > 1 then Array_distinct(Array_agg(workoutname))\n            end as formats_concat,\n            nullif(Count(\n              Distinct Case\n                When service_type in ('GX') Then cl.classes\n              End\n            ),0) as GX_Classes,\n            nullif(Count(\n              Distinct Case\n                When service_type in ('GYM') Then cl.classes\n              End\n            ),0) as GYM_Classes,\n            nullif(Count(\n              Distinct Case\n                When service_type in ('Live') Then cl.classes\n              End\n            ),0) as Live_Classes,\n            nullif(Count(\n              Distinct Case\n                When service_type in ('PLAY') Then cl.classes\n              End\n            ),0) as PLAY_Classes\n            -- nullif(Count(\n            --   Distinct Case\n            --     When slot = 'Morning' Then cl.classes\n            --   End\n            -- ),0) as Morning_Classes,\n            -- nullif(Count(\n            --   Distinct Case\n            --     When slot = 'Evening' Then cl.classes\n            --   End\n            -- ),0) as Evening_Classes,\n            -- nullif(Count(Distinct Weeks_Active),0) Weeks_Active\n          from\n            base bs\n             join all_sessions_df cl on bs.membership_key = cl.membership_key\n            -- and class_date between pack_start_date and pack_end_date\n            \n          group by\n            1\n        \n    )\nselect \ncount(distinct case when formats=1  then membership_key end ) as Single_format,\ncount(distinct case when formats>1  then membership_key end ) as Multi_format\nfrom User_classes \n-- and "
+    }
+  },
+  "id": 75654,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "QEzEeEVfMzDI4vQDWzgBy",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3412,
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "last_name": "Vardhan",
+    "timestamp": "2026-02-09T10:21:22.656062Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "Single_format",
+    "table.cell_column": "Multi_format"
+  },
+  "collection": {
+    "metabase.models.collection.root/is-root?": true,
+    "authority_level": null,
+    "name": "Our analytics",
+    "is_personal": false,
+    "id": "root",
+    "can_write": true
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "b6d3fa4f-a50d-4807-a07e-64f5599d29da",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Last_date"
+        ]
+      ],
+      "name": "Last Date",
+      "slug": "Last_date",
+      "default": "2025-12-31"
+    }
+  ],
+  "created_at": "2026-02-09T09:48:38.852961Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

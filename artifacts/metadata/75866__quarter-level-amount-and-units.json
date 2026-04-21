@@ -1,0 +1,510 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 404,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "quarter_year",
+      "field_ref": [
+        "field",
+        "quarter_year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "quarter_year",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 17,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "year",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "year",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 5,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 2022.0,
+            "q1": 2022.5625,
+            "q3": 2024.6875,
+            "max": 2026.0,
+            "sd": 1.2718675476729209,
+            "avg": 2023.6470588235295
+          }
+        }
+      }
+    },
+    {
+      "display_name": "quarter",
+      "field_ref": [
+        "field",
+        "quarter",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "base_type": "type/Integer",
+      "effective_type": "type/Integer",
+      "name": "quarter",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1.0,
+            "q1": 1.363190752252148,
+            "q3": 3.4375,
+            "max": 4.0,
+            "sd": 1.1757350641945108,
+            "avg": 2.411764705882353
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_amount",
+      "field_ref": [
+        "field",
+        "total_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 17,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 223838911.0,
+            "q1": 630302028.0,
+            "q3": 1236233171.75,
+            "max": 1631108772.0,
+            "sd": 411516842.99113667,
+            "avg": 914026359.4705882
+          }
+        }
+      }
+    },
+    {
+      "display_name": "base_amount",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "base_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 17,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 190854217.0,
+            "q1": 555500041.0,
+            "q3": 1087116810.75,
+            "max": 1456963939.0,
+            "sd": 371164843.95192593,
+            "avg": 803554449.1764706
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_nlc",
+      "field_ref": [
+        "field",
+        "total_nlc",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_nlc",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 17,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 781012099.0,
+            "q1": 2523958784.0,
+            "q3": 17006551918.75,
+            "max": 47847322843.0,
+            "sd": 11893242234.391668,
+            "avg": 11499524868.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "units",
+      "field_ref": [
+        "field",
+        "units",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "units",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 17,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 80367.0,
+            "q1": 271341.7525,
+            "q3": 845004.375,
+            "max": 1587760.0,
+            "sd": 406314.98861393286,
+            "avg": 625104.6329411764
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm",
+      "field_ref": [
+        "field",
+        "gm",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 17,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -47656468626.0,
+            "q1": -16324475968.0,
+            "q3": -1732718822.5,
+            "max": -180401790.0,
+            "sd": 12078266871.918749,
+            "avg": -10695970418.82353
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gm_percent",
+      "field_ref": [
+        "field",
+        "gm_percent",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gm_percent",
+      "semantic_type": "type/Share",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 17,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -249.70089409132626,
+            "q1": -24.825659717000423,
+            "q3": -2.0366458982527957,
+            "max": -0.16158180327134136,
+            "sd": 58.73574162481615,
+            "avg": -26.24239346730674
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "Quarter Level Amount and Units",
+  "last_used_at": "2026-04-16T12:12:21.872735Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-24T05:09:29.196768Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_date": {
+          "type": "date",
+          "name": "start_date",
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "display-name": "Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "end_date": {
+          "type": "date",
+          "name": "end_date",
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "display-name": "End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535274,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "sub_category": {
+          "type": "dimension",
+          "name": "sub_category",
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "display-name": "Sub Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9615855,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "article_type": {
+          "type": "dimension",
+          "name": "article_type",
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "display-name": "Article Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535281,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "#75683-raw-data": {
+          "type": "card",
+          "name": "#75683-raw-data",
+          "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+          "display-name": "#75683 Raw Data",
+          "card-id": 75683
+        },
+        "consider_purchase": {
+          "type": "text",
+          "name": "consider_purchase",
+          "id": "080b5407-5112-42b0-a6ff-2d899c98e11a",
+          "display-name": "Consider Purchase"
+        }
+      },
+      "query": "SELECT \n    CONCAT(\n    CASE\n      WHEN MONTH(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) BETWEEN 1 AND 3  THEN 'Q1'\n      WHEN MONTH(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) BETWEEN 4 AND 6  THEN 'Q2'\n      WHEN MONTH(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) BETWEEN 7 AND 9  THEN 'Q3'\n      ELSE 'Q4'\n    END,\n    '-',\n    CAST(YEAR(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS VARCHAR)\n  ) AS quarter_year,\n  YEAR(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS year,\n  CASE\n      WHEN MONTH(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) BETWEEN 1 AND 3  THEN 1\n      WHEN MONTH(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) BETWEEN 4 AND 6  THEN 2\n      WHEN MONTH(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) BETWEEN 7 AND 9  THEN 3\n      ELSE 4\n  END AS quarter,\n  ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n  ROUND(SUM(nlc)) AS total_nlc,\n  SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n  ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n  (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n[[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\nGROUP BY 1, 2, 3\nORDER BY 1, 2 ,3\n\n\n"
+    }
+  },
+  "id": 75866,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "Cum15OCOpUmis0wGG7G1p",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "business_unit",
+    "table.cell_column": "unique_id",
+    "pie.metric": "total_amount",
+    "pie.dimension": [
+      "month"
+    ],
+    "column_settings": {
+      "[\"name\",\"gm_percent\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "Start Date",
+      "slug": "start_date"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "End Date",
+      "slug": "end_date"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "Sub Category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "Article Type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "080b5407-5112-42b0-a6ff-2d899c98e11a",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "Consider Purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-02-12T06:17:21.944733Z",
+  "public_uuid": null
+}

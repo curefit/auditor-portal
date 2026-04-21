@@ -1,0 +1,288 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 306,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "order_date",
+      "field_ref": [
+        "field",
+        "order_date",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "order_date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 13,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 13.076923076923077
+          }
+        }
+      }
+    },
+    {
+      "display_name": "sort_key",
+      "field_ref": [
+        "field",
+        "sort_key",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "sort_key",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 13,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2025-03-01",
+            "latest": "2026-03-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 13,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 3315824.0,
+            "q1": 6378723.75,
+            "q3": 9559494.75,
+            "max": 11930994.0,
+            "sd": 2485546.5565684945,
+            "avg": 7707192.0
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5860,
+  "query_type": "native",
+  "name": "EBO - Cross-Sell Trend \u2013 Last 12 Months",
+  "last_used_at": "2026-04-16T10:15:15.843855Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:27:35.291107Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "0c4480ad-c12f-4c36-b940-bb0297612681",
+          "display-name": "Order Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "100de142-24d5-4182-a8be-ad83c6ebe123",
+          "display-name": "Order End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "date_filter": {
+          "type": "text",
+          "name": "date_filter",
+          "id": "8464aaea-9c49-44fe-b660-666a7619b067",
+          "display-name": "Date Filter",
+          "default": "Month"
+        },
+        "store_name": {
+          "type": "dimension",
+          "name": "store_name",
+          "id": "4e23daa3-d362-49d7-8fae-c7a89420c295",
+          "display-name": "Store Name",
+          "default": null,
+          "dimension": [
+            "field",
+            9535355,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "twelve_month_trend": {
+          "type": "number",
+          "name": "twelve_month_trend",
+          "id": "45ff809b-e213-4375-a9a3-592c8a6babfc",
+          "display-name": "Twelve Month Trend",
+          "default": "1",
+          "widget-type": null
+        }
+      },
+      "query": "SELECT \n    CASE \n        WHEN {{date_filter}} = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n        WHEN {{date_filter}} = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n        WHEN {{date_filter}} = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n    END AS order_date,\n    CASE\n        WHEN {{date_filter}} = 'Year' THEN date_trunc('year', order_date)\n        WHEN {{date_filter}} = 'Month' THEN date_trunc('month', order_date)\n        WHEN {{date_filter}} = 'Quarter' THEN date_trunc('quarter', order_date)\n    END AS sort_key,\n    ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member= 1\n      AND is_cancelled = 0\n      AND channel = 'EBO'\n      [[AND {{store_name}}]]\n      AND CASE \n            WHEN {{twelve_month_trend}} = 1 THEN order_date BETWEEN DATE_TRUNC('MONTH',CURRENT_DATE) - INTERVAL '13' MONTH AND DATE_TRUNC('MONTH',CURRENT_DATE) - INTERVAL '1' DAY\n            ELSE {{twelve_month_trend}} = 0 [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n          END\nGROUP BY 1,2\nORDER BY sort_key"
+    }
+  },
+  "id": 65202,
+  "parameter_mappings": [],
+  "display": "line",
+  "archived_directly": false,
+  "entity_id": "9ZsLY5nQTfHHCnvEsw2LP",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.show_goal": false,
+    "graph.show_trendline": false,
+    "graph.show_values": true,
+    "graph.series_order_dimension": null,
+    "graph.label_value_frequency": "all",
+    "graph.metrics": [
+      "total_gmv"
+    ],
+    "graph.label_value_formatting": "compact",
+    "graph.series_order": null,
+    "graph.dimensions": [
+      "order_date"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "0c4480ad-c12f-4c36-b940-bb0297612681",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date"
+    },
+    {
+      "id": "100de142-24d5-4182-a8be-ad83c6ebe123",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date"
+    },
+    {
+      "slug": "date_filter",
+      "values_query_type": "list",
+      "default": "Month",
+      "name": "Date Filter",
+      "type": "category",
+      "values_source_type": "static-list",
+      "id": "8464aaea-9c49-44fe-b660-666a7619b067",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "date_filter"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "Month"
+          ],
+          [
+            "Quarter"
+          ],
+          [
+            "Year"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "4e23daa3-d362-49d7-8fae-c7a89420c295",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "store_name"
+        ]
+      ],
+      "name": "Store Name",
+      "slug": "store_name"
+    },
+    {
+      "slug": "twelve_month_trend",
+      "values_query_type": "list",
+      "default": "1",
+      "name": "Twelve Month Trend",
+      "type": "number/=",
+      "values_source_type": "static-list",
+      "id": "45ff809b-e213-4375-a9a3-592c8a6babfc",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "twelve_month_trend"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2025-08-04T15:44:47.044011Z",
+  "public_uuid": null
+}

@@ -1,0 +1,305 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 272,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "City",
+      "field_ref": [
+        "field",
+        "City",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "City",
+      "semantic_type": "type/City",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.29816513761468
+          }
+        }
+      }
+    },
+    {
+      "display_name": "period",
+      "field_ref": [
+        "field",
+        "period",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "period",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 64,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 12.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Product Rating (PR)",
+      "field_ref": [
+        "field",
+        "Product Rating (PR)",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "Product Rating (PR)",
+      "semantic_type": "type/Score",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 22,
+          "nil%": 0.004587155963302752
+        },
+        "type": {
+          "type/Number": {
+            "min": 3.73,
+            "q1": 3.770738355721605,
+            "q3": 3.8496952814534677,
+            "max": 3.93,
+            "sd": 0.04997372155624258,
+            "avg": 3.8125115207373272
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "PR BY CITY",
+  "last_used_at": "2026-04-16T12:31:31.03024Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3486,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-11T03:20:35.445682Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "report_start_date": {
+          "id": "7d8edb1c-2061-dd49-018b-7d35892261d0",
+          "name": "report_start_date",
+          "display-name": "Report start date",
+          "type": "date"
+        },
+        "report_end_date": {
+          "id": "6f9b3db7-cbea-db4b-2d27-c071edab1dc4",
+          "name": "report_end_date",
+          "display-name": "Report end date",
+          "type": "date"
+        },
+        "service_type": {
+          "id": "2ea71374-7aa0-aa4a-b3e7-2d17b2d93789",
+          "name": "service_type",
+          "display-name": "Service type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712473,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "ownership_type": {
+          "id": "b4f2c00e-c707-a3a1-3e9a-fab7ac2ae916",
+          "name": "ownership_type",
+          "display-name": "Ownership type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712485,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "business_line": {
+          "id": "ff4cf4ed-40ae-faaa-7e68-bc1c0142c89e",
+          "name": "business_line",
+          "display-name": "Business line",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712478,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_name": {
+          "id": "e077f4a7-9d0d-4c06-8729-feeaae672348",
+          "name": "center_name",
+          "display-name": "Center name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712482,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_service_id": {
+          "id": "8221ef91-813e-a34e-b4f4-1d576fb909e9",
+          "name": "center_service_id",
+          "display-name": "Center service",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712476,
+            null
+          ],
+          "widget-type": "number/="
+        }
+      },
+      "query": "WITH bt_data AS (\n    -- Monthly Metrics by City\n    SELECT \n        CASE \n            WHEN cd.city_name = 'Bangalore' THEN '1. Bangalore'\n            WHEN cd.city_name = 'Hyderabad' THEN '2. Hyderabad'\n            WHEN cd.city_name = 'Gurgaon' THEN '3. NCR'\n            WHEN cd.city_name IN ('Mumbai', 'Navi_Mumbai_and_Thane') THEN '4. Mumbai'\n            WHEN cd.city_name = 'Pune' THEN '5. Pune'\n            WHEN cd.city_name = 'Chennai' THEN '6. Chennai'\n            ELSE '7. Others'\n        END AS \"City\",\n        DATE_TRUNC('month', bf.attendance_time) AS period,\n        'M' AS period_type,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value, -- Total Rating Value\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings -- Total Ratings Count\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        [[AND {{center_service_id}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.booking_date BETWEEN {{report_start_date}} AND {{report_end_date}}\n    GROUP BY \n        CASE \n            WHEN cd.city_name = 'Bangalore' THEN '1. Bangalore'\n            WHEN cd.city_name = 'Hyderabad' THEN '2. Hyderabad'\n            WHEN cd.city_name = 'Gurgaon' THEN '3. NCR'\n            WHEN cd.city_name IN ('Mumbai', 'Navi_Mumbai_and_Thane') THEN '4. Mumbai'\n            WHEN cd.city_name = 'Pune' THEN '5. Pune'\n            WHEN cd.city_name = 'Chennai' THEN '6. Chennai'\n            ELSE '7. Others'\n        END,\n        DATE_TRUNC('month', bf.attendance_time)\n\n    UNION ALL\n\n    -- Quarterly Metrics by City\n    SELECT \n        CASE \n            WHEN cd.city_name = 'Bangalore' THEN '1. Bangalore'\n            WHEN cd.city_name = 'Hyderabad' THEN '2. Hyderabad'\n            WHEN cd.city_name = 'Gurgaon' THEN '3. NCR'\n            WHEN cd.city_name IN ('Mumbai', 'Navi_Mumbai_and_Thane') THEN '4. Mumbai'\n            WHEN cd.city_name = 'Pune' THEN '5. Pune'\n            WHEN cd.city_name = 'Chennai' THEN '6. Chennai'\n            ELSE '7. Others'\n        END AS \"City\",\n        DATE_TRUNC('quarter', bf.attendance_time) AS period,\n        'Q' AS period_type,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value,\n        COUNT(DISTINCT CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        [[AND {{center_service_id}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.booking_date BETWEEN {{report_start_date}} AND {{report_end_date}}\n    GROUP BY \n        CASE \n            WHEN cd.city_name = 'Bangalore' THEN '1. Bangalore'\n            WHEN cd.city_name = 'Hyderabad' THEN '2. Hyderabad'\n            WHEN cd.city_name = 'Gurgaon' THEN '3. NCR'\n            WHEN cd.city_name IN ('Mumbai', 'Navi_Mumbai_and_Thane') THEN '4. Mumbai'\n            WHEN cd.city_name = 'Pune' THEN '5. Pune'\n            WHEN cd.city_name = 'Chennai' THEN '6. Chennai'\n            ELSE '7. Others'\n        END,\n        DATE_TRUNC('quarter', bf.attendance_time)\n)\n\nSELECT \n    bt.\"City\",\n    CONCAT(bt.period_type, '-', CAST(CAST(bt.period AS DATE) AS VARCHAR)) AS period,  -- Cast the DATE to VARCHAR for CONCAT\n    ROUND(bt.total_rating_value * 1.00 / NULLIF(bt.total_ratings, 0), 2) AS \"Product Rating (PR)\"\nFROM bt_data bt\nORDER BY \n    bt.period_type DESC,\n    bt.period,\n    CASE\n        WHEN bt.\"City\" = '1. Bangalore' THEN 1\n        WHEN bt.\"City\" = '2. Hyderabad' THEN 2\n        WHEN bt.\"City\" = '3. NCR' THEN 3\n        WHEN bt.\"City\" = '4. Mumbai' THEN 4\n        WHEN bt.\"City\" = '5. Pune' THEN 5\n        WHEN bt.\"City\" = '6. Chennai' THEN 6\n        ELSE 7\n    END"
+    }
+  },
+  "id": 56862,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "iIDOKuAjN1NIobWmuuCDR",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot": true,
+    "table.pivot_column": "period",
+    "table.cell_column": "Product Rating (PR)"
+  },
+  "metabase_version": null,
+  "parameters": [
+    {
+      "id": "7d8edb1c-2061-dd49-018b-7d35892261d0",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_start_date"
+        ]
+      ],
+      "name": "Report start date",
+      "slug": "report_start_date"
+    },
+    {
+      "id": "6f9b3db7-cbea-db4b-2d27-c071edab1dc4",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_end_date"
+        ]
+      ],
+      "name": "Report end date",
+      "slug": "report_end_date"
+    },
+    {
+      "id": "2ea71374-7aa0-aa4a-b3e7-2d17b2d93789",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service type",
+      "slug": "service_type"
+    },
+    {
+      "id": "b4f2c00e-c707-a3a1-3e9a-fab7ac2ae916",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "ownership_type"
+        ]
+      ],
+      "name": "Ownership type",
+      "slug": "ownership_type"
+    },
+    {
+      "id": "ff4cf4ed-40ae-faaa-7e68-bc1c0142c89e",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "business_line"
+        ]
+      ],
+      "name": "Business line",
+      "slug": "business_line"
+    },
+    {
+      "id": "e077f4a7-9d0d-4c06-8729-feeaae672348",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_name"
+        ]
+      ],
+      "name": "Center name",
+      "slug": "center_name"
+    },
+    {
+      "id": "8221ef91-813e-a34e-b4f4-1d576fb909e9",
+      "type": "number/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_service_id"
+        ]
+      ],
+      "name": "Center service",
+      "slug": "center_service_id"
+    }
+  ],
+  "created_at": "2024-12-16T05:35:58.917477Z",
+  "public_uuid": null
+}

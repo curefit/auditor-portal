@@ -1,0 +1,468 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 275,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "Month",
+      "field_ref": [
+        "field",
+        "Month",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "Month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 45,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 29.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Total Footfalls",
+      "field_ref": [
+        "field",
+        "Total Footfalls",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "Total Footfalls",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 45,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1424396.0,
+            "q1": 2530634.5,
+            "q3": 4153108.0,
+            "max": 5482918.0,
+            "sd": 1055331.6085639212,
+            "avg": 3331720.9777777777
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Total Ratings (AGBT)",
+      "field_ref": [
+        "field",
+        "Total Ratings (AGBT)",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "Total Ratings (AGBT)",
+      "semantic_type": "type/Score",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 45,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 506097.0,
+            "q1": 711083.5,
+            "q3": 868040.5,
+            "max": 1128768.0,
+            "sd": 145497.98813421454,
+            "avg": 799634.6222222223
+          }
+        }
+      }
+    },
+    {
+      "display_name": "BT Responses",
+      "field_ref": [
+        "field",
+        "BT Responses",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "BT Responses",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 44,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 13447.0,
+            "q1": 22321.75,
+            "q3": 30201.5,
+            "max": 50405.0,
+            "sd": 8797.711494324745,
+            "avg": 27861.68888888889
+          }
+        }
+      }
+    },
+    {
+      "display_name": "BT %",
+      "field_ref": [
+        "field",
+        "BT %",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "BT %",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 40,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Verbatim Count",
+      "field_ref": [
+        "field",
+        "Verbatim Count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "Verbatim Count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 45,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 18316.0,
+            "q1": 22200.75,
+            "q3": 27607.75,
+            "max": 32259.0,
+            "sd": 3600.783094121207,
+            "avg": 25040.466666666667
+          }
+        }
+      }
+    },
+    {
+      "display_name": "Response Rate (%)",
+      "field_ref": [
+        "field",
+        "Response Rate (%)",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "Response Rate (%)",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 42,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 6.0
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "RESPONSE FUNNEL",
+  "last_used_at": "2026-04-13T05:50:39.244404Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 147635810,
+      "cardId": 56872,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 1.07m. Optimize Query to reduce execution time."
+        }
+      ],
+      "queryHash": "40603692b518f66fc3670156fe0f8c74d1c645bde6361c7b72a83097a850f426",
+      "executionStartTime": "2026-04-17T03:01:54.472+0000",
+      "tables": [
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim"
+      ],
+      "archive": false
+    }
+  ],
+  "creator_id": 3486,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-11T03:28:50.478625Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "report_start_date": {
+          "id": "e1ef0c47-454c-2082-2900-8ca81dfad659",
+          "name": "report_start_date",
+          "display-name": "Report start date",
+          "type": "date"
+        },
+        "report_end_date": {
+          "id": "5f2a8da3-c317-714a-e63d-c2b40c32e2ef",
+          "name": "report_end_date",
+          "display-name": "Report end date",
+          "type": "date"
+        },
+        "city_name": {
+          "id": "38bd68f5-ba3a-8c4f-5159-2d04cddd53d1",
+          "name": "city_name",
+          "display-name": "City name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712462,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_service_id": {
+          "id": "784cd775-7b3b-99e0-e58e-76f4d381d77b",
+          "name": "center_service_id",
+          "display-name": "Center service",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712476,
+            null
+          ],
+          "widget-type": "number/="
+        },
+        "service_type": {
+          "id": "730c3b92-8c92-fdde-0ef2-96e43890c99e",
+          "name": "service_type",
+          "display-name": "Service type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712473,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "ownership_type": {
+          "id": "e5e9f797-3e6f-aaa4-87c1-1a90c971b388",
+          "name": "ownership_type",
+          "display-name": "Ownership type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712485,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "business_line": {
+          "id": "f5ee51e8-3570-7324-0cfa-f6445db1c776",
+          "name": "business_line",
+          "display-name": "Business line",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712478,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_name": {
+          "id": "f78df6eb-1947-4378-60fe-cbfc5f157f3a",
+          "name": "center_name",
+          "display-name": "Center name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712482,
+            null
+          ],
+          "widget-type": "string/="
+        }
+      },
+      "query": "WITH response_data AS (\n    SELECT \n        'GYM + GX + SPORTS' AS \"Service Type\",  -- Aggregated service type\n        DATE_TRUNC('month', bf.attendance_time) AS month,\n        \n        -- Total Footfalls\n        COUNT(CASE WHEN bf.attendance_time IS NOT NULL THEN bf.booking_key END) AS total_ff, \n        \n        -- Total Responses (AGBT: Rating value 1, 2, 3, 4)\n        COUNT(CASE WHEN bf.attendance_time IS NOT NULL AND bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_rating,\n        \n        -- BT Responses (Rating value 1, 2)\n        COUNT(CASE WHEN bf.attendance_time IS NOT NULL AND bf.rating_value IN (1, 2) THEN bf.booking_key END) AS bt_responses,\n        \n        -- Verbatim Submissions (Users who provided reviews)\n        COUNT(CASE WHEN bf.review IS NOT NULL AND bf.review <> '' THEN bf.booking_key END) AS verbatim_count\n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * \n         FROM dwh_fitness_mart.center_dim \n         WHERE 1=1\n           [[AND {{city_name}}]]\n           [[AND {{center_service_id}}]]\n           [[AND {{service_type}}]]\n           [[AND {{ownership_type}}]]\n           [[AND {{business_line}}]]\n           [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND cd.center_type IN ('GYM', 'GX', 'SPORTS')\n    GROUP BY \n        DATE_TRUNC('month', bf.attendance_time)  -- Ensure proper grouping\n)\nSELECT \n    CONCAT('M-', CAST(month AS VARCHAR)) AS \"Month\", -- Format for month\n    total_ff AS \"Total Footfalls\",\n    total_rating AS \"Total Ratings (AGBT)\",\n    bt_responses AS \"BT Responses\",\n    -- CONCAT(\n    --     CAST(ROUND((bt_responses * 100.0) / NULLIF(total_rating, 0), 2) AS VARCHAR), '%'\n    -- ) AS \"BT %\",\n    format('%.2f%%', coalesce(round(100.0 * bt_responses / nullif(total_rating, 0), 2), 0.0)) as \"BT %\",\n    verbatim_count AS \"Verbatim Count\",\n    -- CONCAT(\n    --     CAST(ROUND((total_rating * 100.0) / NULLIF(total_ff, 0), 2) AS VARCHAR), '%'\n    -- ) AS \"Response Rate (%)\" \n    format('%.2f%%', coalesce(round(100.0 * total_rating / nullif(total_ff, 0), 2), 0.0)) as \"Response Rate (%)\"\nFROM response_data\nORDER BY \n    \"Month\" ASC"
+    }
+  },
+  "id": 56872,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "RzGFFNzoM16wR9XsK-Z36",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.transpose": true,
+    "table.pivot_column": "month",
+    "table.cell_column": "Total Footfalls"
+  },
+  "metabase_version": null,
+  "parameters": [
+    {
+      "id": "e1ef0c47-454c-2082-2900-8ca81dfad659",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_start_date"
+        ]
+      ],
+      "name": "Report start date",
+      "slug": "report_start_date"
+    },
+    {
+      "id": "5f2a8da3-c317-714a-e63d-c2b40c32e2ef",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_end_date"
+        ]
+      ],
+      "name": "Report end date",
+      "slug": "report_end_date"
+    },
+    {
+      "id": "38bd68f5-ba3a-8c4f-5159-2d04cddd53d1",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "city_name"
+        ]
+      ],
+      "name": "City name",
+      "slug": "city_name"
+    },
+    {
+      "id": "784cd775-7b3b-99e0-e58e-76f4d381d77b",
+      "type": "number/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_service_id"
+        ]
+      ],
+      "name": "Center service",
+      "slug": "center_service_id"
+    },
+    {
+      "id": "730c3b92-8c92-fdde-0ef2-96e43890c99e",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service type",
+      "slug": "service_type"
+    },
+    {
+      "id": "e5e9f797-3e6f-aaa4-87c1-1a90c971b388",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "ownership_type"
+        ]
+      ],
+      "name": "Ownership type",
+      "slug": "ownership_type"
+    },
+    {
+      "id": "f5ee51e8-3570-7324-0cfa-f6445db1c776",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "business_line"
+        ]
+      ],
+      "name": "Business line",
+      "slug": "business_line"
+    },
+    {
+      "id": "f78df6eb-1947-4378-60fe-cbfc5f157f3a",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_name"
+        ]
+      ],
+      "name": "Center name",
+      "slug": "center_name"
+    }
+  ],
+  "created_at": "2024-12-16T06:11:29.017785Z",
+  "public_uuid": null
+}

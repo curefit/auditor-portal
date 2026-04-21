@@ -1,0 +1,515 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 2869,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "order_date",
+      "field_ref": [
+        "field",
+        "order_date",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "order_date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 31,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2026-03-01",
+            "latest": "2026-03-31"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "is_fs_member",
+      "field_ref": [
+        "field",
+        "is_fs_member",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "is_fs_member",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 11.524590163934427
+          }
+        }
+      }
+    },
+    {
+      "display_name": "is_weekend",
+      "field_ref": [
+        "field",
+        "is_weekend",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "base_type": "type/Integer",
+      "effective_type": "type/Integer",
+      "name": "is_weekend",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 0.7108419350765709,
+            "max": 1.0,
+            "sd": 0.45986455596845643,
+            "avg": 0.29508196721311475
+          }
+        }
+      }
+    },
+    {
+      "display_name": "week_of_month",
+      "field_ref": [
+        "field",
+        "week_of_month",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "week_of_month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 6,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1.0,
+            "q1": 2.4464285714285716,
+            "q3": 4.693063937629153,
+            "max": 6.0,
+            "sd": 1.3349034471132186,
+            "avg": 3.5737704918032787
+          }
+        }
+      }
+    },
+    {
+      "display_name": "day_of_week",
+      "field_ref": [
+        "field",
+        "day_of_week",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "day_of_week",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1.0,
+            "q1": 2.0250944597867986,
+            "q3": 5.84375,
+            "max": 7.0,
+            "sd": 2.10891938765012,
+            "avg": 3.9508196721311477
+          }
+        }
+      }
+    },
+    {
+      "display_name": "day_name",
+      "field_ref": [
+        "field",
+        "day_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "day_name",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.032786885245901
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gmv",
+      "field_ref": [
+        "field",
+        "gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 61,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1103867.0,
+            "q1": 1694436.75,
+            "q3": 4247617.25,
+            "max": 7831477.0,
+            "sd": 1465819.7333547517,
+            "avg": 3043553.9344262294
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 31,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 4352473.0,
+            "q1": 5120972.875,
+            "q3": 6574130.0,
+            "max": 10949172.0,
+            "sd": 1255503.3163417492,
+            "avg": 6006881.737704918
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5748,
+  "query_type": "native",
+  "name": "Current Month Day Wise Cross Sell VS D2C",
+  "last_used_at": "2026-04-17T05:24:50.610177Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T08:56:10.313881Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "3d82eef6-d231-47c8-b006-01278ce460e6",
+          "display-name": "Order Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "53fded7c-3140-4e6f-8bce-5fa4fc84f4dc",
+          "display-name": "Order End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "current_month_trend": {
+          "type": "number",
+          "name": "current_month_trend",
+          "id": "5a688989-9db8-43af-a5c2-40046987917f",
+          "display-name": "Current Month Trend",
+          "default": "1",
+          "widget-type": null
+        },
+        "source": {
+          "type": "dimension",
+          "name": "source",
+          "id": "a455ea9c-dee1-4122-abc2-1f1e83f3d640",
+          "display-name": "Source",
+          "default": null,
+          "dimension": [
+            "field",
+            9535370,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "c3b547c2-d754-4853-a389-9a05fddf292e",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "cohort": {
+          "type": "dimension",
+          "name": "cohort",
+          "id": "9d8b936a-5b45-412d-9479-8bd40fd08c45",
+          "display-name": "Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "service_type": {
+          "type": "dimension",
+          "name": "service_type",
+          "id": "d7498558-355f-4a0f-aad8-ea18d614e4b7",
+          "display-name": "Service Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535349,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "WITH final_data AS\n(\n    SELECT \n        order_date,\n        CASE \n            WHEN is_fs_member = 0 THEN 'NON-FS MEMBER'\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n        END AS is_fs_member, \n        CASE \n            WHEN DAY_OF_WEEK(order_date) IN (6, 7) THEN 1 \n            ELSE 0 \n        END AS is_weekend,\n        WEEK(order_date) - WEEK(DATE_TRUNC('MONTH', order_date)) + 1  AS week_of_month,\n        DAY_OF_WEEK(order_date) AS day_of_week,\n        FORMAT_DATETIME(order_date, 'EEEE') AS day_name,\n        ROUND(SUM(gmv)) AS gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE 1 = 1\n         AND is_cancelled = 0\n         AND CASE \n                WHEN {{current_month_trend}} = 1 THEN order_date BETWEEN DATE_TRUNC('MONTH',CURRENT_DATE) AND CURRENT_DATE - INTERVAL '1' DAY\n                ELSE {{current_month_trend}} = 0 [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n             END\n         [[AND {{source}}]]\n         [[AND {{category}}]]\n         [[AND {{cohort}}]]\n         [[AND {{service_type}}]]\n         AND order_date <= CURRENT_DATE - INTERVAL '1' DAY\n    GROUP BY  1, 2,3, 4, 5, 6\n)\n\nSELECT *, ROUND(SUM(gmv) OVER(PARTITION BY order_date)) AS total_gmv\nFROM final_data\nORDER BY 1, 2"
+    }
+  },
+  "id": 64443,
+  "parameter_mappings": [],
+  "display": "line",
+  "archived_directly": false,
+  "entity_id": "EC5INyV-wB4jj99zUa696",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.show_values": true,
+    "graph.series_order_dimension": "is_fs_member",
+    "graph.label_value_frequency": "all",
+    "graph.metrics": [
+      "gmv"
+    ],
+    "graph.tooltip_columns": [
+      "[\"name\",\"is_weekend\"]",
+      "[\"name\",\"day_of_week\"]",
+      "[\"name\",\"week_of_month\"]",
+      "[\"name\",\"total_gmv\"]"
+    ],
+    "graph.label_value_formatting": "compact",
+    "graph.series_order": [
+      {
+        "key": "NON-FS MEMBER",
+        "color": "#227FD2",
+        "enabled": true,
+        "name": "NON-FS MEMBER"
+      },
+      {
+        "key": "CROSS-SELL",
+        "color": "#51528D",
+        "enabled": true,
+        "name": "CROSS-SELL"
+      }
+    ],
+    "series_settings": {
+      "0": {
+        "color": "#509EE3",
+        "title": "NON-FS MEMBER"
+      },
+      "1": {
+        "color": "#7172AD"
+      },
+      "NON-FS MEMBER": {
+        "color": "#227FD2"
+      },
+      "CROSS-SELL": {
+        "color": "#51528D"
+      }
+    },
+    "graph.dimensions": [
+      "order_date",
+      "is_fs_member"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "3d82eef6-d231-47c8-b006-01278ce460e6",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date"
+    },
+    {
+      "id": "53fded7c-3140-4e6f-8bce-5fa4fc84f4dc",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date"
+    },
+    {
+      "slug": "current_month_trend",
+      "values_query_type": "list",
+      "default": "1",
+      "name": "Current Month Trend",
+      "type": "number/=",
+      "values_source_type": "static-list",
+      "id": "5a688989-9db8-43af-a5c2-40046987917f",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "current_month_trend"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "a455ea9c-dee1-4122-abc2-1f1e83f3d640",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "source"
+        ]
+      ],
+      "name": "Source",
+      "slug": "source"
+    },
+    {
+      "id": "c3b547c2-d754-4853-a389-9a05fddf292e",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    },
+    {
+      "id": "9d8b936a-5b45-412d-9479-8bd40fd08c45",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "name": "Cohort",
+      "slug": "cohort"
+    },
+    {
+      "id": "d7498558-355f-4a0f-aad8-ea18d614e4b7",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service Type",
+      "slug": "service_type"
+    }
+  ],
+  "created_at": "2025-07-25T06:52:12.108518Z",
+  "public_uuid": null
+}

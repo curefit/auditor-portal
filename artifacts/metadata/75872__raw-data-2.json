@@ -1,0 +1,2905 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 404,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "business_unit",
+      "field_ref": [
+        "field",
+        "business_unit",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "business_unit",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 23.0404
+          }
+        }
+      }
+    },
+    {
+      "display_name": "transaction_tax_type",
+      "field_ref": [
+        "field",
+        "transaction_tax_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "transaction_tax_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 11.694
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_from_gstin",
+      "field_ref": [
+        "field",
+        "bill_from_gstin",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_from_gstin",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 19,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 14.613
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_from_state",
+      "field_ref": [
+        "field",
+        "bill_from_state",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_from_state",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 10,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.5674
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_gstin",
+      "field_ref": [
+        "field",
+        "bill_to_gstin",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_gstin",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 149,
+          "nil%": 0.7642
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 3.537
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_state",
+      "field_ref": [
+        "field",
+        "bill_to_state",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_state",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 32,
+          "nil%": 0.0006
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.3384
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_pincode",
+      "field_ref": [
+        "field",
+        "bill_to_pincode",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_pincode",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 183,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.8452
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_customer_name",
+      "field_ref": [
+        "field",
+        "bill_to_customer_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_customer_name",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 146,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 23.9468
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_customer_number",
+      "field_ref": [
+        "field",
+        "bill_to_customer_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_customer_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 147,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.699
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_customer_class",
+      "field_ref": [
+        "field",
+        "bill_to_customer_class",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_customer_class",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 8,
+          "nil%": 0.0622
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.309
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_customer_site_code",
+      "field_ref": [
+        "field",
+        "bill_to_customer_site_code",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_customer_site_code",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 399,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.7942
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_address",
+      "field_ref": [
+        "field",
+        "bill_to_address",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_address",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 252,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 39.2206
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_city",
+      "field_ref": [
+        "field",
+        "bill_to_city",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_city",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 136,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.0012
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bill_to_country",
+      "field_ref": [
+        "field",
+        "bill_to_country",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bill_to_country",
+      "semantic_type": "type/Country",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.9742,
+            "average-length": 1.9484
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_from_location",
+      "field_ref": [
+        "field",
+        "ship_from_location",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_from_location",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 11,
+          "nil%": 0.0304
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.5288
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_gstn",
+      "field_ref": [
+        "field",
+        "ship_to_gstn",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_gstn",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 149,
+          "nil%": 0.7642
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 3.537
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_state",
+      "field_ref": [
+        "field",
+        "ship_to_state",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_state",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 32,
+          "nil%": 0.0264
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.0802
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_city17",
+      "field_ref": [
+        "field",
+        "ship_to_city17",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_city17",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 135,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.0062
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_pincode",
+      "field_ref": [
+        "field",
+        "ship_to_pincode",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_pincode",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 182,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.8452
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_customer_name",
+      "field_ref": [
+        "field",
+        "ship_to_customer_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_customer_name",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 147,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 23.1516
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_customer_number",
+      "field_ref": [
+        "field",
+        "ship_to_customer_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_customer_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_custome_class",
+      "field_ref": [
+        "field",
+        "ship_to_custome_class",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_custome_class",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_customer_site_code",
+      "field_ref": [
+        "field",
+        "ship_to_customer_site_code",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_customer_site_code",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 398,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.9946
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_address",
+      "field_ref": [
+        "field",
+        "ship_to_address",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_address",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 252,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 39.1394
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_city24",
+      "field_ref": [
+        "field",
+        "ship_to_city24",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_city24",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 135,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.0062
+          }
+        }
+      }
+    },
+    {
+      "display_name": "ship_to_country",
+      "field_ref": [
+        "field",
+        "ship_to_country",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "ship_to_country",
+      "semantic_type": "type/Country",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.9742,
+            "average-length": 1.9484
+          }
+        }
+      }
+    },
+    {
+      "display_name": "invoice_type",
+      "field_ref": [
+        "field",
+        "invoice_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "invoice_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 5,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.9916
+          }
+        }
+      }
+    },
+    {
+      "display_name": "invoice_source",
+      "field_ref": [
+        "field",
+        "invoice_source",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "invoice_source",
+      "semantic_type": "type/Source",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 10,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 18.0856
+          }
+        }
+      }
+    },
+    {
+      "display_name": "invoice_number",
+      "field_ref": [
+        "field",
+        "invoice_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "invoice_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3485,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.7958
+          }
+        }
+      }
+    },
+    {
+      "display_name": "voucher_number",
+      "field_ref": [
+        "field",
+        "voucher_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "voucher_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3467,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.1186
+          }
+        }
+      }
+    },
+    {
+      "display_name": "invoice_reference_number",
+      "field_ref": [
+        "field",
+        "invoice_reference_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "invoice_reference_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "invoice_date",
+      "field_ref": [
+        "field",
+        "invoice_date",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "invoice_date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 355,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "accounting_date",
+      "field_ref": [
+        "field",
+        "accounting_date",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "accounting_date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 355,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "period",
+      "field_ref": [
+        "field",
+        "period",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "period",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 46,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.8452
+          }
+        }
+      }
+    },
+    {
+      "display_name": "invoice_currency",
+      "field_ref": [
+        "field",
+        "invoice_currency",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "invoice_currency",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.9226
+          }
+        }
+      }
+    },
+    {
+      "display_name": "payment_terms",
+      "field_ref": [
+        "field",
+        "payment_terms",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "payment_terms",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 7,
+          "nil%": 0.3186
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.9792
+          }
+        }
+      }
+    },
+    {
+      "display_name": "line_number",
+      "field_ref": [
+        "field",
+        "line_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "line_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1098,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.3048
+          }
+        }
+      }
+    },
+    {
+      "display_name": "item_code",
+      "field_ref": [
+        "field",
+        "item_code",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "item_code",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 498,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 11.2802
+          }
+        }
+      }
+    },
+    {
+      "display_name": "item_description",
+      "field_ref": [
+        "field",
+        "item_description",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "item_description",
+      "semantic_type": "type/Description",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 274,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 25.5536
+          }
+        }
+      }
+    },
+    {
+      "display_name": "hsn_sac_code",
+      "field_ref": [
+        "field",
+        "hsn_sac_code",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "hsn_sac_code",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 50,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.7908
+          }
+        }
+      }
+    },
+    {
+      "display_name": "line_description",
+      "field_ref": [
+        "field",
+        "line_description",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "line_description",
+      "semantic_type": "type/Description",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 579,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 33.6014
+          }
+        }
+      }
+    },
+    {
+      "display_name": "quantity_invoiced",
+      "field_ref": [
+        "field",
+        "quantity_invoiced",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "quantity_invoiced",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 113,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.3608
+          }
+        }
+      }
+    },
+    {
+      "display_name": "uom",
+      "field_ref": [
+        "field",
+        "uom",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "uom",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.9226
+          }
+        }
+      }
+    },
+    {
+      "display_name": "unit_price",
+      "field_ref": [
+        "field",
+        "unit_price",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "unit_price",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1830,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 6.3042
+          }
+        }
+      }
+    },
+    {
+      "display_name": "company",
+      "field_ref": [
+        "field",
+        "company",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "company",
+      "semantic_type": "type/Company",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.9226
+          }
+        }
+      }
+    },
+    {
+      "display_name": "locations",
+      "field_ref": [
+        "field",
+        "locations",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "locations",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 58,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.8292
+          }
+        }
+      }
+    },
+    {
+      "display_name": "departments",
+      "field_ref": [
+        "field",
+        "departments",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "departments",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 3.8872
+          }
+        }
+      }
+    },
+    {
+      "display_name": "natural_account",
+      "field_ref": [
+        "field",
+        "natural_account",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "natural_account",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.8452
+          }
+        }
+      }
+    },
+    {
+      "display_name": "intercompany",
+      "field_ref": [
+        "field",
+        "intercompany",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "intercompany",
+      "semantic_type": "type/Company",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.9162
+          }
+        }
+      }
+    },
+    {
+      "display_name": "product_group",
+      "field_ref": [
+        "field",
+        "product_group",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "product_group",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 14,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 3.8872
+          }
+        }
+      }
+    },
+    {
+      "display_name": "channel",
+      "field_ref": [
+        "field",
+        "channel",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "channel",
+      "semantic_type": "type/Source",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.9162
+          }
+        }
+      }
+    },
+    {
+      "display_name": "future1",
+      "field_ref": [
+        "field",
+        "future1",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "future1",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.9162
+          }
+        }
+      }
+    },
+    {
+      "display_name": "future2",
+      "field_ref": [
+        "field",
+        "future2",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "future2",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 3.8872
+          }
+        }
+      }
+    },
+    {
+      "display_name": "natural_account_description",
+      "field_ref": [
+        "field",
+        "natural_account_description",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "natural_account_description",
+      "semantic_type": "type/Description",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 20.4582
+          }
+        }
+      }
+    },
+    {
+      "display_name": "location_description",
+      "field_ref": [
+        "field",
+        "location_description",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "location_description",
+      "semantic_type": "type/Description",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 57,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 32.3502
+          }
+        }
+      }
+    },
+    {
+      "display_name": "warehouse_code",
+      "field_ref": [
+        "field",
+        "warehouse_code",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "warehouse_code",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 68,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 16.5882
+          }
+        }
+      }
+    },
+    {
+      "display_name": "base_amount",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "base_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2581,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.0822
+          }
+        }
+      }
+    },
+    {
+      "display_name": "base_amount_in_inr",
+      "field_ref": [
+        "field",
+        "base_amount_in_inr",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "base_amount_in_inr",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2581,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.0822
+          }
+        }
+      }
+    },
+    {
+      "display_name": "cgst_amount",
+      "field_ref": [
+        "field",
+        "cgst_amount",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "cgst_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1427,
+          "nil%": 0.5046
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.6832
+          }
+        }
+      }
+    },
+    {
+      "display_name": "cgst_rate",
+      "field_ref": [
+        "field",
+        "cgst_rate",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "cgst_rate",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.5046
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.5616
+          }
+        }
+      }
+    },
+    {
+      "display_name": "sgst_amount",
+      "field_ref": [
+        "field",
+        "sgst_amount",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "sgst_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1427,
+          "nil%": 0.5046
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.6832
+          }
+        }
+      }
+    },
+    {
+      "display_name": "sgst_rate",
+      "field_ref": [
+        "field",
+        "sgst_rate",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "sgst_rate",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.5046
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.5616
+          }
+        }
+      }
+    },
+    {
+      "display_name": "igst_amount",
+      "field_ref": [
+        "field",
+        "igst_amount",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "igst_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1216,
+          "nil%": 0.5224
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.6008
+          }
+        }
+      }
+    },
+    {
+      "display_name": "igst_rate",
+      "field_ref": [
+        "field",
+        "igst_rate",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "igst_rate",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.5224
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.2536
+          }
+        }
+      }
+    },
+    {
+      "display_name": "cess_amount",
+      "field_ref": [
+        "field",
+        "cess_amount",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "cess_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "cess_rate",
+      "field_ref": [
+        "field",
+        "cess_rate",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "cess_rate",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_amount",
+      "field_ref": [
+        "field",
+        "total_amount",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "total_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2678,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.1634
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_tax_amount",
+      "field_ref": [
+        "field",
+        "total_tax_amount",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "total_tax_amount",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2456,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.4282
+          }
+        }
+      }
+    },
+    {
+      "display_name": "oracle_invoice_number",
+      "field_ref": [
+        "field",
+        "oracle_invoice_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "oracle_invoice_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3485,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.6856
+          }
+        }
+      }
+    },
+    {
+      "display_name": "original_invoice_number",
+      "field_ref": [
+        "field",
+        "original_invoice_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "original_invoice_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 88,
+          "nil%": 0.977
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.1378
+          }
+        }
+      }
+    },
+    {
+      "display_name": "original_invoice_date",
+      "field_ref": [
+        "field",
+        "original_invoice_date",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "original_invoice_date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 43,
+          "nil%": 0.977
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.23
+          }
+        }
+      }
+    },
+    {
+      "display_name": "sales_channel",
+      "field_ref": [
+        "field",
+        "sales_channel",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "sales_channel",
+      "semantic_type": "type/Source",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.9226
+          }
+        }
+      }
+    },
+    {
+      "display_name": "sales_order_no",
+      "field_ref": [
+        "field",
+        "sales_order_no",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "sales_order_no",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 80,
+          "nil%": 0.976
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.288
+          }
+        }
+      }
+    },
+    {
+      "display_name": "transaction_id",
+      "field_ref": [
+        "field",
+        "transaction_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "transaction_id",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3488,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.235
+          }
+        }
+      }
+    },
+    {
+      "display_name": "purchase_order",
+      "field_ref": [
+        "field",
+        "purchase_order",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "purchase_order",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 244,
+          "nil%": 0.9382
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.7504
+          }
+        }
+      }
+    },
+    {
+      "display_name": "irn_number",
+      "field_ref": [
+        "field",
+        "irn_number",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "irn_number",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 501,
+          "nil%": 0.891
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 6.976
+          }
+        }
+      }
+    },
+    {
+      "display_name": "e_com_sale_flag",
+      "field_ref": [
+        "field",
+        "e_com_sale_flag",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "e_com_sale_flag",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.4576
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 1.6184
+          }
+        }
+      }
+    },
+    {
+      "display_name": "trx_type",
+      "field_ref": [
+        "field",
+        "trx_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "trx_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 36,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.1088
+          }
+        }
+      }
+    },
+    {
+      "display_name": "comments",
+      "field_ref": [
+        "field",
+        "comments",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "comments",
+      "semantic_type": "type/Comment",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 62,
+          "nil%": 0.9758
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.921
+          }
+        }
+      }
+    },
+    {
+      "display_name": "reason_of_cn",
+      "field_ref": [
+        "field",
+        "reason_of_cn",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "reason_of_cn",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 9,
+          "nil%": 0.9918
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0934
+          }
+        }
+      }
+    },
+    {
+      "display_name": "item_category",
+      "field_ref": [
+        "field",
+        "item_category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "item_category",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 22,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 17.7824
+          }
+        }
+      }
+    },
+    {
+      "display_name": "creation_date",
+      "field_ref": [
+        "field",
+        "creation_date",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "creation_date",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 774,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 18.4868
+          }
+        }
+      }
+    },
+    {
+      "display_name": "created_by",
+      "field_ref": [
+        "field",
+        "created_by",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "created_by",
+      "semantic_type": "type/Author",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 16,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.9742,
+            "percent-state": 0.0,
+            "average-length": 18.8718
+          }
+        }
+      }
+    },
+    {
+      "display_name": "unique_id",
+      "field_ref": [
+        "field",
+        "unique_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "unique_id",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4862,
+          "nil%": 0.0258
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 15.1116
+          }
+        }
+      }
+    },
+    {
+      "display_name": "business_category",
+      "field_ref": [
+        "field",
+        "business_category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "business_category",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 16,
+          "nil%": 0.0002
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.023
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bus_sub_category",
+      "field_ref": [
+        "field",
+        "bus_sub_category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "bus_sub_category",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 17,
+          "nil%": 0.0002
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.1778
+          }
+        }
+      }
+    },
+    {
+      "display_name": "article_type",
+      "field_ref": [
+        "field",
+        "article_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "article_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 40,
+          "nil%": 0.0002
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.7818
+          }
+        }
+      }
+    },
+    {
+      "display_name": "style_id",
+      "field_ref": [
+        "field",
+        "style_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "style_id",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 440,
+          "nil%": 0.0002
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.4924
+          }
+        }
+      }
+    },
+    {
+      "display_name": "account_channel_type",
+      "field_ref": [
+        "field",
+        "account_channel_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "account_channel_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 15,
+          "nil%": 0.0024
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.3704
+          }
+        }
+      }
+    },
+    {
+      "display_name": "manual_channel_type",
+      "field_ref": [
+        "field",
+        "manual_channel_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "manual_channel_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 9,
+          "nil%": 0.0024
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.3392
+          }
+        }
+      }
+    },
+    {
+      "display_name": "is_purchase_data",
+      "field_ref": [
+        "field",
+        "is_purchase_data",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "is_purchase_data",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.029
+          }
+        }
+      }
+    },
+    {
+      "display_name": "nlc",
+      "field_ref": [
+        "field",
+        "nlc",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "nlc",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1300,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -422112.0,
+            "q1": -697.4587015617271,
+            "q3": 1757.008632626972,
+            "max": 472201375.79999995,
+            "sd": 6742596.556786775,
+            "avg": 115740.90495581
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "Raw Data - 2",
+  "last_used_at": "2026-04-16T12:12:21.889749Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-24T05:26:58.85198Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_date": {
+          "type": "date",
+          "name": "start_date",
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "display-name": "Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "end_date": {
+          "type": "date",
+          "name": "end_date",
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "display-name": "End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535274,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "sub_category": {
+          "type": "dimension",
+          "name": "sub_category",
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "display-name": "Sub Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9615855,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "article_type": {
+          "type": "dimension",
+          "name": "article_type",
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "display-name": "Article Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535281,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "#75683-raw-data": {
+          "type": "card",
+          "name": "#75683-raw-data",
+          "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+          "display-name": "#75683 Raw Data",
+          "card-id": 75683
+        },
+        "consider_purchase": {
+          "type": "text",
+          "name": "consider_purchase",
+          "id": "29dec4c1-6e1e-4627-8874-62b82987d27e",
+          "display-name": "Consider Purchase"
+        }
+      },
+      "query": "SELECT *\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n[[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]"
+    }
+  },
+  "id": 75872,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "jCPVIWNSnHaBHF0sJw-P9",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.pivot_column": "business_unit",
+    "table.cell_column": "unique_id",
+    "pie.metric": "total_amount",
+    "pie.dimension": [
+      "month"
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "Start Date",
+      "slug": "start_date"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "End Date",
+      "slug": "end_date"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "Sub Category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "Article Type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "29dec4c1-6e1e-4627-8874-62b82987d27e",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "Consider Purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-02-12T06:23:12.927698Z",
+  "public_uuid": null
+}

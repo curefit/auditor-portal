@@ -1,0 +1,212 @@
+{
+  "card_id": 75647,
+  "card_name": "Same center vs other center",
+  "parameters": [
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Last_date"
+        ]
+      ],
+      "value": "2026-02-09"
+    }
+  ],
+  "query_response": {
+    "database_id": 39,
+    "started_at": "2026-04-17T06:30:57.003701Z",
+    "via": [
+      {
+        "status": "failed",
+        "class": "class java.sql.SQLException",
+        "error": "Query failed (#20260417_063100_00228_hz9i3): Encountered too many errors talking to a worker node. The node may have crashed or be under too much load. This is probably a transient issue, so please retry your query in a few minutes. (getting task status http://10.218.253.230:8080/v1/task/20260417_063100_00228_hz9i3.2.3.0 - 8 failures, failure duration 6.69s, total failed request time 6.34s)",
+        "stacktrace": [
+          "io.trino.jdbc.AbstractTrinoResultSet.resultsException(AbstractTrinoResultSet.java:1937)",
+          "io.trino.jdbc.TrinoResultSet$ResultsPageIterator.computeNext(TrinoResultSet.java:294)",
+          "io.trino.jdbc.TrinoResultSet$ResultsPageIterator.computeNext(TrinoResultSet.java:254)",
+          "io.trino.jdbc.$internal.guava.collect.AbstractIterator.tryToComputeNext(AbstractIterator.java:145)",
+          "io.trino.jdbc.$internal.guava.collect.AbstractIterator.hasNext(AbstractIterator.java:140)",
+          "java.base/java.util.Spliterators$IteratorSpliterator.tryAdvance(Unknown Source)",
+          "java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.lambda$initPartialTraversalState$0(Unknown Source)",
+          "java.base/java.util.stream.StreamSpliterators$AbstractWrappingSpliterator.fillBuffer(Unknown Source)",
+          "java.base/java.util.stream.StreamSpliterators$AbstractWrappingSpliterator.doAdvance(Unknown Source)",
+          "java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.tryAdvance(Unknown Source)",
+          "java.base/java.util.Spliterators$1Adapter.hasNext(Unknown Source)",
+          "io.trino.jdbc.TrinoResultSet$AsyncIterator.lambda$new$1(TrinoResultSet.java:179)",
+          "java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)",
+          "java.base/java.util.concurrent.FutureTask.run(Unknown Source)",
+          "java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)",
+          "java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)",
+          "java.base/java.lang.Thread.run(Unknown Source)",
+          null
+        ],
+        "state": null
+      },
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Error reducing result rows: Query failed (#20260417_063100_00228_hz9i3): Encountered too many errors talking to a worker node. The node may have crashed or be under too much load. This is probably a transient issue, so please retry your query in a few minutes. (getting task status http://10.218.253.230:8080/v1/task/20260417_063100_00228_hz9i3.2.3.0 - 8 failures, failure duration 6.69s, total failed request time 6.34s)",
+        "stacktrace": [
+          "--> query_processor.pipeline$_STAR_reduce_STAR_$fn__58980.invoke(pipeline.clj:79)",
+          "query_processor.pipeline$_STAR_reduce_STAR_.invokeStatic(pipeline.clj:67)",
+          "query_processor.pipeline$_STAR_reduce_STAR_.invoke(pipeline.clj:54)",
+          "query_processor.middleware.cache$run_query_with_cache77051__77053$reduce_SINGLEQUOTE___77059$fn__77060.invoke(cache.clj:214)",
+          "query_processor.middleware.cache.impl$do_with_serialization.invokeStatic(impl.clj:83)",
+          "query_processor.middleware.cache.impl$do_with_serialization.invoke(impl.clj:54)",
+          "query_processor.middleware.cache.impl$do_with_serialization.invokeStatic(impl.clj:73)",
+          "query_processor.middleware.cache.impl$do_with_serialization.invoke(impl.clj:54)",
+          "query_processor.middleware.cache$run_query_with_cache77051__77053$reduce_SINGLEQUOTE___77059.invoke(cache.clj:210)",
+          "query_processor.pipeline$_STAR_run_STAR_$respond__58992.invoke(pipeline.clj:100)",
+          "driver.sql_jdbc.execute$execute_reducible_query$fn__87406.invoke(execute.clj:775)",
+          "driver.implementation.execute$fn__116556$fn__116558.invoke(execute.clj:72)",
+          "driver.sql_jdbc.execute$do_with_resolved_connection87173__87174.invokeStatic(execute.clj:341)",
+          "driver.sql_jdbc.execute$do_with_resolved_connection87173__87174.invoke(execute.clj:324)",
+          "driver.implementation.execute$fn__116556.invokeStatic(execute.clj:51)",
+          "driver.implementation.execute$fn__116556.invoke(execute.clj:49)",
+          "driver.sql_jdbc.execute$execute_reducible_query.invokeStatic(execute.clj:750)",
+          "driver.sql_jdbc.execute$execute_reducible_query.invoke(execute.clj:736)",
+          "driver.sql_jdbc.execute$execute_reducible_query.invokeStatic(execute.clj:747)",
+          "driver.sql_jdbc.execute$execute_reducible_query.invoke(execute.clj:736)",
+          "driver.sql_jdbc$fn__113952.invokeStatic(sql_jdbc.clj:79)",
+          "driver.sql_jdbc$fn__113952.invoke(sql_jdbc.clj:77)",
+          "query_processor.pipeline$_STAR_execute_STAR_.invokeStatic(pipeline.clj:52)",
+          "query_processor.pipeline$_STAR_execute_STAR_.invoke(pipeline.clj:39)",
+          "query_processor.pipeline$_STAR_run_STAR_.invokeStatic(pipeline.clj:102)",
+          "query_processor.pipeline$_STAR_run_STAR_.invoke(pipeline.clj:95)",
+          "query_processor.execute$run.invokeStatic(execute.clj:62)",
+          "query_processor.execute$run.invoke(execute.clj:56)",
+          "query_processor.middleware.update_used_cards$update_used_cards_BANG_77100__77101$fn__77102.invoke(update_used_cards.clj:60)",
+          "query_processor.execute$add_native_form_to_result_metadata$fn__77117.invoke(execute.clj:25)",
+          "query_processor.execute$add_preprocessed_query_to_result_metadata_for_userland_query$fn__77123.invoke(execute.clj:36)",
+          "query_processor.middleware.cache$run_query_with_cache77051__77053.invokeStatic(cache.clj:215)",
+          "query_processor.middleware.cache$run_query_with_cache77051__77053.invoke(cache.clj:188)",
+          "query_processor.middleware.cache$maybe_return_cached_results$maybe_return_cached_results_STAR___77073.invoke(cache.clj:241)",
+          "query_processor.middleware.permissions$check_query_permissions$fn__74109.invoke(permissions.clj:148)",
+          "query_processor.middleware.enterprise$check_download_permissions_middleware$fn__74821.invoke(enterprise.clj:51)",
+          "query_processor.middleware.enterprise$maybe_apply_column_level_perms_check_middleware$fn__74831.invoke(enterprise.clj:64)",
+          "query_processor.execute$execute77150__77151$fn__77152.invoke(execute.clj:94)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.execute$execute77150__77151.invokeStatic(execute.clj:93)",
+          "query_processor.execute$execute77150__77151.invoke(execute.clj:89)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:49)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "qp",
+        "ex-data": {
+          "type": "qp"
+        }
+      }
+    ],
+    "action_id": null,
+    "error_type": "qp",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 0,
+        "invalidated-at": "2026-04-16T18:30:56.998439Z"
+      },
+      "native": {
+        "template-tags": {
+          "Last_date": {
+            "type": "date",
+            "name": "Last_date",
+            "id": "f9e0ed02-30d0-4b7e-8780-578a68e44520",
+            "display-name": "Last Date",
+            "default": null,
+            "widget-type": null
+          }
+        },
+        "query": "WITH\n  base AS (\n    SELECT\n      date_trunc('quarter', membership_created_date) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city\n    FROM\n      dwh_fitness_mart.membership_dim m\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      AND m.membership_created_date >= date('2017-01-01')\n      and m.business_line in ('ELITE','PRO','PLAY')\n      and amount_paid>2000\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n  )\n  \n  SELECT  IF(other_center_checkins>0,'Multi','Same') type,count(membership_key) memberships\n  FROM (\n  select \n    b.membership_key,\n    COUNT_IF(bf.center_key = final_center_key) attributed_center_checkins,\n    COUNT_IF(bf.center_key <> final_center_key) other_center_checkins\n  from base b \n  JOIN dwh_fitness_mart.booking_fact bf \n  on b.membership_key=bf.membership_key\n  and bf.class_date between  Date('2017-01-01') \n        and {{Last_date}}\n  and attendance_time is not null\n\n  group by 1)\n  group by 1 \n  order by 1,2\n  "
+      },
+      "viz-settings": {
+        "table.pivot_column": "type",
+        "table.cell_column": "memberships"
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "Last_date"
+            ]
+          ],
+          "value": "2026-02-09"
+        }
+      ]
+    },
+    "status": "failed",
+    "class": "class io.trino.jdbc.$internal.client.FailureInfo$FailureException",
+    "stacktrace": [
+      "io.trino.server.remotetask.RequestErrorTracker.requestFailed(RequestErrorTracker.java:129)",
+      "io.trino.server.remotetask.ContinuousTaskStatusFetcher$TaskStatusResponseCallback.failed(ContinuousTaskStatusFetcher.java:193)",
+      "io.trino.server.remotetask.SimpleHttpResponseHandler.onFailure(SimpleHttpResponseHandler.java:85)",
+      "com.google.common.util.concurrent.Futures$CallbackListener.run(Futures.java:1125)",
+      "io.airlift.concurrent.BoundedExecutor.drainQueue(BoundedExecutor.java:79)",
+      "java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)",
+      "java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)",
+      "java.base/java.lang.Thread.run(Thread.java:1474)",
+      null
+    ],
+    "card_id": 75647,
+    "context": "question",
+    "error": "Query failed (#20260417_063100_00228_hz9i3): Encountered too many errors talking to a worker node. The node may have crashed or be under too much load. This is probably a transient issue, so please retry your query in a few minutes. (getting task status http://10.218.253.230:8080/v1/task/20260417_063100_00228_hz9i3.2.3.0 - 8 failures, failure duration 6.69s, total failed request time 6.34s)",
+    "row_count": 0,
+    "running_time": 0,
+    "data": {
+      "rows": [],
+      "cols": []
+    }
+  }
+}

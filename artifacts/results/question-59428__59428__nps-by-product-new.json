@@ -1,0 +1,1367 @@
+{
+  "card_id": 59428,
+  "card_name": "NPS by Product - New",
+  "parameters": [
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "city_name"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "value": "2026-02-09"
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "activity_status"
+        ]
+      ],
+      "value": "actual-active"
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "business_line"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "ownership_type"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_name"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "value": "2025-12-01"
+    },
+    {
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_service_type"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "number/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_service_id"
+        ]
+      ],
+      "value": ""
+    }
+  ],
+  "query_response": {
+    "database_id": 39,
+    "started_at": "2026-04-17T06:37:01.741665Z",
+    "via": [
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Error determining value for parameter \"center_service_id\": Unparseable number: \"\"",
+        "stacktrace": [
+          "--> driver.common.parameters.values$value_for_tag76119__76120.invokeStatic(values.clj:377)",
+          "driver.common.parameters.values$value_for_tag76119__76120.invoke(values.clj:369)",
+          "driver.common.parameters.values$query__GT_params_map76123__76125$iter__76127__76131$fn__76132.invoke(values.clj:395)",
+          "driver.common.parameters.values$query__GT_params_map76123__76125.invokeStatic(values.clj:394)",
+          "driver.common.parameters.values$query__GT_params_map76123__76125.invoke(values.clj:385)",
+          "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:55)",
+          "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
+          "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
+          "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
+          "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
+          "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
+          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
+          "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
+          "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
+          "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
+          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
+          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
+          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
+          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+          "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
+          "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
+          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
+          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
+          "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
+          "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
+          "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "invalid-parameter",
+        "ex-data": {
+          "tag": {
+            "type": "dimension",
+            "name": "center_service_id",
+            "id": "5896cb34-0380-4c8e-829a-1cab9ae552ce",
+            "display-name": "Center Service ID",
+            "default": null,
+            "dimension": [
+              "field",
+              9484200,
+              null
+            ],
+            "widget-type": "number/=",
+            "options": null
+          },
+          "type": "invalid-parameter",
+          "params": [
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "city_name"
+                ]
+              ]
+            },
+            {
+              "value": "2026-02-09",
+              "type": "date/single",
+              "target": [
+                "variable",
+                [
+                  "template-tag",
+                  "end_date"
+                ]
+              ]
+            },
+            {
+              "value": "actual-active",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "activity_status"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "business_line"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "service_type"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "ownership_type"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "center_name"
+                ]
+              ]
+            },
+            {
+              "value": "2025-12-01",
+              "type": "date/single",
+              "target": [
+                "variable",
+                [
+                  "template-tag",
+                  "start_date"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/contains",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "sub_service_type"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "number/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "center_service_id"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Error building query parameter map: Error determining value for parameter \"center_service_id\": Unparseable number: \"\"",
+        "stacktrace": [
+          "--> driver.common.parameters.values$query__GT_params_map76123__76125.invokeStatic(values.clj:400)",
+          "driver.common.parameters.values$query__GT_params_map76123__76125.invoke(values.clj:385)",
+          "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:55)",
+          "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
+          "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
+          "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
+          "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
+          "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
+          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
+          "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
+          "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
+          "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
+          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
+          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
+          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
+          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+          "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
+          "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
+          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
+          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
+          "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
+          "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
+          "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "invalid-parameter",
+        "ex-data": {
+          "type": "invalid-parameter",
+          "tags": {
+            "city_name": {
+              "type": "dimension",
+              "name": "city_name",
+              "id": "9d84edf3-c3ec-42b0-8086-c8b8ae8e8666",
+              "display-name": "City Name",
+              "default": null,
+              "dimension": [
+                "field",
+                9484198,
+                null
+              ],
+              "widget-type": "string/=",
+              "options": null
+            },
+            "end_date": {
+              "type": "date",
+              "name": "end_date",
+              "id": "a7a85bc5-0636-4b7d-ad52-0fb5806cbf57",
+              "display-name": "End Date"
+            },
+            "activity_status": {
+              "type": "dimension",
+              "name": "activity_status",
+              "id": "ce01397d-e348-4c98-8dcd-35ad55104628",
+              "display-name": "Activity Status",
+              "dimension": [
+                "field",
+                9484201,
+                null
+              ],
+              "widget-type": "string/="
+            },
+            "business_line": {
+              "type": "dimension",
+              "name": "business_line",
+              "id": "01be981a-e6e8-4718-a6cb-ae732819c2bf",
+              "display-name": "Business Line",
+              "dimension": [
+                "field",
+                8712478,
+                null
+              ],
+              "widget-type": "string/=",
+              "options": null
+            },
+            "service_type": {
+              "type": "dimension",
+              "name": "service_type",
+              "id": "2a565977-5c76-499f-8e39-f3a9fb63fed1",
+              "display-name": "Service Type",
+              "dimension": [
+                "field",
+                9484192,
+                null
+              ],
+              "widget-type": "string/="
+            },
+            "ownership_type": {
+              "type": "dimension",
+              "name": "ownership_type",
+              "id": "ecdc1436-77fb-4176-8e21-925c694419ca",
+              "display-name": "Ownership Type",
+              "default": null,
+              "dimension": [
+                "field",
+                9484204,
+                null
+              ],
+              "widget-type": "string/=",
+              "options": null
+            },
+            "center_name": {
+              "type": "dimension",
+              "name": "center_name",
+              "id": "8679bdc4-308e-4ceb-afc5-d55479004f38",
+              "display-name": "Center Name",
+              "default": null,
+              "dimension": [
+                "field",
+                9484197,
+                null
+              ],
+              "widget-type": "string/=",
+              "options": null
+            },
+            "start_date": {
+              "type": "date",
+              "name": "start_date",
+              "id": "2ccd0673-bda0-4cde-9b7c-728354202dca",
+              "display-name": "Start Date"
+            },
+            "sub_service_type": {
+              "type": "dimension",
+              "name": "sub_service_type",
+              "id": "fdd3d211-2ae7-4211-ba58-d7fae5a40978",
+              "display-name": "Sub Service Type",
+              "dimension": [
+                "field",
+                9484205,
+                null
+              ],
+              "widget-type": "string/contains",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "center_service_id": {
+              "type": "dimension",
+              "name": "center_service_id",
+              "id": "5896cb34-0380-4c8e-829a-1cab9ae552ce",
+              "display-name": "Center Service ID",
+              "default": null,
+              "dimension": [
+                "field",
+                9484200,
+                null
+              ],
+              "widget-type": "number/=",
+              "options": null
+            }
+          },
+          "params": [
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "city_name"
+                ]
+              ]
+            },
+            {
+              "value": "2026-02-09",
+              "type": "date/single",
+              "target": [
+                "variable",
+                [
+                  "template-tag",
+                  "end_date"
+                ]
+              ]
+            },
+            {
+              "value": "actual-active",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "activity_status"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "business_line"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "service_type"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "ownership_type"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "center_name"
+                ]
+              ]
+            },
+            {
+              "value": "2025-12-01",
+              "type": "date/single",
+              "target": [
+                "variable",
+                [
+                  "template-tag",
+                  "start_date"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "string/contains",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "sub_service_type"
+                ]
+              ]
+            },
+            {
+              "value": "",
+              "type": "number/=",
+              "target": [
+                "dimension",
+                [
+                  "template-tag",
+                  "center_service_id"
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Error preprocessing query in clojure.lang.AFunction$1@1a53a275: Error building query parameter map: Error determining value for parameter \"center_service_id\": Unparseable number: \"\"",
+        "stacktrace": [
+          "--> query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:178)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "qp",
+        "ex-data": {
+          "fn": "clojure.lang.AFunction$1@1a53a275",
+          "query": {
+            "constraints": {
+              "max-results": 10000,
+              "max-results-bare-rows": 5000
+            },
+            "lib/type": "mbql/query",
+            "lib/metadata": "metabase.lib.metadata.invocation_tracker.InvocationTracker@4520976b",
+            "stages": [
+              {
+                "lib/type": "mbql.stage/native",
+                "template-tags": {
+                  "city_name": {
+                    "type": "dimension",
+                    "name": "city_name",
+                    "id": "9d84edf3-c3ec-42b0-8086-c8b8ae8e8666",
+                    "display-name": "City Name",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "9389ebe8-0ff6-47cd-82ed-6449132e56f1",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9484198
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "end_date": {
+                    "type": "date",
+                    "name": "end_date",
+                    "id": "a7a85bc5-0636-4b7d-ad52-0fb5806cbf57",
+                    "display-name": "End Date"
+                  },
+                  "activity_status": {
+                    "type": "dimension",
+                    "name": "activity_status",
+                    "id": "ce01397d-e348-4c98-8dcd-35ad55104628",
+                    "display-name": "Activity Status",
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "18af9bc3-630f-40d2-938f-cc6beeb0938e",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9484201
+                    ],
+                    "widget-type": "string/="
+                  },
+                  "business_line": {
+                    "type": "dimension",
+                    "name": "business_line",
+                    "id": "01be981a-e6e8-4718-a6cb-ae732819c2bf",
+                    "display-name": "Business Line",
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "8161697f-0837-4721-a89b-5f2103c171da",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      8712478
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "service_type": {
+                    "type": "dimension",
+                    "name": "service_type",
+                    "id": "2a565977-5c76-499f-8e39-f3a9fb63fed1",
+                    "display-name": "Service Type",
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "a658fe65-a2f9-4097-a8b7-8a1787e8ae28",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9484192
+                    ],
+                    "widget-type": "string/="
+                  },
+                  "ownership_type": {
+                    "type": "dimension",
+                    "name": "ownership_type",
+                    "id": "ecdc1436-77fb-4176-8e21-925c694419ca",
+                    "display-name": "Ownership Type",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "befef634-9539-4f6a-9064-ef1d986067b4",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9484204
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "center_name": {
+                    "type": "dimension",
+                    "name": "center_name",
+                    "id": "8679bdc4-308e-4ceb-afc5-d55479004f38",
+                    "display-name": "Center Name",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "e69b96cb-edc8-4f85-9e9a-962ab5328d7c",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9484197
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "start_date": {
+                    "type": "date",
+                    "name": "start_date",
+                    "id": "2ccd0673-bda0-4cde-9b7c-728354202dca",
+                    "display-name": "Start Date"
+                  },
+                  "sub_service_type": {
+                    "type": "dimension",
+                    "name": "sub_service_type",
+                    "id": "fdd3d211-2ae7-4211-ba58-d7fae5a40978",
+                    "display-name": "Sub Service Type",
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "b986684c-95d6-44c3-8dc0-7a0fbbb86a0a",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9484205
+                    ],
+                    "widget-type": "string/contains",
+                    "options": {
+                      "case-sensitive": false
+                    }
+                  },
+                  "center_service_id": {
+                    "type": "dimension",
+                    "name": "center_service_id",
+                    "id": "5896cb34-0380-4c8e-829a-1cab9ae552ce",
+                    "display-name": "Center Service ID",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "2df3664c-9ec9-4123-b286-58541fe100c3",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Integer",
+                        "effective-type": "type/Integer"
+                      },
+                      9484200
+                    ],
+                    "widget-type": "number/=",
+                    "options": null
+                  }
+                },
+                "native": "with nps_base as (\nselect response_date, service_type, sum(promoters) as promoters, sum(detractors) as detractors, sum(passives) as passives, sum(total_responses) as total_responses\nfrom dwh_fitness_metrics.nps_responses_base\nwhere response_date between {{start_date}} and date_add('day',6,date_trunc('week',{{end_date}}))\n[[and center_business_line in (select distinct business_line from dwh_fitness_mart.center_dim where {{business_line}})]] [[and {{activity_status}}]] [[and {{service_type}}]] [[and {{sub_service_type}}]]\n[[and {{ownership_type}}]] [[and {{city_name}}]] [[and {{center_name}}]] [[and {{center_service_id}}]]\ngroup by 1,2\n)\n\n, combinations_base as (\nselect a.day as \"period\", a.service_type\n, coalesce((promoters),0) as promoters, coalesce((detractors),0) as detractors, coalesce((passives),0) as passives, coalesce((total_responses),0) as total_responses,\ncoalesce(100.00*((b.promoters) - (b.detractors))/(b.total_responses),0) as nps, sum(a.footfall) as footfall\nfrom dwh_fitness_metrics.footfall_by_service_type a\nleft join nps_base b\non b.response_date = a.day\nand a.service_type = b.service_type\nwhere a.day between {{start_date}} and date_add('day',6,date_trunc('week',{{end_date}}))\ngroup by 1,2,3,4,5,6,7)\n\n, individual_nps as (\n(select '1. Q - '||cast(date_trunc('quarter',response_date) as varchar) as period, service_type, 100.00*(sum(promoters)-sum(detractors))/sum(total_responses) as nps\nfrom nps_base\nwhere service_type is not null and response_date between {{start_date}} and {{end_date}}\ngroup by 1,2)\nunion all\n(select '2. M - '||cast(date_trunc('month',response_date) as varchar) as period, service_type, 100.00*(sum(promoters)-sum(detractors))/sum(total_responses) as nps\nfrom nps_base\nwhere response_date between date_trunc('month',{{end_date}} - interval '2' MONTH) and {{end_date}}\nand service_type is not null\ngroup by 1,2)\nunion all\n(select '3. W - '||cast(date_trunc('week',response_date) as varchar) as period, service_type, 100.00*(sum(promoters)-sum(detractors))/sum(total_responses) as nps\nfrom nps_base\nwhere response_date between date_trunc('week',date_add('week',-3,{{end_date}})) and date_add('day',6,date_trunc('week',{{end_date}}))\nand service_type is not null\ngroup by 1,2)\nunion all\n(select '4. D - '||cast(response_date as varchar) as period, service_type, 100.00*(sum(promoters)-sum(detractors))/sum(total_responses) as nps\nfrom nps_base\nwhere response_date between date_add('day',-6,{{end_date}}) and {{end_date}}\nand service_type is not null\ngroup by 1,2)\n)\n\n, platform_nps as (\nselect '1. Q - '||cast(a.period as varchar) as period, \nsum(case when a.service_type in ('GX','GYM') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM') then b.footfall end),0) as gx_gym_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY') then b.footfall end),0) as gx_gym_play_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then b.footfall end),0) as gx_gym_play_live_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then b.footfall end),0) as platform_nps\nfrom\n(select date_trunc('quarter',period) as period, service_type, 100.00*(sum(promoters) - sum(detractors))/nullif(sum(total_responses),0) * sum(footfall) as numerator\nfrom combinations_base\nwhere period between {{start_date}} and {{end_date}}\nand total_responses > 0\ngroup by 1,2) a\njoin (select Date_Trunc('quarter',period) as period, service_type, sum(footfall) as footfall from combinations_base where total_responses > 0 and period <= {{end_date}} group by 1,2) b on a.period = b.period and a.service_type = b.service_type\ngroup by 1\nunion all\nselect '2. M - '||cast(a.period as varchar) as period, \nsum(case when a.service_type in ('GX','GYM') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM') then b.footfall end),0) as gx_gym_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY') then b.footfall end),0) as gx_gym_play_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then b.footfall end),0) as gx_gym_play_live_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then b.footfall end),0) as platform_nps\nfrom\n(select date_trunc('month',period) as period, service_type, 100.00*(sum(promoters) - sum(detractors))/nullif(sum(total_responses),0) * sum(footfall) as numerator\nfrom combinations_base\nwhere period between date_trunc('month',{{end_date}} - interval '2' MONTH) and {{end_date}}\nand total_responses > 0\ngroup by 1,2) a\njoin (select Date_Trunc('month',period) as period, service_type, sum(footfall) as footfall from combinations_base where total_responses > 0 group by 1,2) b on a.period = b.period and a.service_type = b.service_type\ngroup by 1\nunion all\nselect '3. W - '||cast(a.period as varchar) as period, \nsum(case when a.service_type in ('GX','GYM') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM') then b.footfall end),0) as gx_gym_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY') then b.footfall end),0) as gx_gym_play_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then b.footfall end),0) as gx_gym_play_live_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then b.footfall end),0) as platform_nps\nfrom\n(select date_trunc('week',period) as period, service_type, 100.00*(sum(promoters) - sum(detractors))/nullif(sum(total_responses),0) * sum(footfall) as numerator\nfrom combinations_base\nwhere period between date_trunc('week',date_add('week',-3,{{end_date}})) and date_add('day',6,date_trunc('week',{{end_date}}))\nand total_responses > 0\ngroup by 1,2) a\njoin (select Date_Trunc('week',period) as period, service_type, sum(footfall) as footfall from combinations_base where total_responses > 0 group by 1,2) b on a.period = b.period and a.service_type = b.service_type\ngroup by 1\nunion all\nselect '4. D - '||cast(a.period as varchar) as period, \nsum(case when a.service_type in ('GX','GYM') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM') then b.footfall end),0) as gx_gym_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY') then b.footfall end),0) as gx_gym_play_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then b.footfall end),0) as gx_gym_play_live_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then b.footfall end),0) as platform_nps\nfrom\n(select period as period, service_type, 100.00*(sum(promoters) - sum(detractors))/nullif(sum(total_responses),0) * sum(footfall) as numerator\nfrom combinations_base\nwhere period between date_add('day',-6,{{end_date}}) and {{end_date}}\nand total_responses > 0\ngroup by 1,2) a\njoin (select period as period, service_type, sum(footfall) as footfall from combinations_base where total_responses > 0 group by 1,2) b on a.period = b.period and a.service_type = b.service_type\ngroup by 1\n)\n\n-- select * from platform_nps\nselect period, 'PLATFORM' as service_type, platform_nps as nps from platform_nps\nunion all\nselect * from individual_nps\nunion all\nselect period, 'GX + GYM' as service_type, gx_gym_nps as nps from platform_nps\nunion all\nselect period, 'GX + GYM + PLAY' as service_type, gx_gym_play_nps as nps from platform_nps\nunion all\nselect period, 'GX + GYM + PLAY + LIVE' as service_type, gx_gym_play_live_nps as nps from platform_nps\norder by 1, \n    case\n        when service_type = 'PLATFORM' then 1\n        when service_type = 'GX' then 2\n        when service_type = 'GYM' then 3\n        when service_type = 'PLAY' then 4\n        when service_type = 'LIVE' then 5\n        when service_type = 'BOOTCAMP' then 6\n        when service_type = 'TRANSFORM' then 7\n        when service_type = 'TRANSFORM_PLUS' then 8\n        when service_type = 'PT' then 9\n        when service_type = 'GX + GYM' then 10\n        when service_type = 'GX + GYM + PLAY' then 11\n        when service_type = 'GX + GYM + PLAY + LIVE' then 12 end"
+              }
+            ],
+            "middleware": {
+              "js-int-to-string?": true,
+              "ignore-cached-results?": false,
+              "process-viz-settings?": false,
+              "userland-query?": true
+            },
+            "cache-strategy": {
+              "multiplier": 10,
+              "min-duration-ms": 60000,
+              "type": "ttl",
+              "avg-execution-ms": 0,
+              "invalidated-at": "2026-04-16T18:37:01.73576Z"
+            },
+            "viz-settings": {
+              "table.pivot": true,
+              "table.pivot_column": "period",
+              "table.cell_column": "nps"
+            },
+            "lib.convert/converted?": true,
+            "info": {
+              "executed-by": 3570,
+              "context": "question",
+              "card-id": 59428,
+              "card-name": "NPS by Product - New",
+              "visualization-settings": {
+                "table.pivot": true,
+                "table.pivot_column": "period",
+                "table.cell_column": "nps"
+              },
+              "query-hash": "0xD80A2FD2"
+            },
+            "database": 39,
+            "parameters": [
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "city_name"
+                  ]
+                ]
+              },
+              {
+                "value": "2026-02-09",
+                "type": "date/single",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "end_date"
+                  ]
+                ]
+              },
+              {
+                "value": "actual-active",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "activity_status"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "business_line"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "service_type"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "ownership_type"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "center_name"
+                  ]
+                ]
+              },
+              {
+                "value": "2025-12-01",
+                "type": "date/single",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "start_date"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/contains",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "sub_service_type"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "number/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "center_service_id"
+                  ]
+                ]
+              }
+            ]
+          },
+          "type": "qp"
+        }
+      }
+    ],
+    "action_id": null,
+    "error_type": "invalid-parameter",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 0,
+        "invalidated-at": "2026-04-16T18:37:01.73576Z"
+      },
+      "native": {
+        "template-tags": {
+          "city_name": {
+            "type": "dimension",
+            "name": "city_name",
+            "id": "9d84edf3-c3ec-42b0-8086-c8b8ae8e8666",
+            "display-name": "City Name",
+            "default": null,
+            "dimension": [
+              "field",
+              9484198,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "end_date": {
+            "type": "date",
+            "name": "end_date",
+            "id": "a7a85bc5-0636-4b7d-ad52-0fb5806cbf57",
+            "display-name": "End Date"
+          },
+          "activity_status": {
+            "type": "dimension",
+            "name": "activity_status",
+            "id": "ce01397d-e348-4c98-8dcd-35ad55104628",
+            "display-name": "Activity Status",
+            "dimension": [
+              "field",
+              9484201,
+              null
+            ],
+            "widget-type": "string/="
+          },
+          "business_line": {
+            "type": "dimension",
+            "name": "business_line",
+            "id": "01be981a-e6e8-4718-a6cb-ae732819c2bf",
+            "display-name": "Business Line",
+            "dimension": [
+              "field",
+              8712478,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "service_type": {
+            "type": "dimension",
+            "name": "service_type",
+            "id": "2a565977-5c76-499f-8e39-f3a9fb63fed1",
+            "display-name": "Service Type",
+            "dimension": [
+              "field",
+              9484192,
+              null
+            ],
+            "widget-type": "string/="
+          },
+          "ownership_type": {
+            "type": "dimension",
+            "name": "ownership_type",
+            "id": "ecdc1436-77fb-4176-8e21-925c694419ca",
+            "display-name": "Ownership Type",
+            "default": null,
+            "dimension": [
+              "field",
+              9484204,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "center_name": {
+            "type": "dimension",
+            "name": "center_name",
+            "id": "8679bdc4-308e-4ceb-afc5-d55479004f38",
+            "display-name": "Center Name",
+            "default": null,
+            "dimension": [
+              "field",
+              9484197,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "start_date": {
+            "type": "date",
+            "name": "start_date",
+            "id": "2ccd0673-bda0-4cde-9b7c-728354202dca",
+            "display-name": "Start Date"
+          },
+          "sub_service_type": {
+            "type": "dimension",
+            "name": "sub_service_type",
+            "id": "fdd3d211-2ae7-4211-ba58-d7fae5a40978",
+            "display-name": "Sub Service Type",
+            "dimension": [
+              "field",
+              9484205,
+              null
+            ],
+            "widget-type": "string/contains",
+            "options": {
+              "case-sensitive": false
+            }
+          },
+          "center_service_id": {
+            "type": "dimension",
+            "name": "center_service_id",
+            "id": "5896cb34-0380-4c8e-829a-1cab9ae552ce",
+            "display-name": "Center Service ID",
+            "default": null,
+            "dimension": [
+              "field",
+              9484200,
+              null
+            ],
+            "widget-type": "number/=",
+            "options": null
+          }
+        },
+        "query": "with nps_base as (\nselect response_date, service_type, sum(promoters) as promoters, sum(detractors) as detractors, sum(passives) as passives, sum(total_responses) as total_responses\nfrom dwh_fitness_metrics.nps_responses_base\nwhere response_date between {{start_date}} and date_add('day',6,date_trunc('week',{{end_date}}))\n[[and center_business_line in (select distinct business_line from dwh_fitness_mart.center_dim where {{business_line}})]] [[and {{activity_status}}]] [[and {{service_type}}]] [[and {{sub_service_type}}]]\n[[and {{ownership_type}}]] [[and {{city_name}}]] [[and {{center_name}}]] [[and {{center_service_id}}]]\ngroup by 1,2\n)\n\n, combinations_base as (\nselect a.day as \"period\", a.service_type\n, coalesce((promoters),0) as promoters, coalesce((detractors),0) as detractors, coalesce((passives),0) as passives, coalesce((total_responses),0) as total_responses,\ncoalesce(100.00*((b.promoters) - (b.detractors))/(b.total_responses),0) as nps, sum(a.footfall) as footfall\nfrom dwh_fitness_metrics.footfall_by_service_type a\nleft join nps_base b\non b.response_date = a.day\nand a.service_type = b.service_type\nwhere a.day between {{start_date}} and date_add('day',6,date_trunc('week',{{end_date}}))\ngroup by 1,2,3,4,5,6,7)\n\n, individual_nps as (\n(select '1. Q - '||cast(date_trunc('quarter',response_date) as varchar) as period, service_type, 100.00*(sum(promoters)-sum(detractors))/sum(total_responses) as nps\nfrom nps_base\nwhere service_type is not null and response_date between {{start_date}} and {{end_date}}\ngroup by 1,2)\nunion all\n(select '2. M - '||cast(date_trunc('month',response_date) as varchar) as period, service_type, 100.00*(sum(promoters)-sum(detractors))/sum(total_responses) as nps\nfrom nps_base\nwhere response_date between date_trunc('month',{{end_date}} - interval '2' MONTH) and {{end_date}}\nand service_type is not null\ngroup by 1,2)\nunion all\n(select '3. W - '||cast(date_trunc('week',response_date) as varchar) as period, service_type, 100.00*(sum(promoters)-sum(detractors))/sum(total_responses) as nps\nfrom nps_base\nwhere response_date between date_trunc('week',date_add('week',-3,{{end_date}})) and date_add('day',6,date_trunc('week',{{end_date}}))\nand service_type is not null\ngroup by 1,2)\nunion all\n(select '4. D - '||cast(response_date as varchar) as period, service_type, 100.00*(sum(promoters)-sum(detractors))/sum(total_responses) as nps\nfrom nps_base\nwhere response_date between date_add('day',-6,{{end_date}}) and {{end_date}}\nand service_type is not null\ngroup by 1,2)\n)\n\n, platform_nps as (\nselect '1. Q - '||cast(a.period as varchar) as period, \nsum(case when a.service_type in ('GX','GYM') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM') then b.footfall end),0) as gx_gym_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY') then b.footfall end),0) as gx_gym_play_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then b.footfall end),0) as gx_gym_play_live_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then b.footfall end),0) as platform_nps\nfrom\n(select date_trunc('quarter',period) as period, service_type, 100.00*(sum(promoters) - sum(detractors))/nullif(sum(total_responses),0) * sum(footfall) as numerator\nfrom combinations_base\nwhere period between {{start_date}} and {{end_date}}\nand total_responses > 0\ngroup by 1,2) a\njoin (select Date_Trunc('quarter',period) as period, service_type, sum(footfall) as footfall from combinations_base where total_responses > 0 and period <= {{end_date}} group by 1,2) b on a.period = b.period and a.service_type = b.service_type\ngroup by 1\nunion all\nselect '2. M - '||cast(a.period as varchar) as period, \nsum(case when a.service_type in ('GX','GYM') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM') then b.footfall end),0) as gx_gym_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY') then b.footfall end),0) as gx_gym_play_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then b.footfall end),0) as gx_gym_play_live_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then b.footfall end),0) as platform_nps\nfrom\n(select date_trunc('month',period) as period, service_type, 100.00*(sum(promoters) - sum(detractors))/nullif(sum(total_responses),0) * sum(footfall) as numerator\nfrom combinations_base\nwhere period between date_trunc('month',{{end_date}} - interval '2' MONTH) and {{end_date}}\nand total_responses > 0\ngroup by 1,2) a\njoin (select Date_Trunc('month',period) as period, service_type, sum(footfall) as footfall from combinations_base where total_responses > 0 group by 1,2) b on a.period = b.period and a.service_type = b.service_type\ngroup by 1\nunion all\nselect '3. W - '||cast(a.period as varchar) as period, \nsum(case when a.service_type in ('GX','GYM') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM') then b.footfall end),0) as gx_gym_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY') then b.footfall end),0) as gx_gym_play_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then b.footfall end),0) as gx_gym_play_live_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then b.footfall end),0) as platform_nps\nfrom\n(select date_trunc('week',period) as period, service_type, 100.00*(sum(promoters) - sum(detractors))/nullif(sum(total_responses),0) * sum(footfall) as numerator\nfrom combinations_base\nwhere period between date_trunc('week',date_add('week',-3,{{end_date}})) and date_add('day',6,date_trunc('week',{{end_date}}))\nand total_responses > 0\ngroup by 1,2) a\njoin (select Date_Trunc('week',period) as period, service_type, sum(footfall) as footfall from combinations_base where total_responses > 0 group by 1,2) b on a.period = b.period and a.service_type = b.service_type\ngroup by 1\nunion all\nselect '4. D - '||cast(a.period as varchar) as period, \nsum(case when a.service_type in ('GX','GYM') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM') then b.footfall end),0) as gx_gym_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY') then b.footfall end),0) as gx_gym_play_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE') then b.footfall end),0) as gx_gym_play_live_nps,\nsum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then a.numerator end)/nullif(sum(case when a.service_type in ('GX','GYM','PLAY','LIVE','PT') then b.footfall end),0) as platform_nps\nfrom\n(select period as period, service_type, 100.00*(sum(promoters) - sum(detractors))/nullif(sum(total_responses),0) * sum(footfall) as numerator\nfrom combinations_base\nwhere period between date_add('day',-6,{{end_date}}) and {{end_date}}\nand total_responses > 0\ngroup by 1,2) a\njoin (select period as period, service_type, sum(footfall) as footfall from combinations_base where total_responses > 0 group by 1,2) b on a.period = b.period and a.service_type = b.service_type\ngroup by 1\n)\n\n-- select * from platform_nps\nselect period, 'PLATFORM' as service_type, platform_nps as nps from platform_nps\nunion all\nselect * from individual_nps\nunion all\nselect period, 'GX + GYM' as service_type, gx_gym_nps as nps from platform_nps\nunion all\nselect period, 'GX + GYM + PLAY' as service_type, gx_gym_play_nps as nps from platform_nps\nunion all\nselect period, 'GX + GYM + PLAY + LIVE' as service_type, gx_gym_play_live_nps as nps from platform_nps\norder by 1, \n    case\n        when service_type = 'PLATFORM' then 1\n        when service_type = 'GX' then 2\n        when service_type = 'GYM' then 3\n        when service_type = 'PLAY' then 4\n        when service_type = 'LIVE' then 5\n        when service_type = 'BOOTCAMP' then 6\n        when service_type = 'TRANSFORM' then 7\n        when service_type = 'TRANSFORM_PLUS' then 8\n        when service_type = 'PT' then 9\n        when service_type = 'GX + GYM' then 10\n        when service_type = 'GX + GYM + PLAY' then 11\n        when service_type = 'GX + GYM + PLAY + LIVE' then 12 end"
+      },
+      "viz-settings": {
+        "table.pivot": true,
+        "table.pivot_column": "period",
+        "table.cell_column": "nps"
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "city_name"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "end_date"
+            ]
+          ],
+          "value": "2026-02-09"
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "activity_status"
+            ]
+          ],
+          "value": "actual-active"
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "business_line"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "service_type"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "ownership_type"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "center_name"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "start_date"
+            ]
+          ],
+          "value": "2025-12-01"
+        },
+        {
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "sub_service_type"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "number/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "center_service_id"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    },
+    "status": "failed",
+    "class": "class java.text.ParseException",
+    "stacktrace": [
+      "java.base/java.text.NumberFormat.parse(Unknown Source)",
+      "--> driver.common.parameters.values$parse_number76095__76096.invokeStatic(values.clj:281)",
+      "driver.common.parameters.values$parse_number76095__76096.invoke(values.clj:277)",
+      "driver.common.parameters.values$value__GT_number76098__76099.invokeStatic(values.clj:300)",
+      "driver.common.parameters.values$value__GT_number76098__76099.invoke(values.clj:283)",
+      "driver.common.parameters.values$parse_value_for_field_type76101__76102.invokeStatic(values.clj:313)",
+      "driver.common.parameters.values$parse_value_for_field_type76101__76102.invoke(values.clj:302)",
+      "driver.common.parameters.values$update_filter_for_field_type76104__76106.invokeStatic(values.clj:325)",
+      "driver.common.parameters.values$update_filter_for_field_type76104__76106.invoke(values.clj:318)",
+      "driver.common.parameters.values$parse_value_for_type76114__76115.invokeStatic(values.clj:364)",
+      "driver.common.parameters.values$parse_value_for_type76114__76115.invoke(values.clj:336)",
+      "driver.common.parameters.values$value_for_tag76119__76120.invokeStatic(values.clj:375)",
+      "driver.common.parameters.values$value_for_tag76119__76120.invoke(values.clj:369)",
+      "driver.common.parameters.values$query__GT_params_map76123__76125$iter__76127__76131$fn__76132.invoke(values.clj:395)",
+      "driver.common.parameters.values$query__GT_params_map76123__76125.invokeStatic(values.clj:394)",
+      "driver.common.parameters.values$query__GT_params_map76123__76125.invoke(values.clj:385)",
+      "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:55)",
+      "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
+      "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
+      "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
+      "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
+      "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
+      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
+      "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
+      "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
+      "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
+      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
+      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
+      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
+      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+      "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
+      "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
+      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
+      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
+      "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
+      "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
+      "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
+      "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
+      "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+      "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+      "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+      "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+      "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+      "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+      "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+      "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+      "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+      "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+      "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+      "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+      "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+      "driver$do_with_driver.invokeStatic(driver.clj:106)",
+      "driver$do_with_driver.invoke(driver.clj:101)",
+      "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+      "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+      "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+      "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+      "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+      "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+      "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+      "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+      "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+      "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+      "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+      "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+      "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+      "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+      "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+    ],
+    "card_id": 59428,
+    "context": "question",
+    "error": "Unparseable number: \"\"",
+    "row_count": 0,
+    "running_time": 0,
+    "data": {
+      "rows": [],
+      "cols": []
+    }
+  }
+}

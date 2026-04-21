@@ -1,0 +1,565 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 579,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "source",
+      "field_ref": [
+        "field",
+        "source",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "source",
+      "semantic_type": "type/Source",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 20.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "user_count",
+      "field_ref": [
+        "field",
+        "user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 234785.0,
+            "q1": 234785.0,
+            "q3": 1170315.0,
+            "max": 1170315.0,
+            "sd": 661519.6070034509,
+            "avg": 702550.0
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6220,
+  "query_type": "native",
+  "name": "User Count FS VS D2C With Filters",
+  "last_used_at": "2026-04-16T10:54:41.544881Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 149060413,
+      "cardId": 70058,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 3.18m. Optimize Query to reduce execution time."
+        },
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_CUMULATIVE_MEMORY_USAGE"
+          },
+          "message": "Optimize query to reduce memory usage"
+        }
+      ],
+      "queryHash": "a42880ee8c733b676b72873230d5dcd26bf07924f39fcb878772cf29366f9fb3",
+      "executionStartTime": "2026-04-22T22:22:35.684+0000",
+      "tables": [
+        "dwh_fitness_metrics.fs_cohorts",
+        "dwh_fitness_metrics.fs_cohorts",
+        "default.cs_dev_users",
+        "dwh_fitness_metrics.fs_cohorts",
+        "dwh_fitness_metrics.cross_sell_orders",
+        "dwh_fitness_metrics.fs_cohorts",
+        "dwh_fitness_metrics.fs_cohorts",
+        "default.cs_dev_users",
+        "dwh_fitness_metrics.fs_cohorts",
+        "dwh_fitness_metrics.cross_sell_orders"
+      ],
+      "archive": false
+    }
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2026-03-25T08:47:28.761148Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "city_name": {
+          "type": "dimension",
+          "name": "city_name",
+          "id": "6f1002a3-1dfc-469a-87b5-76a41ec22cfb",
+          "display-name": "City Name",
+          "dimension": [
+            "field",
+            8712462,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "first_membership_created_start_date": {
+          "type": "date",
+          "name": "first_membership_created_start_date",
+          "id": "7f9607ac-977a-4325-8017-2e0c43054f3c",
+          "display-name": "First Membership Created Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "active_end_date": {
+          "type": "date",
+          "name": "active_end_date",
+          "id": "2204e709-410a-4cde-847d-7798f2cbd63b",
+          "display-name": "Active End Date"
+        },
+        "business_line": {
+          "type": "dimension",
+          "name": "business_line",
+          "id": "4d560877-abc0-4f3d-9031-4e6ed751aa9a",
+          "display-name": "Business Line",
+          "default": null,
+          "dimension": [
+            "field",
+            9601331,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "75736c2d-f2ee-4f22-bd09-dca78c890bab",
+          "display-name": "Order Start Date"
+        },
+        "consider_city": {
+          "type": "number",
+          "name": "consider_city",
+          "id": "2975a169-a606-4fe8-90ed-a4fd4320ec69",
+          "display-name": "Consider City",
+          "default": "0"
+        },
+        "purchase_time_cohort": {
+          "type": "dimension",
+          "name": "purchase_time_cohort",
+          "id": "a43184fa-1fbc-47b5-8919-8ca380d335d1",
+          "display-name": "Purchase Time Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "is_freebie": {
+          "type": "dimension",
+          "name": "is_freebie",
+          "id": "2c0ff9d2-41ad-49bc-b80c-56dcdfc82d91",
+          "display-name": "Is Freebie",
+          "default": null,
+          "dimension": [
+            "field",
+            9535354,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "current_month_active_vs_expired": {
+          "type": "dimension",
+          "name": "current_month_active_vs_expired",
+          "id": "00efffa0-57fb-4f32-84b5-199ad5153243",
+          "display-name": "Current Month Active Vs Expired",
+          "dimension": [
+            "field",
+            9601353,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "active_start_date": {
+          "type": "date",
+          "name": "active_start_date",
+          "id": "5087ac5d-8567-48df-9931-a2e73d4d984e",
+          "display-name": "Active Start Date"
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "3e2c1f9f-eb4c-44b7-921a-900ac7adc010",
+          "display-name": "Category",
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "4583fd6e-876f-42cf-9c6c-7cc83bd89c4d",
+          "display-name": "Order End Date"
+        },
+        "first_membership_created_end_date": {
+          "type": "date",
+          "name": "first_membership_created_end_date",
+          "id": "5a438b96-c0cf-44f4-a432-5d7f492f50d0",
+          "display-name": "First Membership Created End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "membership_created_end_date": {
+          "type": "date",
+          "name": "membership_created_end_date",
+          "id": "1f8e7ee5-3411-4152-8118-c54348feb830",
+          "display-name": "Membership Created End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "membership_created_start_date": {
+          "type": "date",
+          "name": "membership_created_start_date",
+          "id": "df4386fe-5b61-4542-86aa-70115ee4bea7",
+          "display-name": "Membership Created Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "consider_active_time": {
+          "type": "number",
+          "name": "consider_active_time",
+          "id": "764902f3-6930-4be3-964e-2f82b5794637",
+          "display-name": "Consider Active Time",
+          "default": "0"
+        }
+      },
+      "query": "WITH booking_fact AS \n(\n    SELECT user_id, MAX_BY(center_key, total_class) AS center_key\n    FROM \n    (\n        SELECT user_id, center_key, COUNT(DISTINCT class_date) AS total_class\n        FROM dwh_fitness_mart.booking_fact\n        WHERE attendance_time IS NOT NULL \n        AND class_date IS NOt NULL \n        GROUP BY 1, 2\n    )\n    GROUP BY 1\n),\n\ncenter_dim AS \n(\n    SELECT center_key, city_name \n    FROM \n    dwh_fitness_mart.center_dim\n),\n\nuser_city_mapped AS \n(\n    SELECT user_id, city_name\n    FROM booking_fact bf \n    LEFT JOIN center_dim cd ON bf.center_key = cd.center_key\n),\n\ncity_filtered AS \n(\n    SELECT user_id\n    FROM user_city_mapped\n    WHERE city_name IN (SELECT city_name FROM dwh_fitness_mart.center_dim WHERE {{city_name}})\n),\n\ndev_users AS \n(\n  SELECT DISTINCT user_id\n  FROM gs_d2c.default.cs_dev_users\n),\n\nactive_pack AS \n(\n  SELECT DISTINCT c.user_id\n  FROM dwh_fitness_metrics.fs_cohorts c\n  WHERE c.active_vs_expired = 'Active'\n    AND c.month >= DATE('2018-01-01')\n    [[AND c.month BETWEEN DATE_TRUNC('month', {{active_start_date}}) AND DATE_TRUNC('month', {{active_end_date}})]]\n),\n\ncurrent_month_data AS \n(\n  SELECT user_id\n  FROM dwh_fitness_metrics.fs_cohorts \n  WHERE month = DATE_TRUNC('month', CURRENT_DATE)\n    AND user_id NOT IN (SELECT user_id FROM dev_users)\n    AND ( {{consider_city}} = 0 OR user_id IN (SELECT user_id FROM city_filtered) )\n    [[AND {{current_month_active_vs_expired}}]]\n),\n\nuser_details AS \n(\n  SELECT DISTINCT user_id\n  FROM dwh_fitness_metrics.fs_cohorts \n  WHERE user_id IN (SELECT user_id FROM current_month_data)\n    AND month >= DATE('2018-01-01')\n    AND ( {{consider_active_time}} = 0 OR user_id IN (SELECT user_id FROM active_pack) )\n    [[AND first_membership_created_date >= {{first_membership_created_start_date}}]]\n    [[AND first_membership_created_date <= {{first_membership_created_end_date}}]]\n    [[AND membership_created_date       >= {{membership_created_start_date}}]]\n    [[AND membership_created_date       <= {{membership_created_end_date}}]]\n    [[AND {{business_line}}]]\n),\n\ncross_sell_orders AS \n(\n  SELECT DISTINCT user_id\n  FROM dwh_fitness_metrics.cross_sell_orders \n  WHERE order_date >= DATE('2018-01-01')\n  [[AND {{category}}]]\n  [[AND {{purchase_time_cohort}}]]\n  [[AND order_date >= {{order_start_date}} ]]\n  [[AND order_date <= {{order_end_date}}]]\n  [[AND {{is_freebie}}]]\n)\n\nSELECT 'D2C (BUYERS)' AS source,\n       COUNT(DISTINCT u.user_id) AS user_count\nFROM user_details u\nWHERE EXISTS (SELECT 1 FROM cross_sell_orders x WHERE x.user_id = u.user_id)\n \nUNION ALL\n\nSELECT 'FITNESS-SERVICE (NON-BUYERS)' AS source,\n       COUNT(DISTINCT u.user_id) AS user_count\nFROM user_details u\nWHERE NOT EXISTS (SELECT 1 FROM cross_sell_orders x WHERE x.user_id = u.user_id)\n"
+    }
+  },
+  "id": 70058,
+  "parameter_mappings": [],
+  "display": "pie",
+  "archived_directly": false,
+  "entity_id": "QH8dDFjj-YVxurQdiEf8T",
+  "collection_preview": true,
+  "visualization_settings": {
+    "pie.rows": [
+      {
+        "key": "FITNESS-SERVICE (NON-BUYERS)",
+        "name": "FITNESS-SERVICE (NON-BUYERS)",
+        "originalName": "FITNESS-SERVICE (NON-BUYERS)",
+        "color": "#7172AD",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      },
+      {
+        "key": "D2C (BUYERS)",
+        "name": "D2C (BUYERS)",
+        "originalName": "D2C (BUYERS)",
+        "color": "#E75454",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      },
+      {
+        "key": "D2C",
+        "name": "D2C",
+        "originalName": "D2C",
+        "color": "#E75454",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": true,
+        "isOther": false
+      }
+    ]
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "7f9607ac-977a-4325-8017-2e0c43054f3c",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "first_membership_created_start_date"
+        ]
+      ],
+      "name": "First Membership Created Start Date",
+      "slug": "first_membership_created_start_date"
+    },
+    {
+      "id": "5a438b96-c0cf-44f4-a432-5d7f492f50d0",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "first_membership_created_end_date"
+        ]
+      ],
+      "name": "First Membership Created End Date",
+      "slug": "first_membership_created_end_date"
+    },
+    {
+      "id": "df4386fe-5b61-4542-86aa-70115ee4bea7",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "membership_created_start_date"
+        ]
+      ],
+      "name": "Membership Created Start Date",
+      "slug": "membership_created_start_date"
+    },
+    {
+      "id": "1f8e7ee5-3411-4152-8118-c54348feb830",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "membership_created_end_date"
+        ]
+      ],
+      "name": "Membership Created End Date",
+      "slug": "membership_created_end_date"
+    },
+    {
+      "id": "5087ac5d-8567-48df-9931-a2e73d4d984e",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "active_start_date"
+        ]
+      ],
+      "name": "Active Start Date",
+      "slug": "active_start_date"
+    },
+    {
+      "id": "2204e709-410a-4cde-847d-7798f2cbd63b",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "active_end_date"
+        ]
+      ],
+      "name": "Active End Date",
+      "slug": "active_end_date"
+    },
+    {
+      "slug": "consider_active_time",
+      "values_query_type": "list",
+      "default": "0",
+      "name": "Consider Active Time",
+      "type": "number/=",
+      "values_source_type": "static-list",
+      "id": "764902f3-6930-4be3-964e-2f82b5794637",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_active_time"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "75736c2d-f2ee-4f22-bd09-dca78c890bab",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date"
+    },
+    {
+      "id": "4583fd6e-876f-42cf-9c6c-7cc83bd89c4d",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date"
+    },
+    {
+      "id": "a43184fa-1fbc-47b5-8919-8ca380d335d1",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "purchase_time_cohort"
+        ]
+      ],
+      "name": "Purchase Time Cohort",
+      "slug": "purchase_time_cohort"
+    },
+    {
+      "id": "6f1002a3-1dfc-469a-87b5-76a41ec22cfb",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "city_name"
+        ]
+      ],
+      "name": "City Name",
+      "slug": "city_name",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "slug": "consider_city",
+      "values_query_type": "list",
+      "default": "0",
+      "name": "Consider City",
+      "type": "number/=",
+      "values_source_type": "static-list",
+      "id": "2975a169-a606-4fe8-90ed-a4fd4320ec69",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_city"
+        ]
+      ],
+      "values_source_config": {
+        "values": [
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "3e2c1f9f-eb4c-44b7-921a-900ac7adc010",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    },
+    {
+      "id": "2c0ff9d2-41ad-49bc-b80c-56dcdfc82d91",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "is_freebie"
+        ]
+      ],
+      "name": "Is Freebie",
+      "slug": "is_freebie"
+    },
+    {
+      "id": "4d560877-abc0-4f3d-9031-4e6ed751aa9a",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "business_line"
+        ]
+      ],
+      "name": "Business Line",
+      "slug": "business_line"
+    },
+    {
+      "id": "00efffa0-57fb-4f32-84b5-199ad5153243",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "current_month_active_vs_expired"
+        ]
+      ],
+      "name": "Current Month Active Vs Expired",
+      "slug": "current_month_active_vs_expired"
+    }
+  ],
+  "created_at": "2025-10-30T08:48:04.066714Z",
+  "public_uuid": null
+}

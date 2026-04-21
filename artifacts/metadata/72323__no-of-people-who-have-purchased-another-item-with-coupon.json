@@ -1,0 +1,184 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 85,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "user_count",
+      "field_ref": [
+        "field",
+        "user_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "user_count",
+      "semantic_type": "type/Quantity",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 301.0,
+            "q1": 301.0,
+            "q3": 301.0,
+            "max": 301.0,
+            "sd": null,
+            "avg": 301.0
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6271,
+  "query_type": "native",
+  "name": "No Of People Who Have Purchased another Item With Coupon",
+  "last_used_at": "2026-04-15T08:54:51.420199Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-12-04T11:51:27.844105Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "7bee29d9-65bf-449b-922d-6976fcaa7b21",
+          "display-name": "Order Start Date",
+          "default": null,
+          "widget-type": null
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "09092ed7-ca88-49c7-966e-065f4e478895",
+          "display-name": "Order End Date",
+          "default": null,
+          "widget-type": null
+        },
+        "coupon_code": {
+          "type": "dimension",
+          "name": "coupon_code",
+          "id": "87f4f596-e7df-4af8-a2a1-82bcb9578316",
+          "display-name": "Coupon Code",
+          "dimension": [
+            "field",
+            9535358,
+            null
+          ],
+          "widget-type": "string/contains",
+          "options": {
+            "case-sensitive": false
+          }
+        },
+        "is_freebie_order": {
+          "type": "dimension",
+          "name": "is_freebie_order",
+          "id": "3fcb005e-9dce-4e7f-ae8e-a3af5844f502",
+          "display-name": "Is Freebie Order",
+          "default": null,
+          "dimension": [
+            "field",
+            9535354,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": " WITH freebie_data AS \n (\n    SELECT *\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE order_date >= DATE('2018-01-01')\n    [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]]\n    AND {{coupon_code}}\n    AND {{is_freebie_order}}\n),\n\nfreebie_user_date AS \n(   \n    SELECT user_id AS min_user_id, MIN_BY(unique_order_id, order_timestamp) AS min_order_id\n    FROM \n    freebie_data\n    GROUP BY 1\n),\n\norder_data_freebie_users AS \n(\n    SELECT *\n    FROM dwh_fitness_metrics.cross_sell_orders nc\n    JOIN freebie_user_date fbd ON nc.user_id = fbd.min_user_id\n    WHERE unique_order_id = min_order_id\n    [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]]\n    AND order_date >= DATE('2018-01-01')\n),\n\nfinal_summary AS \n(\n    SELECT order_id, user_id\n    FROM \n    order_data_freebie_users\n    GROUP BY order_id,user_id\n    HAVING COUNT(DISTINCT sku_code) > 1\n)\n\nSELECT COUNT(DISTINCT user_id) AS user_count\nFROM \nfinal_summary"
+    }
+  },
+  "id": 72323,
+  "parameter_mappings": [],
+  "display": "scalar",
+  "archived_directly": false,
+  "entity_id": "VTkdg3dIinMY1pSOk1M-O",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.cell_column": "_col1",
+    "table.pivot_column": "user_count"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "7bee29d9-65bf-449b-922d-6976fcaa7b21",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date"
+    },
+    {
+      "id": "09092ed7-ca88-49c7-966e-065f4e478895",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date"
+    },
+    {
+      "id": "87f4f596-e7df-4af8-a2a1-82bcb9578316",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "coupon_code"
+        ]
+      ],
+      "name": "Coupon Code",
+      "slug": "coupon_code",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "none"
+    },
+    {
+      "id": "3fcb005e-9dce-4e7f-ae8e-a3af5844f502",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "is_freebie_order"
+        ]
+      ],
+      "name": "Is Freebie Order",
+      "slug": "is_freebie_order"
+    }
+  ],
+  "created_at": "2025-12-04T06:11:48.624116Z",
+  "public_uuid": null
+}

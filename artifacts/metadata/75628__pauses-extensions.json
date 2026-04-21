@@ -1,0 +1,165 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 23,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "display_name": "type",
+      "field_ref": [
+        "field",
+        "type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.5
+          }
+        }
+      }
+    },
+    {
+      "display_name": "memberships",
+      "field_ref": [
+        "field",
+        "memberships",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "memberships",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 24974.0,
+            "q1": 30730.5,
+            "q3": 2234888.0,
+            "max": 3268452.0,
+            "sd": 1526967.1076552097,
+            "avg": 1132809.25
+          }
+        }
+      }
+    }
+  ],
+  "creator": {
+    "email": "mkn@curefit.com",
+    "first_name": "Maragatham",
+    "last_login": "2026-04-14T11:53:08.85271Z",
+    "is_qbnewb": false,
+    "is_superuser": true,
+    "id": 1868,
+    "last_name": "K N",
+    "date_joined": "2021-09-13T10:20:46.362151Z",
+    "common_name": "Maragatham K N"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "Pauses Extensions",
+  "last_query_start": "2026-04-12T14:29:37.509588Z",
+  "dashboard_count": 0,
+  "last_used_at": "2026-04-12T14:29:37.516222Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "average_query_time": 101926.5,
+  "creator_id": 1868,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-25T11:33:38.947883Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "ed": {
+          "type": "date",
+          "name": "ed",
+          "id": "cb5c1038-64f9-4c0e-8b20-17cecf810cd2",
+          "display-name": "Ed"
+        }
+      },
+      "query": "WITH\n  base AS (\n    SELECT\n      m.membership_key,\n      fitness_next_membership\n    FROM\n      dwh_fitness_mart.membership_dim m\n    WHERE 1=1\n      AND m.membership_created_date between date('2017-10-01') and {{ed}}\n      and m.business_line in ('ELITE','PRO','PLAY')\n    --   and amount_paid>2000\n    GROUP BY\n      1,\n      2\n  ),\n\n  parent_child_map AS (\n    SELECT * FROM (\n      SELECT \n        DISTINCT CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS VARCHAR) AS parent_membership_id,\n        cast(m.id as VARCHAR) AS child_membership_id,\n        CASE \n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true' THEN 'Upgrade'\n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true' THEN 'Transfer'\n          ELSE 'Undefined' \n        END AS relationship,\n        md.membership_key, -- needed to join back to base\n        md.business_line,\n        DATE(m2.start) AS parent_pack_start_date,\n        DATE(m2.\"end\") AS parent_pack_end_date_latest,\n        DATE(m.start) AS child_pack_start_date,\n        DATE(m.\"end\") AS child_pack_end_date_latest, \n        COALESCE(COALESCE(CAST(of2.price AS DOUBLE),CAST(m2.price AS DOUBLE)),0) AS parent_amount_paid,\n        COALESCE(COALESCE(CAST(of.price AS DOUBLE),CAST(m.price AS DOUBLE)),0) AS child_amount_paid,\n        DATE(m.cancellation_date) AS child_cancellation_date,\n        DATE(m2.cancellation_date) AS parent_cancellation_date,\n        DATE(m2.created_date) AS parent_created_date,\n        DATE(m.created_date) AS child_created_date,\n        ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num\n      FROM pk_curefitplatforms_membershipdb.memberships m\n      LEFT JOIN dwh_fitness_mart.membership_dim md on m.id = md.membership_service_id\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id\n      LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= {{ed}}\n      LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= {{ed}}\n      WHERE TRUE\n        AND m.created_date between date('2017-10-01') and {{ed}}\n        AND (\n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true'\n          OR \n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true'\n        ) \n        AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')\n    )\n    WHERE row_num = 1\n    -- Filter to Transfer only (excluding Upgrades) to match original transfer logic\n    AND relationship = 'Transfer'\n  )\n\nSELECT\n  CASE \n    WHEN f.membership_key IS NOT NULL AND pcm.parent_membership_id IS NOT NULL THEN 'Both used'\n    WHEN f.membership_key IS NOT NULL THEN 'Pause used'\n    WHEN pcm.parent_membership_id IS NOT NULL THEN 'Transfer used'\n    ELSE 'Unused'\n  END AS type,\n  count(DISTINCT b.membership_key) AS memberships\nFROM base b\nLEFT JOIN dwh_fitness_bi.pause_and_extension_fact f \n  ON b.membership_key = f.membership_key\n  AND UPPER(event_type) = 'PAUSE'\n  AND event_date <= {{ed}} + interval '12' month\nLEFT JOIN parent_child_map pcm\n  ON b.membership_key = pcm.membership_key  -- join on parent's membership_key\n\nGROUP BY 1"
+    }
+  },
+  "id": 75628,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "9srzJzRoDZgMCOD7C-Eml",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3570,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-02-25T11:33:39.344584Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "type",
+    "table.cell_column": "memberships"
+  },
+  "collection": {
+    "metabase.models.collection.root/is-root?": true,
+    "authority_level": null,
+    "name": "Our analytics",
+    "is_personal": false,
+    "id": "root",
+    "can_write": true
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "cb5c1038-64f9-4c0e-8b20-17cecf810cd2",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "ed"
+        ]
+      ],
+      "name": "Ed",
+      "slug": "ed"
+    }
+  ],
+  "created_at": "2026-02-09T06:53:14.624492Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

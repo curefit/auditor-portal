@@ -1,0 +1,156 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 398,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "state_name",
+      "field_ref": [
+        "field",
+        "state_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "state_name",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 41,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.317073170731707
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 41,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1839.0,
+            "q1": 65976.0,
+            "q3": 2882339.0,
+            "max": 45816211.0,
+            "sd": 8119879.709231765,
+            "avg": 3575771.1463414636
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5745,
+  "query_type": "native",
+  "name": "State Wise Cross Sell",
+  "last_used_at": "2026-04-14T06:44:53.792702Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:11:57.826346Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_order_date": {
+          "type": "date",
+          "name": "start_order_date",
+          "id": "2e0a2fbe-1f18-4393-b61a-9f3a55be1445",
+          "display-name": "Start Order Date",
+          "default": "2024-01-01"
+        },
+        "end_order_date": {
+          "type": "date",
+          "name": "end_order_date",
+          "id": "71249ea1-539a-49e4-a261-40cc2c34095e",
+          "display-name": "End Order Date",
+          "default": "2025-05-31"
+        }
+      },
+      "query": "SELECT state_name, ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member = 1\n      AND is_cancelled = 0\n     [[AND order_date BETWEEN {{start_order_date}} AND {{end_order_date}}]]\nGROUP BY state_name\nORDER BY 2 DESC"
+    }
+  },
+  "id": 63729,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "6QEHhrpiCOK2aiUx2_B7H",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.column_widths": [
+      158
+    ],
+    "table.cell_column": "total_gmv"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "2e0a2fbe-1f18-4393-b61a-9f3a55be1445",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_order_date"
+        ]
+      ],
+      "name": "Start Order Date",
+      "slug": "start_order_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "71249ea1-539a-49e4-a261-40cc2c34095e",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_order_date"
+        ]
+      ],
+      "name": "End Order Date",
+      "slug": "end_order_date",
+      "default": "2025-05-31"
+    }
+  ],
+  "created_at": "2025-07-13T05:58:17.089892Z",
+  "public_uuid": null
+}

@@ -1,0 +1,475 @@
+{
+  "card_id": 63761,
+  "card_name": "Gender_Age Wise Cross Sell",
+  "parameters": [
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "value": "2026-01-01"
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "value": "2026-01-31"
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "NO-GENDER",
+          "NO-AGE",
+          6751,
+          16891381.189999994
+        ],
+        [
+          "male",
+          "21-30",
+          3752,
+          8674443.109999998
+        ],
+        [
+          "male",
+          "31-40",
+          3277,
+          9351187.909999998
+        ],
+        [
+          "female",
+          "21-30",
+          1982,
+          4152999.372799999
+        ],
+        [
+          "female",
+          "31-40",
+          1915,
+          4688216.47
+        ],
+        [
+          "male",
+          "41-50",
+          977,
+          2524499.3
+        ],
+        [
+          "female",
+          "41-50",
+          727,
+          1596172.6200000003
+        ],
+        [
+          "male",
+          "NO-AGE",
+          246,
+          752593.12
+        ],
+        [
+          "male",
+          "11-20",
+          167,
+          211852.88999999998
+        ],
+        [
+          "female",
+          "NO-AGE",
+          167,
+          499910.28
+        ],
+        [
+          "male",
+          "50+",
+          165,
+          655767.55
+        ],
+        [
+          "NO-GENDER",
+          "21-30",
+          135,
+          459160.07999999996
+        ],
+        [
+          "female",
+          "50+",
+          124,
+          274291.61
+        ],
+        [
+          "NO-GENDER",
+          "31-40",
+          72,
+          169408.87000000002
+        ],
+        [
+          "female",
+          "0-10",
+          62,
+          169306.05000000005
+        ],
+        [
+          "female",
+          "11-20",
+          56,
+          107916.18999999999
+        ],
+        [
+          "male",
+          "0-10",
+          52,
+          102539.35
+        ],
+        [
+          "NO-GENDER",
+          "41-50",
+          30,
+          70171.29999999999
+        ],
+        [
+          "NO-GENDER",
+          "0-10",
+          30,
+          58787.47000000001
+        ],
+        [
+          "NO-GENDER",
+          "50+",
+          8,
+          16737.4
+        ],
+        [
+          "undisclosed",
+          "21-30",
+          6,
+          13274.550000000001
+        ],
+        [
+          "undisclosed",
+          "31-40",
+          4,
+          8530.5
+        ],
+        [
+          "non-binary",
+          "21-30",
+          2,
+          1798.0
+        ],
+        [
+          "non-binary",
+          "NO-AGE",
+          1,
+          3498.0
+        ],
+        [
+          "undisclosed",
+          "41-50",
+          1,
+          1276.0
+        ],
+        [
+          "NO-GENDER",
+          "11-20",
+          1,
+          359.0
+        ],
+        [
+          "undisclosed",
+          "NO-AGE",
+          1,
+          2807.0
+        ]
+      ],
+      "cols": [
+        {
+          "display_name": "gender",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "gender",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "name": "gender",
+          "base_type": "type/Text",
+          "database_type": "varchar",
+          "effective_type": "type/Text"
+        },
+        {
+          "display_name": "age",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "age",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "name": "age",
+          "base_type": "type/Text",
+          "database_type": "varchar(6)",
+          "effective_type": "type/Text"
+        },
+        {
+          "display_name": "user_count",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "user_count",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "name": "user_count",
+          "base_type": "type/BigInteger",
+          "database_type": "bigint",
+          "effective_type": "type/BigInteger"
+        },
+        {
+          "display_name": "total_gmv",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_gmv",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "name": "total_gmv",
+          "base_type": "type/Float",
+          "database_type": "double",
+          "effective_type": "type/Float"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2026-01-01",
+          "2026-01-31"
+        ],
+        "query": "WITH age_calculated AS \n(\n    SELECT CASE \n            WHEN birthday != 'NO-BIRTHDAY' THEN DATE_DIFF('MONTH',DATE(CAST(birthday AS TIMESTAMP)),CURRENT_DATE)/12 \n            ELSE NULL\n            END AS age, \n            user_id, gender, category, gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE is_fs_member = 1\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n       AND order_date BETWEEN ? AND ?\n      \n)\n\nSELECT  gender,\n        CASE     \n                WHEN age IS NULL THEN 'NO-AGE'\n                WHEN CAST(age AS DECIMAL) <= 10 THEN '0-10'\n                WHEN CAST(age AS DECIMAL) > 10 and CAST(age AS DECIMAL) <= 20 THEN '11-20'\n                WHEN CAST(age AS DECIMAL) > 20 and CAST(age AS DECIMAL) <= 30 THEN '21-30'\n                WHEN CAST(age AS DECIMAL) > 30 and CAST(age AS DECIMAL) <= 40 THEN '31-40'\n                WHEN CAST(age AS DECIMAL) > 40 and CAST(age AS DECIMAL) <= 50 THEN '41-50'\n                WHEN CAST(age AS DECIMAL) > 50 THEN '50+'\n            END AS age,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM age_calculated\nGROUP BY 1,2\nORDER BY 3 DESC"
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "display_name": "gender",
+            "field_ref": [
+              "field",
+              "gender",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "name": "gender",
+            "semantic_type": "type/Category",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 5,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.296296296296297
+                }
+              }
+            }
+          },
+          {
+            "display_name": "age",
+            "field_ref": [
+              "field",
+              "age",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "name": "age",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 4.851851851851852
+                }
+              }
+            }
+          },
+          {
+            "display_name": "user_count",
+            "field_ref": [
+              "field",
+              "user_count",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "name": "user_count",
+            "semantic_type": "type/Quantity",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 22,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 1.0,
+                  "q1": 6.5,
+                  "q3": 606.75,
+                  "max": 6751.0,
+                  "sd": 1566.2041552238506,
+                  "avg": 767.074074074074
+                }
+              }
+            }
+          },
+          {
+            "display_name": "total_gmv",
+            "field_ref": [
+              "field",
+              "total_gmv",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "base_type": "type/Float",
+            "effective_type": "type/Float",
+            "name": "total_gmv",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 27,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 359.0,
+                  "q1": 14140.2625,
+                  "q3": 1385277.745,
+                  "max": 16891381.189999994,
+                  "sd": 3921087.5711353803,
+                  "avg": 1905884.6363999997
+                }
+              }
+            }
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-04-17T06:41:36.654336Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 0,
+        "invalidated-at": "2026-04-16T18:41:36.649623Z"
+      },
+      "native": {
+        "template-tags": {
+          "order_start_date": {
+            "type": "date",
+            "name": "order_start_date",
+            "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+            "display-name": "Order Start Date",
+            "default": "2024-01-01",
+            "widget-type": null
+          },
+          "order_end_date": {
+            "type": "date",
+            "name": "order_end_date",
+            "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+            "display-name": "Order End Date",
+            "default": "2025-05-31",
+            "widget-type": null
+          }
+        },
+        "query": "WITH age_calculated AS \n(\n    SELECT CASE \n            WHEN birthday != 'NO-BIRTHDAY' THEN DATE_DIFF('MONTH',DATE(CAST(birthday AS TIMESTAMP)),CURRENT_DATE)/12 \n            ELSE NULL\n            END AS age, \n            user_id, gender, category, gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE is_fs_member = 1\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n      [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n      \n)\n\nSELECT  gender,\n        CASE     \n                WHEN age IS NULL THEN 'NO-AGE'\n                WHEN CAST(age AS DECIMAL) <= 10 THEN '0-10'\n                WHEN CAST(age AS DECIMAL) > 10 and CAST(age AS DECIMAL) <= 20 THEN '11-20'\n                WHEN CAST(age AS DECIMAL) > 20 and CAST(age AS DECIMAL) <= 30 THEN '21-30'\n                WHEN CAST(age AS DECIMAL) > 30 and CAST(age AS DECIMAL) <= 40 THEN '31-40'\n                WHEN CAST(age AS DECIMAL) > 40 and CAST(age AS DECIMAL) <= 50 THEN '41-50'\n                WHEN CAST(age AS DECIMAL) > 50 THEN '50+'\n            END AS age,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM age_calculated\nGROUP BY 1,2\nORDER BY 3 DESC"
+      },
+      "viz-settings": {
+        "table.pivot_column": "age",
+        "table.cell_column": "user_count",
+        "graph.dimensions": [
+          "age"
+        ],
+        "graph.metrics": [
+          "user_count"
+        ]
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "order_start_date"
+            ]
+          ],
+          "value": "2026-01-01"
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "order_end_date"
+            ]
+          ],
+          "value": "2026-01-31"
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 27,
+    "running_time": 2261
+  }
+}

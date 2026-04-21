@@ -1,0 +1,156 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 408,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "city",
+      "field_ref": [
+        "field",
+        "city",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "city",
+      "semantic_type": "type/City",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1413,
+          "nil%": 0.0007077140835102619
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.019815994338288
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_gmv",
+      "field_ref": [
+        "field",
+        "total_gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "total_gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1110,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 2902.6123464467446,
+            "q3": 19330.81052120952,
+            "max": 34429426.0,
+            "sd": 1101077.464985549,
+            "avg": 103755.55555555553
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5745,
+  "query_type": "native",
+  "name": "City Wise Cross Sell",
+  "last_used_at": "2026-04-14T06:44:53.807618Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:11:35.882525Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_order_date": {
+          "type": "date",
+          "name": "start_order_date",
+          "id": "2e0a2fbe-1f18-4393-b61a-9f3a55be1445",
+          "display-name": "Start Order Date",
+          "default": "2024-01-01"
+        },
+        "end_order_date": {
+          "type": "date",
+          "name": "end_order_date",
+          "id": "71249ea1-539a-49e4-a261-40cc2c34095e",
+          "display-name": "End Order Date",
+          "default": "2025-05-31"
+        }
+      },
+      "query": "SELECT city, ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member = 1\n      AND is_cancelled = 0\n      AND order_date >= DATE('2018-01-01')\n     [[AND order_date BETWEEN {{start_order_date}} AND {{end_order_date}}]]\nGROUP BY city\nORDER BY 2 DESC"
+    }
+  },
+  "id": 63781,
+  "parameter_mappings": [],
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "Q9zFLfyjBvTkfydl3W6AK",
+  "collection_preview": true,
+  "visualization_settings": {
+    "table.column_widths": [
+      158
+    ],
+    "table.cell_column": "total_gmv"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "2e0a2fbe-1f18-4393-b61a-9f3a55be1445",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_order_date"
+        ]
+      ],
+      "name": "Start Order Date",
+      "slug": "start_order_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "71249ea1-539a-49e4-a261-40cc2c34095e",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_order_date"
+        ]
+      ],
+      "name": "End Order Date",
+      "slug": "end_order_date",
+      "default": "2025-05-31"
+    }
+  ],
+  "created_at": "2025-07-13T05:58:17.089892Z",
+  "public_uuid": null
+}

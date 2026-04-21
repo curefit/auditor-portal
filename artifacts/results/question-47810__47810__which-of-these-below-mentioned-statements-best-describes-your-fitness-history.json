@@ -1,0 +1,210 @@
+{
+  "card_id": 47810,
+  "card_name": "Which of these below- mentioned statements best describes your fitness history.",
+  "parameters": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "This is my first paid gym/ centre membership.",
+          113516
+        ],
+        [
+          "Restarting fitness, previously had a gym/ fitness membership.",
+          70951
+        ],
+        [
+          "Switching from another gym/ fitness centre to cult.fit.",
+          42030
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc.",
+          18356
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., This is my first paid gym/ centre membership.",
+          546
+        ],
+        [
+          "Restarting fitness, previously had a gym/ fitness membership., This is my first paid gym/ centre membership.",
+          466
+        ],
+        [
+          "Restarting fitness, previously had a gym/ fitness membership., Switching from another gym/ fitness centre to cult.fit.",
+          381
+        ],
+        [
+          "Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
+          316
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., Restarting fitness, previously had a gym/ fitness membership.",
+          261
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., Switching from another gym/ fitness centre to cult.fit.",
+          52
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., Restarting fitness, previously had a gym/ fitness membership., This is my first paid gym/ centre membership.",
+          9
+        ],
+        [
+          "Restarting fitness, previously had a gym/ fitness membership., Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
+          9
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
+          2
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., Restarting fitness, previously had a gym/ fitness membership., Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
+          2
+        ]
+      ],
+      "cols": [
+        {
+          "display_name": "answers",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "answers",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "name": "answers",
+          "base_type": "type/Text",
+          "database_type": "varchar",
+          "effective_type": "type/Text"
+        },
+        {
+          "display_name": "users",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "users",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "name": "users",
+          "base_type": "type/BigInteger",
+          "database_type": "bigint",
+          "effective_type": "type/BigInteger"
+        }
+      ],
+      "native_form": {
+        "params": null,
+        "query": "SELECT answers,\n       COUNT(DISTINCT userid) users\nFROM(\nselect userid,\n      listagg(DISTINCT answer,', ') WITHIN GROUP (ORDER BY answer) answers\n       \nfrom pk_curefitprod_cfdb.npsresponses \nwhere formid = 'post_pack_purchase_onboarding'  \nand date(createddate) >= DATE('2024-01-01')\nand answer IS NOT NULL --and questiontext NOT IN ('What is your height?', 'Your age?', 'What is your date of birth?', 'What is your current weight (in kgs)?')\nand questiontext IN ('Which of these below-mentioned statements best describes your fitness history.')\nGROUP BY 1\nORDER BY 2 desc\n)\nGROUP BY 1\nORDER BY 2 desc"
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "display_name": "answers",
+            "field_ref": [
+              "field",
+              "answers",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "name": "answers",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 14,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 111.85714285714286
+                }
+              }
+            }
+          },
+          {
+            "display_name": "users",
+            "field_ref": [
+              "field",
+              "users",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "name": "users",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 12,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2.0,
+                  "q1": 20.52181527453828,
+                  "q3": 18356.0,
+                  "max": 113516.0,
+                  "sd": 34718.72641839537,
+                  "avg": 17635.5
+                }
+              }
+            }
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-04-17T06:25:05.005886Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 41791,
+        "invalidated-at": "2026-04-16T18:25:05.003349Z"
+      },
+      "native": {
+        "query": "SELECT answers,\n       COUNT(DISTINCT userid) users\nFROM(\nselect userid,\n      listagg(DISTINCT answer,', ') WITHIN GROUP (ORDER BY answer) answers\n       \nfrom pk_curefitprod_cfdb.npsresponses \nwhere formid = 'post_pack_purchase_onboarding'  \nand date(createddate) >= DATE('2024-01-01')\nand answer IS NOT NULL --and questiontext NOT IN ('What is your height?', 'Your age?', 'What is your date of birth?', 'What is your current weight (in kgs)?')\nand questiontext IN ('Which of these below-mentioned statements best describes your fitness history.')\nGROUP BY 1\nORDER BY 2 desc\n)\nGROUP BY 1\nORDER BY 2 desc",
+        "template-tags": {}
+      },
+      "viz-settings": {
+        "table.pivot_column": "questionid",
+        "table.cell_column": "responsedate_pk_epoch",
+        "table.column_widths": [
+          598
+        ]
+      },
+      "database": 39
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 14,
+    "running_time": 108881
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 9,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "display_name": "type",
+      "field_ref": [
+        "field",
+        "type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.5
+          }
+        }
+      }
+    },
+    {
+      "display_name": "memberships",
+      "field_ref": [
+        "field",
+        "memberships",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "memberships",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 127088.0,
+            "q1": 127088.0,
+            "q3": 1942795.0,
+            "max": 1942795.0,
+            "sd": 1283898.7323478826,
+            "avg": 1034941.5
+          }
+        }
+      }
+    }
+  ],
+  "creator": {
+    "email": "mkn@curefit.com",
+    "first_name": "Maragatham",
+    "last_login": "2026-04-14T11:53:08.85271Z",
+    "is_qbnewb": false,
+    "is_superuser": true,
+    "id": 1868,
+    "last_name": "K N",
+    "date_joined": "2021-09-13T10:20:46.362151Z",
+    "common_name": "Maragatham K N"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "Same city vs other city - Modified",
+  "last_query_start": "2026-04-12T14:16:05.241764Z",
+  "dashboard_count": 0,
+  "last_used_at": "2026-04-12T14:16:05.250487Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 147634127,
+      "cardId": 75650,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 4.11m. Optimize Query to reduce execution time."
+        }
+      ],
+      "queryHash": "660b8d5f813e59254a43279c7bbc4f97aa9f99d6cb5f7b39cd774042653766e5",
+      "executionStartTime": "2026-04-19T21:50:15.955+0000",
+      "tables": [
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.membership_dim",
+        "dwh_fitness_mart.center_dim",
+        "dwh_fitness_mart.center_dim"
+      ],
+      "archive": false
+    }
+  ],
+  "average_query_time": 239196.0,
+  "creator_id": 1868,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-02-09T10:25:52.715959Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "Last_date": {
+          "type": "date",
+          "name": "Last_date",
+          "id": "d7e34f0a-73cc-479d-8ed0-ffd1ad2090b1",
+          "display-name": "Last Date",
+          "default": null,
+          "widget-type": null
+        }
+      },
+      "query": "WITH\n  base AS (\n    SELECT\n      date_trunc('quarter', membership_created_date) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city\n    FROM\n      dwh_fitness_mart.membership_dim m\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      AND m.membership_created_date >= date('2017-01-01')\n      and m.business_line in ('ELITE','PRO','PLAY')\n      and amount_paid>2000\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n  )\n  \n  SELECT  IF(other_city_checkins>0,'Multi','Same') type,count(membership_key) memberships\n  FROM (\n  select \n    b.membership_key,\n    COUNT_IF(c.city_name = attributed_city) attributed_city_checkins,\n    COUNT_IF(c.city_name <> attributed_city) other_city_checkins\n  from base b \n  JOIN dwh_fitness_mart.booking_fact bf \n  on b.membership_key=bf.membership_key\n  and bf.class_date between  Date('2017-01-01') \n        and {{Last_date}}\n  and attendance_time is not null\n    join dwh_fitness_mart.center_dim c \n  on c.center_key = bf.center_key\n  group by 1)\n  group by 1 \n  order by 1,2\n  "
+    }
+  },
+  "id": 75650,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "tqjIuqySQpRDZ2eHMHfNM",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3412,
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "last_name": "Vardhan",
+    "timestamp": "2026-02-09T10:25:52.806327Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "type",
+    "table.cell_column": "memberships"
+  },
+  "collection": {
+    "metabase.models.collection.root/is-root?": true,
+    "authority_level": null,
+    "name": "Our analytics",
+    "is_personal": false,
+    "id": "root",
+    "can_write": true
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "d7e34f0a-73cc-479d-8ed0-ffd1ad2090b1",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Last_date"
+        ]
+      ],
+      "name": "Last Date",
+      "slug": "Last_date"
+    }
+  ],
+  "created_at": "2026-02-09T09:37:03.110432Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

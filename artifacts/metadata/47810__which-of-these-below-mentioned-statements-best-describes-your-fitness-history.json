@@ -1,0 +1,165 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 428,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "display_name": "answers",
+      "field_ref": [
+        "field",
+        "answers",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "answers",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 14,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 111.85714285714286
+          }
+        }
+      }
+    },
+    {
+      "display_name": "users",
+      "field_ref": [
+        "field",
+        "users",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "users",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 12,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 2.0,
+            "q1": 20.25386608210716,
+            "q3": 18321.0,
+            "max": 113255.0,
+            "sd": 34638.49128094035,
+            "avg": 17595.285714285714
+          }
+        }
+      }
+    }
+  ],
+  "creator": {
+    "email": "tavleen.chohan@curefit.com",
+    "first_name": "Tavleen Eeshu",
+    "last_login": "2026-04-09T17:20:51.219856Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 1664,
+    "last_name": "Chohan",
+    "date_joined": "2021-05-07T07:02:59.070918Z",
+    "common_name": "Tavleen Eeshu Chohan"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "Which of these below- mentioned statements best describes your fitness history.",
+  "last_query_start": "2026-04-14T10:09:51.84739Z",
+  "dashboard_count": 2,
+  "last_used_at": "2026-04-14T10:09:51.852724Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 148411996,
+      "cardId": 47810,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": 2,
+            "name": "REDUNDANT_ORDER_BY"
+          },
+          "message": "ORDER BY in subquery may have no effect"
+        }
+      ],
+      "queryHash": "35eed91d585a618ac0b33475ca8748cdca280a9ee28dec51810ee5cf80a3124f",
+      "executionStartTime": "2026-04-15T07:38:27.227+0000",
+      "tables": [
+        "pk_curefitprod_cfdb.npsresponses"
+      ],
+      "archive": false
+    }
+  ],
+  "average_query_time": 42055.72727272727,
+  "creator_id": 1664,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2025-01-28T07:47:45.701569Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "type": "native",
+    "database": 39,
+    "native": {
+      "query": "SELECT answers,\n       COUNT(DISTINCT userid) users\nFROM(\nselect userid,\n      listagg(DISTINCT answer,', ') WITHIN GROUP (ORDER BY answer) answers\n       \nfrom pk_curefitprod_cfdb.npsresponses \nwhere formid = 'post_pack_purchase_onboarding'  \nand date(createddate) >= DATE('2024-01-01')\nand answer IS NOT NULL --and questiontext NOT IN ('What is your height?', 'Your age?', 'What is your date of birth?', 'What is your current weight (in kgs)?')\nand questiontext IN ('Which of these below-mentioned statements best describes your fitness history.')\nGROUP BY 1\nORDER BY 2 desc\n)\nGROUP BY 1\nORDER BY 2 desc",
+      "template-tags": {}
+    }
+  },
+  "id": 47810,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "pie",
+  "archived_directly": false,
+  "entity_id": "HR7huuFYXt7WKOQYLp5z_",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 2002,
+    "email": "ruchir.pokharna@curefit.com",
+    "first_name": "Ruchir",
+    "last_name": "Pokharna",
+    "timestamp": "2024-11-05T05:42:54.98452Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "questionid",
+    "table.cell_column": "responsedate_pk_epoch",
+    "table.column_widths": [
+      598
+    ]
+  },
+  "collection": {
+    "metabase.models.collection.root/is-root?": true,
+    "authority_level": null,
+    "name": "Our analytics",
+    "is_personal": false,
+    "id": "root",
+    "can_write": true
+  },
+  "metabase_version": null,
+  "parameters": [],
+  "created_at": "2024-03-15T14:36:18.218945Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

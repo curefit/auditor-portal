@@ -1,0 +1,338 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 2807,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "member_type",
+      "field_ref": [
+        "field",
+        "member_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "member_type",
+      "semantic_type": "type/Category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 11.5
+          }
+        }
+      }
+    },
+    {
+      "display_name": "source",
+      "field_ref": [
+        "field",
+        "source",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "source",
+      "semantic_type": "type/Source",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "gmv",
+      "field_ref": [
+        "field",
+        "gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "gmv",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 8,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 48780.0,
+            "q1": 2762963.0,
+            "q3": 9471506.5,
+            "max": 36612766.0,
+            "sd": 11600680.383297607,
+            "avg": 9438201.75
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": false,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 5748,
+  "query_type": "native",
+  "name": "Source Wise Cross Sell VS D2C",
+  "last_used_at": "2026-04-16T16:23:02.447193Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "creator_id": 3781,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-08T09:04:34.998208Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "order_start_date": {
+          "type": "date",
+          "name": "order_start_date",
+          "id": "f7ca072f-ad22-42f1-ae3f-ed59503c3dbd",
+          "display-name": "Order Start Date",
+          "default": "2024-01-01"
+        },
+        "order_end_date": {
+          "type": "date",
+          "name": "order_end_date",
+          "id": "5456cef1-6895-4af3-bea0-d609a8f5b201",
+          "display-name": "Order End Date",
+          "default": "2025-05-31"
+        },
+        "source": {
+          "type": "dimension",
+          "name": "source",
+          "id": "3a3a709b-c3d3-4c3c-87d9-ab622ad283a0",
+          "display-name": "Source",
+          "default": null,
+          "dimension": [
+            "field",
+            9535370,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "category": {
+          "type": "dimension",
+          "name": "category",
+          "id": "762d3dc2-6a93-4f48-a675-ba6f212df084",
+          "display-name": "Category",
+          "default": null,
+          "dimension": [
+            "field",
+            9535348,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "cohort": {
+          "type": "dimension",
+          "name": "cohort",
+          "id": "3ae3a1dd-6cd4-4eca-90b9-010d94aa4f4c",
+          "display-name": "Cohort",
+          "default": null,
+          "dimension": [
+            "field",
+            9535350,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        },
+        "service_type": {
+          "type": "dimension",
+          "name": "service_type",
+          "id": "e0a38064-0079-4dff-8ffa-53c7cfd8e102",
+          "display-name": "Service Type",
+          "default": null,
+          "dimension": [
+            "field",
+            9535349,
+            null
+          ],
+          "widget-type": "string/=",
+          "options": null
+        }
+      },
+      "query": "WITH combined_data AS \n(\n    SELECT 'CROSS-SELL' AS member_type,source, ROUND(SUM(gmv)) AS gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE\n         AND is_fs_member= 1\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n         [[AND {{source}}]]\n         [[AND {{category}}]]\n         [[AND {{cohort}}]]\n         [[AND {{service_type}}]]\n         [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]]\n    GROUP BY 1,2\n         \n    UNION ALL \n    \n    SELECT 'NON-FS-MEMBER' AS member_type,source, ROUND(SUM(gmv)) AS gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE\n         AND is_fs_member= 0\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n         [[AND {{source}}]]\n         [[AND {{category}}]]\n         [[AND {{cohort}}]]\n         [[AND {{service_type}}]]\n         [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]] \n    GROUP BY 1,2\n)\n\nSELECT \n    member_type,\n    source,\n    gmv\nFROM combined_data\nORDER BY \n    SUM(gmv) OVER (PARTITION BY source) DESC, \n    source\n"
+    }
+  },
+  "id": 66102,
+  "parameter_mappings": [],
+  "display": "bar",
+  "archived_directly": false,
+  "entity_id": "svjyCjocQnH92oIgN3DDA",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.show_values": true,
+    "graph.series_order_dimension": "_col0",
+    "graph.label_value_frequency": "all",
+    "pie.rows": [
+      {
+        "key": "NON-FS-MEMBER",
+        "name": "NON-FS-MEMBER",
+        "originalName": "NON-FS-MEMBER",
+        "color": "#227FD2",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      },
+      {
+        "key": "CROSS-SELL",
+        "name": "CROSS-SELL",
+        "originalName": "CROSS-SELL",
+        "color": "#51528D",
+        "defaultColor": false,
+        "enabled": true,
+        "hidden": false,
+        "isOther": false
+      }
+    ],
+    "graph.metrics": [
+      "gmv"
+    ],
+    "graph.show_stack_values": "all",
+    "graph.label_value_formatting": "compact",
+    "graph.series_order": [
+      {
+        "key": "NON-FS-MEMBER",
+        "color": "#A989C5",
+        "enabled": true,
+        "name": "NON-FS-MEMBER"
+      },
+      {
+        "key": "CROSS-SELL",
+        "color": "#7172AD",
+        "enabled": true,
+        "name": "CROSS-SELL"
+      }
+    ],
+    "graph.dimensions": [
+      "source",
+      "member_type"
+    ],
+    "stackable.stack_type": "stacked"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "f7ca072f-ad22-42f1-ae3f-ed59503c3dbd",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "name": "Order Start Date",
+      "slug": "order_start_date",
+      "default": "2024-01-01"
+    },
+    {
+      "id": "5456cef1-6895-4af3-bea0-d609a8f5b201",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "name": "Order End Date",
+      "slug": "order_end_date",
+      "default": "2025-05-31"
+    },
+    {
+      "id": "3a3a709b-c3d3-4c3c-87d9-ab622ad283a0",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "source"
+        ]
+      ],
+      "name": "Source",
+      "slug": "source"
+    },
+    {
+      "id": "762d3dc2-6a93-4f48-a675-ba6f212df084",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "Category",
+      "slug": "category"
+    },
+    {
+      "id": "3ae3a1dd-6cd4-4eca-90b9-010d94aa4f4c",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "name": "Cohort",
+      "slug": "cohort"
+    },
+    {
+      "id": "e0a38064-0079-4dff-8ffa-53c7cfd8e102",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service Type",
+      "slug": "service_type"
+    }
+  ],
+  "created_at": "2025-08-12T09:27:36.7056Z",
+  "public_uuid": null
+}

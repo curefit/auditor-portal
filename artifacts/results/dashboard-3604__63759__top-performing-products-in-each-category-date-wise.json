@@ -1,0 +1,924 @@
+{
+  "card_id": 63759,
+  "card_name": "Top Performing Products In Each Category Date Wise",
+  "parameters": [
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "value": "2026-01-01"
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "value": "2026-01-31"
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "date_filter"
+        ]
+      ],
+      "value": "Month"
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "value": [
+        "Indoor Equipment",
+        "Indoor_Equipment-Strength"
+      ]
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "source"
+        ]
+      ],
+      "value": ""
+    }
+  ],
+  "query_response": {
+    "database_id": 39,
+    "started_at": "2026-04-17T06:41:41.548629Z",
+    "via": [
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Unable to substitute parameters: Invalid values provided for operator: :string/=",
+        "stacktrace": [
+          "--> driver.sql.parameters.substitute$substitute$fn__89379.invoke(substitute.clj:91)",
+          "driver.sql.parameters.substitute$substitute.invokeStatic(substitute.clj:88)",
+          "driver.sql.parameters.substitute$substitute.invoke(substitute.clj:78)",
+          "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:59)",
+          "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
+          "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
+          "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
+          "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
+          "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
+          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
+          "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
+          "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
+          "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
+          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
+          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
+          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
+          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+          "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
+          "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
+          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
+          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
+          "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
+          "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
+          "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "invalid-parameter",
+        "ex-data": {
+          "type": "invalid-parameter",
+          "params": {
+            "order_start_date": {
+              "s": "2026-01-01"
+            },
+            "order_end_date": {
+              "s": "2026-01-31"
+            },
+            "date_filter": "Month",
+            "category": {
+              "field": {
+                "description": null,
+                "lib/type": "metadata/column",
+                "base-type": "type/Text",
+                "semantic-type": "type/Category",
+                "table-id": 9950473,
+                "name": "category",
+                "coercion-strategy": null,
+                "settings": null,
+                "nfc-path": null,
+                "database-type": "varchar",
+                "effective-type": "type/Text",
+                "fk-target-field-id": null,
+                "active": true,
+                "id": 9535348,
+                "parent-id": null,
+                "visibility-type": "normal",
+                "display-name": "Category",
+                "position": 15,
+                "fingerprint": {
+                  "global": {
+                    "distinct-count": 18,
+                    "nil%": 0.0
+                  },
+                  "type": {
+                    "type/Text": {
+                      "percent-json": 0.0,
+                      "percent-url": 0.0,
+                      "percent-email": 0.0,
+                      "percent-state": 0.0,
+                      "average-length": 8.6931
+                    }
+                  }
+                }
+              },
+              "value": {
+                "value": [
+                  "Indoor Equipment",
+                  "Indoor_Equipment-Strength"
+                ],
+                "type": "string/="
+              }
+            },
+            "cohort": {
+              "field": {
+                "description": null,
+                "lib/type": "metadata/column",
+                "base-type": "type/Text",
+                "semantic-type": "type/Category",
+                "table-id": 9950473,
+                "name": "cohort",
+                "coercion-strategy": null,
+                "settings": null,
+                "nfc-path": null,
+                "database-type": "varchar",
+                "effective-type": "type/Text",
+                "fk-target-field-id": null,
+                "active": true,
+                "id": 9535350,
+                "parent-id": null,
+                "visibility-type": "normal",
+                "display-name": "Cohort",
+                "position": 13,
+                "fingerprint": {
+                  "global": {
+                    "distinct-count": 15,
+                    "nil%": 0.0
+                  },
+                  "type": {
+                    "type/Text": {
+                      "percent-json": 0.0,
+                      "percent-url": 0.0,
+                      "percent-email": 0.0,
+                      "percent-state": 0.0,
+                      "average-length": 15.1123
+                    }
+                  }
+                }
+              },
+              "value": {
+                "value": "",
+                "type": "string/="
+              }
+            },
+            "source": {
+              "field": {
+                "description": null,
+                "lib/type": "metadata/column",
+                "base-type": "type/Text",
+                "semantic-type": "type/Source",
+                "table-id": 9950473,
+                "name": "source",
+                "coercion-strategy": null,
+                "settings": null,
+                "nfc-path": null,
+                "database-type": "varchar",
+                "effective-type": "type/Text",
+                "fk-target-field-id": null,
+                "active": true,
+                "id": 9535370,
+                "parent-id": null,
+                "visibility-type": "normal",
+                "display-name": "Source",
+                "position": 19,
+                "fingerprint": {
+                  "global": {
+                    "distinct-count": 7,
+                    "nil%": 0.0
+                  },
+                  "type": {
+                    "type/Text": {
+                      "percent-json": 0.0,
+                      "percent-url": 0.0,
+                      "percent-email": 0.0,
+                      "percent-state": 0.0,
+                      "average-length": 10.3016
+                    }
+                  }
+                }
+              },
+              "value": {
+                "value": "",
+                "type": "string/="
+              }
+            },
+            "rank_less_than": "metabase.driver.common.parameters/no-value"
+          },
+          "parsed-query": [
+            "WITH grouped_data AS \n(\n    SELECT CASE \n        WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n        WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n        WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n    END AS order_date,\n    CASE\n        WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Year' THEN date_trunc('year', order_date)\n        WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Month' THEN date_trunc('month', order_date)\n        WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Quarter' THEN date_trunc('quarter', order_date)\n    END AS sort_key,\n    category, article_type, majority_service, style_id, ROUND(SUM(gmv)) AS product_total_gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE \n        AND is_fs_member = 1\n        AND is_cancelled = 0\n        ",
+            {
+              "args": [
+                "AND order_date BETWEEN ",
+                {
+                  "k": "order_start_date"
+                },
+                " AND ",
+                {
+                  "k": "order_end_date"
+                }
+              ]
+            },
+            "\n        ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "category"
+                }
+              ]
+            },
+            "\n        ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "source"
+                }
+              ]
+            },
+            "\n        ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "cohort"
+                }
+              ]
+            },
+            "\n    GROUP BY 1,2,3,4,5,6\n),\n\noverall_gmv AS\n(\n    SELECT  \n        CASE \n            WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n            WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n            WHEN ",
+            {
+              "k": "date_filter"
+            },
+            " = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n        END AS order_date_overall,\n        ROUND(SUM(gmv)) AS overall_total_gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE \n        AND is_fs_member = 1\n        AND is_cancelled = 0\n        ",
+            {
+              "args": [
+                "AND order_date BETWEEN ",
+                {
+                  "k": "order_start_date"
+                },
+                " AND ",
+                {
+                  "k": "order_end_date"
+                }
+              ]
+            },
+            "\n    GROUP BY 1\n),\n\nranked_data AS \n(\n    SELECT order_date,sort_key, category, article_type, majority_service, style_id,product_total_gmv, SUM(product_total_gmv) OVER(PARTITION BY category,order_date) AS category_total_gmv, og.overall_total_gmv, ROW_NUMBER() OVER(PARTITION BY order_date,sort_key,category ORDER BY product_total_gmv DESC) AS rnk \n    FROM \n    grouped_data gd\n    JOIN \n    overall_gmv og ON gd.order_date = og.order_date_overall\n)\n\n\nSELECT \n    order_date,category, article_type, majority_service, style_id, product_total_gmv, category_total_gmv, overall_total_gmv,\n    CAST(category_total_gmv/overall_total_gmv AS DOUBLE) * 100 AS overall_category_percentage_contribution, \n    CAST(product_total_gmv/category_total_gmv AS DOUBLE) * 100 AS category__product_percentage_contribution, \n    CAST(product_total_gmv/overall_total_gmv AS DOUBLE) * 100 AS overall_product_percentage_contribution, \n    rnk \nFROM ranked_data \n    WHERE 1 = 1\n    ",
+            {
+              "args": [
+                "AND rnk <= ",
+                {
+                  "k": "rank_less_than"
+                }
+              ]
+            },
+            "\n    ORDER BY sort_key, overall_category_percentage_contribution DESC, overall_product_percentage_contribution DESC"
+          ]
+        }
+      },
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Error preprocessing query in clojure.lang.AFunction$1@7fc6ebb5: Unable to substitute parameters: Invalid values provided for operator: :string/=",
+        "stacktrace": [
+          "--> query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:178)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "qp",
+        "ex-data": {
+          "fn": "clojure.lang.AFunction$1@7fc6ebb5",
+          "query": {
+            "constraints": {
+              "max-results": 10000,
+              "max-results-bare-rows": 5000
+            },
+            "lib/type": "mbql/query",
+            "lib/metadata": "metabase.lib.metadata.invocation_tracker.InvocationTracker@6b76ac57",
+            "stages": [
+              {
+                "lib/type": "mbql.stage/native",
+                "template-tags": {
+                  "order_start_date": {
+                    "type": "date",
+                    "name": "order_start_date",
+                    "id": "df65f1f9-6028-4005-b561-9b857e5f45cc",
+                    "display-name": "Order Start Date",
+                    "default": "2024-01-01"
+                  },
+                  "order_end_date": {
+                    "type": "date",
+                    "name": "order_end_date",
+                    "id": "90b799dd-67c8-49e6-935b-91278d57a169",
+                    "display-name": "Order End Date",
+                    "default": "2025-05-31"
+                  },
+                  "date_filter": {
+                    "type": "text",
+                    "name": "date_filter",
+                    "id": "784c843f-f307-4265-968c-b53ba9f6cb02",
+                    "display-name": "Date Filter",
+                    "default": "Month"
+                  },
+                  "category": {
+                    "type": "dimension",
+                    "name": "category",
+                    "id": "3ebb961f-b923-42dd-9705-f17ef51fbf30",
+                    "display-name": "Category",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "a69a660d-4cd0-49e4-b0c1-51f3aae2bdb0",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9535348
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "cohort": {
+                    "type": "dimension",
+                    "name": "cohort",
+                    "id": "b223b2db-6c6c-4087-9b0a-44baf66223fd",
+                    "display-name": "Cohort",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "6aac1cb7-7a59-4605-b855-00afbbc4404d",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9535350
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "source": {
+                    "type": "dimension",
+                    "name": "source",
+                    "id": "c74abe4c-12f4-465f-80c9-3b90d99f7830",
+                    "display-name": "Source",
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "a20a3b16-8c50-47dd-ba11-565d126506f6",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9535370
+                    ],
+                    "widget-type": "string/="
+                  },
+                  "rank_less_than": {
+                    "type": "number",
+                    "name": "rank_less_than",
+                    "id": "300bba69-13ff-4638-a0e0-d9100aed7581",
+                    "display-name": "Rank Less Than",
+                    "default": null
+                  }
+                },
+                "native": "WITH grouped_data AS \n(\n    SELECT CASE \n        WHEN {{date_filter}} = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n        WHEN {{date_filter}} = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n        WHEN {{date_filter}} = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n    END AS order_date,\n    CASE\n        WHEN {{date_filter}} = 'Year' THEN date_trunc('year', order_date)\n        WHEN {{date_filter}} = 'Month' THEN date_trunc('month', order_date)\n        WHEN {{date_filter}} = 'Quarter' THEN date_trunc('quarter', order_date)\n    END AS sort_key,\n    category, article_type, majority_service, style_id, ROUND(SUM(gmv)) AS product_total_gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE \n        AND is_fs_member = 1\n        AND is_cancelled = 0\n        [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n        [[AND {{category}}]]\n        [[AND {{source}}]]\n        [[AND {{cohort}}]]\n    GROUP BY 1,2,3,4,5,6\n),\n\noverall_gmv AS\n(\n    SELECT  \n        CASE \n            WHEN {{date_filter}} = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n            WHEN {{date_filter}} = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n            WHEN {{date_filter}} = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n        END AS order_date_overall,\n        ROUND(SUM(gmv)) AS overall_total_gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE \n        AND is_fs_member = 1\n        AND is_cancelled = 0\n        [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n    GROUP BY 1\n),\n\nranked_data AS \n(\n    SELECT order_date,sort_key, category, article_type, majority_service, style_id,product_total_gmv, SUM(product_total_gmv) OVER(PARTITION BY category,order_date) AS category_total_gmv, og.overall_total_gmv, ROW_NUMBER() OVER(PARTITION BY order_date,sort_key,category ORDER BY product_total_gmv DESC) AS rnk \n    FROM \n    grouped_data gd\n    JOIN \n    overall_gmv og ON gd.order_date = og.order_date_overall\n)\n\n\nSELECT \n    order_date,category, article_type, majority_service, style_id, product_total_gmv, category_total_gmv, overall_total_gmv,\n    CAST(category_total_gmv/overall_total_gmv AS DOUBLE) * 100 AS overall_category_percentage_contribution, \n    CAST(product_total_gmv/category_total_gmv AS DOUBLE) * 100 AS category__product_percentage_contribution, \n    CAST(product_total_gmv/overall_total_gmv AS DOUBLE) * 100 AS overall_product_percentage_contribution, \n    rnk \nFROM ranked_data \n    WHERE 1 = 1\n    [[AND rnk <= {{rank_less_than}}]]\n    ORDER BY sort_key, overall_category_percentage_contribution DESC, overall_product_percentage_contribution DESC"
+              }
+            ],
+            "middleware": {
+              "js-int-to-string?": true,
+              "ignore-cached-results?": false,
+              "process-viz-settings?": false,
+              "userland-query?": true
+            },
+            "cache-strategy": {
+              "multiplier": 10,
+              "min-duration-ms": 60000,
+              "type": "ttl",
+              "avg-execution-ms": 0,
+              "invalidated-at": "2026-04-16T18:41:41.543716Z"
+            },
+            "viz-settings": {
+              "table.pivot_column": "overall_total_gmv",
+              "table.cell_column": "product_total_gmv"
+            },
+            "lib.convert/converted?": true,
+            "info": {
+              "executed-by": 3570,
+              "context": "question",
+              "card-id": 63759,
+              "card-name": "Top Performing Products In Each Category Date Wise",
+              "visualization-settings": {
+                "table.pivot_column": "overall_total_gmv",
+                "table.cell_column": "product_total_gmv"
+              },
+              "query-hash": "0x9258CC3B"
+            },
+            "database": 39,
+            "parameters": [
+              {
+                "value": "2026-01-01",
+                "type": "date/single",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "order_start_date"
+                  ]
+                ]
+              },
+              {
+                "value": "2026-01-31",
+                "type": "date/single",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "order_end_date"
+                  ]
+                ]
+              },
+              {
+                "value": "Month",
+                "type": "string/=",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "date_filter"
+                  ]
+                ]
+              },
+              {
+                "value": [
+                  "Indoor Equipment",
+                  "Indoor_Equipment-Strength"
+                ],
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "category"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "cohort"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "source"
+                  ]
+                ]
+              }
+            ]
+          },
+          "type": "qp"
+        }
+      }
+    ],
+    "action_id": null,
+    "error_type": "invalid-parameter",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 0,
+        "invalidated-at": "2026-04-16T18:41:41.543716Z"
+      },
+      "native": {
+        "template-tags": {
+          "order_start_date": {
+            "type": "date",
+            "name": "order_start_date",
+            "id": "df65f1f9-6028-4005-b561-9b857e5f45cc",
+            "display-name": "Order Start Date",
+            "default": "2024-01-01"
+          },
+          "order_end_date": {
+            "type": "date",
+            "name": "order_end_date",
+            "id": "90b799dd-67c8-49e6-935b-91278d57a169",
+            "display-name": "Order End Date",
+            "default": "2025-05-31"
+          },
+          "date_filter": {
+            "type": "text",
+            "name": "date_filter",
+            "id": "784c843f-f307-4265-968c-b53ba9f6cb02",
+            "display-name": "Date Filter",
+            "default": "Month"
+          },
+          "category": {
+            "type": "dimension",
+            "name": "category",
+            "id": "3ebb961f-b923-42dd-9705-f17ef51fbf30",
+            "display-name": "Category",
+            "default": null,
+            "dimension": [
+              "field",
+              9535348,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "cohort": {
+            "type": "dimension",
+            "name": "cohort",
+            "id": "b223b2db-6c6c-4087-9b0a-44baf66223fd",
+            "display-name": "Cohort",
+            "default": null,
+            "dimension": [
+              "field",
+              9535350,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "source": {
+            "type": "dimension",
+            "name": "source",
+            "id": "c74abe4c-12f4-465f-80c9-3b90d99f7830",
+            "display-name": "Source",
+            "dimension": [
+              "field",
+              9535370,
+              null
+            ],
+            "widget-type": "string/="
+          },
+          "rank_less_than": {
+            "type": "number",
+            "name": "rank_less_than",
+            "id": "300bba69-13ff-4638-a0e0-d9100aed7581",
+            "display-name": "Rank Less Than",
+            "default": null
+          }
+        },
+        "query": "WITH grouped_data AS \n(\n    SELECT CASE \n        WHEN {{date_filter}} = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n        WHEN {{date_filter}} = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n        WHEN {{date_filter}} = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n    END AS order_date,\n    CASE\n        WHEN {{date_filter}} = 'Year' THEN date_trunc('year', order_date)\n        WHEN {{date_filter}} = 'Month' THEN date_trunc('month', order_date)\n        WHEN {{date_filter}} = 'Quarter' THEN date_trunc('quarter', order_date)\n    END AS sort_key,\n    category, article_type, majority_service, style_id, ROUND(SUM(gmv)) AS product_total_gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE \n        AND is_fs_member = 1\n        AND is_cancelled = 0\n        [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n        [[AND {{category}}]]\n        [[AND {{source}}]]\n        [[AND {{cohort}}]]\n    GROUP BY 1,2,3,4,5,6\n),\n\noverall_gmv AS\n(\n    SELECT  \n        CASE \n            WHEN {{date_filter}} = 'Year' THEN CAST(year(order_date) AS VARCHAR)\n            WHEN {{date_filter}} = 'Month' THEN format_datetime(order_date, 'MMMM') || ' - ' || CAST(year(order_date) AS VARCHAR)\n            WHEN {{date_filter}} = 'Quarter' THEN 'Q' || CAST(quarter(order_date) AS VARCHAR) || ' - ' || CAST(year(order_date) AS VARCHAR)\n        END AS order_date_overall,\n        ROUND(SUM(gmv)) AS overall_total_gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE \n        AND is_fs_member = 1\n        AND is_cancelled = 0\n        [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n    GROUP BY 1\n),\n\nranked_data AS \n(\n    SELECT order_date,sort_key, category, article_type, majority_service, style_id,product_total_gmv, SUM(product_total_gmv) OVER(PARTITION BY category,order_date) AS category_total_gmv, og.overall_total_gmv, ROW_NUMBER() OVER(PARTITION BY order_date,sort_key,category ORDER BY product_total_gmv DESC) AS rnk \n    FROM \n    grouped_data gd\n    JOIN \n    overall_gmv og ON gd.order_date = og.order_date_overall\n)\n\n\nSELECT \n    order_date,category, article_type, majority_service, style_id, product_total_gmv, category_total_gmv, overall_total_gmv,\n    CAST(category_total_gmv/overall_total_gmv AS DOUBLE) * 100 AS overall_category_percentage_contribution, \n    CAST(product_total_gmv/category_total_gmv AS DOUBLE) * 100 AS category__product_percentage_contribution, \n    CAST(product_total_gmv/overall_total_gmv AS DOUBLE) * 100 AS overall_product_percentage_contribution, \n    rnk \nFROM ranked_data \n    WHERE 1 = 1\n    [[AND rnk <= {{rank_less_than}}]]\n    ORDER BY sort_key, overall_category_percentage_contribution DESC, overall_product_percentage_contribution DESC"
+      },
+      "viz-settings": {
+        "table.pivot_column": "overall_total_gmv",
+        "table.cell_column": "product_total_gmv"
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "order_start_date"
+            ]
+          ],
+          "value": "2026-01-01"
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "order_end_date"
+            ]
+          ],
+          "value": "2026-01-31"
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "date_filter"
+            ]
+          ],
+          "value": "Month"
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "category"
+            ]
+          ],
+          "value": [
+            "Indoor Equipment",
+            "Indoor_Equipment-Strength"
+          ]
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "cohort"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "source"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    },
+    "status": "failed",
+    "class": "class clojure.lang.ExceptionInfo",
+    "stacktrace": [
+      "--> driver.common.parameters.operators$verify_type_and_arity74141__74142.invokeStatic(operators.clj:54)",
+      "driver.common.parameters.operators$verify_type_and_arity74141__74142.invoke(operators.clj:35)",
+      "driver.common.parameters.operators$to_clause74148__74150.invokeStatic(operators.clj:70)",
+      "driver.common.parameters.operators$to_clause74148__74150.invoke(operators.clj:66)",
+      "driver.sql.parameters.substitution$field_filter__GT_replacement_snippet_info89282__89284.invokeStatic(substitution.clj:320)",
+      "driver.sql.parameters.substitution$field_filter__GT_replacement_snippet_info89282__89284.invoke(substitution.clj:304)",
+      "driver.sql.parameters.substitution$fn__89295$_AMPERSAND_f__89297.invoke(substitution.clj:366)",
+      "driver.sql.parameters.substitution$fn__89295$fn__89314.invoke(substitution.clj:349)",
+      "driver.sql.parameters.substitute$substitute_field_filter.invokeStatic(substitute.clj:19)",
+      "driver.sql.parameters.substitute$substitute_field_filter.invoke(substitute.clj:13)",
+      "driver.sql.parameters.substitute$substitute_param.invokeStatic(substitute.clj:37)",
+      "driver.sql.parameters.substitute$substitute_param.invoke(substitute.clj:31)",
+      "driver.sql.parameters.substitute$substitute_STAR_$fn__89370.invoke(substitute.clj:71)",
+      "driver.sql.parameters.substitute$substitute_STAR_.invokeStatic(substitute.clj:64)",
+      "driver.sql.parameters.substitute$substitute_STAR_.invoke(substitute.clj:61)",
+      "driver.sql.parameters.substitute$substitute_optional.invokeStatic(substitute.clj:56)",
+      "driver.sql.parameters.substitute$substitute_optional.invoke(substitute.clj:55)",
+      "driver.sql.parameters.substitute$substitute_STAR_$fn__89370.invoke(substitute.clj:74)",
+      "driver.sql.parameters.substitute$substitute_STAR_.invokeStatic(substitute.clj:64)",
+      "driver.sql.parameters.substitute$substitute_STAR_.invoke(substitute.clj:61)",
+      "driver.sql.parameters.substitute$substitute$fn__89379.invoke(substitute.clj:89)",
+      "driver.sql.parameters.substitute$substitute.invokeStatic(substitute.clj:88)",
+      "driver.sql.parameters.substitute$substitute.invoke(substitute.clj:78)",
+      "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:59)",
+      "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
+      "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
+      "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
+      "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
+      "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
+      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
+      "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
+      "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
+      "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
+      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
+      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
+      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
+      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+      "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
+      "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
+      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
+      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
+      "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
+      "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
+      "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
+      "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
+      "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+      "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+      "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+      "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+      "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+      "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+      "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+      "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+      "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+      "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+      "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+      "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+      "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+      "driver$do_with_driver.invokeStatic(driver.clj:106)",
+      "driver$do_with_driver.invoke(driver.clj:101)",
+      "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+      "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+      "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+      "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+      "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+      "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+      "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+      "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+      "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+      "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+      "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+      "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+      "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+      "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+      "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+    ],
+    "card_id": 63759,
+    "context": "question",
+    "error": "Invalid values provided for operator: :string/=",
+    "row_count": 0,
+    "running_time": 0,
+    "ex-data": {
+      "param-type": "string/=",
+      "param-value": "",
+      "field-id": 9535370,
+      "type": "invalid-parameter"
+    },
+    "data": {
+      "rows": [],
+      "cols": []
+    }
+  }
+}

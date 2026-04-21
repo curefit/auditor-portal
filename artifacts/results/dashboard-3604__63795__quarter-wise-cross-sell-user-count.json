@@ -1,0 +1,323 @@
+{
+  "card_id": 63795,
+  "card_name": "Quarter Wise Cross Sell User Count",
+  "parameters": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "2018-10-01T00:00:00Z",
+          6343
+        ],
+        [
+          "2019-01-01T00:00:00Z",
+          7105
+        ],
+        [
+          "2019-04-01T00:00:00Z",
+          14451
+        ],
+        [
+          "2019-07-01T00:00:00Z",
+          24066
+        ],
+        [
+          "2019-10-01T00:00:00Z",
+          32265
+        ],
+        [
+          "2020-01-01T00:00:00Z",
+          46972
+        ],
+        [
+          "2020-04-01T00:00:00Z",
+          52941
+        ],
+        [
+          "2020-07-01T00:00:00Z",
+          63554
+        ],
+        [
+          "2020-10-01T00:00:00Z",
+          70333
+        ],
+        [
+          "2021-01-01T00:00:00Z",
+          77276
+        ],
+        [
+          "2021-04-01T00:00:00Z",
+          82437
+        ],
+        [
+          "2021-07-01T00:00:00Z",
+          89148
+        ],
+        [
+          "2021-10-01T00:00:00Z",
+          95849
+        ],
+        [
+          "2022-01-01T00:00:00Z",
+          101189
+        ],
+        [
+          "2022-04-01T00:00:00Z",
+          110669
+        ],
+        [
+          "2022-07-01T00:00:00Z",
+          122845
+        ],
+        [
+          "2022-10-01T00:00:00Z",
+          140192
+        ],
+        [
+          "2023-01-01T00:00:00Z",
+          173980
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          197991
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          211399
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          225038
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          239008
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          253329
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          272328
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          290292
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          308232
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          337300
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          364907
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          396315
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          432451
+        ],
+        [
+          "2026-04-01T00:00:00Z",
+          437564
+        ]
+      ],
+      "cols": [
+        {
+          "display_name": "month",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "month",
+            {
+              "base-type": "type/Date"
+            }
+          ],
+          "name": "month",
+          "base_type": "type/Date",
+          "database_type": "date",
+          "effective_type": "type/Date"
+        },
+        {
+          "display_name": "user_count",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "user_count",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "name": "user_count",
+          "base_type": "type/BigInteger",
+          "database_type": "bigint",
+          "effective_type": "type/BigInteger"
+        }
+      ],
+      "native_form": {
+        "params": null,
+        "query": "WITH user_details AS \n(\n    SELECT DISTINCT user_id\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE user_id NOT IN (SELECT user_id FROM gs_d2c.default.cs_dev_users)\n    AND month = DATE_TRUNC('MONTH', CURRENT_DATE)\n),\n\norder_detail AS \n(\n    SELECT user_id, MIN(order_date) AS min_order_date\n    FROM  dwh_fitness_metrics.cross_sell_orders\n    WHERE user_id IN (SELECT DISTINCT user_id FROM user_details)\n    AND order_date >= DATE('2018-01-01')\n    GROUP BY 1\n),\n\nuser_count_details AS\n(\n    SELECT DATE_TRUNC('QUARTER',min_order_date) AS month, COUNT(DISTINCT user_id) AS user_count\n    FROM \n    order_detail\n    GROUP BY 1\n)\n\n\nSELECT month, SUM(user_count) OVER(ORDER BY month) AS user_count \nFROM \nuser_count_details"
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "display_name": "month",
+            "field_ref": [
+              "field",
+              "month",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "base_type": "type/Date",
+            "effective_type": "type/Date",
+            "name": "month",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 31,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2018-10-01",
+                  "latest": "2026-04-01"
+                }
+              }
+            }
+          },
+          {
+            "display_name": "user_count",
+            "field_ref": [
+              "field",
+              "user_count",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "name": "user_count",
+            "semantic_type": "type/Quantity",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 31,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 6343.0,
+                  "q1": 65248.75,
+                  "q3": 267578.25,
+                  "max": 437564.0,
+                  "sd": 132478.3317137001,
+                  "avg": 170250.61290322582
+                }
+              }
+            }
+          }
+        ]
+      },
+      "insights": [
+        {
+          "previous-value": 432451,
+          "unit": "quarter",
+          "offset": -2808959.494332484,
+          "last-change": 0.011823304836848568,
+          "col": "user_count",
+          "slope": 155.3715881684188,
+          "last-value": 437564,
+          "best-fit": [
+            "+",
+            -2808959.494332484,
+            [
+              "*",
+              155.3715881684188,
+              "x"
+            ]
+          ]
+        }
+      ]
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-04-17T06:41:50.317505Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 48538,
+        "invalidated-at": "2026-04-16T18:41:50.314758Z"
+      },
+      "native": {
+        "template-tags": {},
+        "query": "WITH user_details AS \n(\n    SELECT DISTINCT user_id\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE user_id NOT IN (SELECT user_id FROM gs_d2c.default.cs_dev_users)\n    AND month = DATE_TRUNC('MONTH', CURRENT_DATE)\n),\n\norder_detail AS \n(\n    SELECT user_id, MIN(order_date) AS min_order_date\n    FROM  dwh_fitness_metrics.cross_sell_orders\n    WHERE user_id IN (SELECT DISTINCT user_id FROM user_details)\n    AND order_date >= DATE('2018-01-01')\n    GROUP BY 1\n),\n\nuser_count_details AS\n(\n    SELECT DATE_TRUNC('QUARTER',min_order_date) AS month, COUNT(DISTINCT user_id) AS user_count\n    FROM \n    order_detail\n    GROUP BY 1\n)\n\n\nSELECT month, SUM(user_count) OVER(ORDER BY month) AS user_count \nFROM \nuser_count_details\n"
+      },
+      "viz-settings": {
+        "pie.rows": [
+          {
+            "key": "FITNESS-SERVICE (NON-BUYERS)",
+            "name": "FITNESS-SERVICE (NON-BUYERS)",
+            "originalName": "FITNESS-SERVICE (NON-BUYERS)",
+            "color": "#7172AD",
+            "defaultColor": true,
+            "enabled": true,
+            "hidden": false,
+            "isOther": false
+          },
+          {
+            "key": "D2C",
+            "name": "D2C",
+            "originalName": "D2C",
+            "color": "#E75454",
+            "defaultColor": false,
+            "enabled": true,
+            "hidden": false,
+            "isOther": false
+          }
+        ],
+        "table.column_widths": [
+          172
+        ],
+        "graph.dimensions": [
+          "month"
+        ],
+        "graph.show_values": true,
+        "graph.label_value_frequency": "all",
+        "graph.label_value_formatting": "compact",
+        "graph.metrics": [
+          "user_count"
+        ]
+      },
+      "database": 39
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 31,
+    "running_time": 104951
+  }
+}

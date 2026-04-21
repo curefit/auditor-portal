@@ -1,0 +1,1042 @@
+{
+  "card_id": 70149,
+  "card_name": "EBO - Store Wise Cross Sell VS D2C",
+  "parameters": [
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_start_date"
+        ]
+      ],
+      "value": "2026-01-01"
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "order_end_date"
+        ]
+      ],
+      "value": "2026-01-31"
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cohort"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "value": [
+        "Indoor Equipment",
+        "Indoor_Equipment-Strength"
+      ]
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "value": ""
+    },
+    {
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "store_name"
+        ]
+      ],
+      "value": ""
+    }
+  ],
+  "query_response": {
+    "database_id": 39,
+    "started_at": "2026-04-17T06:45:51.982697Z",
+    "via": [
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Unable to substitute parameters: Invalid values provided for operator: :string/=",
+        "stacktrace": [
+          "--> driver.sql.parameters.substitute$substitute$fn__89379.invoke(substitute.clj:91)",
+          "driver.sql.parameters.substitute$substitute.invokeStatic(substitute.clj:88)",
+          "driver.sql.parameters.substitute$substitute.invoke(substitute.clj:78)",
+          "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:59)",
+          "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
+          "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
+          "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
+          "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
+          "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
+          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
+          "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
+          "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
+          "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
+          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
+          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
+          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
+          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+          "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
+          "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
+          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
+          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
+          "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
+          "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
+          "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "invalid-parameter",
+        "ex-data": {
+          "type": "invalid-parameter",
+          "params": {
+            "order_start_date": {
+              "s": "2026-01-01"
+            },
+            "order_end_date": {
+              "s": "2026-01-31"
+            },
+            "category": {
+              "field": {
+                "description": null,
+                "lib/type": "metadata/column",
+                "base-type": "type/Text",
+                "semantic-type": "type/Category",
+                "table-id": 9950473,
+                "name": "category",
+                "coercion-strategy": null,
+                "settings": null,
+                "nfc-path": null,
+                "database-type": "varchar",
+                "effective-type": "type/Text",
+                "fk-target-field-id": null,
+                "active": true,
+                "id": 9535348,
+                "parent-id": null,
+                "visibility-type": "normal",
+                "display-name": "Category",
+                "position": 15,
+                "fingerprint": {
+                  "global": {
+                    "distinct-count": 18,
+                    "nil%": 0.0
+                  },
+                  "type": {
+                    "type/Text": {
+                      "percent-json": 0.0,
+                      "percent-url": 0.0,
+                      "percent-email": 0.0,
+                      "percent-state": 0.0,
+                      "average-length": 8.6931
+                    }
+                  }
+                }
+              },
+              "value": {
+                "value": [
+                  "Indoor Equipment",
+                  "Indoor_Equipment-Strength"
+                ],
+                "type": "string/="
+              }
+            },
+            "cohort": {
+              "field": {
+                "description": null,
+                "lib/type": "metadata/column",
+                "base-type": "type/Text",
+                "semantic-type": "type/Category",
+                "table-id": 9950473,
+                "name": "cohort",
+                "coercion-strategy": null,
+                "settings": null,
+                "nfc-path": null,
+                "database-type": "varchar",
+                "effective-type": "type/Text",
+                "fk-target-field-id": null,
+                "active": true,
+                "id": 9535350,
+                "parent-id": null,
+                "visibility-type": "normal",
+                "display-name": "Cohort",
+                "position": 13,
+                "fingerprint": {
+                  "global": {
+                    "distinct-count": 15,
+                    "nil%": 0.0
+                  },
+                  "type": {
+                    "type/Text": {
+                      "percent-json": 0.0,
+                      "percent-url": 0.0,
+                      "percent-email": 0.0,
+                      "percent-state": 0.0,
+                      "average-length": 15.1123
+                    }
+                  }
+                }
+              },
+              "value": {
+                "value": "",
+                "type": "string/="
+              }
+            },
+            "service_type": {
+              "field": {
+                "description": null,
+                "lib/type": "metadata/column",
+                "base-type": "type/Text",
+                "semantic-type": "type/Category",
+                "table-id": 9950473,
+                "name": "majority_service",
+                "coercion-strategy": null,
+                "settings": null,
+                "nfc-path": null,
+                "database-type": "varchar",
+                "effective-type": "type/Text",
+                "fk-target-field-id": null,
+                "active": true,
+                "id": 9535349,
+                "parent-id": null,
+                "visibility-type": "normal",
+                "display-name": "Majority Service",
+                "position": 25,
+                "fingerprint": {
+                  "global": {
+                    "distinct-count": 6,
+                    "nil%": 0.0
+                  },
+                  "type": {
+                    "type/Text": {
+                      "percent-json": 0.0,
+                      "percent-url": 0.0,
+                      "percent-email": 0.0,
+                      "percent-state": 0.0,
+                      "average-length": 5.6896
+                    }
+                  }
+                }
+              },
+              "value": {
+                "value": "",
+                "type": "string/="
+              }
+            },
+            "store_name": {
+              "field": {
+                "description": null,
+                "lib/type": "metadata/column",
+                "base-type": "type/Text",
+                "semantic-type": "type/Category",
+                "table-id": 9950473,
+                "name": "store_name",
+                "coercion-strategy": null,
+                "settings": null,
+                "nfc-path": null,
+                "database-type": "varchar",
+                "effective-type": "type/Text",
+                "fk-target-field-id": null,
+                "active": true,
+                "id": 9535355,
+                "parent-id": null,
+                "visibility-type": "normal",
+                "display-name": "Store Name",
+                "position": 8,
+                "fingerprint": {
+                  "global": {
+                    "distinct-count": 42,
+                    "nil%": 0.0
+                  },
+                  "type": {
+                    "type/Text": {
+                      "percent-json": 0.0,
+                      "percent-url": 0.0,
+                      "percent-email": 0.0,
+                      "percent-state": 0.0,
+                      "average-length": 3.6181
+                    }
+                  }
+                }
+              },
+              "value": {
+                "value": "",
+                "type": "string/="
+              }
+            }
+          },
+          "parsed-query": [
+            "WITH combined_data AS \n(\n    SELECT 'CROSS-SELL' AS member_type,store_name, ROUND(SUM(gmv)) AS gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE\n         AND is_fs_member= 1\n         AND is_cancelled = 0\n         AND channel = 'EBO'\n         ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "category"
+                }
+              ]
+            },
+            "\n         ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "cohort"
+                }
+              ]
+            },
+            "\n         ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "service_type"
+                }
+              ]
+            },
+            "\n         ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "store_name"
+                }
+              ]
+            },
+            "\n         ",
+            {
+              "args": [
+                "AND order_date BETWEEN ",
+                {
+                  "k": "order_start_date"
+                },
+                " AND ",
+                {
+                  "k": "order_end_date"
+                },
+                " "
+              ]
+            },
+            "\n    GROUP BY 1,2\n         \n    UNION ALL \n    \n    SELECT 'NON-FS-MEMBER' AS member_type,store_name, ROUND(SUM(gmv)) AS gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE\n         AND is_fs_member= 0\n         AND is_cancelled = 0\n         AND channel = 'EBO'\n         ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "category"
+                }
+              ]
+            },
+            "\n         ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "cohort"
+                }
+              ]
+            },
+            "\n         ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "service_type"
+                }
+              ]
+            },
+            "\n         ",
+            {
+              "args": [
+                "AND ",
+                {
+                  "k": "store_name"
+                }
+              ]
+            },
+            "\n         ",
+            {
+              "args": [
+                " AND order_date BETWEEN ",
+                {
+                  "k": "order_start_date"
+                },
+                " AND ",
+                {
+                  "k": "order_end_date"
+                },
+                " "
+              ]
+            },
+            " \n    GROUP BY 1,2\n)\n\nSELECT \n    member_type,\n    store_name,\n    gmv\nFROM combined_data\nORDER BY \n    SUM(gmv) OVER (PARTITION BY store_name) DESC, \n    store_name"
+          ]
+        }
+      },
+      {
+        "status": "failed",
+        "class": "class clojure.lang.ExceptionInfo",
+        "error": "Error preprocessing query in clojure.lang.AFunction$1@5f86671c: Unable to substitute parameters: Invalid values provided for operator: :string/=",
+        "stacktrace": [
+          "--> query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:178)",
+          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+          "driver$do_with_driver.invokeStatic(driver.clj:106)",
+          "driver$do_with_driver.invoke(driver.clj:101)",
+          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+        ],
+        "error_type": "qp",
+        "ex-data": {
+          "fn": "clojure.lang.AFunction$1@5f86671c",
+          "query": {
+            "constraints": {
+              "max-results": 10000,
+              "max-results-bare-rows": 5000
+            },
+            "lib/type": "mbql/query",
+            "lib/metadata": "metabase.lib.metadata.invocation_tracker.InvocationTracker@67ce00de",
+            "stages": [
+              {
+                "lib/type": "mbql.stage/native",
+                "template-tags": {
+                  "order_start_date": {
+                    "type": "date",
+                    "name": "order_start_date",
+                    "id": "7f0d04fc-a078-47d5-9a3a-c73159cd3a67",
+                    "display-name": "Order Start Date"
+                  },
+                  "order_end_date": {
+                    "type": "date",
+                    "name": "order_end_date",
+                    "id": "59a5520c-1c16-48b9-a931-2b04d7f55c36",
+                    "display-name": "Order End Date"
+                  },
+                  "category": {
+                    "type": "dimension",
+                    "name": "category",
+                    "id": "8684a6a6-b3f5-4e9d-b3a6-afbb9c9ffb0f",
+                    "display-name": "Category",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "bf2eaf16-cb12-4dcc-a610-06d4312b2dfd",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9535348
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "cohort": {
+                    "type": "dimension",
+                    "name": "cohort",
+                    "id": "d4872477-f6a6-4ca3-b39a-495b86974505",
+                    "display-name": "Cohort",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "e24c29eb-a948-4333-a3ac-4e224eba0186",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9535350
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "service_type": {
+                    "type": "dimension",
+                    "name": "service_type",
+                    "id": "ee87eb18-496d-4c3a-a4a6-83c1d2aeb777",
+                    "display-name": "Service Type",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "027af9fd-b4ef-44da-bc51-9437d46d7bb2",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9535349
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  },
+                  "store_name": {
+                    "type": "dimension",
+                    "name": "store_name",
+                    "id": "1b27f8af-8b91-4e63-92dd-48a290c77271",
+                    "display-name": "Store Name",
+                    "default": null,
+                    "dimension": [
+                      "field",
+                      {
+                        "lib/uuid": "82e687bf-aa9e-4538-9bc6-b1897c67e07d",
+                        "metabase.lib.query/transformation-added-base-type": true,
+                        "base-type": "type/Text",
+                        "effective-type": "type/Text"
+                      },
+                      9535355
+                    ],
+                    "widget-type": "string/=",
+                    "options": null
+                  }
+                },
+                "native": "WITH combined_data AS \n(\n    SELECT 'CROSS-SELL' AS member_type,store_name, ROUND(SUM(gmv)) AS gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE\n         AND is_fs_member= 1\n         AND is_cancelled = 0\n         AND channel = 'EBO'\n         [[AND {{category}}]]\n         [[AND {{cohort}}]]\n         [[AND {{service_type}}]]\n         [[AND {{store_name}}]]\n         [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]]\n    GROUP BY 1,2\n         \n    UNION ALL \n    \n    SELECT 'NON-FS-MEMBER' AS member_type,store_name, ROUND(SUM(gmv)) AS gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE\n         AND is_fs_member= 0\n         AND is_cancelled = 0\n         AND channel = 'EBO'\n         [[AND {{category}}]]\n         [[AND {{cohort}}]]\n         [[AND {{service_type}}]]\n         [[AND {{store_name}}]]\n         [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]] \n    GROUP BY 1,2\n)\n\nSELECT \n    member_type,\n    store_name,\n    gmv\nFROM combined_data\nORDER BY \n    SUM(gmv) OVER (PARTITION BY store_name) DESC, \n    store_name"
+              }
+            ],
+            "middleware": {
+              "js-int-to-string?": true,
+              "ignore-cached-results?": false,
+              "process-viz-settings?": false,
+              "userland-query?": true
+            },
+            "cache-strategy": {
+              "multiplier": 10,
+              "min-duration-ms": 60000,
+              "type": "ttl",
+              "avg-execution-ms": 0,
+              "invalidated-at": "2026-04-16T18:45:51.978254Z"
+            },
+            "viz-settings": {
+              "stackable.stack_type": "stacked",
+              "graph.dimensions": [
+                "store_name",
+                "member_type"
+              ],
+              "graph.series_order": [
+                {
+                  "key": "NON-FS-MEMBER",
+                  "color": "#A989C5",
+                  "enabled": true,
+                  "name": "NON-FS-MEMBER"
+                },
+                {
+                  "key": "CROSS-SELL",
+                  "color": "#7172AD",
+                  "enabled": true,
+                  "name": "CROSS-SELL"
+                }
+              ],
+              "graph.series_order_dimension": "_col0",
+              "graph.show_values": true,
+              "graph.show_stack_values": "all",
+              "graph.label_value_formatting": "compact",
+              "graph.metrics": [
+                "gmv"
+              ]
+            },
+            "lib.convert/converted?": true,
+            "info": {
+              "executed-by": 3570,
+              "context": "question",
+              "card-id": 70149,
+              "card-name": "EBO - Store Wise Cross Sell VS D2C",
+              "visualization-settings": {
+                "stackable.stack_type": "stacked",
+                "graph.dimensions": [
+                  "store_name",
+                  "member_type"
+                ],
+                "graph.series_order": [
+                  {
+                    "key": "NON-FS-MEMBER",
+                    "color": "#A989C5",
+                    "enabled": true,
+                    "name": "NON-FS-MEMBER"
+                  },
+                  {
+                    "key": "CROSS-SELL",
+                    "color": "#7172AD",
+                    "enabled": true,
+                    "name": "CROSS-SELL"
+                  }
+                ],
+                "graph.series_order_dimension": "_col0",
+                "graph.show_values": true,
+                "graph.show_stack_values": "all",
+                "graph.label_value_formatting": "compact",
+                "graph.metrics": [
+                  "gmv"
+                ]
+              },
+              "query-hash": "0x56A7FE7B"
+            },
+            "database": 39,
+            "parameters": [
+              {
+                "value": "2026-01-01",
+                "type": "date/single",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "order_start_date"
+                  ]
+                ]
+              },
+              {
+                "value": "2026-01-31",
+                "type": "date/single",
+                "target": [
+                  "variable",
+                  [
+                    "template-tag",
+                    "order_end_date"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "cohort"
+                  ]
+                ]
+              },
+              {
+                "value": [
+                  "Indoor Equipment",
+                  "Indoor_Equipment-Strength"
+                ],
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "category"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "service_type"
+                  ]
+                ]
+              },
+              {
+                "value": "",
+                "type": "string/=",
+                "target": [
+                  "dimension",
+                  [
+                    "template-tag",
+                    "store_name"
+                  ]
+                ]
+              }
+            ]
+          },
+          "type": "qp"
+        }
+      }
+    ],
+    "action_id": null,
+    "error_type": "invalid-parameter",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 0,
+        "invalidated-at": "2026-04-16T18:45:51.978254Z"
+      },
+      "native": {
+        "template-tags": {
+          "order_start_date": {
+            "type": "date",
+            "name": "order_start_date",
+            "id": "7f0d04fc-a078-47d5-9a3a-c73159cd3a67",
+            "display-name": "Order Start Date"
+          },
+          "order_end_date": {
+            "type": "date",
+            "name": "order_end_date",
+            "id": "59a5520c-1c16-48b9-a931-2b04d7f55c36",
+            "display-name": "Order End Date"
+          },
+          "category": {
+            "type": "dimension",
+            "name": "category",
+            "id": "8684a6a6-b3f5-4e9d-b3a6-afbb9c9ffb0f",
+            "display-name": "Category",
+            "default": null,
+            "dimension": [
+              "field",
+              9535348,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "cohort": {
+            "type": "dimension",
+            "name": "cohort",
+            "id": "d4872477-f6a6-4ca3-b39a-495b86974505",
+            "display-name": "Cohort",
+            "default": null,
+            "dimension": [
+              "field",
+              9535350,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "service_type": {
+            "type": "dimension",
+            "name": "service_type",
+            "id": "ee87eb18-496d-4c3a-a4a6-83c1d2aeb777",
+            "display-name": "Service Type",
+            "default": null,
+            "dimension": [
+              "field",
+              9535349,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          },
+          "store_name": {
+            "type": "dimension",
+            "name": "store_name",
+            "id": "1b27f8af-8b91-4e63-92dd-48a290c77271",
+            "display-name": "Store Name",
+            "default": null,
+            "dimension": [
+              "field",
+              9535355,
+              null
+            ],
+            "widget-type": "string/=",
+            "options": null
+          }
+        },
+        "query": "WITH combined_data AS \n(\n    SELECT 'CROSS-SELL' AS member_type,store_name, ROUND(SUM(gmv)) AS gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE\n         AND is_fs_member= 1\n         AND is_cancelled = 0\n         AND channel = 'EBO'\n         [[AND {{category}}]]\n         [[AND {{cohort}}]]\n         [[AND {{service_type}}]]\n         [[AND {{store_name}}]]\n         [[AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]]\n    GROUP BY 1,2\n         \n    UNION ALL \n    \n    SELECT 'NON-FS-MEMBER' AS member_type,store_name, ROUND(SUM(gmv)) AS gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE TRUE\n         AND is_fs_member= 0\n         AND is_cancelled = 0\n         AND channel = 'EBO'\n         [[AND {{category}}]]\n         [[AND {{cohort}}]]\n         [[AND {{service_type}}]]\n         [[AND {{store_name}}]]\n         [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}} ]] \n    GROUP BY 1,2\n)\n\nSELECT \n    member_type,\n    store_name,\n    gmv\nFROM combined_data\nORDER BY \n    SUM(gmv) OVER (PARTITION BY store_name) DESC, \n    store_name"
+      },
+      "viz-settings": {
+        "stackable.stack_type": "stacked",
+        "graph.dimensions": [
+          "store_name",
+          "member_type"
+        ],
+        "graph.series_order": [
+          {
+            "key": "NON-FS-MEMBER",
+            "color": "#A989C5",
+            "enabled": true,
+            "name": "NON-FS-MEMBER"
+          },
+          {
+            "key": "CROSS-SELL",
+            "color": "#7172AD",
+            "enabled": true,
+            "name": "CROSS-SELL"
+          }
+        ],
+        "graph.series_order_dimension": "_col0",
+        "graph.show_values": true,
+        "graph.show_stack_values": "all",
+        "graph.label_value_formatting": "compact",
+        "graph.metrics": [
+          "gmv"
+        ]
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "order_start_date"
+            ]
+          ],
+          "value": "2026-01-01"
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "order_end_date"
+            ]
+          ],
+          "value": "2026-01-31"
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "cohort"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "category"
+            ]
+          ],
+          "value": [
+            "Indoor Equipment",
+            "Indoor_Equipment-Strength"
+          ]
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "service_type"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "type": "string/=",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "store_name"
+            ]
+          ],
+          "value": ""
+        }
+      ]
+    },
+    "status": "failed",
+    "class": "class clojure.lang.ExceptionInfo",
+    "stacktrace": [
+      "--> driver.common.parameters.operators$verify_type_and_arity74141__74142.invokeStatic(operators.clj:54)",
+      "driver.common.parameters.operators$verify_type_and_arity74141__74142.invoke(operators.clj:35)",
+      "driver.common.parameters.operators$to_clause74148__74150.invokeStatic(operators.clj:70)",
+      "driver.common.parameters.operators$to_clause74148__74150.invoke(operators.clj:66)",
+      "driver.sql.parameters.substitution$field_filter__GT_replacement_snippet_info89282__89284.invokeStatic(substitution.clj:320)",
+      "driver.sql.parameters.substitution$field_filter__GT_replacement_snippet_info89282__89284.invoke(substitution.clj:304)",
+      "driver.sql.parameters.substitution$fn__89295$_AMPERSAND_f__89297.invoke(substitution.clj:366)",
+      "driver.sql.parameters.substitution$fn__89295$fn__89314.invoke(substitution.clj:349)",
+      "driver.sql.parameters.substitute$substitute_field_filter.invokeStatic(substitute.clj:19)",
+      "driver.sql.parameters.substitute$substitute_field_filter.invoke(substitute.clj:13)",
+      "driver.sql.parameters.substitute$substitute_param.invokeStatic(substitute.clj:37)",
+      "driver.sql.parameters.substitute$substitute_param.invoke(substitute.clj:31)",
+      "driver.sql.parameters.substitute$substitute_STAR_$fn__89370.invoke(substitute.clj:71)",
+      "driver.sql.parameters.substitute$substitute_STAR_.invokeStatic(substitute.clj:64)",
+      "driver.sql.parameters.substitute$substitute_STAR_.invoke(substitute.clj:61)",
+      "driver.sql.parameters.substitute$substitute_optional.invokeStatic(substitute.clj:56)",
+      "driver.sql.parameters.substitute$substitute_optional.invoke(substitute.clj:55)",
+      "driver.sql.parameters.substitute$substitute_STAR_$fn__89370.invoke(substitute.clj:74)",
+      "driver.sql.parameters.substitute$substitute_STAR_.invokeStatic(substitute.clj:64)",
+      "driver.sql.parameters.substitute$substitute_STAR_.invoke(substitute.clj:61)",
+      "driver.sql.parameters.substitute$substitute$fn__89379.invoke(substitute.clj:89)",
+      "driver.sql.parameters.substitute$substitute.invokeStatic(substitute.clj:88)",
+      "driver.sql.parameters.substitute$substitute.invoke(substitute.clj:78)",
+      "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:59)",
+      "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
+      "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
+      "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
+      "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
+      "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
+      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
+      "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
+      "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
+      "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
+      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
+      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
+      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
+      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
+      "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
+      "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
+      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
+      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
+      "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
+      "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
+      "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
+      "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
+      "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+      "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
+      "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
+      "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
+      "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
+      "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
+      "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
+      "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
+      "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
+      "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
+      "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
+      "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
+      "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
+      "driver$do_with_driver.invokeStatic(driver.clj:106)",
+      "driver$do_with_driver.invoke(driver.clj:101)",
+      "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
+      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
+      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
+      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
+      "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
+      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
+      "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
+      "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
+      "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
+      "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
+      "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
+      "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
+      "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
+      "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
+      "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
+      "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
+      "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
+      "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
+      "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+    ],
+    "card_id": 70149,
+    "context": "question",
+    "error": "Invalid values provided for operator: :string/=",
+    "row_count": 0,
+    "running_time": 0,
+    "ex-data": {
+      "param-type": "string/=",
+      "param-value": "",
+      "field-id": 9535350,
+      "type": "invalid-parameter"
+    },
+    "data": {
+      "rows": [],
+      "cols": []
+    }
+  }
+}

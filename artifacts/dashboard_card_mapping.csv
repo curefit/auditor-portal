@@ -1,0 +1,97 @@
+root_key,root_asset_id,root_asset_name,dashboard_id,dashboard_name,dashcard_id,card_id,card_name,dashboard_tab_id,row,col
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26096,56424,PR BY PRODUCT,,0,0
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26097,56862,PR BY CITY,,10,0
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26098,56863,PR BY OWNERSHIP TYPE,,15,0
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26099,56865,PR BY PRODUCT x CITY,,23,0
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26100,56866,PR BY PRODUCT x OWNERSHIP TYPE,,28,0
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26101,56867,PR BY PRODUCT x OWNERSHIP TYPE x CITY,,33,0
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26102,56868,PR BY CENTER,,38,0
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26103,56869,PR SERVICE TYPE WEEK TREND LINE,,4,0
+dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26104,56872,RESPONSE FUNNEL,,18,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35243,75736,Total Amount and Units,,0,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35320,75865,Business Unit Level Amount and Units,,30,12
+dashboard-4042,4042,IPO Data,4042,IPO Data,35321,75868,Month_Category_itemcode Level Amount and Units,,39,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35322,75869,Category_itemcode Level Amount and Units,,39,12
+dashboard-4042,4042,IPO Data,4042,IPO Data,35319,75864,Month_Business Unit Level Amount and Units,,30,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35324,75871,Unique Sku Code,,48,12
+dashboard-4042,4042,IPO Data,4042,IPO Data,35325,75872,Raw Data - 2,,108,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35318,75867,Financial Year Level Amount and Units,,21,12
+dashboard-4042,4042,IPO Data,4042,IPO Data,35314,75860,Month_Category Level Amount and Units,,3,12
+dashboard-4042,4042,IPO Data,4042,IPO Data,35315,75859,Month_Pincode Level  Units,,12,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35316,75863,Month_Skucode Level  Units,,12,12
+dashboard-4042,4042,IPO Data,4042,IPO Data,35317,75866,Quarter Level Amount and Units,,21,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35313,75854,Month Level Amount and Units,,3,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35323,75870,Unique Pincodes,,48,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35326,75876,Financial Year Wise Summary,,57,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35329,75881,New Launch SKU,,90,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35331,75894,New Launch Style Id,,90,12
+dashboard-4042,4042,IPO Data,4042,IPO Data,35338,75906,Financial Year Wise Summary -  Category Wise,,64,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35339,75910,Month_Bill to Customer Name Level Amount and Units -,,99,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35674,76602,Financial Year Wise Summary -  Category and Channel Wise,,72,0
+dashboard-4042,4042,IPO Data,4042,IPO Data,35675,76604,Financial Year Wise Summary -  Channel Type Wise,,81,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28799,63753,Cross-Sell VS D2C Trend – Last 12 Months,207,24,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28798,63791,New VS Repeat  No Of Orders  Summary,207,8,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28795,63745,Category Wise Cross Sell VS D2C,207,40,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28807,63726,Source Wise Cross Sales,207,102,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28801,63733,New VS Repeat GMV  Summary  – Last 12 Months,207,48,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28804,63727,Service_Type  Wise Cross Sales,207,87,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28803,63738,Cohort  Wise Cross Sales,207,79,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28805,63786,Category Wise Cross Sales,207,94,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28797,63735,New VS Repeat GMV  Summary,207,8,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28802,63760,New VS Repeat  No Of Orders  Summary  – Last 12 Months,207,56,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28806,63763,Funnel Cross Sales,207,109,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28810,63754,Cohort__Category Wise Cross Sales,208,0,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28815,63734,Source_Cohort_Category Wise Cross Sell,208,18,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28816,63767,Top Performing Products In Each Category,208,27,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28824,63781,City Wise Cross Sell,208,54,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28821,63761,Gender_Age Wise Cross Sell,208,45,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28825,63729,State Wise Cross Sell,208,54,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28814,63780,Day_Cohort_Category Wise Cross Sales,208,18,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28817,63759,Top Performing Products In Each Category Date Wise,208,27,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28813,63748,Cohort__Service_Type_Category Wise Cross Sales,208,9,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28812,63750,Cohort_Service_Type  Wise Cross Sales,208,9,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28811,63731,Service_Type_Category  Wise Cross Sell,208,0,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28820,63746,Gender_Age_Category Wise Cross Sell,208,45,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28818,63788,Age_Category Wise Cross Sell,208,36,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28819,63774,Gender_Category Wise Cross Sell,208,36,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,28863,63795,Quarter Wise Cross Sell User Count,207,32,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29231,64443,Current Month Day Wise Cross Sell VS D2C,207,16,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29757,65195,EBO - Cross Sell VS D2C,294,0,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29759,65159,EBO Cross Sell - Majority Service Wise,294,8,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29758,65138,EBO Cross Sell - Cohort Wise,294,0,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29764,64117,EBO Cross Sell - Month_Store Wise,294,43,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29761,65196,EBO - Category Wise Cross Sell VS D2C,294,25,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29760,65198,EBO Cross Sell - Category Wise,294,8,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29765,65123,EBO Cross Sell - Store_Category Wise,294,52,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29763,65124,EBO Cross Sell - Store Wise,294,43,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29762,65122,EBO Cross Sell - Month_Store_Category Wise,294,52,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29766,65202,EBO - Cross-Sell Trend – Last 12 Months,294,16,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,29768,65204,Cross Sell VS D2C,207,0,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,30795,66102,Source Wise Cross Sell VS D2C,207,72,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,30822,66114,Active VS Expired GMV  Summary,207,0,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,30835,66134,Active VS Expired GMV  Summary  – Last 12 Months,207,64,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,30837,65637,EBO -  Cross Sell Market Size,294,61,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,30985,63751,Age Wise Cross Sell,207,116,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,30986,63743,Gender Wise Cross Sell,207,123,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31831,68056,Article Type wise comparison,448,28,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31832,68058,Majority Service Type wise comparison,448,35,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31833,68061,Month Wise Membership Purchase Count,448,42,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31837,68051,Source wise comparison,448,70,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31834,68066,Membership Purchase Cohort Wise Count,448,49,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31828,68050,Platform wise comparison,448,7,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31830,68052,Category wise comparison,448,21,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31827,68059,Month Wise Revenue Comparison,448,0,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31835,68064,First Membership Purchase Count,448,56,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31836,68065,First Membership Purchase Cohort Wise Count,448,63,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,31829,68048,Cohort wise comparison,448,14,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,32526,70058,User Count FS VS D2C With Filters,418,0,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,32568,70149,EBO - Store Wise Cross Sell VS D2C,294,34,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33658,71753,No of users who used coupons,580,0,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33660,72319,No Of People Who Have Purchased Before Coupons,580,0,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33661,72323,No Of People Who Have Purchased another Item With Coupon,580,0,18
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33663,72382,Repeat Purchase Category User Count,580,3,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33662,72328,Coupon Article Type Wise User Count,580,3,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33664,72383,Coupon Article_Type Repeat Purchase_Category User Count With Average Values,580,12,0
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33665,72384,Coupon Article_Type Repeat Category  Month Wise User Count,580,12,12
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33659,71754,Repeat Count,580,0,6
+dashboard-3604,3604,Cross Sell Dashboard,3604,Cross Sell Dashboard,33667,72385,Coupon Repeat Funnel,580,21,0

@@ -1,0 +1,387 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 280,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "display_name": "week",
+      "field_ref": [
+        "field",
+        "week",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "week",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 48,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.0
+          }
+        }
+      }
+    },
+    {
+      "display_name": "GX Product Rating",
+      "field_ref": [
+        "field",
+        "GX Product Rating",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "GX Product Rating",
+      "semantic_type": "type/Score",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 9,
+          "nil%": 0.0198019801980198
+        },
+        "type": {
+          "type/Number": {
+            "min": 3.84,
+            "q1": 3.860842193570679,
+            "q3": 3.8781094217700147,
+            "max": 4.0,
+            "sd": 0.014883453983590936,
+            "avg": 3.869444444444445
+          }
+        }
+      }
+    },
+    {
+      "display_name": "GYM Product Rating",
+      "field_ref": [
+        "field",
+        "GYM Product Rating",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "GYM Product Rating",
+      "semantic_type": "type/Score",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 21,
+          "nil%": 0.02475247524752475
+        },
+        "type": {
+          "type/Number": {
+            "min": 3.53,
+            "q1": 3.596306936062371,
+            "q3": 3.650909935797875,
+            "max": 3.72,
+            "sd": 0.04100885134120287,
+            "avg": 3.624263959390863
+          }
+        }
+      }
+    },
+    {
+      "display_name": "PLAY Product Rating",
+      "field_ref": [
+        "field",
+        "PLAY Product Rating",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "PLAY Product Rating",
+      "semantic_type": "type/Score",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 20,
+          "nil%": 0.2128712871287129
+        },
+        "type": {
+          "type/Number": {
+            "min": 3.56,
+            "q1": 3.646993149399158,
+            "q3": 3.7016740423089107,
+            "max": 3.77,
+            "sd": 0.03776991337270758,
+            "avg": 3.673459119496855
+          }
+        }
+      }
+    }
+  ],
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "PR SERVICE TYPE WEEK TREND LINE",
+  "last_used_at": "2026-04-16T12:31:31.035702Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 148023677,
+      "cardId": 56869,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 4.58m. Optimize Query to reduce execution time."
+        }
+      ],
+      "queryHash": "52146a90210701d98afb0243d4c27054d29ed26b7c2a30adf5d8d2ed9873babd",
+      "executionStartTime": "2026-04-16T12:59:46.317+0000",
+      "tables": [
+        "dwh_fitness_mart.booking_fact",
+        "dwh_fitness_mart.center_dim"
+      ],
+      "archive": false
+    }
+  ],
+  "creator_id": 3486,
+  "moderation_reviews": [],
+  "updated_at": "2025-11-11T03:20:03.650161Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "report_start_date": {
+          "id": "7245e081-5e39-c4b0-83ef-e57984bea30d",
+          "name": "report_start_date",
+          "display-name": "Report start date",
+          "type": "date"
+        },
+        "report_end_date": {
+          "id": "c26af8c1-ef8c-c272-645d-9449abcafc1a",
+          "name": "report_end_date",
+          "display-name": "Report end date",
+          "type": "date"
+        },
+        "city_name": {
+          "id": "0a95ddd4-caa3-c6b8-23be-d3ad40e681e1",
+          "name": "city_name",
+          "display-name": "City name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712462,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_service_id": {
+          "id": "2919cefb-c341-4dda-971f-1a9f28786d27",
+          "name": "center_service_id",
+          "display-name": "Center service",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712476,
+            null
+          ],
+          "widget-type": "number/="
+        },
+        "service_type": {
+          "id": "00a130b2-4f81-1f3b-9507-796a24a821b9",
+          "name": "service_type",
+          "display-name": "Service type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712473,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "ownership_type": {
+          "id": "b5d82001-37a1-af88-69c8-c229bd64bbda",
+          "name": "ownership_type",
+          "display-name": "Ownership type",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712485,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "business_line": {
+          "id": "72c2b3b0-923e-200c-930c-9b2601ee9f7b",
+          "name": "business_line",
+          "display-name": "Business line",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712478,
+            null
+          ],
+          "widget-type": "string/="
+        },
+        "center_name": {
+          "id": "39d5e3c1-82ac-e777-fc46-c7afd8010e3b",
+          "name": "center_name",
+          "display-name": "Center name",
+          "type": "dimension",
+          "dimension": [
+            "field",
+            8712482,
+            null
+          ],
+          "widget-type": "string/="
+        }
+      },
+      "query": "WITH bt_data AS (\n    \n    SELECT \n        CASE \n            WHEN cd.center_type = 'GX' THEN 'GX'\n            WHEN cd.center_type = 'GYM' THEN 'GYM'\n            WHEN cd.center_type = 'SPORTS' THEN 'PLAY'\n            ELSE 'OTHER'\n        END AS \"Service Type\",\n        DATE_TRUNC('week', bf.attendance_time) AS period,\n        SUM(CASE WHEN bf.rating_value IS NOT NULL THEN bf.rating_value END) AS total_rating_value, \n        COUNT(CASE WHEN bf.rating_value IS NOT NULL THEN bf.booking_key END) AS total_ratings \n    FROM \n        dwh_fitness_mart.booking_fact bf\n    JOIN \n        (SELECT * FROM dwh_fitness_mart.center_dim WHERE 1=1\n        [[AND {{city_name}}]]\n        [[AND {{center_service_id}}]]\n        [[AND {{service_type}}]]\n        [[AND {{ownership_type}}]]\n        [[AND {{business_line}}]]\n        [[AND {{center_name}}]]\n        ) cd ON bf.center_key = cd.center_key\n    WHERE \n        bf.attendance_time IS NOT NULL\n        AND bf.class_date >= DATE('2022-01-01')\n        AND bf.booking_date BETWEEN {{report_start_date}} AND {{report_end_date}}\n        AND cd.center_type IN ('GYM', 'GX', 'SPORTS')\n    GROUP BY \n        CASE \n            WHEN cd.center_type = 'GX' THEN 'GX'\n            WHEN cd.center_type = 'GYM' THEN 'GYM'\n            WHEN cd.center_type = 'SPORTS' THEN 'PLAY'\n            ELSE 'OTHER'\n        END,\n        DATE_TRUNC('week', bf.attendance_time)\n),\npivoted_data AS (\n    SELECT \n        DATE_TRUNC('week', period) AS week,\n        MAX(CASE WHEN \"Service Type\" = 'GX' THEN ROUND(total_rating_value * 1.00 / NULLIF(total_ratings, 0), 2) END) AS \"GX PR\",\n        MAX(CASE WHEN \"Service Type\" = 'GYM' THEN ROUND(total_rating_value * 1.00 / NULLIF(total_ratings, 0), 2) END) AS \"GYM PR\",\n        MAX(CASE WHEN \"Service Type\" = 'PLAY' THEN ROUND(total_rating_value * 1.00 / NULLIF(total_ratings, 0), 2) END) AS \"PLAY PR\"\n    FROM bt_data\n    GROUP BY DATE_TRUNC('week', period)\n)\nSELECT \n    DATE_FORMAT(week, '%Y-%m') AS \"week\",\n    \"GX PR\" AS \"GX Product Rating\",\n    \"GYM PR\" AS \"GYM Product Rating\",\n    \"PLAY PR\" AS \"PLAY Product Rating\"\nFROM pivoted_data\nORDER BY week ASC"
+    }
+  },
+  "id": 56869,
+  "parameter_mappings": [],
+  "display": "line",
+  "archived_directly": false,
+  "entity_id": "p0hc2PSaaPLVkSAG-yuge",
+  "collection_preview": true,
+  "visualization_settings": {
+    "graph.dimensions": [
+      "week"
+    ],
+    "table.pivot_column": "GX Product Rating",
+    "table.cell_column": "GYM Product Rating",
+    "graph.metrics": [
+      "GX Product Rating",
+      "GYM Product Rating",
+      "PLAY Product Rating"
+    ]
+  },
+  "metabase_version": null,
+  "parameters": [
+    {
+      "id": "7245e081-5e39-c4b0-83ef-e57984bea30d",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_start_date"
+        ]
+      ],
+      "name": "Report start date",
+      "slug": "report_start_date"
+    },
+    {
+      "id": "c26af8c1-ef8c-c272-645d-9449abcafc1a",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "report_end_date"
+        ]
+      ],
+      "name": "Report end date",
+      "slug": "report_end_date"
+    },
+    {
+      "id": "0a95ddd4-caa3-c6b8-23be-d3ad40e681e1",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "city_name"
+        ]
+      ],
+      "name": "City name",
+      "slug": "city_name"
+    },
+    {
+      "id": "2919cefb-c341-4dda-971f-1a9f28786d27",
+      "type": "number/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_service_id"
+        ]
+      ],
+      "name": "Center service",
+      "slug": "center_service_id"
+    },
+    {
+      "id": "00a130b2-4f81-1f3b-9507-796a24a821b9",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "service_type"
+        ]
+      ],
+      "name": "Service type",
+      "slug": "service_type"
+    },
+    {
+      "id": "b5d82001-37a1-af88-69c8-c229bd64bbda",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "ownership_type"
+        ]
+      ],
+      "name": "Ownership type",
+      "slug": "ownership_type"
+    },
+    {
+      "id": "72c2b3b0-923e-200c-930c-9b2601ee9f7b",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "business_line"
+        ]
+      ],
+      "name": "Business line",
+      "slug": "business_line"
+    },
+    {
+      "id": "39d5e3c1-82ac-e777-fc46-c7afd8010e3b",
+      "type": "string/=",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "center_name"
+        ]
+      ],
+      "name": "Center name",
+      "slug": "center_name"
+    }
+  ],
+  "created_at": "2024-12-16T05:41:43.83962Z",
+  "public_uuid": null
+}

@@ -1,0 +1,745 @@
+{
+  "card_id": 75109,
+  "card_name": "Memberships by Each Business Line - End of Each Month - including all packs",
+  "parameters": [
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "value": "2025-09-01"
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "value": "2026-01-31"
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "2026-01-01T00:00:00Z",
+          "ELITE",
+          490606
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "PRO",
+          134174
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "ELITE (B2B)",
+          128339
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "LIVE (B2B)",
+          49129
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "LIVE",
+          47395
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "PLAY",
+          34291
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "ONEPASS (B2B)",
+          27258
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "LUX",
+          18673
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "GYM_PT",
+          13868
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "PLAY (B2B)",
+          4863
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "TRANSFORM",
+          3987
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "PRO (B2B)",
+          1540
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "TRANSFORM (B2B)",
+          387
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "PLAY_PT",
+          139
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "ONEPASS",
+          54
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "ONLINE_PT",
+          8
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "OFFLINE_PT",
+          7
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "PLAY_ACADEMY",
+          7
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "SGT",
+          1
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "ELITE",
+          477026
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "PRO",
+          129082
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "ELITE (B2B)",
+          118814
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "LIVE",
+          48184
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "LIVE (B2B)",
+          35364
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "PLAY",
+          34313
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "ONEPASS (B2B)",
+          25649
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "LUX",
+          18266
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "GYM_PT",
+          12457
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "PLAY (B2B)",
+          4026
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "TRANSFORM",
+          4010
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "TRANSFORM (B2B)",
+          622
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "PRO (B2B)",
+          569
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "PLAY_PT",
+          88
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "ONEPASS",
+          54
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "PLAY_ACADEMY",
+          21
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "OFFLINE_PT",
+          7
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "ONLINE_PT",
+          6
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "SGT",
+          1
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "ELITE",
+          482908
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "PRO",
+          128687
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "ELITE (B2B)",
+          114624
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "LIVE",
+          48403
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "PLAY",
+          35733
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "LIVE (B2B)",
+          31662
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "ONEPASS (B2B)",
+          24644
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "LUX",
+          18449
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "GYM_PT",
+          12479
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "TRANSFORM",
+          4159
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "PLAY (B2B)",
+          3635
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "TRANSFORM (B2B)",
+          703
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "PRO (B2B)",
+          220
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "PLAY_PT",
+          61
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "ONEPASS",
+          52
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "PLAY_ACADEMY",
+          33
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "OFFLINE_PT",
+          9
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "ONLINE_PT",
+          8
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "SGT",
+          1
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "ELITE",
+          480416
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "PRO",
+          127000
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "ELITE (B2B)",
+          111540
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "LIVE",
+          48129
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "PLAY",
+          36815
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "LIVE (B2B)",
+          28989
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "ONEPASS (B2B)",
+          23712
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "LUX",
+          18558
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "GYM_PT",
+          11674
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "TRANSFORM",
+          4149
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "PLAY (B2B)",
+          3341
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "TRANSFORM (B2B)",
+          743
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "PRO (B2B)",
+          201
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "PLAY_PT",
+          61
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "PLAY_ACADEMY",
+          51
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "ONEPASS",
+          49
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "ONLINE_PT",
+          11
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "SGT",
+          1
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "OFFLINE_PT",
+          1
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "ELITE",
+          479790
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "PRO",
+          124574
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "ELITE (B2B)",
+          110266
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "LIVE",
+          49673
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "PLAY",
+          37934
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "LIVE (B2B)",
+          26410
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "ONEPASS (B2B)",
+          23782
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "LUX",
+          18538
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "GYM_PT",
+          11751
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "TRANSFORM",
+          4324
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "PLAY (B2B)",
+          2554
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "TRANSFORM (B2B)",
+          858
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "PRO (B2B)",
+          194
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "PLAY_PT",
+          151
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "PLAY_ACADEMY",
+          77
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "ONEPASS",
+          49
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "ONLINE_PT",
+          9
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "SGT",
+          1
+        ]
+      ],
+      "cols": [
+        {
+          "display_name": "month",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "month",
+            {
+              "base-type": "type/Date"
+            }
+          ],
+          "name": "month",
+          "base_type": "type/Date",
+          "database_type": "date",
+          "effective_type": "type/Date"
+        },
+        {
+          "display_name": "business_line",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "business_line",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "name": "business_line",
+          "base_type": "type/Text",
+          "database_type": "varchar",
+          "effective_type": "type/Text"
+        },
+        {
+          "display_name": "user_base",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "user_base",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "name": "user_base",
+          "base_type": "type/BigInteger",
+          "database_type": "bigint",
+          "effective_type": "type/BigInteger"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2025-09-01",
+          "2026-01-31"
+        ],
+        "query": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between ? and ?\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,\ncount(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id\nfrom dwh_fitness_mart.membership_dim \nwhere lower(status) not like '%canc%'\n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand business_line is not null\n) md\non d.month_end_date between md.pack_start_date and md.pack_end_date\ngroup by 1,2\norder by 1 desc, 3 desc"
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "display_name": "month",
+            "field_ref": [
+              "field",
+              "month",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "base_type": "type/Date",
+            "effective_type": "type/Date",
+            "name": "month",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 5,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2025-09-01",
+                  "latest": "2026-01-01"
+                }
+              }
+            }
+          },
+          {
+            "display_name": "business_line",
+            "field_ref": [
+              "field",
+              "business_line",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "name": "business_line",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 19,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.872340425531915
+                }
+              }
+            }
+          },
+          {
+            "display_name": "user_base",
+            "field_ref": [
+              "field",
+              "user_base",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "base_type": "type/BigInteger",
+            "effective_type": "type/BigInteger",
+            "name": "user_base",
+            "semantic_type": null,
+            "fingerprint": {
+              "global": {
+                "distinct-count": 82,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 1.0,
+                  "q1": 64.22316700167555,
+                  "q3": 35733.0,
+                  "max": 490606.0,
+                  "sd": 109883.6644023311,
+                  "avg": 48469.47872340425
+                }
+              }
+            }
+          }
+        ]
+      },
+      "insights": [
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": -111082.37270608952,
+          "last-change": null,
+          "col": "user_base",
+          "slope": 7.823682427381982,
+          "last-value": 1,
+          "best-fit": [
+            "*",
+            1.5344949867896433e+129,
+            [
+              "pow",
+              "x",
+              -29.217816627600914
+            ]
+          ]
+        }
+      ]
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-04-17T06:20:42.277235Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "type": "native",
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "avg-execution-ms": 4512,
+        "invalidated-at": "2026-04-16T18:20:42.27245Z"
+      },
+      "native": {
+        "template-tags": {
+          "start_date": {
+            "type": "date",
+            "name": "start_date",
+            "id": "1d48c1b6-1868-421e-be74-cc24177aff01",
+            "display-name": "Start Date"
+          },
+          "end_date": {
+            "type": "date",
+            "name": "end_date",
+            "id": "c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d",
+            "display-name": "End Date"
+          }
+        },
+        "query": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between {{start_date}} and {{end_date}}\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,\ncount(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id\nfrom dwh_fitness_mart.membership_dim \nwhere lower(status) not like '%canc%'\n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand business_line is not null\n) md\non d.month_end_date between md.pack_start_date and md.pack_end_date\ngroup by 1,2\norder by 1 desc, 3 desc"
+      },
+      "viz-settings": {
+        "table.pivot": true,
+        "table.pivot_column": "month",
+        "table.cell_column": "user_base"
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "start_date"
+            ]
+          ],
+          "value": "2025-09-01"
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "end_date"
+            ]
+          ],
+          "value": "2026-01-31"
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 94,
+    "running_time": 10101
+  }
+}
