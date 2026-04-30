@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # allow manual trigger from GitHub UI
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate catalog + build portal
+        # npm run build already runs generate-catalog.mjs first (see auditor-portal/package.json)
+        run: npm run build -w curefit-auditor-portal
+        env:
+          # PAT with read access to curefit/dbt-data-models and curefit/cf-data-lab
+          # Add this in: GitHub repo → Settings → Secrets → Actions → New secret
+          GITHUB_TOKEN: ${{ secrets.DBT_GITHUB_TOKEN }}
+          METABASE_SITE_URL: https://metabase.curefit.co
+          DBT_GITHUB_REPO: https://github.com/curefit/dbt-data-models
+          DBT_GITHUB_REF: master
+          DBT_MODELS_PATH: transformatics/models
+          FALLBACK_GITHUB_REPO: https://github.com/curefit/cf-data-lab
+          FALLBACK_GITHUB_REF: master
+          FALLBACK_MODELS_PATH: nbs/pinaka_data_models
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: auditor-portal/dist
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

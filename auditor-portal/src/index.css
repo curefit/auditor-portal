@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  color-scheme: dark;
+  font-size: 87.5%;
+}
+
+body {
+  @apply m-0 min-h-screen bg-zinc-950 font-sans text-base leading-relaxed text-zinc-100 antialiased;
+}

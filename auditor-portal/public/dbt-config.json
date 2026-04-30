@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "owner": "curefit",
+  "repo": "dbt-data-models",
+  "ref": "master",
+  "modelSqlFileCount": 274,
+  "fallback": {
+    "enabled": true,
+    "owner": "curefit",
+    "repo": "cf-data-lab",
+    "ref": "master",
+    "modelNotebookCount": 148
+  }
+}
