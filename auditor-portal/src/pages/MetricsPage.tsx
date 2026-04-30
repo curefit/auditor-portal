@@ -17,7 +17,12 @@ const catalog: Catalog = {
     } as Catalog["dbt"]),
 };
 
-const HANDOFF = "/handoff/";
+const HANDOFF = `${import.meta.env.BASE_URL}handoff/`;
+
+/** Resolve a root-relative path (e.g. /dbt-sql/foo.sql) against the Vite base URL. */
+function publicUrl(path: string): string {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+}
 
 type DbtSqlRefs = { sources: string[]; refs: string[] };
 
@@ -888,7 +893,7 @@ export default function MetricsPage() {
     setNotebookErr(null);
     setNotebookGithubUrl(githubUrl);
     setNotebookOpen(true);
-    fetch(localUrl)
+    fetch(publicUrl(localUrl))
       .then((res) => {
         if (!res.ok) throw new Error(`${res.status} — try running npm run generate to download notebooks`);
         return res.text();
@@ -904,7 +909,7 @@ export default function MetricsPage() {
     setDbtSqlRefs(null);
     setDbtSqlGithubUrl(githubUrl);
     setDbtSqlOpen(true);
-    fetch(localUrl)
+    fetch(publicUrl(localUrl))
       .then((res) => {
         if (!res.ok) throw new Error(`${res.status} fetching ${localUrl} — try rebuilding (npm run dev) to download SQL files`);
         return res.text();
