@@ -1,0 +1,412 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 10,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "display_name": "month",
+      "field_ref": [
+        "field",
+        "month",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 36,
+          "nil%": 0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2023-04-01",
+            "latest": "2026-03-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "activitytype",
+      "field_ref": [
+        "field",
+        "activitytype",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "activitytype",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 10,
+          "nil%": 0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 12.87295081967213
+          }
+        }
+      }
+    },
+    {
+      "display_name": "users",
+      "field_ref": [
+        "field",
+        "users",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "users",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 214,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 5,
+            "q1": 12454.049968044841,
+            "q3": 37383.570424275254,
+            "max": 102258,
+            "sd": 26291.884678699666,
+            "avg": 29312.860655737706
+          }
+        }
+      }
+    },
+    {
+      "display_name": "days",
+      "field_ref": [
+        "field",
+        "days",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "base_type": "type/Float",
+      "effective_type": "type/Float",
+      "name": "days",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 214,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1.2644628099173554,
+            "q1": 6.188660332945946,
+            "q3": 12.50079135309176,
+            "max": 30.79797197640118,
+            "sd": 5.5775113321550736,
+            "avg": 9.717674608937546
+          }
+        }
+      }
+    }
+  ],
+  "creator": {
+    "email": "ruchir.pokharna@curefit.com",
+    "first_name": "Ruchir",
+    "last_login": "2026-04-29T02:38:54.675965Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 2002,
+    "last_name": "Pokharna",
+    "date_joined": "2021-11-11T09:31:51.890842Z",
+    "common_name": "Ruchir Pokharna"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 3142,
+  "query_type": "native",
+  "name": "How Much Data from wearbles v3",
+  "last_query_start": "2026-04-29T11:35:22.167109Z",
+  "dashboard_count": 0,
+  "last_used_at": "2026-04-29T11:35:22.175855Z",
+  "type": "question",
+  "warnings": [
+    {
+      "id": 153145371,
+      "cardId": 74738,
+      "warnings": [
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_EXECUTION_TIME"
+          },
+          "message": "Execution time is 4.22m. Optimize Query to reduce execution time."
+        },
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_CUMULATIVE_MEMORY_USAGE"
+          },
+          "message": "Optimize query to reduce memory usage"
+        },
+        {
+          "warningCode": {
+            "code": -1,
+            "name": "HIGH_PEAK_TASK_MEMORY_USAGE"
+          },
+          "message": "Optimize query to reduce memory usage"
+        }
+      ],
+      "queryHash": "0c4be6aa7885f56f2bbb1c06eded88ae593fd222b339b7a134a108904fe19a0b",
+      "executionStartTime": "2026-05-03T19:57:25.463+0000",
+      "tables": [
+        "pk_prod_curefit_prod.activitystores",
+        "pk_prod_curefit_prod.activitystores_meta_healthmetric",
+        "pk_prod_curefit_prod.activitystores_meta_healthmetric_healthmetricinstance"
+      ],
+      "archive": false
+    }
+  ],
+  "average_query_time": 121387.66666666667,
+  "creator_id": 2002,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-01-22T10:54:13.780403Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start": {
+          "type": "date",
+          "name": "start",
+          "id": "beef4a65-a7fd-410c-9184-ae21b76d4242",
+          "display-name": "Start",
+          "default": null,
+          "widget-type": null
+        },
+        "end": {
+          "type": "date",
+          "name": "end",
+          "id": "b3051ef9-8974-451e-8a9c-b05cbdcdd194",
+          "display-name": "End",
+          "default": null,
+          "widget-type": null
+        }
+      },
+      "query": "SELECT month,\n       CASE WHEN \"type\" IS NOT NULL THEN \"type\" ELSE activitytype END activitytype,\n       COUNT(DISTINCT userid) users,\n       avg(days) days\n       \nFROM(\nselect DATE_TRUNC('month',date(ac.createddate_date)) month,\n        activitytype,\n       \"type\",\n        userid,\n       COUNT(*)/COUNT(distinct CASE WHEN activitytype IN ('SLEEP','WALK') THEN DATE(cast(date as timestamp)) else createddate_date END) value,\n       COUNT(*),\n       COUNT(distinct CASE WHEN activitytype IN ('SLEEP','WALK') THEN DATE(cast(date as timestamp)) else createddate_date END) days\n\nFROM pk_prod_curefit_prod.activitystores ac\n\nleft JOIN  pk_prod_curefit_prod.activitystores_meta_healthmetric ashm on ashm.root_ref_id = ac._id and date(ashm.root_createddate_date) = date(ac.createddate_date) and date(ashm.root_createddate_date) >= DATE('2025-01-01')\nLEFT JOIN pk_prod_curefit_prod.activitystores_meta_healthmetric_healthmetricinstance ashmi ON ashmi.root_ref_id = ac._id and ashmi.parent_array_index = ashm.array_index and date(ashm.root_createddate_date) = date(ashmi.root_createddate_date) and date(ashmi.root_createddate_date) >= DATE('2025-01-01')\nwhere activitytype IN ('WALK','SLEEP','CALORIES_BURNT','HEART_RATE','HEART_RATE_VARIABILITY','HEALTH_METRIC_TIME_SERIES','RESTING_HEART_RATE') \nand (date IS NOT NULL OR value IS NOT NULL)\nand date(ac.createddate_date) BETWEEN {{start}} AND {{end}}\nGROUP BY 1,2,3,4\n)\nGROUP BY 1,2\n\n\n\n\n\n"
+    }
+  },
+  "id": 74738,
+  "parameter_mappings": [],
+  "can_manage_db": true,
+  "display": "line",
+  "archived_directly": false,
+  "entity_id": "-D-qWqwNqDz56XJ8KKAIv",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 2002,
+    "email": "ruchir.pokharna@curefit.com",
+    "first_name": "Ruchir",
+    "last_name": "Pokharna",
+    "timestamp": "2026-01-22T10:54:13.887323Z"
+  },
+  "visualization_settings": {
+    "graph.show_trendline": true,
+    "graph.show_values": true,
+    "table.columns": [
+      {
+        "name": "activitytype",
+        "fieldRef": [
+          "field",
+          "activitytype",
+          {
+            "base-type": "type/Text"
+          }
+        ],
+        "enabled": true
+      },
+      {
+        "name": "users",
+        "fieldRef": [
+          "field",
+          "users",
+          {
+            "base-type": "type/BigInteger"
+          }
+        ],
+        "enabled": true
+      },
+      {
+        "name": "month",
+        "enabled": true
+      },
+      {
+        "name": "users",
+        "enabled": true
+      },
+      {
+        "name": "_col3",
+        "enabled": true
+      },
+      {
+        "name": "days",
+        "enabled": true
+      }
+    ],
+    "table.cell_column": "_col2",
+    "graph.y_axis.max": 30,
+    "graph.series_order_dimension": "activitytype",
+    "graph.metrics": [
+      "users"
+    ],
+    "graph.series_order": [
+      {
+        "key": "WALK",
+        "color": "#8A5EB0",
+        "enabled": true,
+        "name": "WALK"
+      },
+      {
+        "key": "HEART_RATE_SERIES",
+        "color": "#689636",
+        "enabled": true,
+        "name": "HEART_RATE_SERIES"
+      },
+      {
+        "name": "HEALTH_METRIC_TIME_SERIES",
+        "enabled": false,
+        "color": "#F7C41F",
+        "key": "HEALTH_METRIC_TIME_SERIES"
+      },
+      {
+        "key": "SLEEP",
+        "color": "#509EE3",
+        "enabled": true,
+        "name": "SLEEP"
+      },
+      {
+        "name": "HEART_RATE",
+        "enabled": false,
+        "color": "#227FD2",
+        "key": "HEART_RATE"
+      },
+      {
+        "name": "STEPS_SERIES",
+        "enabled": false,
+        "color": "#F9D45C",
+        "key": "STEPS_SERIES"
+      },
+      {
+        "key": "HEART_RATE_VARIABILITY",
+        "color": "#A989C5",
+        "enabled": true,
+        "name": "HEART_RATE_VARIABILITY"
+      },
+      {
+        "name": "CALORIES_BURNT",
+        "enabled": false,
+        "color": "#E75454",
+        "key": "CALORIES_BURNT"
+      },
+      {
+        "name": "CALORIE_BURNT_SERIES",
+        "enabled": false,
+        "color": "#88BF4D",
+        "key": "CALORIE_BURNT_SERIES"
+      },
+      {
+        "name": "RESTING_HEART_RATE",
+        "enabled": false,
+        "color": "#EF8C8C",
+        "key": "RESTING_HEART_RATE"
+      }
+    ],
+    "table.pivot_column": "users",
+    "column_settings": {
+      "[\"name\",\"activeMemberships\"]": {
+        "column_title": "userWithHealthData"
+      },
+      "[\"name\",\"weeklyActiveMemberships\"]": {
+        "column_title": "%userWithHealthData"
+      }
+    },
+    "graph.y_axis.auto_range": false,
+    "graph.dimensions": [
+      "month",
+      "activitytype"
+    ],
+    "stackable.stack_type": "stacked",
+    "graph.y_axis.min": 0
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "slug": "activity",
+    "archive_operation_id": null,
+    "name": "Activity",
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 3142,
+    "archived_directly": null,
+    "entity_id": null,
+    "location": "/1575/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2022-12-10T05:46:31.748106Z"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "beef4a65-a7fd-410c-9184-ae21b76d4242",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start"
+        ]
+      ],
+      "name": "Start",
+      "slug": "start"
+    },
+    {
+      "id": "b3051ef9-8974-451e-8a9c-b05cbdcdd194",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end"
+        ]
+      ],
+      "name": "End",
+      "slug": "end"
+    }
+  ],
+  "created_at": "2026-01-22T10:54:13.780403Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

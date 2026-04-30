@@ -1,0 +1,214 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 6,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "display_name": "fiscal_year",
+      "field_ref": [
+        "field",
+        "fiscal_year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "fiscal_year",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 4
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bt_responses",
+      "field_ref": [
+        "field",
+        "bt_responses",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "bt_responses",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 324582,
+            "q1": 335352.25,
+            "q3": 409027.75,
+            "max": 422816,
+            "sd": 49240.472388067115,
+            "avg": 371687
+          }
+        }
+      }
+    },
+    {
+      "display_name": "total_responses",
+      "field_ref": [
+        "field",
+        "total_responses",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "total_responses",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 9382031,
+            "q1": 9401143.75,
+            "q3": 10304203.75,
+            "max": 10586111,
+            "sd": 674190.9427160331,
+            "avg": 9808874.666666666
+          }
+        }
+      }
+    },
+    {
+      "display_name": "bt_pct",
+      "field_ref": [
+        "field",
+        "bt_pct",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "name": "bt_pct",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 3.459613382219692,
+            "q1": 3.5664912379188394,
+            "q3": 3.9673288579903354,
+            "max": 3.99406354231502,
+            "sd": 0.282795239169773,
+            "avg": 3.780267243183664
+          }
+        }
+      }
+    }
+  ],
+  "creator": {
+    "email": "priyal.saraogi@curefit.com",
+    "first_name": "Priyal",
+    "last_login": "2026-04-28T10:19:37.81061Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 4185,
+    "last_name": "Saraogi",
+    "date_joined": "2026-03-03T09:06:26.74454Z",
+    "common_name": "Priyal Saraogi"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6878,
+  "query_type": "native",
+  "name": "BT-FY24/25/26",
+  "last_query_start": "2026-04-30T15:56:19.497161Z",
+  "dashboard_count": 0,
+  "last_used_at": "2026-04-30T15:56:19.506105Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "average_query_time": 33355,
+  "creator_id": 4185,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-04-24T05:50:03.71659Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {},
+      "query": "SELECT\n  CASE\n    WHEN bf.class_date >= DATE '2023-04-01' AND bf.class_date < DATE '2024-04-01' THEN 'FY24'\n    WHEN bf.class_date >= DATE '2024-04-01' AND bf.class_date < DATE '2025-04-01' THEN 'FY25'\n    WHEN bf.class_date >= DATE '2025-04-01' AND bf.class_date < DATE '2026-04-01' THEN 'FY26'\n  END AS fiscal_year,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END) AS bt_responses,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END) AS total_responses,\n  100.0 * COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END)\n    / NULLIF(COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END), 0) AS bt_pct\nFROM dwh_fitness_mart.booking_fact bf\nWHERE bf.class_date >= DATE '2023-04-01'\n  AND bf.class_date < DATE '2026-04-01'\nGROUP BY 1\nORDER BY 1 "
+    }
+  },
+  "id": 79589,
+  "parameter_mappings": [],
+  "can_manage_db": true,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "ZUljM1Y5SEpthYw4xNDD8",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 4185,
+    "email": "priyal.saraogi@curefit.com",
+    "first_name": "Priyal",
+    "last_name": "Saraogi",
+    "timestamp": "2026-04-24T05:50:03.933569Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "fiscal_year",
+    "table.cell_column": "bt_responses"
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "slug": "adhocs",
+    "archive_operation_id": null,
+    "name": "Adhocs",
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 6878,
+    "archived_directly": null,
+    "entity_id": "dNxK80e96eFbNEQmkROHz",
+    "location": "/6801/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-04-21T07:31:07.61971Z"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [],
+  "created_at": "2026-04-20T08:20:51.767984Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

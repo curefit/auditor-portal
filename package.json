@@ -1,0 +1,12 @@
+{
+  "name": "curefit-auditor-handoff-repo",
+  "private": true,
+  "description": "Auditor handoff artifacts + auditor portal UI",
+  "workspaces": ["auditor-portal"],
+  "scripts": {
+    "dev": "npm run dev -w curefit-auditor-portal",
+    "build": "npm run build -w curefit-auditor-portal",
+    "preview": "npm run preview -w curefit-auditor-portal",
+    "generate": "npm run generate -w curefit-auditor-portal"
+  }
+}
