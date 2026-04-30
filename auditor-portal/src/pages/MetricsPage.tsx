@@ -24,8 +24,8 @@ type DbtSqlRefs = { sources: string[]; refs: string[] };
 function parseDbtRefs(sql: string): DbtSqlRefs {
   const sources = new Set<string>();
   const refs = new Set<string>();
-  const srcRe = /{{\s*source\s*\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]+)['"]\s*\)\s*}}/gi;
-  const refRe = /{{\s*ref\s*\(\s*['"]([^'"]+)['"]\s*\)\s*}}/gi;
+  const srcRe = /{{\ *source\ *\(\ *['"]([^'"]+)['"]\,\ *['"]([^'"]+)['"]\s*\)\s*}}/gi;
+  const refRe = /{{\ *ref\ *\(\ *['"]([^'"]+)['"]\s*\)\s*}}/gi;
   let m: RegExpExecArray | null;
   while ((m = srcRe.exec(sql))) sources.add(`${m[1]}.${m[2]}`);
   while ((m = refRe.exec(sql))) refs.add(m[1]);
@@ -330,7 +330,6 @@ function DashboardGroup({
   cards,
   selected,
   onSelect,
-  onOpenMetabase,
   onOpenSql,
 }: {
   metric: SheetMetric;
@@ -339,7 +338,6 @@ function DashboardGroup({
   cards: CatalogEntry[];
   selected: CatalogEntry | null;
   onSelect: (e: CatalogEntry) => void;
-  onOpenMetabase: (url: string) => void;
   onOpenSql: (e: CatalogEntry) => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -808,13 +806,11 @@ export default function MetricsPage() {
     const matched = catalog.entries.filter(matchEntry);
 
     if (!drhpOnly) {
-      // Non-DRHP view: flat sorted list
       return matched
         .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }))
         .map((e) => ({ type: "card" as const, entry: e }));
     }
 
-    // DRHP view: group dashboard cards, sort by sheetOrder
     const dashboardGroups = new Map<
       string,
       { dashboardId: string; dashboardName: string; metric: SheetMetric; cards: CatalogEntry[] }
@@ -848,7 +844,6 @@ export default function MetricsPage() {
       })),
     ];
 
-    // Sort by sheetOrder (position in the DRHP sheet)
     return allRows.sort((a, b) => {
       const ao = a.type === "card" ? (a.entry.sheetMetric?.sheetOrder ?? 999) : a.metric.sheetOrder;
       const bo = b.type === "card" ? (b.entry.sheetMetric?.sheetOrder ?? 999) : b.metric.sheetOrder;
@@ -881,7 +876,6 @@ export default function MetricsPage() {
     }
   }, [sqlOpen, selected, loadSql]);
 
-  // When an entry is selected from deep in the list, scroll that row into view
   useEffect(() => {
     if (!selected) return;
     const row = tableScrollRef.current?.querySelector(`[data-card-id="${selected.cardId}"]`);
@@ -1014,7 +1008,6 @@ export default function MetricsPage() {
                       cards={row.cards}
                       selected={selected}
                       onSelect={setSelected}
-                      onOpenMetabase={(url) => window.open(url, "_blank")}
                       onOpenSql={handleOpenSql}
                     />
                   );
