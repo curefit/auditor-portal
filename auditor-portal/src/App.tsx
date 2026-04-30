@@ -4,7 +4,7 @@ import rawCatalog from "./catalog.json";
 
 const catalog = rawCatalog as Catalog;
 
-const HANDOFF = "/handoff/";
+const HANDOFF = `${import.meta.env.BASE_URL}handoff/`;
 
 function handoffUrl(rel: string) {
   return `${HANDOFF}${rel.replace(/^\//, "")}`;
