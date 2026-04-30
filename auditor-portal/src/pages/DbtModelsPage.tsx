@@ -90,10 +90,11 @@ export default function DbtModelsPage() {
   const [srcErr, setSrcErr] = useState<string | null>(null);
 
   useEffect(() => {
+    const base = import.meta.env.BASE_URL;
     Promise.all([
-      fetch("/dbt-config.json").then((r) => r.json()),
-      fetch("/dbt-models-index.json").then((r) => r.json()),
-      fetch("/dbt-notebooks-index.json")
+      fetch(`${base}dbt-config.json`).then((r) => r.json()),
+      fetch(`${base}dbt-models-index.json`).then((r) => r.json()),
+      fetch(`${base}dbt-notebooks-index.json`)
         .then((r) => (r.ok ? r.json() : { paths: [] }))
         .catch(() => ({ paths: [] })),
     ])
@@ -129,10 +130,11 @@ export default function DbtModelsPage() {
     if (!openPath) return;
     setSrcErr(null);
     setSource(null);
+    const base = import.meta.env.BASE_URL;
     const url =
       openPath.kind === "sql"
-        ? `/dbt-sql/${openPath.path}`
-        : `/dbt-notebooks/${openPath.path}`;
+        ? `${base}dbt-sql/${openPath.path}`
+        : `${base}dbt-notebooks/${openPath.path}`;
     fetch(url)
       .then((res) => {
         if (!res.ok) throw new Error(`${res.status} — run npm run generate to download files`);
@@ -200,7 +202,6 @@ export default function DbtModelsPage() {
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto px-6 pb-8">
-        {/* dbt SQL models */}
         {sqlEnabled && filteredSql.length > 0 && (
           <section className="mb-6">
             <h2 className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
@@ -239,7 +240,6 @@ export default function DbtModelsPage() {
           </section>
         )}
 
-        {/* cf-data-lab notebooks */}
         {nbEnabled && filteredNb.length > 0 && (
           <section>
             <h2 className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">
