@@ -4,7 +4,10 @@ import { useState } from "react";
 // in the compiled JS bundle and can be found by anyone who inspects the source.
 // It stops casual visitors but not a determined person. See docs/superpowers/plans
 // for the Cloudflare Access migration plan if stronger auth is needed later.
-const ACCESS_PASSWORD = "curefit2026";
+//
+// Set VITE_ACCESS_PASSWORD in the GitHub Actions workflow (or .env.production)
+// to rotate the password without touching this file.
+const ACCESS_PASSWORD = import.meta.env.VITE_ACCESS_PASSWORD ?? "curefit2026";
 const SESSION_KEY = "auditor_authed";
 const SESSION_EMAIL_KEY = "auditor_visitor_email";
 

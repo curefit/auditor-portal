@@ -51,6 +51,7 @@ jobs:
           FALLBACK_GITHUB_REF: master
           FALLBACK_MODELS_PATH: nbs/pinaka_data_models
           VITE_VISITOR_WEBHOOK_URL: https://formspree.io/f/xlgzgoaj
+          VITE_ACCESS_PASSWORD: ${{ secrets.AUDITOR_PORTAL_PASSWORD }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
