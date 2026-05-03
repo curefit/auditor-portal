@@ -36,6 +36,7 @@ jobs:
         run: npm install
 
       - name: Generate catalog + build portal
+        # VITE_VISITOR_WEBHOOK_URL is baked into the JS bundle at build time.
         # npm run build already runs generate-catalog.mjs first (see auditor-portal/package.json)
         run: npm run build -w curefit-auditor-portal
         env:
@@ -49,6 +50,7 @@ jobs:
           FALLBACK_GITHUB_REPO: https://github.com/curefit/cf-data-lab
           FALLBACK_GITHUB_REF: master
           FALLBACK_MODELS_PATH: nbs/pinaka_data_models
+          VITE_VISITOR_WEBHOOK_URL: https://formspree.io/f/xlgzgoaj
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
