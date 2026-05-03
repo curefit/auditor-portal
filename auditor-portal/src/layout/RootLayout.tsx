@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { isAuthed, PasswordGate } from "../auth";
 
 const navCls = ({ isActive }: { isActive: boolean }) =>
   `rounded-lg px-4 py-2 text-base font-medium transition-colors ${
@@ -8,6 +10,12 @@ const navCls = ({ isActive }: { isActive: boolean }) =>
   }`;
 
 export default function RootLayout() {
+  const [authed, setAuthed] = useState(isAuthed);
+
+  if (!authed) {
+    return <PasswordGate onUnlock={() => setAuthed(true)} />;
+  }
+
   return (
     <div className="flex h-screen flex-col overflow-hidden">
       <nav className="flex flex-wrap items-center gap-2 border-b border-zinc-800 bg-zinc-900 px-6 py-3">
