@@ -6168,7 +6168,7 @@
         "sheetOrder": 21,
         "slNo": "43",
         "metricName": "Referrals",
-        "definition": "Pack revenue earned through referrals divided by the",
+        "definition": "Pack revenue earned through referrals divided by the total pack revenue",
         "status": "Done",
         "poc": "Growth",
         "units": "%",
