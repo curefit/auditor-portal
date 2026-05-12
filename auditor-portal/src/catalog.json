@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-03T11:30:47.993Z",
+  "generatedAt": "2026-05-12T04:54:26.612Z",
   "basePath": "/handoff/",
-  "count": 115,
+  "count": 116,
   "entries": [
     {
       "cardId": "75753",
@@ -6102,6 +6102,86 @@
         "limitations": ""
       },
       "sheetMetricVia": "dashboard"
+    },
+    {
+      "cardId": "55835",
+      "name": "Referral Revenue",
+      "rootKey": "question-55835",
+      "rootAssetName": "Referral Revenue",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/55835",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/55835__referral-revenue.sql",
+        "metadata": "artifacts/metadata/55835__referral-revenue.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.membership_dim",
+          "dbtModelPaths": [
+            "transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "githubBlobUrls": [
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "localSqlUrls": [
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness_mart.orders_fact",
+          "dbtModelPaths": [
+            "transformatics/models/datalake/analytics/dwh_fitness_mart/orders_fact.sql",
+            "transformatics/models/datalake/analytics/dwh_growth_mart/growth_orders_fact.sql"
+          ],
+          "githubBlobUrls": [
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_mart/orders_fact.sql",
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_growth_mart/growth_orders_fact.sql"
+          ],
+          "localSqlUrls": [
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/orders_fact.sql",
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_growth_mart/growth_orders_fact.sql"
+          ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness_mart.orders_offer_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 21,
+        "slNo": "43",
+        "metricName": "Referrals",
+        "definition": "Pack revenue earned through referrals divided by the",
+        "status": "Done",
+        "poc": "Growth",
+        "units": "%",
+        "fy23": "",
+        "fy24": "15%",
+        "fy25": "18%",
+        "fy26": "24%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/55835-referral-revenue?start_date=2023-04-01&end_date=2024-03-31",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
     },
     {
       "cardId": "71754",

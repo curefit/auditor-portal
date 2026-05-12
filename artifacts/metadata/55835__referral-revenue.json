@@ -1,0 +1,82 @@
+{
+  "name": "Referral Revenue",
+  "description": "Reconstructed locally from the Metabase source URL stored in artifacts/op_metrics_sheet.csv because the saved-card export for card 55835 is not present in this repository.",
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "start_date": {
+          "type": "date",
+          "name": "start_date",
+          "id": "b4576ce8-b8ac-4617-b8cf-f9f4b630e52e",
+          "display-name": "Start Date"
+        },
+        "end_date": {
+          "type": "date",
+          "name": "end_date",
+          "id": "88eb02b4-e5a3-4ab7-9a89-67459596c8ed",
+          "display-name": "End Date"
+        }
+      },
+      "query": "Select\n    *,\n    \"Revenue\"*1.00/Sum(\"Revenue\") Over(Partition by Split_Part(\"Business Line\", ' - ', 2)) as \"Distribution\"\n\nFrom\n(\n    Select\n        Case\n            When orders_offer_fact.order_id is not Null and membership_dim.business_line = 'ELITE' Then '1. Referred - Elite'\n            When orders_offer_fact.order_id is Null and membership_dim.business_line = 'ELITE' Then '2. Regular - Elite'\n            When orders_offer_fact.order_id is not Null and membership_dim.business_line = 'PRO' Then '3. Referred - Pro'\n            When orders_offer_fact.order_id is Null and membership_dim.business_line = 'PRO' Then '4. Regular - Pro'\n        End as \"Business Line\",\n        Count(Distinct(membership_dim.user_id)) as \"# Packs\",\n        Sum(amount_paid + Coalesce(orders_fact.payable_platform_fee, 0)) as \"Revenue\"\n    From dwh_fitness_mart.membership_dim\n    Left join\n        (\n            Select\n                order_id\n            From dwh_fitness_mart.orders_offer_fact\n            Where\n                offer_id in ('SJETGo_cm', '7CvtJxzWA')\n                and orders_offer_fact.purchase_date >= Date('2020-01-01')\n        ) as orders_offer_fact\n        on orders_offer_fact.order_id = membership_dim.order_id\n    Left join dwh_fitness_mart.orders_fact on orders_fact.order_key = membership_dim.order_key\n        and orders_fact.membership_key = membership_dim.membership_key\n        and orders_fact.purchase_date >= Date('2020-01-01')\n    Where\n        amount_paid > 0\n        and membership_created_date BETWEEN {{start_date}} AND {{end_date}}\n        and membership_dim.business_line in ('ELITE', 'PRO')\n        and pack_category in ('12 Months', '6 Months', '3 Months')\n    Group by\n        1\n)\n\nOrder by\n    1"
+    }
+  },
+  "display": "table",
+  "displayIsLocked": true,
+  "parameters": [
+    {
+      "id": "b4576ce8-b8ac-4617-b8cf-f9f4b630e52e",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "Start Date",
+      "slug": "start_date"
+    },
+    {
+      "id": "88eb02b4-e5a3-4ab7-9a89-67459596c8ed",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "End Date",
+      "slug": "end_date"
+    }
+  ],
+  "visualization_settings": {
+    "table.column_formatting": [
+      {
+        "columns": [
+          "Business Line"
+        ],
+        "type": "single",
+        "operator": "contains",
+        "value": "Referred",
+        "color": "#88BF4D",
+        "highlight_row": false
+      }
+    ],
+    "table.pivot_column": "Business Line",
+    "table.cell_column": "Revenue",
+    "column_settings": {
+      "[\"name\",\"Revenue\"]": {
+        "number_style": "currency",
+        "decimals": 0
+      },
+      "[\"name\",\"Distribution\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "original_card_id": 55835,
+  "type": "question"
+}
