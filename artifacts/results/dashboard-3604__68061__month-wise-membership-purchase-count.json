@@ -14,28 +14,6 @@
       "value": "1"
     },
     {
-      "type": "date/single",
-      "target": [
-        "variable",
-        [
-          "template-tag",
-          "month_start_date"
-        ]
-      ],
-      "value": ""
-    },
-    {
-      "type": "date/single",
-      "target": [
-        "variable",
-        [
-          "template-tag",
-          "month_end_date"
-        ]
-      ],
-      "value": ""
-    },
-    {
       "type": "number/=",
       "target": [
         "variable",
@@ -56,723 +34,251 @@
         ]
       ],
       "value": "1"
-    },
-    {
-      "type": "number/=",
-      "target": [
-        "variable",
-        [
-          "template-tag",
-          "date_of_month_start_date"
-        ]
-      ],
-      "value": ""
-    },
-    {
-      "type": "number/=",
-      "target": [
-        "variable",
-        [
-          "template-tag",
-          "date_of_month_end_date"
-        ]
-      ],
-      "value": ""
     }
   ],
   "query_response": {
-    "database_id": 39,
-    "started_at": "2026-04-17T06:45:46.448387Z",
-    "via": [
-      {
-        "status": "failed",
-        "class": "class clojure.lang.ExceptionInfo",
-        "error": "Error determining value for parameter \"date_of_month_start_date\": Unparseable number: \"\"",
-        "stacktrace": [
-          "--> driver.common.parameters.values$value_for_tag76119__76120.invokeStatic(values.clj:377)",
-          "driver.common.parameters.values$value_for_tag76119__76120.invoke(values.clj:369)",
-          "driver.common.parameters.values$query__GT_params_map76123__76125$iter__76127__76131$fn__76132.invoke(values.clj:395)",
-          "driver.common.parameters.values$query__GT_params_map76123__76125.invokeStatic(values.clj:394)",
-          "driver.common.parameters.values$query__GT_params_map76123__76125.invoke(values.clj:385)",
-          "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:55)",
-          "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
-          "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
-          "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
-          "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
-          "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
-          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
-          "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
-          "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
-          "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
-          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
-          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
-          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
-          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-          "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
-          "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
-          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
-          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
-          "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
-          "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
-          "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
-          "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
-          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
-          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
-          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
-          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
-          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
-          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
-          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
-          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
-          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
-          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
-          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
-          "driver$do_with_driver.invokeStatic(driver.clj:106)",
-          "driver$do_with_driver.invoke(driver.clj:101)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
-          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
-          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
-          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
-          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
-          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
-          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
-          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
-          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
-          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+    "data": {
+      "rows": [
+        [
+          "2026-03-01T00:00:00Z",
+          32402
         ],
-        "error_type": "invalid-parameter",
-        "ex-data": {
-          "tag": {
-            "type": "number",
-            "name": "date_of_month_start_date",
-            "id": "72250b63-dba0-464e-96e4-5254e8418b52",
-            "display-name": "Date Of Month Start Date"
-          },
-          "type": "invalid-parameter",
-          "params": [
+        [
+          "2026-04-01T00:00:00Z",
+          25132
+        ],
+        [
+          "2026-05-01T00:00:00Z",
+          30094
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "date",
+          "lib/deduplicated-name": "month",
+          "lib/original-name": "month",
+          "name": "month",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "month",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "month",
             {
-              "value": "1",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "compare_with_current_month"
-                ]
-              ]
-            },
-            {
-              "value": "",
-              "type": "date/single",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "month_start_date"
-                ]
-              ]
-            },
-            {
-              "value": "",
-              "type": "date/single",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "month_end_date"
-                ]
-              ]
-            },
-            {
-              "value": "2",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "no_of_month"
-                ]
-              ]
-            },
-            {
-              "value": "1",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "compare_with_current_date"
-                ]
-              ]
-            },
-            {
-              "value": "",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "date_of_month_start_date"
-                ]
-              ]
-            },
-            {
-              "value": "",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "date_of_month_end_date"
-                ]
-              ]
+              "base-type": "type/Date"
             }
-          ]
+          ],
+          "effective_type": "type/Date",
+          "lib/desired-column-alias": "month",
+          "display_name": "month",
+          "base_type": "type/Date"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "user_count",
+          "lib/original-name": "user_count",
+          "name": "user_count",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "user_count",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "user_count",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "user_count",
+          "display_name": "user_count",
+          "base_type": "type/BigInteger"
         }
+      ],
+      "native_form": {
+        "params": [],
+        "lib/type": "mbql.stage/native",
+        "query": "WITH fs_cohorts AS \n(\n    SELECT *\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE 1 = 1\n    AND month >= DATE('2018-01-01')\n    AND \n        CASE \n            WHEN 1 = 1 THEN 1 = 1  AND DATE_TRUNC('MONTH',membership_created_date) >= DATE_TRUNC('MONTH', CURRENT_DATE - INTERVAL  '1' MONTH * 2) \n            ELSE 1 = 1 \n        END\n    AND \n        CASE\n            WHEN 1 = 1 THEN DAY(membership_created_date) < DAY(CURRENT_DATE)\n            ELSE 1 = 1 \n        END\n)\n\nSELECT DATE_TRUNC('MONTH',membership_created_date) AS month, COUNT(DISTINCT user_id) AS user_count\nFROM \nfs_cohorts\nGROUP BY 1\nORDER BY 1"
       },
-      {
-        "status": "failed",
-        "class": "class clojure.lang.ExceptionInfo",
-        "error": "Error building query parameter map: Error determining value for parameter \"date_of_month_start_date\": Unparseable number: \"\"",
-        "stacktrace": [
-          "--> driver.common.parameters.values$query__GT_params_map76123__76125.invokeStatic(values.clj:400)",
-          "driver.common.parameters.values$query__GT_params_map76123__76125.invoke(values.clj:385)",
-          "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:55)",
-          "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
-          "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
-          "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
-          "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
-          "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
-          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
-          "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
-          "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
-          "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
-          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
-          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
-          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
-          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-          "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
-          "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
-          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
-          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
-          "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
-          "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
-          "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
-          "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
-          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
-          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
-          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
-          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
-          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
-          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
-          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
-          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
-          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
-          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
-          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
-          "driver$do_with_driver.invokeStatic(driver.clj:106)",
-          "driver$do_with_driver.invoke(driver.clj:101)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
-          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
-          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
-          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
-          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
-          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
-          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
-          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
-          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
-          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
-        ],
-        "error_type": "invalid-parameter",
-        "ex-data": {
-          "type": "invalid-parameter",
-          "tags": {
-            "compare_with_current_month": {
-              "type": "number",
-              "name": "compare_with_current_month",
-              "id": "e4b261ec-6457-4d54-bfa6-84cf1f40383d",
-              "display-name": "Compare With Current Month",
-              "default": "1"
-            },
-            "month_start_date": {
-              "type": "date",
-              "name": "month_start_date",
-              "id": "eebf64bb-6088-4915-9ee5-5c0889f5e7c4",
-              "display-name": "Month Start Date"
-            },
-            "month_end_date": {
-              "type": "date",
-              "name": "month_end_date",
-              "id": "3615af24-4f65-42b3-a425-3925aa42552e",
-              "display-name": "Month End Date"
-            },
-            "no_of_month": {
-              "type": "number",
-              "name": "no_of_month",
-              "id": "c228d6d5-5fe5-4dd1-afeb-d9ac29629ff4",
-              "display-name": "No Of Month",
-              "default": "2"
-            },
-            "compare_with_current_date": {
-              "type": "number",
-              "name": "compare_with_current_date",
-              "id": "2945ed56-a473-4ad1-827d-ebf8464d4747",
-              "display-name": "Compare With Current Date",
-              "default": "1",
-              "required": false
-            },
-            "date_of_month_start_date": {
-              "type": "number",
-              "name": "date_of_month_start_date",
-              "id": "72250b63-dba0-464e-96e4-5254e8418b52",
-              "display-name": "Date Of Month Start Date"
-            },
-            "date_of_month_end_date": {
-              "type": "number",
-              "name": "date_of_month_end_date",
-              "id": "5c50099c-9c79-4e32-93a6-6175d2c4a019",
-              "display-name": "Date Of Month End Date"
-            }
-          },
-          "params": [
-            {
-              "value": "1",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "compare_with_current_month"
-                ]
-              ]
-            },
-            {
-              "value": "",
-              "type": "date/single",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "month_start_date"
-                ]
-              ]
-            },
-            {
-              "value": "",
-              "type": "date/single",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "month_end_date"
-                ]
-              ]
-            },
-            {
-              "value": "2",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "no_of_month"
-                ]
-              ]
-            },
-            {
-              "value": "1",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "compare_with_current_date"
-                ]
-              ]
-            },
-            {
-              "value": "",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "date_of_month_start_date"
-                ]
-              ]
-            },
-            {
-              "value": "",
-              "type": "number/=",
-              "target": [
-                "variable",
-                [
-                  "template-tag",
-                  "date_of_month_end_date"
-                ]
-              ]
-            }
-          ]
-        }
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
       },
-      {
-        "status": "failed",
-        "class": "class clojure.lang.ExceptionInfo",
-        "error": "Error preprocessing query in clojure.lang.AFunction$1@5f86671c: Error building query parameter map: Error determining value for parameter \"date_of_month_start_date\": Unparseable number: \"\"",
-        "stacktrace": [
-          "--> query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:178)",
-          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
-          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
-          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
-          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
-          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
-          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
-          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
-          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
-          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
-          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
-          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
-          "driver$do_with_driver.invokeStatic(driver.clj:106)",
-          "driver$do_with_driver.invoke(driver.clj:101)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
-          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
-          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
-          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
-          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
-          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
-          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
-          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
-          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
-          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
-        ],
-        "error_type": "qp",
-        "ex-data": {
-          "fn": "clojure.lang.AFunction$1@5f86671c",
-          "query": {
-            "constraints": {
-              "max-results": 10000,
-              "max-results-bare-rows": 5000
-            },
-            "lib/type": "mbql/query",
-            "lib/metadata": "metabase.lib.metadata.invocation_tracker.InvocationTracker@dcd20f",
-            "stages": [
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "date",
+            "semantic_type": null,
+            "lib/deduplicated-name": "month",
+            "lib/original-name": "month",
+            "name": "month",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "month",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "month",
               {
-                "lib/type": "mbql.stage/native",
-                "template-tags": {
-                  "compare_with_current_month": {
-                    "type": "number",
-                    "name": "compare_with_current_month",
-                    "id": "e4b261ec-6457-4d54-bfa6-84cf1f40383d",
-                    "display-name": "Compare With Current Month",
-                    "default": "1"
-                  },
-                  "month_start_date": {
-                    "type": "date",
-                    "name": "month_start_date",
-                    "id": "eebf64bb-6088-4915-9ee5-5c0889f5e7c4",
-                    "display-name": "Month Start Date"
-                  },
-                  "month_end_date": {
-                    "type": "date",
-                    "name": "month_end_date",
-                    "id": "3615af24-4f65-42b3-a425-3925aa42552e",
-                    "display-name": "Month End Date"
-                  },
-                  "no_of_month": {
-                    "type": "number",
-                    "name": "no_of_month",
-                    "id": "c228d6d5-5fe5-4dd1-afeb-d9ac29629ff4",
-                    "display-name": "No Of Month",
-                    "default": "2"
-                  },
-                  "compare_with_current_date": {
-                    "type": "number",
-                    "name": "compare_with_current_date",
-                    "id": "2945ed56-a473-4ad1-827d-ebf8464d4747",
-                    "display-name": "Compare With Current Date",
-                    "default": "1",
-                    "required": false
-                  },
-                  "date_of_month_start_date": {
-                    "type": "number",
-                    "name": "date_of_month_start_date",
-                    "id": "72250b63-dba0-464e-96e4-5254e8418b52",
-                    "display-name": "Date Of Month Start Date"
-                  },
-                  "date_of_month_end_date": {
-                    "type": "number",
-                    "name": "date_of_month_end_date",
-                    "id": "5c50099c-9c79-4e32-93a6-6175d2c4a019",
-                    "display-name": "Date Of Month End Date"
-                  }
-                },
-                "native": "WITH fs_cohorts AS \n(\n    SELECT *\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE 1 = 1\n    AND month >= DATE('2018-01-01')\n    AND \n        CASE \n            WHEN {{compare_with_current_month}} = 1 THEN 1 = 1 [[ AND DATE_TRUNC('MONTH',membership_created_date) >= DATE_TRUNC('MONTH', CURRENT_DATE - INTERVAL  '1' MONTH * {{no_of_month}}) ]]\n            ELSE 1 = 1 [[ AND DATE_TRUNC('MONTH',membership_created_date) BETWEEN DATE_TRUNC('MONTH',{{month_start_date}}) AND DATE_TRUNC('MONTH', {{month_end_date}}) ]]\n        END\n    AND \n        CASE\n            WHEN {{compare_with_current_date}} = 1 THEN DAY(membership_created_date) < DAY(CURRENT_DATE)\n            ELSE 1 = 1 [[ AND DAY(membership_created_date) BETWEEN {{date_of_month_start_date}} AND {{date_of_month_end_date}} ]]\n        END\n)\n\nSELECT DATE_TRUNC('MONTH',membership_created_date) AS month, COUNT(DISTINCT user_id) AS user_count\nFROM \nfs_cohorts\nGROUP BY 1\nORDER BY 1"
+                "base-type": "type/Date"
               }
             ],
-            "middleware": {
-              "js-int-to-string?": true,
-              "ignore-cached-results?": false,
-              "process-viz-settings?": false,
-              "userland-query?": true
-            },
-            "cache-strategy": {
-              "multiplier": 10,
-              "min-duration-ms": 60000,
-              "type": "ttl",
-              "avg-execution-ms": 0,
-              "invalidated-at": "2026-04-16T18:45:46.44385Z"
-            },
-            "viz-settings": {
-              "graph.tooltip_columns": [
-                "[\"name\",\"total_weekends\"]"
-              ],
-              "graph.series_order": null,
-              "graph.series_order_dimension": null,
-              "graph.dimensions": [
-                "month"
-              ],
-              "series_settings": {
-                "total_gmv": {
-                  "color": "#EF8C8C"
+            "effective_type": "type/Date",
+            "lib/desired-column-alias": "month",
+            "display_name": "month",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2026-03-01",
+                  "latest": "2026-05-01"
                 }
-              },
-              "graph.metrics": [
-                "user_count"
-              ]
-            },
-            "lib.convert/converted?": true,
-            "info": {
-              "executed-by": 3570,
-              "context": "question",
-              "card-id": 68061,
-              "card-name": "Month Wise Membership Purchase Count",
-              "visualization-settings": {
-                "graph.tooltip_columns": [
-                  "[\"name\",\"total_weekends\"]"
-                ],
-                "graph.dimensions": [
-                  "month"
-                ],
-                "series_settings": {
-                  "total_gmv": {
-                    "color": "#EF8C8C"
-                  }
-                },
-                "graph.metrics": [
-                  "user_count"
-                ]
-              },
-              "query-hash": "0xDD862A7E"
-            },
-            "database": 39,
-            "parameters": [
-              {
-                "value": "1",
-                "type": "number/=",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "compare_with_current_month"
-                  ]
-                ]
-              },
-              {
-                "value": "",
-                "type": "date/single",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "month_start_date"
-                  ]
-                ]
-              },
-              {
-                "value": "",
-                "type": "date/single",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "month_end_date"
-                  ]
-                ]
-              },
-              {
-                "value": "2",
-                "type": "number/=",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "no_of_month"
-                  ]
-                ]
-              },
-              {
-                "value": "1",
-                "type": "number/=",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "compare_with_current_date"
-                  ]
-                ]
-              },
-              {
-                "value": "",
-                "type": "number/=",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "date_of_month_start_date"
-                  ]
-                ]
-              },
-              {
-                "value": "",
-                "type": "number/=",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "date_of_month_end_date"
-                  ]
-                ]
               }
-            ]
+            },
+            "base_type": "type/Date"
           },
-          "type": "qp"
+          {
+            "database_type": "bigint",
+            "semantic_type": "type/Quantity",
+            "lib/deduplicated-name": "user_count",
+            "lib/original-name": "user_count",
+            "name": "user_count",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "user_count",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "user_count",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "user_count",
+            "display_name": "user_count",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 25132,
+                  "q1": 26372.5,
+                  "q3": 31825,
+                  "max": 32402,
+                  "sd": 3714.8622226582415,
+                  "avg": 29209.333333333332
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          }
+        ]
+      },
+      "insights": [
+        {
+          "previous-value": 25132,
+          "unit": "month",
+          "offset": 828940.196703732,
+          "last-change": 0.19743752984243196,
+          "col": "user_count",
+          "slope": -38.92834109638324,
+          "last-value": 30094,
+          "best-fit": [
+            "+",
+            7980764.810763047,
+            [
+              "*",
+              -800736.0981157707,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
         }
-      }
-    ],
-    "action_id": null,
-    "error_type": "invalid-parameter",
+      ]
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-05-13T10:48:39.815432551Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
         "max-results-bare-rows": 5000
       },
-      "type": "native",
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "compare_with_current_month": {
+              "display-name": "Compare With Current Month",
+              "type": "number",
+              "name": "compare_with_current_month",
+              "id": "e4b261ec-6457-4d54-bfa6-84cf1f40383d",
+              "default": "1"
+            },
+            "month_start_date": {
+              "id": "eebf64bb-6088-4915-9ee5-5c0889f5e7c4",
+              "type": "date",
+              "name": "month_start_date",
+              "display-name": "Month Start Date"
+            },
+            "month_end_date": {
+              "id": "3615af24-4f65-42b3-a425-3925aa42552e",
+              "type": "date",
+              "name": "month_end_date",
+              "display-name": "Month End Date"
+            },
+            "no_of_month": {
+              "display-name": "No Of Month",
+              "type": "number",
+              "name": "no_of_month",
+              "id": "c228d6d5-5fe5-4dd1-afeb-d9ac29629ff4",
+              "default": "2"
+            },
+            "compare_with_current_date": {
+              "default": "1",
+              "type": "number",
+              "name": "compare_with_current_date",
+              "id": "2945ed56-a473-4ad1-827d-ebf8464d4747",
+              "display-name": "Compare With Current Date",
+              "required": false
+            },
+            "date_of_month_start_date": {
+              "id": "72250b63-dba0-464e-96e4-5254e8418b52",
+              "type": "number",
+              "name": "date_of_month_start_date",
+              "display-name": "Date Of Month Start Date"
+            },
+            "date_of_month_end_date": {
+              "id": "5c50099c-9c79-4e32-93a6-6175d2c4a019",
+              "type": "number",
+              "name": "date_of_month_end_date",
+              "display-name": "Date Of Month End Date"
+            }
+          },
+          "native": "WITH fs_cohorts AS \n(\n    SELECT *\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE 1 = 1\n    AND month >= DATE('2018-01-01')\n    AND \n        CASE \n            WHEN {{compare_with_current_month}} = 1 THEN 1 = 1 [[ AND DATE_TRUNC('MONTH',membership_created_date) >= DATE_TRUNC('MONTH', CURRENT_DATE - INTERVAL  '1' MONTH * {{no_of_month}}) ]]\n            ELSE 1 = 1 [[ AND DATE_TRUNC('MONTH',membership_created_date) BETWEEN DATE_TRUNC('MONTH',{{month_start_date}}) AND DATE_TRUNC('MONTH', {{month_end_date}}) ]]\n        END\n    AND \n        CASE\n            WHEN {{compare_with_current_date}} = 1 THEN DAY(membership_created_date) < DAY(CURRENT_DATE)\n            ELSE 1 = 1 [[ AND DAY(membership_created_date) BETWEEN {{date_of_month_start_date}} AND {{date_of_month_end_date}} ]]\n        END\n)\n\nSELECT DATE_TRUNC('MONTH',membership_created_date) AS month, COUNT(DISTINCT user_id) AS user_count\nFROM \nfs_cohorts\nGROUP BY 1\nORDER BY 1"
+        }
+      ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": false,
+        "ignore-cached-results?": true,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "avg-execution-ms": 0,
-        "invalidated-at": "2026-04-16T18:45:46.44385Z"
-      },
-      "native": {
-        "template-tags": {
-          "compare_with_current_month": {
-            "type": "number",
-            "name": "compare_with_current_month",
-            "id": "e4b261ec-6457-4d54-bfa6-84cf1f40383d",
-            "display-name": "Compare With Current Month",
-            "default": "1"
-          },
-          "month_start_date": {
-            "type": "date",
-            "name": "month_start_date",
-            "id": "eebf64bb-6088-4915-9ee5-5c0889f5e7c4",
-            "display-name": "Month Start Date"
-          },
-          "month_end_date": {
-            "type": "date",
-            "name": "month_end_date",
-            "id": "3615af24-4f65-42b3-a425-3925aa42552e",
-            "display-name": "Month End Date"
-          },
-          "no_of_month": {
-            "type": "number",
-            "name": "no_of_month",
-            "id": "c228d6d5-5fe5-4dd1-afeb-d9ac29629ff4",
-            "display-name": "No Of Month",
-            "default": "2"
-          },
-          "compare_with_current_date": {
-            "type": "number",
-            "name": "compare_with_current_date",
-            "id": "2945ed56-a473-4ad1-827d-ebf8464d4747",
-            "display-name": "Compare With Current Date",
-            "default": "1",
-            "required": false
-          },
-          "date_of_month_start_date": {
-            "type": "number",
-            "name": "date_of_month_start_date",
-            "id": "72250b63-dba0-464e-96e4-5254e8418b52",
-            "display-name": "Date Of Month Start Date"
-          },
-          "date_of_month_end_date": {
-            "type": "number",
-            "name": "date_of_month_end_date",
-            "id": "5c50099c-9c79-4e32-93a6-6175d2c4a019",
-            "display-name": "Date Of Month End Date"
-          }
-        },
-        "query": "WITH fs_cohorts AS \n(\n    SELECT *\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE 1 = 1\n    AND month >= DATE('2018-01-01')\n    AND \n        CASE \n            WHEN {{compare_with_current_month}} = 1 THEN 1 = 1 [[ AND DATE_TRUNC('MONTH',membership_created_date) >= DATE_TRUNC('MONTH', CURRENT_DATE - INTERVAL  '1' MONTH * {{no_of_month}}) ]]\n            ELSE 1 = 1 [[ AND DATE_TRUNC('MONTH',membership_created_date) BETWEEN DATE_TRUNC('MONTH',{{month_start_date}}) AND DATE_TRUNC('MONTH', {{month_end_date}}) ]]\n        END\n    AND \n        CASE\n            WHEN {{compare_with_current_date}} = 1 THEN DAY(membership_created_date) < DAY(CURRENT_DATE)\n            ELSE 1 = 1 [[ AND DAY(membership_created_date) BETWEEN {{date_of_month_start_date}} AND {{date_of_month_end_date}} ]]\n        END\n)\n\nSELECT DATE_TRUNC('MONTH',membership_created_date) AS month, COUNT(DISTINCT user_id) AS user_count\nFROM \nfs_cohorts\nGROUP BY 1\nORDER BY 1"
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false
       },
       "viz-settings": {
         "graph.tooltip_columns": [
@@ -792,6 +298,7 @@
           "user_count"
         ]
       },
+      "lib.convert/converted?": true,
       "database": 39,
       "parameters": [
         {
@@ -804,28 +311,6 @@
             ]
           ],
           "value": "1"
-        },
-        {
-          "type": "date/single",
-          "target": [
-            "variable",
-            [
-              "template-tag",
-              "month_start_date"
-            ]
-          ],
-          "value": ""
-        },
-        {
-          "type": "date/single",
-          "target": [
-            "variable",
-            [
-              "template-tag",
-              "month_end_date"
-            ]
-          ],
-          "value": ""
         },
         {
           "type": "number/=",
@@ -848,118 +333,13 @@
             ]
           ],
           "value": "1"
-        },
-        {
-          "type": "number/=",
-          "target": [
-            "variable",
-            [
-              "template-tag",
-              "date_of_month_start_date"
-            ]
-          ],
-          "value": ""
-        },
-        {
-          "type": "number/=",
-          "target": [
-            "variable",
-            [
-              "template-tag",
-              "date_of_month_end_date"
-            ]
-          ],
-          "value": ""
         }
       ]
     },
-    "status": "failed",
-    "class": "class java.text.ParseException",
-    "stacktrace": [
-      "java.base/java.text.NumberFormat.parse(Unknown Source)",
-      "--> driver.common.parameters.values$parse_number76095__76096.invokeStatic(values.clj:281)",
-      "driver.common.parameters.values$parse_number76095__76096.invoke(values.clj:277)",
-      "driver.common.parameters.values$value__GT_number76098__76099.invokeStatic(values.clj:300)",
-      "driver.common.parameters.values$value__GT_number76098__76099.invoke(values.clj:283)",
-      "driver.common.parameters.values$parse_value_for_type76114__76115.invokeStatic(values.clj:348)",
-      "driver.common.parameters.values$parse_value_for_type76114__76115.invoke(values.clj:336)",
-      "driver.common.parameters.values$value_for_tag76119__76120.invokeStatic(values.clj:375)",
-      "driver.common.parameters.values$value_for_tag76119__76120.invoke(values.clj:369)",
-      "driver.common.parameters.values$query__GT_params_map76123__76125$iter__76127__76131$fn__76132.invoke(values.clj:395)",
-      "driver.common.parameters.values$query__GT_params_map76123__76125.invokeStatic(values.clj:394)",
-      "driver.common.parameters.values$query__GT_params_map76123__76125.invoke(values.clj:385)",
-      "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:55)",
-      "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
-      "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
-      "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
-      "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
-      "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
-      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
-      "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
-      "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
-      "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
-      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
-      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
-      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
-      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-      "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
-      "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
-      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
-      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
-      "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
-      "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
-      "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
-      "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
-      "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
-      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
-      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-      "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
-      "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
-      "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
-      "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
-      "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
-      "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
-      "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
-      "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
-      "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
-      "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
-      "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
-      "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
-      "driver$do_with_driver.invokeStatic(driver.clj:106)",
-      "driver$do_with_driver.invoke(driver.clj:101)",
-      "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
-      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
-      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
-      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
-      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
-      "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
-      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
-      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-      "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
-      "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
-      "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
-      "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
-      "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
-      "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
-      "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
-      "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
-      "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
-      "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
-      "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
-      "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
-      "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
-    ],
-    "card_id": 68061,
+    "average_execution_time": null,
+    "status": "completed",
     "context": "question",
-    "error": "Unparseable number: \"\"",
-    "row_count": 0,
-    "running_time": 0,
-    "data": {
-      "rows": [],
-      "cols": []
-    }
+    "row_count": 3,
+    "running_time": 1433
   }
 }

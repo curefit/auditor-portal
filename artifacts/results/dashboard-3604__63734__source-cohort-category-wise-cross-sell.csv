@@ -1,1 +1,174 @@
-
+source,cohort,category,total_gmv
+CULTSPORT_APP,Active Complimentary,Indoor Equipment,155282
+CULTSPORT_APP,Active Elite,Indoor Equipment,90346
+CULTSPORT_APP,Expired Elite,Indoor Equipment,263178
+CULTSPORT_APP,Active Athome,Indoor Equipment,35999
+CULTSPORT_APP,Expired B2B,Indoor Equipment,77170
+CULTSPORT_APP,Expired Pro,Indoor Equipment,131496
+CULTSPORT_APP,Expired Complimentary,Indoor Equipment,1224059
+CULTSPORT_APP,Active Play,Indoor Equipment,11299
+CULTSPORT_APP,Expired Play,Indoor Equipment,54498
+CULTSPORT_APP,Active B2B,Indoor Equipment,178344
+CULTSPORT_WEBSITE,Expired B2B,Indoor_Equipment-Strength,17518
+CULTSPORT_WEBSITE,Expired Athome,Indoor_Equipment-Strength,13121
+CULTSPORT_WEBSITE,Active Pro,Indoor_Equipment-Strength,13123
+CULTSPORT_WEBSITE,Active Lux,Indoor_Equipment-Strength,4499
+CULTSPORT_WEBSITE,Expired Pro,Indoor_Equipment-Strength,17151
+CULTSPORT_WEBSITE,Active Complimentary,Indoor_Equipment-Strength,27218
+CULTSPORT_WEBSITE,Active Athome,Indoor_Equipment-Strength,36521
+CULTSPORT_WEBSITE,Expired Elite,Indoor_Equipment-Strength,102668
+CULTSPORT_WEBSITE,Expired Complimentary,Indoor_Equipment-Strength,214080
+CULTSPORT_WEBSITE,Expired Play,Indoor_Equipment-Strength,9997
+CULTSPORT_WEBSITE,Active B2B,Indoor_Equipment-Strength,42557
+CULTSPORT_WEBSITE,Active Elite,Indoor_Equipment-Strength,82122
+CULTSPORT_WEBSITE,Active Play,Indoor_Equipment-Strength,10998
+CULTSPORT_WEBSITE,Expired Elite,Indoor Equipment,13556531
+CULTSPORT_WEBSITE,Expired Play,Indoor Equipment,1160825
+CULTSPORT_WEBSITE,Expired B2B,Indoor Equipment,3827432
+CULTSPORT_WEBSITE,Expired Complimentary,Indoor Equipment,45701192
+CULTSPORT_WEBSITE,Active B2B,Indoor Equipment,7153694
+CULTSPORT_WEBSITE,Expired Pro,Indoor Equipment,2837930
+CULTSPORT_WEBSITE,Active Elite,Indoor Equipment,12389736
+CULTSPORT_WEBSITE,Active Lux,Indoor Equipment,159944
+CULTSPORT_WEBSITE,Active Play,Indoor Equipment,1770903
+CULTSPORT_WEBSITE,MP Pro,Indoor Equipment,14482
+CULTSPORT_WEBSITE,Expired Athome,Indoor Equipment,2802963
+CULTSPORT_WEBSITE,Active Complimentary,Indoor Equipment,7752786
+CULTSPORT_WEBSITE,Active Pro,Indoor Equipment,1803394
+CULTSPORT_WEBSITE,Active Athome,Indoor Equipment,3445824
+CULTSPORT_WEBSITE,MP Complimentary,Indoor Equipment,74498
+CULTSPORT_WEBSITE,MP Elite,Indoor Equipment,756
+CUREFIT_APP,Expired Play,Indoor_Equipment-Strength,10662
+CUREFIT_APP,Active Play,Indoor_Equipment-Strength,44959
+CUREFIT_APP,Expired Elite,Indoor_Equipment-Strength,68866
+CUREFIT_APP,Active Complimentary,Indoor_Equipment-Strength,78360
+CUREFIT_APP,Expired Pro,Indoor_Equipment-Strength,8383
+CUREFIT_APP,Expired Athome,Indoor_Equipment-Strength,23468
+CUREFIT_APP,Active Athome,Indoor_Equipment-Strength,174324
+CUREFIT_APP,Expired B2B,Indoor_Equipment-Strength,20443
+CUREFIT_APP,Active Elite,Indoor_Equipment-Strength,336598
+CUREFIT_APP,Active Pro,Indoor_Equipment-Strength,9907
+CUREFIT_APP,Expired Complimentary,Indoor_Equipment-Strength,64955
+CUREFIT_APP,Active B2B,Indoor_Equipment-Strength,69438
+CUREFIT_APP,Active Lux,Indoor_Equipment-Strength,8290
+CUREFIT_APP,MP Elite,Indoor_Equipment-Strength,4499
+CUREFIT_APP,Expired Athome,Indoor Equipment,2769477
+CUREFIT_APP,Active Elite,Indoor Equipment,37840778
+CUREFIT_APP,Active Pro,Indoor Equipment,5263483
+CUREFIT_APP,MP B2B,Indoor Equipment,19499
+CUREFIT_APP,Expired Elite,Indoor Equipment,11398460
+CUREFIT_APP,MP Pro,Indoor Equipment,62879
+CUREFIT_APP,Active B2B,Indoor Equipment,12922004
+CUREFIT_APP,Expired B2B,Indoor Equipment,2688254
+CUREFIT_APP,Expired Pro,Indoor Equipment,3534245
+CUREFIT_APP,Active Play,Indoor Equipment,3534447
+CUREFIT_APP,Active Complimentary,Indoor Equipment,6189841
+CUREFIT_APP,Expired Complimentary,Indoor Equipment,15678684
+CUREFIT_APP,Expired Play,Indoor Equipment,620239
+CUREFIT_APP,Active Lux,Indoor Equipment,282096
+CUREFIT_APP,MP Complimentary,Indoor Equipment,14999
+CUREFIT_APP,Active Athome,Indoor Equipment,8402915
+CUREFIT_APP,MP Elite,Indoor Equipment,53291
+CUREFIT_APP,Expired Lux,Indoor Equipment,71998
+EBO,Expired Pro,Indoor_Equipment-Strength,43211
+EBO,Active B2B,Indoor_Equipment-Strength,85251
+EBO,Active Elite,Indoor_Equipment-Strength,157918
+EBO,Expired Elite,Indoor_Equipment-Strength,89796
+EBO,Active Athome,Indoor_Equipment-Strength,17495
+EBO,Active Play,Indoor_Equipment-Strength,22536
+EBO,Expired Lux,Indoor_Equipment-Strength,11199
+EBO,Expired Athome,Indoor_Equipment-Strength,9007
+EBO,Expired B2B,Indoor_Equipment-Strength,25432
+EBO,Active Pro,Indoor_Equipment-Strength,42668
+EBO,Expired Complimentary,Indoor_Equipment-Strength,99581
+EBO,Active Complimentary,Indoor_Equipment-Strength,4402
+EBO,Active Pro,Indoor Equipment,153469
+EBO,Expired Lux,Indoor Equipment,157498
+EBO,Expired B2B,Indoor Equipment,358271
+EBO,Expired Elite,Indoor Equipment,1304196
+EBO,Expired Play,Indoor Equipment,27245
+EBO,Expired Pro,Indoor Equipment,186812
+EBO,Active Athome,Indoor Equipment,97771
+EBO,Expired Athome,Indoor Equipment,87463
+EBO,MP Play,Indoor Equipment,9999
+EBO,Active Lux,Indoor Equipment,41597
+EBO,Active Play,Indoor Equipment,354526
+EBO,Active B2B,Indoor Equipment,355668
+EBO,Expired Complimentary,Indoor Equipment,1280776
+EBO,Active Complimentary,Indoor Equipment,130668
+EBO,Active Elite,Indoor Equipment,1661132
+SHOPIFY,Active Elite,Indoor_Equipment-Strength,58794
+SHOPIFY,Expired B2B,Indoor_Equipment-Strength,11999
+SHOPIFY,Expired Complimentary,Indoor_Equipment-Strength,7341
+SHOPIFY,Expired Athome,Indoor_Equipment-Strength,3599
+SHOPIFY,Expired Elite,Indoor_Equipment-Strength,26197
+SHOPIFY,Active Athome,Indoor_Equipment-Strength,23498
+SHOPIFY,Active Pro,Indoor Equipment,26499
+SHOPIFY,Expired Athome,Indoor Equipment,2399
+SHOPIFY,Expired Complimentary,Indoor Equipment,455300
+SHOPIFY,Expired Pro,Indoor Equipment,66996
+SHOPIFY,Active B2B,Indoor Equipment,215386
+SHOPIFY,Active Play,Indoor Equipment,60915
+SHOPIFY,Expired B2B,Indoor Equipment,171938
+SHOPIFY,Expired Play,Indoor Equipment,55445
+SHOPIFY,Active Athome,Indoor Equipment,7999
+SHOPIFY,Expired Elite,Indoor Equipment,292299
+SHOPIFY,Active Elite,Indoor Equipment,259282
+SHOPIFY_APP,Active Lux,Indoor_Equipment-Strength,16277
+SHOPIFY_APP,Expired Athome,Indoor_Equipment-Strength,47825
+SHOPIFY_APP,Active Play,Indoor_Equipment-Strength,109940
+SHOPIFY_APP,Active B2B,Indoor_Equipment-Strength,438446
+SHOPIFY_APP,Expired Elite,Indoor_Equipment-Strength,571087
+SHOPIFY_APP,Active Complimentary,Indoor_Equipment-Strength,41507
+SHOPIFY_APP,Expired Play,Indoor_Equipment-Strength,2075
+SHOPIFY_APP,Expired B2B,Indoor_Equipment-Strength,171958
+SHOPIFY_APP,Expired Lux,Indoor_Equipment-Strength,11999
+SHOPIFY_APP,Expired Pro,Indoor_Equipment-Strength,56712
+SHOPIFY_APP,Active Athome,Indoor_Equipment-Strength,343104
+SHOPIFY_APP,Active Pro,Indoor_Equipment-Strength,134788
+SHOPIFY_APP,Expired Complimentary,Indoor_Equipment-Strength,286256
+SHOPIFY_APP,Active Elite,Indoor_Equipment-Strength,1015428
+SHOPIFY_APP,Active Pro,Indoor Equipment,2112602
+SHOPIFY_APP,Active Elite,Indoor Equipment,17124522
+SHOPIFY_APP,Expired Pro,Indoor Equipment,1511379
+SHOPIFY_APP,MP Elite,Indoor Equipment,50286
+SHOPIFY_APP,Active Lux,Indoor Equipment,493490
+SHOPIFY_APP,Active Athome,Indoor Equipment,2891474
+SHOPIFY_APP,Expired Complimentary,Indoor Equipment,5695322
+SHOPIFY_APP,Active Complimentary,Indoor Equipment,597647
+SHOPIFY_APP,Expired B2B,Indoor Equipment,1517245
+SHOPIFY_APP,MP Pro,Indoor Equipment,60565
+SHOPIFY_APP,Active B2B,Indoor Equipment,12409827
+SHOPIFY_APP,Expired Lux,Indoor Equipment,80997
+SHOPIFY_APP,Expired Play,Indoor Equipment,418825
+SHOPIFY_APP,Expired Elite,Indoor Equipment,6091287
+SHOPIFY_APP,Active Play,Indoor Equipment,1229624
+SHOPIFY_APP,Expired Athome,Indoor Equipment,763953
+SHOPIFY_WEB,Active Complimentary,Indoor_Equipment-Strength,28746
+SHOPIFY_WEB,Expired Play,Indoor_Equipment-Strength,70005
+SHOPIFY_WEB,Expired B2B,Indoor_Equipment-Strength,219441
+SHOPIFY_WEB,Active Play,Indoor_Equipment-Strength,53207
+SHOPIFY_WEB,Active B2B,Indoor_Equipment-Strength,241817
+SHOPIFY_WEB,Expired Elite,Indoor_Equipment-Strength,978948
+SHOPIFY_WEB,Active Pro,Indoor_Equipment-Strength,87922
+SHOPIFY_WEB,Expired Athome,Indoor_Equipment-Strength,183049
+SHOPIFY_WEB,Active Elite,Indoor_Equipment-Strength,621906
+SHOPIFY_WEB,Active Lux,Indoor_Equipment-Strength,38347
+SHOPIFY_WEB,Expired Pro,Indoor_Equipment-Strength,161713
+SHOPIFY_WEB,Active Athome,Indoor_Equipment-Strength,136958
+SHOPIFY_WEB,Expired Complimentary,Indoor_Equipment-Strength,1193461
+SHOPIFY_WEB,Active Elite,Indoor Equipment,14221521
+SHOPIFY_WEB,Expired Lux,Indoor Equipment,271634
+SHOPIFY_WEB,Expired Elite,Indoor Equipment,18614676
+SHOPIFY_WEB,Expired Pro,Indoor Equipment,3961054
+SHOPIFY_WEB,Expired B2B,Indoor Equipment,5000691
+SHOPIFY_WEB,Active Lux,Indoor Equipment,775121
+SHOPIFY_WEB,Active Play,Indoor Equipment,694212
+SHOPIFY_WEB,Expired Athome,Indoor Equipment,3128185
+SHOPIFY_WEB,Active Pro,Indoor Equipment,1984299
+SHOPIFY_WEB,Active Complimentary,Indoor Equipment,516095
+SHOPIFY_WEB,Expired Play,Indoor Equipment,1491924
+SHOPIFY_WEB,Active B2B,Indoor Equipment,6236894
+SHOPIFY_WEB,MP Elite,Indoor Equipment,1199
+SHOPIFY_WEB,Active Athome,Indoor Equipment,2098179
+SHOPIFY_WEB,Expired Complimentary,Indoor Equipment,32588969

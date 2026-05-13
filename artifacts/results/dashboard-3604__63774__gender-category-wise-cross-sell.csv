@@ -1,8 +1,9 @@
 gender,category,user_count,total_gmv
-male,Indoor Equipment,366,7067123.02
-NO-GENDER,Indoor Equipment,323,5394303.220000001
-female,Indoor Equipment,209,2338098.9200000004
-male,Indoor_Equipment-Strength,72,644341.68
-NO-GENDER,Indoor_Equipment-Strength,49,472153.49
-female,Indoor_Equipment-Strength,38,200757.55999999997
-undisclosed,Indoor Equipment,1,5599.0
+male,Indoor Equipment,7800,170212593.64999998
+NO-GENDER,Indoor Equipment,6911,138903641.9599999
+female,Indoor Equipment,3888,60876822.290000044
+male,Indoor_Equipment-Strength,635,4340684.309999998
+NO-GENDER,Indoor_Equipment-Strength,477,3197632.41
+female,Indoor_Equipment-Strength,360,1979254.4799999997
+undisclosed,Indoor Equipment,11,314361
+non-binary,Indoor Equipment,7,169981.3

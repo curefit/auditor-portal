@@ -11,7 +11,7 @@
           "order_start_date"
         ]
       ],
-      "value": "2026-01-01"
+      "value": "2023-04-01"
     },
     {
       "type": "date/single",
@@ -22,7 +22,7 @@
           "order_end_date"
         ]
       ],
-      "value": "2026-01-31"
+      "value": "2026-03-31"
     }
   ],
   "query_response": {
@@ -31,169 +31,216 @@
         [
           "NO-GENDER",
           "NO-AGE",
-          6751,
-          16891381.189999994
+          87514,
+          321676158.49570024
         ],
         [
           "male",
           "21-30",
-          3752,
-          8674443.109999998
+          50080,
+          158710124.68529987
         ],
         [
           "male",
           "31-40",
-          3277,
-          9351187.909999998
+          49890,
+          215145946.04600012
         ],
         [
           "female",
           "21-30",
-          1982,
-          4152999.372799999
+          26624,
+          80441019.33239995
         ],
         [
           "female",
           "31-40",
-          1915,
-          4688216.47
+          26133,
+          104882680.65610002
         ],
         [
           "male",
           "41-50",
-          977,
-          2524499.3
+          14598,
+          70242698.89459997
         ],
         [
           "female",
           "41-50",
-          727,
-          1596172.6200000003
+          9180,
+          37102653.240700014
         ],
         [
           "male",
           "NO-AGE",
-          246,
-          752593.12
-        ],
-        [
-          "male",
-          "11-20",
-          167,
-          211852.88999999998
+          5182,
+          24807471.2536
         ],
         [
           "female",
           "NO-AGE",
-          167,
-          499910.28
+          2767,
+          12151095.529999996
         ],
         [
           "male",
           "50+",
-          165,
-          655767.55
+          2638,
+          12106249.163
+        ],
+        [
+          "male",
+          "11-20",
+          2202,
+          4648520.669000002
         ],
         [
           "NO-GENDER",
           "21-30",
-          135,
-          459160.07999999996
+          1802,
+          7548925.177599998
         ],
         [
           "female",
           "50+",
-          124,
-          274291.61
+          1778,
+          7549819.4745000005
         ],
         [
           "NO-GENDER",
           "31-40",
-          72,
-          169408.87000000002
+          1525,
+          7245106.9478
+        ],
+        [
+          "male",
+          "0-10",
+          959,
+          4103903.935800001
         ],
         [
           "female",
           "0-10",
-          62,
-          169306.05000000005
+          780,
+          2670502.0491000004
         ],
         [
           "female",
           "11-20",
-          56,
-          107916.18999999999
-        ],
-        [
-          "male",
-          "0-10",
-          52,
-          102539.35
+          743,
+          1795490.4343999992
         ],
         [
           "NO-GENDER",
           "41-50",
-          30,
-          70171.29999999999
+          501,
+          2498121.85
         ],
         [
           "NO-GENDER",
           "0-10",
-          30,
-          58787.47000000001
+          453,
+          1799062.3099999994
         ],
         [
           "NO-GENDER",
           "50+",
-          8,
-          16737.4
-        ],
-        [
-          "undisclosed",
-          "21-30",
-          6,
-          13274.550000000001
+          129,
+          546280.79
         ],
         [
           "undisclosed",
           "31-40",
-          4,
-          8530.5
+          80,
+          434572.22
+        ],
+        [
+          "undisclosed",
+          "21-30",
+          55,
+          231623.75
+        ],
+        [
+          "undisclosed",
+          "NO-AGE",
+          36,
+          147059.05
         ],
         [
           "non-binary",
           "21-30",
+          15,
+          71803
+        ],
+        [
+          "non-binary",
+          "31-40",
+          14,
+          46735.5
+        ],
+        [
+          "NO-GENDER",
+          "11-20",
+          13,
+          23899.35
+        ],
+        [
+          "undisclosed",
+          "41-50",
+          11,
+          20648.75
+        ],
+        [
+          "non-binary",
+          "41-50",
+          5,
+          18694.5
+        ],
+        [
+          "undisclosed",
+          "0-10",
+          3,
+          8003
+        ],
+        [
+          "undisclosed",
+          "50+",
           2,
-          1798.0
+          10223
+        ],
+        [
+          "other",
+          "NO-AGE",
+          2,
+          4079
+        ],
+        [
+          "non-binary",
+          "11-20",
+          2,
+          1433.4
+        ],
+        [
+          "non-binary",
+          "0-10",
+          2,
+          111724
         ],
         [
           "non-binary",
           "NO-AGE",
-          1,
-          3498.0
-        ],
-        [
-          "undisclosed",
-          "41-50",
-          1,
-          1276.0
-        ],
-        [
-          "NO-GENDER",
-          "11-20",
-          1,
-          359.0
-        ],
-        [
-          "undisclosed",
-          "NO-AGE",
-          1,
-          2807.0
+          2,
+          11966.6
         ]
       ],
       "cols": [
         {
-          "display_name": "gender",
+          "database_type": "varchar",
+          "lib/deduplicated-name": "gender",
+          "lib/original-name": "gender",
+          "name": "gender",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "gender",
           "source": "native",
           "field_ref": [
             "field",
@@ -202,13 +249,18 @@
               "base-type": "type/Text"
             }
           ],
-          "name": "gender",
-          "base_type": "type/Text",
-          "database_type": "varchar",
-          "effective_type": "type/Text"
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "gender",
+          "display_name": "gender",
+          "base_type": "type/Text"
         },
         {
-          "display_name": "age",
+          "database_type": "varchar(6)",
+          "lib/deduplicated-name": "age",
+          "lib/original-name": "age",
+          "name": "age",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "age",
           "source": "native",
           "field_ref": [
             "field",
@@ -217,13 +269,18 @@
               "base-type": "type/Text"
             }
           ],
-          "name": "age",
-          "base_type": "type/Text",
-          "database_type": "varchar(6)",
-          "effective_type": "type/Text"
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "age",
+          "display_name": "age",
+          "base_type": "type/Text"
         },
         {
-          "display_name": "user_count",
+          "database_type": "bigint",
+          "lib/deduplicated-name": "user_count",
+          "lib/original-name": "user_count",
+          "name": "user_count",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "user_count",
           "source": "native",
           "field_ref": [
             "field",
@@ -232,13 +289,18 @@
               "base-type": "type/BigInteger"
             }
           ],
-          "name": "user_count",
-          "base_type": "type/BigInteger",
-          "database_type": "bigint",
-          "effective_type": "type/BigInteger"
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "user_count",
+          "display_name": "user_count",
+          "base_type": "type/BigInteger"
         },
         {
-          "display_name": "total_gmv",
+          "database_type": "double",
+          "lib/deduplicated-name": "total_gmv",
+          "lib/original-name": "total_gmv",
+          "name": "total_gmv",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_gmv",
           "source": "native",
           "field_ref": [
             "field",
@@ -247,18 +309,23 @@
               "base-type": "type/Float"
             }
           ],
-          "name": "total_gmv",
-          "base_type": "type/Float",
-          "database_type": "double",
-          "effective_type": "type/Float"
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_gmv",
+          "display_name": "total_gmv",
+          "base_type": "type/Float"
         }
       ],
       "native_form": {
         "params": [
-          "2026-01-01",
-          "2026-01-31"
+          "2023-04-01",
+          "2026-03-31"
         ],
+        "lib/type": "mbql.stage/native",
         "query": "WITH age_calculated AS \n(\n    SELECT CASE \n            WHEN birthday != 'NO-BIRTHDAY' THEN DATE_DIFF('MONTH',DATE(CAST(birthday AS TIMESTAMP)),CURRENT_DATE)/12 \n            ELSE NULL\n            END AS age, \n            user_id, gender, category, gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE is_fs_member = 1\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n       AND order_date BETWEEN ? AND ?\n      \n)\n\nSELECT  gender,\n        CASE     \n                WHEN age IS NULL THEN 'NO-AGE'\n                WHEN CAST(age AS DECIMAL) <= 10 THEN '0-10'\n                WHEN CAST(age AS DECIMAL) > 10 and CAST(age AS DECIMAL) <= 20 THEN '11-20'\n                WHEN CAST(age AS DECIMAL) > 20 and CAST(age AS DECIMAL) <= 30 THEN '21-30'\n                WHEN CAST(age AS DECIMAL) > 30 and CAST(age AS DECIMAL) <= 40 THEN '31-40'\n                WHEN CAST(age AS DECIMAL) > 40 and CAST(age AS DECIMAL) <= 50 THEN '41-50'\n                WHEN CAST(age AS DECIMAL) > 50 THEN '50+'\n            END AS age,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM age_calculated\nGROUP BY 1,2\nORDER BY 3 DESC"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
       },
       "results_timezone": "UTC",
       "requested_timezone": "UTC",
@@ -266,7 +333,14 @@
       "results_metadata": {
         "columns": [
           {
-            "display_name": "gender",
+            "database_type": "varchar",
+            "semantic_type": "type/Category",
+            "lib/deduplicated-name": "gender",
+            "lib/original-name": "gender",
+            "name": "gender",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "gender",
+            "source": "native",
             "field_ref": [
               "field",
               "gender",
@@ -274,28 +348,35 @@
                 "base-type": "type/Text"
               }
             ],
-            "base_type": "type/Text",
             "effective_type": "type/Text",
-            "name": "gender",
-            "semantic_type": "type/Category",
+            "lib/desired-column-alias": "gender",
+            "display_name": "gender",
             "fingerprint": {
               "global": {
-                "distinct-count": 5,
-                "nil%": 0.0
+                "distinct-count": 6,
+                "nil%": 0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0.0,
-                  "percent-url": 0.0,
-                  "percent-email": 0.0,
-                  "percent-state": 0.0,
-                  "average-length": 7.296296296296297
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 7.764705882352941
                 }
               }
-            }
+            },
+            "base_type": "type/Text"
           },
           {
-            "display_name": "age",
+            "database_type": "varchar(6)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "age",
+            "lib/original-name": "age",
+            "name": "age",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "age",
+            "source": "native",
             "field_ref": [
               "field",
               "age",
@@ -303,28 +384,35 @@
                 "base-type": "type/Text"
               }
             ],
-            "base_type": "type/Text",
             "effective_type": "type/Text",
-            "name": "age",
-            "semantic_type": null,
+            "lib/desired-column-alias": "age",
+            "display_name": "age",
             "fingerprint": {
               "global": {
                 "distinct-count": 7,
-                "nil%": 0.0
+                "nil%": 0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0.0,
-                  "percent-url": 0.0,
-                  "percent-email": 0.0,
-                  "percent-state": 0.0,
-                  "average-length": 4.851851851851852
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 4.794117647058823
                 }
               }
-            }
+            },
+            "base_type": "type/Text"
           },
           {
-            "display_name": "user_count",
+            "database_type": "bigint",
+            "semantic_type": "type/Quantity",
+            "lib/deduplicated-name": "user_count",
+            "lib/original-name": "user_count",
+            "name": "user_count",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "user_count",
+            "source": "native",
             "field_ref": [
               "field",
               "user_count",
@@ -332,29 +420,36 @@
                 "base-type": "type/BigInteger"
               }
             ],
-            "base_type": "type/BigInteger",
             "effective_type": "type/BigInteger",
-            "name": "user_count",
-            "semantic_type": "type/Quantity",
+            "lib/desired-column-alias": "user_count",
+            "display_name": "user_count",
             "fingerprint": {
               "global": {
-                "distinct-count": 22,
-                "nil%": 0.0
+                "distinct-count": 30,
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 1.0,
-                  "q1": 6.5,
-                  "q3": 606.75,
-                  "max": 6751.0,
-                  "sd": 1566.2041552238506,
-                  "avg": 767.074074074074
+                  "min": 2,
+                  "q1": 13,
+                  "q3": 2767,
+                  "max": 87514,
+                  "sd": 19070.382544089058,
+                  "avg": 8403.529411764706
                 }
               }
-            }
+            },
+            "base_type": "type/BigInteger"
           },
           {
-            "display_name": "total_gmv",
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_gmv",
+            "lib/original-name": "total_gmv",
+            "name": "total_gmv",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_gmv",
+            "source": "native",
             "field_ref": [
               "field",
               "total_gmv",
@@ -362,26 +457,26 @@
                 "base-type": "type/Float"
               }
             ],
-            "base_type": "type/Float",
             "effective_type": "type/Float",
-            "name": "total_gmv",
-            "semantic_type": null,
+            "lib/desired-column-alias": "total_gmv",
+            "display_name": "total_gmv",
             "fingerprint": {
               "global": {
-                "distinct-count": 27,
-                "nil%": 0.0
+                "distinct-count": 34,
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 359.0,
-                  "q1": 14140.2625,
-                  "q3": 1385277.745,
-                  "max": 16891381.189999994,
-                  "sd": 3921087.5711353803,
-                  "avg": 1905884.6363999997
+                  "min": 1433.4,
+                  "q1": 46735.5,
+                  "q3": 12151095.529999996,
+                  "max": 321676158.49570024,
+                  "sd": 70847334.81902334,
+                  "avg": 31729832.236929417
                 }
               }
-            }
+            },
+            "base_type": "type/Float"
           }
         ]
       },
@@ -389,46 +484,49 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-04-17T06:41:36.654336Z",
+    "started_at": "2026-05-13T10:46:54.91017672Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
         "max-results-bare-rows": 5000
       },
-      "type": "native",
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "order_start_date": {
+              "default": "2024-01-01",
+              "type": "date",
+              "name": "order_start_date",
+              "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+              "display-name": "Order Start Date",
+              "widget-type": null
+            },
+            "order_end_date": {
+              "default": "2025-05-31",
+              "type": "date",
+              "name": "order_end_date",
+              "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+              "display-name": "Order End Date",
+              "widget-type": null
+            }
+          },
+          "native": "WITH age_calculated AS \n(\n    SELECT CASE \n            WHEN birthday != 'NO-BIRTHDAY' THEN DATE_DIFF('MONTH',DATE(CAST(birthday AS TIMESTAMP)),CURRENT_DATE)/12 \n            ELSE NULL\n            END AS age, \n            user_id, gender, category, gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE is_fs_member = 1\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n      [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n      \n)\n\nSELECT  gender,\n        CASE     \n                WHEN age IS NULL THEN 'NO-AGE'\n                WHEN CAST(age AS DECIMAL) <= 10 THEN '0-10'\n                WHEN CAST(age AS DECIMAL) > 10 and CAST(age AS DECIMAL) <= 20 THEN '11-20'\n                WHEN CAST(age AS DECIMAL) > 20 and CAST(age AS DECIMAL) <= 30 THEN '21-30'\n                WHEN CAST(age AS DECIMAL) > 30 and CAST(age AS DECIMAL) <= 40 THEN '31-40'\n                WHEN CAST(age AS DECIMAL) > 40 and CAST(age AS DECIMAL) <= 50 THEN '41-50'\n                WHEN CAST(age AS DECIMAL) > 50 THEN '50+'\n            END AS age,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM age_calculated\nGROUP BY 1,2\nORDER BY 3 DESC"
+        }
+      ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": false,
+        "ignore-cached-results?": true,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "avg-execution-ms": 0,
-        "invalidated-at": "2026-04-16T18:41:36.649623Z"
-      },
-      "native": {
-        "template-tags": {
-          "order_start_date": {
-            "type": "date",
-            "name": "order_start_date",
-            "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
-            "display-name": "Order Start Date",
-            "default": "2024-01-01",
-            "widget-type": null
-          },
-          "order_end_date": {
-            "type": "date",
-            "name": "order_end_date",
-            "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
-            "display-name": "Order End Date",
-            "default": "2025-05-31",
-            "widget-type": null
-          }
-        },
-        "query": "WITH age_calculated AS \n(\n    SELECT CASE \n            WHEN birthday != 'NO-BIRTHDAY' THEN DATE_DIFF('MONTH',DATE(CAST(birthday AS TIMESTAMP)),CURRENT_DATE)/12 \n            ELSE NULL\n            END AS age, \n            user_id, gender, category, gmv\n    FROM \n    dwh_fitness_metrics.cross_sell_orders\n    WHERE is_fs_member = 1\n         AND is_cancelled = 0\n         AND order_date >= DATE('2018-01-01')\n      [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n      \n)\n\nSELECT  gender,\n        CASE     \n                WHEN age IS NULL THEN 'NO-AGE'\n                WHEN CAST(age AS DECIMAL) <= 10 THEN '0-10'\n                WHEN CAST(age AS DECIMAL) > 10 and CAST(age AS DECIMAL) <= 20 THEN '11-20'\n                WHEN CAST(age AS DECIMAL) > 20 and CAST(age AS DECIMAL) <= 30 THEN '21-30'\n                WHEN CAST(age AS DECIMAL) > 30 and CAST(age AS DECIMAL) <= 40 THEN '31-40'\n                WHEN CAST(age AS DECIMAL) > 40 and CAST(age AS DECIMAL) <= 50 THEN '41-50'\n                WHEN CAST(age AS DECIMAL) > 50 THEN '50+'\n            END AS age,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM age_calculated\nGROUP BY 1,2\nORDER BY 3 DESC"
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false
       },
       "viz-settings": {
         "table.pivot_column": "age",
@@ -440,6 +538,7 @@
           "user_count"
         ]
       },
+      "lib.convert/converted?": true,
       "database": 39,
       "parameters": [
         {
@@ -451,7 +550,7 @@
               "order_start_date"
             ]
           ],
-          "value": "2026-01-01"
+          "value": "2023-04-01"
         },
         {
           "type": "date/single",
@@ -462,14 +561,14 @@
               "order_end_date"
             ]
           ],
-          "value": "2026-01-31"
+          "value": "2026-03-31"
         }
       ]
     },
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
-    "row_count": 27,
-    "running_time": 2261
+    "row_count": 34,
+    "running_time": 1738
   }
 }

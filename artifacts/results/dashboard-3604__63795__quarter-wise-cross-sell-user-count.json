@@ -19,120 +19,125 @@
         ],
         [
           "2019-07-01T00:00:00Z",
-          24066
+          24067
         ],
         [
           "2019-10-01T00:00:00Z",
-          32265
+          32267
         ],
         [
           "2020-01-01T00:00:00Z",
-          46972
+          46976
         ],
         [
           "2020-04-01T00:00:00Z",
-          52941
+          52945
         ],
         [
           "2020-07-01T00:00:00Z",
-          63554
+          63560
         ],
         [
           "2020-10-01T00:00:00Z",
-          70333
+          70341
         ],
         [
           "2021-01-01T00:00:00Z",
-          77276
+          77284
         ],
         [
           "2021-04-01T00:00:00Z",
-          82437
+          82446
         ],
         [
           "2021-07-01T00:00:00Z",
-          89148
+          89160
         ],
         [
           "2021-10-01T00:00:00Z",
-          95849
+          95862
         ],
         [
           "2022-01-01T00:00:00Z",
-          101189
+          101202
         ],
         [
           "2022-04-01T00:00:00Z",
-          110669
+          110686
         ],
         [
           "2022-07-01T00:00:00Z",
-          122845
+          122863
         ],
         [
           "2022-10-01T00:00:00Z",
-          140192
+          140211
         ],
         [
           "2023-01-01T00:00:00Z",
-          173980
+          174001
         ],
         [
           "2023-04-01T00:00:00Z",
-          197991
+          198027
         ],
         [
           "2023-07-01T00:00:00Z",
-          211399
+          211451
         ],
         [
           "2023-10-01T00:00:00Z",
-          225038
+          225113
         ],
         [
           "2024-01-01T00:00:00Z",
-          239008
+          239102
         ],
         [
           "2024-04-01T00:00:00Z",
-          253329
+          253443
         ],
         [
           "2024-07-01T00:00:00Z",
-          272328
+          272450
         ],
         [
           "2024-10-01T00:00:00Z",
-          290292
+          290430
         ],
         [
           "2025-01-01T00:00:00Z",
-          308232
+          308399
         ],
         [
           "2025-04-01T00:00:00Z",
-          337300
+          337507
         ],
         [
           "2025-07-01T00:00:00Z",
-          364907
+          365170
         ],
         [
           "2025-10-01T00:00:00Z",
-          396315
+          396645
         ],
         [
           "2026-01-01T00:00:00Z",
-          432451
+          432889
         ],
         [
           "2026-04-01T00:00:00Z",
-          437564
+          446224
         ]
       ],
       "cols": [
         {
-          "display_name": "month",
+          "database_type": "date",
+          "lib/deduplicated-name": "month",
+          "lib/original-name": "month",
+          "name": "month",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "month",
           "source": "native",
           "field_ref": [
             "field",
@@ -141,13 +146,18 @@
               "base-type": "type/Date"
             }
           ],
-          "name": "month",
-          "base_type": "type/Date",
-          "database_type": "date",
-          "effective_type": "type/Date"
+          "effective_type": "type/Date",
+          "lib/desired-column-alias": "month",
+          "display_name": "month",
+          "base_type": "type/Date"
         },
         {
-          "display_name": "user_count",
+          "database_type": "bigint",
+          "lib/deduplicated-name": "user_count",
+          "lib/original-name": "user_count",
+          "name": "user_count",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "user_count",
           "source": "native",
           "field_ref": [
             "field",
@@ -156,15 +166,19 @@
               "base-type": "type/BigInteger"
             }
           ],
-          "name": "user_count",
-          "base_type": "type/BigInteger",
-          "database_type": "bigint",
-          "effective_type": "type/BigInteger"
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "user_count",
+          "display_name": "user_count",
+          "base_type": "type/BigInteger"
         }
       ],
       "native_form": {
-        "params": null,
-        "query": "WITH user_details AS \n(\n    SELECT DISTINCT user_id\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE user_id NOT IN (SELECT user_id FROM gs_d2c.default.cs_dev_users)\n    AND month = DATE_TRUNC('MONTH', CURRENT_DATE)\n),\n\norder_detail AS \n(\n    SELECT user_id, MIN(order_date) AS min_order_date\n    FROM  dwh_fitness_metrics.cross_sell_orders\n    WHERE user_id IN (SELECT DISTINCT user_id FROM user_details)\n    AND order_date >= DATE('2018-01-01')\n    GROUP BY 1\n),\n\nuser_count_details AS\n(\n    SELECT DATE_TRUNC('QUARTER',min_order_date) AS month, COUNT(DISTINCT user_id) AS user_count\n    FROM \n    order_detail\n    GROUP BY 1\n)\n\n\nSELECT month, SUM(user_count) OVER(ORDER BY month) AS user_count \nFROM \nuser_count_details"
+        "lib/type": "mbql.stage/native",
+        "query": "WITH user_details AS \n(\n    SELECT DISTINCT user_id\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE user_id NOT IN (SELECT user_id FROM gs_d2c.default.cs_dev_users)\n    AND month = DATE_TRUNC('MONTH', CURRENT_DATE)\n),\n\norder_detail AS \n(\n    SELECT user_id, MIN(order_date) AS min_order_date\n    FROM  dwh_fitness_metrics.cross_sell_orders\n    WHERE user_id IN (SELECT DISTINCT user_id FROM user_details)\n    AND order_date >= DATE('2018-01-01')\n    GROUP BY 1\n),\n\nuser_count_details AS\n(\n    SELECT DATE_TRUNC('QUARTER',min_order_date) AS month, COUNT(DISTINCT user_id) AS user_count\n    FROM \n    order_detail\n    GROUP BY 1\n)\n\n\nSELECT month, SUM(user_count) OVER(ORDER BY month) AS user_count \nFROM \nuser_count_details\n"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
       },
       "results_timezone": "UTC",
       "requested_timezone": "UTC",
@@ -172,7 +186,14 @@
       "results_metadata": {
         "columns": [
           {
-            "display_name": "month",
+            "database_type": "date",
+            "semantic_type": null,
+            "lib/deduplicated-name": "month",
+            "lib/original-name": "month",
+            "name": "month",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "month",
+            "source": "native",
             "field_ref": [
               "field",
               "month",
@@ -180,14 +201,13 @@
                 "base-type": "type/Date"
               }
             ],
-            "base_type": "type/Date",
             "effective_type": "type/Date",
-            "name": "month",
-            "semantic_type": null,
+            "lib/desired-column-alias": "month",
+            "display_name": "month",
             "fingerprint": {
               "global": {
                 "distinct-count": 31,
-                "nil%": 0.0
+                "nil%": 0
               },
               "type": {
                 "type/DateTime": {
@@ -195,10 +215,18 @@
                   "latest": "2026-04-01"
                 }
               }
-            }
+            },
+            "base_type": "type/Date"
           },
           {
-            "display_name": "user_count",
+            "database_type": "bigint",
+            "semantic_type": "type/Quantity",
+            "lib/deduplicated-name": "user_count",
+            "lib/original-name": "user_count",
+            "name": "user_count",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "user_count",
+            "source": "native",
             "field_ref": [
               "field",
               "user_count",
@@ -206,44 +234,44 @@
                 "base-type": "type/BigInteger"
               }
             ],
-            "base_type": "type/BigInteger",
             "effective_type": "type/BigInteger",
-            "name": "user_count",
-            "semantic_type": "type/Quantity",
+            "lib/desired-column-alias": "user_count",
+            "display_name": "user_count",
             "fingerprint": {
               "global": {
                 "distinct-count": 31,
-                "nil%": 0.0
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 6343.0,
-                  "q1": 65248.75,
-                  "q3": 267578.25,
-                  "max": 437564.0,
-                  "sd": 132478.3317137001,
-                  "avg": 170250.61290322582
+                  "min": 6343,
+                  "q1": 65255.25,
+                  "q3": 267698.25,
+                  "max": 446224,
+                  "sd": 133153.875754469,
+                  "avg": 170600.64516129033
                 }
               }
-            }
+            },
+            "base_type": "type/BigInteger"
           }
         ]
       },
       "insights": [
         {
-          "previous-value": 432451,
+          "previous-value": 432889,
           "unit": "quarter",
-          "offset": -2808959.494332484,
-          "last-change": 0.011823304836848568,
+          "offset": -2821417.534553392,
+          "last-change": 0.030804663551164388,
           "col": "user_count",
-          "slope": 155.3715881684188,
-          "last-value": 437564,
+          "slope": 156.03955400191305,
+          "last-value": 446224,
           "best-fit": [
             "+",
-            -2808959.494332484,
+            -2821417.534553392,
             [
               "*",
-              155.3715881684188,
+              156.03955400191305,
               "x"
             ]
           ]
@@ -252,29 +280,31 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-04-17T06:41:50.317505Z",
+    "started_at": "2026-05-13T10:47:07.622565896Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
         "max-results-bare-rows": 5000
       },
-      "type": "native",
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "native": "WITH user_details AS \n(\n    SELECT DISTINCT user_id\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE user_id NOT IN (SELECT user_id FROM gs_d2c.default.cs_dev_users)\n    AND month = DATE_TRUNC('MONTH', CURRENT_DATE)\n),\n\norder_detail AS \n(\n    SELECT user_id, MIN(order_date) AS min_order_date\n    FROM  dwh_fitness_metrics.cross_sell_orders\n    WHERE user_id IN (SELECT DISTINCT user_id FROM user_details)\n    AND order_date >= DATE('2018-01-01')\n    GROUP BY 1\n),\n\nuser_count_details AS\n(\n    SELECT DATE_TRUNC('QUARTER',min_order_date) AS month, COUNT(DISTINCT user_id) AS user_count\n    FROM \n    order_detail\n    GROUP BY 1\n)\n\n\nSELECT month, SUM(user_count) OVER(ORDER BY month) AS user_count \nFROM \nuser_count_details\n"
+        }
+      ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": false,
+        "ignore-cached-results?": true,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "avg-execution-ms": 48538,
-        "invalidated-at": "2026-04-16T18:41:50.314758Z"
-      },
-      "native": {
-        "template-tags": {},
-        "query": "WITH user_details AS \n(\n    SELECT DISTINCT user_id\n    FROM \n    dwh_fitness_metrics.fs_cohorts\n    WHERE user_id NOT IN (SELECT user_id FROM gs_d2c.default.cs_dev_users)\n    AND month = DATE_TRUNC('MONTH', CURRENT_DATE)\n),\n\norder_detail AS \n(\n    SELECT user_id, MIN(order_date) AS min_order_date\n    FROM  dwh_fitness_metrics.cross_sell_orders\n    WHERE user_id IN (SELECT DISTINCT user_id FROM user_details)\n    AND order_date >= DATE('2018-01-01')\n    GROUP BY 1\n),\n\nuser_count_details AS\n(\n    SELECT DATE_TRUNC('QUARTER',min_order_date) AS month, COUNT(DISTINCT user_id) AS user_count\n    FROM \n    order_detail\n    GROUP BY 1\n)\n\n\nSELECT month, SUM(user_count) OVER(ORDER BY month) AS user_count \nFROM \nuser_count_details\n"
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false
       },
       "viz-settings": {
         "pie.rows": [
@@ -312,12 +342,13 @@
           "user_count"
         ]
       },
+      "lib.convert/converted?": true,
       "database": 39
     },
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
     "row_count": 31,
-    "running_time": 104951
+    "running_time": 57352
   }
 }

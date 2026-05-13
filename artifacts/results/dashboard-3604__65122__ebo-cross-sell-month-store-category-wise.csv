@@ -1,1 +1,362 @@
-
+month,store_name,category,order_count,total_gmv
+2024-08-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,11,62500
+2025-03-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,11,51817
+2025-11-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,10,55001
+2026-01-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,9,89188
+2025-05-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,9,64798
+2025-06-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,7,32778
+2026-01-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,6,230994
+2024-04-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,6,12469
+2025-05-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,6,29691
+2024-04-01T00:00:00Z,HSR Store,Indoor Equipment,6,21612
+2024-12-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,6,47684
+2025-01-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,6,9724
+2025-10-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,6,121072
+2025-02-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,5,14636
+2025-12-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,5,195544
+2024-05-01T00:00:00Z,HSR Store,Indoor Equipment,5,19590
+2025-05-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,5,25819
+2026-03-01T00:00:00Z,Cult Store - Tolichowki,Indoor Equipment,5,41245
+2025-01-01T00:00:00Z,HSR Store,Indoor Equipment,5,15271
+2026-01-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,5,30195
+2025-02-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,5,16496
+2025-04-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,5,3270
+2025-07-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,5,31187
+2026-02-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,5,39893
+2025-01-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,5,14423
+2025-03-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,5,20994
+2026-03-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,5,37895
+2024-03-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,4,4105
+2026-03-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,4,22095
+2026-01-01T00:00:00Z,Cult Store - BTM Layout,Indoor Equipment,4,42594
+2024-01-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,4,4679
+2024-08-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,4,7589
+2025-12-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,4,9656
+2025-01-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,4,19457
+2025-11-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,4,45496
+2026-03-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,4,12796
+2024-04-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,4,5558
+2025-07-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,4,88497
+2025-05-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,4,278498
+2024-08-01T00:00:00Z,CS - Marathahalli,Indoor Equipment,4,14803
+2025-11-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,4,228997
+2025-06-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,4,7325
+2025-09-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,4,192496
+2025-09-01T00:00:00Z,Cult Store - Atrium Mall,Indoor Equipment,4,74596
+2024-06-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,4,6872
+2024-08-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,4,6886
+2024-11-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,4,23217
+2024-07-01T00:00:00Z,HSR Store,Indoor Equipment,4,14399
+2025-04-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,4,21896
+2024-06-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,4,14444
+2023-11-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,4,3955
+2025-02-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,4,17794
+2025-07-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,4,8096
+2025-05-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,4,15193
+2026-01-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,4,37975
+2024-09-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,4,31036
+2025-09-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,4,14996
+2024-07-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,3,2726
+2024-12-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,3,14848
+2025-01-01T00:00:00Z,VR MALL,Indoor Equipment,3,7938
+2023-12-01T00:00:00Z,HSR Store,Indoor Equipment,3,3223
+2025-01-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,3,8388
+2026-03-01T00:00:00Z,Cult Store - Vision One Wakad,Indoor Equipment,3,12347
+2024-12-01T00:00:00Z,HSR Store,Indoor Equipment,3,4277
+2026-03-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,3,20897
+2026-01-01T00:00:00Z,Cult store - Lake Shore,Indoor Equipment,3,6106
+2024-07-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,3,7966
+2025-05-01T00:00:00Z,Cult Store - Banashankari,Indoor Equipment,3,6897
+2026-02-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,3,61606
+2025-05-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,3,81196
+2025-12-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,3,11397
+2025-06-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,3,67197
+2025-09-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,3,25797
+2026-01-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,3,14296
+2026-02-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,3,2497
+2024-06-01T00:00:00Z,CS - Marathahalli,Indoor_Equipment-Strength,3,6144
+2025-09-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,3,16994
+2025-07-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,3,41389
+2025-03-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,3,20196
+2025-05-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,3,166313
+2025-10-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,3,29997
+2025-06-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,3,10046
+2026-01-01T00:00:00Z,,Indoor Equipment,3,17542
+2025-05-01T00:00:00Z,Cult Store - Indiranagar,Indoor_Equipment-Strength,3,8597
+2024-05-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,3,2672
+2024-06-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,3,4828
+2025-11-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,3,27076
+2025-06-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,3,12721
+2026-01-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,3,19186
+2024-08-01T00:00:00Z,CS- JP NAGAR,Indoor Equipment,3,109493
+2025-08-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,3,49096
+2025-12-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,3,7397
+2026-01-01T00:00:00Z,Cult Store - Chikkajala,Indoor Equipment,3,27095
+2025-11-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,3,49297
+2024-09-01T00:00:00Z,HSR Store,Indoor Equipment,2,20167
+2026-03-01T00:00:00Z,Cult Store - Kamlanagar,Indoor Equipment,2,17998
+2025-03-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,2,6298
+2024-11-01T00:00:00Z,CULT STORE - TOLICHOWKI,Indoor Equipment,2,12710
+2024-12-01T00:00:00Z,CS- JP NAGAR,Indoor Equipment,2,15761
+2025-07-01T00:00:00Z,Cult Store - VR Mall,Indoor_Equipment-Strength,2,9998
+2025-11-01T00:00:00Z,Cult Store - Atrium Mall,Indoor Equipment,2,34597
+2024-05-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,2,2592
+2025-10-01T00:00:00Z,Cult Store - HSR,Indoor_Equipment-Strength,2,16998
+2024-02-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,2,5573
+2024-02-01T00:00:00Z,VR MALL,Indoor Equipment,2,6438
+2026-01-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,2,18547
+2024-07-01T00:00:00Z,CS- JP NAGAR,Indoor_Equipment-Strength,2,2299
+2025-10-01T00:00:00Z,Cult Store - Tolichowki,Indoor Equipment,2,19998
+2025-06-01T00:00:00Z,Cult Store - Dwarka,Indoor_Equipment-Strength,2,6798
+2025-11-01T00:00:00Z,Cult Store - Chikkajala,Indoor Equipment,2,24598
+2023-11-01T00:00:00Z,HSR Store,Indoor Equipment,2,1566
+2024-11-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,2,2394
+2024-08-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,2,4873
+2024-01-01T00:00:00Z,HSR Store,Indoor Equipment,2,5083
+2024-02-01T00:00:00Z,HSR Store,Indoor Equipment,2,2160
+2025-06-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,2,17497
+2025-07-01T00:00:00Z,Cult Store - HSR,Indoor_Equipment-Strength,2,9998
+2024-10-01T00:00:00Z,VR MALL,Indoor Equipment,2,9998
+2024-04-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,2,15164
+2026-03-01T00:00:00Z,Cult Store - BTM Layout,Indoor Equipment,2,15398
+2025-06-01T00:00:00Z,Cult Store - HSR,Indoor_Equipment-Strength,2,7498
+2025-10-01T00:00:00Z,Cult Store - Atrium Mall,Indoor Equipment,2,29998
+2024-01-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,2,9141
+2026-01-01T00:00:00Z,Cult Store - Anzal Plaza,Indoor Equipment,2,10348
+2024-11-01T00:00:00Z,HSR Store,Indoor Equipment,2,15066
+2024-12-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,2,3185
+2025-12-01T00:00:00Z,Cult Store - Atrium Mall,Indoor Equipment,2,17998
+2024-10-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,2,64867
+2026-03-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,2,11498
+2025-07-01T00:00:00Z,Cult Store - Tolichowki,Indoor Equipment,2,18033
+2024-10-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,2,3008
+2024-12-01T00:00:00Z,CS-TRIMULGHERRY,Indoor Equipment,2,63422
+2025-02-01T00:00:00Z,Cult Store - HSR,Indoor_Equipment-Strength,2,5898
+2026-03-01T00:00:00Z,Cult Store - Gaur Central Mall,Indoor Equipment,2,5327
+2024-07-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,2,5911
+2025-03-01T00:00:00Z,Cult Store - Indiranagar,Indoor_Equipment-Strength,2,2767
+2024-07-01T00:00:00Z,VR MALL,Indoor Equipment,2,16521
+2025-10-01T00:00:00Z,Cult Store - Indiranagar,Indoor_Equipment-Strength,2,25496
+2026-03-01T00:00:00Z,Cult Store - Central 120,Indoor Equipment,2,898
+2026-02-01T00:00:00Z,Cult Store - Amanora,Indoor Equipment,2,4297
+2024-09-01T00:00:00Z,CS - Marathahalli,Indoor Equipment,2,91989
+2025-04-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,2,104699
+2024-12-01T00:00:00Z,CULT STORE - DWARKA,Indoor Equipment,2,13558
+2024-07-01T00:00:00Z,CS - Marathahalli,Indoor Equipment,2,1309
+2025-02-01T00:00:00Z,CS- JP NAGAR,Indoor_Equipment-Strength,2,2821
+2026-03-01T00:00:00Z,Cult Store - Mantri Mall,Indoor Equipment,2,17998
+2025-10-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,2,1398
+2025-04-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,2,2823
+2025-01-01T00:00:00Z,CULT STORE - IRRAM MANZIL,Indoor Equipment,2,2569
+2025-08-01T00:00:00Z,Cult Store - Mantri Mall,Indoor_Equipment-Strength,2,12998
+2025-12-01T00:00:00Z,Cult Store - BTM Layout,Indoor Equipment,2,8097
+2025-08-01T00:00:00Z,Cult Store - Necklace Mall,Indoor Equipment,2,4198
+2024-12-01T00:00:00Z,VR MALL,Indoor Equipment,2,12710
+2026-02-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,2,41497
+2025-09-01T00:00:00Z,Cult Store - JP Nagar,Indoor_Equipment-Strength,2,11498
+2025-06-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,2,21547
+2024-03-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,2,3769
+2026-01-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor Equipment,2,12998
+2025-11-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,2,39998
+2025-10-01T00:00:00Z,Cult Store - Banashankari,Indoor Equipment,2,13665
+2025-08-01T00:00:00Z,Cult Store - Banashankari,Indoor Equipment,2,4598
+2025-07-01T00:00:00Z,Cult Store - Indiranagar,Indoor_Equipment-Strength,2,7058
+2025-01-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,2,5277
+2025-08-01T00:00:00Z,Cult Store - HSR,Indoor Equipment,2,4078
+2025-03-01T00:00:00Z,Cult Store - HSR,Indoor_Equipment-Strength,2,6220
+2025-09-01T00:00:00Z,Cult Store - HSR Hardline,Indoor Equipment,2,16998
+2024-08-01T00:00:00Z,VR MALL,Indoor Equipment,2,5126
+2026-01-01T00:00:00Z,Cult Store - JP Nagar,Indoor_Equipment-Strength,2,10998
+2026-02-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,2,26498
+2025-08-01T00:00:00Z,Cult Store - Chikkajala,Indoor Equipment,2,17197
+2024-07-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,2,7267
+2025-05-01T00:00:00Z,Cult Store - Tolichowki,Indoor Equipment,2,10148
+2026-02-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,2,9723
+2025-02-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,2,5677
+2025-03-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,2,21547
+2024-12-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,2,5532
+2024-11-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,2,2592
+2024-05-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,2,6400
+2025-08-01T00:00:00Z,Cult Store - Indiranagar,Indoor Equipment,2,24498
+2024-09-01T00:00:00Z,CS-TRIMULGHERRY,Indoor Equipment,2,9214
+2025-11-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,2,10648
+2024-08-01T00:00:00Z,CS- JP NAGAR,Indoor_Equipment-Strength,2,3613
+2025-09-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor Equipment,2,39998
+2025-07-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor Equipment,2,16898
+2024-09-01T00:00:00Z,VR MALL,Indoor Equipment,2,23266
+2024-11-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,2,23050
+2024-03-01T00:00:00Z,HSR Store,Indoor Equipment,2,3486
+2025-10-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,2,27598
+2025-09-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,2,34597
+2025-05-01T00:00:00Z,Cult Store - Anzal Plaza,Indoor_Equipment-Strength,1,1259
+2024-12-01T00:00:00Z,HSR Hardline,Indoor Equipment,1,1864
+2025-02-01T00:00:00Z,HSR Store,Indoor Equipment,1,423
+2025-06-01T00:00:00Z,Cult Store - HSR Hardline,Indoor Equipment,1,150000
+2024-04-01T00:00:00Z,HSR Hardline,Indoor Equipment,1,29491
+2026-01-01T00:00:00Z,Cult Store - Necklace Mall,Indoor Equipment,1,8999
+2025-09-01T00:00:00Z,Cult Store - Moosarambagh Mall,Indoor Equipment,1,8999
+2025-05-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,1,10999
+2024-05-01T00:00:00Z,CS- JP NAGAR,Indoor_Equipment-Strength,1,1779
+2025-06-01T00:00:00Z,Cult Store - Banashankari,Indoor_Equipment-Strength,1,4999
+2024-11-01T00:00:00Z,CULT STORE - BANASHANKARI,Indoor Equipment,1,24152
+2024-08-01T00:00:00Z,HSR Hardline,Indoor Equipment,1,21694
+2025-01-01T00:00:00Z,CULT STORE - DWARKA,Indoor_Equipment-Strength,1,1296
+2024-04-01T00:00:00Z,CS - Marathahalli,Indoor_Equipment-Strength,1,1864
+2025-01-01T00:00:00Z,CULT STORE - BANASHANKARI,Indoor Equipment,1,609
+2025-06-01T00:00:00Z,Cult Store - HSR Hardline,Indoor_Equipment-Strength,1,6399
+2025-05-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,1,4999
+2024-03-01T00:00:00Z,VR MALL,Indoor Equipment,1,6464
+2025-07-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,1,69999
+2024-05-01T00:00:00Z,CS - Marathahalli,Indoor Equipment,1,5560
+2024-02-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,1,3643
+2026-01-01T00:00:00Z,Cult Store - Banashankari,Indoor_Equipment-Strength,1,11199
+2025-02-01T00:00:00Z,CS-PASCHIM VIHAR,Indoor_Equipment-Strength,1,1525
+2025-10-01T00:00:00Z,Cult Store - Necklace Mall,Indoor Equipment,1,8999
+2025-10-01T00:00:00Z,Cult Store - BTM Layout,Indoor Equipment,1,19999
+2026-03-01T00:00:00Z,Cult Store - Atrium Mall,Indoor Equipment,1,8999
+2024-06-01T00:00:00Z,VR MALL,Indoor Equipment,1,2669
+2025-10-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,1,899
+2024-08-01T00:00:00Z,HSR Store,Indoor Equipment,1,11633
+2025-12-01T00:00:00Z,Cult Store - Amanora,Indoor_Equipment-Strength,1,11999
+2026-01-01T00:00:00Z,,Indoor_Equipment-Strength,1,12998
+2025-06-01T00:00:00Z,Cult Store - Tolichowki,Indoor_Equipment-Strength,1,5899
+2026-03-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,1,8999
+2025-09-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,1,19999
+2025-12-01T00:00:00Z,,Indoor Equipment,1,8999
+2025-02-01T00:00:00Z,CULT STORE - TOLICHOWKI,Indoor Equipment,1,1287
+2025-11-01T00:00:00Z,Cult Store - Global Divinity Mall,Indoor Equipment,1,1499
+2026-01-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,1,8999
+2026-02-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,1,14998
+2025-06-01T00:00:00Z,Cult Store - Tolichowki,Indoor Equipment,1,21999
+2026-03-01T00:00:00Z,Cult Store - Banashankari,Indoor_Equipment-Strength,1,5099
+2025-07-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor_Equipment-Strength,1,1799
+2025-08-01T00:00:00Z,Cult Store - Mantri Mall,Indoor Equipment,1,899
+2025-08-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,1,8598
+2025-01-01T00:00:00Z,HSR Hardline,Indoor_Equipment-Strength,1,2203
+2025-03-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor Equipment,1,15499
+2025-12-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor Equipment,1,1899
+2025-04-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor_Equipment-Strength,1,5499
+2025-11-01T00:00:00Z,Cult Store - BTM Layout,Indoor Equipment,1,7999
+2025-11-01T00:00:00Z,Cult Store - Kamlanagar,Indoor Equipment,1,499
+2024-12-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,1,3813
+2025-05-01T00:00:00Z,Cult Store - JP Nagar,Indoor_Equipment-Strength,1,4999
+2026-03-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor Equipment,1,198000
+2025-06-01T00:00:00Z,Cult Store - Chikkajala,Indoor Equipment,1,9148
+2025-12-01T00:00:00Z,Cult Store - Global Divinity Mall,Indoor Equipment,1,799
+2026-01-01T00:00:00Z,Cult Store - Tolichowki,Indoor Equipment,1,8999
+2024-06-01T00:00:00Z,CS- JP NAGAR,Indoor Equipment,1,711
+2025-10-01T00:00:00Z,Cult Store - Moosarambagh Mall,Indoor Equipment,1,8999
+2025-07-01T00:00:00Z,Cult Store - BTM Layout,Indoor Equipment,1,3598
+2025-12-01T00:00:00Z,Cult Store - Chikkajala,Indoor Equipment,1,19999
+2026-02-01T00:00:00Z,Cult store - Lake Shore,Indoor Equipment,1,2899
+2025-04-01T00:00:00Z,Cult Store - Banashankari,Indoor Equipment,1,2000
+2025-04-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,1,11199
+2024-07-01T00:00:00Z,CS - Marathahalli,Indoor_Equipment-Strength,1,2996
+2025-11-01T00:00:00Z,Cult Store - HSR Hardline,Indoor Equipment,1,19999
+2024-03-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,1,2542
+2025-02-01T00:00:00Z,HSR Hardline,Indoor Equipment,1,16948
+2025-10-01T00:00:00Z,Cult Store - HSR Hardline,Indoor Equipment,1,9999
+2025-09-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,1,1899
+2024-11-01T00:00:00Z,CS- JP NAGAR,Indoor_Equipment-Strength,1,1525
+2024-10-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,1,3219
+2026-03-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,1,7499
+2026-01-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor_Equipment-Strength,1,4999
+2024-03-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,1,1067
+2025-12-01T00:00:00Z,Cult Store - JP Nagar,Indoor_Equipment-Strength,1,1249
+2025-07-01T00:00:00Z,Cult Store - Atrium Mall,Indoor Equipment,1,7999
+2026-01-01T00:00:00Z,Cult Store - Mantri Mall,Indoor Equipment,1,899
+2025-12-01T00:00:00Z,Cult Store - VR Mall,Indoor_Equipment-Strength,1,5999
+2025-02-01T00:00:00Z,CULT STORE - IRRAM MANZIL,Indoor_Equipment-Strength,1,5713
+2025-08-01T00:00:00Z,Cult Store - HSR,Indoor_Equipment-Strength,1,11199
+2026-03-01T00:00:00Z,Cult Store - Banashankari,Indoor Equipment,1,8999
+2023-12-01T00:00:00Z,CS - Indiranagar,Indoor Equipment,1,1864
+2025-03-01T00:00:00Z,Cult Store - VR Mall,Indoor_Equipment-Strength,1,899
+2026-01-01T00:00:00Z,Cult Store - Indiranagar,Indoor_Equipment-Strength,1,11199
+2024-04-01T00:00:00Z,VR MALL,Indoor Equipment,1,3643
+2024-11-01T00:00:00Z,CULT STORE - DWARKA,Indoor_Equipment-Strength,1,762
+2025-04-01T00:00:00Z,Cult Store - VR Mall,Indoor_Equipment-Strength,1,4999
+2025-12-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,1,2699
+2025-06-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,1,23299
+2025-07-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,1,14999
+2026-03-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,1,8999
+2026-02-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,1,2199
+2025-08-01T00:00:00Z,Cult Store - VR Mall,Indoor_Equipment-Strength,1,11199
+2025-02-01T00:00:00Z,CULT STORE - DWARKA,Indoor Equipment,1,762
+2025-03-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,1,424
+2026-02-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor_Equipment-Strength,1,12998
+2025-10-01T00:00:00Z,Cult Store - JP Nagar,Indoor_Equipment-Strength,1,12998
+2024-12-01T00:00:00Z,CS- JP NAGAR,Indoor_Equipment-Strength,1,1525
+2024-11-01T00:00:00Z,CS- JP NAGAR,Indoor Equipment,1,8897
+2025-08-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,1,11597
+2025-03-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,1,8159
+2025-06-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,1,4479
+2024-02-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,1,1584
+2025-10-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,1,19999
+2025-05-01T00:00:00Z,Cult Store - Mantri Mall,Indoor Equipment,1,15998
+2025-12-01T00:00:00Z,Cult Store - Anzal Plaza,Indoor Equipment,1,9999
+2025-05-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor Equipment,1,15998
+2024-09-01T00:00:00Z,HSR Hardline,Indoor Equipment,1,9152
+2025-12-01T00:00:00Z,Cult Store - Irrum Manzil,Indoor Equipment,1,1398
+2024-10-01T00:00:00Z,CS- JP NAGAR,Indoor Equipment,1,7480
+2026-03-01T00:00:00Z,Cult Store - JP Nagar,Indoor_Equipment-Strength,1,11999
+2024-11-01T00:00:00Z,VR MALL,Indoor Equipment,1,14316
+2025-12-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,1,899
+2024-11-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,1,3813
+2024-08-01T00:00:00Z,CS - Marathahalli,Indoor_Equipment-Strength,1,475
+2024-08-01T00:00:00Z,CS-TRIMULGHERRY,Indoor_Equipment-Strength,1,2966
+2025-12-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,1,5549
+2025-04-01T00:00:00Z,Cult Store - Mantri Mall,Indoor Equipment,1,5549
+2025-06-01T00:00:00Z,Cult Store - BTM Layout,Indoor Equipment,1,764
+2026-03-01T00:00:00Z,Cult Store - Chikkajala,Indoor Equipment,1,8999
+2025-11-01T00:00:00Z,Cult Store - Moosarambagh Mall,Indoor Equipment,1,19999
+2025-04-01T00:00:00Z,Cult Store - Indiranagar,Indoor_Equipment-Strength,1,899
+2026-03-01T00:00:00Z,Cult Store - Moosarambagh Mall,Indoor Equipment,1,8999
+2026-03-01T00:00:00Z,Cult Store - Amanora,Indoor Equipment,1,8999
+2026-03-01T00:00:00Z,Cult Store - Necklace Mall,Indoor Equipment,1,8999
+2025-04-01T00:00:00Z,Cult Store - Tirumalagiri,Indoor Equipment,1,2499
+2024-12-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,1,1525
+2025-12-01T00:00:00Z,Cult Store - Mantri Mall,Indoor Equipment,1,5549
+2024-05-01T00:00:00Z,CS- JP NAGAR,Indoor Equipment,1,902
+2025-09-01T00:00:00Z,Cult Store - Anzal Plaza,Indoor Equipment,1,1499
+2025-08-01T00:00:00Z,Cult Store - JP Nagar,Indoor_Equipment-Strength,1,1799
+2025-08-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,1,6499
+2024-06-01T00:00:00Z,HSR Store,Indoor Equipment,1,1647
+2025-08-01T00:00:00Z,Cult Store - Dwarka,Indoor Equipment,1,1799
+2026-01-01T00:00:00Z,Cult Store - Atrium Mall,Indoor Equipment,1,12998
+2025-11-01T00:00:00Z,Cult Store - JP Nagar,Indoor_Equipment-Strength,1,4200
+2026-01-01T00:00:00Z,Cult Store - Kamlanagar,Indoor Equipment,1,8999
+2025-12-01T00:00:00Z,Cult Store - Indiranagar,Indoor_Equipment-Strength,1,11199
+2026-01-01T00:00:00Z,Cult Store - AECS Layout,Indoor_Equipment-Strength,1,11199
+2025-04-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,1,15998
+2025-12-01T00:00:00Z,Cult store - Lake Shore,Indoor Equipment,1,499
+2024-09-01T00:00:00Z,HSR Store,Indoor_Equipment-Strength,1,678
+2026-01-01T00:00:00Z,Cult Store - Banashankari,Indoor Equipment,1,809
+2024-01-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,1,762
+2025-03-01T00:00:00Z,CS-TRIMULGHERRY,Indoor Equipment,1,1695
+2025-01-01T00:00:00Z,CULT STORE - ANSAL PLAZA,Indoor Equipment,1,13294
+2025-10-01T00:00:00Z,Cult Store - Global Divinity Mall,Indoor_Equipment-Strength,1,2599
+2024-04-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,1,3728
+2025-11-01T00:00:00Z,Cult Store - Necklace Mall,Indoor Equipment,1,9999
+2025-05-01T00:00:00Z,Cult Store - Chikkajala,Indoor Equipment,1,1499
+2024-10-01T00:00:00Z,Cult Store - AECS Layout,Indoor Equipment,1,1800
+2025-03-01T00:00:00Z,Cult Store - JP Nagar,Indoor Equipment,1,14999
+2026-03-01T00:00:00Z,Cult store - Lake Shore,Indoor Equipment,1,6299
+2025-10-01T00:00:00Z,Cult Store - Anzal Plaza,Indoor Equipment,1,9499
+2025-02-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,1,8159
+2026-02-01T00:00:00Z,Cult Store - Vision One Wakad,Indoor_Equipment-Strength,1,11999
+2026-01-01T00:00:00Z,Cult Store - Amanora,Indoor Equipment,1,499
+2025-10-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor Equipment,1,19999
+2025-11-01T00:00:00Z,Cult Store - VR Mall,Indoor Equipment,1,169496
+2026-03-01T00:00:00Z,Cult Store - Paschim Vihar,Indoor_Equipment-Strength,1,11998
+2026-02-01T00:00:00Z,Cult Store - Mantri Mall,Indoor Equipment,1,8999
+2024-11-01T00:00:00Z,CS-PASCHIM VIHAR,Indoor_Equipment-Strength,1,4236
+2026-02-01T00:00:00Z,Cult Store - Global Divinity Mall,Indoor Equipment,1,14998
+2024-09-01T00:00:00Z,CULT STORE - BANASHANKARI,Indoor_Equipment-Strength,1,1513
+2024-09-01T00:00:00Z,VR MALL,Indoor_Equipment-Strength,1,1801
+2026-02-01T00:00:00Z,Cult Store - Atrium Mall,Indoor Equipment,1,8999
+2024-07-01T00:00:00Z,CS- JP NAGAR,Indoor Equipment,1,5819
+2025-02-01T00:00:00Z,CS - Indiranagar,Indoor_Equipment-Strength,1,3389
+2026-02-01T00:00:00Z,Cult Store - Banashankari,Indoor Equipment,1,17499
+2025-02-01T00:00:00Z,HSR Hardline,Indoor_Equipment-Strength,1,5713
+2025-12-01T00:00:00Z,Cult Store - Tolichowki,Indoor Equipment,1,4599
+2026-02-01T00:00:00Z,Cult Store - Necklace Mall,Indoor Equipment,1,899

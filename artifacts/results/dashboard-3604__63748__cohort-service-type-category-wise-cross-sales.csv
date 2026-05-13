@@ -1,1 +1,107 @@
-
+cohort,majority_service,category,total_gmv
+Active Athome,OTHERS,Indoor Equipment,16980161
+Active Athome,OTHERS,Indoor_Equipment-Strength,731900
+Active B2B,GX,Indoor Equipment,3782987
+Active B2B,GX,Indoor_Equipment-Strength,74862
+Active B2B,GYM,Indoor Equipment,10358276
+Active B2B,GYM,Indoor_Equipment-Strength,215200
+Active B2B,HYBRID_GX,Indoor Equipment,2313578
+Active B2B,HYBRID_GX,Indoor_Equipment-Strength,58113
+Active B2B,HYBRID_GYM,Indoor Equipment,7906722
+Active B2B,HYBRID_GYM,Indoor_Equipment-Strength,163930
+Active B2B,OTHERS,Indoor Equipment,14659820
+Active B2B,OTHERS,Indoor_Equipment-Strength,332870
+Active B2B,PLAY,Indoor Equipment,450434
+Active B2B,PLAY,Indoor_Equipment-Strength,32533
+Active Complimentary,GX,Indoor Equipment,132703
+Active Complimentary,GYM,Indoor Equipment,214140
+Active Complimentary,HYBRID_GX,Indoor Equipment,16998
+Active Complimentary,HYBRID_GX,Indoor_Equipment-Strength,1399
+Active Complimentary,HYBRID_GYM,Indoor Equipment,100832
+Active Complimentary,OTHERS,Indoor Equipment,14859269
+Active Complimentary,OTHERS,Indoor_Equipment-Strength,178834
+Active Complimentary,PLAY,Indoor Equipment,18377
+Active Elite,GX,Indoor Equipment,19940440
+Active Elite,GX,Indoor_Equipment-Strength,453702
+Active Elite,GYM,Indoor Equipment,23413342
+Active Elite,GYM,Indoor_Equipment-Strength,602413
+Active Elite,HYBRID_GX,Indoor Equipment,13938174
+Active Elite,HYBRID_GX,Indoor_Equipment-Strength,410844
+Active Elite,HYBRID_GYM,Indoor Equipment,17229995
+Active Elite,HYBRID_GYM,Indoor_Equipment-Strength,577275
+Active Elite,OTHERS,Indoor Equipment,9065366
+Active Elite,OTHERS,Indoor_Equipment-Strength,228531
+Active Lux,GYM,Indoor Equipment,608393
+Active Lux,GYM,Indoor_Equipment-Strength,19846
+Active Lux,HYBRID_GX,Indoor Equipment,49595
+Active Lux,HYBRID_GYM,Indoor Equipment,21962
+Active Lux,OTHERS,Indoor Equipment,1072299
+Active Lux,OTHERS,Indoor_Equipment-Strength,47567
+Active Play,OTHERS,Indoor Equipment,1341726
+Active Play,OTHERS,Indoor_Equipment-Strength,13098
+Active Play,PLAY,Indoor Equipment,6314200
+Active Play,PLAY,Indoor_Equipment-Strength,228543
+Active Pro,GX,Indoor Equipment,8999
+Active Pro,GYM,Indoor Equipment,10179568
+Active Pro,GYM,Indoor_Equipment-Strength,284581
+Active Pro,HYBRID_GYM,Indoor Equipment,177909
+Active Pro,OTHERS,Indoor Equipment,977270
+Active Pro,OTHERS,Indoor_Equipment-Strength,3828
+Expired Athome,OTHERS,Indoor Equipment,9554440
+Expired Athome,OTHERS,Indoor_Equipment-Strength,280069
+Expired B2B,GX,Indoor Equipment,1271525
+Expired B2B,GX,Indoor_Equipment-Strength,65606
+Expired B2B,GYM,Indoor Equipment,1760789
+Expired B2B,GYM,Indoor_Equipment-Strength,102981
+Expired B2B,HYBRID_GX,Indoor Equipment,378140
+Expired B2B,HYBRID_GX,Indoor_Equipment-Strength,17097
+Expired B2B,HYBRID_GYM,Indoor Equipment,502234
+Expired B2B,HYBRID_GYM,Indoor_Equipment-Strength,28640
+Expired B2B,OTHERS,Indoor Equipment,9604480
+Expired B2B,OTHERS,Indoor_Equipment-Strength,252467
+Expired B2B,PLAY,Indoor Equipment,123832
+Expired Complimentary,GX,Indoor Equipment,382232
+Expired Complimentary,GX,Indoor_Equipment-Strength,3599
+Expired Complimentary,GYM,Indoor Equipment,261965
+Expired Complimentary,HYBRID_GX,Indoor Equipment,35169
+Expired Complimentary,HYBRID_GX,Indoor_Equipment-Strength,342
+Expired Complimentary,HYBRID_GYM,Indoor Equipment,130978
+Expired Complimentary,HYBRID_GYM,Indoor_Equipment-Strength,11249
+Expired Complimentary,OTHERS,Indoor Equipment,101813958
+Expired Complimentary,OTHERS,Indoor_Equipment-Strength,1850485
+Expired Elite,GX,Indoor Equipment,18014842
+Expired Elite,GX,Indoor_Equipment-Strength,584621
+Expired Elite,GYM,Indoor Equipment,10292133
+Expired Elite,GYM,Indoor_Equipment-Strength,330398
+Expired Elite,HYBRID_GX,Indoor Equipment,5912754
+Expired Elite,HYBRID_GX,Indoor_Equipment-Strength,192829
+Expired Elite,HYBRID_GYM,Indoor Equipment,6126001
+Expired Elite,HYBRID_GYM,Indoor_Equipment-Strength,239211
+Expired Elite,OTHERS,Indoor Equipment,11174898
+Expired Elite,OTHERS,Indoor_Equipment-Strength,490503
+Expired Lux,GYM,Indoor Equipment,83297
+Expired Lux,HYBRID_GX,Indoor Equipment,15999
+Expired Lux,OTHERS,Indoor Equipment,482831
+Expired Lux,OTHERS,Indoor_Equipment-Strength,23198
+Expired Play,OTHERS,Indoor Equipment,979504
+Expired Play,OTHERS,Indoor_Equipment-Strength,31558
+Expired Play,PLAY,Indoor Equipment,2849498
+Expired Play,PLAY,Indoor_Equipment-Strength,61180
+Expired Pro,GX,Indoor Equipment,20497
+Expired Pro,GYM,Indoor Equipment,10552683
+Expired Pro,GYM,Indoor_Equipment-Strength,277344
+Expired Pro,HYBRID_GX,Indoor Equipment,49998
+Expired Pro,HYBRID_GYM,Indoor Equipment,5999
+Expired Pro,OTHERS,Indoor Equipment,1600735
+Expired Pro,OTHERS,Indoor_Equipment-Strength,9826
+MP B2B,OTHERS,Indoor Equipment,19499
+MP Complimentary,OTHERS,Indoor Equipment,89497
+MP Elite,GX,Indoor Equipment,8299
+MP Elite,GYM,Indoor Equipment,1455
+MP Elite,HYBRID_GX,Indoor Equipment,8999
+MP Elite,HYBRID_GYM,Indoor Equipment,124
+MP Elite,OTHERS,Indoor Equipment,86655
+MP Elite,OTHERS,Indoor_Equipment-Strength,4499
+MP Play,PLAY,Indoor Equipment,9999
+MP Pro,GYM,Indoor Equipment,2430
+MP Pro,OTHERS,Indoor Equipment,135496
