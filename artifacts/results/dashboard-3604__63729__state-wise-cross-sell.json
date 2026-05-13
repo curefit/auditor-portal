@@ -11,7 +11,7 @@
           "start_order_date"
         ]
       ],
-      "value": "2026-01-01"
+      "value": "2023-04-01"
     },
     {
       "type": "date/single",
@@ -22,7 +22,7 @@
           "end_order_date"
         ]
       ],
-      "value": "2026-01-31"
+      "value": "2026-03-31"
     }
   ],
   "query_response": {
@@ -30,168 +30,201 @@
       "rows": [
         [
           "Karnataka",
-          16634318.0
-        ],
-        [
-          "KARNATAKA",
-          7271997.0
+          359471371
         ],
         [
           "Telangana",
-          6070432.0
+          150665734
         ],
         [
           "Maharashtra",
-          4490517.0
-        ],
-        [
-          "TELANGANA",
-          2749335.0
+          101830462
         ],
         [
           "Delhi",
-          2507227.0
+          72739382
         ],
         [
-          "Uttar Pradesh",
-          2131394.0
+          "KARNATAKA",
+          67094679
         ],
         [
           "Haryana",
-          1945642.0
+          53979137
+        ],
+        [
+          "Uttar Pradesh",
+          47842489
+        ],
+        [
+          "",
+          32965773
         ],
         [
           "Tamil Nadu",
-          1491276.0
-        ],
-        [
-          "MAHARASHTRA",
-          1163077.0
+          31075821
         ],
         [
           "Andhra Pradesh",
-          1126554.0
+          22275215
         ],
         [
-          "DELHI",
-          636273.0
-        ],
-        [
-          "Madhya Pradesh",
-          399977.0
+          "TELANGANA",
+          20934174
         ],
         [
           "Gujarat",
-          386366.0
+          12111011
         ],
         [
-          "Odisha",
-          344411.0
-        ],
-        [
-          "West Bengal",
-          318874.0
+          "Madhya Pradesh",
+          11464664
         ],
         [
           "Rajasthan",
-          309966.0
+          10919439
         ],
         [
-          "Kerala",
-          243119.0
+          "West Bengal",
+          9803582
+        ],
+        [
+          "Odisha",
+          9093180
         ],
         [
           "Punjab",
-          193877.0
+          8618872
         ],
         [
-          "Jharkhand",
-          148974.0
+          "Kerala",
+          7772084
         ],
         [
           "Bihar",
-          125495.0
+          6789387
         ],
         [
-          "UTTAR PRADESH",
-          110312.0
-        ],
-        [
-          "Meghalaya",
-          109738.0
-        ],
-        [
-          "Assam",
-          109238.0
+          "DELHI",
+          6620344
         ],
         [
           "Uttarakhand",
-          87539.0
+          4848288
         ],
         [
-          "Jammu & Kashmir",
-          66238.0
+          "Jharkhand",
+          4531042
         ],
         [
           "Chhattisgarh",
-          64632.0
+          4137759
         ],
         [
-          "Goa",
-          61466.0
+          "MAHARASHTRA",
+          4080543
+        ],
+        [
+          "Jammu and Kashmir",
+          3073674
+        ],
+        [
+          "Assam",
+          2983836
+        ],
+        [
+          "UTTAR PRADESH",
+          2046467
         ],
         [
           "Chandigarh",
-          48664.0
+          1644038
         ],
         [
-          "Tripura",
-          38818.0
-        ],
-        [
-          "Puducherry",
-          35864.0
-        ],
-        [
-          "Dadra and Nagar Haveli and Daman and Diu",
-          13105.0
+          "Goa",
+          1418719
         ],
         [
           "Himachal Pradesh",
-          10544.0
+          1282339
         ],
         [
-          "Sikkim",
-          2818.0
+          "Meghalaya",
+          995724
         ],
         [
-          "Mizoram",
-          2349.0
-        ],
-        [
-          "Ladakh",
-          1839.0
-        ],
-        [
-          "Arunachal Pradesh",
-          1818.0
+          "Jammu & Kashmir",
+          842216
         ],
         [
           "Manipur",
-          1747.0
+          769674
+        ],
+        [
+          "Puducherry",
+          589557
+        ],
+        [
+          "Tripura",
+          394485
+        ],
+        [
+          "Arunachal Pradesh",
+          348560
+        ],
+        [
+          "Sikkim",
+          211152
+        ],
+        [
+          "Mizoram",
+          161921
+        ],
+        [
+          "Daman and Diu",
+          108192
         ],
         [
           "Nagaland",
-          1699.0
+          103411
+        ],
+        [
+          "Andaman and Nicobar Islands",
+          53385
         ],
         [
           "Andaman & Nicobar Islands",
-          1355.0
+          45794
+        ],
+        [
+          "Dadra and Nagar Haveli and Daman and Diu",
+          41768
+        ],
+        [
+          "Dadra and Nagar Haveli",
+          30039
+        ],
+        [
+          "Daman & Diu",
+          2623
+        ],
+        [
+          "Ladakh",
+          2288
+        ],
+        [
+          "Lakshadweep",
+          0
         ]
       ],
       "cols": [
         {
-          "display_name": "state_name",
+          "database_type": "varchar",
+          "lib/deduplicated-name": "state_name",
+          "lib/original-name": "state_name",
+          "name": "state_name",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "state_name",
           "source": "native",
           "field_ref": [
             "field",
@@ -200,13 +233,18 @@
               "base-type": "type/Text"
             }
           ],
-          "name": "state_name",
-          "base_type": "type/Text",
-          "database_type": "varchar",
-          "effective_type": "type/Text"
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "state_name",
+          "display_name": "state_name",
+          "base_type": "type/Text"
         },
         {
-          "display_name": "total_gmv",
+          "database_type": "double",
+          "lib/deduplicated-name": "total_gmv",
+          "lib/original-name": "total_gmv",
+          "name": "total_gmv",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_gmv",
           "source": "native",
           "field_ref": [
             "field",
@@ -215,18 +253,23 @@
               "base-type": "type/Float"
             }
           ],
-          "name": "total_gmv",
-          "base_type": "type/Float",
-          "database_type": "double",
-          "effective_type": "type/Float"
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_gmv",
+          "display_name": "total_gmv",
+          "base_type": "type/Float"
         }
       ],
       "native_form": {
         "params": [
-          "2026-01-01",
-          "2026-01-31"
+          "2023-04-01",
+          "2026-03-31"
         ],
+        "lib/type": "mbql.stage/native",
         "query": "SELECT state_name, ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member = 1\n      AND is_cancelled = 0\n     AND order_date BETWEEN ? AND ?\nGROUP BY state_name\nORDER BY 2 DESC"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
       },
       "results_timezone": "UTC",
       "requested_timezone": "UTC",
@@ -234,7 +277,14 @@
       "results_metadata": {
         "columns": [
           {
-            "display_name": "state_name",
+            "database_type": "varchar",
+            "semantic_type": null,
+            "lib/deduplicated-name": "state_name",
+            "lib/original-name": "state_name",
+            "name": "state_name",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "state_name",
+            "source": "native",
             "field_ref": [
               "field",
               "state_name",
@@ -242,28 +292,35 @@
                 "base-type": "type/Text"
               }
             ],
-            "base_type": "type/Text",
             "effective_type": "type/Text",
-            "name": "state_name",
-            "semantic_type": null,
+            "lib/desired-column-alias": "state_name",
+            "display_name": "state_name",
             "fingerprint": {
               "global": {
-                "distinct-count": 40,
-                "nil%": 0.0
+                "distinct-count": 47,
+                "nil%": 0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0.0,
-                  "percent-url": 0.0,
-                  "percent-email": 0.0,
-                  "percent-state": 0.0,
-                  "average-length": 10.3
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 10.914893617021276
                 }
               }
-            }
+            },
+            "base_type": "type/Text"
           },
           {
-            "display_name": "total_gmv",
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_gmv",
+            "lib/original-name": "total_gmv",
+            "name": "total_gmv",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_gmv",
+            "source": "native",
             "field_ref": [
               "field",
               "total_gmv",
@@ -271,26 +328,26 @@
                 "base-type": "type/Float"
               }
             ],
-            "base_type": "type/Float",
             "effective_type": "type/Float",
-            "name": "total_gmv",
-            "semantic_type": null,
+            "lib/desired-column-alias": "total_gmv",
+            "display_name": "total_gmv",
             "fingerprint": {
               "global": {
-                "distinct-count": 40,
-                "nil%": 0.0
+                "distinct-count": 47,
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 1355.0,
-                  "q1": 37341.0,
-                  "q3": 1144815.5,
-                  "max": 16634318.0,
-                  "sd": 2989909.765375836,
-                  "avg": 1286472.1
+                  "min": 0,
+                  "q1": 360041.25,
+                  "q3": 11949424.25,
+                  "max": 359471371,
+                  "sd": 58313142.31831801,
+                  "avg": 22953495.617021278
                 }
               }
-            }
+            },
+            "base_type": "type/Float"
           }
         ]
       },
@@ -298,44 +355,47 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-04-17T06:41:39.349645Z",
+    "started_at": "2026-05-13T10:46:32.731455581Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
         "max-results-bare-rows": 5000
       },
-      "type": "native",
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "start_order_date": {
+              "display-name": "Start Order Date",
+              "type": "date",
+              "name": "start_order_date",
+              "id": "2e0a2fbe-1f18-4393-b61a-9f3a55be1445",
+              "default": "2024-01-01"
+            },
+            "end_order_date": {
+              "display-name": "End Order Date",
+              "type": "date",
+              "name": "end_order_date",
+              "id": "71249ea1-539a-49e4-a261-40cc2c34095e",
+              "default": "2025-05-31"
+            }
+          },
+          "native": "SELECT state_name, ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member = 1\n      AND is_cancelled = 0\n     [[AND order_date BETWEEN {{start_order_date}} AND {{end_order_date}}]]\nGROUP BY state_name\nORDER BY 2 DESC"
+        }
+      ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": false,
+        "ignore-cached-results?": true,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "avg-execution-ms": 0,
-        "invalidated-at": "2026-04-16T18:41:39.345716Z"
-      },
-      "native": {
-        "template-tags": {
-          "start_order_date": {
-            "type": "date",
-            "name": "start_order_date",
-            "id": "2e0a2fbe-1f18-4393-b61a-9f3a55be1445",
-            "display-name": "Start Order Date",
-            "default": "2024-01-01"
-          },
-          "end_order_date": {
-            "type": "date",
-            "name": "end_order_date",
-            "id": "71249ea1-539a-49e4-a261-40cc2c34095e",
-            "display-name": "End Order Date",
-            "default": "2025-05-31"
-          }
-        },
-        "query": "SELECT state_name, ROUND(SUM(gmv)) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE TRUE\n      AND is_fs_member = 1\n      AND is_cancelled = 0\n     [[AND order_date BETWEEN {{start_order_date}} AND {{end_order_date}}]]\nGROUP BY state_name\nORDER BY 2 DESC"
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false
       },
       "viz-settings": {
         "table.column_widths": [
@@ -343,6 +403,7 @@
         ],
         "table.cell_column": "total_gmv"
       },
+      "lib.convert/converted?": true,
       "database": 39,
       "parameters": [
         {
@@ -354,7 +415,7 @@
               "start_order_date"
             ]
           ],
-          "value": "2026-01-01"
+          "value": "2023-04-01"
         },
         {
           "type": "date/single",
@@ -365,14 +426,14 @@
               "end_order_date"
             ]
           ],
-          "value": "2026-01-31"
+          "value": "2026-03-31"
         }
       ]
     },
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
-    "row_count": 40,
-    "running_time": 1193
+    "row_count": 47,
+    "running_time": 834
   }
 }

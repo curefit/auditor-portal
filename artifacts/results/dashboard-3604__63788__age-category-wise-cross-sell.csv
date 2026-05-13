@@ -1,14 +1,15 @@
 age,category,user_count,total_gmv
-NO-AGE,Indoor Equipment,332,5638038.0
-31-40,Indoor Equipment,253,4547288.0
-21-30,Indoor Equipment,230,3354336.0
-41-50,Indoor Equipment,60,815161.0
-NO-AGE,Indoor_Equipment-Strength,52,465433.0
-50+,Indoor Equipment,19,400966.0
-31-40,Indoor_Equipment-Strength,60,371282.0
-21-30,Indoor_Equipment-Strength,31,347564.0
-41-50,Indoor_Equipment-Strength,13,92963.0
-11-20,Indoor Equipment,2,25248.0
-0-10,Indoor Equipment,3,24087.0
-0-10,Indoor_Equipment-Strength,1,23999.0
-50+,Indoor_Equipment-Strength,2,16011.0
+NO-AGE,Indoor Equipment,7284,146240016
+31-40,Indoor Equipment,5580,112349506
+21-30,Indoor Equipment,3775,70639179
+41-50,Indoor Equipment,1469,30930112
+50+,Indoor Equipment,283,5757618
+NO-AGE,Indoor_Equipment-Strength,499,3255272
+0-10,Indoor Equipment,148,2933180
+31-40,Indoor_Equipment-Strength,444,2675679
+21-30,Indoor_Equipment-Strength,346,2464582
+11-20,Indoor Equipment,78,1627789
+41-50,Indoor_Equipment-Strength,135,846792
+50+,Indoor_Equipment-Strength,33,195343
+0-10,Indoor_Equipment-Strength,10,50039
+11-20,Indoor_Equipment-Strength,5,29865

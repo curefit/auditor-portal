@@ -1,41 +1,48 @@
 state_name,total_gmv
-Karnataka,16634318.0
-KARNATAKA,7271997.0
-Telangana,6070432.0
-Maharashtra,4490517.0
-TELANGANA,2749335.0
-Delhi,2507227.0
-Uttar Pradesh,2131394.0
-Haryana,1945642.0
-Tamil Nadu,1491276.0
-MAHARASHTRA,1163077.0
-Andhra Pradesh,1126554.0
-DELHI,636273.0
-Madhya Pradesh,399977.0
-Gujarat,386366.0
-Odisha,344411.0
-West Bengal,318874.0
-Rajasthan,309966.0
-Kerala,243119.0
-Punjab,193877.0
-Jharkhand,148974.0
-Bihar,125495.0
-UTTAR PRADESH,110312.0
-Meghalaya,109738.0
-Assam,109238.0
-Uttarakhand,87539.0
-Jammu & Kashmir,66238.0
-Chhattisgarh,64632.0
-Goa,61466.0
-Chandigarh,48664.0
-Tripura,38818.0
-Puducherry,35864.0
-Dadra and Nagar Haveli and Daman and Diu,13105.0
-Himachal Pradesh,10544.0
-Sikkim,2818.0
-Mizoram,2349.0
-Ladakh,1839.0
-Arunachal Pradesh,1818.0
-Manipur,1747.0
-Nagaland,1699.0
-Andaman & Nicobar Islands,1355.0
+Karnataka,359471371
+Telangana,150665734
+Maharashtra,101830462
+Delhi,72739382
+KARNATAKA,67094679
+Haryana,53979137
+Uttar Pradesh,47842489
+,32965773
+Tamil Nadu,31075821
+Andhra Pradesh,22275215
+TELANGANA,20934174
+Gujarat,12111011
+Madhya Pradesh,11464664
+Rajasthan,10919439
+West Bengal,9803582
+Odisha,9093180
+Punjab,8618872
+Kerala,7772084
+Bihar,6789387
+DELHI,6620344
+Uttarakhand,4848288
+Jharkhand,4531042
+Chhattisgarh,4137759
+MAHARASHTRA,4080543
+Jammu and Kashmir,3073674
+Assam,2983836
+UTTAR PRADESH,2046467
+Chandigarh,1644038
+Goa,1418719
+Himachal Pradesh,1282339
+Meghalaya,995724
+Jammu & Kashmir,842216
+Manipur,769674
+Puducherry,589557
+Tripura,394485
+Arunachal Pradesh,348560
+Sikkim,211152
+Mizoram,161921
+Daman and Diu,108192
+Nagaland,103411
+Andaman and Nicobar Islands,53385
+Andaman & Nicobar Islands,45794
+Dadra and Nagar Haveli and Daman and Diu,41768
+Dadra and Nagar Haveli,30039
+Daman & Diu,2623
+Ladakh,2288
+Lakshadweep,0

@@ -1,0 +1,472 @@
+{
+  "files": {},
+  "cards": {
+    "30893": {
+      "params": {
+        "workout": { "action": "remove" },
+        "cluster": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "city": { "action": "remove" }
+      }
+    },
+    "55566": {
+      "params": {
+        "gx_class_cuts": {
+          "action": "set",
+          "value": "no",
+          "createIfMissing": {
+            "type": "category",
+            "target": ["variable", ["template-tag", "gx_class_cuts"]]
+          }
+        }
+      }
+    },
+    "56424": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "56862": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "56863": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "56865": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "56866": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "56867": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "56868": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "56869": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "56872": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "59428": {
+      "params": {
+        "city_name": { "action": "remove" },
+        "business_line": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "ownership_type": { "action": "remove" },
+        "center_name": { "action": "remove" },
+        "sub_service_type": { "action": "remove" },
+        "center_service_id": { "action": "remove" }
+      }
+    },
+    "63726": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63727": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63731": {
+      "params": {
+        "service_type": { "action": "remove" }
+      }
+    },
+    "63733": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63734": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63735": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63738": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63743": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63745": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63748": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "63750": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "63751": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63753": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63754": {
+      "params": {
+        "cohort": { "action": "remove" }
+      }
+    },
+    "63759": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63760": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63767": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63780": {
+      "params": {
+        "cohort": { "action": "remove" }
+      }
+    },
+    "63786": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "63791": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "64117": {
+      "params": {
+        "store_name": { "action": "remove" }
+      }
+    },
+    "64443": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "65122": {
+      "params": {
+        "store_name": { "action": "remove" }
+      }
+    },
+    "65123": {
+      "params": {
+        "store_name": { "action": "remove" }
+      }
+    },
+    "65124": {
+      "params": {
+        "store_name": { "action": "remove" }
+      }
+    },
+    "65138": {
+      "params": {
+        "store_name": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "65159": {
+      "params": {
+        "store_name": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "65195": {
+      "params": {
+        "store_name": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "65196": {
+      "params": {
+        "store_name": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "65198": {
+      "params": {
+        "store_name": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "65202": {
+      "params": {
+        "store_name": { "action": "remove" }
+      }
+    },
+    "65204": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "66102": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "66114": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "66134": {
+      "params": {
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" },
+        "source": { "action": "remove" }
+      }
+    },
+    "67337": {
+      "params": {
+        "City": { "action": "remove" },
+        "Campaign": { "action": "remove" }
+      }
+    },
+    "68048": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "68050": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "68051": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "68052": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "68056": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "68058": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "68059": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "source": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    },
+    "68061": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" }
+      }
+    },
+    "68064": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" }
+      }
+    },
+    "68065": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" }
+      }
+    },
+    "68066": {
+      "params": {
+        "month_start_date": { "action": "remove" },
+        "month_end_date": { "action": "remove" },
+        "date_of_month_start_date": { "action": "remove" },
+        "date_of_month_end_date": { "action": "remove" }
+      }
+    },
+    "70149": {
+      "params": {
+        "store_name": { "action": "remove" },
+        "cohort": { "action": "remove" },
+        "service_type": { "action": "remove" }
+      }
+    }
+  }
+}

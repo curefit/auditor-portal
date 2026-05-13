@@ -11,7 +11,7 @@
           "order_start_date"
         ]
       ],
-      "value": "2026-01-01"
+      "value": "2023-04-01"
     },
     {
       "type": "date/single",
@@ -22,7 +22,7 @@
           "order_end_date"
         ]
       ],
-      "value": "2026-01-31"
+      "value": "2026-03-31"
     },
     {
       "type": "string/=",
@@ -45,49 +45,60 @@
         [
           "male",
           "Indoor Equipment",
-          366,
-          7067123.02
+          7800,
+          170212593.64999998
         ],
         [
           "NO-GENDER",
           "Indoor Equipment",
-          323,
-          5394303.220000001
+          6911,
+          138903641.9599999
         ],
         [
           "female",
           "Indoor Equipment",
-          209,
-          2338098.9200000004
+          3888,
+          60876822.290000044
         ],
         [
           "male",
           "Indoor_Equipment-Strength",
-          72,
-          644341.68
+          635,
+          4340684.309999998
         ],
         [
           "NO-GENDER",
           "Indoor_Equipment-Strength",
-          49,
-          472153.49
+          477,
+          3197632.41
         ],
         [
           "female",
           "Indoor_Equipment-Strength",
-          38,
-          200757.55999999997
+          360,
+          1979254.4799999997
         ],
         [
           "undisclosed",
           "Indoor Equipment",
-          1,
-          5599.0
+          11,
+          314361
+        ],
+        [
+          "non-binary",
+          "Indoor Equipment",
+          7,
+          169981.3
         ]
       ],
       "cols": [
         {
-          "display_name": "gender",
+          "database_type": "varchar",
+          "lib/deduplicated-name": "gender",
+          "lib/original-name": "gender",
+          "name": "gender",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "gender",
           "source": "native",
           "field_ref": [
             "field",
@@ -96,13 +107,18 @@
               "base-type": "type/Text"
             }
           ],
-          "name": "gender",
-          "base_type": "type/Text",
-          "database_type": "varchar",
-          "effective_type": "type/Text"
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "gender",
+          "display_name": "gender",
+          "base_type": "type/Text"
         },
         {
-          "display_name": "category",
+          "database_type": "varchar",
+          "lib/deduplicated-name": "category",
+          "lib/original-name": "category",
+          "name": "category",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "category",
           "source": "native",
           "field_ref": [
             "field",
@@ -111,13 +127,18 @@
               "base-type": "type/Text"
             }
           ],
-          "name": "category",
-          "base_type": "type/Text",
-          "database_type": "varchar",
-          "effective_type": "type/Text"
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "category",
+          "display_name": "category",
+          "base_type": "type/Text"
         },
         {
-          "display_name": "user_count",
+          "database_type": "bigint",
+          "lib/deduplicated-name": "user_count",
+          "lib/original-name": "user_count",
+          "name": "user_count",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "user_count",
           "source": "native",
           "field_ref": [
             "field",
@@ -126,13 +147,18 @@
               "base-type": "type/BigInteger"
             }
           ],
-          "name": "user_count",
-          "base_type": "type/BigInteger",
-          "database_type": "bigint",
-          "effective_type": "type/BigInteger"
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "user_count",
+          "display_name": "user_count",
+          "base_type": "type/BigInteger"
         },
         {
-          "display_name": "total_gmv",
+          "database_type": "double",
+          "lib/deduplicated-name": "total_gmv",
+          "lib/original-name": "total_gmv",
+          "name": "total_gmv",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_gmv",
           "source": "native",
           "field_ref": [
             "field",
@@ -141,20 +167,25 @@
               "base-type": "type/Float"
             }
           ],
-          "name": "total_gmv",
-          "base_type": "type/Float",
-          "database_type": "double",
-          "effective_type": "type/Float"
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_gmv",
+          "display_name": "total_gmv",
+          "base_type": "type/Float"
         }
       ],
       "native_form": {
         "params": [
-          "2026-01-01",
-          "2026-01-31",
+          "2023-04-01",
+          "2026-03-31",
           "Indoor Equipment",
           "Indoor_Equipment-Strength"
         ],
+        "lib/type": "mbql.stage/native",
         "query": "SELECT  gender,\n        category,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE is_fs_member = 1\n      AND is_cancelled = 0\n       AND order_date BETWEEN ? AND ?\n       AND ((\"dwh_fitness_metrics\".\"cross_sell_orders\".\"category\" = ?) OR (\"dwh_fitness_metrics\".\"cross_sell_orders\".\"category\" = ?))\n      AND order_date > DATE('2018-01-01')\nGROUP BY 1,2\nORDER BY 3 DESC"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
       },
       "results_timezone": "UTC",
       "requested_timezone": "UTC",
@@ -162,7 +193,14 @@
       "results_metadata": {
         "columns": [
           {
-            "display_name": "gender",
+            "database_type": "varchar",
+            "semantic_type": "type/Category",
+            "lib/deduplicated-name": "gender",
+            "lib/original-name": "gender",
+            "name": "gender",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "gender",
+            "source": "native",
             "field_ref": [
               "field",
               "gender",
@@ -170,28 +208,35 @@
                 "base-type": "type/Text"
               }
             ],
-            "base_type": "type/Text",
             "effective_type": "type/Text",
-            "name": "gender",
-            "semantic_type": "type/Category",
+            "lib/desired-column-alias": "gender",
+            "display_name": "gender",
             "fingerprint": {
               "global": {
-                "distinct-count": 4,
-                "nil%": 0.0
+                "distinct-count": 5,
+                "nil%": 0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0.0,
-                  "percent-url": 0.0,
-                  "percent-email": 0.0,
-                  "percent-state": 0.0,
-                  "average-length": 7.0
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 7.375
                 }
               }
-            }
+            },
+            "base_type": "type/Text"
           },
           {
-            "display_name": "category",
+            "database_type": "varchar",
+            "semantic_type": null,
+            "lib/deduplicated-name": "category",
+            "lib/original-name": "category",
+            "name": "category",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "category",
+            "source": "native",
             "field_ref": [
               "field",
               "category",
@@ -199,28 +244,35 @@
                 "base-type": "type/Text"
               }
             ],
-            "base_type": "type/Text",
             "effective_type": "type/Text",
-            "name": "category",
-            "semantic_type": null,
+            "lib/desired-column-alias": "category",
+            "display_name": "category",
             "fingerprint": {
               "global": {
                 "distinct-count": 2,
-                "nil%": 0.0
+                "nil%": 0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0.0,
-                  "percent-url": 0.0,
-                  "percent-email": 0.0,
-                  "percent-state": 0.0,
-                  "average-length": 19.857142857142858
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 19.375
                 }
               }
-            }
+            },
+            "base_type": "type/Text"
           },
           {
-            "display_name": "user_count",
+            "database_type": "bigint",
+            "semantic_type": "type/Quantity",
+            "lib/deduplicated-name": "user_count",
+            "lib/original-name": "user_count",
+            "name": "user_count",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "user_count",
+            "source": "native",
             "field_ref": [
               "field",
               "user_count",
@@ -228,29 +280,36 @@
                 "base-type": "type/BigInteger"
               }
             ],
-            "base_type": "type/BigInteger",
             "effective_type": "type/BigInteger",
-            "name": "user_count",
-            "semantic_type": "type/Quantity",
+            "lib/desired-column-alias": "user_count",
+            "display_name": "user_count",
             "fingerprint": {
               "global": {
-                "distinct-count": 7,
-                "nil%": 0.0
+                "distinct-count": 8,
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 1.0,
-                  "q1": 40.75,
-                  "q3": 294.5,
-                  "max": 366.0,
-                  "sd": 147.81004540899622,
-                  "avg": 151.14285714285714
+                  "min": 7,
+                  "q1": 185.5,
+                  "q3": 5399.5,
+                  "max": 7800,
+                  "sd": 3252.0981990752634,
+                  "avg": 2511.125
                 }
               }
-            }
+            },
+            "base_type": "type/BigInteger"
           },
           {
-            "display_name": "total_gmv",
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_gmv",
+            "lib/original-name": "total_gmv",
+            "name": "total_gmv",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_gmv",
+            "source": "native",
             "field_ref": [
               "field",
               "total_gmv",
@@ -258,26 +317,26 @@
                 "base-type": "type/Float"
               }
             ],
-            "base_type": "type/Float",
             "effective_type": "type/Float",
-            "name": "total_gmv",
-            "semantic_type": null,
+            "lib/desired-column-alias": "total_gmv",
+            "display_name": "total_gmv",
             "fingerprint": {
               "global": {
-                "distinct-count": 7,
-                "nil%": 0.0
+                "distinct-count": 8,
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 5599.0,
-                  "q1": 268606.5425,
-                  "q3": 4630252.1450000005,
-                  "max": 7067123.02,
-                  "sd": 2830043.4745792546,
-                  "avg": 2303196.6985714287
+                  "min": 169981.3,
+                  "q1": 1146807.7399999998,
+                  "q3": 99890232.12499997,
+                  "max": 170212593.64999998,
+                  "sd": 69648223.80143669,
+                  "avg": 47499371.42499999
                 }
               }
-            }
+            },
+            "base_type": "type/Float"
           }
         ]
       },
@@ -285,60 +344,68 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-04-17T06:41:49.098191Z",
+    "started_at": "2026-05-13T10:46:58.748235661Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
         "max-results-bare-rows": 5000
       },
-      "type": "native",
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "order_start_date": {
+              "default": "2024-01-01",
+              "type": "date",
+              "name": "order_start_date",
+              "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
+              "display-name": "Order Start Date",
+              "widget-type": null
+            },
+            "order_end_date": {
+              "default": "2025-05-31",
+              "type": "date",
+              "name": "order_end_date",
+              "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
+              "display-name": "Order End Date",
+              "widget-type": null
+            },
+            "category": {
+              "widget-type": "string/=",
+              "default": null,
+              "name": "category",
+              "type": "dimension",
+              "id": "26287257-298f-42ae-95d4-f4df2e461686",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "a3b9155d-a17c-4d10-8d86-afe1270861ce",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535348
+              ],
+              "display-name": "Category",
+              "options": null
+            }
+          },
+          "native": "SELECT  gender,\n        category,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE is_fs_member = 1\n      AND is_cancelled = 0\n      [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n      [[ AND {{category}}]]\n      AND order_date > DATE('2018-01-01')\nGROUP BY 1,2\nORDER BY 3 DESC"
+        }
+      ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": false,
+        "ignore-cached-results?": true,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "avg-execution-ms": 0,
-        "invalidated-at": "2026-04-16T18:41:49.093701Z"
-      },
-      "native": {
-        "template-tags": {
-          "order_start_date": {
-            "type": "date",
-            "name": "order_start_date",
-            "id": "5609bd89-cff4-431a-93a3-5f69d7a2da57",
-            "display-name": "Order Start Date",
-            "default": "2024-01-01",
-            "widget-type": null
-          },
-          "order_end_date": {
-            "type": "date",
-            "name": "order_end_date",
-            "id": "7808d926-9a7c-48b2-81ef-e9dcc364b2ea",
-            "display-name": "Order End Date",
-            "default": "2025-05-31",
-            "widget-type": null
-          },
-          "category": {
-            "type": "dimension",
-            "name": "category",
-            "id": "26287257-298f-42ae-95d4-f4df2e461686",
-            "display-name": "Category",
-            "default": null,
-            "dimension": [
-              "field",
-              9535348,
-              null
-            ],
-            "widget-type": "string/=",
-            "options": null
-          }
-        },
-        "query": "SELECT  gender,\n        category,\n        COUNT(DISTINCT user_id) AS user_count,\n        SUM(gmv) AS total_gmv\nFROM dwh_fitness_metrics.cross_sell_orders\nWHERE is_fs_member = 1\n      AND is_cancelled = 0\n      [[ AND order_date BETWEEN {{order_start_date}} AND {{order_end_date}}]]\n      [[ AND {{category}}]]\n      AND order_date > DATE('2018-01-01')\nGROUP BY 1,2\nORDER BY 3 DESC"
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false
       },
       "viz-settings": {
         "table.pivot_column": "age",
@@ -355,6 +422,7 @@
           "user_count"
         ]
       },
+      "lib.convert/converted?": true,
       "database": 39,
       "parameters": [
         {
@@ -366,7 +434,7 @@
               "order_start_date"
             ]
           ],
-          "value": "2026-01-01"
+          "value": "2023-04-01"
         },
         {
           "type": "date/single",
@@ -377,7 +445,7 @@
               "order_end_date"
             ]
           ],
-          "value": "2026-01-31"
+          "value": "2026-03-31"
         },
         {
           "type": "string/=",
@@ -398,7 +466,7 @@
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
-    "row_count": 7,
-    "running_time": 777
+    "row_count": 8,
+    "running_time": 1154
   }
 }

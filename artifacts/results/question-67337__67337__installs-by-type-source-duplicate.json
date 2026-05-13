@@ -22,7 +22,7 @@
           "From"
         ]
       ],
-      "value": "2022-04-01"
+      "value": "2023-04-01"
     },
     {
       "type": "date/single",
@@ -33,29 +33,7 @@
           "To"
         ]
       ],
-      "value": "2025-12-31"
-    },
-    {
-      "type": "string/contains",
-      "target": [
-        "dimension",
-        [
-          "template-tag",
-          "City"
-        ]
-      ],
-      "value": ""
-    },
-    {
-      "type": "string/contains",
-      "target": [
-        "dimension",
-        [
-          "template-tag",
-          "Campaign"
-        ]
-      ],
-      "value": ""
+      "value": "2026-03-31"
     },
     {
       "type": "category",
@@ -70,751 +48,1610 @@
     }
   ],
   "query_response": {
-    "database_id": 39,
-    "started_at": "2026-04-17T06:37:10.000309Z",
-    "via": [
-      {
-        "status": "failed",
-        "class": "class clojure.lang.ExceptionInfo",
-        "error": "Unable to substitute parameters: Invalid values provided for operator: :string/contains",
-        "stacktrace": [
-          "--> driver.sql.parameters.substitute$substitute$fn__89379.invoke(substitute.clj:91)",
-          "driver.sql.parameters.substitute$substitute.invokeStatic(substitute.clj:88)",
-          "driver.sql.parameters.substitute$substitute.invoke(substitute.clj:78)",
-          "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:59)",
-          "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
-          "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
-          "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
-          "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
-          "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
-          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
-          "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
-          "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
-          "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
-          "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
-          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
-          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-          "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
-          "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-          "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
-          "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
-          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
-          "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
-          "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
-          "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
-          "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
-          "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
-          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
-          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
-          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
-          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
-          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
-          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
-          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
-          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
-          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
-          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
-          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
-          "driver$do_with_driver.invokeStatic(driver.clj:106)",
-          "driver$do_with_driver.invoke(driver.clj:101)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
-          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
-          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
-          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
-          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
-          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
-          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
-          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
-          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
-          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+    "data": {
+      "rows": [
+        [
+          "2026-03-01T00:00:00Z",
+          "New - Organic",
+          44151
         ],
-        "error_type": "invalid-parameter",
-        "ex-data": {
-          "type": "invalid-parameter",
-          "params": {
-            "Time_Granularity": "Month",
-            "From": {
-              "s": "2022-04-01"
-            },
-            "To": {
-              "s": "2025-12-31"
-            },
-            "City": {
-              "field": {
-                "description": "The city of the user as per rashi events user attribute. This gets updated to the lastest city for the user",
-                "lib/type": "metadata/column",
-                "base-type": "type/Text",
-                "semantic-type": "type/City",
-                "table-id": 7781510,
-                "name": "user_city",
-                "coercion-strategy": null,
-                "settings": null,
-                "nfc-path": null,
-                "database-type": "varchar",
-                "effective-type": "type/Text",
-                "fk-target-field-id": null,
-                "active": true,
-                "id": 9443644,
-                "parent-id": null,
-                "visibility-type": "normal",
-                "display-name": "User City",
-                "position": 25,
-                "fingerprint": {
-                  "global": {
-                    "distinct-count": 65,
-                    "nil%": 0.2688
-                  },
-                  "type": {
-                    "type/Text": {
-                      "percent-json": 0.0,
-                      "percent-url": 0.0,
-                      "percent-email": 0.0,
-                      "percent-state": 0.0,
-                      "average-length": 5.9217
-                    }
-                  }
-                }
-              },
-              "value": {
-                "value": "",
-                "type": "string/contains",
-                "options": {
-                  "case-sensitive": false
-                }
-              }
-            },
-            "Campaign": {
-              "field": {
-                "description": "The name of the campaign through which we got the paid install",
-                "lib/type": "metadata/column",
-                "base-type": "type/Text",
-                "semantic-type": null,
-                "table-id": 7781510,
-                "name": "campaign",
-                "coercion-strategy": null,
-                "settings": null,
-                "nfc-path": null,
-                "database-type": "varchar",
-                "effective-type": "type/Text",
-                "fk-target-field-id": null,
-                "active": true,
-                "id": 9443633,
-                "parent-id": null,
-                "visibility-type": "normal",
-                "display-name": "Campaign",
-                "position": 10,
-                "fingerprint": {
-                  "global": {
-                    "distinct-count": 245,
-                    "nil%": 0.4909
-                  },
-                  "type": {
-                    "type/Text": {
-                      "percent-json": 0.0,
-                      "percent-url": 0.0,
-                      "percent-email": 0.0,
-                      "percent-state": 0.0,
-                      "average-length": 23.4438
-                    }
-                  }
-                }
-              },
-              "value": {
-                "value": "",
-                "type": "string/contains",
-                "options": {
-                  "case-sensitive": false
-                }
-              }
-            },
-            "Value_Type": "Users",
-            "OS": {
-              "field": {
-                "description": null,
-                "lib/type": "metadata/column",
-                "base-type": "type/Text",
-                "semantic-type": "type/Category",
-                "table-id": 10825384,
-                "name": "os",
-                "coercion-strategy": null,
-                "settings": null,
-                "nfc-path": null,
-                "database-type": "varchar",
-                "effective-type": "type/Text",
-                "fk-target-field-id": null,
-                "active": true,
-                "id": 9601913,
-                "parent-id": null,
-                "visibility-type": "normal",
-                "display-name": "Os",
-                "position": 13,
-                "fingerprint": {
-                  "global": {
-                    "distinct-count": 2,
-                    "nil%": 0.0
-                  },
-                  "type": {
-                    "type/Text": {
-                      "percent-json": 0.0,
-                      "percent-url": 0.0,
-                      "percent-email": 0.0,
-                      "percent-state": 0.0,
-                      "average-length": 5.3912
-                    }
-                  }
-                }
-              },
-              "value": "metabase.driver.common.parameters/no-value"
+        [
+          "2026-03-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Re-Install - Organic",
+          23283
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "TOTAL",
+          191987
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "New - Paid",
+          98213
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Re-Install - Paid",
+          26340
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Re-Install - Paid",
+          21678
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "New - Organic",
+          36595
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "TOTAL",
+          167492
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Re-Install - Organic",
+          19594
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "New - Paid",
+          89625
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "TOTAL",
+          205848
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "New - Organic",
+          49247
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Re-Install - Organic",
+          24042
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "New - Paid",
+          105659
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Re-Install - Paid",
+          26900
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "TOTAL",
+          176161
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "New - Organic",
+          41492
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "New - Paid",
+          88500
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Re-Install - Organic",
+          21918
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Re-Install - Paid",
+          24251
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "New - Organic",
+          39280
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Re-Install - Organic",
+          21487
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "TOTAL",
+          172977
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Re-Install - Paid",
+          23243
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "New - Paid",
+          88967
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "TOTAL",
+          161469
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "New - Paid",
+          76169
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "New - Organic",
+          42608
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "Re-Install - Organic",
+          22093
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "Re-Install - Paid",
+          20599
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "New - Organic",
+          42785
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "New - Paid",
+          76649
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "TOTAL",
+          164484
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "Re-Install - Paid",
+          22108
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "Re-Install - Organic",
+          22942
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "TOTAL",
+          190782
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "New - Paid",
+          90009
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "New - Organic",
+          48340
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "Re-Install - Paid",
+          27290
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "Re-Install - Organic",
+          25143
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "TOTAL",
+          200132
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "Re-Install - Organic",
+          26347
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "New - Paid",
+          92705
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "New - Organic",
+          53392
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "Re-Install - Paid",
+          27688
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "TOTAL",
+          175350
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "Re-Install - Paid",
+          21060
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "New - Paid",
+          75426
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "Re-Install - Organic",
+          25503
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "New - Organic",
+          53361
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Re-Install - Organic",
+          25191
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "New - Organic",
+          53120
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "New - Paid",
+          78533
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "TOTAL",
+          178917
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Re-Install - Paid",
+          22073
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "TOTAL",
+          157798
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "New - Paid",
+          66308
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Re-Install - Paid",
+          19730
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Re-Install - Organic",
+          23107
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "New - Organic",
+          48653
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Re-Install - Paid",
+          18541
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Re-Install - Organic",
+          23780
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "New - Paid",
+          60830
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "TOTAL",
+          154904
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "New - Organic",
+          51753
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "New - Organic",
+          44445
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Re-Install - Paid",
+          15118
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "New - Paid",
+          56790
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Re-Install - Organic",
+          20754
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "TOTAL",
+          137107
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "New - Organic",
+          55695
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "New - Paid",
+          74924
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Re-Install - Paid",
+          20107
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "TOTAL",
+          175339
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Re-Install - Organic",
+          24613
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "TOTAL",
+          144330
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "New - Paid",
+          56515
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Re-Install - Paid",
+          18060
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "New - Organic",
+          47323
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Re-Install - Organic",
+          22432
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "New - Organic",
+          45858
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Re-Install - Paid",
+          19457
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "New - Paid",
+          67394
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Re-Install - Organic",
+          20971
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "TOTAL",
+          153680
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "TOTAL",
+          152030
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Re-Install - Organic",
+          22031
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "New - Organic",
+          51545
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "New - Paid",
+          62548
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Re-Install - Paid",
+          15906
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "New - Paid",
+          64829
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "TOTAL",
+          165158
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "Re-Install - Paid",
+          17415
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "Re-Install - Organic",
+          23945
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "New - Organic",
+          58969
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "TOTAL",
+          178972
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "New - Organic",
+          63184
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "Re-Install - Paid",
+          19392
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "New - Paid",
+          71593
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "Re-Install - Organic",
+          24803
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "New - Paid",
+          72865
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "Re-Install - Organic",
+          24564
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "New - Organic",
+          69181
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "Re-Install - Paid",
+          18806
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "TOTAL",
+          185416
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "TOTAL",
+          179983
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Re-Install - Paid",
+          17525
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Re-Install - Organic",
+          23031
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "New - Organic",
+          66024
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "New - Paid",
+          73403
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Re-Install - Organic",
+          22906
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "TOTAL",
+          172165
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "New - Paid",
+          67053
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Re-Install - Paid",
+          16177
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "New - Organic",
+          66029
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "TOTAL",
+          176895
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Re-Install - Organic",
+          21836
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "New - Paid",
+          73849
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Re-Install - Paid",
+          17749
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "New - Organic",
+          63461
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "New - Organic",
+          60307
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "TOTAL",
+          160375
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Re-Install - Paid",
+          15971
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "New - Paid",
+          63149
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Re-Install - Organic",
+          20948
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "TOTAL",
+          148331
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Re-Install - Paid",
+          14902
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "New - Organic",
+          55635
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Re-Install - Organic",
+          19062
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "New - Paid",
+          58732
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Re-Install - Paid",
+          16198
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "New - Organic",
+          65043
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "New - Paid",
+          77524
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "TOTAL",
+          179857
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Re-Install - Organic",
+          21092
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "Re-Install - Organic",
+          20189
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "Re-Install - Paid",
+          14346
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "New - Paid",
+          71915
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "TOTAL",
+          167756
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "New - Organic",
+          61306
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "Re-Install - Organic",
+          15013
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "Re-Install - Paid",
+          11623
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "TOTAL",
+          147347
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "New - Organic",
+          53154
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "New - Paid",
+          67557
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "Re-Install - Organic",
+          11806
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "Re-Install - Paid",
+          10916
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "New - Paid",
+          70676
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "New - Organic",
+          59259
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "TOTAL",
+          152657
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "New - Paid",
+          77364
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "Re-Install - Paid",
+          10776
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "Re-Install - Organic",
+          10024
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "New - Organic",
+          57063
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "TOTAL",
+          155227
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "Re-Install - Organic",
+          11317
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "New - Paid",
+          87000
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "New - Organic",
+          65113
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "Re-Install - Paid",
+          10315
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "TOTAL",
+          173745
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "Re-Install - Organic",
+          12400
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "TOTAL",
+          186335
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "New - Paid",
+          90361
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "Re-Install - Paid",
+          10986
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "New - Organic",
+          72588
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "Re-Install - Paid",
+          9404
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "TOTAL",
+          170335
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "New - Paid",
+          76466
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "Re-Install - Organic",
+          12136
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "New - Organic",
+          72329
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "TOTAL",
+          159565
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "New - Organic",
+          69633
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "New - Paid",
+          69493
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "Re-Install - Paid",
+          8440
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "Re-Install - Organic",
+          11999
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "No Device ID - Paid",
+          0
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "New - Organic",
+          67734
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "Re-Install - Organic",
+          10689
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "New - Paid",
+          71693
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "TOTAL",
+          157956
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "Re-Install - Paid",
+          7840
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "No Device ID - Organic",
+          0
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "date",
+          "lib/deduplicated-name": "Date",
+          "lib/original-name": "Date",
+          "name": "Date",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "Date",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "Date",
+            {
+              "base-type": "type/Date"
             }
-          },
-          "parsed-query": [
-            "Select\n    \"Date\",\n    \"Install Type - Source\",\n    Case\n        When ",
+          ],
+          "effective_type": "type/Date",
+          "lib/desired-column-alias": "Date",
+          "display_name": "Date",
+          "base_type": "type/Date"
+        },
+        {
+          "database_type": "varchar",
+          "lib/deduplicated-name": "Install Type - Source",
+          "lib/original-name": "Install Type - Source",
+          "name": "Install Type - Source",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "Install Type - Source",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "Install Type - Source",
             {
-              "k": "Value_Type"
-            },
-            " = 'Users' Then \"Users\"\n        When ",
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "Install Type - Source",
+          "display_name": "Install Type - Source",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "Installs",
+          "lib/original-name": "Installs",
+          "name": "Installs",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "Installs",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "Installs",
             {
-              "k": "Value_Type"
-            },
-            " = 'Devices' Then \"Devices\"\n        When ",
-            {
-              "k": "Value_Type"
-            },
-            " = 'Installs' Then \"Installs\"\n    End as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc (",
-            {
-              "k": "Time_Granularity"
-            },
-            ", install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact \n    WHERE\n      install_date BETWEEN ",
-            {
-              "k": "From"
-            },
-            " AND ",
-            {
-              "k": "To"
-            },
-            "\n      and fitness_membership_type='Non-Member'\n      AND ",
-            {
-              "k": "City"
-            },
-            "\n      AND ",
-            {
-              "k": "Campaign"
-            },
-            "\n      and ",
-            {
-              "k": "OS"
-            },
-            "\n    GROUP BY\n      1,\n      2\n)\n\n\nUNION ALL \n\nSelect\n    \"Date\",\n    'TOTAL',\n    SUM(Case\n        When ",
-            {
-              "k": "Value_Type"
-            },
-            " = 'Users' Then \"Users\"\n        When ",
-            {
-              "k": "Value_Type"
-            },
-            " = 'Devices' Then \"Devices\"\n        When ",
-            {
-              "k": "Value_Type"
-            },
-            " = 'Installs' Then \"Installs\"\n    End ) as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc (",
-            {
-              "k": "Time_Granularity"
-            },
-            ", install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact\n    WHERE\n      install_date BETWEEN ",
-            {
-              "k": "From"
-            },
-            " AND ",
-            {
-              "k": "To"
-            },
-            "\n      and fitness_membership_type='Non-Member'\n      AND ",
-            {
-              "k": "City"
-            },
-            "\n      AND ",
-            {
-              "k": "Campaign"
-            },
-            "\n    GROUP BY\n      1,\n      2\n)\ngroup by 1,2\nORDER BY\n  1 DESC"
-          ]
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "Installs",
+          "display_name": "Installs",
+          "base_type": "type/BigInteger"
         }
-      },
-      {
-        "status": "failed",
-        "class": "class clojure.lang.ExceptionInfo",
-        "error": "Error preprocessing query in clojure.lang.AFunction$1@1a53a275: Unable to substitute parameters: Invalid values provided for operator: :string/contains",
-        "stacktrace": [
-          "--> query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:178)",
-          "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
-          "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
-          "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
-          "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
-          "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
-          "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
-          "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
-          "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
-          "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
-          "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
-          "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
-          "driver$do_with_driver.invokeStatic(driver.clj:106)",
-          "driver$do_with_driver.invoke(driver.clj:101)",
-          "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
-          "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-          "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
-          "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
-          "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-          "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
-          "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
-          "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
-          "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
-          "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
-          "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
-          "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
-          "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
-          "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
-          "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
-          "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
+      ],
+      "native_form": {
+        "params": [
+          "Users",
+          "Users",
+          "Users",
+          "Month",
+          "2023-04-01",
+          "2026-03-31",
+          "Users",
+          "Users",
+          "Users",
+          "Month",
+          "2023-04-01",
+          "2026-03-31"
         ],
-        "error_type": "qp",
-        "ex-data": {
-          "fn": "clojure.lang.AFunction$1@1a53a275",
-          "query": {
-            "constraints": {
-              "max-results": 10000,
-              "max-results-bare-rows": 5000
-            },
-            "lib/type": "mbql/query",
-            "lib/metadata": "metabase.lib.metadata.invocation_tracker.InvocationTracker@6afa578b",
-            "stages": [
+        "lib/type": "mbql.stage/native",
+        "query": "Select\n    \"Date\",\n    \"Install Type - Source\",\n    Case\n        When ? = 'Users' Then \"Users\"\n        When ? = 'Devices' Then \"Devices\"\n        When ? = 'Installs' Then \"Installs\"\n    End as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc (?, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact \n    WHERE\n      install_date BETWEEN ? AND ?\n      and fitness_membership_type='Non-Member'\n      AND 1 = 1\n      AND 1 = 1\n      and 1 = 1\n    GROUP BY\n      1,\n      2\n)\n\n\nUNION ALL \n\nSelect\n    \"Date\",\n    'TOTAL',\n    SUM(Case\n        When ? = 'Users' Then \"Users\"\n        When ? = 'Devices' Then \"Devices\"\n        When ? = 'Installs' Then \"Installs\"\n    End ) as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc (?, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact\n    WHERE\n      install_date BETWEEN ? AND ?\n      and fitness_membership_type='Non-Member'\n      AND 1 = 1\n      AND 1 = 1\n    GROUP BY\n      1,\n      2\n)\ngroup by 1,2\nORDER BY\n  1 DESC"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "date",
+            "semantic_type": null,
+            "lib/deduplicated-name": "Date",
+            "lib/original-name": "Date",
+            "name": "Date",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "Date",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "Date",
               {
-                "lib/type": "mbql.stage/native",
-                "template-tags": {
-                  "Time_Granularity": {
-                    "type": "text",
-                    "name": "Time_Granularity",
-                    "id": "db9c2454-1a06-4e4d-9702-224eec583b96",
-                    "display-name": "Time Granularity",
-                    "required": true,
-                    "default": "Month"
-                  },
-                  "From": {
-                    "type": "date",
-                    "name": "From",
-                    "id": "e9a5476a-39ac-420f-8f7d-07f7bd9d84dd",
-                    "display-name": "From",
-                    "default": "2025-07-01",
-                    "required": true
-                  },
-                  "To": {
-                    "type": "date",
-                    "name": "To",
-                    "id": "5926f6b7-e742-45f7-8109-18c2e1b3a530",
-                    "display-name": "To",
-                    "default": "2025-07-31",
-                    "required": true
-                  },
-                  "City": {
-                    "type": "dimension",
-                    "name": "City",
-                    "id": "95c476a9-18db-4223-9c23-160918290c44",
-                    "display-name": "City",
-                    "default": null,
-                    "dimension": [
-                      "field",
-                      {
-                        "lib/uuid": "da2c3612-ee4d-48bd-8962-56d4da25b76c",
-                        "metabase.lib.query/transformation-added-base-type": true,
-                        "base-type": "type/Text",
-                        "effective-type": "type/Text"
-                      },
-                      9443644
-                    ],
-                    "widget-type": "string/contains",
-                    "options": {
-                      "case-sensitive": false
-                    }
-                  },
-                  "Campaign": {
-                    "type": "dimension",
-                    "name": "Campaign",
-                    "id": "0988f8f2-6a65-4c73-bf2b-732f7b9e6a39",
-                    "display-name": "Campaign",
-                    "default": null,
-                    "dimension": [
-                      "field",
-                      {
-                        "lib/uuid": "c6b6adf7-2023-4928-b457-de1b2cda0da4",
-                        "metabase.lib.query/transformation-added-base-type": true,
-                        "base-type": "type/Text",
-                        "effective-type": "type/Text"
-                      },
-                      9443633
-                    ],
-                    "widget-type": "string/contains",
-                    "options": {
-                      "case-sensitive": false
-                    }
-                  },
-                  "Value_Type": {
-                    "type": "text",
-                    "name": "Value_Type",
-                    "id": "b2a4b8bb-5d62-489b-b00f-4414826840af",
-                    "display-name": "Value Type",
-                    "required": true,
-                    "default": "Users"
-                  },
-                  "OS": {
-                    "type": "dimension",
-                    "name": "OS",
-                    "id": "cda2fef9-e68a-489c-8ec2-de0a4e23b3f1",
-                    "display-name": "Os",
-                    "default": null,
-                    "dimension": [
-                      "field",
-                      {
-                        "lib/uuid": "89ac93ba-3b41-45b1-93cd-e575496f7440",
-                        "metabase.lib.query/transformation-added-base-type": true,
-                        "base-type": "type/Text",
-                        "effective-type": "type/Text"
-                      },
-                      9601913
-                    ],
-                    "widget-type": "string/=",
-                    "options": null
-                  }
-                },
-                "native": "Select\n    \"Date\",\n    \"Install Type - Source\",\n    Case\n        When {{Value_Type}} = 'Users' Then \"Users\"\n        When {{Value_Type}} = 'Devices' Then \"Devices\"\n        When {{Value_Type}} = 'Installs' Then \"Installs\"\n    End as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc ({{Time_Granularity}}, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact \n    WHERE\n      install_date BETWEEN {{From}} AND {{To}}\n      and fitness_membership_type='Non-Member'\n      AND {{City}}\n      AND {{Campaign}}\n      and {{OS}}\n    GROUP BY\n      1,\n      2\n)\n\n\nUNION ALL \n\nSelect\n    \"Date\",\n    'TOTAL',\n    SUM(Case\n        When {{Value_Type}} = 'Users' Then \"Users\"\n        When {{Value_Type}} = 'Devices' Then \"Devices\"\n        When {{Value_Type}} = 'Installs' Then \"Installs\"\n    End ) as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc ({{Time_Granularity}}, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact\n    WHERE\n      install_date BETWEEN {{From}} AND {{To}}\n      and fitness_membership_type='Non-Member'\n      AND {{City}}\n      AND {{Campaign}}\n    GROUP BY\n      1,\n      2\n)\ngroup by 1,2\nORDER BY\n  1 DESC"
+                "base-type": "type/Date"
               }
             ],
-            "middleware": {
-              "js-int-to-string?": true,
-              "ignore-cached-results?": false,
-              "process-viz-settings?": false,
-              "userland-query?": true
-            },
-            "cache-strategy": {
-              "multiplier": 10,
-              "min-duration-ms": 60000,
-              "type": "ttl",
-              "avg-execution-ms": 0,
-              "invalidated-at": "2026-04-16T18:37:09.994168Z"
-            },
-            "viz-settings": {
-              "graph.dimensions": [
-                "Date",
-                "Install Type - Source"
-              ],
-              "graph.series_order_dimension": "Install Type - Source",
-              "graph.series_order": [
-                {
-                  "key": "No Device ID - Paid",
-                  "color": "#88BF4D",
-                  "enabled": true,
-                  "name": "No Device ID - Paid"
-                },
-                {
-                  "key": "New - Paid",
-                  "color": "#7172AD",
-                  "enabled": true,
-                  "name": "New - Paid"
-                },
-                {
-                  "key": "Re-Install - Paid",
-                  "color": "#EF8C8C",
-                  "enabled": true,
-                  "name": "Re-Install - Paid"
-                },
-                {
-                  "key": "No Device ID - Organic",
-                  "color": "#98D9D9",
-                  "enabled": true,
-                  "name": "No Device ID - Organic"
-                },
-                {
-                  "key": "New - Organic",
-                  "color": "#509EE3",
-                  "enabled": true,
-                  "name": "New - Organic"
-                },
-                {
-                  "key": "Re-Install - Organic",
-                  "color": "#A989C5",
-                  "enabled": true,
-                  "name": "Re-Install - Organic"
+            "effective_type": "type/Date",
+            "lib/desired-column-alias": "Date",
+            "display_name": "Date",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2023-04-01",
+                  "latest": "2026-03-01"
                 }
-              ],
-              "graph.show_trendline": false,
-              "graph.show_goal": false,
-              "graph.show_values": true,
-              "graph.metrics": [
-                "Installs"
-              ]
-            },
-            "lib.convert/converted?": true,
-            "info": {
-              "executed-by": 3570,
-              "context": "question",
-              "card-id": 67337,
-              "card-name": "# Installs by type & source - Duplicate",
-              "visualization-settings": {
-                "graph.dimensions": [
-                  "Date",
-                  "Install Type - Source"
-                ],
-                "graph.series_order_dimension": "Install Type - Source",
-                "graph.series_order": [
-                  {
-                    "key": "No Device ID - Paid",
-                    "color": "#88BF4D",
-                    "enabled": true,
-                    "name": "No Device ID - Paid"
-                  },
-                  {
-                    "key": "New - Paid",
-                    "color": "#7172AD",
-                    "enabled": true,
-                    "name": "New - Paid"
-                  },
-                  {
-                    "key": "Re-Install - Paid",
-                    "color": "#EF8C8C",
-                    "enabled": true,
-                    "name": "Re-Install - Paid"
-                  },
-                  {
-                    "key": "No Device ID - Organic",
-                    "color": "#98D9D9",
-                    "enabled": true,
-                    "name": "No Device ID - Organic"
-                  },
-                  {
-                    "key": "New - Organic",
-                    "color": "#509EE3",
-                    "enabled": true,
-                    "name": "New - Organic"
-                  },
-                  {
-                    "key": "Re-Install - Organic",
-                    "color": "#A989C5",
-                    "enabled": true,
-                    "name": "Re-Install - Organic"
-                  }
-                ],
-                "graph.show_trendline": false,
-                "graph.show_goal": false,
-                "graph.show_values": true,
-                "graph.metrics": [
-                  "Installs"
-                ]
-              },
-              "query-hash": "0x6E2BF43D"
-            },
-            "database": 39,
-            "parameters": [
-              {
-                "value": "Month",
-                "type": "category",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "Time_Granularity"
-                  ]
-                ]
-              },
-              {
-                "value": "2022-04-01",
-                "type": "date/single",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "From"
-                  ]
-                ]
-              },
-              {
-                "value": "2025-12-31",
-                "type": "date/single",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "To"
-                  ]
-                ]
-              },
-              {
-                "value": "",
-                "type": "string/contains",
-                "target": [
-                  "dimension",
-                  [
-                    "template-tag",
-                    "City"
-                  ]
-                ]
-              },
-              {
-                "value": "",
-                "type": "string/contains",
-                "target": [
-                  "dimension",
-                  [
-                    "template-tag",
-                    "Campaign"
-                  ]
-                ]
-              },
-              {
-                "value": "Users",
-                "type": "category",
-                "target": [
-                  "variable",
-                  [
-                    "template-tag",
-                    "Value_Type"
-                  ]
-                ]
               }
-            ]
+            },
+            "base_type": "type/Date"
           },
-          "type": "qp"
+          {
+            "database_type": "varchar",
+            "semantic_type": "type/Source",
+            "lib/deduplicated-name": "Install Type - Source",
+            "lib/original-name": "Install Type - Source",
+            "name": "Install Type - Source",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "Install Type - Source",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "Install Type - Source",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "Install Type - Source",
+            "display_name": "Install Type - Source",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 7,
+                "nil%": 0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 15.142857142857142
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "Installs",
+            "lib/original-name": "Installs",
+            "name": "Installs",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "Installs",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "Installs",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "Installs",
+            "display_name": "Installs",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 181,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 0,
+                  "q1": 4015.3471108317467,
+                  "q3": 69765.67181175742,
+                  "max": 205848,
+                  "sd": 56455.80182956284,
+                  "avg": 48244.93650793651
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          }
+        ]
+      },
+      "insights": [
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": -39737.997714381214,
+          "last-change": null,
+          "col": "Installs",
+          "slope": 4.403231931852657,
+          "last-value": 0,
+          "best-fit": [
+            "+",
+            -39737.997714381214,
+            [
+              "*",
+              4.403231931852657,
+              "x"
+            ]
+          ]
         }
-      }
-    ],
-    "action_id": null,
-    "error_type": "invalid-parameter",
+      ]
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-05-13T10:53:01.386221043Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
         "max-results-bare-rows": 5000
       },
-      "type": "native",
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "Time_Granularity": {
+              "required": true,
+              "type": "text",
+              "name": "Time_Granularity",
+              "id": "db9c2454-1a06-4e4d-9702-224eec583b96",
+              "display-name": "Time Granularity",
+              "default": "Month"
+            },
+            "From": {
+              "default": "2025-07-01",
+              "type": "date",
+              "name": "From",
+              "id": "e9a5476a-39ac-420f-8f7d-07f7bd9d84dd",
+              "display-name": "From",
+              "required": true
+            },
+            "To": {
+              "default": "2025-07-31",
+              "type": "date",
+              "name": "To",
+              "id": "5926f6b7-e742-45f7-8109-18c2e1b3a530",
+              "display-name": "To",
+              "required": true
+            },
+            "City": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "City",
+              "type": "dimension",
+              "id": "95c476a9-18db-4223-9c23-160918290c44",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "cd47405a-7672-4a2c-8501-e7c6d4ba98e1",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9601893
+              ],
+              "display-name": "City",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "Campaign": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "Campaign",
+              "type": "dimension",
+              "id": "0988f8f2-6a65-4c73-bf2b-732f7b9e6a39",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "ac83f147-f77d-4909-ab0d-aafb9cda14af",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9443633
+              ],
+              "display-name": "Campaign",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "Value_Type": {
+              "required": true,
+              "type": "text",
+              "name": "Value_Type",
+              "id": "b2a4b8bb-5d62-489b-b00f-4414826840af",
+              "display-name": "Value Type",
+              "default": "Users"
+            },
+            "OS": {
+              "widget-type": "string/=",
+              "default": null,
+              "name": "OS",
+              "type": "dimension",
+              "id": "cda2fef9-e68a-489c-8ec2-de0a4e23b3f1",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "4802fd6c-f09a-4ace-b383-fa5f293a2cad",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9601913
+              ],
+              "display-name": "Os",
+              "options": null
+            }
+          },
+          "native": "Select\n    \"Date\",\n    \"Install Type - Source\",\n    Case\n        When {{Value_Type}} = 'Users' Then \"Users\"\n        When {{Value_Type}} = 'Devices' Then \"Devices\"\n        When {{Value_Type}} = 'Installs' Then \"Installs\"\n    End as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc ({{Time_Granularity}}, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact \n    WHERE\n      install_date BETWEEN {{From}} AND {{To}}\n      and fitness_membership_type='Non-Member'\n      AND {{City}}\n      AND {{Campaign}}\n      and {{OS}}\n    GROUP BY\n      1,\n      2\n)\n\n\nUNION ALL \n\nSelect\n    \"Date\",\n    'TOTAL',\n    SUM(Case\n        When {{Value_Type}} = 'Users' Then \"Users\"\n        When {{Value_Type}} = 'Devices' Then \"Devices\"\n        When {{Value_Type}} = 'Installs' Then \"Installs\"\n    End ) as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc ({{Time_Granularity}}, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact\n    WHERE\n      install_date BETWEEN {{From}} AND {{To}}\n      and fitness_membership_type='Non-Member'\n      AND {{City}}\n      AND {{Campaign}}\n    GROUP BY\n      1,\n      2\n)\ngroup by 1,2\nORDER BY\n  1 DESC"
+        }
+      ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": false,
+        "ignore-cached-results?": true,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "avg-execution-ms": 0,
-        "invalidated-at": "2026-04-16T18:37:09.994168Z"
-      },
-      "native": {
-        "template-tags": {
-          "Time_Granularity": {
-            "type": "text",
-            "name": "Time_Granularity",
-            "id": "db9c2454-1a06-4e4d-9702-224eec583b96",
-            "display-name": "Time Granularity",
-            "required": true,
-            "default": "Month"
-          },
-          "From": {
-            "type": "date",
-            "name": "From",
-            "id": "e9a5476a-39ac-420f-8f7d-07f7bd9d84dd",
-            "display-name": "From",
-            "default": "2025-07-01",
-            "required": true
-          },
-          "To": {
-            "type": "date",
-            "name": "To",
-            "id": "5926f6b7-e742-45f7-8109-18c2e1b3a530",
-            "display-name": "To",
-            "default": "2025-07-31",
-            "required": true
-          },
-          "City": {
-            "type": "dimension",
-            "name": "City",
-            "id": "95c476a9-18db-4223-9c23-160918290c44",
-            "display-name": "City",
-            "default": null,
-            "dimension": [
-              "field",
-              9443644,
-              null
-            ],
-            "widget-type": "string/contains",
-            "options": {
-              "case-sensitive": false
-            }
-          },
-          "Campaign": {
-            "type": "dimension",
-            "name": "Campaign",
-            "id": "0988f8f2-6a65-4c73-bf2b-732f7b9e6a39",
-            "display-name": "Campaign",
-            "default": null,
-            "dimension": [
-              "field",
-              9443633,
-              null
-            ],
-            "widget-type": "string/contains",
-            "options": {
-              "case-sensitive": false
-            }
-          },
-          "Value_Type": {
-            "type": "text",
-            "name": "Value_Type",
-            "id": "b2a4b8bb-5d62-489b-b00f-4414826840af",
-            "display-name": "Value Type",
-            "required": true,
-            "default": "Users"
-          },
-          "OS": {
-            "type": "dimension",
-            "name": "OS",
-            "id": "cda2fef9-e68a-489c-8ec2-de0a4e23b3f1",
-            "display-name": "Os",
-            "default": null,
-            "dimension": [
-              "field",
-              9601913,
-              null
-            ],
-            "widget-type": "string/=",
-            "options": null
-          }
-        },
-        "query": "Select\n    \"Date\",\n    \"Install Type - Source\",\n    Case\n        When {{Value_Type}} = 'Users' Then \"Users\"\n        When {{Value_Type}} = 'Devices' Then \"Devices\"\n        When {{Value_Type}} = 'Installs' Then \"Installs\"\n    End as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc ({{Time_Granularity}}, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact \n    WHERE\n      install_date BETWEEN {{From}} AND {{To}}\n      and fitness_membership_type='Non-Member'\n      AND {{City}}\n      AND {{Campaign}}\n      and {{OS}}\n    GROUP BY\n      1,\n      2\n)\n\n\nUNION ALL \n\nSelect\n    \"Date\",\n    'TOTAL',\n    SUM(Case\n        When {{Value_Type}} = 'Users' Then \"Users\"\n        When {{Value_Type}} = 'Devices' Then \"Devices\"\n        When {{Value_Type}} = 'Installs' Then \"Installs\"\n    End ) as \"Installs\"\nFrom\n(\n    SELECT\n      Date_Trunc ({{Time_Granularity}}, install_date) AS \"Date\",\n      user_install_type || ' - ' || source AS \"Install Type - Source\",\n      COUNT(DISTINCT user_id) AS \"Users\",\n      COUNT(DISTINCT device_id) AS \"Devices\",\n      COUNT(DISTINCT primary_key) AS \"Installs\"\n    FROM\n      dwh_growth_mart.growth_install_fact\n    WHERE\n      install_date BETWEEN {{From}} AND {{To}}\n      and fitness_membership_type='Non-Member'\n      AND {{City}}\n      AND {{Campaign}}\n    GROUP BY\n      1,\n      2\n)\ngroup by 1,2\nORDER BY\n  1 DESC"
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-05-13T06:42:58.654647Z"
       },
       "viz-settings": {
         "graph.dimensions": [
@@ -867,6 +1704,7 @@
           "Installs"
         ]
       },
+      "lib.convert/converted?": true,
       "database": 39,
       "parameters": [
         {
@@ -889,7 +1727,7 @@
               "From"
             ]
           ],
-          "value": "2022-04-01"
+          "value": "2023-04-01"
         },
         {
           "type": "date/single",
@@ -900,29 +1738,7 @@
               "To"
             ]
           ],
-          "value": "2025-12-31"
-        },
-        {
-          "type": "string/contains",
-          "target": [
-            "dimension",
-            [
-              "template-tag",
-              "City"
-            ]
-          ],
-          "value": ""
-        },
-        {
-          "type": "string/contains",
-          "target": [
-            "dimension",
-            [
-              "template-tag",
-              "Campaign"
-            ]
-          ],
-          "value": ""
+          "value": "2026-03-31"
         },
         {
           "type": "category",
@@ -937,105 +1753,10 @@
         }
       ]
     },
-    "status": "failed",
-    "class": "class clojure.lang.ExceptionInfo",
-    "stacktrace": [
-      "--> driver.common.parameters.operators$verify_type_and_arity74141__74142.invokeStatic(operators.clj:54)",
-      "driver.common.parameters.operators$verify_type_and_arity74141__74142.invoke(operators.clj:35)",
-      "driver.common.parameters.operators$to_clause74148__74150.invokeStatic(operators.clj:70)",
-      "driver.common.parameters.operators$to_clause74148__74150.invoke(operators.clj:66)",
-      "driver.sql.parameters.substitution$field_filter__GT_replacement_snippet_info89282__89284.invokeStatic(substitution.clj:320)",
-      "driver.sql.parameters.substitution$field_filter__GT_replacement_snippet_info89282__89284.invoke(substitution.clj:304)",
-      "driver.sql.parameters.substitution$fn__89295$_AMPERSAND_f__89297.invoke(substitution.clj:366)",
-      "driver.sql.parameters.substitution$fn__89295$fn__89314.invoke(substitution.clj:349)",
-      "driver.sql.parameters.substitute$substitute_field_filter.invokeStatic(substitute.clj:19)",
-      "driver.sql.parameters.substitute$substitute_field_filter.invoke(substitute.clj:13)",
-      "driver.sql.parameters.substitute$substitute_param.invokeStatic(substitute.clj:37)",
-      "driver.sql.parameters.substitute$substitute_param.invoke(substitute.clj:31)",
-      "driver.sql.parameters.substitute$substitute_STAR_$fn__89370.invoke(substitute.clj:71)",
-      "driver.sql.parameters.substitute$substitute_STAR_.invokeStatic(substitute.clj:64)",
-      "driver.sql.parameters.substitute$substitute_STAR_.invoke(substitute.clj:61)",
-      "driver.sql.parameters.substitute$substitute$fn__89379.invoke(substitute.clj:89)",
-      "driver.sql.parameters.substitute$substitute.invokeStatic(substitute.clj:88)",
-      "driver.sql.parameters.substitute$substitute.invoke(substitute.clj:78)",
-      "driver.sql$fn__89412$_AMPERSAND_f__89414.invoke(sql.clj:59)",
-      "driver.sql$fn__89412$fn__89421.invoke(sql.clj:53)",
-      "query_processor.middleware.parameters.native$expand_inner.invokeStatic(native.clj:43)",
-      "query_processor.middleware.parameters.native$expand_inner.invoke(native.clj:34)",
-      "query_processor.middleware.parameters$expand_one.invokeStatic(parameters.clj:51)",
-      "query_processor.middleware.parameters$expand_one.invoke(parameters.clj:42)",
-      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:62)",
-      "lib.util.match.impl$replace_in_collection$fn__16859.invoke(impl.cljc:53)",
-      "lib.util.match.impl$replace_in_collection.invokeStatic(impl.cljc:52)",
-      "lib.util.match.impl$replace_in_collection.invoke(impl.cljc:47)",
-      "query_processor.middleware.parameters$expand_all$replace_74341__74342.invoke(parameters.clj:60)",
-      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:60)",
-      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-      "query_processor.middleware.parameters$expand_all.invokeStatic(parameters.clj:57)",
-      "query_processor.middleware.parameters$expand_all.invoke(parameters.clj:54)",
-      "query_processor.middleware.parameters$expand_parameters.invokeStatic(parameters.clj:84)",
-      "query_processor.middleware.parameters$expand_parameters.invoke(parameters.clj:79)",
-      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invokeStatic(parameters.clj:93)",
-      "query_processor.middleware.parameters$substitute_parameters_STAR_74359__74360.invoke(parameters.clj:90)",
-      "query_processor.middleware.parameters$substitute_parameters.invokeStatic(parameters.clj:120)",
-      "query_processor.middleware.parameters$substitute_parameters.invoke(parameters.clj:111)",
-      "query_processor.preprocess$ensure_legacy$fn__75822.invoke(preprocess.clj:64)",
-      "query_processor.preprocess$preprocess75838__75839$fn__75840$fn__75841.invoke(preprocess.clj:161)",
-      "query_processor.preprocess$preprocess75838__75839$fn__75840.invoke(preprocess.clj:151)",
-      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:225)",
-      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-      "query_processor.preprocess$preprocess75838__75839.invokeStatic(preprocess.clj:149)",
-      "query_processor.preprocess$preprocess75838__75839.invoke(preprocess.clj:145)",
-      "query_processor$process_query_STAR__STAR_.invokeStatic(query_processor.clj:46)",
-      "query_processor$process_query_STAR__STAR_.invoke(query_processor.clj:44)",
-      "query_processor.middleware.enterprise$fn__74848$handle_audit_app_internal_queries__74849$fn__74851.invoke(enterprise.clj:96)",
-      "query_processor.middleware.enterprise$handle_audit_app_internal_queries_middleware$fn__74859.invoke(enterprise.clj:103)",
-      "query_processor.middleware.process_userland_query$process_userland_query_middleware77967__77968$fn__77969.invoke(process_userland_query.clj:204)",
-      "query_processor.middleware.catch_exceptions$catch_exceptions78032__78033$fn__78034.invoke(catch_exceptions.clj:132)",
-      "query_processor$process_query78073__78074$fn__78075.invoke(query_processor.clj:80)",
-      "query_processor.setup$do_with_canceled_chan75341__75342$fn__75343.invoke(setup.clj:187)",
-      "query_processor.setup$do_with_database_local_settings75334__75335$fn__75336.invoke(setup.clj:181)",
-      "query_processor.setup$do_with_driver75327__75328$fn__75329$fn__75330.invoke(setup.clj:166)",
-      "driver$do_with_driver.invokeStatic(driver.clj:106)",
-      "driver$do_with_driver.invoke(driver.clj:101)",
-      "query_processor.setup$do_with_driver75327__75328$fn__75329.invoke(setup.clj:165)",
-      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320$fn__75323.invoke(setup.clj:151)",
-      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:170)",
-      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-      "query_processor.store$do_with_metadata_provider58703__58704.invokeStatic(store.clj:159)",
-      "query_processor.store$do_with_metadata_provider58703__58704.invoke(store.clj:150)",
-      "query_processor.setup$do_with_metadata_provider75318__75319$fn__75320.invoke(setup.clj:150)",
-      "query_processor.setup$do_with_resolved_database75308__75309$fn__75310.invoke(setup.clj:128)",
-      "query_processor.setup$do_with_qp_setup75346__75347.invokeStatic(setup.clj:232)",
-      "query_processor.setup$do_with_qp_setup75346__75347.invoke(setup.clj:216)",
-      "query_processor$process_query78073__78074.invokeStatic(query_processor.clj:78)",
-      "query_processor$process_query78073__78074.invoke(query_processor.clj:71)",
-      "query_processor.card$process_query_for_card_default_qp87649__87650.invokeStatic(card.clj:229)",
-      "query_processor.card$process_query_for_card_default_qp87649__87650.invoke(card.clj:225)",
-      "query_processor.card$process_query_for_card_default_run_fn$fn__87652$fn__87653.invoke(card.clj:236)",
-      "query_processor.streaming$_streaming_response$fn__61549$fn__61550$fn__61551.invoke(streaming.clj:175)",
-      "query_processor.streaming$_streaming_response$fn__61549$fn__61550.invoke(streaming.clj:173)",
-      "query_processor.streaming$do_with_streaming_rff.invokeStatic(streaming.clj:164)",
-      "query_processor.streaming$do_with_streaming_rff.invoke(streaming.clj:151)",
-      "query_processor.streaming$_streaming_response$fn__61549.invoke(streaming.clj:170)",
-      "async.streaming_response$do_f_STAR_.invokeStatic(streaming_response.clj:78)",
-      "async.streaming_response$do_f_STAR_.invoke(streaming_response.clj:76)",
-      "async.streaming_response$do_f_async$task__53178.invoke(streaming_response.clj:97)"
-    ],
-    "card_id": 67337,
+    "average_execution_time": null,
+    "status": "completed",
     "context": "question",
-    "error": "Invalid values provided for operator: :string/contains",
-    "row_count": 0,
-    "running_time": 0,
-    "ex-data": {
-      "param-type": "string/contains",
-      "param-value": "",
-      "field-id": 9443644,
-      "type": "invalid-parameter"
-    },
-    "data": {
-      "rows": [],
-      "cols": []
-    }
+    "row_count": 252,
+    "running_time": 11077
   }
 }

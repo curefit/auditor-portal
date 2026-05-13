@@ -172,6 +172,32 @@ Only rows where the **Source** column contains a `metabase.curefit.co` link are 
 
 ---
 
+## Refreshing Sample Result Files
+
+The portal does not generate sample result files in the browser. It only links static files already present under `artifacts/results/`.
+
+To refresh those files while preserving portal behavior:
+
+```bash
+# Preview date normalization and matched files without changing anything
+node scripts/refresh-result-files.mjs --dry-run
+
+# Refresh every result bundle in place
+node scripts/refresh-result-files.mjs --write
+
+# Refresh a subset
+node scripts/refresh-result-files.mjs --write --only question-75109
+node scripts/refresh-result-files.mjs --write --only dashboard-3604
+```
+
+Rules:
+- Only date parameters are auto-updated.
+- Non-date parameters are preserved as-is by default.
+- Reviewed exceptions belong in `artifacts/result_refresh_overrides.json`.
+- After refreshing result files, rerun `node scripts/generate-catalog.mjs` to copy updated artifacts into the portal's static handoff bundle.
+
+---
+
 ## Current Status (as of last generate run)
 
 | Check | Count |

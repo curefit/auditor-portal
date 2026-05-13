@@ -11,7 +11,7 @@
           "ed"
         ]
       ],
-      "value": "2025-12-31"
+      "value": "2026-03-31"
     }
   ],
   "query_response": {
@@ -19,24 +19,29 @@
       "rows": [
         [
           "Both used",
-          24048
-        ],
-        [
-          "Unused",
-          3069756
-        ],
-        [
-          "Transfer used",
-          33752
+          25359
         ],
         [
           "Pause used",
-          1155424
+          1235913
+        ],
+        [
+          "Unused",
+          3233983
+        ],
+        [
+          "Transfer used",
+          36102
         ]
       ],
       "cols": [
         {
-          "display_name": "type",
+          "database_type": "varchar(13)",
+          "lib/deduplicated-name": "type",
+          "lib/original-name": "type",
+          "name": "type",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "type",
           "source": "native",
           "field_ref": [
             "field",
@@ -45,13 +50,18 @@
               "base-type": "type/Text"
             }
           ],
-          "name": "type",
-          "base_type": "type/Text",
-          "database_type": "varchar(13)",
-          "effective_type": "type/Text"
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "type",
+          "display_name": "type",
+          "base_type": "type/Text"
         },
         {
-          "display_name": "memberships",
+          "database_type": "bigint",
+          "lib/deduplicated-name": "memberships",
+          "lib/original-name": "memberships",
+          "name": "memberships",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "memberships",
           "source": "native",
           "field_ref": [
             "field",
@@ -60,21 +70,26 @@
               "base-type": "type/BigInteger"
             }
           ],
-          "name": "memberships",
-          "base_type": "type/BigInteger",
-          "database_type": "bigint",
-          "effective_type": "type/BigInteger"
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "memberships",
+          "display_name": "memberships",
+          "base_type": "type/BigInteger"
         }
       ],
       "native_form": {
         "params": [
-          "2025-12-31",
-          "2025-12-31",
-          "2025-12-31",
-          "2025-12-31",
-          "2025-12-31"
+          "2026-03-31",
+          "2026-03-31",
+          "2026-03-31",
+          "2026-03-31",
+          "2026-03-31"
         ],
+        "lib/type": "mbql.stage/native",
         "query": "WITH\n  base AS (\n    SELECT\n      m.membership_key,\n      fitness_next_membership\n    FROM\n      dwh_fitness_mart.membership_dim m\n    WHERE 1=1\n      AND m.membership_created_date between date('2017-10-01') and ?\n      and m.business_line in ('ELITE','PRO','PLAY')\n    --   and amount_paid>2000\n    GROUP BY\n      1,\n      2\n  ),\n\n  parent_child_map AS (\n    SELECT * FROM (\n      SELECT \n        DISTINCT CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS VARCHAR) AS parent_membership_id,\n        cast(m.id as VARCHAR) AS child_membership_id,\n        CASE \n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true' THEN 'Upgrade'\n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true' THEN 'Transfer'\n          ELSE 'Undefined' \n        END AS relationship,\n        md.membership_key, -- needed to join back to base\n        md.business_line,\n        DATE(m2.start) AS parent_pack_start_date,\n        DATE(m2.\"end\") AS parent_pack_end_date_latest,\n        DATE(m.start) AS child_pack_start_date,\n        DATE(m.\"end\") AS child_pack_end_date_latest, \n        COALESCE(COALESCE(CAST(of2.price AS DOUBLE),CAST(m2.price AS DOUBLE)),0) AS parent_amount_paid,\n        COALESCE(COALESCE(CAST(of.price AS DOUBLE),CAST(m.price AS DOUBLE)),0) AS child_amount_paid,\n        DATE(m.cancellation_date) AS child_cancellation_date,\n        DATE(m2.cancellation_date) AS parent_cancellation_date,\n        DATE(m2.created_date) AS parent_created_date,\n        DATE(m.created_date) AS child_created_date,\n        ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num\n      FROM pk_curefitplatforms_membershipdb.memberships m\n      LEFT JOIN dwh_fitness_mart.membership_dim md on m.id = md.membership_service_id\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id\n      LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= ?\n      LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= ?\n      WHERE TRUE\n        AND m.created_date between date('2017-10-01') and ?\n        AND (\n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true'\n          OR \n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true'\n        ) \n        AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')\n    )\n    WHERE row_num = 1\n    -- Filter to Transfer only (excluding Upgrades) to match original transfer logic\n    AND relationship = 'Transfer'\n  )\n\nSELECT\n  CASE \n    WHEN f.membership_key IS NOT NULL AND pcm.parent_membership_id IS NOT NULL THEN 'Both used'\n    WHEN f.membership_key IS NOT NULL THEN 'Pause used'\n    WHEN pcm.parent_membership_id IS NOT NULL THEN 'Transfer used'\n    ELSE 'Unused'\n  END AS type,\n  count(DISTINCT b.membership_key) AS memberships\nFROM base b\nLEFT JOIN dwh_fitness_bi.pause_and_extension_fact f \n  ON b.membership_key = f.membership_key\n  AND UPPER(event_type) = 'PAUSE'\n  AND event_date <= ? + interval '12' month\nLEFT JOIN parent_child_map pcm\n  ON b.membership_key = pcm.membership_key  -- join on parent's membership_key\n\nGROUP BY 1"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
       },
       "results_timezone": "UTC",
       "requested_timezone": "UTC",
@@ -82,7 +97,14 @@
       "results_metadata": {
         "columns": [
           {
-            "display_name": "type",
+            "database_type": "varchar(13)",
+            "semantic_type": "type/Category",
+            "lib/deduplicated-name": "type",
+            "lib/original-name": "type",
+            "name": "type",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "type",
+            "source": "native",
             "field_ref": [
               "field",
               "type",
@@ -90,28 +112,35 @@
                 "base-type": "type/Text"
               }
             ],
-            "base_type": "type/Text",
             "effective_type": "type/Text",
-            "name": "type",
-            "semantic_type": "type/Category",
+            "lib/desired-column-alias": "type",
+            "display_name": "type",
             "fingerprint": {
               "global": {
                 "distinct-count": 4,
-                "nil%": 0.0
+                "nil%": 0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0.0,
-                  "percent-url": 0.0,
-                  "percent-email": 0.0,
-                  "percent-state": 0.0,
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
                   "average-length": 9.5
                 }
               }
-            }
+            },
+            "base_type": "type/Text"
           },
           {
-            "display_name": "memberships",
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "memberships",
+            "lib/original-name": "memberships",
+            "name": "memberships",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "memberships",
+            "source": "native",
             "field_ref": [
               "field",
               "memberships",
@@ -119,26 +148,26 @@
                 "base-type": "type/BigInteger"
               }
             ],
-            "base_type": "type/BigInteger",
             "effective_type": "type/BigInteger",
-            "name": "memberships",
-            "semantic_type": null,
+            "lib/desired-column-alias": "memberships",
+            "display_name": "memberships",
             "fingerprint": {
               "global": {
                 "distinct-count": 4,
-                "nil%": 0.0
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 24048.0,
-                  "q1": 28900.0,
-                  "q3": 2112590.0,
-                  "max": 3069756.0,
-                  "sd": 1434589.9069095205,
-                  "avg": 1070745.0
+                  "min": 25359,
+                  "q1": 30730.5,
+                  "q3": 2234948,
+                  "max": 3233983,
+                  "sd": 1511596.7667537034,
+                  "avg": 1132839.25
                 }
               }
-            }
+            },
+            "base_type": "type/BigInteger"
           }
         ]
       },
@@ -146,41 +175,45 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-04-17T06:36:03.094112Z",
+    "started_at": "2026-05-13T10:53:23.027459644Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
         "max-results-bare-rows": 5000
       },
-      "type": "native",
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "ed": {
+              "id": "cb5c1038-64f9-4c0e-8b20-17cecf810cd2",
+              "type": "date",
+              "name": "ed",
+              "display-name": "Ed"
+            }
+          },
+          "native": "WITH\n  base AS (\n    SELECT\n      m.membership_key,\n      fitness_next_membership\n    FROM\n      dwh_fitness_mart.membership_dim m\n    WHERE 1=1\n      AND m.membership_created_date between date('2017-10-01') and {{ed}}\n      and m.business_line in ('ELITE','PRO','PLAY')\n    --   and amount_paid>2000\n    GROUP BY\n      1,\n      2\n  ),\n\n  parent_child_map AS (\n    SELECT * FROM (\n      SELECT \n        DISTINCT CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS VARCHAR) AS parent_membership_id,\n        cast(m.id as VARCHAR) AS child_membership_id,\n        CASE \n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true' THEN 'Upgrade'\n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true' THEN 'Transfer'\n          ELSE 'Undefined' \n        END AS relationship,\n        md.membership_key, -- needed to join back to base\n        md.business_line,\n        DATE(m2.start) AS parent_pack_start_date,\n        DATE(m2.\"end\") AS parent_pack_end_date_latest,\n        DATE(m.start) AS child_pack_start_date,\n        DATE(m.\"end\") AS child_pack_end_date_latest, \n        COALESCE(COALESCE(CAST(of2.price AS DOUBLE),CAST(m2.price AS DOUBLE)),0) AS parent_amount_paid,\n        COALESCE(COALESCE(CAST(of.price AS DOUBLE),CAST(m.price AS DOUBLE)),0) AS child_amount_paid,\n        DATE(m.cancellation_date) AS child_cancellation_date,\n        DATE(m2.cancellation_date) AS parent_cancellation_date,\n        DATE(m2.created_date) AS parent_created_date,\n        DATE(m.created_date) AS child_created_date,\n        ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num\n      FROM pk_curefitplatforms_membershipdb.memberships m\n      LEFT JOIN dwh_fitness_mart.membership_dim md on m.id = md.membership_service_id\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id\n      LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= {{ed}}\n      LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= {{ed}}\n      WHERE TRUE\n        AND m.created_date between date('2017-10-01') and {{ed}}\n        AND (\n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true'\n          OR \n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true'\n        ) \n        AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')\n    )\n    WHERE row_num = 1\n    -- Filter to Transfer only (excluding Upgrades) to match original transfer logic\n    AND relationship = 'Transfer'\n  )\n\nSELECT\n  CASE \n    WHEN f.membership_key IS NOT NULL AND pcm.parent_membership_id IS NOT NULL THEN 'Both used'\n    WHEN f.membership_key IS NOT NULL THEN 'Pause used'\n    WHEN pcm.parent_membership_id IS NOT NULL THEN 'Transfer used'\n    ELSE 'Unused'\n  END AS type,\n  count(DISTINCT b.membership_key) AS memberships\nFROM base b\nLEFT JOIN dwh_fitness_bi.pause_and_extension_fact f \n  ON b.membership_key = f.membership_key\n  AND UPPER(event_type) = 'PAUSE'\n  AND event_date <= {{ed}} + interval '12' month\nLEFT JOIN parent_child_map pcm\n  ON b.membership_key = pcm.membership_key  -- join on parent's membership_key\n\nGROUP BY 1"
+        }
+      ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": false,
+        "ignore-cached-results?": true,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "avg-execution-ms": 0,
-        "invalidated-at": "2026-04-16T18:36:03.090193Z"
-      },
-      "native": {
-        "template-tags": {
-          "ed": {
-            "type": "date",
-            "name": "ed",
-            "id": "cb5c1038-64f9-4c0e-8b20-17cecf810cd2",
-            "display-name": "Ed"
-          }
-        },
-        "query": "WITH\n  base AS (\n    SELECT\n      m.membership_key,\n      fitness_next_membership\n    FROM\n      dwh_fitness_mart.membership_dim m\n    WHERE 1=1\n      AND m.membership_created_date between date('2017-10-01') and {{ed}}\n      and m.business_line in ('ELITE','PRO','PLAY')\n    --   and amount_paid>2000\n    GROUP BY\n      1,\n      2\n  ),\n\n  parent_child_map AS (\n    SELECT * FROM (\n      SELECT \n        DISTINCT CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS VARCHAR) AS parent_membership_id,\n        cast(m.id as VARCHAR) AS child_membership_id,\n        CASE \n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true' THEN 'Upgrade'\n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true' THEN 'Transfer'\n          ELSE 'Undefined' \n        END AS relationship,\n        md.membership_key, -- needed to join back to base\n        md.business_line,\n        DATE(m2.start) AS parent_pack_start_date,\n        DATE(m2.\"end\") AS parent_pack_end_date_latest,\n        DATE(m.start) AS child_pack_start_date,\n        DATE(m.\"end\") AS child_pack_end_date_latest, \n        COALESCE(COALESCE(CAST(of2.price AS DOUBLE),CAST(m2.price AS DOUBLE)),0) AS parent_amount_paid,\n        COALESCE(COALESCE(CAST(of.price AS DOUBLE),CAST(m.price AS DOUBLE)),0) AS child_amount_paid,\n        DATE(m.cancellation_date) AS child_cancellation_date,\n        DATE(m2.cancellation_date) AS parent_cancellation_date,\n        DATE(m2.created_date) AS parent_created_date,\n        DATE(m.created_date) AS child_created_date,\n        ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num\n      FROM pk_curefitplatforms_membershipdb.memberships m\n      LEFT JOIN dwh_fitness_mart.membership_dim md on m.id = md.membership_service_id\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id\n      LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= {{ed}}\n      LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= {{ed}}\n      WHERE TRUE\n        AND m.created_date between date('2017-10-01') and {{ed}}\n        AND (\n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true'\n          OR \n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true'\n        ) \n        AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')\n    )\n    WHERE row_num = 1\n    -- Filter to Transfer only (excluding Upgrades) to match original transfer logic\n    AND relationship = 'Transfer'\n  )\n\nSELECT\n  CASE \n    WHEN f.membership_key IS NOT NULL AND pcm.parent_membership_id IS NOT NULL THEN 'Both used'\n    WHEN f.membership_key IS NOT NULL THEN 'Pause used'\n    WHEN pcm.parent_membership_id IS NOT NULL THEN 'Transfer used'\n    ELSE 'Unused'\n  END AS type,\n  count(DISTINCT b.membership_key) AS memberships\nFROM base b\nLEFT JOIN dwh_fitness_bi.pause_and_extension_fact f \n  ON b.membership_key = f.membership_key\n  AND UPPER(event_type) = 'PAUSE'\n  AND event_date <= {{ed}} + interval '12' month\nLEFT JOIN parent_child_map pcm\n  ON b.membership_key = pcm.membership_key  -- join on parent's membership_key\n\nGROUP BY 1"
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false
       },
       "viz-settings": {
         "table.pivot_column": "type",
         "table.cell_column": "memberships"
       },
+      "lib.convert/converted?": true,
       "database": 39,
       "parameters": [
         {
@@ -192,7 +225,7 @@
               "ed"
             ]
           ],
-          "value": "2025-12-31"
+          "value": "2026-03-31"
         }
       ]
     },
@@ -200,6 +233,6 @@
     "status": "completed",
     "context": "question",
     "row_count": 4,
-    "running_time": 57011
+    "running_time": 20008
   }
 }

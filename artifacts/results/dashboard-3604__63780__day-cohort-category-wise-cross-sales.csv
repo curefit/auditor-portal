@@ -1,1 +1,763 @@
-
+order_date,sort_key,cohort,category,total_gmv
+April - 2023,2023-04-01T00:00:00Z,Active Complimentary,Indoor Equipment,3122447
+April - 2023,2023-04-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2491720
+April - 2023,2023-04-01T00:00:00Z,Active Elite,Indoor Equipment,1616645
+April - 2023,2023-04-01T00:00:00Z,Active B2B,Indoor Equipment,507857
+April - 2023,2023-04-01T00:00:00Z,Expired Elite,Indoor Equipment,478270
+April - 2023,2023-04-01T00:00:00Z,Active Athome,Indoor Equipment,394875
+April - 2023,2023-04-01T00:00:00Z,Active Pro,Indoor Equipment,280756
+April - 2023,2023-04-01T00:00:00Z,Expired B2B,Indoor Equipment,237071
+April - 2023,2023-04-01T00:00:00Z,Expired Athome,Indoor Equipment,172235
+April - 2023,2023-04-01T00:00:00Z,Active Play,Indoor Equipment,58516
+April - 2023,2023-04-01T00:00:00Z,MP Complimentary,Indoor Equipment,38499
+April - 2023,2023-04-01T00:00:00Z,Expired Pro,Indoor Equipment,24788
+April - 2023,2023-04-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,10838
+April - 2023,2023-04-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,9518
+April - 2023,2023-04-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,4899
+April - 2023,2023-04-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,4199
+May - 2023,2023-05-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2271966
+May - 2023,2023-05-01T00:00:00Z,Active Elite,Indoor Equipment,1565643
+May - 2023,2023-05-01T00:00:00Z,Active Complimentary,Indoor Equipment,1477172
+May - 2023,2023-05-01T00:00:00Z,Active Athome,Indoor Equipment,569520
+May - 2023,2023-05-01T00:00:00Z,Active B2B,Indoor Equipment,460209
+May - 2023,2023-05-01T00:00:00Z,Expired Elite,Indoor Equipment,378796
+May - 2023,2023-05-01T00:00:00Z,Active Pro,Indoor Equipment,346620
+May - 2023,2023-05-01T00:00:00Z,Expired Athome,Indoor Equipment,135928
+May - 2023,2023-05-01T00:00:00Z,Active Play,Indoor Equipment,103110
+May - 2023,2023-05-01T00:00:00Z,Expired B2B,Indoor Equipment,82092
+May - 2023,2023-05-01T00:00:00Z,Expired Pro,Indoor Equipment,77022
+May - 2023,2023-05-01T00:00:00Z,MP B2B,Indoor Equipment,19499
+May - 2023,2023-05-01T00:00:00Z,Expired Play,Indoor Equipment,15499
+May - 2023,2023-05-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,5699
+May - 2023,2023-05-01T00:00:00Z,MP Elite,Indoor Equipment,1673
+May - 2023,2023-05-01T00:00:00Z,MP Pro,Indoor Equipment,1049
+June - 2023,2023-06-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2588371
+June - 2023,2023-06-01T00:00:00Z,Active Elite,Indoor Equipment,1662542
+June - 2023,2023-06-01T00:00:00Z,Expired Elite,Indoor Equipment,629589
+June - 2023,2023-06-01T00:00:00Z,Active Athome,Indoor Equipment,552247
+June - 2023,2023-06-01T00:00:00Z,Active Complimentary,Indoor Equipment,515814
+June - 2023,2023-06-01T00:00:00Z,Active B2B,Indoor Equipment,506854
+June - 2023,2023-06-01T00:00:00Z,Active Pro,Indoor Equipment,309789
+June - 2023,2023-06-01T00:00:00Z,Expired B2B,Indoor Equipment,194227
+June - 2023,2023-06-01T00:00:00Z,Expired Athome,Indoor Equipment,181155
+June - 2023,2023-06-01T00:00:00Z,Expired Pro,Indoor Equipment,140001
+June - 2023,2023-06-01T00:00:00Z,Active Play,Indoor Equipment,96942
+June - 2023,2023-06-01T00:00:00Z,MP Elite,Indoor Equipment,5655
+June - 2023,2023-06-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,4559
+June - 2023,2023-06-01T00:00:00Z,MP Pro,Indoor Equipment,0
+June - 2023,2023-06-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,0
+July - 2023,2023-07-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2853674
+July - 2023,2023-07-01T00:00:00Z,Active Elite,Indoor Equipment,1602391
+July - 2023,2023-07-01T00:00:00Z,Active B2B,Indoor Equipment,617743
+July - 2023,2023-07-01T00:00:00Z,Expired Elite,Indoor Equipment,525998
+July - 2023,2023-07-01T00:00:00Z,Active Athome,Indoor Equipment,511115
+July - 2023,2023-07-01T00:00:00Z,Active Complimentary,Indoor Equipment,361067
+July - 2023,2023-07-01T00:00:00Z,Expired Pro,Indoor Equipment,265243
+July - 2023,2023-07-01T00:00:00Z,Expired B2B,Indoor Equipment,197450
+July - 2023,2023-07-01T00:00:00Z,Expired Athome,Indoor Equipment,154365
+July - 2023,2023-07-01T00:00:00Z,Active Pro,Indoor Equipment,137360
+July - 2023,2023-07-01T00:00:00Z,Active Play,Indoor Equipment,130963
+July - 2023,2023-07-01T00:00:00Z,MP Complimentary,Indoor Equipment,14999
+July - 2023,2023-07-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,4759
+July - 2023,2023-07-01T00:00:00Z,Expired Play,Indoor Equipment,2477
+August - 2023,2023-08-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2399982
+August - 2023,2023-08-01T00:00:00Z,Active Elite,Indoor Equipment,1361740
+August - 2023,2023-08-01T00:00:00Z,Expired Elite,Indoor Equipment,542053
+August - 2023,2023-08-01T00:00:00Z,Active B2B,Indoor Equipment,470306
+August - 2023,2023-08-01T00:00:00Z,Active Complimentary,Indoor Equipment,419306
+August - 2023,2023-08-01T00:00:00Z,Active Athome,Indoor Equipment,394442
+August - 2023,2023-08-01T00:00:00Z,Expired B2B,Indoor Equipment,322039
+August - 2023,2023-08-01T00:00:00Z,Active Pro,Indoor Equipment,284494
+August - 2023,2023-08-01T00:00:00Z,Expired Pro,Indoor Equipment,224769
+August - 2023,2023-08-01T00:00:00Z,Expired Athome,Indoor Equipment,200583
+August - 2023,2023-08-01T00:00:00Z,Active Play,Indoor Equipment,122688
+August - 2023,2023-08-01T00:00:00Z,Expired Play,Indoor Equipment,32699
+August - 2023,2023-08-01T00:00:00Z,MP Elite,Indoor Equipment,15898
+August - 2023,2023-08-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,15499
+September - 2023,2023-09-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2038035
+September - 2023,2023-09-01T00:00:00Z,Active Elite,Indoor Equipment,1086640
+September - 2023,2023-09-01T00:00:00Z,Expired Elite,Indoor Equipment,537347
+September - 2023,2023-09-01T00:00:00Z,Active B2B,Indoor Equipment,481675
+September - 2023,2023-09-01T00:00:00Z,Active Pro,Indoor Equipment,293572
+September - 2023,2023-09-01T00:00:00Z,Active Athome,Indoor Equipment,262111
+September - 2023,2023-09-01T00:00:00Z,Expired Pro,Indoor Equipment,216670
+September - 2023,2023-09-01T00:00:00Z,Expired Athome,Indoor Equipment,185134
+September - 2023,2023-09-01T00:00:00Z,Active Complimentary,Indoor Equipment,172903
+September - 2023,2023-09-01T00:00:00Z,Expired B2B,Indoor Equipment,139151
+September - 2023,2023-09-01T00:00:00Z,Active Play,Indoor Equipment,122438
+September - 2023,2023-09-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,46651
+September - 2023,2023-09-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,34675
+September - 2023,2023-09-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,33956
+September - 2023,2023-09-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,33289
+September - 2023,2023-09-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,24832
+September - 2023,2023-09-01T00:00:00Z,Expired Play,Indoor Equipment,16499
+September - 2023,2023-09-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,14771
+September - 2023,2023-09-01T00:00:00Z,MP Pro,Indoor Equipment,14482
+September - 2023,2023-09-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,11746
+September - 2023,2023-09-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,8957
+September - 2023,2023-09-01T00:00:00Z,MP Elite,Indoor Equipment,7499
+September - 2023,2023-09-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,2848
+September - 2023,2023-09-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,2624
+October - 2023,2023-10-01T00:00:00Z,Expired Complimentary,Indoor Equipment,1830207
+October - 2023,2023-10-01T00:00:00Z,Active Elite,Indoor Equipment,1420332
+October - 2023,2023-10-01T00:00:00Z,Active B2B,Indoor Equipment,332081
+October - 2023,2023-10-01T00:00:00Z,Expired Elite,Indoor Equipment,293839
+October - 2023,2023-10-01T00:00:00Z,Expired Pro,Indoor Equipment,254441
+October - 2023,2023-10-01T00:00:00Z,Active Complimentary,Indoor Equipment,253360
+October - 2023,2023-10-01T00:00:00Z,Active Athome,Indoor Equipment,250087
+October - 2023,2023-10-01T00:00:00Z,Expired B2B,Indoor Equipment,241099
+October - 2023,2023-10-01T00:00:00Z,Expired Athome,Indoor Equipment,165412
+October - 2023,2023-10-01T00:00:00Z,Active Play,Indoor Equipment,142862
+October - 2023,2023-10-01T00:00:00Z,Active Pro,Indoor Equipment,123482
+October - 2023,2023-10-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,39862
+October - 2023,2023-10-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,31406
+October - 2023,2023-10-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,12852
+October - 2023,2023-10-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,11217
+October - 2023,2023-10-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,9615
+October - 2023,2023-10-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,5713
+October - 2023,2023-10-01T00:00:00Z,Expired Play,Indoor_Equipment-Strength,3749
+October - 2023,2023-10-01T00:00:00Z,MP Elite,Indoor Equipment,124
+November - 2023,2023-11-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2152518
+November - 2023,2023-11-01T00:00:00Z,Active Elite,Indoor Equipment,1327061
+November - 2023,2023-11-01T00:00:00Z,Active B2B,Indoor Equipment,612058
+November - 2023,2023-11-01T00:00:00Z,Expired Elite,Indoor Equipment,450372
+November - 2023,2023-11-01T00:00:00Z,Active Athome,Indoor Equipment,444558
+November - 2023,2023-11-01T00:00:00Z,Expired B2B,Indoor Equipment,263668
+November - 2023,2023-11-01T00:00:00Z,Expired Athome,Indoor Equipment,244132
+November - 2023,2023-11-01T00:00:00Z,Expired Pro,Indoor Equipment,233910
+November - 2023,2023-11-01T00:00:00Z,Active Pro,Indoor Equipment,225790
+November - 2023,2023-11-01T00:00:00Z,Active Complimentary,Indoor Equipment,195999
+November - 2023,2023-11-01T00:00:00Z,Active Play,Indoor Equipment,166146
+November - 2023,2023-11-01T00:00:00Z,Expired Play,Indoor Equipment,112205
+November - 2023,2023-11-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,18957
+November - 2023,2023-11-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,15592
+November - 2023,2023-11-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,14194
+November - 2023,2023-11-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,9553
+November - 2023,2023-11-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,9147
+November - 2023,2023-11-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,5510
+November - 2023,2023-11-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,5337
+November - 2023,2023-11-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,4521
+November - 2023,2023-11-01T00:00:00Z,Expired Play,Indoor_Equipment-Strength,4319
+November - 2023,2023-11-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,4146
+November - 2023,2023-11-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,1873
+November - 2023,2023-11-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,1525
+December - 2023,2023-12-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2877500
+December - 2023,2023-12-01T00:00:00Z,Active Elite,Indoor Equipment,1807721
+December - 2023,2023-12-01T00:00:00Z,Expired Elite,Indoor Equipment,855328
+December - 2023,2023-12-01T00:00:00Z,Active B2B,Indoor Equipment,607626
+December - 2023,2023-12-01T00:00:00Z,Active Complimentary,Indoor Equipment,532555
+December - 2023,2023-12-01T00:00:00Z,Active Athome,Indoor Equipment,378286
+December - 2023,2023-12-01T00:00:00Z,Expired B2B,Indoor Equipment,257068
+December - 2023,2023-12-01T00:00:00Z,Expired Athome,Indoor Equipment,256668
+December - 2023,2023-12-01T00:00:00Z,Active Pro,Indoor Equipment,247051
+December - 2023,2023-12-01T00:00:00Z,Active Play,Indoor Equipment,244911
+December - 2023,2023-12-01T00:00:00Z,Expired Pro,Indoor Equipment,136964
+December - 2023,2023-12-01T00:00:00Z,Expired Play,Indoor Equipment,62997
+December - 2023,2023-12-01T00:00:00Z,MP Complimentary,Indoor Equipment,35999
+December - 2023,2023-12-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,34306
+December - 2023,2023-12-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,34167
+December - 2023,2023-12-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,20443
+December - 2023,2023-12-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,18357
+December - 2023,2023-12-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,15609
+December - 2023,2023-12-01T00:00:00Z,Active Lux,Indoor Equipment,12949
+December - 2023,2023-12-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,3999
+December - 2023,2023-12-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,3248
+December - 2023,2023-12-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,2998
+December - 2023,2023-12-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,2998
+December - 2023,2023-12-01T00:00:00Z,Expired Play,Indoor_Equipment-Strength,1749
+January - 2024,2024-01-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2008844
+January - 2024,2024-01-01T00:00:00Z,Active Elite,Indoor Equipment,1306115
+January - 2024,2024-01-01T00:00:00Z,Active Complimentary,Indoor Equipment,636965
+January - 2024,2024-01-01T00:00:00Z,Expired Elite,Indoor Equipment,482717
+January - 2024,2024-01-01T00:00:00Z,Active B2B,Indoor Equipment,467126
+January - 2024,2024-01-01T00:00:00Z,Expired B2B,Indoor Equipment,301890
+January - 2024,2024-01-01T00:00:00Z,Expired Pro,Indoor Equipment,289990
+January - 2024,2024-01-01T00:00:00Z,Active Play,Indoor Equipment,259291
+January - 2024,2024-01-01T00:00:00Z,Active Athome,Indoor Equipment,254722
+January - 2024,2024-01-01T00:00:00Z,Active Pro,Indoor Equipment,101204
+January - 2024,2024-01-01T00:00:00Z,Expired Athome,Indoor Equipment,99095
+January - 2024,2024-01-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,43950
+January - 2024,2024-01-01T00:00:00Z,Expired Play,Indoor Equipment,34999
+January - 2024,2024-01-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,25202
+January - 2024,2024-01-01T00:00:00Z,MP Elite,Indoor Equipment,23198
+January - 2024,2024-01-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,10970
+January - 2024,2024-01-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,9741
+January - 2024,2024-01-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,8659
+January - 2024,2024-01-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,3148
+January - 2024,2024-01-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,1978
+January - 2024,2024-01-01T00:00:00Z,Expired Play,Indoor_Equipment-Strength,1844
+January - 2024,2024-01-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,461
+February - 2024,2024-02-01T00:00:00Z,Expired Complimentary,Indoor Equipment,1574126
+February - 2024,2024-02-01T00:00:00Z,Active Elite,Indoor Equipment,1403859
+February - 2024,2024-02-01T00:00:00Z,Active Complimentary,Indoor Equipment,477732
+February - 2024,2024-02-01T00:00:00Z,Expired Elite,Indoor Equipment,454095
+February - 2024,2024-02-01T00:00:00Z,Active B2B,Indoor Equipment,395468
+February - 2024,2024-02-01T00:00:00Z,Active Athome,Indoor Equipment,293813
+February - 2024,2024-02-01T00:00:00Z,Active Pro,Indoor Equipment,230712
+February - 2024,2024-02-01T00:00:00Z,Expired B2B,Indoor Equipment,158131
+February - 2024,2024-02-01T00:00:00Z,Expired Pro,Indoor Equipment,146094
+February - 2024,2024-02-01T00:00:00Z,Expired Athome,Indoor Equipment,130297
+February - 2024,2024-02-01T00:00:00Z,Active Play,Indoor Equipment,48336
+February - 2024,2024-02-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,6999
+February - 2024,2024-02-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,6499
+February - 2024,2024-02-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,6199
+February - 2024,2024-02-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,6002
+February - 2024,2024-02-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,2965
+February - 2024,2024-02-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,2608
+March - 2024,2024-03-01T00:00:00Z,Expired Complimentary,Indoor Equipment,1785195
+March - 2024,2024-03-01T00:00:00Z,Active Elite,Indoor Equipment,1708905
+March - 2024,2024-03-01T00:00:00Z,Expired Elite,Indoor Equipment,723325
+March - 2024,2024-03-01T00:00:00Z,Active Athome,Indoor Equipment,390230
+March - 2024,2024-03-01T00:00:00Z,Active B2B,Indoor Equipment,378387
+March - 2024,2024-03-01T00:00:00Z,Active Complimentary,Indoor Equipment,338247
+March - 2024,2024-03-01T00:00:00Z,Active Pro,Indoor Equipment,208575
+March - 2024,2024-03-01T00:00:00Z,Expired B2B,Indoor Equipment,186105
+March - 2024,2024-03-01T00:00:00Z,Expired Pro,Indoor Equipment,170393
+March - 2024,2024-03-01T00:00:00Z,Expired Athome,Indoor Equipment,84870
+March - 2024,2024-03-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,39004
+March - 2024,2024-03-01T00:00:00Z,Expired Play,Indoor Equipment,38498
+March - 2024,2024-03-01T00:00:00Z,Active Play,Indoor Equipment,27748
+March - 2024,2024-03-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,22355
+March - 2024,2024-03-01T00:00:00Z,Active Lux,Indoor Equipment,13087
+March - 2024,2024-03-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,10280
+March - 2024,2024-03-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,8049
+March - 2024,2024-03-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,5499
+March - 2024,2024-03-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,3639
+April - 2024,2024-04-01T00:00:00Z,Expired Complimentary,Indoor Equipment,1616601
+April - 2024,2024-04-01T00:00:00Z,Active Elite,Indoor Equipment,1215614
+April - 2024,2024-04-01T00:00:00Z,Expired Elite,Indoor Equipment,681867
+April - 2024,2024-04-01T00:00:00Z,Active B2B,Indoor Equipment,554170
+April - 2024,2024-04-01T00:00:00Z,Active Complimentary,Indoor Equipment,480434
+April - 2024,2024-04-01T00:00:00Z,Active Athome,Indoor Equipment,397657
+April - 2024,2024-04-01T00:00:00Z,Expired B2B,Indoor Equipment,345604
+April - 2024,2024-04-01T00:00:00Z,Active Play,Indoor Equipment,294681
+April - 2024,2024-04-01T00:00:00Z,Active Pro,Indoor Equipment,272128
+April - 2024,2024-04-01T00:00:00Z,Expired Athome,Indoor Equipment,160578
+April - 2024,2024-04-01T00:00:00Z,Expired Pro,Indoor Equipment,107997
+April - 2024,2024-04-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,30888
+April - 2024,2024-04-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,24915
+April - 2024,2024-04-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,9398
+April - 2024,2024-04-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,6896
+April - 2024,2024-04-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,5759
+April - 2024,2024-04-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,4700
+April - 2024,2024-04-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,4349
+April - 2024,2024-04-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,1872
+April - 2024,2024-04-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,1864
+May - 2024,2024-05-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2682780
+May - 2024,2024-05-01T00:00:00Z,Active Elite,Indoor Equipment,1611113
+May - 2024,2024-05-01T00:00:00Z,Expired Elite,Indoor Equipment,1096928
+May - 2024,2024-05-01T00:00:00Z,Active B2B,Indoor Equipment,1069476
+May - 2024,2024-05-01T00:00:00Z,Active Athome,Indoor Equipment,557021
+May - 2024,2024-05-01T00:00:00Z,Active Complimentary,Indoor Equipment,336839
+May - 2024,2024-05-01T00:00:00Z,Active Pro,Indoor Equipment,253391
+May - 2024,2024-05-01T00:00:00Z,Expired Pro,Indoor Equipment,250574
+May - 2024,2024-05-01T00:00:00Z,Expired Athome,Indoor Equipment,244645
+May - 2024,2024-05-01T00:00:00Z,Expired B2B,Indoor Equipment,244537
+May - 2024,2024-05-01T00:00:00Z,Active Play,Indoor Equipment,214241
+May - 2024,2024-05-01T00:00:00Z,Expired Play,Indoor Equipment,99997
+May - 2024,2024-05-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,20535
+May - 2024,2024-05-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,14629
+May - 2024,2024-05-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,9438
+May - 2024,2024-05-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,4209
+May - 2024,2024-05-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,4099
+June - 2024,2024-06-01T00:00:00Z,Expired Complimentary,Indoor Equipment,1823406
+June - 2024,2024-06-01T00:00:00Z,Active Elite,Indoor Equipment,1423920
+June - 2024,2024-06-01T00:00:00Z,Expired Elite,Indoor Equipment,1289670
+June - 2024,2024-06-01T00:00:00Z,Active B2B,Indoor Equipment,770927
+June - 2024,2024-06-01T00:00:00Z,Active Athome,Indoor Equipment,549974
+June - 2024,2024-06-01T00:00:00Z,Active Complimentary,Indoor Equipment,404700
+June - 2024,2024-06-01T00:00:00Z,Expired Athome,Indoor Equipment,318963
+June - 2024,2024-06-01T00:00:00Z,Expired Pro,Indoor Equipment,299916
+June - 2024,2024-06-01T00:00:00Z,Expired B2B,Indoor Equipment,204428
+June - 2024,2024-06-01T00:00:00Z,Active Pro,Indoor Equipment,157593
+June - 2024,2024-06-01T00:00:00Z,Active Play,Indoor Equipment,152981
+June - 2024,2024-06-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,14937
+June - 2024,2024-06-01T00:00:00Z,Active Lux,Indoor Equipment,12499
+June - 2024,2024-06-01T00:00:00Z,Expired Play,Indoor Equipment,11899
+June - 2024,2024-06-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,8210
+June - 2024,2024-06-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,7718
+June - 2024,2024-06-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,6821
+June - 2024,2024-06-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,4799
+June - 2024,2024-06-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,3834
+June - 2024,2024-06-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,3828
+June - 2024,2024-06-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,1695
+June - 2024,2024-06-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,1483
+July - 2024,2024-07-01T00:00:00Z,Active Elite,Indoor Equipment,2674167
+July - 2024,2024-07-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2467354
+July - 2024,2024-07-01T00:00:00Z,Expired Elite,Indoor Equipment,973057
+July - 2024,2024-07-01T00:00:00Z,Active B2B,Indoor Equipment,755556
+July - 2024,2024-07-01T00:00:00Z,Active Athome,Indoor Equipment,411285
+July - 2024,2024-07-01T00:00:00Z,Active Pro,Indoor Equipment,358736
+July - 2024,2024-07-01T00:00:00Z,Expired Pro,Indoor Equipment,348205
+July - 2024,2024-07-01T00:00:00Z,Expired Athome,Indoor Equipment,331018
+July - 2024,2024-07-01T00:00:00Z,Active Complimentary,Indoor Equipment,300916
+July - 2024,2024-07-01T00:00:00Z,Active Play,Indoor Equipment,185379
+July - 2024,2024-07-01T00:00:00Z,Expired B2B,Indoor Equipment,180315
+July - 2024,2024-07-01T00:00:00Z,Expired Play,Indoor Equipment,93293
+July - 2024,2024-07-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,23759
+July - 2024,2024-07-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,22826
+July - 2024,2024-07-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,12339
+July - 2024,2024-07-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,8998
+July - 2024,2024-07-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,7598
+July - 2024,2024-07-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,4799
+July - 2024,2024-07-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,4599
+July - 2024,2024-07-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,1483
+August - 2024,2024-08-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2743440
+August - 2024,2024-08-01T00:00:00Z,Active Elite,Indoor Equipment,2527340
+August - 2024,2024-08-01T00:00:00Z,Expired Elite,Indoor Equipment,1216947
+August - 2024,2024-08-01T00:00:00Z,Active B2B,Indoor Equipment,1107130
+August - 2024,2024-08-01T00:00:00Z,Active Play,Indoor Equipment,494272
+August - 2024,2024-08-01T00:00:00Z,Active Complimentary,Indoor Equipment,467319
+August - 2024,2024-08-01T00:00:00Z,Expired B2B,Indoor Equipment,381010
+August - 2024,2024-08-01T00:00:00Z,Active Athome,Indoor Equipment,380661
+August - 2024,2024-08-01T00:00:00Z,Expired Pro,Indoor Equipment,352352
+August - 2024,2024-08-01T00:00:00Z,Expired Athome,Indoor Equipment,332613
+August - 2024,2024-08-01T00:00:00Z,Active Pro,Indoor Equipment,294424
+August - 2024,2024-08-01T00:00:00Z,Expired Play,Indoor Equipment,71623
+August - 2024,2024-08-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,40164
+August - 2024,2024-08-01T00:00:00Z,Active Lux,Indoor Equipment,14999
+August - 2024,2024-08-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,9699
+August - 2024,2024-08-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,9036
+August - 2024,2024-08-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,5982
+August - 2024,2024-08-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,5429
+August - 2024,2024-08-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,4499
+August - 2024,2024-08-01T00:00:00Z,Expired Play,Indoor_Equipment-Strength,4499
+August - 2024,2024-08-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,3499
+August - 2024,2024-08-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,1483
+September - 2024,2024-09-01T00:00:00Z,Active Elite,Indoor Equipment,3480779
+September - 2024,2024-09-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3239620
+September - 2024,2024-09-01T00:00:00Z,Expired Elite,Indoor Equipment,1438691
+September - 2024,2024-09-01T00:00:00Z,Active B2B,Indoor Equipment,1208736
+September - 2024,2024-09-01T00:00:00Z,Active Athome,Indoor Equipment,671620
+September - 2024,2024-09-01T00:00:00Z,Active Complimentary,Indoor Equipment,514369
+September - 2024,2024-09-01T00:00:00Z,Expired Pro,Indoor Equipment,405959
+September - 2024,2024-09-01T00:00:00Z,Active Pro,Indoor Equipment,264852
+September - 2024,2024-09-01T00:00:00Z,Active Lux,Indoor Equipment,217652
+September - 2024,2024-09-01T00:00:00Z,Expired B2B,Indoor Equipment,214018
+September - 2024,2024-09-01T00:00:00Z,Active Play,Indoor Equipment,208135
+September - 2024,2024-09-01T00:00:00Z,Expired Athome,Indoor Equipment,170378
+September - 2024,2024-09-01T00:00:00Z,Expired Play,Indoor Equipment,48499
+September - 2024,2024-09-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,16651
+September - 2024,2024-09-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,13542
+September - 2024,2024-09-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,13497
+September - 2024,2024-09-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,10176
+September - 2024,2024-09-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,4499
+September - 2024,2024-09-01T00:00:00Z,Active Lux,Indoor_Equipment-Strength,4499
+September - 2024,2024-09-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,4499
+September - 2024,2024-09-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,3314
+October - 2024,2024-10-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3432383
+October - 2024,2024-10-01T00:00:00Z,Active Elite,Indoor Equipment,2453920
+October - 2024,2024-10-01T00:00:00Z,Expired Elite,Indoor Equipment,2283604
+October - 2024,2024-10-01T00:00:00Z,Active B2B,Indoor Equipment,1567348
+October - 2024,2024-10-01T00:00:00Z,Active Athome,Indoor Equipment,786382
+October - 2024,2024-10-01T00:00:00Z,Active Complimentary,Indoor Equipment,778754
+October - 2024,2024-10-01T00:00:00Z,Expired B2B,Indoor Equipment,287150
+October - 2024,2024-10-01T00:00:00Z,Active Play,Indoor Equipment,260605
+October - 2024,2024-10-01T00:00:00Z,Expired Pro,Indoor Equipment,200293
+October - 2024,2024-10-01T00:00:00Z,Expired Athome,Indoor Equipment,191076
+October - 2024,2024-10-01T00:00:00Z,Active Pro,Indoor Equipment,89082
+October - 2024,2024-10-01T00:00:00Z,Expired Play,Indoor Equipment,87870
+October - 2024,2024-10-01T00:00:00Z,Active Lux,Indoor Equipment,71498
+October - 2024,2024-10-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,18996
+October - 2024,2024-10-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,16216
+October - 2024,2024-10-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,15980
+October - 2024,2024-10-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,8998
+October - 2024,2024-10-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,7998
+October - 2024,2024-10-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,4499
+October - 2024,2024-10-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,4499
+October - 2024,2024-10-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,1525
+November - 2024,2024-11-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3299810
+November - 2024,2024-11-01T00:00:00Z,Active Elite,Indoor Equipment,3010310
+November - 2024,2024-11-01T00:00:00Z,Active B2B,Indoor Equipment,1570864
+November - 2024,2024-11-01T00:00:00Z,Expired Elite,Indoor Equipment,1404385
+November - 2024,2024-11-01T00:00:00Z,Active Complimentary,Indoor Equipment,544927
+November - 2024,2024-11-01T00:00:00Z,Active Athome,Indoor Equipment,478645
+November - 2024,2024-11-01T00:00:00Z,Active Play,Indoor Equipment,426687
+November - 2024,2024-11-01T00:00:00Z,Active Pro,Indoor Equipment,396014
+November - 2024,2024-11-01T00:00:00Z,Expired Pro,Indoor Equipment,380231
+November - 2024,2024-11-01T00:00:00Z,Expired Athome,Indoor Equipment,364802
+November - 2024,2024-11-01T00:00:00Z,Expired B2B,Indoor Equipment,318990
+November - 2024,2024-11-01T00:00:00Z,Expired Play,Indoor Equipment,253235
+November - 2024,2024-11-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,28170
+November - 2024,2024-11-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,17610
+November - 2024,2024-11-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,8998
+November - 2024,2024-11-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,4597
+November - 2024,2024-11-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,4499
+November - 2024,2024-11-01T00:00:00Z,MP Elite,Indoor_Equipment-Strength,4499
+November - 2024,2024-11-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,4499
+November - 2024,2024-11-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,3813
+December - 2024,2024-12-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3432197
+December - 2024,2024-12-01T00:00:00Z,Active Elite,Indoor Equipment,3387612
+December - 2024,2024-12-01T00:00:00Z,Expired Elite,Indoor Equipment,1658820
+December - 2024,2024-12-01T00:00:00Z,Active B2B,Indoor Equipment,1226395
+December - 2024,2024-12-01T00:00:00Z,Expired B2B,Indoor Equipment,650024
+December - 2024,2024-12-01T00:00:00Z,Active Athome,Indoor Equipment,563770
+December - 2024,2024-12-01T00:00:00Z,Active Complimentary,Indoor Equipment,530335
+December - 2024,2024-12-01T00:00:00Z,Active Play,Indoor Equipment,491783
+December - 2024,2024-12-01T00:00:00Z,Expired Athome,Indoor Equipment,469083
+December - 2024,2024-12-01T00:00:00Z,Expired Play,Indoor Equipment,389991
+December - 2024,2024-12-01T00:00:00Z,Active Pro,Indoor Equipment,379133
+December - 2024,2024-12-01T00:00:00Z,Expired Pro,Indoor Equipment,290991
+December - 2024,2024-12-01T00:00:00Z,MP Pro,Indoor Equipment,61199
+December - 2024,2024-12-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,30781
+December - 2024,2024-12-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,13497
+December - 2024,2024-12-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,13311
+December - 2024,2024-12-01T00:00:00Z,Active Lux,Indoor Equipment,10898
+December - 2024,2024-12-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,5698
+December - 2024,2024-12-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,4999
+December - 2024,2024-12-01T00:00:00Z,Expired Play,Indoor_Equipment-Strength,4499
+December - 2024,2024-12-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,3282
+January - 2025,2025-01-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2965700
+January - 2025,2025-01-01T00:00:00Z,Active Elite,Indoor Equipment,2798766
+January - 2025,2025-01-01T00:00:00Z,Expired Elite,Indoor Equipment,1720553
+January - 2025,2025-01-01T00:00:00Z,Active B2B,Indoor Equipment,955930
+January - 2025,2025-01-01T00:00:00Z,Active Athome,Indoor Equipment,902875
+January - 2025,2025-01-01T00:00:00Z,Expired Pro,Indoor Equipment,550702
+January - 2025,2025-01-01T00:00:00Z,Active Pro,Indoor Equipment,531066
+January - 2025,2025-01-01T00:00:00Z,Expired B2B,Indoor Equipment,476173
+January - 2025,2025-01-01T00:00:00Z,Active Play,Indoor Equipment,435398
+January - 2025,2025-01-01T00:00:00Z,Active Complimentary,Indoor Equipment,371683
+January - 2025,2025-01-01T00:00:00Z,Expired Athome,Indoor Equipment,251958
+January - 2025,2025-01-01T00:00:00Z,Expired Play,Indoor Equipment,208389
+January - 2025,2025-01-01T00:00:00Z,Expired Lux,Indoor Equipment,60999
+January - 2025,2025-01-01T00:00:00Z,Active Lux,Indoor Equipment,35961
+January - 2025,2025-01-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,16810
+January - 2025,2025-01-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,13843
+January - 2025,2025-01-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,9498
+January - 2025,2025-01-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,5875
+January - 2025,2025-01-01T00:00:00Z,Active Lux,Indoor_Equipment-Strength,3999
+January - 2025,2025-01-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,3999
+January - 2025,2025-01-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,3981
+January - 2025,2025-01-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,2203
+January - 2025,2025-01-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,1525
+January - 2025,2025-01-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,647
+January - 2025,2025-01-01T00:00:00Z,MP Pro,Indoor Equipment,631
+February - 2025,2025-02-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2082380
+February - 2025,2025-02-01T00:00:00Z,Active Elite,Indoor Equipment,2014810
+February - 2025,2025-02-01T00:00:00Z,Active B2B,Indoor Equipment,1452605
+February - 2025,2025-02-01T00:00:00Z,Expired Elite,Indoor Equipment,1331244
+February - 2025,2025-02-01T00:00:00Z,Expired Pro,Indoor Equipment,478923
+February - 2025,2025-02-01T00:00:00Z,Active Pro,Indoor Equipment,440155
+February - 2025,2025-02-01T00:00:00Z,Active Complimentary,Indoor Equipment,245946
+February - 2025,2025-02-01T00:00:00Z,Expired Athome,Indoor Equipment,232597
+February - 2025,2025-02-01T00:00:00Z,Expired B2B,Indoor Equipment,219891
+February - 2025,2025-02-01T00:00:00Z,Active Athome,Indoor Equipment,196260
+February - 2025,2025-02-01T00:00:00Z,Active Play,Indoor Equipment,95872
+February - 2025,2025-02-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,32335
+February - 2025,2025-02-01T00:00:00Z,Expired Play,Indoor Equipment,28999
+February - 2025,2025-02-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,17606
+February - 2025,2025-02-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,11997
+February - 2025,2025-02-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,11647
+February - 2025,2025-02-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,9123
+February - 2025,2025-02-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,8998
+February - 2025,2025-02-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,5863
+February - 2025,2025-02-01T00:00:00Z,Active Lux,Indoor_Equipment-Strength,4291
+February - 2025,2025-02-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,3999
+March - 2025,2025-03-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3397368
+March - 2025,2025-03-01T00:00:00Z,Active Elite,Indoor Equipment,2824067
+March - 2025,2025-03-01T00:00:00Z,Expired Elite,Indoor Equipment,1660259
+March - 2025,2025-03-01T00:00:00Z,Active B2B,Indoor Equipment,1191636
+March - 2025,2025-03-01T00:00:00Z,Expired B2B,Indoor Equipment,359211
+March - 2025,2025-03-01T00:00:00Z,Expired Athome,Indoor Equipment,346787
+March - 2025,2025-03-01T00:00:00Z,Active Pro,Indoor Equipment,345722
+March - 2025,2025-03-01T00:00:00Z,Active Athome,Indoor Equipment,295108
+March - 2025,2025-03-01T00:00:00Z,Expired Pro,Indoor Equipment,237989
+March - 2025,2025-03-01T00:00:00Z,Active Complimentary,Indoor Equipment,218811
+March - 2025,2025-03-01T00:00:00Z,Active Play,Indoor Equipment,124790
+March - 2025,2025-03-01T00:00:00Z,Expired Play,Indoor Equipment,70497
+March - 2025,2025-03-01T00:00:00Z,Active Lux,Indoor Equipment,40498
+March - 2025,2025-03-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,23973
+March - 2025,2025-03-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,19932
+March - 2025,2025-03-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,13896
+March - 2025,2025-03-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,7998
+March - 2025,2025-03-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,6227
+March - 2025,2025-03-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,4680
+March - 2025,2025-03-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,4499
+March - 2025,2025-03-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,3999
+March - 2025,2025-03-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,3142
+March - 2025,2025-03-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,1539
+April - 2025,2025-04-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2073853
+April - 2025,2025-04-01T00:00:00Z,Active Elite,Indoor Equipment,1836641
+April - 2025,2025-04-01T00:00:00Z,Expired Elite,Indoor Equipment,1109561
+April - 2025,2025-04-01T00:00:00Z,Active B2B,Indoor Equipment,769468
+April - 2025,2025-04-01T00:00:00Z,Expired Pro,Indoor Equipment,476492
+April - 2025,2025-04-01T00:00:00Z,Active Athome,Indoor Equipment,435356
+April - 2025,2025-04-01T00:00:00Z,Active Play,Indoor Equipment,351766
+April - 2025,2025-04-01T00:00:00Z,Active Complimentary,Indoor Equipment,304796
+April - 2025,2025-04-01T00:00:00Z,Expired B2B,Indoor Equipment,269807
+April - 2025,2025-04-01T00:00:00Z,Active Pro,Indoor Equipment,246841
+April - 2025,2025-04-01T00:00:00Z,Expired Athome,Indoor Equipment,129506
+April - 2025,2025-04-01T00:00:00Z,Expired Play,Indoor Equipment,110896
+April - 2025,2025-04-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,12998
+April - 2025,2025-04-01T00:00:00Z,Expired Lux,Indoor Equipment,10999
+April - 2025,2025-04-01T00:00:00Z,Active Lux,Indoor Equipment,10499
+April - 2025,2025-04-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,5499
+April - 2025,2025-04-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,4398
+April - 2025,2025-04-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,3499
+May - 2025,2025-05-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3387598
+May - 2025,2025-05-01T00:00:00Z,Active Elite,Indoor Equipment,2833443
+May - 2025,2025-05-01T00:00:00Z,Expired Elite,Indoor Equipment,2186844
+May - 2025,2025-05-01T00:00:00Z,Active B2B,Indoor Equipment,1753543
+May - 2025,2025-05-01T00:00:00Z,Active Play,Indoor Equipment,698099
+May - 2025,2025-05-01T00:00:00Z,Active Athome,Indoor Equipment,506676
+May - 2025,2025-05-01T00:00:00Z,Expired B2B,Indoor Equipment,446220
+May - 2025,2025-05-01T00:00:00Z,Expired Pro,Indoor Equipment,280149
+May - 2025,2025-05-01T00:00:00Z,Active Pro,Indoor Equipment,268582
+May - 2025,2025-05-01T00:00:00Z,Active Complimentary,Indoor Equipment,184981
+May - 2025,2025-05-01T00:00:00Z,Expired Athome,Indoor Equipment,181841
+May - 2025,2025-05-01T00:00:00Z,Expired Play,Indoor Equipment,115344
+May - 2025,2025-05-01T00:00:00Z,Active Lux,Indoor Equipment,61998
+May - 2025,2025-05-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,12998
+May - 2025,2025-05-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,8597
+May - 2025,2025-05-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,4999
+May - 2025,2025-05-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,1259
+June - 2025,2025-06-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3465035
+June - 2025,2025-06-01T00:00:00Z,Active Elite,Indoor Equipment,2880996
+June - 2025,2025-06-01T00:00:00Z,Expired Elite,Indoor Equipment,2370442
+June - 2025,2025-06-01T00:00:00Z,Active B2B,Indoor Equipment,1937853
+June - 2025,2025-06-01T00:00:00Z,Active Athome,Indoor Equipment,562270
+June - 2025,2025-06-01T00:00:00Z,Active Pro,Indoor Equipment,482012
+June - 2025,2025-06-01T00:00:00Z,Expired B2B,Indoor Equipment,367177
+June - 2025,2025-06-01T00:00:00Z,Expired Athome,Indoor Equipment,339563
+June - 2025,2025-06-01T00:00:00Z,Active Complimentary,Indoor Equipment,271655
+June - 2025,2025-06-01T00:00:00Z,Expired Pro,Indoor Equipment,200563
+June - 2025,2025-06-01T00:00:00Z,Active Play,Indoor Equipment,125200
+June - 2025,2025-06-01T00:00:00Z,Expired Play,Indoor Equipment,62996
+June - 2025,2025-06-01T00:00:00Z,Active Lux,Indoor Equipment,40498
+June - 2025,2025-06-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,11398
+June - 2025,2025-06-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,10898
+June - 2025,2025-06-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,10697
+June - 2025,2025-06-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,4479
+June - 2025,2025-06-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,3499
+June - 2025,2025-06-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,3499
+June - 2025,2025-06-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,1799
+June - 2025,2025-06-01T00:00:00Z,MP Pro,Indoor Equipment,750
+July - 2025,2025-07-01T00:00:00Z,Expired Complimentary,Indoor Equipment,2875940
+July - 2025,2025-07-01T00:00:00Z,Active Elite,Indoor Equipment,2465752
+July - 2025,2025-07-01T00:00:00Z,Expired Elite,Indoor Equipment,2083064
+July - 2025,2025-07-01T00:00:00Z,Active B2B,Indoor Equipment,1445867
+July - 2025,2025-07-01T00:00:00Z,Active Athome,Indoor Equipment,465810
+July - 2025,2025-07-01T00:00:00Z,Expired B2B,Indoor Equipment,458644
+July - 2025,2025-07-01T00:00:00Z,Expired Athome,Indoor Equipment,420492
+July - 2025,2025-07-01T00:00:00Z,Active Pro,Indoor Equipment,348945
+July - 2025,2025-07-01T00:00:00Z,Expired Pro,Indoor Equipment,304680
+July - 2025,2025-07-01T00:00:00Z,Active Play,Indoor Equipment,125352
+July - 2025,2025-07-01T00:00:00Z,Active Complimentary,Indoor Equipment,115896
+July - 2025,2025-07-01T00:00:00Z,Expired Play,Indoor Equipment,92397
+July - 2025,2025-07-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,83991
+July - 2025,2025-07-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,71193
+July - 2025,2025-07-01T00:00:00Z,Active Lux,Indoor Equipment,54495
+July - 2025,2025-07-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,43764
+July - 2025,2025-07-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,25098
+July - 2025,2025-07-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,21447
+July - 2025,2025-07-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,20945
+July - 2025,2025-07-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,17398
+July - 2025,2025-07-01T00:00:00Z,Expired Lux,Indoor Equipment,16999
+July - 2025,2025-07-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,15057
+July - 2025,2025-07-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,12999
+July - 2025,2025-07-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,11099
+July - 2025,2025-07-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,1799
+August - 2025,2025-08-01T00:00:00Z,Expired Complimentary,Indoor Equipment,4061259
+August - 2025,2025-08-01T00:00:00Z,Active Elite,Indoor Equipment,3996754
+August - 2025,2025-08-01T00:00:00Z,Expired Elite,Indoor Equipment,2152262
+August - 2025,2025-08-01T00:00:00Z,Active B2B,Indoor Equipment,1417229
+August - 2025,2025-08-01T00:00:00Z,Expired B2B,Indoor Equipment,655161
+August - 2025,2025-08-01T00:00:00Z,Expired Pro,Indoor Equipment,573393
+August - 2025,2025-08-01T00:00:00Z,Active Athome,Indoor Equipment,472585
+August - 2025,2025-08-01T00:00:00Z,Active Pro,Indoor Equipment,406532
+August - 2025,2025-08-01T00:00:00Z,Active Play,Indoor Equipment,264133
+August - 2025,2025-08-01T00:00:00Z,Expired Athome,Indoor Equipment,262384
+August - 2025,2025-08-01T00:00:00Z,Active Lux,Indoor Equipment,254563
+August - 2025,2025-08-01T00:00:00Z,Expired Play,Indoor Equipment,120995
+August - 2025,2025-08-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,110695
+August - 2025,2025-08-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,69460
+August - 2025,2025-08-01T00:00:00Z,Active Complimentary,Indoor Equipment,65393
+August - 2025,2025-08-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,50422
+August - 2025,2025-08-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,46065
+August - 2025,2025-08-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,42896
+August - 2025,2025-08-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,13099
+August - 2025,2025-08-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,11283
+August - 2025,2025-08-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,1029
+September - 2025,2025-09-01T00:00:00Z,Expired Complimentary,Indoor Equipment,4435838
+September - 2025,2025-09-01T00:00:00Z,Active Elite,Indoor Equipment,3551225
+September - 2025,2025-09-01T00:00:00Z,Expired Elite,Indoor Equipment,2224442
+September - 2025,2025-09-01T00:00:00Z,Active B2B,Indoor Equipment,1687849
+September - 2025,2025-09-01T00:00:00Z,Expired B2B,Indoor Equipment,786496
+September - 2025,2025-09-01T00:00:00Z,Expired Athome,Indoor Equipment,487070
+September - 2025,2025-09-01T00:00:00Z,Active Athome,Indoor Equipment,457692
+September - 2025,2025-09-01T00:00:00Z,Expired Pro,Indoor Equipment,379863
+September - 2025,2025-09-01T00:00:00Z,Active Pro,Indoor Equipment,279491
+September - 2025,2025-09-01T00:00:00Z,Active Lux,Indoor Equipment,251533
+September - 2025,2025-09-01T00:00:00Z,Active Play,Indoor Equipment,243689
+September - 2025,2025-09-01T00:00:00Z,Expired Play,Indoor Equipment,208598
+September - 2025,2025-09-01T00:00:00Z,Active Complimentary,Indoor Equipment,180907
+September - 2025,2025-09-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,126450
+September - 2025,2025-09-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,92305
+September - 2025,2025-09-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,50693
+September - 2025,2025-09-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,44986
+September - 2025,2025-09-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,40704
+September - 2025,2025-09-01T00:00:00Z,Expired Lux,Indoor Equipment,22998
+September - 2025,2025-09-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,18461
+September - 2025,2025-09-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,11199
+September - 2025,2025-09-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,11199
+September - 2025,2025-09-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,1514
+September - 2025,2025-09-01T00:00:00Z,MP Elite,Indoor Equipment,1199
+October - 2025,2025-10-01T00:00:00Z,Expired Complimentary,Indoor Equipment,4294371
+October - 2025,2025-10-01T00:00:00Z,Active Elite,Indoor Equipment,3018813
+October - 2025,2025-10-01T00:00:00Z,Active B2B,Indoor Equipment,2074859
+October - 2025,2025-10-01T00:00:00Z,Expired Elite,Indoor Equipment,1991191
+October - 2025,2025-10-01T00:00:00Z,Expired Pro,Indoor Equipment,714888
+October - 2025,2025-10-01T00:00:00Z,Active Athome,Indoor Equipment,635138
+October - 2025,2025-10-01T00:00:00Z,Expired B2B,Indoor Equipment,447459
+October - 2025,2025-10-01T00:00:00Z,Active Pro,Indoor Equipment,395481
+October - 2025,2025-10-01T00:00:00Z,Expired Play,Indoor Equipment,332491
+October - 2025,2025-10-01T00:00:00Z,Expired Athome,Indoor Equipment,305238
+October - 2025,2025-10-01T00:00:00Z,Active Lux,Indoor Equipment,235469
+October - 2025,2025-10-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,122658
+October - 2025,2025-10-01T00:00:00Z,Active Complimentary,Indoor Equipment,111089
+October - 2025,2025-10-01T00:00:00Z,Active Play,Indoor Equipment,56476
+October - 2025,2025-10-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,49686
+October - 2025,2025-10-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,40512
+October - 2025,2025-10-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,34695
+October - 2025,2025-10-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,33841
+October - 2025,2025-10-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,33076
+October - 2025,2025-10-01T00:00:00Z,Expired Lux,Indoor Equipment,29398
+October - 2025,2025-10-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,11999
+October - 2025,2025-10-01T00:00:00Z,MP Play,Indoor Equipment,9999
+October - 2025,2025-10-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,6099
+October - 2025,2025-10-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,4099
+October - 2025,2025-10-01T00:00:00Z,Active Lux,Indoor_Equipment-Strength,3279
+November - 2025,2025-11-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3541099
+November - 2025,2025-11-01T00:00:00Z,Active Elite,Indoor Equipment,2790133
+November - 2025,2025-11-01T00:00:00Z,Expired Elite,Indoor Equipment,2564881
+November - 2025,2025-11-01T00:00:00Z,Active B2B,Indoor Equipment,1646541
+November - 2025,2025-11-01T00:00:00Z,Expired B2B,Indoor Equipment,1016426
+November - 2025,2025-11-01T00:00:00Z,Expired Pro,Indoor Equipment,840156
+November - 2025,2025-11-01T00:00:00Z,Active Athome,Indoor Equipment,611451
+November - 2025,2025-11-01T00:00:00Z,Active Pro,Indoor Equipment,576155
+November - 2025,2025-11-01T00:00:00Z,Expired Play,Indoor Equipment,363429
+November - 2025,2025-11-01T00:00:00Z,Expired Athome,Indoor Equipment,296252
+November - 2025,2025-11-01T00:00:00Z,Active Play,Indoor Equipment,167892
+November - 2025,2025-11-01T00:00:00Z,Active Lux,Indoor Equipment,131320
+November - 2025,2025-11-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,76267
+November - 2025,2025-11-01T00:00:00Z,Active Complimentary,Indoor Equipment,52710
+November - 2025,2025-11-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,40519
+November - 2025,2025-11-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,35177
+November - 2025,2025-11-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,32239
+November - 2025,2025-11-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,31517
+November - 2025,2025-11-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,29974
+November - 2025,2025-11-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,23104
+November - 2025,2025-11-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,17598
+November - 2025,2025-11-01T00:00:00Z,Expired Lux,Indoor Equipment,15497
+November - 2025,2025-11-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,12736
+November - 2025,2025-11-01T00:00:00Z,MP Elite,Indoor Equipment,8999
+December - 2025,2025-12-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3520896
+December - 2025,2025-12-01T00:00:00Z,Active Elite,Indoor Equipment,3369173
+December - 2025,2025-12-01T00:00:00Z,Expired Elite,Indoor Equipment,3243360
+December - 2025,2025-12-01T00:00:00Z,Active B2B,Indoor Equipment,1703504
+December - 2025,2025-12-01T00:00:00Z,Expired Pro,Indoor Equipment,793339
+December - 2025,2025-12-01T00:00:00Z,Active Pro,Indoor Equipment,620411
+December - 2025,2025-12-01T00:00:00Z,Expired B2B,Indoor Equipment,613800
+December - 2025,2025-12-01T00:00:00Z,Expired Athome,Indoor Equipment,471451
+December - 2025,2025-12-01T00:00:00Z,Active Athome,Indoor Equipment,379837
+December - 2025,2025-12-01T00:00:00Z,Expired Play,Indoor Equipment,262986
+December - 2025,2025-12-01T00:00:00Z,Expired Lux,Indoor Equipment,225496
+December - 2025,2025-12-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,151712
+December - 2025,2025-12-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,143124
+December - 2025,2025-12-01T00:00:00Z,Active Play,Indoor Equipment,130884
+December - 2025,2025-12-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,89343
+December - 2025,2025-12-01T00:00:00Z,Active Lux,Indoor Equipment,66541
+December - 2025,2025-12-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,60676
+December - 2025,2025-12-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,50207
+December - 2025,2025-12-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,47996
+December - 2025,2025-12-01T00:00:00Z,Active Complimentary,Indoor Equipment,47729
+December - 2025,2025-12-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,28097
+December - 2025,2025-12-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,25077
+December - 2025,2025-12-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,23809
+December - 2025,2025-12-01T00:00:00Z,Expired Lux,Indoor_Equipment-Strength,23198
+December - 2025,2025-12-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,16498
+December - 2025,2025-12-01T00:00:00Z,MP Elite,Indoor Equipment,13540
+December - 2025,2025-12-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,863
+January - 2026,2026-01-01T00:00:00Z,Active Elite,Indoor Equipment,3414005
+January - 2026,2026-01-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3258690
+January - 2026,2026-01-01T00:00:00Z,Expired Elite,Indoor Equipment,2881250
+January - 2026,2026-01-01T00:00:00Z,Active B2B,Indoor Equipment,1740570
+January - 2026,2026-01-01T00:00:00Z,Expired B2B,Indoor Equipment,954056
+January - 2026,2026-01-01T00:00:00Z,Active Athome,Indoor Equipment,578099
+January - 2026,2026-01-01T00:00:00Z,Expired Pro,Indoor Equipment,558306
+January - 2026,2026-01-01T00:00:00Z,Active Pro,Indoor Equipment,425362
+January - 2026,2026-01-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,380347
+January - 2026,2026-01-01T00:00:00Z,Expired Athome,Indoor Equipment,260037
+January - 2026,2026-01-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,248034
+January - 2026,2026-01-01T00:00:00Z,Active Play,Indoor Equipment,247698
+January - 2026,2026-01-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,246232
+January - 2026,2026-01-01T00:00:00Z,Active Complimentary,Indoor Equipment,175732
+January - 2026,2026-01-01T00:00:00Z,Expired Play,Indoor Equipment,169060
+January - 2026,2026-01-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,111711
+January - 2026,2026-01-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,105574
+January - 2026,2026-01-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,94753
+January - 2026,2026-01-01T00:00:00Z,Expired Lux,Indoor Equipment,83696
+January - 2026,2026-01-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,77893
+January - 2026,2026-01-01T00:00:00Z,Active Lux,Indoor Equipment,48498
+January - 2026,2026-01-01T00:00:00Z,Active Lux,Indoor_Equipment-Strength,23999
+January - 2026,2026-01-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,16536
+January - 2026,2026-01-01T00:00:00Z,MP Elite,Indoor Equipment,8749
+January - 2026,2026-01-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,6448
+January - 2026,2026-01-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,5726
+January - 2026,2026-01-01T00:00:00Z,MP Pro,Indoor Equipment,1316
+February - 2026,2026-02-01T00:00:00Z,Expired Complimentary,Indoor Equipment,3639075
+February - 2026,2026-02-01T00:00:00Z,Active Elite,Indoor Equipment,2970007
+February - 2026,2026-02-01T00:00:00Z,Expired Elite,Indoor Equipment,2238246
+February - 2026,2026-02-01T00:00:00Z,Active B2B,Indoor Equipment,1726457
+February - 2026,2026-02-01T00:00:00Z,Expired B2B,Indoor Equipment,536845
+February - 2026,2026-02-01T00:00:00Z,Expired Pro,Indoor Equipment,383197
+February - 2026,2026-02-01T00:00:00Z,Active Athome,Indoor Equipment,379603
+February - 2026,2026-02-01T00:00:00Z,Expired Athome,Indoor Equipment,377163
+February - 2026,2026-02-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,326477
+February - 2026,2026-02-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,307441
+February - 2026,2026-02-01T00:00:00Z,Active Play,Indoor Equipment,202374
+February - 2026,2026-02-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,202156
+February - 2026,2026-02-01T00:00:00Z,Expired Play,Indoor Equipment,178384
+February - 2026,2026-02-01T00:00:00Z,Active Pro,Indoor Equipment,173843
+February - 2026,2026-02-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,84586
+February - 2026,2026-02-01T00:00:00Z,Active Lux,Indoor Equipment,64298
+February - 2026,2026-02-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,62181
+February - 2026,2026-02-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,59375
+February - 2026,2026-02-01T00:00:00Z,MP Pro,Indoor Equipment,58499
+February - 2026,2026-02-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,47523
+February - 2026,2026-02-01T00:00:00Z,Active Complimentary,Indoor Equipment,46144
+February - 2026,2026-02-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,43616
+February - 2026,2026-02-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,40695
+February - 2026,2026-02-01T00:00:00Z,Expired Lux,Indoor Equipment,38549
+February - 2026,2026-02-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,31397
+February - 2026,2026-02-01T00:00:00Z,Expired Play,Indoor_Equipment-Strength,25312
+February - 2026,2026-02-01T00:00:00Z,Active Lux,Indoor_Equipment-Strength,13499
+February - 2026,2026-02-01T00:00:00Z,MP Elite,Indoor Equipment,8999
+March - 2026,2026-03-01T00:00:00Z,Expired Complimentary,Indoor Equipment,4015471
+March - 2026,2026-03-01T00:00:00Z,Expired Elite,Indoor Equipment,3367333
+March - 2026,2026-03-01T00:00:00Z,Active Elite,Indoor Equipment,3168364
+March - 2026,2026-03-01T00:00:00Z,Active B2B,Indoor Equipment,2299916
+March - 2026,2026-03-01T00:00:00Z,Active Elite,Indoor_Equipment-Strength,681774
+March - 2026,2026-03-01T00:00:00Z,Expired Elite,Indoor_Equipment-Strength,658662
+March - 2026,2026-03-01T00:00:00Z,Expired Pro,Indoor Equipment,640469
+March - 2026,2026-03-01T00:00:00Z,Expired B2B,Indoor Equipment,627567
+March - 2026,2026-03-01T00:00:00Z,Active Athome,Indoor Equipment,608379
+March - 2026,2026-03-01T00:00:00Z,Expired Athome,Indoor Equipment,599072
+March - 2026,2026-03-01T00:00:00Z,Active Pro,Indoor Equipment,548391
+March - 2026,2026-03-01T00:00:00Z,Expired Complimentary,Indoor_Equipment-Strength,503894
+March - 2026,2026-03-01T00:00:00Z,Active B2B,Indoor_Equipment-Strength,259928
+March - 2026,2026-03-01T00:00:00Z,Expired B2B,Indoor_Equipment-Strength,135414
+March - 2026,2026-03-01T00:00:00Z,Active Play,Indoor Equipment,133588
+March - 2026,2026-03-01T00:00:00Z,Expired Play,Indoor Equipment,131261
+March - 2026,2026-03-01T00:00:00Z,Active Lux,Indoor Equipment,102495
+March - 2026,2026-03-01T00:00:00Z,Active Athome,Indoor_Equipment-Strength,100157
+March - 2026,2026-03-01T00:00:00Z,Expired Pro,Indoor_Equipment-Strength,88609
+March - 2026,2026-03-01T00:00:00Z,Active Complimentary,Indoor Equipment,86689
+March - 2026,2026-03-01T00:00:00Z,Expired Lux,Indoor Equipment,77496
+March - 2026,2026-03-01T00:00:00Z,Active Pro,Indoor_Equipment-Strength,70319
+March - 2026,2026-03-01T00:00:00Z,Expired Athome,Indoor_Equipment-Strength,68715
+March - 2026,2026-03-01T00:00:00Z,Active Play,Indoor_Equipment-Strength,53023
+March - 2026,2026-03-01T00:00:00Z,Expired Play,Indoor_Equipment-Strength,46768
+March - 2026,2026-03-01T00:00:00Z,Active Complimentary,Indoor_Equipment-Strength,32344
+March - 2026,2026-03-01T00:00:00Z,Active Lux,Indoor_Equipment-Strength,13847
+March - 2026,2026-03-01T00:00:00Z,MP Elite,Indoor Equipment,9999
