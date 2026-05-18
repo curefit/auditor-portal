@@ -125,24 +125,113 @@ function parseNotebookDeps(notebookJson: string, path: string): ParsedDeps {
 
 // ─── Recursive deps tree ───────────────────────────────────────────────────
 
+type TreeSharedProps = {
+  depsMap: Map<string, ParsedDeps>;
+  knownModelNames: Set<string>;
+  modelNameToPath: Map<string, string>;
+  notebookNameToPath: Map<string, string>;
+  notebookDepsMap: Map<string, ParsedDeps>;
+  fetchModel: (name: string) => Promise<boolean>;
+  fetchNotebook: (name: string) => Promise<boolean>;
+  cfg: DbtConfigFile;
+  onOpenSql: (path: string) => void;
+};
+
+/** Renders a Databricks notebook as an expandable node inside the dep tree. */
+function NotebookNode({
+  notebookName,
+  schema,
+  notebookDepsMap,
+  fetchNotebook,
+  notebookNameToPath,
+  cfg,
+}: {
+  notebookName: string;
+  schema: string;
+  notebookDepsMap: Map<string, ParsedDeps>;
+  fetchNotebook: (name: string) => Promise<boolean>;
+  notebookNameToPath: Map<string, string>;
+  cfg: DbtConfigFile;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const [fetchState, setFetchState] = useState<"idle" | "loading" | "missing">("idle");
+
+  const deps = notebookDepsMap.get(notebookName);
+  const path = notebookNameToPath.get(notebookName);
+  const hasDeps = deps && deps.rawTableRefs.length > 0;
+
+  async function handleToggle() {
+    const opening = !expanded;
+    setExpanded((e) => !e);
+    if (opening && !deps && fetchState !== "loading") {
+      setFetchState("loading");
+      const ok = await fetchNotebook(notebookName);
+      setFetchState(ok ? "idle" : "missing");
+    }
+  }
+
+  return (
+    <div>
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 py-0.5 text-xs">
+        <button
+          type="button"
+          onClick={handleToggle}
+          className={`flex h-5 w-5 items-center justify-center rounded bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white ${
+            deps && !hasDeps ? "invisible" : ""
+          }`}
+        >
+          {fetchState === "loading" ? "…" : expanded ? "▾" : "▸"}
+        </button>
+        <span className="font-mono text-sm font-medium text-amber-400">{notebookName}</span>
+        <span className="rounded bg-amber-950/50 px-1 py-0.5 text-zinc-500">notebook</span>
+        <span className="rounded bg-zinc-800/50 px-1 py-0.5 text-zinc-600">{schema}</span>
+        {cfg.fallback?.owner && cfg.fallback.repo && path && (
+          <a
+            href={blobGithubUrl(cfg.fallback.owner, cfg.fallback.repo, cfg.fallback.ref ?? "main", path)}
+            target="_blank"
+            rel="noreferrer"
+            className="text-zinc-600 hover:text-zinc-300"
+          >
+            GitHub ↗
+          </a>
+        )}
+        {fetchState === "missing" && (
+          <span className="text-zinc-700">(content not available locally)</span>
+        )}
+      </div>
+      {expanded && deps && (
+        <div className="ml-5 border-l border-zinc-800/60 pl-3 pt-0.5">
+          {deps.rawTableRefs.length > 0 ? (
+            deps.rawTableRefs.map((s) => (
+              <RawTableRow key={`${s.schema}.${s.table}`} schema={s.schema} table={s.table} />
+            ))
+          ) : (
+            <p className="py-0.5 text-xs text-zinc-700">No FROM/JOIN refs found in notebook.</p>
+          )}
+        </div>
+      )}
+      {expanded && fetchState === "loading" && (
+        <div className="ml-5 pl-3 text-xs text-zinc-600">Loading…</div>
+      )}
+    </div>
+  );
+}
+
 function DepsTree({
   modelName,
   depsMap,
   knownModelNames,
   modelNameToPath,
+  notebookNameToPath,
+  notebookDepsMap,
   fetchModel,
+  fetchNotebook,
   cfg,
   onOpenSql,
   ancestors = new Set<string>(),
   showSelf = true,
-}: {
+}: TreeSharedProps & {
   modelName: string;
-  depsMap: Map<string, ParsedDeps>;
-  knownModelNames: Set<string>;
-  modelNameToPath: Map<string, string>;
-  fetchModel: (name: string) => Promise<boolean>;
-  cfg: DbtConfigFile;
-  onOpenSql: (path: string) => void;
   ancestors?: Set<string>;
   showSelf?: boolean;
 }) {
@@ -163,9 +252,12 @@ function DepsTree({
   const dbtSourceDeps =
     deps?.sources.filter((s) => modelNameToPath.has(s.table) && !refDepSet.has(s.table)) ?? [];
   const rawSourceDeps = deps?.sources.filter((s) => !modelNameToPath.has(s.table)) ?? [];
-  const rawTableRefs = deps?.rawTableRefs ?? [];
+  // Split raw FROM/JOIN refs into notebook-backed and truly raw
+  const allRawRefs = deps?.rawTableRefs ?? [];
+  const notebookRawRefs = allRawRefs.filter((s) => notebookNameToPath.has(s.table));
+  const pureRawRefs = allRawRefs.filter((s) => !notebookNameToPath.has(s.table));
   const totalChildren =
-    refDeps.length + dbtSourceDeps.length + rawSourceDeps.length + rawTableRefs.length;
+    refDeps.length + dbtSourceDeps.length + rawSourceDeps.length + allRawRefs.length;
 
   const canFetch = !deps && modelNameToPath.has(modelName);
 
@@ -186,40 +278,35 @@ function DepsTree({
     setFetchState(ok ? "idle" : "missing");
   }
 
+  const sharedProps: TreeSharedProps = {
+    depsMap, knownModelNames, modelNameToPath,
+    notebookNameToPath, notebookDepsMap,
+    fetchModel, fetchNotebook, cfg, onOpenSql,
+  };
+
   const childrenBlock = (
     <div className={showSelf ? "ml-5 border-l border-zinc-800/60 pl-3 pt-0.5" : ""}>
       {refDeps.map((ref) => (
-        <DepsTree
-          key={`ref-${ref}`}
-          modelName={ref}
-          depsMap={depsMap}
-          knownModelNames={knownModelNames}
-          modelNameToPath={modelNameToPath}
-          fetchModel={fetchModel}
-          cfg={cfg}
-          onOpenSql={onOpenSql}
-          ancestors={newAncestors}
-          showSelf
-        />
+        <DepsTree key={`ref-${ref}`} modelName={ref} {...sharedProps} ancestors={newAncestors} showSelf />
       ))}
       {dbtSourceDeps.map((s) => (
-        <DepsTree
-          key={`srcmodel-${s.schema}-${s.table}`}
-          modelName={s.table}
-          depsMap={depsMap}
-          knownModelNames={knownModelNames}
-          modelNameToPath={modelNameToPath}
-          fetchModel={fetchModel}
-          cfg={cfg}
-          onOpenSql={onOpenSql}
-          ancestors={newAncestors}
-          showSelf
-        />
+        <DepsTree key={`srcmodel-${s.schema}-${s.table}`} modelName={s.table} {...sharedProps} ancestors={newAncestors} showSelf />
       ))}
       {rawSourceDeps.map((s) => (
         <RawTableRow key={`rawsrc-${s.schema}-${s.table}`} schema={s.schema} table={s.table} />
       ))}
-      {rawTableRefs.map((s) => (
+      {notebookRawRefs.map((s) => (
+        <NotebookNode
+          key={`nb-${s.schema}-${s.table}`}
+          notebookName={s.table}
+          schema={s.schema}
+          notebookDepsMap={notebookDepsMap}
+          fetchNotebook={fetchNotebook}
+          notebookNameToPath={notebookNameToPath}
+          cfg={cfg}
+        />
+      ))}
+      {pureRawRefs.map((s) => (
         <RawTableRow key={`raw-${s.schema}-${s.table}`} schema={s.schema} table={s.table} />
       ))}
       {totalChildren === 0 && (
@@ -437,6 +524,16 @@ export default function DbtModelsPage() {
     return map;
   }, [index]);
 
+  // Full notebook name → path map (all notebooks, for raw-ref classification)
+  const notebookNameToPath = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const p of notebookIndex?.paths ?? []) {
+      const name = p.split("/").pop()!.replace(/\.ipynb$/i, "");
+      map.set(name, p);
+    }
+    return map;
+  }, [notebookIndex]);
+
   // Pre-fetch all used SQL files to power the deps tree
   useEffect(() => {
     if (!usedSqlPaths.length) return;
@@ -508,6 +605,27 @@ export default function DbtModelsPage() {
     [modelNameToPath],
   );
 
+  // Lazy-fetch a notebook on demand (when a raw-ref resolves to a notebook node)
+  const fetchNotebook = useCallback(
+    async (notebookName: string): Promise<boolean> => {
+      const path = notebookNameToPath.get(notebookName);
+      if (!path) return false;
+      try {
+        const base = import.meta.env.BASE_URL;
+        const res = await fetch(`${base}dbt-notebooks/${path}`);
+        if (!res.ok) return false;
+        const contentType = res.headers.get("content-type") ?? "";
+        if (contentType.includes("text/html")) return false;
+        const text = await res.text();
+        setNotebookCache((prev) => ({ ...prev, [path]: text }));
+        return true;
+      } catch {
+        return false;
+      }
+    },
+    [notebookNameToPath],
+  );
+
   const filteredSql = useMemo(() => {
     const qq = q.trim().toLowerCase();
     return qq ? usedSqlPaths.filter((p) => p.toLowerCase().includes(qq)) : usedSqlPaths;
@@ -577,11 +695,14 @@ export default function DbtModelsPage() {
     return null;
   })();
 
-  const depTreeProps = {
+  const depTreeProps: TreeSharedProps = {
     depsMap,
     knownModelNames,
     modelNameToPath,
+    notebookNameToPath,
+    notebookDepsMap,
     fetchModel,
+    fetchNotebook,
     cfg,
     onOpenSql: (path: string) => openFile(path, "sql"),
   };
