@@ -157,7 +157,11 @@ function DepsTree({
   // Use modelNameToPath (full index) rather than knownModelNames (only pre-fetched set)
   // so source() refs that happen to share a name with a dbt model are correctly classified
   // even before that model's SQL has been fetched.
-  const dbtSourceDeps = deps?.sources.filter((s) => modelNameToPath.has(s.table)) ?? [];
+  // Exclude any source() entry whose table name is already covered by a ref() — avoids
+  // duplicates when a model is referenced via both {{ ref('x') }} and {{ source('s', 'x') }}.
+  const refDepSet = new Set(refDeps);
+  const dbtSourceDeps =
+    deps?.sources.filter((s) => modelNameToPath.has(s.table) && !refDepSet.has(s.table)) ?? [];
   const rawSourceDeps = deps?.sources.filter((s) => !modelNameToPath.has(s.table)) ?? [];
   const rawTableRefs = deps?.rawTableRefs ?? [];
   const totalChildren =

@@ -530,17 +530,31 @@ async function downloadDbtSqlWithTransitiveDeps(owner, repo, ref, token, allMode
       }),
     );
 
-    // Parse each fetched SQL for ref() calls and queue any new deps
+    // Parse each fetched SQL for all dependency name mentions and queue any new deps.
+    // Covers: ref(), source(), and raw FROM/JOIN schema.table where the table name
+    // matches a known model (e.g. models referenced only via source() or raw SQL).
     const nextQueue = [];
     for (const p of queue) {
       const sql = sqlCache.get(p);
       if (!sql) continue;
-      // Matches both {{ ref('model') }} and {{ ref('package', 'model') }}
-      const refs = [
-        ...sql.matchAll(/\{\{\s*ref\s*\([^)]*['"]([\w]+)['"]\s*\)\s*\}\}/gi),
-      ].map((m) => m[1]);
-      for (const refName of refs) {
-        const refPath = modelNameToPath.get(refName);
+
+      const candidateNames = new Set();
+
+      // {{ ref('model') }} and {{ ref('package', 'model') }}
+      for (const m of sql.matchAll(/\{\{\s*ref\s*\([^)]*['"]([\w]+)['"]\s*\)\s*\}\}/gi)) {
+        candidateNames.add(m[1]);
+      }
+      // {{ source('schema', 'table') }} — table name may match a model
+      for (const m of sql.matchAll(/\{\{\s*source\s*\(\s*['"][^'"]+['"]\s*,\s*['"]([\w]+)['"]\s*\)\s*\}\}/gi)) {
+        candidateNames.add(m[1]);
+      }
+      // Raw FROM/JOIN schema.table — table name may match a model
+      for (const m of sql.matchAll(/\b(?:FROM|JOIN)\s+[\w]+\.([\w_]+)/gi)) {
+        candidateNames.add(m[1]);
+      }
+
+      for (const name of candidateNames) {
+        const refPath = modelNameToPath.get(name);
         if (refPath && !allPaths.has(refPath)) {
           allPaths.add(refPath);
           nextQueue.push(refPath);
