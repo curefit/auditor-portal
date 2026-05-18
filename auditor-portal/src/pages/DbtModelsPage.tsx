@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Modal } from "../components/Modal";
 import type { Catalog, DbtConfigFile, DbtModelsIndexFile } from "../types";
 import rawCatalog from "../catalog.json";
@@ -23,6 +23,305 @@ function blobGithubUrl(owner: string, repo: string, ref: string, path: string) {
     .map((s) => encodeURIComponent(s))
     .join("/")}`;
 }
+
+// ─── Dependency parsing ────────────────────────────────────────────────────
+
+type ParsedDeps = {
+  refs: string[];
+  sources: Array<{ schema: string; table: string }>;
+  /** Raw FROM/JOIN schema.table refs extracted from non-dbt SQL (ClickHouse, Spark SQL) */
+  rawTableRefs: Array<{ schema: string; table: string }>;
+  path: string;
+};
+
+// Hoisted to module scope — used by both parseDeps and parseNotebookDeps
+const dedupe = <T extends object>(arr: T[], key: (x: T) => string) =>
+  arr.filter((v, i, a) => a.findIndex((x) => key(x) === key(v)) === i);
+
+// Matches both single-arg {{ ref('model') }} and two-arg {{ ref('pkg', 'model') }}
+const DBT_REF_RE = /\{\{\s*ref\s*\([^)]*['"]([\w]+)['"]\s*\)\s*\}\}/gi;
+const DBT_SOURCE_RE =
+  /\{\{\s*source\s*\(\s*['"]([^'"]+)['"]\s*,\s*['"]([\w]+)['"]\s*\)\s*\}\}/gi;
+
+function parseDeps(sql: string, path: string): ParsedDeps {
+  const refs = [...sql.matchAll(DBT_REF_RE)].map((m) => m[1]);
+  const sources = [...sql.matchAll(DBT_SOURCE_RE)].map((m) => ({
+    schema: m[1],
+    table: m[2],
+  }));
+
+  // Always extract raw FROM/JOIN schema.table refs in addition to dbt ref()/source() calls.
+  // This catches cross-db joins and ClickHouse models that bypass dbt macros entirely.
+  // CTE names are excluded so they don't appear as false dependencies.
+  // /gi so lowercase from/join/with/as are all matched.
+  const cteNames = new Set(
+    [...sql.matchAll(/(?:WITH|,)\s+([\w]+)\s+AS\s*\(/gi)].map((m) => m[1].toLowerCase()),
+  );
+  const rawTableRefs: Array<{ schema: string; table: string }> = [];
+  const rawMatches = [
+    ...sql.matchAll(/\bFROM\s+([\w]+)\.([\w_]+)/gi),
+    ...sql.matchAll(/\bJOIN\s+([\w]+)\.([\w_]+)/gi),
+  ];
+  for (const m of rawMatches) {
+    const schema = m[1];
+    const table = m[2];
+    if (!cteNames.has(table.toLowerCase()) && !cteNames.has(schema.toLowerCase())) {
+      rawTableRefs.push({ schema, table });
+    }
+  }
+
+  return {
+    refs: [...new Set(refs)],
+    sources: dedupe(sources, (s) => `${s.schema}.${s.table}`),
+    rawTableRefs: dedupe(rawTableRefs, (s) => `${s.schema}.${s.table}`),
+    path,
+  };
+}
+
+// Python module names to skip when extracting FROM/JOIN from notebook cells
+const PYTHON_MODULES = new Set([
+  "cfdatalab", "pandas", "numpy", "pyspark", "scipy", "sklearn", "matplotlib",
+  "seaborn", "os", "sys", "re", "io", "json", "math", "time", "datetime",
+  "typing", "collections", "functools", "itertools", "pathlib", "logging",
+  "subprocess", "shutil", "glob", "dbutils", "spark", "sc", "sqlalchemy",
+]);
+
+function parseNotebookDeps(notebookJson: string, path: string): ParsedDeps {
+  let cells: Array<{ cell_type: string; source: string | string[] }> = [];
+  try {
+    const nb = JSON.parse(notebookJson) as {
+      cells?: Array<{ cell_type: string; source: string | string[] }>;
+    };
+    cells = nb.cells ?? [];
+  } catch {
+    return { refs: [], sources: [], rawTableRefs: [], path };
+  }
+
+  const fullText = cells
+    .filter((c) => c.cell_type === "code")
+    .map((c) => (Array.isArray(c.source) ? c.source.join("") : String(c.source ?? "")))
+    .join("\n");
+
+  const rawMatches = [
+    ...fullText.matchAll(/\bFROM\s+([\w]+)\.([\w_]+)/gi),
+    ...fullText.matchAll(/\bJOIN\s+([\w]+)\.([\w_]+)/gi),
+  ];
+  const rawTableRefs: Array<{ schema: string; table: string }> = [];
+  for (const m of rawMatches) {
+    const schema = m[1];
+    const table = m[2];
+    if (!PYTHON_MODULES.has(schema.toLowerCase())) {
+      rawTableRefs.push({ schema, table });
+    }
+  }
+
+  return {
+    refs: [],
+    sources: [],
+    rawTableRefs: dedupe(rawTableRefs, (s) => `${s.schema}.${s.table}`),
+    path,
+  };
+}
+
+// ─── Recursive deps tree ───────────────────────────────────────────────────
+
+function DepsTree({
+  modelName,
+  depsMap,
+  knownModelNames,
+  modelNameToPath,
+  fetchModel,
+  cfg,
+  onOpenSql,
+  ancestors = new Set<string>(),
+  showSelf = true,
+}: {
+  modelName: string;
+  depsMap: Map<string, ParsedDeps>;
+  knownModelNames: Set<string>;
+  modelNameToPath: Map<string, string>;
+  fetchModel: (name: string) => Promise<boolean>;
+  cfg: DbtConfigFile;
+  onOpenSql: (path: string) => void;
+  ancestors?: Set<string>;
+  showSelf?: boolean;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const [fetchState, setFetchState] = useState<"idle" | "loading" | "missing">("idle");
+
+  const deps = depsMap.get(modelName);
+  const isCycle = ancestors.has(modelName);
+  const newAncestors = new Set([...ancestors, modelName]);
+
+  const refDeps = deps?.refs ?? [];
+  // Use modelNameToPath (full index) rather than knownModelNames (only pre-fetched set)
+  // so source() refs that happen to share a name with a dbt model are correctly classified
+  // even before that model's SQL has been fetched.
+  const dbtSourceDeps = deps?.sources.filter((s) => modelNameToPath.has(s.table)) ?? [];
+  const rawSourceDeps = deps?.sources.filter((s) => !modelNameToPath.has(s.table)) ?? [];
+  const rawTableRefs = deps?.rawTableRefs ?? [];
+  const totalChildren =
+    refDeps.length + dbtSourceDeps.length + rawSourceDeps.length + rawTableRefs.length;
+
+  const canFetch = !deps && modelNameToPath.has(modelName);
+
+  async function handleToggle() {
+    const opening = !expanded;
+    setExpanded((e) => !e);
+    if (opening && !deps && fetchState !== "loading" && modelNameToPath.has(modelName)) {
+      setFetchState("loading");
+      const ok = await fetchModel(modelName);
+      setFetchState(ok ? "idle" : "missing");
+    }
+  }
+
+  async function handleRetry() {
+    setFetchState("loading");
+    setExpanded(true);
+    const ok = await fetchModel(modelName);
+    setFetchState(ok ? "idle" : "missing");
+  }
+
+  const childrenBlock = (
+    <div className={showSelf ? "ml-5 border-l border-zinc-800/60 pl-3 pt-0.5" : ""}>
+      {refDeps.map((ref) => (
+        <DepsTree
+          key={`ref-${ref}`}
+          modelName={ref}
+          depsMap={depsMap}
+          knownModelNames={knownModelNames}
+          modelNameToPath={modelNameToPath}
+          fetchModel={fetchModel}
+          cfg={cfg}
+          onOpenSql={onOpenSql}
+          ancestors={newAncestors}
+          showSelf
+        />
+      ))}
+      {dbtSourceDeps.map((s) => (
+        <DepsTree
+          key={`srcmodel-${s.schema}-${s.table}`}
+          modelName={s.table}
+          depsMap={depsMap}
+          knownModelNames={knownModelNames}
+          modelNameToPath={modelNameToPath}
+          fetchModel={fetchModel}
+          cfg={cfg}
+          onOpenSql={onOpenSql}
+          ancestors={newAncestors}
+          showSelf
+        />
+      ))}
+      {rawSourceDeps.map((s) => (
+        <RawTableRow key={`rawsrc-${s.schema}-${s.table}`} schema={s.schema} table={s.table} />
+      ))}
+      {rawTableRefs.map((s) => (
+        <RawTableRow key={`raw-${s.schema}-${s.table}`} schema={s.schema} table={s.table} />
+      ))}
+      {totalChildren === 0 && (
+        <p className="py-0.5 text-xs text-zinc-700">No dependencies found in SQL.</p>
+      )}
+    </div>
+  );
+
+  if (showSelf && isCycle) {
+    return (
+      <div className="flex items-center gap-2 py-0.5 text-xs text-amber-600/70">
+        <span className="w-5 text-center">↻</span>
+        <span className="font-mono">{modelName}</span>
+        <span className="text-zinc-700">(cycle)</span>
+      </div>
+    );
+  }
+
+  if (!showSelf) return <>{childrenBlock}</>;
+
+  // Model not in our depsMap
+  if (!deps) {
+    return (
+      <div>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 py-0.5 text-xs">
+          {canFetch || fetchState === "loading" ? (
+            <button
+              type="button"
+              onClick={handleToggle}
+              className="flex h-5 w-5 items-center justify-center rounded bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white"
+            >
+              {fetchState === "loading" ? "…" : expanded ? "▾" : "▸"}
+            </button>
+          ) : (
+            <span className="flex h-5 w-5 items-center justify-center text-zinc-700">◦</span>
+          )}
+          <span className="font-mono text-zinc-400">{modelName}</span>
+          <span className="text-zinc-600">dbt model</span>
+          {fetchState === "missing" && (
+            <>
+              <span className="text-zinc-700">(SQL not available locally)</span>
+              <button
+                type="button"
+                onClick={handleRetry}
+                className="text-zinc-600 underline hover:text-zinc-400"
+              >
+                Retry
+              </button>
+            </>
+          )}
+        </div>
+        {expanded && fetchState === "loading" && (
+          <div className="ml-5 pl-3 text-xs text-zinc-600">Loading…</div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 py-0.5 text-xs">
+        <button
+          type="button"
+          onClick={handleToggle}
+          className={`flex h-5 w-5 items-center justify-center rounded bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white ${
+            totalChildren === 0 ? "invisible" : ""
+          }`}
+        >
+          {expanded ? "▾" : "▸"}
+        </button>
+        <span className="font-mono text-sm font-medium text-emerald-400">{modelName}</span>
+        <span className="rounded bg-emerald-950/50 px-1 py-0.5 text-zinc-500">dbt model</span>
+        <button
+          type="button"
+          onClick={() => onOpenSql(deps.path)}
+          className="text-zinc-600 underline hover:text-emerald-400"
+        >
+          View SQL
+        </button>
+        {cfg.owner && cfg.repo && (
+          <a
+            href={blobGithubUrl(cfg.owner, cfg.repo, cfg.ref ?? "main", deps.path)}
+            target="_blank"
+            rel="noreferrer"
+            className="text-zinc-600 hover:text-zinc-300"
+          >
+            GitHub ↗
+          </a>
+        )}
+      </div>
+      {expanded && childrenBlock}
+    </div>
+  );
+}
+
+function RawTableRow({ schema, table }: { schema: string; table: string }) {
+  return (
+    <div className="flex items-center gap-2 py-0.5 text-xs">
+      <span className="flex h-5 w-5 items-center justify-center text-zinc-700">—</span>
+      <span className="font-mono text-zinc-400">{table}</span>
+      <span className="rounded bg-zinc-800/50 px-1 py-0.5 text-zinc-600">{schema}</span>
+    </div>
+  );
+}
+
+// ─── Notebook viewer ────────────────────────────────────────────────────────
 
 type NotebookCell = { cell_type: string; source: string[] };
 
@@ -79,15 +378,23 @@ function NotebookView({ body }: { body: string }) {
   );
 }
 
+// ─── Page ──────────────────────────────────────────────────────────────────
+
 export default function DbtModelsPage() {
   const [cfg, setCfg] = useState<DbtConfigFile | null>(null);
   const [index, setIndex] = useState<DbtModelsIndexFile | null>(null);
   const [notebookIndex, setNotebookIndex] = useState<DbtModelsIndexFile | null>(null);
   const [loadErr, setLoadErr] = useState<string | null>(null);
   const [q, setQ] = useState("");
-  const [openPath, setOpenPath] = useState<{ path: string; kind: "sql" | "notebook" } | null>(null);
+  const [openPath, setOpenPath] = useState<{ path: string; kind: "sql" | "notebook" } | null>(
+    null,
+  );
   const [source, setSource] = useState<string | null>(null);
   const [srcErr, setSrcErr] = useState<string | null>(null);
+
+  const [sqlCache, setSqlCache] = useState<Record<string, string>>({});
+  const [notebookCache, setNotebookCache] = useState<Record<string, string>>({});
+  const [expandedPaths, setExpandedPaths] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const base = import.meta.env.BASE_URL;
@@ -114,6 +421,87 @@ export default function DbtModelsPage() {
   const usedNbPaths = useMemo(
     () => (notebookIndex?.paths ?? []).filter((p) => usedNotebookPaths.has(p)),
     [notebookIndex],
+  );
+
+  // Full model name → path map (all 299+ models, not just the 31 we pre-fetch)
+  const modelNameToPath = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const p of index?.paths ?? []) {
+      const name = p.split("/").pop()!.replace(/\.sql$/i, "");
+      map.set(name, p);
+    }
+    return map;
+  }, [index]);
+
+  // Pre-fetch all used SQL files to power the deps tree
+  useEffect(() => {
+    if (!usedSqlPaths.length) return;
+    const base = import.meta.env.BASE_URL;
+    for (const path of usedSqlPaths) {
+      fetch(`${base}dbt-sql/${path}`)
+        .then((r) => (r.ok ? r.text() : null))
+        .then((text) => {
+          if (text) setSqlCache((prev) => ({ ...prev, [path]: text }));
+        })
+        .catch(() => {});
+    }
+  }, [usedSqlPaths]);
+
+  // Pre-fetch all used notebook files to power their deps view
+  useEffect(() => {
+    if (!usedNbPaths.length) return;
+    const base = import.meta.env.BASE_URL;
+    for (const path of usedNbPaths) {
+      fetch(`${base}dbt-notebooks/${path}`)
+        .then((r) => (r.ok ? r.text() : null))
+        .then((text) => {
+          if (text) setNotebookCache((prev) => ({ ...prev, [path]: text }));
+        })
+        .catch(() => {});
+    }
+  }, [usedNbPaths]);
+
+  const depsMap = useMemo(() => {
+    const map = new Map<string, ParsedDeps>();
+    for (const [path, sql] of Object.entries(sqlCache)) {
+      const name = path.split("/").pop()!.replace(/\.sql$/i, "");
+      map.set(name, parseDeps(sql, path));
+    }
+    return map;
+  }, [sqlCache]);
+
+  const notebookDepsMap = useMemo(() => {
+    const map = new Map<string, ParsedDeps>();
+    for (const [path, json] of Object.entries(notebookCache)) {
+      const name = path.split("/").pop()!.replace(/\.ipynb$/i, "");
+      map.set(name, parseNotebookDeps(json, path));
+    }
+    return map;
+  }, [notebookCache]);
+
+  const knownModelNames = useMemo(() => new Set(depsMap.keys()), [depsMap]);
+
+  // Lazy-fetch a dep model's SQL on demand (for nodes not in the pre-fetched set)
+  const fetchModel = useCallback(
+    async (modelName: string): Promise<boolean> => {
+      const path = modelNameToPath.get(modelName);
+      if (!path) return false;
+      try {
+        const base = import.meta.env.BASE_URL;
+        const res = await fetch(`${base}dbt-sql/${path}`);
+        if (!res.ok) return false;
+        // Vite dev server returns index.html (text/html, status 200) for missing
+        // static files. Reject those so we don't parse HTML as SQL.
+        const contentType = res.headers.get("content-type") ?? "";
+        if (contentType.includes("text/html")) return false;
+        const text = await res.text();
+        setSqlCache((prev) => ({ ...prev, [path]: text }));
+        return true;
+      } catch {
+        return false;
+      }
+    },
+    [modelNameToPath],
   );
 
   const filteredSql = useMemo(() => {
@@ -160,13 +548,47 @@ export default function DbtModelsPage() {
     setSrcErr(null);
   }
 
+  function toggleExpanded(path: string) {
+    setExpandedPaths((prev) => {
+      const next = new Set(prev);
+      if (next.has(path)) next.delete(path);
+      else next.add(path);
+      return next;
+    });
+  }
+
+  const openFileGithubUrl = (() => {
+    if (!openPath) return null;
+    if (openPath.kind === "sql" && cfg.owner && cfg.repo) {
+      return blobGithubUrl(cfg.owner, cfg.repo, cfg.ref ?? "main", openPath.path);
+    }
+    if (openPath.kind === "notebook" && cfg.fallback?.owner && cfg.fallback.repo) {
+      return blobGithubUrl(
+        cfg.fallback.owner,
+        cfg.fallback.repo,
+        cfg.fallback.ref ?? "master",
+        openPath.path,
+      );
+    }
+    return null;
+  })();
+
+  const depTreeProps = {
+    depsMap,
+    knownModelNames,
+    modelNameToPath,
+    fetchModel,
+    cfg,
+    onOpenSql: (path: string) => openFile(path, "sql"),
+  };
+
   return (
     <div className="flex h-full min-h-0 w-full flex-col overflow-hidden">
       <header className="border-b border-zinc-800 px-6 py-6">
         <h1 className="text-2xl font-bold text-white">Model Source Code</h1>
         <p className="mt-2 max-w-3xl text-sm text-zinc-400">
-          dbt SQL models and cf-data-lab notebooks matched to the metrics in this handoff.
-          Click a file to view its contents inline.
+          dbt SQL models and cf-data-lab notebooks matched to the metrics in this handoff. Click a
+          file to view its SQL, or use the Dependencies button to explore its source tables.
         </p>
         <div className="mt-3 flex flex-wrap gap-6 text-xs text-zinc-500">
           {sqlEnabled && (
@@ -209,17 +631,26 @@ export default function DbtModelsPage() {
               dbt SQL models
               <span className="font-normal text-zinc-600">({cfg.owner}/{cfg.repo})</span>
             </h2>
-            <ul className="space-y-0 divide-y divide-zinc-800/60">
+            <ul className="divide-y divide-zinc-800/60">
               {filteredSql.map((p) => {
                 const filename = p.split("/").pop() ?? p;
+                const modelName = filename.replace(/\.sql$/i, "");
                 const dir = p.split("/").slice(0, -1).join("/");
+                const isExpanded = expandedPaths.has(p);
+                const deps = depsMap.get(modelName);
+                const hasDeps =
+                  deps &&
+                  (deps.refs.length +
+                    deps.sources.length +
+                    deps.rawTableRefs.length) > 0;
+
                 return (
-                  <li key={p} className="py-2.5">
-                    <div className="flex items-center gap-3">
+                  <li key={p} className="py-3">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
                       <button
                         type="button"
                         onClick={() => openFile(p, "sql")}
-                        className="text-left font-mono text-sm font-medium text-emerald-400 hover:underline"
+                        className="font-mono text-sm font-medium text-emerald-400 hover:underline"
                       >
                         {filename}
                       </button>
@@ -227,12 +658,50 @@ export default function DbtModelsPage() {
                         href={blobGithubUrl(cfg.owner!, cfg.repo!, cfg.ref ?? "main", p)}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-xs text-zinc-600 hover:text-zinc-300"
+                        className="flex items-center gap-1 rounded border border-zinc-700 px-2 py-0.5 text-xs text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
                       >
                         GitHub ↗
                       </a>
+                      {/* Show button only once deps are fetched; while loading show a small spinner */}
+                      {deps ? (
+                        <button
+                          type="button"
+                          onClick={() => toggleExpanded(p)}
+                          className={`flex items-center gap-1.5 rounded border px-2.5 py-1 text-xs font-medium transition-colors ${
+                            isExpanded
+                              ? "border-emerald-800 bg-emerald-950/60 text-emerald-400"
+                              : "border-zinc-700 bg-zinc-900 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
+                          }`}
+                        >
+                          {isExpanded ? "▾" : "▸"} Dependencies
+                          {hasDeps && !isExpanded && (
+                            <span className="rounded-full bg-zinc-700 px-1.5 py-0.5 text-zinc-400">
+                              {deps.refs.length + deps.sources.length + deps.rawTableRefs.length}
+                            </span>
+                          )}
+                        </button>
+                      ) : (
+                        <span className="text-xs text-zinc-700">Loading deps…</span>
+                      )}
                     </div>
-                    <p className="mt-0.5 font-mono text-xs text-zinc-600">{dir}/</p>
+                    <p className="mt-1 font-mono text-xs text-zinc-600">{dir}/</p>
+
+                    {isExpanded && (
+                      <div className="mt-2 rounded-lg border border-zinc-800 bg-zinc-950/60 px-4 py-3">
+                        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-600">
+                          Dependencies
+                        </p>
+                        {deps ? (
+                          <DepsTree
+                            modelName={modelName}
+                            showSelf={false}
+                            {...depTreeProps}
+                          />
+                        ) : (
+                          <p className="text-xs text-zinc-600">Loading dependencies…</p>
+                        )}
+                      </div>
+                    )}
                   </li>
                 );
               })}
@@ -249,13 +718,18 @@ export default function DbtModelsPage() {
                 ({cfg.fallback!.owner}/{cfg.fallback!.repo})
               </span>
             </h2>
-            <ul className="space-y-0 divide-y divide-zinc-800/60">
+            <ul className="divide-y divide-zinc-800/60">
               {filteredNb.map((p) => {
                 const filename = p.split("/").pop() ?? p;
+                const modelName = filename.replace(/\.ipynb$/i, "");
                 const dir = p.split("/").slice(0, -1).join("/");
+                const isExpanded = expandedPaths.has(p);
+                const nbDeps = notebookDepsMap.get(modelName);
+                const hasDeps = nbDeps && nbDeps.rawTableRefs.length > 0;
+
                 return (
-                  <li key={p} className="py-2.5">
-                    <div className="flex items-center gap-3">
+                  <li key={p} className="py-3">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
                       <button
                         type="button"
                         onClick={() => openFile(p, "notebook")}
@@ -267,17 +741,64 @@ export default function DbtModelsPage() {
                         href={blobGithubUrl(
                           cfg.fallback!.owner!,
                           cfg.fallback!.repo!,
-                          cfg.fallback!.ref ?? "master",
+                          cfg.fallback!.ref ?? "main",
                           p,
                         )}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-xs text-zinc-600 hover:text-zinc-300"
+                        className="flex items-center gap-1 rounded border border-zinc-700 px-2 py-0.5 text-xs text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
                       >
                         GitHub ↗
                       </a>
+                      {nbDeps ? (
+                        <button
+                          type="button"
+                          onClick={() => toggleExpanded(p)}
+                          className={`flex items-center gap-1.5 rounded border px-2.5 py-1 text-xs font-medium transition-colors ${
+                            isExpanded
+                              ? "border-amber-800 bg-amber-950/60 text-amber-400"
+                              : "border-zinc-700 bg-zinc-900 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
+                          }`}
+                        >
+                          {isExpanded ? "▾" : "▸"} Dependencies
+                          {hasDeps && !isExpanded && (
+                            <span className="rounded-full bg-zinc-700 px-1.5 py-0.5 text-zinc-400">
+                              {nbDeps.rawTableRefs.length}
+                            </span>
+                          )}
+                        </button>
+                      ) : (
+                        <span className="text-xs text-zinc-700">Loading deps…</span>
+                      )}
                     </div>
-                    <p className="mt-0.5 font-mono text-xs text-zinc-600">{dir}/</p>
+                    <p className="mt-1 font-mono text-xs text-zinc-600">{dir}/</p>
+
+                    {isExpanded && (
+                      <div className="mt-2 rounded-lg border border-zinc-800 bg-zinc-950/60 px-4 py-3">
+                        <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-600">
+                          Source tables
+                        </p>
+                        {nbDeps ? (
+                          nbDeps.rawTableRefs.length > 0 ? (
+                            <div className="space-y-0.5">
+                              {nbDeps.rawTableRefs.map((s) => (
+                                <RawTableRow
+                                  key={`${s.schema}.${s.table}`}
+                                  schema={s.schema}
+                                  table={s.table}
+                                />
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="text-xs text-zinc-600">
+                              No FROM/JOIN table references found in code cells.
+                            </p>
+                          )
+                        ) : (
+                          <p className="text-xs text-zinc-600">Loading…</p>
+                        )}
+                      </div>
+                    )}
                   </li>
                 );
               })}
@@ -300,6 +821,19 @@ export default function DbtModelsPage() {
             setSrcErr(null);
           }}
         >
+          {openFileGithubUrl && (
+            <div className="mb-3 flex items-center gap-2">
+              <a
+                href={openFileGithubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 rounded-lg border border-zinc-700 px-3 py-1.5 text-xs font-medium text-zinc-300 hover:border-zinc-500 hover:text-white"
+              >
+                View on GitHub ↗
+              </a>
+              <span className="font-mono text-xs text-zinc-600">{openPath.path}</span>
+            </div>
+          )}
           {srcErr && <p className="text-sm text-amber-400">{srcErr}</p>}
           {!srcErr && source == null && <p className="text-sm text-zinc-500">Loading…</p>}
           {source != null && openPath.kind === "sql" && (
@@ -307,9 +841,7 @@ export default function DbtModelsPage() {
               {source}
             </pre>
           )}
-          {source != null && openPath.kind === "notebook" && (
-            <NotebookView body={source} />
-          )}
+          {source != null && openPath.kind === "notebook" && <NotebookView body={source} />}
         </Modal>
       )}
     </div>
