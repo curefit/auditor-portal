@@ -458,38 +458,79 @@ async function fetchFallbackNotebookPaths(owner, repo, ref, token, modelsPath) {
 }
 
 /**
- * Downloads matched dbt SQL files to public/dbt-sql/ at build time so the
- * portal can serve them statically (no browser GitHub auth needed).
+ * Downloads matched dbt SQL files to public/dbt-sql/ at build time, then
+ * follows ref() calls transitively (BFS) so that deps-of-deps are also
+ * available for the portal's inline dependency tree.
  */
-async function downloadMatchedDbtSqlFiles(owner, repo, ref, token, paths) {
-  if (!paths.size) return;
+async function downloadDbtSqlWithTransitiveDeps(owner, repo, ref, token, allModelPaths, seedPaths) {
+  if (!seedPaths.size) return;
   rmSync(DBT_SQL_DIR, { recursive: true, force: true });
 
   const headers = { "User-Agent": "curefit-auditor-catalog-generator" };
   if (token) headers.Authorization = `Bearer ${token}`;
 
+  // Build model-name → path lookup from the full model index
+  const modelNameToPath = new Map();
+  for (const p of allModelPaths) {
+    const name = p.split("/").pop().replace(/\.sql$/i, "");
+    modelNameToPath.set(name, p);
+  }
+
+  const allPaths = new Set(seedPaths);
+  const sqlCache = new Map(); // path → sql text (avoids re-fetching)
+  let queue = [...seedPaths];
+
+  while (queue.length > 0) {
+    // Fetch all paths in the current wave in parallel
+    await Promise.all(
+      queue.map(async (p) => {
+        if (sqlCache.has(p)) return;
+        const encoded = p.split("/").map(encodeURIComponent).join("/");
+        const url = `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${encoded}`;
+        try {
+          const res = await fetch(url, { headers });
+          if (res.ok) sqlCache.set(p, await res.text());
+        } catch {}
+      }),
+    );
+
+    // Parse each fetched SQL for ref() calls and queue any new deps
+    const nextQueue = [];
+    for (const p of queue) {
+      const sql = sqlCache.get(p);
+      if (!sql) continue;
+      const refs = [
+        ...sql.matchAll(/\{\{\s*ref\s*\(\s*['"]([\w]+)['"]\s*\)\s*\}\}/g),
+      ].map((m) => m[1]);
+      for (const refName of refs) {
+        const refPath = modelNameToPath.get(refName);
+        if (refPath && !allPaths.has(refPath)) {
+          allPaths.add(refPath);
+          nextQueue.push(refPath);
+        }
+      }
+    }
+    queue = nextQueue;
+  }
+
+  // Write everything to disk
   let ok = 0;
   let fail = 0;
-  for (const p of paths) {
-    const encoded = p.split("/").map(encodeURIComponent).join("/");
-    const url = `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${encoded}`;
+  for (const [p, sql] of sqlCache) {
     try {
-      const res = await fetch(url, { headers });
-      if (!res.ok) {
-        fail++;
-        continue;
-      }
-      const text = await res.text();
       const outPath = join(DBT_SQL_DIR, ...p.split("/"));
       mkdirSync(dirname(outPath), { recursive: true });
-      writeFileSync(outPath, text, "utf8");
+      writeFileSync(outPath, sql, "utf8");
       ok++;
     } catch {
       fail++;
     }
   }
+  fail += allPaths.size - sqlCache.size; // paths that 404'd
+
+  const transitive = ok - seedPaths.size > 0 ? ` (${ok - seedPaths.size} transitive)` : "";
   console.log(
-    `[generate-catalog] Downloaded dbt SQL: ${ok} ok, ${fail} failed → public/dbt-sql/`,
+    `[generate-catalog] Downloaded dbt SQL: ${ok} ok${transitive}, ${fail} failed → public/dbt-sql/`,
   );
 }
 
@@ -852,7 +893,7 @@ async function main() {
         for (const p of rel.dbtModelPaths) uniquePaths.add(p);
       }
     }
-    await downloadMatchedDbtSqlFiles(dbt.owner, dbt.repo, dbt.ref, token, uniquePaths);
+    await downloadDbtSqlWithTransitiveDeps(dbt.owner, dbt.repo, dbt.ref, token, modelPaths, uniquePaths);
   } else if (dbt && !token) {
     console.log(
       "[generate-catalog] Skipping dbt SQL download (no GITHUB_TOKEN). Add GITHUB_TOKEN to .env to enable inline SQL viewing.",
