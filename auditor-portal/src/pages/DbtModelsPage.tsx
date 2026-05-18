@@ -34,26 +34,33 @@ type ParsedDeps = {
   path: string;
 };
 
+// Hoisted to module scope — used by both parseDeps and parseNotebookDeps
+const dedupe = <T extends object>(arr: T[], key: (x: T) => string) =>
+  arr.filter((v, i, a) => a.findIndex((x) => key(x) === key(v)) === i);
+
+// Matches both single-arg {{ ref('model') }} and two-arg {{ ref('pkg', 'model') }}
+const DBT_REF_RE = /\{\{\s*ref\s*\([^)]*['"]([\w]+)['"]\s*\)\s*\}\}/gi;
+const DBT_SOURCE_RE =
+  /\{\{\s*source\s*\(\s*['"]([^'"]+)['"]\s*,\s*['"]([\w]+)['"]\s*\)\s*\}\}/gi;
+
 function parseDeps(sql: string, path: string): ParsedDeps {
-  const refs = [...sql.matchAll(/\{\{\s*ref\s*\(\s*['"]([\w]+)['"]\s*\)\s*\}\}/g)].map(
-    (m) => m[1],
-  );
-  const sources = [
-    ...sql.matchAll(
-      /\{\{\s*source\s*\(\s*['"]([^'"]+)['"]\s*,\s*['"]([\w]+)['"]\s*\)\s*\}\}/g,
-    ),
-  ].map((m) => ({ schema: m[1], table: m[2] }));
+  const refs = [...sql.matchAll(DBT_REF_RE)].map((m) => m[1]);
+  const sources = [...sql.matchAll(DBT_SOURCE_RE)].map((m) => ({
+    schema: m[1],
+    table: m[2],
+  }));
 
   // Always extract raw FROM/JOIN schema.table refs in addition to dbt ref()/source() calls.
   // This catches cross-db joins and ClickHouse models that bypass dbt macros entirely.
   // CTE names are excluded so they don't appear as false dependencies.
+  // /gi so lowercase from/join/with/as are all matched.
   const cteNames = new Set(
-    [...sql.matchAll(/(?:WITH|,)\s+([\w]+)\s+AS\s*\(/g)].map((m) => m[1].toLowerCase()),
+    [...sql.matchAll(/(?:WITH|,)\s+([\w]+)\s+AS\s*\(/gi)].map((m) => m[1].toLowerCase()),
   );
   const rawTableRefs: Array<{ schema: string; table: string }> = [];
   const rawMatches = [
-    ...sql.matchAll(/\bFROM\s+([\w]+)\.([\w_]+)/g),
-    ...sql.matchAll(/\bJOIN\s+([\w]+)\.([\w_]+)/g),
+    ...sql.matchAll(/\bFROM\s+([\w]+)\.([\w_]+)/gi),
+    ...sql.matchAll(/\bJOIN\s+([\w]+)\.([\w_]+)/gi),
   ];
   for (const m of rawMatches) {
     const schema = m[1];
@@ -62,9 +69,6 @@ function parseDeps(sql: string, path: string): ParsedDeps {
       rawTableRefs.push({ schema, table });
     }
   }
-
-  const dedupe = <T extends object>(arr: T[], key: (x: T) => string) =>
-    arr.filter((v, i, a) => a.findIndex((x) => key(x) === key(v)) === i);
 
   return {
     refs: [...new Set(refs)],
@@ -99,8 +103,8 @@ function parseNotebookDeps(notebookJson: string, path: string): ParsedDeps {
     .join("\n");
 
   const rawMatches = [
-    ...fullText.matchAll(/\bFROM\s+([\w]+)\.([\w_]+)/g),
-    ...fullText.matchAll(/\bJOIN\s+([\w]+)\.([\w_]+)/g),
+    ...fullText.matchAll(/\bFROM\s+([\w]+)\.([\w_]+)/gi),
+    ...fullText.matchAll(/\bJOIN\s+([\w]+)\.([\w_]+)/gi),
   ];
   const rawTableRefs: Array<{ schema: string; table: string }> = [];
   for (const m of rawMatches) {
@@ -110,9 +114,6 @@ function parseNotebookDeps(notebookJson: string, path: string): ParsedDeps {
       rawTableRefs.push({ schema, table });
     }
   }
-
-  const dedupe = <T extends object>(arr: T[], key: (x: T) => string) =>
-    arr.filter((v, i, a) => a.findIndex((x) => key(x) === key(v)) === i);
 
   return {
     refs: [],
@@ -153,22 +154,32 @@ function DepsTree({
   const newAncestors = new Set([...ancestors, modelName]);
 
   const refDeps = deps?.refs ?? [];
-  const dbtSourceDeps = deps?.sources.filter((s) => knownModelNames.has(s.table)) ?? [];
-  const rawSourceDeps = deps?.sources.filter((s) => !knownModelNames.has(s.table)) ?? [];
+  // Use modelNameToPath (full index) rather than knownModelNames (only pre-fetched set)
+  // so source() refs that happen to share a name with a dbt model are correctly classified
+  // even before that model's SQL has been fetched.
+  const dbtSourceDeps = deps?.sources.filter((s) => modelNameToPath.has(s.table)) ?? [];
+  const rawSourceDeps = deps?.sources.filter((s) => !modelNameToPath.has(s.table)) ?? [];
   const rawTableRefs = deps?.rawTableRefs ?? [];
   const totalChildren =
     refDeps.length + dbtSourceDeps.length + rawSourceDeps.length + rawTableRefs.length;
 
-  const canFetch = !deps && modelNameToPath.has(modelName) && fetchState !== "missing";
+  const canFetch = !deps && modelNameToPath.has(modelName);
 
   async function handleToggle() {
     const opening = !expanded;
     setExpanded((e) => !e);
-    if (opening && !deps && fetchState === "idle" && modelNameToPath.has(modelName)) {
+    if (opening && !deps && fetchState !== "loading" && modelNameToPath.has(modelName)) {
       setFetchState("loading");
       const ok = await fetchModel(modelName);
       setFetchState(ok ? "idle" : "missing");
     }
+  }
+
+  async function handleRetry() {
+    setFetchState("loading");
+    setExpanded(true);
+    const ok = await fetchModel(modelName);
+    setFetchState(ok ? "idle" : "missing");
   }
 
   const childrenBlock = (
@@ -227,11 +238,10 @@ function DepsTree({
 
   // Model not in our depsMap
   if (!deps) {
-    const showArrow = canFetch || fetchState === "loading";
     return (
       <div>
         <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 py-0.5 text-xs">
-          {showArrow ? (
+          {canFetch || fetchState === "loading" ? (
             <button
               type="button"
               onClick={handleToggle}
@@ -245,7 +255,16 @@ function DepsTree({
           <span className="font-mono text-zinc-400">{modelName}</span>
           <span className="text-zinc-600">dbt model</span>
           {fetchState === "missing" && (
-            <span className="text-zinc-700">(SQL not available locally)</span>
+            <>
+              <span className="text-zinc-700">(SQL not available locally)</span>
+              <button
+                type="button"
+                onClick={handleRetry}
+                className="text-zinc-600 underline hover:text-zinc-400"
+              >
+                Retry
+              </button>
+            </>
           )}
         </div>
         {expanded && fetchState === "loading" && (
@@ -278,7 +297,7 @@ function DepsTree({
         </button>
         {cfg.owner && cfg.repo && (
           <a
-            href={blobGithubUrl(cfg.owner, cfg.repo, cfg.ref ?? "master", deps.path)}
+            href={blobGithubUrl(cfg.owner, cfg.repo, cfg.ref ?? "main", deps.path)}
             target="_blank"
             rel="noreferrer"
             className="text-zinc-600 hover:text-zinc-300"
@@ -408,7 +427,7 @@ export default function DbtModelsPage() {
   const modelNameToPath = useMemo(() => {
     const map = new Map<string, string>();
     for (const p of index?.paths ?? []) {
-      const name = p.split("/").pop()!.replace(".sql", "");
+      const name = p.split("/").pop()!.replace(/\.sql$/i, "");
       map.set(name, p);
     }
     return map;
@@ -445,7 +464,7 @@ export default function DbtModelsPage() {
   const depsMap = useMemo(() => {
     const map = new Map<string, ParsedDeps>();
     for (const [path, sql] of Object.entries(sqlCache)) {
-      const name = path.split("/").pop()!.replace(".sql", "");
+      const name = path.split("/").pop()!.replace(/\.sql$/i, "");
       map.set(name, parseDeps(sql, path));
     }
     return map;
@@ -454,7 +473,7 @@ export default function DbtModelsPage() {
   const notebookDepsMap = useMemo(() => {
     const map = new Map<string, ParsedDeps>();
     for (const [path, json] of Object.entries(notebookCache)) {
-      const name = path.split("/").pop()!.replace(".ipynb", "");
+      const name = path.split("/").pop()!.replace(/\.ipynb$/i, "");
       map.set(name, parseNotebookDeps(json, path));
     }
     return map;
@@ -541,7 +560,7 @@ export default function DbtModelsPage() {
   const openFileGithubUrl = (() => {
     if (!openPath) return null;
     if (openPath.kind === "sql" && cfg.owner && cfg.repo) {
-      return blobGithubUrl(cfg.owner, cfg.repo, cfg.ref ?? "master", openPath.path);
+      return blobGithubUrl(cfg.owner, cfg.repo, cfg.ref ?? "main", openPath.path);
     }
     if (openPath.kind === "notebook" && cfg.fallback?.owner && cfg.fallback.repo) {
       return blobGithubUrl(
@@ -615,7 +634,7 @@ export default function DbtModelsPage() {
             <ul className="divide-y divide-zinc-800/60">
               {filteredSql.map((p) => {
                 const filename = p.split("/").pop() ?? p;
-                const modelName = filename.replace(".sql", "");
+                const modelName = filename.replace(/\.sql$/i, "");
                 const dir = p.split("/").slice(0, -1).join("/");
                 const isExpanded = expandedPaths.has(p);
                 const deps = depsMap.get(modelName);
@@ -636,29 +655,34 @@ export default function DbtModelsPage() {
                         {filename}
                       </button>
                       <a
-                        href={blobGithubUrl(cfg.owner!, cfg.repo!, cfg.ref ?? "master", p)}
+                        href={blobGithubUrl(cfg.owner!, cfg.repo!, cfg.ref ?? "main", p)}
                         target="_blank"
                         rel="noreferrer"
                         className="flex items-center gap-1 rounded border border-zinc-700 px-2 py-0.5 text-xs text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
                       >
                         GitHub ↗
                       </a>
-                      <button
-                        type="button"
-                        onClick={() => toggleExpanded(p)}
-                        className={`flex items-center gap-1.5 rounded border px-2.5 py-1 text-xs font-medium transition-colors ${
-                          isExpanded
-                            ? "border-emerald-800 bg-emerald-950/60 text-emerald-400"
-                            : "border-zinc-700 bg-zinc-900 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
-                        }`}
-                      >
-                        {isExpanded ? "▾" : "▸"} Dependencies
-                        {hasDeps && !isExpanded && (
-                          <span className="rounded-full bg-zinc-700 px-1.5 py-0.5 text-zinc-400">
-                            {deps.refs.length + deps.sources.length + deps.rawTableRefs.length}
-                          </span>
-                        )}
-                      </button>
+                      {/* Show button only once deps are fetched; while loading show a small spinner */}
+                      {deps ? (
+                        <button
+                          type="button"
+                          onClick={() => toggleExpanded(p)}
+                          className={`flex items-center gap-1.5 rounded border px-2.5 py-1 text-xs font-medium transition-colors ${
+                            isExpanded
+                              ? "border-emerald-800 bg-emerald-950/60 text-emerald-400"
+                              : "border-zinc-700 bg-zinc-900 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
+                          }`}
+                        >
+                          {isExpanded ? "▾" : "▸"} Dependencies
+                          {hasDeps && !isExpanded && (
+                            <span className="rounded-full bg-zinc-700 px-1.5 py-0.5 text-zinc-400">
+                              {deps.refs.length + deps.sources.length + deps.rawTableRefs.length}
+                            </span>
+                          )}
+                        </button>
+                      ) : (
+                        <span className="text-xs text-zinc-700">Loading deps…</span>
+                      )}
                     </div>
                     <p className="mt-1 font-mono text-xs text-zinc-600">{dir}/</p>
 
@@ -697,7 +721,7 @@ export default function DbtModelsPage() {
             <ul className="divide-y divide-zinc-800/60">
               {filteredNb.map((p) => {
                 const filename = p.split("/").pop() ?? p;
-                const modelName = filename.replace(".ipynb", "");
+                const modelName = filename.replace(/\.ipynb$/i, "");
                 const dir = p.split("/").slice(0, -1).join("/");
                 const isExpanded = expandedPaths.has(p);
                 const nbDeps = notebookDepsMap.get(modelName);
@@ -717,7 +741,7 @@ export default function DbtModelsPage() {
                         href={blobGithubUrl(
                           cfg.fallback!.owner!,
                           cfg.fallback!.repo!,
-                          cfg.fallback!.ref ?? "master",
+                          cfg.fallback!.ref ?? "main",
                           p,
                         )}
                         target="_blank"
@@ -726,22 +750,26 @@ export default function DbtModelsPage() {
                       >
                         GitHub ↗
                       </a>
-                      <button
-                        type="button"
-                        onClick={() => toggleExpanded(p)}
-                        className={`flex items-center gap-1.5 rounded border px-2.5 py-1 text-xs font-medium transition-colors ${
-                          isExpanded
-                            ? "border-amber-800 bg-amber-950/60 text-amber-400"
-                            : "border-zinc-700 bg-zinc-900 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
-                        }`}
-                      >
-                        {isExpanded ? "▾" : "▸"} Dependencies
-                        {hasDeps && !isExpanded && (
-                          <span className="rounded-full bg-zinc-700 px-1.5 py-0.5 text-zinc-400">
-                            {nbDeps.rawTableRefs.length}
-                          </span>
-                        )}
-                      </button>
+                      {nbDeps ? (
+                        <button
+                          type="button"
+                          onClick={() => toggleExpanded(p)}
+                          className={`flex items-center gap-1.5 rounded border px-2.5 py-1 text-xs font-medium transition-colors ${
+                            isExpanded
+                              ? "border-amber-800 bg-amber-950/60 text-amber-400"
+                              : "border-zinc-700 bg-zinc-900 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
+                          }`}
+                        >
+                          {isExpanded ? "▾" : "▸"} Dependencies
+                          {hasDeps && !isExpanded && (
+                            <span className="rounded-full bg-zinc-700 px-1.5 py-0.5 text-zinc-400">
+                              {nbDeps.rawTableRefs.length}
+                            </span>
+                          )}
+                        </button>
+                      ) : (
+                        <span className="text-xs text-zinc-700">Loading deps…</span>
+                      )}
                     </div>
                     <p className="mt-1 font-mono text-xs text-zinc-600">{dir}/</p>
 

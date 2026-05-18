@@ -469,10 +469,17 @@ async function downloadDbtSqlWithTransitiveDeps(owner, repo, ref, token, allMode
   const headers = { "User-Agent": "curefit-auditor-catalog-generator" };
   if (token) headers.Authorization = `Bearer ${token}`;
 
-  // Build model-name → path lookup from the full model index
+  // Build model-name → path lookup from the full model index.
+  // Warn if two files share the same basename — the last one wins and the earlier
+  // one will be silently ignored during BFS transitive expansion.
   const modelNameToPath = new Map();
   for (const p of allModelPaths) {
     const name = p.split("/").pop().replace(/\.sql$/i, "");
+    if (modelNameToPath.has(name)) {
+      console.warn(
+        `[generate-catalog] Duplicate model basename "${name}": "${modelNameToPath.get(name)}" overwritten by "${p}"`,
+      );
+    }
     modelNameToPath.set(name, p);
   }
 
@@ -499,8 +506,9 @@ async function downloadDbtSqlWithTransitiveDeps(owner, repo, ref, token, allMode
     for (const p of queue) {
       const sql = sqlCache.get(p);
       if (!sql) continue;
+      // Matches both {{ ref('model') }} and {{ ref('package', 'model') }}
       const refs = [
-        ...sql.matchAll(/\{\{\s*ref\s*\(\s*['"]([\w]+)['"]\s*\)\s*\}\}/g),
+        ...sql.matchAll(/\{\{\s*ref\s*\([^)]*['"]([\w]+)['"]\s*\)\s*\}\}/gi),
       ].map((m) => m[1]);
       for (const refName of refs) {
         const refPath = modelNameToPath.get(refName);
@@ -515,7 +523,7 @@ async function downloadDbtSqlWithTransitiveDeps(owner, repo, ref, token, allMode
 
   // Write everything to disk
   let ok = 0;
-  let fail = 0;
+  let writeFail = 0;
   for (const [p, sql] of sqlCache) {
     try {
       const outPath = join(DBT_SQL_DIR, ...p.split("/"));
@@ -523,14 +531,18 @@ async function downloadDbtSqlWithTransitiveDeps(owner, repo, ref, token, allMode
       writeFileSync(outPath, sql, "utf8");
       ok++;
     } catch {
-      fail++;
+      writeFail++;
     }
   }
-  fail += allPaths.size - sqlCache.size; // paths that 404'd
+  // Paths that were queued (via seed or BFS) but never made it into sqlCache = fetch failures
+  const fetchFail = allPaths.size - sqlCache.size;
 
   const transitive = ok - seedPaths.size > 0 ? ` (${ok - seedPaths.size} transitive)` : "";
+  const failMsg = fetchFail + writeFail > 0
+    ? `, ${fetchFail} fetch-failed, ${writeFail} write-failed`
+    : "";
   console.log(
-    `[generate-catalog] Downloaded dbt SQL: ${ok} ok${transitive}, ${fail} failed → public/dbt-sql/`,
+    `[generate-catalog] Downloaded dbt SQL: ${ok} ok${transitive}${failMsg} → public/dbt-sql/`,
   );
 }
 
