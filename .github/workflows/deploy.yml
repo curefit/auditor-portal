@@ -45,10 +45,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DBT_GITHUB_TOKEN }}
           METABASE_SITE_URL: https://metabase.curefit.co
           DBT_GITHUB_REPO: https://github.com/curefit/dbt-data-models
-          DBT_GITHUB_REF: master
+          DBT_GITHUB_REF: main
           DBT_MODELS_PATH: transformatics/models
           FALLBACK_GITHUB_REPO: https://github.com/curefit/cf-data-lab
-          FALLBACK_GITHUB_REF: master
+          FALLBACK_GITHUB_REF: main
           FALLBACK_MODELS_PATH: nbs/pinaka_data_models
           VITE_VISITOR_WEBHOOK_URL: https://formspree.io/f/xlgzgoaj
           VITE_ACCESS_PASSWORD: ${{ secrets.AUDITOR_PORTAL_PASSWORD }}
