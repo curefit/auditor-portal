@@ -416,6 +416,33 @@ function matchDbtModelsForRelation(
   };
 }
 
+/**
+ * Resolves the ref to use for a repo. If the specified ref exists, returns it.
+ * Otherwise falls back to the repo's default branch (fetched from the API).
+ * This avoids hard-coding master/main when repos may use either convention.
+ */
+async function resolveRef(owner, repo, ref, headers) {
+  const branchRes = await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/branches/${encodeURIComponent(ref)}`,
+    { headers },
+  );
+  if (branchRes.ok) return ref;
+
+  // Branch not found — try the repo's default branch
+  console.warn(
+    `[generate-catalog] Branch "${ref}" not found on ${owner}/${repo}, falling back to repo default branch`,
+  );
+  const repoRes = await fetch(`https://api.github.com/repos/${owner}/${repo}`, { headers });
+  if (!repoRes.ok) {
+    const t = await repoRes.text();
+    throw new Error(`GitHub branch ${ref}: ${branchRes.status} — repo lookup also failed: ${repoRes.status} ${t.slice(0, 200)}`);
+  }
+  const repoData = await repoRes.json();
+  const defaultBranch = repoData.default_branch;
+  console.log(`[generate-catalog] Using default branch "${defaultBranch}" for ${owner}/${repo}`);
+  return defaultBranch;
+}
+
 /** Fetches .ipynb notebook paths from a fallback repo (e.g. cf-data-lab). */
 async function fetchFallbackNotebookPaths(owner, repo, ref, token, modelsPath) {
   const headers = {
@@ -425,13 +452,15 @@ async function fetchFallbackNotebookPaths(owner, repo, ref, token, modelsPath) {
   };
   if (token) headers.Authorization = `Bearer ${token}`;
 
+  const resolvedRef = await resolveRef(owner, repo, ref, headers);
+
   const branchRes = await fetch(
-    `https://api.github.com/repos/${owner}/${repo}/branches/${encodeURIComponent(ref)}`,
+    `https://api.github.com/repos/${owner}/${repo}/branches/${encodeURIComponent(resolvedRef)}`,
     { headers },
   );
   if (!branchRes.ok) {
     const t = await branchRes.text();
-    throw new Error(`GitHub branch ${ref}: ${branchRes.status} ${t.slice(0, 200)}`);
+    throw new Error(`GitHub branch ${resolvedRef}: ${branchRes.status} ${t.slice(0, 200)}`);
   }
   const branch = await branchRes.json();
   const sha = branch.commit.sha;
@@ -454,7 +483,7 @@ async function fetchFallbackNotebookPaths(owner, repo, ref, token, modelsPath) {
     if (!p.toLowerCase().endsWith(".ipynb")) continue;
     paths.push(p);
   }
-  return paths.sort();
+  return { paths: paths.sort(), resolvedRef };
 }
 
 /**
@@ -583,13 +612,15 @@ async function fetchDbtModelSqlPaths(owner, repo, ref, token, modelsPath = "mode
   };
   if (token) headers.Authorization = `Bearer ${token}`;
 
+  const resolvedRef = await resolveRef(owner, repo, ref, headers);
+
   const branchRes = await fetch(
-    `https://api.github.com/repos/${owner}/${repo}/branches/${encodeURIComponent(ref)}`,
+    `https://api.github.com/repos/${owner}/${repo}/branches/${encodeURIComponent(resolvedRef)}`,
     { headers },
   );
   if (!branchRes.ok) {
     const t = await branchRes.text();
-    throw new Error(`GitHub branch ${ref}: ${branchRes.status} ${t.slice(0, 200)}`);
+    throw new Error(`GitHub branch ${resolvedRef}: ${branchRes.status} ${t.slice(0, 200)}`);
   }
   const branch = await branchRes.json();
   const sha = branch.commit.sha;
@@ -612,7 +643,7 @@ async function fetchDbtModelSqlPaths(owner, repo, ref, token, modelsPath = "mode
     if (!p.toLowerCase().endsWith(".sql")) continue;
     paths.push(p);
   }
-  return paths.sort();
+  return { paths: paths.sort(), resolvedRef };
 }
 
 /** Vite warns if the app tree contains a path segment `#` (e.g. stray folder `auditor-portal/#`). */
@@ -724,6 +755,7 @@ async function main() {
   let modelPaths = [];
   let dbt = null;
   let dbtFetchNote;
+  let resolvedDbtRef = ref;
   const repoSlug = process.env.DBT_GITHUB_REPO?.trim();
   const ref = process.env.DBT_GITHUB_REF?.trim() || "main";
   const token = process.env.GITHUB_TOKEN?.trim();
@@ -738,10 +770,10 @@ async function main() {
     if (parsed) {
       const { owner, repo } = parsed;
       try {
-        modelPaths = await fetchDbtModelSqlPaths(owner, repo, ref, token, modelsPath);
-        dbt = { owner, repo, ref };
+        ({ paths: modelPaths, resolvedRef: resolvedDbtRef } = await fetchDbtModelSqlPaths(owner, repo, ref, token, modelsPath));
+        dbt = { owner, repo, ref: resolvedDbtRef };
         console.log(
-          `[generate-catalog] DBT models on GitHub: ${modelPaths.length} SQL files under ${modelsPath}/ (${owner}/${repo})`,
+          `[generate-catalog] DBT models on GitHub: ${modelPaths.length} SQL files under ${modelsPath}/ (${owner}/${repo}@${resolvedDbtRef})`,
         );
       } catch (e) {
         dbtFetchNote = e instanceof Error ? e.message : String(e);
@@ -760,15 +792,16 @@ async function main() {
   let fallbackPaths = [];
   let fallbackDbt = null;
   let fallbackFetchNote;
+  let resolvedFallbackRef = fallbackRef;
   if (fallbackRepoSlug) {
     const parsed = parseGithubRepoSlug(fallbackRepoSlug);
     if (parsed) {
       const { owner, repo } = parsed;
       try {
-        fallbackPaths = await fetchFallbackNotebookPaths(owner, repo, fallbackRef, token, fallbackModelsPath);
-        fallbackDbt = { owner, repo, ref: fallbackRef };
+        ({ paths: fallbackPaths, resolvedRef: resolvedFallbackRef } = await fetchFallbackNotebookPaths(owner, repo, fallbackRef, token, fallbackModelsPath));
+        fallbackDbt = { owner, repo, ref: resolvedFallbackRef };
         console.log(
-          `[generate-catalog] Fallback notebooks on GitHub: ${fallbackPaths.length} .ipynb files under ${fallbackModelsPath}/ (${owner}/${repo})`,
+          `[generate-catalog] Fallback notebooks on GitHub: ${fallbackPaths.length} .ipynb files under ${fallbackModelsPath}/ (${owner}/${repo}@${resolvedFallbackRef})`,
         );
       } catch (e) {
         fallbackFetchNote = e instanceof Error ? e.message : String(e);
