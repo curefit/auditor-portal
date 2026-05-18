@@ -752,10 +752,6 @@ async function main() {
   ).replace(/\/$/, "");
   const rootSourceUrls = buildRootSourceUrlMap();
 
-  let modelPaths = [];
-  let dbt = null;
-  let dbtFetchNote;
-  let resolvedDbtRef = ref;
   const repoSlug = process.env.DBT_GITHUB_REPO?.trim();
   const ref = process.env.DBT_GITHUB_REF?.trim() || "main";
   const token = process.env.GITHUB_TOKEN?.trim();
@@ -764,6 +760,11 @@ async function main() {
   const fallbackRepoSlug = process.env.FALLBACK_GITHUB_REPO?.trim();
   const fallbackRef = process.env.FALLBACK_GITHUB_REF?.trim() || "master";
   const fallbackModelsPath = process.env.FALLBACK_MODELS_PATH?.trim() || "nbs/pinaka_data_models";
+
+  let modelPaths = [];
+  let dbt = null;
+  let dbtFetchNote;
+  let resolvedDbtRef = ref;
 
   if (repoSlug) {
     const parsed = parseGithubRepoSlug(repoSlug);
