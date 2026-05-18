@@ -44,23 +44,22 @@ function parseDeps(sql: string, path: string): ParsedDeps {
     ),
   ].map((m) => ({ schema: m[1], table: m[2] }));
 
-  // Fallback for ClickHouse / raw SQL dbt models that don't use ref() or source().
-  // Extract CTE names first so we don't mistake them for table refs.
+  // Always extract raw FROM/JOIN schema.table refs in addition to dbt ref()/source() calls.
+  // This catches cross-db joins and ClickHouse models that bypass dbt macros entirely.
+  // CTE names are excluded so they don't appear as false dependencies.
+  const cteNames = new Set(
+    [...sql.matchAll(/(?:WITH|,)\s+([\w]+)\s+AS\s*\(/g)].map((m) => m[1].toLowerCase()),
+  );
   const rawTableRefs: Array<{ schema: string; table: string }> = [];
-  if (refs.length === 0 && sources.length === 0) {
-    const cteNames = new Set(
-      [...sql.matchAll(/(?:WITH|,)\s+([\w]+)\s+AS\s*\(/g)].map((m) => m[1].toLowerCase()),
-    );
-    const rawMatches = [
-      ...sql.matchAll(/\bFROM\s+([\w]+)\.([\w_]+)/g),
-      ...sql.matchAll(/\bJOIN\s+([\w]+)\.([\w_]+)/g),
-    ];
-    for (const m of rawMatches) {
-      const schema = m[1];
-      const table = m[2];
-      if (!cteNames.has(table.toLowerCase()) && !cteNames.has(schema.toLowerCase())) {
-        rawTableRefs.push({ schema, table });
-      }
+  const rawMatches = [
+    ...sql.matchAll(/\bFROM\s+([\w]+)\.([\w_]+)/g),
+    ...sql.matchAll(/\bJOIN\s+([\w]+)\.([\w_]+)/g),
+  ];
+  for (const m of rawMatches) {
+    const schema = m[1];
+    const table = m[2];
+    if (!cteNames.has(table.toLowerCase()) && !cteNames.has(schema.toLowerCase())) {
+      rawTableRefs.push({ schema, table });
     }
   }
 
