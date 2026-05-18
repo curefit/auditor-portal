@@ -471,6 +471,10 @@ export default function DbtModelsPage() {
         const base = import.meta.env.BASE_URL;
         const res = await fetch(`${base}dbt-sql/${path}`);
         if (!res.ok) return false;
+        // Vite dev server returns index.html (text/html, status 200) for missing
+        // static files. Reject those so we don't parse HTML as SQL.
+        const contentType = res.headers.get("content-type") ?? "";
+        if (contentType.includes("text/html")) return false;
         const text = await res.text();
         setSqlCache((prev) => ({ ...prev, [path]: text }));
         return true;
