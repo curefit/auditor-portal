@@ -145,8 +145,12 @@ function loadExistingMetadata(metadataPath) {
 function mergeResultMetadata(card, existingCard) {
   const fresh = card?.result_metadata;
   const previous = existingCard?.result_metadata;
-  if (!Array.isArray(fresh) || fresh.length > 0) return card;
-  if (!Array.isArray(previous) || previous.length === 0) return card;
+  const hasFreshResultMetadata = Array.isArray(fresh) && fresh.length > 0;
+  const hasPreviousResultMetadata =
+    Array.isArray(previous) && previous.length > 0;
+
+  if (hasFreshResultMetadata || !hasPreviousResultMetadata) return card;
+
   return {
     ...card,
     result_metadata: previous,
