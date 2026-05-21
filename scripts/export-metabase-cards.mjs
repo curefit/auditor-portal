@@ -133,6 +133,26 @@ async function fetchCard(baseUrl, authHeaders, cardId) {
   return res.json();
 }
 
+function loadExistingMetadata(metadataPath) {
+  if (!existsSync(metadataPath)) return null;
+  try {
+    return JSON.parse(readFileSync(metadataPath, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function mergeResultMetadata(card, existingCard) {
+  const fresh = card?.result_metadata;
+  const previous = existingCard?.result_metadata;
+  if (!Array.isArray(fresh) || fresh.length > 0) return card;
+  if (!Array.isArray(previous) || previous.length === 0) return card;
+  return {
+    ...card,
+    result_metadata: previous,
+  };
+}
+
 async function main() {
   loadEnvFile();
   const cardIds = process.argv.slice(2).filter(Boolean);
@@ -156,7 +176,9 @@ async function main() {
     const sql = nativeSqlFromCard(card);
 
     const metadataPath = join(METADATA, `${cardId}__${slug}.json`);
-    writeFileSync(metadataPath, `${JSON.stringify(card, null, 2)}\n`, "utf8");
+    const existingCard = loadExistingMetadata(metadataPath);
+    const mergedCard = mergeResultMetadata(card, existingCard);
+    writeFileSync(metadataPath, `${JSON.stringify(mergedCard, null, 2)}\n`, "utf8");
 
     if (!sql) {
       throw new Error(

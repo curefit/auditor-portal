@@ -7,7 +7,93 @@
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
-  "result_metadata": [],
+  "result_metadata": [
+    {
+      "display_name": "month",
+      "field_ref": [
+        "field",
+        "month",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "name": "month",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 5,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2025-09-01",
+            "latest": "2026-01-01"
+          }
+        }
+      }
+    },
+    {
+      "display_name": "business_line",
+      "field_ref": [
+        "field",
+        "business_line",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "name": "business_line",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 19,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.872340425531915
+          }
+        }
+      }
+    },
+    {
+      "display_name": "user_base",
+      "field_ref": [
+        "field",
+        "user_base",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "base_type": "type/BigInteger",
+      "effective_type": "type/BigInteger",
+      "name": "user_base",
+      "semantic_type": null,
+      "fingerprint": {
+        "global": {
+          "distinct-count": 82,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1.0,
+            "q1": 64.22316700167555,
+            "q3": 35733.0,
+            "max": 490606.0,
+            "sd": 109883.6644023311,
+            "avg": 48469.47872340425
+          }
+        }
+      }
+    }
+  ],
   "embedding_type": null,
   "creator": {
     "email": "mukul.yambal@curefit.com",
