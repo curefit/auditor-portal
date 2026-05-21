@@ -14,15 +14,15 @@ d."month"
 ,count(distinct user_id) as user_base
 from dates d
 left join (
-select membership_key, md.business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cd.city_name
+select membership_key, md.business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cd.city_name, cancellation_date
 from dwh_fitness_mart.membership_dim md 
 left join dwh_fitness_mart.center_dim cd on cd.center_key=coalesce(attributed_center_key,final_center_key,purchase_center_key,last_30_days_preferred_center_key)
 
-where lower(status) not like '%canc%'
--- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)
--- )
+where 1=1
+and UPPER(md.business_line) not like '%PT%' -- users of PT are counted in ELITE/PRO memberships
+
 and md.business_line is not null
 ) md
-on d.month_end_date between md.pack_start_date and md.pack_end_date
+on d.month_end_date between md.pack_start_date and least(coalesce(md.cancellation_date,pack_end_date),md.pack_end_date)
 group by 1,2,3
 order by 1 desc, 3 desc

@@ -116,6 +116,9 @@ function nativeSqlFromCard(card) {
     return query.native.query;
   }
   if (query?.native?.query) return query.native.query;
+  const firstStage = Array.isArray(query?.stages) ? query.stages[0] : null;
+  if (firstStage?.native?.query) return firstStage.native.query;
+  if (typeof firstStage?.native === "string") return firstStage.native;
   return null;
 }
 
