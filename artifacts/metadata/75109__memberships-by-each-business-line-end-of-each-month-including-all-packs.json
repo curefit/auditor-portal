@@ -1,8 +1,8 @@
 {
-  "cache_invalidated_at": null,
+  "cache_invalidated_at": "2026-05-20T12:18:36.990082Z",
   "description": null,
   "archived": false,
-  "view_count": 29,
+  "view_count": 66,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
@@ -94,73 +94,84 @@
       }
     }
   ],
+  "embedding_type": null,
   "creator": {
     "email": "mukul.yambal@curefit.com",
     "first_name": "Mukul",
-    "last_login": "2026-04-06T08:50:45.067276Z",
+    "is_data_analyst": false,
+    "last_login": "2026-05-18T09:18:42.221641Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3749,
     "last_name": "Yambal",
+    "tenant_id": null,
     "date_joined": "2025-03-07T10:30:17.035802Z",
     "common_name": "Mukul Yambal"
   },
   "initially_published_at": null,
   "can_write": true,
+  "card_schema": 23,
   "database_id": 39,
   "enable_embedding": false,
   "collection_id": null,
   "query_type": "native",
   "name": "Memberships by Each Business Line - End of Each Month - including all packs",
-  "last_query_start": "2026-04-17T06:13:18.321719Z",
+  "last_query_start": "2026-05-21T10:02:39.71738Z",
+  "is_remote_synced": false,
   "dashboard_count": 0,
-  "last_used_at": "2026-04-17T06:13:18.330277Z",
+  "document_id": null,
+  "last_used_at": "2026-05-21T10:02:39.725708Z",
+  "dashboard": null,
   "type": "question",
-  "warnings": [
-    null
-  ],
-  "average_query_time": 6569.714285714285,
+  "dimensions": null,
+  "average_query_time": 5870.1,
   "creator_id": 3749,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-01-29T09:56:19.632032Z",
+  "updated_at": "2026-05-20T12:18:36.987389Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
+    "lib/type": "mbql/query",
     "database": 39,
-    "type": "native",
-    "native": {
-      "template-tags": {
-        "start_date": {
-          "type": "date",
-          "name": "start_date",
-          "id": "1d48c1b6-1868-421e-be74-cc24177aff01",
-          "display-name": "Start Date"
+    "stages": [
+      {
+        "template-tags": {
+          "start_date": {
+            "id": "1d48c1b6-1868-421e-be74-cc24177aff01",
+            "type": "date",
+            "name": "start_date",
+            "display-name": "Start Date"
+          },
+          "end_date": {
+            "id": "c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d",
+            "type": "date",
+            "name": "end_date",
+            "display-name": "End Date"
+          }
         },
-        "end_date": {
-          "type": "date",
-          "name": "end_date",
-          "id": "c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d",
-          "display-name": "End Date"
-        }
-      },
-      "query": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between {{start_date}} and {{end_date}}\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,\ncount(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id\nfrom dwh_fitness_mart.membership_dim \nwhere lower(status) not like '%canc%'\n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand business_line is not null\n) md\non d.month_end_date between md.pack_start_date and md.pack_end_date\ngroup by 1,2\norder by 1 desc, 3 desc"
-    }
+        "lib/type": "mbql.stage/native",
+        "native": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between {{start_date}} and {{end_date}}\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,\ncount(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cancellation_date\nfrom dwh_fitness_mart.membership_dim \nwhere 1=1\nand UPPER(business_line) not like '%PT%' -- users of PT are counted in ELITE/PRO memberships\n-- (lower(status) not like '%canc%' \n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand business_line is not null\n) md\non d.month_end_date between md.pack_start_date and least(coalesce(md.cancellation_date,pack_end_date),md.pack_end_date)\ngroup by 1,2\norder by 1 desc, 3 desc"
+      }
+    ]
   },
+  "dimension_mappings": null,
   "id": 75109,
+  "legacy_query": "{\"database\":39,\"type\":\"native\",\"native\":{\"template-tags\":{\"start_date\":{\"type\":\"date\",\"name\":\"start_date\",\"id\":\"1d48c1b6-1868-421e-be74-cc24177aff01\",\"display-name\":\"Start Date\"},\"end_date\":{\"type\":\"date\",\"name\":\"end_date\",\"id\":\"c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d\",\"display-name\":\"End Date\"}},\"query\":\"with dates as (\\nselect date_trunc('month',full_date) as \\\"month\\\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\\nfrom dwh_curefit.dim_date\\nwhere full_date between {{start_date}} and {{end_date}}\\ngroup by 1\\n)\\n\\n-- select * from dates\\n\\nselect \\nd.\\\"month\\\"\\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\\n,\\ncount(distinct user_id) as user_base\\nfrom dates d\\nleft join (\\nselect membership_key, business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id\\nfrom dwh_fitness_mart.membership_dim \\nwhere lower(status) not like '%canc%'\\n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\\n-- )\\nand business_line is not null\\n) md\\non d.month_end_date between md.pack_start_date and md.pack_end_date\\ngroup by 1,2\\norder by 1 desc, 3 desc\"}}",
   "parameter_mappings": [],
   "can_manage_db": false,
   "display": "table",
   "archived_directly": false,
   "entity_id": "8_k_hBNuWTqQLs1QPJ3lT",
+  "param_fields": {},
   "collection_preview": true,
   "last-edit-info": {
-    "id": 3749,
-    "email": "mukul.yambal@curefit.com",
-    "first_name": "Mukul",
-    "last_name": "Yambal",
-    "timestamp": "2026-01-29T09:56:19.719947Z"
+    "id": 3570,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-05-20T12:18:37.027478Z"
   },
   "visualization_settings": {
     "table.pivot": true,
@@ -168,11 +179,12 @@
     "table.cell_column": "user_base"
   },
   "collection": {
-    "metabase.models.collection.root/is-root?": true,
+    "metabase.collections.models.collection.root/is-root?": true,
     "authority_level": null,
     "name": "Our analytics",
     "is_personal": false,
     "id": "root",
+    "is_remote_synced": false,
     "can_write": true
   },
   "metabase_version": "vUNKNOWN (?)",
@@ -188,7 +200,8 @@
         ]
       ],
       "name": "Start Date",
-      "slug": "start_date"
+      "slug": "start_date",
+      "isMultiSelect": false
     },
     {
       "id": "c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d",
@@ -201,9 +214,11 @@
         ]
       ],
       "name": "End Date",
-      "slug": "end_date"
+      "slug": "end_date",
+      "isMultiSelect": false
     }
   ],
+  "dashboard_id": null,
   "created_at": "2026-01-29T09:56:19.632032Z",
   "parameter_usage_count": 0,
   "public_uuid": null,

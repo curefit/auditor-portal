@@ -1,15 +1,22 @@
 {
-  "cache_invalidated_at": null,
+  "cache_invalidated_at": "2026-05-20T12:17:39.881106Z",
   "description": null,
   "archived": false,
-  "view_count": 7,
+  "view_count": 16,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "display_name": "month",
+      "database_type": "date",
+      "semantic_type": null,
+      "lib/deduplicated-name": "month",
+      "lib/original-name": "month",
+      "name": "month",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "month",
+      "source": "native",
       "field_ref": [
         "field",
         "month",
@@ -17,25 +24,32 @@
           "base-type": "type/Date"
         }
       ],
-      "base_type": "type/Date",
       "effective_type": "type/Date",
-      "name": "month",
-      "semantic_type": null,
+      "lib/desired-column-alias": "month",
+      "display_name": "month",
       "fingerprint": {
         "global": {
-          "distinct-count": 9,
-          "nil%": 0.0
+          "distinct-count": 7,
+          "nil%": 0
         },
         "type": {
           "type/DateTime": {
-            "earliest": "2025-07-01",
+            "earliest": "2025-09-01",
             "latest": "2026-03-01"
           }
         }
-      }
+      },
+      "base_type": "type/Date"
     },
     {
-      "display_name": "business_line",
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "business_line",
+      "lib/original-name": "business_line",
+      "name": "business_line",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "business_line",
+      "source": "native",
       "field_ref": [
         "field",
         "business_line",
@@ -43,28 +57,35 @@
           "base-type": "type/Text"
         }
       ],
-      "base_type": "type/Text",
       "effective_type": "type/Text",
-      "name": "business_line",
-      "semantic_type": null,
+      "lib/desired-column-alias": "business_line",
+      "display_name": "business_line",
       "fingerprint": {
         "global": {
-          "distinct-count": 19,
-          "nil%": 0.0
+          "distinct-count": 14,
+          "nil%": 0
         },
         "type": {
           "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 7.554778554778554
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 7.806236080178174
           }
         }
-      }
+      },
+      "base_type": "type/Text"
     },
     {
-      "display_name": "city_name",
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "city_name",
+      "lib/original-name": "city_name",
+      "name": "city_name",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "city_name",
+      "source": "native",
       "field_ref": [
         "field",
         "city_name",
@@ -72,28 +93,35 @@
           "base-type": "type/Text"
         }
       ],
-      "base_type": "type/Text",
       "effective_type": "type/Text",
-      "name": "city_name",
-      "semantic_type": null,
+      "lib/desired-column-alias": "city_name",
+      "display_name": "city_name",
       "fingerprint": {
         "global": {
-          "distinct-count": 56,
-          "nil%": 0.101010101010101
+          "distinct-count": 55,
+          "nil%": 0.08240534521158129
         },
         "type": {
           "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 7.037296037296037
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 7.160356347438753
           }
         }
-      }
+      },
+      "base_type": "type/Text"
     },
     {
-      "display_name": "user_base",
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "user_base",
+      "lib/original-name": "user_base",
+      "name": "user_base",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "user_base",
+      "source": "native",
       "field_ref": [
         "field",
         "user_base",
@@ -101,99 +129,110 @@
           "base-type": "type/BigInteger"
         }
       ],
-      "base_type": "type/BigInteger",
       "effective_type": "type/BigInteger",
-      "name": "user_base",
-      "semantic_type": null,
+      "lib/desired-column-alias": "user_base",
+      "display_name": "user_base",
       "fingerprint": {
         "global": {
-          "distinct-count": 702,
-          "nil%": 0.0
+          "distinct-count": 528,
+          "nil%": 0
         },
         "type": {
           "type/Number": {
-            "min": 1.0,
-            "q1": 122.04953037715394,
-            "q3": 1635.6817798702577,
-            "max": 222029.0,
-            "sd": 23114.067937079122,
-            "avg": 6430.913752913753
+            "min": 1,
+            "q1": 55.71876294138889,
+            "q3": 1607.8323916823351,
+            "max": 223220,
+            "sd": 24856.307261955535,
+            "avg": 7356.053452115813
           }
         }
-      }
+      },
+      "base_type": "type/BigInteger"
     }
   ],
+  "embedding_type": null,
   "creator": {
     "email": "mukul.yambal@curefit.com",
     "first_name": "Mukul",
-    "last_login": "2026-04-06T08:50:45.067276Z",
+    "is_data_analyst": false,
+    "last_login": "2026-05-18T09:18:42.221641Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3749,
     "last_name": "Yambal",
+    "tenant_id": null,
     "date_joined": "2025-03-07T10:30:17.035802Z",
     "common_name": "Mukul Yambal"
   },
   "initially_published_at": null,
   "can_write": true,
+  "card_schema": 23,
   "database_id": 39,
   "enable_embedding": false,
   "collection_id": null,
   "query_type": "native",
   "name": "Memberships by Each Business Line - End of Each Month - including all packs -city level",
-  "last_query_start": "2026-04-12T13:01:47.223903Z",
+  "last_query_start": "2026-05-21T10:07:23.446779Z",
+  "is_remote_synced": false,
   "dashboard_count": 0,
-  "last_used_at": "2026-04-12T13:01:47.229523Z",
+  "document_id": null,
+  "last_used_at": "2026-05-21T10:07:23.504545Z",
+  "dashboard": null,
   "type": "question",
-  "warnings": [
-    null
-  ],
-  "average_query_time": 3335.0,
+  "dimensions": null,
+  "average_query_time": 18757.571428571428,
   "creator_id": 3749,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-03-12T06:29:20.341384Z",
+  "updated_at": "2026-05-20T12:17:39.87657Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
+    "lib/type": "mbql/query",
     "database": 39,
-    "type": "native",
-    "native": {
-      "template-tags": {
-        "start_date": {
-          "type": "date",
-          "name": "start_date",
-          "id": "a76b1cdc-1d22-4832-adcd-a4b15058e8cf",
-          "display-name": "Start Date",
-          "default": "2025-09-12",
-          "widget-type": null
+    "stages": [
+      {
+        "template-tags": {
+          "start_date": {
+            "display-name": "Start Date",
+            "default": "2025-09-12",
+            "type": "date",
+            "name": "start_date",
+            "id": "a76b1cdc-1d22-4832-adcd-a4b15058e8cf",
+            "widget-type": null
+          },
+          "end_date": {
+            "display-name": "End Date",
+            "default": "2026-03-12",
+            "type": "date",
+            "name": "end_date",
+            "id": "ddf5f89d-5764-4594-9077-650163c1b069",
+            "widget-type": null
+          }
         },
-        "end_date": {
-          "type": "date",
-          "name": "end_date",
-          "id": "ddf5f89d-5764-4594-9077-650163c1b069",
-          "display-name": "End Date",
-          "default": "2026-03-12",
-          "widget-type": null
-        }
-      },
-      "query": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between {{start_date}} and {{end_date}}\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,city_name\n,count(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, md.business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cd.city_name\nfrom dwh_fitness_mart.membership_dim md \nleft join dwh_fitness_mart.center_dim cd on cd.center_key=coalesce(attributed_center_key,final_center_key,purchase_center_key,last_30_days_preferred_center_key)\n\nwhere lower(status) not like '%canc%'\n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand md.business_line is not null\n) md\non d.month_end_date between md.pack_start_date and md.pack_end_date\ngroup by 1,2,3\norder by 1 desc, 3 desc"
-    }
+        "lib/type": "mbql.stage/native",
+        "native": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between {{start_date}} and {{end_date}}\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,city_name\n,count(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, md.business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cd.city_name, cancellation_date\nfrom dwh_fitness_mart.membership_dim md \nleft join dwh_fitness_mart.center_dim cd on cd.center_key=coalesce(attributed_center_key,final_center_key,purchase_center_key,last_30_days_preferred_center_key)\n\nwhere 1=1\nand UPPER(md.business_line) not like '%PT%' -- users of PT are counted in ELITE/PRO memberships\n\nand md.business_line is not null\n) md\non d.month_end_date between md.pack_start_date and least(coalesce(md.cancellation_date,pack_end_date),md.pack_end_date)\ngroup by 1,2,3\norder by 1 desc, 3 desc"
+      }
+    ]
   },
+  "dimension_mappings": null,
   "id": 77280,
+  "legacy_query": "{\"database\":39,\"type\":\"native\",\"native\":{\"template-tags\":{\"start_date\":{\"type\":\"date\",\"name\":\"start_date\",\"id\":\"a76b1cdc-1d22-4832-adcd-a4b15058e8cf\",\"display-name\":\"Start Date\",\"default\":\"2025-09-12\",\"widget-type\":null},\"end_date\":{\"type\":\"date\",\"name\":\"end_date\",\"id\":\"ddf5f89d-5764-4594-9077-650163c1b069\",\"display-name\":\"End Date\",\"default\":\"2026-03-12\",\"widget-type\":null}},\"query\":\"with dates as (\\nselect date_trunc('month',full_date) as \\\"month\\\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\\nfrom dwh_curefit.dim_date\\nwhere full_date between {{start_date}} and {{end_date}}\\ngroup by 1\\n)\\n\\n-- select * from dates\\n\\nselect \\nd.\\\"month\\\"\\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\\n,city_name\\n,count(distinct user_id) as user_base\\nfrom dates d\\nleft join (\\nselect membership_key, md.business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cd.city_name\\nfrom dwh_fitness_mart.membership_dim md \\nleft join dwh_fitness_mart.center_dim cd on cd.center_key=coalesce(attributed_center_key,final_center_key,purchase_center_key,last_30_days_preferred_center_key)\\n\\nwhere lower(status) not like '%canc%'\\n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\\n-- )\\nand md.business_line is not null\\n) md\\non d.month_end_date between md.pack_start_date and md.pack_end_date\\ngroup by 1,2,3\\norder by 1 desc, 3 desc\"}}",
   "parameter_mappings": [],
   "can_manage_db": false,
   "display": "table",
   "archived_directly": false,
   "entity_id": "KiOkdKmG-k2pUvUJZxRRq",
+  "param_fields": {},
   "collection_preview": true,
   "last-edit-info": {
-    "id": 3749,
-    "email": "mukul.yambal@curefit.com",
-    "first_name": "Mukul",
-    "last_name": "Yambal",
-    "timestamp": "2026-03-12T06:29:20.931677Z"
+    "id": 3570,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-05-20T12:17:39.923056Z"
   },
   "visualization_settings": {
     "table.pivot_column": "month",
@@ -203,11 +242,12 @@
     ]
   },
   "collection": {
-    "metabase.models.collection.root/is-root?": true,
+    "metabase.collections.models.collection.root/is-root?": true,
     "authority_level": null,
     "name": "Our analytics",
     "is_personal": false,
     "id": "root",
+    "is_remote_synced": false,
     "can_write": true
   },
   "metabase_version": "vUNKNOWN (?)",
@@ -224,7 +264,8 @@
       ],
       "name": "Start Date",
       "slug": "start_date",
-      "default": "2025-09-12"
+      "default": "2025-09-12",
+      "isMultiSelect": false
     },
     {
       "id": "ddf5f89d-5764-4594-9077-650163c1b069",
@@ -238,9 +279,11 @@
       ],
       "name": "End Date",
       "slug": "end_date",
-      "default": "2026-03-12"
+      "default": "2026-03-12",
+      "isMultiSelect": false
     }
   ],
+  "dashboard_id": null,
   "created_at": "2026-03-12T04:43:05.418968Z",
   "parameter_usage_count": 0,
   "public_uuid": null,

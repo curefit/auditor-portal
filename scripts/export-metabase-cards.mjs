@@ -116,6 +116,9 @@ function nativeSqlFromCard(card) {
     return query.native.query;
   }
   if (query?.native?.query) return query.native.query;
+  const firstStage = Array.isArray(query?.stages) ? query.stages[0] : null;
+  if (firstStage?.native?.query) return firstStage.native.query;
+  if (typeof firstStage?.native === "string") return firstStage.native;
   return null;
 }
 
@@ -128,6 +131,30 @@ async function fetchCard(baseUrl, authHeaders, cardId) {
     throw new Error(`Card ${cardId}: ${res.status} ${text.slice(0, 200)}`);
   }
   return res.json();
+}
+
+function loadExistingMetadata(metadataPath) {
+  if (!existsSync(metadataPath)) return null;
+  try {
+    return JSON.parse(readFileSync(metadataPath, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function mergeResultMetadata(card, existingCard) {
+  const fresh = card?.result_metadata;
+  const previous = existingCard?.result_metadata;
+  const hasFreshResultMetadata = Array.isArray(fresh) && fresh.length > 0;
+  const hasPreviousResultMetadata =
+    Array.isArray(previous) && previous.length > 0;
+
+  if (hasFreshResultMetadata || !hasPreviousResultMetadata) return card;
+
+  return {
+    ...card,
+    result_metadata: previous,
+  };
 }
 
 async function main() {
@@ -153,7 +180,9 @@ async function main() {
     const sql = nativeSqlFromCard(card);
 
     const metadataPath = join(METADATA, `${cardId}__${slug}.json`);
-    writeFileSync(metadataPath, `${JSON.stringify(card, null, 2)}\n`, "utf8");
+    const existingCard = loadExistingMetadata(metadataPath);
+    const mergedCard = mergeResultMetadata(card, existingCard);
+    writeFileSync(metadataPath, `${JSON.stringify(mergedCard, null, 2)}\n`, "utf8");
 
     if (!sql) {
       throw new Error(
