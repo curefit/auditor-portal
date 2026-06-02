@@ -1,3 +1,6 @@
+-- Purpose: Classify memberships by pause usage, transfer usage, both, or neither.
+-- Output: type, memberships.
+-- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the base cohort.
 WITH
   base AS (
     SELECT
@@ -5,10 +8,18 @@ WITH
       fitness_next_membership
     FROM
       dwh_fitness_mart.membership_dim m
+      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
+        ON mdb.id = m.membership_service_id
     WHERE 1=1
-      AND m.membership_created_date between date('2017-10-01') and {{ed}}
+      -- Use membership-service created_date for transferred/upgraded packs before classifying pause/transfer usage.
+      AND DATE(
+        CASE
+          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date
+          ELSE m.membership_created_date
+        END
+      ) between date('2017-10-01') and {{ed}}
+      -- Pause/transfer usage is reviewed for the main fitness membership lines.
       and m.business_line in ('ELITE','PRO','PLAY')
-    --   and amount_paid>2000
     GROUP BY
       1,
       2
@@ -52,7 +63,7 @@ WITH
         AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')
     )
     WHERE row_num = 1
-    -- Filter to Transfer only (excluding Upgrades) to match original transfer logic
+    -- Only transfers are counted in the transfer-used bucket; upgrades are not part of this audit cut.
     AND relationship = 'Transfer'
   )
 

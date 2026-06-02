@@ -1,3 +1,6 @@
+-- Purpose: Report daily membership revenue, packs, duration, realization, spot offers, and no-cost EMI metrics.
+-- Output: Purchase Date, SKU, Type, Membership Type, City, Pack Duration, Presales, Revenue, Packs, Duration, realization and offer metrics.
+-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for purchase windows and duration.
 Select
         purchase_date as "Purchase Date",
         business_line as "SKU",
@@ -38,9 +41,38 @@ Select
     (
         Select
             Coalesce(membership_dim.elite_membership_id, membership_dim.pro_membership_id) as membership_id,
-            membership_dim.pack_start_date, Coalesce(original_pack_end_date, membership_dim.pack_end_date) as pack_end_date,
-            Date_Diff('Day', membership_dim.pack_start_date, Coalesce(original_pack_end_date, membership_dim.pack_end_date)) as day_difference,
-            membership_dim.user_id, Date(membership_dim.membership_created_date) as purchase_date, 
+            CASE
+                WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then membership_mdb."start"
+                Else membership_dim.pack_start_date
+            End as pack_start_date,
+            Coalesce(
+                original_pack_end_date,
+                CASE
+                    WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then membership_mdb."end"
+                    Else membership_dim.pack_end_date
+                End
+            ) as pack_end_date,
+            Date_Diff(
+                'Day',
+                CASE
+                    WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then membership_mdb."start"
+                    Else membership_dim.pack_start_date
+                End,
+                Coalesce(
+                    original_pack_end_date,
+                    CASE
+                        WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then membership_mdb."end"
+                        Else membership_dim.pack_end_date
+                    End
+                )
+            ) as day_difference,
+            membership_dim.user_id,
+            Date(
+                CASE
+                    WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then membership_mdb.created_date
+                    Else membership_dim.membership_created_date
+                End
+            ) as purchase_date,
             attributed_center.city_name as attributed_city,
             membership_dim.business_line as business_line,
             membership_dim.amount_paid,
@@ -69,13 +101,20 @@ Select
             Coalesce(orders_fact.city_name, attributed_center.city_name, purchase_center.city_name) as order_cityname,
             is_select,
             Case
-                When Date(membership_created_date) < Date(purchase_center.center_launch_date) Then 1
+                When Date(
+                    CASE
+                        WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then membership_mdb.created_date
+                        Else membership_dim.membership_created_date
+                    End
+                ) < Date(purchase_center.center_launch_date) Then 1
                 Else 0
             End as pre_sales_flag,
             orders_fact.spot_offer_value,
             orders_fact.instant_discount as no_cost_emi
             
         From dwh_fitness_mart.membership_dim
+        Left join pk_curefitplatforms_membershipdb.memberships membership_mdb
+            on membership_mdb.id = membership_dim.membership_service_id
         Left join dwh_fitness_mart.orders_fact on dwh_fitness_mart.orders_fact.order_key = dwh_fitness_mart.membership_dim.order_key
             and Date(orders_fact.purchase_date) >= Date(current_date) - Interval '3' Year
         Left join dwh_fitness_mart.center_dim purchase_center on purchase_center.center_key = membership_dim.purchase_center_key
@@ -83,15 +122,26 @@ Select
         Left join 
             (
                 Select 
-                    membership_key, Row_Number() Over(Partition By user_id Order by membership_created_date) as membership_rank, 
-                    Lag(business_line) Over(Partition By user_id Order by membership_created_date) as previous_sku
+                    membership_key,
+                    -- Repeat logic should order transfers/upgrades by membership-service created_date.
+                    Row_Number() Over(Partition By membership_dim.user_id Order by CASE
+                        WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then repeat_mdb.created_date
+                        Else membership_dim.membership_created_date
+                    END) as membership_rank,
+                    Lag(membership_dim.business_line) Over(Partition By membership_dim.user_id Order by CASE
+                        WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then repeat_mdb.created_date
+                        Else membership_dim.membership_created_date
+                    END) as previous_sku
                 From dwh_fitness_mart.membership_dim
+                Left join pk_curefitplatforms_membershipdb.memberships repeat_mdb
+                    on repeat_mdb.id = membership_dim.membership_service_id
                 Where
-                    (lower(Coalesce(status,'xx')) not like '%canc%') and
+                    -- Cancelled packs are not used while deciding New vs Repeat.
+                    (lower(Coalesce(membership_dim.status,'xx')) not like '%canc%') and
                     (
-                        membership_dim.amount_paid > 0 or Coalesce(membership_type,'xx')  in ('MEMBER_MIGRATION','ENTERPRISE','MIGRATION') or 
-                        Coalesce(pack_name,'xx')  in ('Transferred Pack') or Coalesce(status,'xx')  in ('MEMBERSHIP_TRANSFERRED') or 
-                        Coalesce(source,'xx')  in ('MIGRATION')
+                        membership_dim.amount_paid > 0 or Coalesce(membership_dim.membership_type,'xx')  in ('MEMBER_MIGRATION','ENTERPRISE','MIGRATION') or
+                        Coalesce(membership_dim.pack_name,'xx')  in ('Transferred Pack') or Coalesce(membership_dim.status,'xx')  in ('MEMBERSHIP_TRANSFERRED') or
+                        Coalesce(membership_dim.source,'xx')  in ('MIGRATION')
                     )
             ) as membership
             on membership.membership_key = membership_dim.membership_key
@@ -122,16 +172,27 @@ Select
             on emi_order_data.orderid = orders_fact.order_id
         
         Where
+            -- Daily revenue view is for ELITE and PRO memberships.
             membership_dim.business_line IN ('ELITE','PRO')
-            and Date(membership_dim.membership_created_date) >= {{Start_Date}}
-            and Date(membership_dim.membership_created_date) <= {{End_Date}}
+            -- Use membership-service created_date for transferred/upgraded packs in purchase-window reporting.
+            and Date(CASE
+                WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then membership_mdb.created_date
+                Else membership_dim.membership_created_date
+            END) >= {{Start_Date}}
+            and Date(CASE
+                WHEN Lower(Cast(membership_dim.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(membership_dim.is_upgrade_pack as Varchar)) = 'true' Then membership_mdb.created_date
+                Else membership_dim.membership_created_date
+            END) <= {{End_Date}}
+            -- Revenue metrics use paid packs only.
             and membership_dim.amount_paid is not Null 
             and membership_dim.amount_paid > 0
             
     )
     
     Where
+        -- Avoid divide-by-zero and invalid duration packs.
         day_difference > 0
+        -- Upgraded/transfer pack names are excluded from final pack-sale reporting.
         and Lower(pack_name) not like '%upgraded%'
         and Lower(pack_name) not like '%transfer%'
         

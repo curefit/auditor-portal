@@ -1,0 +1,1295 @@
+{
+  "card_id": 75114,
+  "card_name": "Monthly active memberships ELITE, PRO, PLAY, LUX",
+  "parameters": [
+    {
+      "id": "90e4791f-ad7f-654d-70b1-b79a4b1143b7",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Start_Date"
+        ]
+      ],
+      "name": "Start_Date",
+      "slug": "Start_Date",
+      "default": "2023-01-01",
+      "required": true,
+      "isMultiSelect": false,
+      "value": "2023-04-01"
+    },
+    {
+      "id": "01e4ebe1-c50a-c995-3ec0-56c59e66640b",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "end_date",
+      "slug": "end_date",
+      "default": "2026-03-31",
+      "required": true,
+      "isMultiSelect": false,
+      "value": "2026-03-31"
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          2023,
+          4,
+          "2023-04-01T00:00:00Z",
+          322220,
+          188422,
+          58.48,
+          10.041210686650178
+        ],
+        [
+          2023,
+          5,
+          "2023-05-01T00:00:00Z",
+          338613,
+          197666,
+          58.38,
+          10.311884694383455
+        ],
+        [
+          2023,
+          6,
+          "2023-06-01T00:00:00Z",
+          345364,
+          202191,
+          58.54,
+          10.137187115153493
+        ],
+        [
+          2023,
+          7,
+          "2023-07-01T00:00:00Z",
+          354220,
+          208462,
+          58.85,
+          10.379383292878318
+        ],
+        [
+          2023,
+          8,
+          "2023-08-01T00:00:00Z",
+          371873,
+          221793,
+          59.64,
+          10.399381405184114
+        ],
+        [
+          2023,
+          9,
+          "2023-09-01T00:00:00Z",
+          385361,
+          223703,
+          58.05,
+          9.634694215097696
+        ],
+        [
+          2023,
+          10,
+          "2023-10-01T00:00:00Z",
+          394945,
+          229594,
+          58.13,
+          9.759758530275182
+        ],
+        [
+          2023,
+          11,
+          "2023-11-01T00:00:00Z",
+          402941,
+          220153,
+          54.64,
+          9.091336479630076
+        ],
+        [
+          2023,
+          12,
+          "2023-12-01T00:00:00Z",
+          404296,
+          223610,
+          55.31,
+          9.467716112875095
+        ],
+        [
+          2024,
+          1,
+          "2024-01-01T00:00:00Z",
+          408056,
+          234082,
+          57.37,
+          10.023372151639169
+        ],
+        [
+          2024,
+          2,
+          "2024-02-01T00:00:00Z",
+          426701,
+          250565,
+          58.72,
+          10.013936503502086
+        ],
+        [
+          2024,
+          3,
+          "2024-03-01T00:00:00Z",
+          433637,
+          253833,
+          58.54,
+          9.99342087120272
+        ],
+        [
+          2024,
+          4,
+          "2024-04-01T00:00:00Z",
+          442436,
+          261683,
+          59.15,
+          10.045509261205352
+        ],
+        [
+          2024,
+          5,
+          "2024-05-01T00:00:00Z",
+          455690,
+          275077,
+          60.36,
+          10.502761045089192
+        ],
+        [
+          2024,
+          6,
+          "2024-06-01T00:00:00Z",
+          460837,
+          276730,
+          60.05,
+          9.958811838253894
+        ],
+        [
+          2024,
+          7,
+          "2024-07-01T00:00:00Z",
+          469883,
+          288307,
+          61.36,
+          10.555709712216492
+        ],
+        [
+          2024,
+          8,
+          "2024-08-01T00:00:00Z",
+          482273,
+          291810,
+          60.51,
+          9.984496761591446
+        ],
+        [
+          2024,
+          9,
+          "2024-09-01T00:00:00Z",
+          491951,
+          299728,
+          60.93,
+          9.899845860246623
+        ],
+        [
+          2024,
+          10,
+          "2024-10-01T00:00:00Z",
+          502233,
+          297746,
+          59.28,
+          9.60640613140059
+        ],
+        [
+          2024,
+          11,
+          "2024-11-01T00:00:00Z",
+          498399,
+          290464,
+          58.28,
+          9.623684862840145
+        ],
+        [
+          2024,
+          12,
+          "2024-12-01T00:00:00Z",
+          501873,
+          288555,
+          57.5,
+          9.64154493943962
+        ],
+        [
+          2025,
+          1,
+          "2025-01-01T00:00:00Z",
+          500196,
+          304094,
+          60.79,
+          10.26837096424132
+        ],
+        [
+          2025,
+          2,
+          "2025-02-01T00:00:00Z",
+          525727,
+          316334,
+          60.17,
+          9.521113759507356
+        ],
+        [
+          2025,
+          3,
+          "2025-03-01T00:00:00Z",
+          529889,
+          320823,
+          60.55,
+          10.2373333582692
+        ],
+        [
+          2025,
+          4,
+          "2025-04-01T00:00:00Z",
+          537048,
+          331229,
+          61.68,
+          10.252163910768683
+        ],
+        [
+          2025,
+          5,
+          "2025-05-01T00:00:00Z",
+          542689,
+          329908,
+          60.79,
+          10.347263479515501
+        ],
+        [
+          2025,
+          6,
+          "2025-06-01T00:00:00Z",
+          556143,
+          345890,
+          62.19,
+          10.207583335742576
+        ],
+        [
+          2025,
+          7,
+          "2025-07-01T00:00:00Z",
+          564297,
+          359302,
+          63.67,
+          11.137196564449962
+        ],
+        [
+          2025,
+          8,
+          "2025-08-01T00:00:00Z",
+          573744,
+          349250,
+          60.87,
+          9.841603435934145
+        ],
+        [
+          2025,
+          9,
+          "2025-09-01T00:00:00Z",
+          583803,
+          357554,
+          61.25,
+          10.054682649334087
+        ],
+        [
+          2025,
+          10,
+          "2025-10-01T00:00:00Z",
+          589242,
+          343685,
+          58.33,
+          9.387968634068988
+        ],
+        [
+          2025,
+          11,
+          "2025-11-01T00:00:00Z",
+          589158,
+          355469,
+          60.34,
+          10.044273902928245
+        ],
+        [
+          2025,
+          12,
+          "2025-12-01T00:00:00Z",
+          590589,
+          350155,
+          59.29,
+          10.133963530436521
+        ],
+        [
+          2026,
+          1,
+          "2026-01-01T00:00:00Z",
+          589967,
+          361772,
+          61.32,
+          10.162016408124455
+        ],
+        [
+          2026,
+          2,
+          "2026-02-01T00:00:00Z",
+          608775,
+          375367,
+          61.66,
+          9.86707142609766
+        ],
+        [
+          2026,
+          3,
+          "2026-03-01T00:00:00Z",
+          599294,
+          374106,
+          62.42,
+          10.291313157233512
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "Year",
+          "lib/original-name": "Year",
+          "name": "Year",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "Year",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "Year",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "Year",
+          "display_name": "Year",
+          "base_type": "type/BigInteger"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "Month",
+          "lib/original-name": "Month",
+          "name": "Month",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "Month",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "Month",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "Month",
+          "display_name": "Month",
+          "base_type": "type/BigInteger"
+        },
+        {
+          "database_type": "date",
+          "lib/deduplicated-name": "month",
+          "lib/original-name": "month",
+          "name": "month",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "month",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "month",
+            {
+              "base-type": "type/Date"
+            }
+          ],
+          "effective_type": "type/Date",
+          "lib/desired-column-alias": "month",
+          "display_name": "month",
+          "base_type": "type/Date"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "liveMemberships",
+          "lib/original-name": "liveMemberships",
+          "name": "liveMemberships",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "liveMemberships",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "liveMemberships",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "liveMemberships",
+          "display_name": "liveMemberships",
+          "base_type": "type/BigInteger"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "activeMemberships",
+          "lib/original-name": "activeMemberships",
+          "name": "activeMemberships",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "activeMemberships",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "activeMemberships",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "activeMemberships",
+          "display_name": "activeMemberships",
+          "base_type": "type/BigInteger"
+        },
+        {
+          "database_type": "decimal(38,15)",
+          "lib/deduplicated-name": "monthlyActiveMemberships",
+          "lib/original-name": "monthlyActiveMemberships",
+          "name": "monthlyActiveMemberships",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "monthlyActiveMemberships",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "monthlyActiveMemberships",
+            {
+              "base-type": "type/Decimal"
+            }
+          ],
+          "effective_type": "type/Decimal",
+          "lib/desired-column-alias": "monthlyActiveMemberships",
+          "display_name": "monthlyActiveMemberships",
+          "base_type": "type/Decimal"
+        },
+        {
+          "database_type": "decimal(38,17)",
+          "lib/deduplicated-name": "avg_sessions",
+          "lib/original-name": "avg_sessions",
+          "name": "avg_sessions",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "avg_sessions",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "avg_sessions",
+            {
+              "base-type": "type/Decimal"
+            }
+          ],
+          "effective_type": "type/Decimal",
+          "lib/desired-column-alias": "avg_sessions",
+          "display_name": "avg_sessions",
+          "base_type": "type/Decimal"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2023-04-01",
+          "2026-03-31",
+          "2023-04-01",
+          "2026-03-31"
+        ],
+        "lib/type": "mbql.stage/native",
+        "query": "-- Purpose: Count live and monthly active memberships for ELITE, PRO, PLAY, and LUX.\n-- Output: Year, Month, month, liveMemberships, activeMemberships, monthlyActiveMemberships, avg_sessions.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live and active windows.\nwith liveMemberships as(\nselect Weekstart.weekstart as weekstart,\nm.membership_key as membershipdb_id, -- Cult membership id\nm.user_id,\ndate(m.pack_start_date) as Startdate,\ndate(m.pack_end_date) as enddate,\ndate(m.membership_created_date) as membership_created_date\n\nfrom\n(\nSELECT distinct date_trunc('month',full_date) as Weekstart\nFROM \"dwh_curefit\".\"dim_date\" \nwhere full_date between ? and ?\n) weekstart\nleft join (\n    select\n        md.membership_key,\n        md.user_id,\n        md.business_line,\n        md.amount_paid,\n        md.status,\n        -- Transfers/upgrades should use membership-service dates so live and active windows use the corrected pack lifecycle.\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n        end as pack_start_date,\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n        end as pack_end_date,\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n        end as membership_created_date\n    from dwh_fitness_mart.membership_dim md\n    left join pk_curefitplatforms_membershipdb.memberships mdb\n        on mdb.id = md.membership_service_id\n-- Live membership must cover the complete month.\n) m on date(m.pack_start_date)<=weekstart.Weekstart and date(m.pack_end_date)>=date_add('month',1,weekstart.Weekstart)\n\nwhere  m.business_line  is not null\n-- Fitness membership lines included in the active-membership report.\nand m.business_line in ('ELITE','PRO','PLAY','LUX')\n-- Keep customer-paid packs; enterprise packs are intentionally not included here.\nand (m.amount_paid>2000 \n-- or is_enterprise = 1\n)\n-- Cancelled memberships are not counted as live.\nand m.status not like ('%CANC%')\n\n)\n-- select * from liveMemberships\n,\n\nactiveMemberships as(\n\nselect weekstart.weekstart as weekstart,\nb.membership_key as membershipserviceid, --cult membershipid\nb.user_id,\nb.class_date,\nb.booking_key\n\nfrom\n\n(\nSELECT distinct date_trunc('month',full_date) as Weekstart\nFROM \"dwh_curefit\".\"dim_date\" \nwhere full_date between ? and ?\n) weekstart\n\nleft join\"dwh_fitness_mart\".\"booking_fact\" b on date(b.class_date)>= weekstart.Weekstart and date(b.class_date)< date_Add('month',1,weekstart.weekstart) and b.attendance_Time is not null -- Active users are counted only when they attended a class in the month.\nand date(b.class_date)>=date('2022-01-01') -- Partition \n)\n-- select * from activeMemberships\nselect year(l1.Weekstart) as Year,\nmonth(l1.weekstart) as Month,\ndate_trunc('month',l1.weekstart) month,\ncount(distinct l1.membershipdb_id) as liveMemberships,\ncount(distinct am.user_id) as activeMemberships,\nround(count(distinct am.user_id)*100.00/count(distinct l1.membershipdb_id),2) as monthlyActiveMemberships,\n1.00*count(distinct booking_key)/nullif(count(distinct am.user_id),0) as avg_sessions\nfrom liveMemberships l1\nleft join activeMemberships am on l1.user_id=am.user_id and l1.weekstart=am.weekstart and am.class_date between l1.Startdate and l1.enddate\n\ngroup by 1,2,3\norder by 1,2,3"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "Year",
+            "lib/original-name": "Year",
+            "name": "Year",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "Year",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "Year",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "Year",
+            "display_name": "Year",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2023,
+                  "q1": 2023.4641016151377,
+                  "q3": 2025,
+                  "max": 2026,
+                  "sd": 0.9373214115613857,
+                  "avg": 2024.25
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "Month",
+            "lib/original-name": "Month",
+            "name": "Month",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "Month",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "Month",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "Month",
+            "display_name": "Month",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 12,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 1,
+                  "q1": 3.5,
+                  "q3": 9.5,
+                  "max": 12,
+                  "sd": 3.5010202594590707,
+                  "avg": 6.5
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          },
+          {
+            "database_type": "date",
+            "semantic_type": null,
+            "lib/deduplicated-name": "month",
+            "lib/original-name": "month",
+            "name": "month",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "month",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "month",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "effective_type": "type/Date",
+            "lib/desired-column-alias": "month",
+            "display_name": "month",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2023-04-01",
+                  "latest": "2026-03-01"
+                }
+              }
+            },
+            "base_type": "type/Date"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "liveMemberships",
+            "lib/original-name": "liveMemberships",
+            "name": "liveMemberships",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "liveMemberships",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "liveMemberships",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "liveMemberships",
+            "display_name": "liveMemberships",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 322220,
+                  "q1": 406176,
+                  "q3": 560220,
+                  "max": 608775,
+                  "sd": 85499.94938471999,
+                  "avg": 482621.19444444444
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "activeMemberships",
+            "lib/original-name": "activeMemberships",
+            "name": "activeMemberships",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "activeMemberships",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "activeMemberships",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "activeMemberships",
+            "display_name": "activeMemberships",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 188422,
+                  "q1": 231838,
+                  "q3": 344787.5,
+                  "max": 375367,
+                  "sd": 57053.129394131334,
+                  "avg": 288864.22222222225
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          },
+          {
+            "database_type": "decimal(38,15)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "monthlyActiveMemberships",
+            "lib/original-name": "monthlyActiveMemberships",
+            "name": "monthlyActiveMemberships",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "monthlyActiveMemberships",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "monthlyActiveMemberships",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "effective_type": "type/Decimal",
+            "lib/desired-column-alias": "monthlyActiveMemberships",
+            "display_name": "monthlyActiveMemberships",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 34,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 54.64,
+                  "q1": 58.43,
+                  "q3": 60.9,
+                  "max": 63.67,
+                  "sd": 1.8907209299419716,
+                  "avg": 59.649722222222216
+                }
+              }
+            },
+            "base_type": "type/Decimal"
+          },
+          {
+            "database_type": "decimal(38,17)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "avg_sessions",
+            "lib/original-name": "avg_sessions",
+            "name": "avg_sessions",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "avg_sessions",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "avg_sessions",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "effective_type": "type/Decimal",
+            "lib/desired-column-alias": "avg_sessions",
+            "display_name": "avg_sessions",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 9.091336479630076,
+                  "q1": 9.800680983104662,
+                  "q3": 10.260267437505002,
+                  "max": 11.137196564449962,
+                  "sd": 0.38297255901740557,
+                  "avg": 10.022943638539086
+                }
+              }
+            },
+            "base_type": "type/Decimal"
+          }
+        ]
+      },
+      "insights": [
+        {
+          "previous-value": 2026,
+          "unit": "month",
+          "offset": 1968.7876613683316,
+          "last-change": 0,
+          "col": "Year",
+          "slope": 0.002775692157084713,
+          "last-value": 2026,
+          "best-fit": [
+            "*",
+            1969.541178148445,
+            [
+              "exp",
+              [
+                "*",
+                0.00000137119947988592,
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": 2,
+          "unit": "month",
+          "offset": 16.12152691761551,
+          "last-change": 0.5,
+          "col": "Month",
+          "slope": -0.0004815230923053032,
+          "last-value": 3,
+          "best-fit": [
+            "+",
+            100.52336947842424,
+            [
+              "*",
+              -9.494975723569477,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": 608775,
+          "unit": "month",
+          "offset": -4808422.206581589,
+          "last-change": -0.01557389840252967,
+          "col": "liveMemberships",
+          "slope": 264.797843606203,
+          "last-value": 599294,
+          "best-fit": [
+            "+",
+            -51931604.2274868,
+            [
+              "*",
+              5293064.912602788,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": 375367,
+          "unit": "month",
+          "offset": -3219949.621115746,
+          "last-change": -0.003359378954463232,
+          "col": "activeMemberships",
+          "slope": 175.60361329701288,
+          "last-value": 374106,
+          "best-fit": [
+            "+",
+            -34465901.54756991,
+            [
+              "*",
+              3509719.541993702,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": 61.66,
+          "unit": "month",
+          "offset": -14.368720072386786,
+          "last-change": 0.012325656827765248,
+          "col": "monthlyActiveMemberships",
+          "slope": 0.0037043589366327714,
+          "last-value": 62.42,
+          "best-fit": [
+            "+",
+            -14.368720072386786,
+            [
+              "*",
+              0.0037043589366327714,
+              "x"
+            ]
+          ]
+        },
+        {
+          "previous-value": 9.86707142609766,
+          "unit": "month",
+          "offset": 7.750359158110417,
+          "last-change": 0.042995708940929044,
+          "col": "avg_sessions",
+          "slope": 0.00011373474459002534,
+          "last-value": 10.291313157233512,
+          "best-fit": [
+            "+",
+            -12.293703981586987,
+            [
+              "*",
+              2.2536527733477563,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-02T10:03:08.958100005Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "template-tags": {
+            "Start_Date": {
+              "id": "90e4791f-ad7f-654d-70b1-b79a4b1143b7",
+              "name": "Start_Date",
+              "display-name": "Start date",
+              "type": "date",
+              "required": true,
+              "default": "2023-01-01"
+            },
+            "end_date": {
+              "id": "01e4ebe1-c50a-c995-3ec0-56c59e66640b",
+              "name": "end_date",
+              "display-name": "End date",
+              "type": "date",
+              "required": true,
+              "default": "2026-03-31"
+            }
+          },
+          "native": "-- Purpose: Count live and monthly active memberships for ELITE, PRO, PLAY, and LUX.\n-- Output: Year, Month, month, liveMemberships, activeMemberships, monthlyActiveMemberships, avg_sessions.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live and active windows.\nwith liveMemberships as(\nselect Weekstart.weekstart as weekstart,\nm.membership_key as membershipdb_id, -- Cult membership id\nm.user_id,\ndate(m.pack_start_date) as Startdate,\ndate(m.pack_end_date) as enddate,\ndate(m.membership_created_date) as membership_created_date\n\nfrom\n(\nSELECT distinct date_trunc('month',full_date) as Weekstart\nFROM \"dwh_curefit\".\"dim_date\" \nwhere full_date between {{Start_Date}} and {{end_date}}\n) weekstart\nleft join (\n    select\n        md.membership_key,\n        md.user_id,\n        md.business_line,\n        md.amount_paid,\n        md.status,\n        -- Transfers/upgrades should use membership-service dates so live and active windows use the corrected pack lifecycle.\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n        end as pack_start_date,\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n        end as pack_end_date,\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n        end as membership_created_date\n    from dwh_fitness_mart.membership_dim md\n    left join pk_curefitplatforms_membershipdb.memberships mdb\n        on mdb.id = md.membership_service_id\n-- Live membership must cover the complete month.\n) m on date(m.pack_start_date)<=weekstart.Weekstart and date(m.pack_end_date)>=date_add('month',1,weekstart.Weekstart)\n\nwhere  m.business_line  is not null\n-- Fitness membership lines included in the active-membership report.\nand m.business_line in ('ELITE','PRO','PLAY','LUX')\n-- Keep customer-paid packs; enterprise packs are intentionally not included here.\nand (m.amount_paid>2000 \n-- or is_enterprise = 1\n)\n-- Cancelled memberships are not counted as live.\nand m.status not like ('%CANC%')\n\n)\n-- select * from liveMemberships\n,\n\nactiveMemberships as(\n\nselect weekstart.weekstart as weekstart,\nb.membership_key as membershipserviceid, --cult membershipid\nb.user_id,\nb.class_date,\nb.booking_key\n\nfrom\n\n(\nSELECT distinct date_trunc('month',full_date) as Weekstart\nFROM \"dwh_curefit\".\"dim_date\" \nwhere full_date between {{Start_Date}} and {{end_date}}\n) weekstart\n\nleft join\"dwh_fitness_mart\".\"booking_fact\" b on date(b.class_date)>= weekstart.Weekstart and date(b.class_date)< date_Add('month',1,weekstart.weekstart) and b.attendance_Time is not null -- Active users are counted only when they attended a class in the month.\nand date(b.class_date)>=date('2022-01-01') -- Partition \n)\n-- select * from activeMemberships\nselect year(l1.Weekstart) as Year,\nmonth(l1.weekstart) as Month,\ndate_trunc('month',l1.weekstart) month,\ncount(distinct l1.membershipdb_id) as liveMemberships,\ncount(distinct am.user_id) as activeMemberships,\nround(count(distinct am.user_id)*100.00/count(distinct l1.membershipdb_id),2) as monthlyActiveMemberships,\n1.00*count(distinct booking_key)/nullif(count(distinct am.user_id),0) as avg_sessions\nfrom liveMemberships l1\nleft join activeMemberships am on l1.user_id=am.user_id and l1.weekstart=am.weekstart and am.class_date between l1.Startdate and l1.enddate\n\ngroup by 1,2,3\norder by 1,2,3\n",
+          "lib/type": "mbql.stage/native"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-02T06:38:14.89616Z"
+      },
+      "viz-settings": {
+        "graph.show_trendline": true,
+        "graph.show_values": true,
+        "table.cell_column": "liveMemberships",
+        "graph.y_axis.max": 80,
+        "graph.series_order_dimension": "city_name",
+        "graph.metrics": [
+          "Year",
+          "Month",
+          "liveMemberships",
+          "activeMemberships",
+          "monthlyActiveMemberships",
+          "avg_sessions"
+        ],
+        "graph.tooltip_columns": [
+          "[\"name\",\"liveMemberships\"]",
+          "[\"name\",\"activeMemberships\"]"
+        ],
+        "graph.series_order": [
+          {
+            "name": "Ahmedabad",
+            "enabled": false,
+            "color": "#509EE3",
+            "key": "Ahmedabad"
+          },
+          {
+            "name": "Allahabad",
+            "enabled": false,
+            "color": "#87BCEC",
+            "key": "Allahabad"
+          },
+          {
+            "key": "Bangalore",
+            "color": "#227FD2",
+            "enabled": true,
+            "name": "Bangalore"
+          },
+          {
+            "name": "Bareilly",
+            "enabled": false,
+            "color": "#88BF4D",
+            "key": "Bareilly"
+          },
+          {
+            "name": "Belgaum",
+            "enabled": false,
+            "color": "#A7D07C",
+            "key": "Belgaum"
+          },
+          {
+            "name": "Bhubaneswar",
+            "enabled": false,
+            "color": "#A989C5",
+            "key": "Bhubaneswar"
+          },
+          {
+            "name": "Bilaspur",
+            "enabled": false,
+            "color": "#C8B4DA",
+            "key": "Bilaspur"
+          },
+          {
+            "name": "Chandigarh",
+            "enabled": false,
+            "color": "#8A5EB0",
+            "key": "Chandigarh"
+          },
+          {
+            "key": "Chennai",
+            "color": "#EF8C8C",
+            "enabled": true,
+            "name": "Chennai"
+          },
+          {
+            "name": "Coimbatore",
+            "enabled": false,
+            "color": "#F7C4C4",
+            "key": "Coimbatore"
+          },
+          {
+            "name": "Dehradun",
+            "enabled": false,
+            "color": "#E75454",
+            "key": "Dehradun"
+          },
+          {
+            "name": "Dubai",
+            "enabled": false,
+            "color": "#F9D45C",
+            "key": "Dubai"
+          },
+          {
+            "key": "Gurgaon",
+            "color": "#FBE499",
+            "enabled": true,
+            "name": "Gurgaon"
+          },
+          {
+            "name": "Guwahati",
+            "enabled": false,
+            "color": "#F7C41F",
+            "key": "Guwahati"
+          },
+          {
+            "key": "Hyderabad",
+            "color": "#F2A86F",
+            "enabled": true,
+            "name": "Hyderabad"
+          },
+          {
+            "name": "Imphal",
+            "enabled": false,
+            "color": "#F7CBA9",
+            "key": "Imphal"
+          },
+          {
+            "name": "Indore",
+            "enabled": false,
+            "color": "#ED8535",
+            "key": "Indore"
+          },
+          {
+            "name": "Jabalpur",
+            "enabled": false,
+            "color": "#98D9D9",
+            "key": "Jabalpur"
+          },
+          {
+            "name": "Jaipur",
+            "enabled": false,
+            "color": "#C7EAEA",
+            "key": "Jaipur"
+          },
+          {
+            "name": "Jammu",
+            "enabled": false,
+            "color": "#69C8C8",
+            "key": "Jammu"
+          },
+          {
+            "name": "Kanpur",
+            "enabled": false,
+            "color": "#999AC4",
+            "key": "Kanpur"
+          },
+          {
+            "name": "Kochi",
+            "enabled": false,
+            "color": "#51528D",
+            "key": "Kochi"
+          },
+          {
+            "name": "Lucknow",
+            "enabled": false,
+            "color": "#87BCEC",
+            "key": "Lucknow"
+          },
+          {
+            "name": "Mangalore",
+            "enabled": false,
+            "color": "#227FD2",
+            "key": "Mangalore"
+          },
+          {
+            "name": "Moradabad",
+            "enabled": false,
+            "color": "#88BF4D",
+            "key": "Moradabad"
+          },
+          {
+            "key": "Mumbai",
+            "color": "#A7D07C",
+            "enabled": true,
+            "name": "Mumbai"
+          },
+          {
+            "name": "Muzaffarpur",
+            "enabled": false,
+            "color": "#689636",
+            "key": "Muzaffarpur"
+          },
+          {
+            "name": "Mysore",
+            "enabled": false,
+            "color": "#A989C5",
+            "key": "Mysore"
+          },
+          {
+            "name": "Nagpur",
+            "enabled": false,
+            "color": "#C8B4DA",
+            "key": "Nagpur"
+          },
+          {
+            "name": "Navi_Mum_And_Thane",
+            "enabled": false,
+            "color": "#8A5EB0",
+            "key": "Navi_Mum_And_Thane"
+          },
+          {
+            "name": "Patna",
+            "enabled": false,
+            "color": "#EF8C8C",
+            "key": "Patna"
+          },
+          {
+            "key": "Pune",
+            "color": "#F7C4C4",
+            "enabled": true,
+            "name": "Pune"
+          },
+          {
+            "name": "Rajahmundry",
+            "enabled": false,
+            "color": "#E75454",
+            "key": "Rajahmundry"
+          },
+          {
+            "name": "Ranchi",
+            "enabled": false,
+            "color": "#F9D45C",
+            "key": "Ranchi"
+          },
+          {
+            "name": "Roorkee",
+            "enabled": false,
+            "color": "#FBE499",
+            "key": "Roorkee"
+          },
+          {
+            "name": "Rourkela",
+            "enabled": false,
+            "color": "#F7C41F",
+            "key": "Rourkela"
+          },
+          {
+            "name": "Sangli",
+            "enabled": false,
+            "color": "#F2A86F",
+            "key": "Sangli"
+          },
+          {
+            "name": "Shillong",
+            "enabled": false,
+            "color": "#F7CBA9",
+            "key": "Shillong"
+          },
+          {
+            "name": "Tumkur",
+            "enabled": false,
+            "color": "#ED8535",
+            "key": "Tumkur"
+          },
+          {
+            "name": "Visakhapatnam",
+            "enabled": false,
+            "color": "#98D9D9",
+            "key": "Visakhapatnam"
+          },
+          {
+            "name": "Kota",
+            "enabled": false,
+            "color": "#509EE3",
+            "key": "Kota"
+          },
+          {
+            "name": "Jamshedpur",
+            "enabled": false,
+            "color": "#7172AD",
+            "key": "Jamshedpur"
+          },
+          {
+            "name": "(empty)",
+            "enabled": false,
+            "color": "#C7EAEA",
+            "key": "(empty)"
+          },
+          {
+            "name": "Bhopal",
+            "enabled": false,
+            "color": "#689636",
+            "key": "Bhopal"
+          }
+        ],
+        "table.pivot_column": "Weekstart",
+        "graph.y_axis.auto_range": false,
+        "graph.dimensions": [
+          "month"
+        ],
+        "stackable.stack_type": "stacked",
+        "graph.y_axis.min": 50
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "slug": "Start_Date",
+          "default": "2023-01-01",
+          "name": "Start_Date",
+          "value": "2023-04-01",
+          "type": "date/single",
+          "ismultiselect": false,
+          "id": "90e4791f-ad7f-654d-70b1-b79a4b1143b7",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "Start_Date"
+            ]
+          ],
+          "required": true
+        },
+        {
+          "slug": "end_date",
+          "default": "2026-03-31",
+          "name": "end_date",
+          "value": "2026-03-31",
+          "type": "date/single",
+          "ismultiselect": false,
+          "id": "01e4ebe1-c50a-c995-3ec0-56c59e66640b",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "end_date"
+            ]
+          ],
+          "required": true
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 36,
+    "running_time": 186690
+  }
+}

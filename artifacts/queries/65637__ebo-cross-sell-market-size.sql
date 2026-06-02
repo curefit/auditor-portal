@@ -1,8 +1,12 @@
+-- Purpose: Estimate EBO cross-sell market size around nearby fitness centers using FS cohorts and cross-sell orders.
+-- Output: store-level FS user base, active/expired split, conversion rates, EBO conversions, and GMV.
+-- Membership-date fix: transferred/upgraded packs use membership-service created_date when assigning the latest attributed center.
 WITH center_dim AS 
 (
     SELECT center_key, locality, center_name, latitude, longitude
     FROM 
     dwh_fitness_mart.center_dim
+    -- Keep only regular fitness centers for EBO proximity mapping.
     WHERE LOWER(center_name) NOT LIKE '%sport%'
         AND LOWER(center_name) NOT LIKE '%store%'
         AND center_type <> 'BREAKAGE'
@@ -30,14 +34,26 @@ membership_dim AS
     SELECT attributed_center_key, user_id
     FROM 
     (
-        SELECT attributed_center_key, user_id, ROW_NUMBER() OVER(PARTITION BY user_id ORDER BY membership_created_time DESC, membership_key DESC) AS rnk
+        SELECT
+            md.attributed_center_key,
+            md.user_id,
+            ROW_NUMBER() OVER(PARTITION BY md.user_id ORDER BY md.membership_created_time DESC, md.membership_key DESC) AS rnk
         FROM 
-        dwh_fitness_mart.membership_dim
-        WHERE business_line IN ('PRO','ELITE')
-              AND membership_created_date < CURRENT_DATE - INTERVAL '1' DAY
+        dwh_fitness_mart.membership_dim md
+        LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
+            ON mdb.id = md.membership_service_id
+        -- Market size is based on PRO and ELITE fitness users.
+        WHERE md.business_line IN ('PRO','ELITE')
+              -- Use membership-service created_date for transfers/upgrades when picking the latest attributed center.
+              AND DATE(
+                CASE
+                    WHEN LOWER(CAST(md.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(md.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date
+                    ELSE md.membership_created_date
+                END
+              ) < CURRENT_DATE - INTERVAL '1' DAY
               AND CASE 
                     WHEN {{is_lifetime}} = 1 THEN TRUE
-                    [[ELSE user_id IN (SELECT DISTINCT user_id FROM fs_cohorts WHERE month BETWEEN DATE_TRUNC('MONTH',{{Fs_start_date}}) AND DATE_TRUNC('MONTH',{{Fs_end_date}}))]]
+                    [[ELSE md.user_id IN (SELECT DISTINCT user_id FROM fs_cohorts WHERE month BETWEEN DATE_TRUNC('MONTH',{{Fs_start_date}}) AND DATE_TRUNC('MONTH',{{Fs_end_date}}))]]
                   END
     )
     WHERE rnk = 1
@@ -83,6 +99,7 @@ filtered_centers AS
            ROW_NUMBER() OVER(PARTITION BY center_key ORDER BY great_circle_distance(es.latitude, es.longitude, cd.latitude, cd.longitude)) AS rnk
     FROM 
     center_dim cd
+    -- Attach users to EBO stores within the selected nearby distance.
     JOIN ebo_store es ON great_circle_distance(es.latitude, es.longitude, cd.latitude, cd.longitude) <= {{displacement_distance_within}}
 ),
 
