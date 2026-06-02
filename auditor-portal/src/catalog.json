@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T04:54:26.612Z",
+  "generatedAt": "2026-06-02T10:13:38.059Z",
   "basePath": "/handoff/",
   "count": 116,
   "entries": [
@@ -19,7 +19,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-75753__75753__at-home-footfalls.csv",
+        "artifacts/results/question-75753__75753__at-home-footfalls.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_mart.membership_dim",
@@ -50,6 +53,15 @@
           "fallbackLocalUrls": [
             "/dbt-notebooks/nbs/pinaka_data_models/dwh_live/dwh_live.live_bookings.ipynb"
           ]
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
         }
       ],
       "sheetMetric": {
@@ -233,7 +245,7 @@
           "fallbackLocalUrls": []
         },
         {
-          "relation": "dwh_fitness_mart.membership_dim.business_line",
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
           "dbtModelPaths": [],
           "githubBlobUrls": [],
           "localSqlUrls": [],
@@ -1914,7 +1926,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-76611__76611__daily-metrics-tanmai-v2-with-end-date.csv",
+        "artifacts/results/question-76611__76611__daily-metrics-tanmai-v2-with-end-date.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness.fitness_orders",
@@ -1996,6 +2011,15 @@
         },
         {
           "relation": "dwh_fitness_mart.orders_fact.order_key",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
           "dbtModelPaths": [],
           "githubBlobUrls": [],
           "localSqlUrls": [],
@@ -2128,7 +2152,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__65637__ebo-cross-sell-market-size.csv",
+        "artifacts/results/dashboard-3604__65637__ebo-cross-sell-market-size.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_mart.booking_fact",
@@ -2213,6 +2240,15 @@
         },
         {
           "relation": "gs_d2c.default.ebo_store_location",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
           "dbtModelPaths": [],
           "githubBlobUrls": [],
           "localSqlUrls": [],
@@ -3350,7 +3386,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-75630__75630__gender-split.csv",
+        "artifacts/results/question-75630__75630__gender-split.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_mart.membership_dim",
@@ -3384,6 +3423,15 @@
         },
         {
           "relation": "pk_cfuserservice_cultapp.user",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
           "dbtModelPaths": [],
           "githubBlobUrls": [],
           "localSqlUrls": [],
@@ -3660,7 +3708,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-75654__75654__gx-formats.csv",
+        "artifacts/results/question-75654__75654__gx-formats.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_mart.booking_fact",
@@ -3742,6 +3793,15 @@
           "localSqlUrls": [
             "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/workout_dim.sql"
           ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
           "fallbackModelPaths": [],
           "fallbackGithubBlobUrls": [],
           "fallbackLocalUrls": []
@@ -3993,6 +4053,15 @@
           "fallbackModelPaths": [],
           "fallbackGithubBlobUrls": [],
           "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
         }
       ],
       "sheetMetric": {
@@ -4082,6 +4151,15 @@
           "localSqlUrls": [
             "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
           ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
           "fallbackModelPaths": [],
           "fallbackGithubBlobUrls": [],
           "fallbackLocalUrls": []
@@ -4563,7 +4641,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-75114__75114__monthly-active-memberships-elite-pro-play-lux.csv",
+        "artifacts/results/question-75114__75114__monthly-active-memberships-elite-pro-play-lux.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_curefit.dim_date",
@@ -4591,6 +4672,15 @@
           "localSqlUrls": [
             "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
           ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
           "fallbackModelPaths": [],
           "fallbackGithubBlobUrls": [],
           "fallbackLocalUrls": []
@@ -6119,7 +6209,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-55835__55835__referral-revenue.csv",
+        "artifacts/results/question-55835__55835__referral-revenue.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_mart.membership_dim",
@@ -6156,6 +6249,15 @@
         },
         {
           "relation": "dwh_fitness_mart.orders_offer_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
           "dbtModelPaths": [],
           "githubBlobUrls": [],
           "localSqlUrls": [],
@@ -6421,6 +6523,15 @@
           "fallbackModelPaths": [],
           "fallbackGithubBlobUrls": [],
           "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
         }
       ],
       "sheetMetric": {
@@ -6458,7 +6569,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-75650__75650__same-city-vs-other-city-modified.csv",
+        "artifacts/results/question-75650__75650__same-city-vs-other-city-modified.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_mart.booking_fact",
@@ -6507,6 +6621,15 @@
           "localSqlUrls": [
             "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
           ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
           "fallbackModelPaths": [],
           "fallbackGithubBlobUrls": [],
           "fallbackLocalUrls": []

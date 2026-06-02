@@ -3,6 +3,7 @@
   "card_name": "Memberships by Each Business Line - End of Each Month - including all packs",
   "parameters": [
     {
+      "id": "1d48c1b6-1868-421e-be74-cc24177aff01",
       "type": "date/single",
       "target": [
         "variable",
@@ -11,9 +12,14 @@
           "start_date"
         ]
       ],
+      "name": "start_date",
+      "slug": "start_date",
+      "default": "2023-04-01",
+      "isMultiSelect": false,
       "value": "2023-04-01"
     },
     {
+      "id": "c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d",
       "type": "date/single",
       "target": [
         "variable",
@@ -22,6 +28,10 @@
           "end_date"
         ]
       ],
+      "name": "end_date",
+      "slug": "end_date",
+      "default": "2026-03-31",
+      "isMultiSelect": false,
       "value": "2026-03-31"
     }
   ],
@@ -31,32 +41,32 @@
         [
           "2026-03-01T00:00:00Z",
           "ELITE",
-          487957
+          487681
         ],
         [
           "2026-03-01T00:00:00Z",
           "ELITE (B2B)",
-          144887
+          144920
         ],
         [
           "2026-03-01T00:00:00Z",
           "PRO",
-          136769
+          136770
         ],
         [
           "2026-03-01T00:00:00Z",
           "LIVE (B2B)",
-          69473
+          67412
         ],
         [
           "2026-03-01T00:00:00Z",
           "LIVE",
-          44432
+          46624
         ],
         [
           "2026-03-01T00:00:00Z",
           "PLAY",
-          35763
+          35762
         ],
         [
           "2026-03-01T00:00:00Z",
@@ -66,7 +76,7 @@
         [
           "2026-03-01T00:00:00Z",
           "LUX",
-          18963
+          18973
         ],
         [
           "2026-03-01T00:00:00Z",
@@ -76,7 +86,7 @@
         [
           "2026-03-01T00:00:00Z",
           "PRO (B2B)",
-          4180
+          4179
         ],
         [
           "2026-03-01T00:00:00Z",
@@ -101,12 +111,12 @@
         [
           "2026-02-01T00:00:00Z",
           "ELITE",
-          493561
+          493175
         ],
         [
           "2026-02-01T00:00:00Z",
           "ELITE (B2B)",
-          140679
+          140712
         ],
         [
           "2026-02-01T00:00:00Z",
@@ -116,17 +126,17 @@
         [
           "2026-02-01T00:00:00Z",
           "LIVE (B2B)",
-          59965
+          57938
         ],
         [
           "2026-02-01T00:00:00Z",
           "LIVE",
-          45627
+          47779
         ],
         [
           "2026-02-01T00:00:00Z",
           "PLAY",
-          34632
+          34631
         ],
         [
           "2026-02-01T00:00:00Z",
@@ -136,7 +146,7 @@
         [
           "2026-02-01T00:00:00Z",
           "LUX",
-          18907
+          18914
         ],
         [
           "2026-02-01T00:00:00Z",
@@ -151,7 +161,7 @@
         [
           "2026-02-01T00:00:00Z",
           "PRO (B2B)",
-          2627
+          2626
         ],
         [
           "2026-02-01T00:00:00Z",
@@ -171,12 +181,12 @@
         [
           "2026-01-01T00:00:00Z",
           "ELITE",
-          494005
+          493333
         ],
         [
           "2026-01-01T00:00:00Z",
           "ELITE (B2B)",
-          138345
+          138374
         ],
         [
           "2026-01-01T00:00:00Z",
@@ -185,13 +195,13 @@
         ],
         [
           "2026-01-01T00:00:00Z",
-          "LIVE (B2B)",
-          50347
+          "LIVE",
+          49592
         ],
         [
           "2026-01-01T00:00:00Z",
-          "LIVE",
-          47477
+          "LIVE (B2B)",
+          48278
         ],
         [
           "2026-01-01T00:00:00Z",
@@ -206,7 +216,7 @@
         [
           "2026-01-01T00:00:00Z",
           "LUX",
-          18809
+          18815
         ],
         [
           "2026-01-01T00:00:00Z",
@@ -241,12 +251,12 @@
         [
           "2025-12-01T00:00:00Z",
           "ELITE",
-          481609
+          480647
         ],
         [
           "2025-12-01T00:00:00Z",
           "ELITE (B2B)",
-          132544
+          132575
         ],
         [
           "2025-12-01T00:00:00Z",
@@ -256,17 +266,17 @@
         [
           "2025-12-01T00:00:00Z",
           "LIVE",
-          48290
-        ],
-        [
-          "2025-12-01T00:00:00Z",
-          "LIVE (B2B)",
-          36327
+          50346
         ],
         [
           "2025-12-01T00:00:00Z",
           "PLAY",
           34749
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "LIVE (B2B)",
+          34294
         ],
         [
           "2025-12-01T00:00:00Z",
@@ -276,7 +286,7 @@
         [
           "2025-12-01T00:00:00Z",
           "LUX",
-          18420
+          18423
         ],
         [
           "2025-12-01T00:00:00Z",
@@ -311,7 +321,7 @@
         [
           "2025-11-01T00:00:00Z",
           "ELITE",
-          488360
+          487183
         ],
         [
           "2025-11-01T00:00:00Z",
@@ -321,12 +331,12 @@
         [
           "2025-11-01T00:00:00Z",
           "ELITE (B2B)",
-          128610
+          128643
         ],
         [
           "2025-11-01T00:00:00Z",
           "LIVE",
-          48500
+          50521
         ],
         [
           "2025-11-01T00:00:00Z",
@@ -336,7 +346,7 @@
         [
           "2025-11-01T00:00:00Z",
           "LIVE (B2B)",
-          34332
+          32335
         ],
         [
           "2025-11-01T00:00:00Z",
@@ -346,7 +356,7 @@
         [
           "2025-11-01T00:00:00Z",
           "LUX",
-          18610
+          18613
         ],
         [
           "2025-11-01T00:00:00Z",
@@ -381,7 +391,7 @@
         [
           "2025-10-01T00:00:00Z",
           "ELITE",
-          486656
+          485265
         ],
         [
           "2025-10-01T00:00:00Z",
@@ -391,12 +401,12 @@
         [
           "2025-10-01T00:00:00Z",
           "ELITE (B2B)",
-          125944
+          125974
         ],
         [
           "2025-10-01T00:00:00Z",
           "LIVE",
-          48251
+          50256
         ],
         [
           "2025-10-01T00:00:00Z",
@@ -406,7 +416,7 @@
         [
           "2025-10-01T00:00:00Z",
           "LIVE (B2B)",
-          32410
+          30431
         ],
         [
           "2025-10-01T00:00:00Z",
@@ -416,7 +426,7 @@
         [
           "2025-10-01T00:00:00Z",
           "LUX",
-          18711
+          18714
         ],
         [
           "2025-10-01T00:00:00Z",
@@ -451,7 +461,7 @@
         [
           "2025-09-01T00:00:00Z",
           "ELITE",
-          487308
+          485715
         ],
         [
           "2025-09-01T00:00:00Z",
@@ -461,12 +471,12 @@
         [
           "2025-09-01T00:00:00Z",
           "ELITE (B2B)",
-          126170
+          126199
         ],
         [
           "2025-09-01T00:00:00Z",
           "LIVE",
-          49763
+          51750
         ],
         [
           "2025-09-01T00:00:00Z",
@@ -481,12 +491,12 @@
         [
           "2025-09-01T00:00:00Z",
           "LIVE (B2B)",
-          29968
+          28003
         ],
         [
           "2025-09-01T00:00:00Z",
           "LUX",
-          18738
+          18739
         ],
         [
           "2025-09-01T00:00:00Z",
@@ -521,7 +531,7 @@
         [
           "2025-08-01T00:00:00Z",
           "ELITE",
-          482343
+          480559
         ],
         [
           "2025-08-01T00:00:00Z",
@@ -531,12 +541,12 @@
         [
           "2025-08-01T00:00:00Z",
           "ELITE (B2B)",
-          123050
+          123079
         ],
         [
           "2025-08-01T00:00:00Z",
           "LIVE",
-          51152
+          53109
         ],
         [
           "2025-08-01T00:00:00Z",
@@ -551,12 +561,12 @@
         [
           "2025-08-01T00:00:00Z",
           "LIVE (B2B)",
-          29652
+          27716
         ],
         [
           "2025-08-01T00:00:00Z",
           "LUX",
-          18571
+          18572
         ],
         [
           "2025-08-01T00:00:00Z",
@@ -591,7 +601,7 @@
         [
           "2025-07-01T00:00:00Z",
           "ELITE",
-          478537
+          476627
         ],
         [
           "2025-07-01T00:00:00Z",
@@ -601,12 +611,12 @@
         [
           "2025-07-01T00:00:00Z",
           "ELITE (B2B)",
-          119569
+          119594
         ],
         [
           "2025-07-01T00:00:00Z",
           "LIVE",
-          55792
+          57713
         ],
         [
           "2025-07-01T00:00:00Z",
@@ -621,12 +631,12 @@
         [
           "2025-07-01T00:00:00Z",
           "LIVE (B2B)",
-          28674
+          26773
         ],
         [
           "2025-07-01T00:00:00Z",
           "LUX",
-          18017
+          18018
         ],
         [
           "2025-07-01T00:00:00Z",
@@ -666,7 +676,7 @@
         [
           "2025-06-01T00:00:00Z",
           "ELITE",
-          474822
+          472741
         ],
         [
           "2025-06-01T00:00:00Z",
@@ -676,12 +686,12 @@
         [
           "2025-06-01T00:00:00Z",
           "ELITE (B2B)",
-          108757
+          108773
         ],
         [
           "2025-06-01T00:00:00Z",
           "LIVE",
-          58322
+          58467
         ],
         [
           "2025-06-01T00:00:00Z",
@@ -696,7 +706,7 @@
         [
           "2025-06-01T00:00:00Z",
           "LIVE (B2B)",
-          20268
+          20120
         ],
         [
           "2025-06-01T00:00:00Z",
@@ -746,7 +756,7 @@
         [
           "2025-05-01T00:00:00Z",
           "ELITE",
-          472212
+          470066
         ],
         [
           "2025-05-01T00:00:00Z",
@@ -756,12 +766,12 @@
         [
           "2025-05-01T00:00:00Z",
           "ELITE (B2B)",
-          100958
+          100975
         ],
         [
           "2025-05-01T00:00:00Z",
           "LIVE",
-          59611
+          59711
         ],
         [
           "2025-05-01T00:00:00Z",
@@ -776,7 +786,7 @@
         [
           "2025-05-01T00:00:00Z",
           "LIVE (B2B)",
-          18624
+          18521
         ],
         [
           "2025-05-01T00:00:00Z",
@@ -826,7 +836,7 @@
         [
           "2025-04-01T00:00:00Z",
           "ELITE",
-          465153
+          463064
         ],
         [
           "2025-04-01T00:00:00Z",
@@ -836,12 +846,12 @@
         [
           "2025-04-01T00:00:00Z",
           "ELITE (B2B)",
-          96333
+          96348
         ],
         [
           "2025-04-01T00:00:00Z",
           "LIVE",
-          62676
+          62680
         ],
         [
           "2025-04-01T00:00:00Z",
@@ -856,7 +866,7 @@
         [
           "2025-04-01T00:00:00Z",
           "LIVE (B2B)",
-          18071
+          18067
         ],
         [
           "2025-04-01T00:00:00Z",
@@ -911,7 +921,7 @@
         [
           "2025-03-01T00:00:00Z",
           "ELITE",
-          460851
+          458792
         ],
         [
           "2025-03-01T00:00:00Z",
@@ -921,7 +931,7 @@
         [
           "2025-03-01T00:00:00Z",
           "ELITE (B2B)",
-          90109
+          90124
         ],
         [
           "2025-03-01T00:00:00Z",
@@ -996,7 +1006,7 @@
         [
           "2025-02-01T00:00:00Z",
           "ELITE",
-          456122
+          454108
         ],
         [
           "2025-02-01T00:00:00Z",
@@ -1006,12 +1016,12 @@
         [
           "2025-02-01T00:00:00Z",
           "ELITE (B2B)",
-          84597
+          84612
         ],
         [
           "2025-02-01T00:00:00Z",
           "LIVE",
-          66913
+          66912
         ],
         [
           "2025-02-01T00:00:00Z",
@@ -1026,7 +1036,7 @@
         [
           "2025-02-01T00:00:00Z",
           "LIVE (B2B)",
-          14880
+          14881
         ],
         [
           "2025-02-01T00:00:00Z",
@@ -1081,7 +1091,7 @@
         [
           "2025-01-01T00:00:00Z",
           "ELITE",
-          449008
+          446985
         ],
         [
           "2025-01-01T00:00:00Z",
@@ -1091,7 +1101,7 @@
         [
           "2025-01-01T00:00:00Z",
           "ELITE (B2B)",
-          79699
+          79712
         ],
         [
           "2025-01-01T00:00:00Z",
@@ -1166,7 +1176,7 @@
         [
           "2024-12-01T00:00:00Z",
           "ELITE",
-          435585
+          433726
         ],
         [
           "2024-12-01T00:00:00Z",
@@ -1176,12 +1186,12 @@
         [
           "2024-12-01T00:00:00Z",
           "LIVE",
-          85754
+          85750
         ],
         [
           "2024-12-01T00:00:00Z",
           "ELITE (B2B)",
-          74916
+          74923
         ],
         [
           "2024-12-01T00:00:00Z",
@@ -1196,7 +1206,7 @@
         [
           "2024-12-01T00:00:00Z",
           "LIVE (B2B)",
-          14215
+          14219
         ],
         [
           "2024-12-01T00:00:00Z",
@@ -1251,7 +1261,7 @@
         [
           "2024-11-01T00:00:00Z",
           "ELITE",
-          436764
+          434963
         ],
         [
           "2024-11-01T00:00:00Z",
@@ -1261,12 +1271,12 @@
         [
           "2024-11-01T00:00:00Z",
           "LIVE",
-          87677
+          87673
         ],
         [
           "2024-11-01T00:00:00Z",
           "ELITE (B2B)",
-          72092
+          72100
         ],
         [
           "2024-11-01T00:00:00Z",
@@ -1281,7 +1291,7 @@
         [
           "2024-11-01T00:00:00Z",
           "LIVE (B2B)",
-          11897
+          11901
         ],
         [
           "2024-11-01T00:00:00Z",
@@ -1336,7 +1346,7 @@
         [
           "2024-10-01T00:00:00Z",
           "ELITE",
-          433559
+          431797
         ],
         [
           "2024-10-01T00:00:00Z",
@@ -1346,12 +1356,12 @@
         [
           "2024-10-01T00:00:00Z",
           "LIVE",
-          89139
+          89135
         ],
         [
           "2024-10-01T00:00:00Z",
           "ELITE (B2B)",
-          68929
+          68939
         ],
         [
           "2024-10-01T00:00:00Z",
@@ -1366,7 +1376,7 @@
         [
           "2024-10-01T00:00:00Z",
           "LIVE (B2B)",
-          12245
+          12249
         ],
         [
           "2024-10-01T00:00:00Z",
@@ -1410,18 +1420,18 @@
         ],
         [
           "2024-10-01T00:00:00Z",
-          "GOLDs",
+          "SGT",
           1
         ],
         [
           "2024-10-01T00:00:00Z",
-          "SGT",
+          "GOLDs",
           1
         ],
         [
           "2024-09-01T00:00:00Z",
           "ELITE",
-          435384
+          433582
         ],
         [
           "2024-09-01T00:00:00Z",
@@ -1431,12 +1441,12 @@
         [
           "2024-09-01T00:00:00Z",
           "LIVE",
-          91463
+          91459
         ],
         [
           "2024-09-01T00:00:00Z",
           "ELITE (B2B)",
-          66856
+          66869
         ],
         [
           "2024-09-01T00:00:00Z",
@@ -1451,7 +1461,7 @@
         [
           "2024-09-01T00:00:00Z",
           "LIVE (B2B)",
-          13546
+          13550
         ],
         [
           "2024-09-01T00:00:00Z",
@@ -1495,18 +1505,18 @@
         ],
         [
           "2024-09-01T00:00:00Z",
-          "SGT",
+          "GOLDs",
           2
         ],
         [
           "2024-09-01T00:00:00Z",
-          "GOLDs",
+          "SGT",
           2
         ],
         [
           "2024-08-01T00:00:00Z",
           "ELITE",
-          428283
+          426429
         ],
         [
           "2024-08-01T00:00:00Z",
@@ -1516,12 +1526,12 @@
         [
           "2024-08-01T00:00:00Z",
           "LIVE",
-          90230
+          90226
         ],
         [
           "2024-08-01T00:00:00Z",
           "ELITE (B2B)",
-          64879
+          64899
         ],
         [
           "2024-08-01T00:00:00Z",
@@ -1536,7 +1546,7 @@
         [
           "2024-08-01T00:00:00Z",
           "LIVE (B2B)",
-          13399
+          13403
         ],
         [
           "2024-08-01T00:00:00Z",
@@ -1591,7 +1601,7 @@
         [
           "2024-07-01T00:00:00Z",
           "ELITE",
-          422201
+          420257
         ],
         [
           "2024-07-01T00:00:00Z",
@@ -1601,12 +1611,12 @@
         [
           "2024-07-01T00:00:00Z",
           "LIVE",
-          90378
+          90374
         ],
         [
           "2024-07-01T00:00:00Z",
           "ELITE (B2B)",
-          61098
+          61116
         ],
         [
           "2024-07-01T00:00:00Z",
@@ -1621,7 +1631,7 @@
         [
           "2024-07-01T00:00:00Z",
           "LIVE (B2B)",
-          11307
+          11311
         ],
         [
           "2024-07-01T00:00:00Z",
@@ -1665,18 +1675,18 @@
         ],
         [
           "2024-07-01T00:00:00Z",
-          "SGT",
+          "GOLDs",
           2
         ],
         [
           "2024-07-01T00:00:00Z",
-          "GOLDs",
+          "SGT",
           2
         ],
         [
           "2024-06-01T00:00:00Z",
           "ELITE",
-          414474
+          412499
         ],
         [
           "2024-06-01T00:00:00Z",
@@ -1686,12 +1696,12 @@
         [
           "2024-06-01T00:00:00Z",
           "LIVE",
-          94295
+          94291
         ],
         [
           "2024-06-01T00:00:00Z",
           "ELITE (B2B)",
-          55099
+          55112
         ],
         [
           "2024-06-01T00:00:00Z",
@@ -1706,7 +1716,7 @@
         [
           "2024-06-01T00:00:00Z",
           "LIVE (B2B)",
-          12859
+          12863
         ],
         [
           "2024-06-01T00:00:00Z",
@@ -1750,18 +1760,18 @@
         ],
         [
           "2024-06-01T00:00:00Z",
-          "GOLDs",
+          "SGT",
           2
         ],
         [
           "2024-06-01T00:00:00Z",
-          "SGT",
+          "GOLDs",
           2
         ],
         [
           "2024-05-01T00:00:00Z",
           "ELITE",
-          409095
+          407069
         ],
         [
           "2024-05-01T00:00:00Z",
@@ -1771,12 +1781,12 @@
         [
           "2024-05-01T00:00:00Z",
           "LIVE",
-          96727
+          96723
         ],
         [
           "2024-05-01T00:00:00Z",
           "ELITE (B2B)",
-          50275
+          50286
         ],
         [
           "2024-05-01T00:00:00Z",
@@ -1791,7 +1801,7 @@
         [
           "2024-05-01T00:00:00Z",
           "LIVE (B2B)",
-          10771
+          10775
         ],
         [
           "2024-05-01T00:00:00Z",
@@ -1841,7 +1851,7 @@
         [
           "2024-04-01T00:00:00Z",
           "ELITE",
-          400369
+          398267
         ],
         [
           "2024-04-01T00:00:00Z",
@@ -1851,12 +1861,12 @@
         [
           "2024-04-01T00:00:00Z",
           "LIVE",
-          99399
+          99395
         ],
         [
           "2024-04-01T00:00:00Z",
           "ELITE (B2B)",
-          47527
+          47533
         ],
         [
           "2024-04-01T00:00:00Z",
@@ -1881,7 +1891,7 @@
         [
           "2024-04-01T00:00:00Z",
           "LIVE (B2B)",
-          3098
+          3102
         ],
         [
           "2024-04-01T00:00:00Z",
@@ -1910,23 +1920,23 @@
         ],
         [
           "2024-04-01T00:00:00Z",
-          "LUX (B2B)",
+          "SGT",
           2
         ],
         [
           "2024-04-01T00:00:00Z",
-          "SGT",
+          "LUX (B2B)",
           2
         ],
         [
           "2024-03-01T00:00:00Z",
           "ELITE",
-          387633
+          385568
         ],
         [
           "2024-03-01T00:00:00Z",
           "LIVE",
-          102877
+          102873
         ],
         [
           "2024-03-01T00:00:00Z",
@@ -1936,7 +1946,7 @@
         [
           "2024-03-01T00:00:00Z",
           "ELITE (B2B)",
-          42589
+          42584
         ],
         [
           "2024-03-01T00:00:00Z",
@@ -1966,7 +1976,7 @@
         [
           "2024-03-01T00:00:00Z",
           "LIVE (B2B)",
-          2108
+          2112
         ],
         [
           "2024-03-01T00:00:00Z",
@@ -2001,12 +2011,12 @@
         [
           "2024-02-01T00:00:00Z",
           "ELITE",
-          383577
+          381542
         ],
         [
           "2024-02-01T00:00:00Z",
           "LIVE",
-          105617
+          105613
         ],
         [
           "2024-02-01T00:00:00Z",
@@ -2016,7 +2026,7 @@
         [
           "2024-02-01T00:00:00Z",
           "ELITE (B2B)",
-          39612
+          39606
         ],
         [
           "2024-02-01T00:00:00Z",
@@ -2036,7 +2046,7 @@
         [
           "2024-02-01T00:00:00Z",
           "LIVE (B2B)",
-          2190
+          2194
         ],
         [
           "2024-02-01T00:00:00Z",
@@ -2065,23 +2075,23 @@
         ],
         [
           "2024-02-01T00:00:00Z",
-          "SGT",
+          "GOLDs",
           3
         ],
         [
           "2024-02-01T00:00:00Z",
-          "GOLDs",
+          "SGT",
           3
         ],
         [
           "2024-01-01T00:00:00Z",
           "ELITE",
-          375964
+          373947
         ],
         [
           "2024-01-01T00:00:00Z",
           "LIVE",
-          105516
+          105512
         ],
         [
           "2024-01-01T00:00:00Z",
@@ -2091,7 +2101,7 @@
         [
           "2024-01-01T00:00:00Z",
           "ELITE (B2B)",
-          36993
+          36988
         ],
         [
           "2024-01-01T00:00:00Z",
@@ -2111,7 +2121,7 @@
         [
           "2024-01-01T00:00:00Z",
           "LIVE (B2B)",
-          2501
+          2505
         ],
         [
           "2024-01-01T00:00:00Z",
@@ -2135,23 +2145,23 @@
         ],
         [
           "2024-01-01T00:00:00Z",
-          "SGT",
+          "GOLDs",
           3
         ],
         [
           "2024-01-01T00:00:00Z",
-          "GOLDs",
+          "SGT",
           3
         ],
         [
           "2023-12-01T00:00:00Z",
           "ELITE",
-          361097
+          359170
         ],
         [
           "2023-12-01T00:00:00Z",
           "LIVE",
-          105150
+          105146
         ],
         [
           "2023-12-01T00:00:00Z",
@@ -2161,7 +2171,7 @@
         [
           "2023-12-01T00:00:00Z",
           "ELITE (B2B)",
-          33025
+          33019
         ],
         [
           "2023-12-01T00:00:00Z",
@@ -2181,7 +2191,7 @@
         [
           "2023-12-01T00:00:00Z",
           "LIVE (B2B)",
-          2765
+          2769
         ],
         [
           "2023-12-01T00:00:00Z",
@@ -2205,23 +2215,23 @@
         ],
         [
           "2023-12-01T00:00:00Z",
-          "GOLDs",
+          "SGT",
           3
         ],
         [
           "2023-12-01T00:00:00Z",
-          "SGT",
+          "GOLDs",
           3
         ],
         [
           "2023-11-01T00:00:00Z",
           "ELITE",
-          356737
+          354885
         ],
         [
           "2023-11-01T00:00:00Z",
           "LIVE",
-          113247
+          113243
         ],
         [
           "2023-11-01T00:00:00Z",
@@ -2236,12 +2246,12 @@
         [
           "2023-11-01T00:00:00Z",
           "ELITE (B2B)",
-          30792
+          30788
         ],
         [
           "2023-11-01T00:00:00Z",
           "LIVE (B2B)",
-          20364
+          20368
         ],
         [
           "2023-11-01T00:00:00Z",
@@ -2286,12 +2296,12 @@
         [
           "2023-10-01T00:00:00Z",
           "ELITE",
-          352985
+          351142
         ],
         [
           "2023-10-01T00:00:00Z",
           "LIVE",
-          116563
+          116559
         ],
         [
           "2023-10-01T00:00:00Z",
@@ -2306,12 +2316,12 @@
         [
           "2023-10-01T00:00:00Z",
           "ELITE (B2B)",
-          29082
+          29080
         ],
         [
           "2023-10-01T00:00:00Z",
           "LIVE (B2B)",
-          21208
+          21212
         ],
         [
           "2023-10-01T00:00:00Z",
@@ -2356,12 +2366,12 @@
         [
           "2023-09-01T00:00:00Z",
           "ELITE",
-          345055
+          343286
         ],
         [
           "2023-09-01T00:00:00Z",
           "LIVE",
-          114631
+          114627
         ],
         [
           "2023-09-01T00:00:00Z",
@@ -2376,12 +2386,12 @@
         [
           "2023-09-01T00:00:00Z",
           "ELITE (B2B)",
-          27086
+          27083
         ],
         [
           "2023-09-01T00:00:00Z",
           "LIVE (B2B)",
-          25593
+          25597
         ],
         [
           "2023-09-01T00:00:00Z",
@@ -2415,12 +2425,12 @@
         ],
         [
           "2023-09-01T00:00:00Z",
-          "GOLDs",
+          "SGT",
           3
         ],
         [
           "2023-09-01T00:00:00Z",
-          "SGT",
+          "GOLDs",
           3
         ],
         [
@@ -2431,12 +2441,12 @@
         [
           "2023-08-01T00:00:00Z",
           "ELITE",
-          337816
+          336105
         ],
         [
           "2023-08-01T00:00:00Z",
           "LIVE",
-          112207
+          112203
         ],
         [
           "2023-08-01T00:00:00Z",
@@ -2451,7 +2461,7 @@
         [
           "2023-08-01T00:00:00Z",
           "LIVE (B2B)",
-          26851
+          26855
         ],
         [
           "2023-08-01T00:00:00Z",
@@ -2495,18 +2505,18 @@
         ],
         [
           "2023-08-01T00:00:00Z",
-          "TRANSFORM (B2B)",
+          "SGT (B2B)",
           1
         ],
         [
           "2023-08-01T00:00:00Z",
-          "SGT (B2B)",
+          "TRANSFORM (B2B)",
           1
         ],
         [
           "2023-07-01T00:00:00Z",
           "ELITE",
-          323730
+          322047
         ],
         [
           "2023-07-01T00:00:00Z",
@@ -2516,7 +2526,7 @@
         [
           "2023-07-01T00:00:00Z",
           "LIVE",
-          108586
+          108582
         ],
         [
           "2023-07-01T00:00:00Z",
@@ -2526,12 +2536,12 @@
         [
           "2023-07-01T00:00:00Z",
           "LIVE (B2B)",
-          26529
+          26533
         ],
         [
           "2023-07-01T00:00:00Z",
           "ELITE (B2B)",
-          21130
+          21132
         ],
         [
           "2023-07-01T00:00:00Z",
@@ -2565,18 +2575,18 @@
         ],
         [
           "2023-07-01T00:00:00Z",
-          "GOLDs",
+          "SGT (B2B)",
           1
         ],
         [
           "2023-07-01T00:00:00Z",
-          "SGT (B2B)",
+          "GOLDs",
           1
         ],
         [
           "2023-06-01T00:00:00Z",
           "ELITE",
-          308918
+          307330
         ],
         [
           "2023-06-01T00:00:00Z",
@@ -2586,17 +2596,17 @@
         [
           "2023-06-01T00:00:00Z",
           "LIVE",
-          102834
+          102830
         ],
         [
           "2023-06-01T00:00:00Z",
           "ELITE (B2B)",
-          34354
+          34363
         ],
         [
           "2023-06-01T00:00:00Z",
           "LIVE (B2B)",
-          31058
+          31062
         ],
         [
           "2023-06-01T00:00:00Z",
@@ -2635,18 +2645,18 @@
         ],
         [
           "2023-06-01T00:00:00Z",
-          "SGT (B2B)",
+          "GOLDs",
           1
         ],
         [
           "2023-06-01T00:00:00Z",
-          "GOLDs",
+          "SGT (B2B)",
           1
         ],
         [
           "2023-05-01T00:00:00Z",
           "ELITE",
-          300608
+          299061
         ],
         [
           "2023-05-01T00:00:00Z",
@@ -2656,12 +2666,12 @@
         [
           "2023-05-01T00:00:00Z",
           "LIVE",
-          93403
+          93399
         ],
         [
           "2023-05-01T00:00:00Z",
           "ELITE (B2B)",
-          39352
+          39364
         ],
         [
           "2023-05-01T00:00:00Z",
@@ -2671,7 +2681,7 @@
         [
           "2023-05-01T00:00:00Z",
           "LIVE (B2B)",
-          17567
+          17571
         ],
         [
           "2023-05-01T00:00:00Z",
@@ -2716,7 +2726,7 @@
         [
           "2023-04-01T00:00:00Z",
           "ELITE",
-          293604
+          292061
         ],
         [
           "2023-04-01T00:00:00Z",
@@ -2726,12 +2736,12 @@
         [
           "2023-04-01T00:00:00Z",
           "LIVE",
-          100952
+          100948
         ],
         [
           "2023-04-01T00:00:00Z",
           "ELITE (B2B)",
-          36007
+          36029
         ],
         [
           "2023-04-01T00:00:00Z",
@@ -2741,7 +2751,7 @@
         [
           "2023-04-01T00:00:00Z",
           "LIVE (B2B)",
-          19534
+          19538
         ],
         [
           "2023-04-01T00:00:00Z",
@@ -2842,7 +2852,7 @@
           "2026-03-31"
         ],
         "lib/type": "mbql.stage/native",
-        "query": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between ? and ?\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,\ncount(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cancellation_date\nfrom dwh_fitness_mart.membership_dim \nwhere 1=1\nand UPPER(business_line) not like '%PT%' -- users of PT are counted in ELITE/PRO memberships\n-- (lower(status) not like '%canc%' \n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand business_line is not null\n) md\non d.month_end_date between md.pack_start_date and least(coalesce(md.cancellation_date,pack_end_date),md.pack_end_date)\ngroup by 1,2\norder by 1 desc, 3 desc"
+        "query": "-- Purpose: Count month-end membership base by business line, including all packs.\n-- Output: month, business_line, user_base.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for month-end active windows.\nwith dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between ? and ?\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,\ncount(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect\nmembership_key,\nbusiness_line,\n-- Transfers/upgrades should use membership-service dates so month-end membership counts follow the corrected pack window.\ncase\n    when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n    else md.membership_created_date\nend as membership_created_date,\ncase\n    when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n    else md.pack_start_date\nend as pack_start_date,\ncase\n    when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n    else md.pack_end_date\nend as pack_end_date,\nmd.is_enterprise, md.amount_paid, md.pack_name, md.user_id, md.cancellation_date\nfrom dwh_fitness_mart.membership_dim md\nleft join pk_curefitplatforms_membershipdb.memberships mdb on mdb.id = md.membership_service_id\nwhere 1=1\nand UPPER(md.business_line) not like '%PT%' -- users of PT are counted in ELITE/PRO memberships\n-- (lower(status) not like '%canc%' \n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand md.business_line is not null\n) md\n-- Count users whose pack is active on the month-end date.\non d.month_end_date between md.pack_start_date and least(coalesce(md.cancellation_date,pack_end_date),md.pack_end_date)\ngroup by 1,2\norder by 1 desc, 3 desc"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -2949,11 +2959,11 @@
               "type": {
                 "type/Number": {
                   "min": 1,
-                  "q1": 715.3503437100719,
-                  "q3": 43521.27855430229,
-                  "max": 494005,
-                  "sd": 105568.22042183735,
-                  "avg": 51527.40255009107
+                  "q1": 715.387761103124,
+                  "q3": 43751.952612973095,
+                  "max": 493333,
+                  "sd": 105186.9854517657,
+                  "avg": 51417.528233151184
                 }
               }
             },
@@ -2965,19 +2975,19 @@
         {
           "previous-value": null,
           "unit": null,
-          "offset": -412614.63510344486,
+          "offset": -413889.84737487056,
           "last-change": null,
           "col": "user_base",
-          "slope": 23.224799687684722,
+          "slope": 23.283111019918742,
           "last-value": 1,
           "best-fit": [
             "*",
-            1.4436781215495769e-13,
+            1.4583196323969237e-13,
             [
               "exp",
               [
                 "*",
-                0.0018600024531368314,
+                0.0018594736649749507,
                 "x"
               ]
             ]
@@ -2987,7 +2997,7 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-05-20T12:28:08.297182485Z",
+    "started_at": "2026-06-02T10:02:57.312539546Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -2999,20 +3009,22 @@
         {
           "template-tags": {
             "start_date": {
+              "display-name": "Start Date",
+              "name": "start_date",
               "id": "1d48c1b6-1868-421e-be74-cc24177aff01",
               "type": "date",
-              "name": "start_date",
-              "display-name": "Start Date"
+              "default": "2023-04-01"
             },
             "end_date": {
-              "id": "c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d",
               "type": "date",
               "name": "end_date",
-              "display-name": "End Date"
+              "display-name": "End Date",
+              "id": "c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d",
+              "default": "2026-03-31"
             }
           },
           "lib/type": "mbql.stage/native",
-          "native": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between {{start_date}} and {{end_date}}\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,\ncount(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cancellation_date\nfrom dwh_fitness_mart.membership_dim \nwhere 1=1\nand UPPER(business_line) not like '%PT%' -- users of PT are counted in ELITE/PRO memberships\n-- (lower(status) not like '%canc%' \n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand business_line is not null\n) md\non d.month_end_date between md.pack_start_date and least(coalesce(md.cancellation_date,pack_end_date),md.pack_end_date)\ngroup by 1,2\norder by 1 desc, 3 desc"
+          "native": "-- Purpose: Count month-end membership base by business line, including all packs.\n-- Output: month, business_line, user_base.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for month-end active windows.\nwith dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between {{start_date}} and {{end_date}}\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,\ncount(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect\nmembership_key,\nbusiness_line,\n-- Transfers/upgrades should use membership-service dates so month-end membership counts follow the corrected pack window.\ncase\n    when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n    else md.membership_created_date\nend as membership_created_date,\ncase\n    when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n    else md.pack_start_date\nend as pack_start_date,\ncase\n    when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n    else md.pack_end_date\nend as pack_end_date,\nmd.is_enterprise, md.amount_paid, md.pack_name, md.user_id, md.cancellation_date\nfrom dwh_fitness_mart.membership_dim md\nleft join pk_curefitplatforms_membershipdb.memberships mdb on mdb.id = md.membership_service_id\nwhere 1=1\nand UPPER(md.business_line) not like '%PT%' -- users of PT are counted in ELITE/PRO memberships\n-- (lower(status) not like '%canc%' \n-- and ((amount_paid > 0) --or (lower(source) <> 'enterprise_split' and is_enterprise = 1)\n-- )\nand md.business_line is not null\n) md\n-- Count users whose pack is active on the month-end date.\non d.month_end_date between md.pack_start_date and least(coalesce(md.cancellation_date,pack_end_date),md.pack_end_date)\ngroup by 1,2\norder by 1 desc, 3 desc\n"
         }
       ],
       "middleware": {
@@ -3026,7 +3038,7 @@
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-05-20T12:18:36.990082Z"
+        "invalidated-at": "2026-06-02T06:38:49.134984Z"
       },
       "viz-settings": {
         "table.pivot": true,
@@ -3036,6 +3048,7 @@
       "database": 39,
       "parameters": [
         {
+          "id": "1d48c1b6-1868-421e-be74-cc24177aff01",
           "type": "date/single",
           "target": [
             "variable",
@@ -3044,9 +3057,14 @@
               "start_date"
             ]
           ],
-          "value": "2023-04-01"
+          "name": "start_date",
+          "slug": "start_date",
+          "default": "2023-04-01",
+          "value": "2023-04-01",
+          "ismultiselect": false
         },
         {
+          "id": "c1a57f0a-a8b7-4f51-be9b-6f43bb2dbc8d",
           "type": "date/single",
           "target": [
             "variable",
@@ -3055,7 +3073,11 @@
               "end_date"
             ]
           ],
-          "value": "2026-03-31"
+          "name": "end_date",
+          "slug": "end_date",
+          "default": "2026-03-31",
+          "value": "2026-03-31",
+          "ismultiselect": false
         }
       ]
     },
@@ -3063,6 +3085,6 @@
     "status": "completed",
     "context": "question",
     "row_count": 549,
-    "running_time": 7197
+    "running_time": 11251
   }
 }

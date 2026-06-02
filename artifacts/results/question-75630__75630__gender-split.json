@@ -1,0 +1,242 @@
+{
+  "card_id": 75630,
+  "card_name": "Gender Split",
+  "parameters": [
+    {
+      "id": "97db8298-146c-4e43-a596-c892a0f76ac9",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "ed"
+        ]
+      ],
+      "name": "ed",
+      "slug": "ed",
+      "default": "2026-03-31",
+      "isMultiSelect": false,
+      "value": "2026-03-31"
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "NA",
+          517155
+        ],
+        [
+          "f",
+          458233
+        ],
+        [
+          "m",
+          891783
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar",
+          "lib/deduplicated-name": "Gender",
+          "lib/original-name": "Gender",
+          "name": "Gender",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "Gender",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "Gender",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "Gender",
+          "display_name": "Gender",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "MEMBERS",
+          "lib/original-name": "MEMBERS",
+          "name": "MEMBERS",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "MEMBERS",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "MEMBERS",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "MEMBERS",
+          "display_name": "MEMBERS",
+          "base_type": "type/BigInteger"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2026-03-31"
+        ],
+        "lib/type": "mbql.stage/native",
+        "query": "-- Purpose: Count membership users by inferred gender using onboarding, user profile, and attribute sources.\n-- Output: gender, members.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the member base.\nWITH\n  base AS (\n    SELECT\n      --date_trunc('quarter', dd.full_date) AS \"quarter\",\n      m.USER_ID\n    FROM\n      dwh_fitness_mart.membership_dim m\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n        ON mdb.id = m.membership_service_id\n    --   JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE 1=1\n    -- dd.full_date >= DATE('2025-01-01')\n      -- Use membership-service created_date for transferred/upgraded packs before building the member base.\n      AND DATE(\n        CASE\n          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n          ELSE m.membership_created_date\n        END\n      ) between date('2017-10-01') AND ?\n      -- Gender split is shown for ELITE/PRO/PLAY members.\n      and m.business_line in ('ELITE','PRO','PLAY')\n      -- Exclude free packs from the member base.\n      and amount_paid>0\n    GROUP BY\n      1\n  )\n, birthday_base as (\n\n\nselect \nuser_id\n,case when birthday between date('1970-01-01') and date_add('year',-18,now()) THEN cast(birthday as varchar) end as birthday\n,coalesce(case when cast(birthday as varchar)='-1' then null else age end,'NA') as age\n,coalesce(gender,'NA') as Gender\n-- ,COALESCE(NULLIF(TRIM(gender), ''), 'NA') AS Gender\n,age_source\n,age_nos\nfrom (with age_onboarding as  (select nrs.userid\n,date_diff('year',date(substr(max(case when  nrs.questionid='onboarding_user_dob_v1' then  nrs.answer end),1,10)),current_date) as age \n,date(substr(max(case when  nrs.questionid='onboarding_user_dob_v1' then  nrs.answer end),1,10)) as birthday\n,substr(max(case when questionid='@Home Guidance_Gender_v1' and lower(trim(answer)) in ('m','f') then lower(trim(answer)) end),1,1) as gender\nfrom pk_curefitprod_cfdb.npsresponses nrs \nwhere 1=1\nand nrs.answer is not null and nrs.answer!=''\n-- filter for onboarding forms \nand nrs.formid='post_pack_purchase_onboarding' and nrs.questionid in ('onboarding_user_dob_v1','@Home Guidance_Gender_v1')\ngroup by 1)\n\n\n, user_age as (select cast(id as varchar) userid\n,case when substr(lower(trim(gender)),1,1) in ('m','f') then substr(lower(trim(gender)),1,1) end as gender\n,date_diff('year',cast(substr(birthday,1,10) as date),current_date) as age\n,cast(substr(birthday,1,10) as date) birthday\nfrom (select id, gender,birthday,row_number() over (partition by id order by updatedat desc) rf \n from pk_cfuserservice_cultapp.User) user where rf=1)\n\n\n, rashi_age as  (select  cast(Userid as varchar) as userid \n,date_diff('year',min(date(from_unixtime(cast(case when Attribute in ('birthday') then value end as double)/1000)+interval '330' minute)),current_date) as age\n,min(date(from_unixtime(cast(case when Attribute in ('birthday') then value end as double)/1000)+interval '330' minute)) as birthday\n, max(case when Attribute in ('Gender','gender','predictedgender') and coalesce(substr(lower(CAST(json_extract(value, '$.gender') AS VARCHAR)),1,1),substr(trim(lower(value)),1,1)) in ('m','f') then coalesce(substr(lower(CAST(json_extract(value, '$.gender') AS VARCHAR)),1,1),substr(trim(lower(value)),1,1)) end) as gender\nfrom\npk_cfprodplatforms_rashi.User_Attribute where  Attribute in (\n 'Gender'\n,'gender'\n, 'birthday'\n) and value !=''\ngroup by 1\n--having min(date(from_unixtime(cast(value as double)/1000)+interval '330' minute)) > date_trunc('year',current_date) - interval '100' year  and min(date(from_unixtime(cast(value as double)/1000)+interval '330' minute))<=date_trunc('year',current_date)\n)\n\n\n\nselect cast(u.id as varchar) as user_id , case when coalesce(ua.age,ra.age,ab.age) is null then 'AGE NA'\nwhen coalesce(ua.age,ra.age,ab.age) between 0 and 20 then '0-20 yrs'\nwhen coalesce(ua.age,ra.age,ab.age) between 20 and 60 then concat(cast(coalesce(ua.age,ra.age,ab.age) as varchar),' yrs')\nwhen coalesce(ua.age,ra.age,ab.age) >60 then '>60 yrs' end age\n,coalesce(ua.age,ra.age,ab.age) as age_nos\n,coalesce(ua.gender,ra.gender,ab.gender,'NA') as gender\n,coalesce(ua.birthday,ra.birthday,ab.birthday) as birthday\n,case when ua.age is not null then 'user_table'\n when ra.age is not null then 'rashi_table'\n when ab.age is not null then 'onboarding_table'\nelse 'no_value' end as age_source\nfrom pk_cfuserservice_cultapp.User u\nleft join user_age ua on ua.userid=cast(u.id as varchar)\nleft join rashi_age ra on  cast(ra.userid as varchar)=cast(u.id as varchar)\nleft join age_onboarding ab on  cast(ab.userid as varchar)=cast(u.id as varchar)\n)\nm\n)\n,GENDER_BASE AS ( \nselect gender,USER_ID\nfrom birthday_base)\n\nSELECT  COALESCE(NULLIF(TRIM(gender), ''), 'NA') AS Gender,COUNT(BASE.USER_ID) MEMBERS--,COUNT_IF(UPPER(GENDER)='F') FEMALE_MEMBERS,COUNT_IF(UPPER(GENDER)='M') MALE_MEMBERS\nFROM BASE \nLEFT JOIN GENDER_BASE ON GENDER_BASE.USER_ID = BASE.USER_ID\nGROUP BY 1\norder by 1"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "varchar",
+            "semantic_type": "type/Category",
+            "lib/deduplicated-name": "Gender",
+            "lib/original-name": "Gender",
+            "name": "Gender",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "Gender",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "Gender",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "Gender",
+            "display_name": "Gender",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 1.3333333333333333
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "MEMBERS",
+            "lib/original-name": "MEMBERS",
+            "name": "MEMBERS",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "MEMBERS",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "MEMBERS",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "MEMBERS",
+            "display_name": "MEMBERS",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 458233,
+                  "q1": 472963.5,
+                  "q3": 798126,
+                  "max": 891783,
+                  "sd": 235153.68838556058,
+                  "avg": 622390.3333333334
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-02T10:05:03.564891931Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "ed": {
+              "name": "ed",
+              "id": "97db8298-146c-4e43-a596-c892a0f76ac9",
+              "display-name": "Ed",
+              "default": "2026-03-31",
+              "type": "date",
+              "widget-type": null
+            }
+          },
+          "native": "-- Purpose: Count membership users by inferred gender using onboarding, user profile, and attribute sources.\n-- Output: gender, members.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the member base.\nWITH\n  base AS (\n    SELECT\n      --date_trunc('quarter', dd.full_date) AS \"quarter\",\n      m.USER_ID\n    FROM\n      dwh_fitness_mart.membership_dim m\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n        ON mdb.id = m.membership_service_id\n    --   JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE 1=1\n    -- dd.full_date >= DATE('2025-01-01')\n      -- Use membership-service created_date for transferred/upgraded packs before building the member base.\n      AND DATE(\n        CASE\n          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n          ELSE m.membership_created_date\n        END\n      ) between date('2017-10-01') AND {{ed}}\n      -- Gender split is shown for ELITE/PRO/PLAY members.\n      and m.business_line in ('ELITE','PRO','PLAY')\n      -- Exclude free packs from the member base.\n      and amount_paid>0\n    GROUP BY\n      1\n  )\n, birthday_base as (\n\n\nselect \nuser_id\n,case when birthday between date('1970-01-01') and date_add('year',-18,now()) THEN cast(birthday as varchar) end as birthday\n,coalesce(case when cast(birthday as varchar)='-1' then null else age end,'NA') as age\n,coalesce(gender,'NA') as Gender\n-- ,COALESCE(NULLIF(TRIM(gender), ''), 'NA') AS Gender\n,age_source\n,age_nos\nfrom (with age_onboarding as  (select nrs.userid\n,date_diff('year',date(substr(max(case when  nrs.questionid='onboarding_user_dob_v1' then  nrs.answer end),1,10)),current_date) as age \n,date(substr(max(case when  nrs.questionid='onboarding_user_dob_v1' then  nrs.answer end),1,10)) as birthday\n,substr(max(case when questionid='@Home Guidance_Gender_v1' and lower(trim(answer)) in ('m','f') then lower(trim(answer)) end),1,1) as gender\nfrom pk_curefitprod_cfdb.npsresponses nrs \nwhere 1=1\nand nrs.answer is not null and nrs.answer!=''\n-- filter for onboarding forms \nand nrs.formid='post_pack_purchase_onboarding' and nrs.questionid in ('onboarding_user_dob_v1','@Home Guidance_Gender_v1')\ngroup by 1)\n\n\n, user_age as (select cast(id as varchar) userid\n,case when substr(lower(trim(gender)),1,1) in ('m','f') then substr(lower(trim(gender)),1,1) end as gender\n,date_diff('year',cast(substr(birthday,1,10) as date),current_date) as age\n,cast(substr(birthday,1,10) as date) birthday\nfrom (select id, gender,birthday,row_number() over (partition by id order by updatedat desc) rf \n from pk_cfuserservice_cultapp.User) user where rf=1)\n\n\n, rashi_age as  (select  cast(Userid as varchar) as userid \n,date_diff('year',min(date(from_unixtime(cast(case when Attribute in ('birthday') then value end as double)/1000)+interval '330' minute)),current_date) as age\n,min(date(from_unixtime(cast(case when Attribute in ('birthday') then value end as double)/1000)+interval '330' minute)) as birthday\n, max(case when Attribute in ('Gender','gender','predictedgender') and coalesce(substr(lower(CAST(json_extract(value, '$.gender') AS VARCHAR)),1,1),substr(trim(lower(value)),1,1)) in ('m','f') then coalesce(substr(lower(CAST(json_extract(value, '$.gender') AS VARCHAR)),1,1),substr(trim(lower(value)),1,1)) end) as gender\nfrom\npk_cfprodplatforms_rashi.User_Attribute where  Attribute in (\n 'Gender'\n,'gender'\n, 'birthday'\n) and value !=''\ngroup by 1\n--having min(date(from_unixtime(cast(value as double)/1000)+interval '330' minute)) > date_trunc('year',current_date) - interval '100' year  and min(date(from_unixtime(cast(value as double)/1000)+interval '330' minute))<=date_trunc('year',current_date)\n)\n\n\n\nselect cast(u.id as varchar) as user_id , case when coalesce(ua.age,ra.age,ab.age) is null then 'AGE NA'\nwhen coalesce(ua.age,ra.age,ab.age) between 0 and 20 then '0-20 yrs'\nwhen coalesce(ua.age,ra.age,ab.age) between 20 and 60 then concat(cast(coalesce(ua.age,ra.age,ab.age) as varchar),' yrs')\nwhen coalesce(ua.age,ra.age,ab.age) >60 then '>60 yrs' end age\n,coalesce(ua.age,ra.age,ab.age) as age_nos\n,coalesce(ua.gender,ra.gender,ab.gender,'NA') as gender\n,coalesce(ua.birthday,ra.birthday,ab.birthday) as birthday\n,case when ua.age is not null then 'user_table'\n when ra.age is not null then 'rashi_table'\n when ab.age is not null then 'onboarding_table'\nelse 'no_value' end as age_source\nfrom pk_cfuserservice_cultapp.User u\nleft join user_age ua on ua.userid=cast(u.id as varchar)\nleft join rashi_age ra on  cast(ra.userid as varchar)=cast(u.id as varchar)\nleft join age_onboarding ab on  cast(ab.userid as varchar)=cast(u.id as varchar)\n)\nm\n)\n,GENDER_BASE AS ( \nselect gender,USER_ID\nfrom birthday_base)\n\nSELECT  COALESCE(NULLIF(TRIM(gender), ''), 'NA') AS Gender,COUNT(BASE.USER_ID) MEMBERS--,COUNT_IF(UPPER(GENDER)='F') FEMALE_MEMBERS,COUNT_IF(UPPER(GENDER)='M') MALE_MEMBERS\nFROM BASE \nLEFT JOIN GENDER_BASE ON GENDER_BASE.USER_ID = BASE.USER_ID\nGROUP BY 1\norder by 1\n\n"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-02T06:37:31.105261Z"
+      },
+      "viz-settings": {
+        "table.cell_column": "MEMBERS",
+        "table.pivot_column": "gender"
+      },
+      "database": 39,
+      "parameters": [
+        {
+          "id": "97db8298-146c-4e43-a596-c892a0f76ac9",
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "ed"
+            ]
+          ],
+          "name": "ed",
+          "slug": "ed",
+          "default": "2026-03-31",
+          "value": "2026-03-31",
+          "ismultiselect": false
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 3,
+    "running_time": 46829
+  }
+}

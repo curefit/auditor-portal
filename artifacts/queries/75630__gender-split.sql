@@ -1,3 +1,6 @@
+-- Purpose: Count membership users by inferred gender using onboarding, user profile, and attribute sources.
+-- Output: gender, members.
+-- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the member base.
 WITH
   base AS (
     SELECT
@@ -5,11 +8,21 @@ WITH
       m.USER_ID
     FROM
       dwh_fitness_mart.membership_dim m
+      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
+        ON mdb.id = m.membership_service_id
     --   JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date
     WHERE 1=1
     -- dd.full_date >= DATE('2025-01-01')
-      AND m.membership_created_date between date('2017-10-01') AND {{ed}}
+      -- Use membership-service created_date for transferred/upgraded packs before building the member base.
+      AND DATE(
+        CASE
+          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date
+          ELSE m.membership_created_date
+        END
+      ) between date('2017-10-01') AND {{ed}}
+      -- Gender split is shown for ELITE/PRO/PLAY members.
       and m.business_line in ('ELITE','PRO','PLAY')
+      -- Exclude free packs from the member base.
       and amount_paid>0
     GROUP BY
       1
@@ -22,6 +35,7 @@ user_id
 ,case when birthday between date('1970-01-01') and date_add('year',-18,now()) THEN cast(birthday as varchar) end as birthday
 ,coalesce(case when cast(birthday as varchar)='-1' then null else age end,'NA') as age
 ,coalesce(gender,'NA') as Gender
+-- ,COALESCE(NULLIF(TRIM(gender), ''), 'NA') AS Gender
 ,age_source
 ,age_nos
 from (with age_onboarding as  (select nrs.userid
@@ -82,8 +96,9 @@ m
 select gender,USER_ID
 from birthday_base)
 
-SELECT  gender,COUNT(BASE.USER_ID) MEMBERS--,COUNT_IF(UPPER(GENDER)='F') FEMALE_MEMBERS,COUNT_IF(UPPER(GENDER)='M') MALE_MEMBERS
+SELECT  COALESCE(NULLIF(TRIM(gender), ''), 'NA') AS Gender,COUNT(BASE.USER_ID) MEMBERS--,COUNT_IF(UPPER(GENDER)='F') FEMALE_MEMBERS,COUNT_IF(UPPER(GENDER)='M') MALE_MEMBERS
 FROM BASE 
 LEFT JOIN GENDER_BASE ON GENDER_BASE.USER_ID = BASE.USER_ID
 GROUP BY 1
 order by 1
+
