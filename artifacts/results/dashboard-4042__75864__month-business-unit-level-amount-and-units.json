@@ -1,0 +1,1888 @@
+{
+  "card_id": 75864,
+  "card_name": "Month_Business Unit Level Amount and Units",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "start_date",
+      "slug": "start_date",
+      "value": "2023-04-01"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "end_date",
+      "slug": "end_date",
+      "value": "2026-03-31"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list",
+      "value": null
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "sub_category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "article_type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "ac1e19e5-5046-4f8f-b19b-9f5b6852d38c",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "consider_purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "2023-04-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          121761519,
+          106612694,
+          3292831281,
+          63718,
+          -3186218587,
+          -29.885921342537316
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "Cultsport Private Limited",
+          8477904,
+          7453192,
+          328658863,
+          18026,
+          -321205671,
+          -43.09639024460929
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          239931507,
+          209073833,
+          7875721194,
+          92952.25,
+          -7666647361,
+          -36.6695690751506
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "Cultsport Private Limited",
+          18765475,
+          16584631,
+          2883093572,
+          42201,
+          -2866508941,
+          -172.8412854648379
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          201749157,
+          174359229,
+          1132791868,
+          37850,
+          -958432639,
+          -5.4968850487403795
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "Cultsport Private Limited",
+          10657316,
+          9399684,
+          506380336,
+          19118,
+          -496980652,
+          -52.87205952880969
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          225325607,
+          195385528,
+          2656330553,
+          56003.26,
+          -2460945025,
+          -12.595329092132147
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "Cultsport Private Limited",
+          -19400204,
+          -15894972,
+          4190577588,
+          8721,
+          -4206472560,
+          264.6417093405386
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          240890543,
+          207439896,
+          7978751614,
+          77536,
+          -7771311718,
+          -37.46295610368027
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "Cultsport Private Limited",
+          12161718,
+          10737099,
+          848434085,
+          21297,
+          -837696986,
+          -78.01893099802842
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          346860413,
+          298939616,
+          1096480064,
+          61473,
+          -797540448,
+          -2.667898148367194
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "Cultsport Private Limited",
+          24529227,
+          21777271,
+          470768865,
+          38741,
+          -448991594,
+          -20.61744072524055
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          512484465,
+          440642980,
+          4068012777,
+          109245,
+          -3627369797,
+          -8.231992705296246
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "Cultsport Private Limited",
+          19932054,
+          17695107,
+          445434074,
+          38066,
+          -427738967,
+          -24.17272565800252
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          271314653,
+          235988491,
+          875528432,
+          328136,
+          -639539941,
+          -2.710047164969583
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "Cultsport Private Limited",
+          14748887,
+          13018084,
+          1913937784,
+          20585,
+          -1900919700,
+          -146.02146521715486
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          275611187,
+          236234284,
+          13402372047,
+          305044,
+          -13166137763,
+          -55.73339119143265
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "Cultsport Private Limited",
+          18826010,
+          16484896,
+          76149448,
+          26798,
+          -59664552,
+          -3.619346582471615
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          183111886,
+          158004198,
+          436754916,
+          17141,
+          -278750718,
+          -1.764198176557309
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Cultsport Private Limited",
+          12156997,
+          10741386,
+          156578437,
+          26259,
+          -145837051,
+          -13.577116677493947
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          -45413820,
+          -38053223,
+          697958196,
+          208831,
+          -736011419,
+          19.341631561668244
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Cultsport Private Limited",
+          10715441,
+          9413409,
+          65512643,
+          22704,
+          -56099234,
+          -5.959502450175064
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          349506607,
+          299058610,
+          560596050,
+          227516,
+          -261537440,
+          -0.8745357306382183
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Cultsport Private Limited",
+          15585301,
+          13861960,
+          138263213,
+          36048,
+          -124401253,
+          -8.974290287953508
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          276998371,
+          247587644,
+          169959560,
+          159008,
+          77628084,
+          0.3135377951251881
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Cultsport Private Limited",
+          12886740,
+          11444410,
+          26476176,
+          25617,
+          -15031766,
+          -1.3134592346831335
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          158403134,
+          139848835,
+          361046615,
+          236871,
+          -221197780,
+          -1.5816919747668974
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Cultsport Private Limited",
+          11322382,
+          10107946,
+          30686523,
+          22272,
+          -20578577,
+          -2.0358811770462566
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          447106687,
+          390158475,
+          330528506,
+          227182,
+          59629969,
+          0.1528352523932743
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Cultsport Private Limited",
+          8596100,
+          7647300,
+          19779012,
+          18800,
+          -12131712,
+          -1.5864046133929621
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          null,
+          -236325137,
+          -206184302,
+          -157464293,
+          -88439,
+          -48720009,
+          0.23629349338146993
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          195425087,
+          170033534,
+          451998648,
+          260522.63999999998,
+          -281965114,
+          -1.6582912050748766
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "Cultsport Private Limited",
+          9835416,
+          8752496,
+          33235853,
+          21230,
+          -24483357,
+          -2.79729999305341
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          517908744,
+          450901327,
+          738718026,
+          416049,
+          -287816699,
+          -0.63831415381929
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "Cultsport Private Limited",
+          12191086,
+          10837400,
+          14679204,
+          25676,
+          -3841804,
+          -0.35449498957314485
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          null,
+          -171665397,
+          -151329526,
+          -140405710,
+          -137243,
+          -10923816,
+          0.07218562225589738
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          540572102,
+          468731634,
+          1445224338,
+          407508.05,
+          -976492704,
+          -2.0832660592308136
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "Cultsport Private Limited",
+          21730100,
+          19401874,
+          18823297,
+          46817,
+          578577,
+          0.029820676085207026
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          557759311,
+          491813704,
+          714752512,
+          277745.55,
+          -222938808,
+          -0.4532993005009881
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Cultsport Private Limited",
+          41430067,
+          36370533,
+          27985079,
+          30798,
+          8385454,
+          0.23055625827644594
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          null,
+          -3428144,
+          -2991951,
+          -2511051,
+          -5322,
+          -480900,
+          0.16073124192207694
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          130397432,
+          114209569,
+          142657974,
+          101963.36,
+          -28448405,
+          -0.2490895049258088
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Cultsport Private Limited",
+          132510685,
+          116428318,
+          7702717413,
+          91821,
+          -7586289095,
+          -65.15845307496411
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          null,
+          -392732,
+          -353854,
+          -310337,
+          -336,
+          -43517,
+          0.12298009913693218
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          195843247,
+          172010407,
+          124641267,
+          116481,
+          47369140,
+          0.2753853143315916
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Cultsport Private Limited",
+          212739002,
+          186499530,
+          161947091,
+          139740,
+          24552439,
+          0.1316487982570251
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          null,
+          -41926744,
+          -37310941,
+          -32491770,
+          -50964,
+          -4819171,
+          0.12916240842062923
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          87658464,
+          74710813,
+          79815902,
+          38221,
+          -5105089,
+          -0.06833132708648211
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Cultsport Private Limited",
+          213337421,
+          188999075,
+          331562524,
+          162564,
+          -142563449,
+          -0.7543076546803206
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          null,
+          -111219269,
+          -98078993,
+          -17350836,
+          -106390,
+          -80728157,
+          0.8230932489284428
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          40944931,
+          27626998,
+          16977796,
+          -377214,
+          10649202,
+          0.385463596153299
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Cultsport Private Limited",
+          188528418,
+          165464259,
+          148454570,
+          362034,
+          17009689,
+          0.10279977744317581
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          null,
+          -169969779,
+          -150514143,
+          -130311047,
+          -166395,
+          -20203096,
+          0.13422722673974896
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          176163373,
+          155179175,
+          188516726,
+          75221,
+          -33337551,
+          -0.21483263459803803
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Cultsport Private Limited",
+          310317037,
+          271657161,
+          1793139316,
+          710430,
+          -1521482155,
+          -5.600743780871655
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          null,
+          -2362137,
+          -2109565,
+          -1790780,
+          -3495,
+          -318785,
+          0.15111409224176547
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Cultfit Product",
+          88461040,
+          75005642,
+          2627566083,
+          43798,
+          -2552560441,
+          -34.0315791310739
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          -10352573,
+          -8709165,
+          -5154646,
+          -791,
+          -3554519,
+          0.40813545270987517
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Cultsport Private Limited",
+          364199608,
+          321717464,
+          237642623,
+          881033,
+          84074841,
+          0.2613312934730829
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Cultfit Product",
+          19252888,
+          16362074,
+          11609162,
+          9140,
+          4752912,
+          0.2904834680493439
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          -15960465,
+          -14291389,
+          -11324101,
+          -1231,
+          -2967288,
+          0.2076276840550628
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Cultsport Private Limited",
+          420295083,
+          371483400,
+          302347567,
+          367975,
+          69135833,
+          0.1861074626753174
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "Cultfit Product",
+          44634345,
+          37055745,
+          34702667,
+          25721,
+          2353078,
+          0.06350103067688964
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          22073872,
+          21856055,
+          27711693,
+          959,
+          -5855638,
+          -0.26791834116449653
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "Cultsport Private Limited",
+          337532514,
+          297961470,
+          237798866,
+          261156,
+          60162604,
+          0.20191403942261393
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "Cultfit Product",
+          45033799,
+          38164236,
+          30059891,
+          14932,
+          8104345,
+          0.2123544409483266
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          -11922378,
+          -10304460,
+          14677627,
+          1040,
+          -24982087,
+          2.424395552993558
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "Cultsport Private Limited",
+          417004602,
+          367549471,
+          241842079,
+          208569,
+          125707392,
+          0.3420148902894217
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "Cultfit Product",
+          52456831,
+          44512653,
+          37649667,
+          34692,
+          6862986,
+          0.154180565242876
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          -3177960,
+          -2722285,
+          -1818262,
+          4874,
+          -904023,
+          0.3320824234053378
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "Cultsport Private Limited",
+          556570085,
+          492654319,
+          862988961,
+          497961,
+          -370334642,
+          -0.7517129713826786
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "Cultfit Product",
+          76182218,
+          64647486,
+          48948723,
+          41440,
+          15698763,
+          0.24283640356873273
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          4185625,
+          3536414,
+          14104836,
+          9908,
+          -10568422,
+          -2.988457233796722
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "Cultsport Private Limited",
+          494775951,
+          443979338,
+          426567385,
+          380979,
+          17411953,
+          0.03921793540761575
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "Cultfit Product",
+          44453691,
+          37704714,
+          28923601,
+          12082,
+          8781113,
+          0.2328916485084597
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          -3571250,
+          -3060841,
+          -5386230,
+          -257,
+          2325389,
+          -0.7597222462715313
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "Cultsport Private Limited",
+          466072787,
+          427565680,
+          6212605390,
+          296904,
+          -5785039710,
+          -13.530177889862442
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Cultfit Product",
+          71609347,
+          60843599,
+          54348830,
+          11371,
+          6494769,
+          0.10674531268276881
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          2376269,
+          2008783,
+          10554296,
+          1787,
+          -8545513,
+          -4.254074730819606
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Cultsport Private Limited",
+          338927226,
+          308794314,
+          277590407,
+          219734,
+          31203907,
+          0.10105078230164562
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Cultfit Product",
+          49063572,
+          41646250,
+          39112444,
+          27008,
+          2533806,
+          0.060841156166521596
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          -1743561,
+          -1449948,
+          9689882,
+          3157,
+          -11139830,
+          7.682916904606234
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Cultsport Private Limited",
+          413528548,
+          378135612,
+          299692765,
+          -10918,
+          78442847,
+          0.20744633541682925
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Cultfit Product",
+          50980157,
+          43268422,
+          31750195,
+          13793,
+          11518227,
+          0.2662039997668508
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          -71485,
+          -66545,
+          -10771,
+          -9,
+          -55774,
+          0.8381396047787212
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Cultsport Private Limited",
+          457937914,
+          416246725,
+          535938738,
+          332362,
+          -119692013,
+          -0.2875506419900361
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Cultfit Product",
+          46853400,
+          39715520,
+          39298904,
+          27180,
+          416616,
+          0.010490004914955161
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          5089648,
+          4310580,
+          355275560,
+          5716,
+          -350964980,
+          -81.4194331157292
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Cultsport Private Limited",
+          421471846,
+          385601994,
+          444442870,
+          254021,
+          -58840876,
+          -0.15259484368745252
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Cultfit Product",
+          105160072,
+          89137477,
+          78085399,
+          41621,
+          11052078,
+          0.1239891274912347
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Cultgear Pvt Ltd",
+          53998656,
+          52135219,
+          36579111,
+          9360,
+          15556108,
+          0.29838002598588875
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Cultsport Private Limited",
+          472363477,
+          426614546,
+          2642689503,
+          212351.5,
+          -2216074957,
+          -5.194560236584151
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "date",
+          "lib/deduplicated-name": "month",
+          "lib/original-name": "month",
+          "name": "month",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "month",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "month",
+            {
+              "base-type": "type/Date"
+            }
+          ],
+          "effective_type": "type/Date",
+          "lib/desired-column-alias": "month",
+          "display_name": "month",
+          "base_type": "type/Date"
+        },
+        {
+          "database_type": "varchar",
+          "lib/deduplicated-name": "business_unit",
+          "lib/original-name": "business_unit",
+          "name": "business_unit",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "business_unit",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "business_unit",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "business_unit",
+          "display_name": "business_unit",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "total_amount",
+          "lib/original-name": "total_amount",
+          "name": "total_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_amount",
+          "display_name": "total_amount",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "base_amount",
+          "lib/original-name": "base_amount",
+          "name": "base_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "base_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "base_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "base_amount",
+          "display_name": "base_amount",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "total_nlc",
+          "lib/original-name": "total_nlc",
+          "name": "total_nlc",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_nlc",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_nlc",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_nlc",
+          "display_name": "total_nlc",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "units",
+          "lib/original-name": "units",
+          "name": "units",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "units",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "units",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "units",
+          "display_name": "units",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "gm",
+          "lib/original-name": "gm",
+          "name": "gm",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "gm",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "gm",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "gm",
+          "display_name": "gm",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "gm_percent",
+          "lib/original-name": "gm_percent",
+          "name": "gm_percent",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "gm_percent",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "gm_percent",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "gm_percent",
+          "display_name": "gm_percent",
+          "base_type": "type/Float"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2023-04-01",
+          "2026-03-31"
+        ],
+        "query-permissions/referenced-card-ids": [
+          75683
+        ],
+        "lib/type": "mbql.stage/native",
+        "query": "SELECT \n    DATE_TRUNC('MONTH', DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS month, business_unit, ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    ROUND(SUM(nlc)) AS total_nlc,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n    (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM (SELECT *\nFROM stage_dwh.dwh_d2c_metrics_bizfin_sales_data)\nWHERE 1 = 1 \n\n\n\n AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN ? AND ? \n\nGROUP BY 1, 2\nORDER BY 1, 2"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "date",
+            "semantic_type": null,
+            "lib/deduplicated-name": "month",
+            "lib/original-name": "month",
+            "name": "month",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "month",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "month",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "effective_type": "type/Date",
+            "lib/desired-column-alias": "month",
+            "display_name": "month",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2023-04-01",
+                  "latest": "2026-03-01"
+                }
+              }
+            },
+            "base_type": "type/Date"
+          },
+          {
+            "database_type": "varchar",
+            "semantic_type": null,
+            "lib/deduplicated-name": "business_unit",
+            "lib/original-name": "business_unit",
+            "name": "business_unit",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "business_unit",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "business_unit",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "business_unit",
+            "display_name": "business_unit",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.08695652173913043
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 18
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_amount",
+            "lib/original-name": "total_amount",
+            "name": "total_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "total_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "total_amount",
+            "display_name": "total_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 92,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -236325137,
+                  "q1": 10071114.575208517,
+                  "q3": 258513951.15586707,
+                  "max": 557759311,
+                  "sd": 185991365.07313874,
+                  "avg": 138362513.5543478
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "base_amount",
+            "lib/original-name": "base_amount",
+            "name": "base_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "base_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "base_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "base_amount",
+            "display_name": "base_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 92,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -206184302,
+                  "q1": 8907444.627495311,
+                  "q3": 220273154.7673017,
+                  "max": 492654319,
+                  "sd": 164653423.92179257,
+                  "avg": 121870843.41304348
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_nlc",
+            "lib/original-name": "total_nlc",
+            "name": "total_nlc",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_nlc",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "total_nlc",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "total_nlc",
+            "display_name": "total_nlc",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 92,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -157464293,
+                  "q1": 24822365.158869527,
+                  "q3": 629277123,
+                  "max": 13402372047,
+                  "sd": 2132745041.3583608,
+                  "avg": 944768562.1630435
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "units",
+            "lib/original-name": "units",
+            "name": "units",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "units",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "units",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "units",
+            "display_name": "units",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 92,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -377214,
+                  "q1": 9937.184813599772,
+                  "q3": 181674.15691364513,
+                  "max": 881033,
+                  "sd": 174347.09306346584,
+                  "avg": 99806.53923913043
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "gm",
+            "lib/original-name": "gm",
+            "name": "gm",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "gm",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "gm",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "gm",
+            "display_name": "gm",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 92,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -13166137763,
+                  "q1": -399036804.5,
+                  "q3": 3893183.845057631,
+                  "max": 125707392,
+                  "sd": 2095470448.2045553,
+                  "avg": -822897718.75
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": "type/Share",
+            "lib/deduplicated-name": "gm_percent",
+            "lib/original-name": "gm_percent",
+            "name": "gm_percent",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "gm_percent",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "gm_percent",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "gm_percent",
+            "display_name": "gm_percent",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 92,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -172.8412854648379,
+                  "q1": -4.724317483701878,
+                  "q3": 0.2014078563673605,
+                  "max": 264.6417093405386,
+                  "sd": 40.3138558734198,
+                  "avg": -7.5143344165877455
+                }
+              }
+            },
+            "base_type": "type/Float"
+          }
+        ]
+      },
+      "insights": [
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": -868753849.6821707,
+          "last-change": null,
+          "col": "total_amount",
+          "slope": 50271.77686528375,
+          "last-value": 472363477,
+          "best-fit": [
+            "+",
+            -9768099159.375685,
+            [
+              "*",
+              1000143658.6154783,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": -878084047.5603921,
+          "last-change": null,
+          "col": "base_amount",
+          "slope": 49914.3008587579,
+          "last-value": 426614546,
+          "best-fit": [
+            "+",
+            -9715182752.38861,
+            [
+              "*",
+              993136308.2124248,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": 46783522871.13673,
+          "last-change": null,
+          "col": "total_nlc",
+          "slope": -2288112.5881003165,
+          "last-value": 2642689503,
+          "best-fit": [
+            "+",
+            456261488201.12506,
+            [
+              "*",
+              -45968191756.3833,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": -633651.7255035028,
+          "last-change": null,
+          "col": "units",
+          "slope": 36.61170801221559,
+          "last-value": 212351.5,
+          "best-fit": [
+            "+",
+            -633651.7255035028,
+            [
+              "*",
+              36.61170801221559,
+              "x"
+            ]
+          ]
+        },
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": -47661606918.697105,
+          "last-change": null,
+          "col": "gm",
+          "slope": 2338026.8889590735,
+          "last-value": -2216074957,
+          "best-fit": [
+            "+",
+            -465976670953.51337,
+            [
+              "*",
+              46961328064.595695,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": -408.61480176565755,
+          "last-change": null,
+          "col": "gm_percent",
+          "slope": 0.020021552554595916,
+          "last-value": -5.194560236584151,
+          "best-fit": [
+            "+",
+            -3999.2651307767906,
+            [
+              "*",
+              403.0020382213959,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-02T14:38:03.090096813Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "start_date": {
+              "default": null,
+              "type": "date",
+              "name": "start_date",
+              "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+              "display-name": "Start Date",
+              "widget-type": null
+            },
+            "end_date": {
+              "default": null,
+              "type": "date",
+              "name": "end_date",
+              "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+              "display-name": "End Date",
+              "widget-type": null
+            },
+            "category": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "category",
+              "type": "dimension",
+              "id": "0c146900-863e-476b-929b-9e820d2bef98",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "93df34e2-59b2-4e42-afe3-68b4aeaed7c2",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535274
+              ],
+              "display-name": "Category",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "sub_category": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "sub_category",
+              "type": "dimension",
+              "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "d2a1ff5e-3810-4437-8359-dd2ed35c93c9",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9615855
+              ],
+              "display-name": "Sub Category",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "article_type": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "article_type",
+              "type": "dimension",
+              "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "c32c0df2-86e8-43c2-b0d2-1bcde80b02c2",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535281
+              ],
+              "display-name": "Article Type",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "#75683-raw-data": {
+              "display-name": "#75683 Raw Data",
+              "type": "card",
+              "name": "#75683-raw-data",
+              "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+              "card-id": 75683
+            },
+            "consider_purchase": {
+              "id": "ac1e19e5-5046-4f8f-b19b-9f5b6852d38c",
+              "type": "text",
+              "name": "consider_purchase",
+              "display-name": "Consider Purchase"
+            }
+          },
+          "native": "SELECT \n    DATE_TRUNC('MONTH', DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS month, business_unit, ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    ROUND(SUM(nlc)) AS total_nlc,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n    (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n[[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\nGROUP BY 1, 2\nORDER BY 1, 2\n\n\n"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-05-26T12:03:27.346619Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "business_unit",
+        "table.cell_column": "unique_id",
+        "pie.metric": "total_amount",
+        "pie.dimension": [
+          "month"
+        ],
+        "column_settings": {
+          "[\"name\",\"gm_percent\"]": {
+            "number_style": "percent"
+          }
+        }
+      },
+      "lib.convert/converted?": true,
+      "database": 39,
+      "parameters": [
+        {
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "start_date"
+            ]
+          ],
+          "name": "start_date",
+          "slug": "start_date",
+          "value": "2023-04-01"
+        },
+        {
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "end_date"
+            ]
+          ],
+          "name": "end_date",
+          "slug": "end_date",
+          "value": "2026-03-31"
+        },
+        {
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "category"
+            ]
+          ],
+          "name": "category",
+          "slug": "category",
+          "options": {
+            "case-sensitive": false
+          },
+          "value": null,
+          "values-query-type": "list"
+        },
+        {
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "sub_category"
+            ]
+          ],
+          "name": "sub_category",
+          "slug": "sub_category",
+          "options": {
+            "case-sensitive": false
+          },
+          "values-query-type": "list"
+        },
+        {
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "article_type"
+            ]
+          ],
+          "name": "article_type",
+          "slug": "article_type",
+          "options": {
+            "case-sensitive": false
+          },
+          "values-query-type": "list"
+        },
+        {
+          "id": "ac1e19e5-5046-4f8f-b19b-9f5b6852d38c",
+          "type": "category",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "consider_purchase"
+            ]
+          ],
+          "name": "consider_purchase",
+          "slug": "consider_purchase",
+          "values-source-type": "static-list",
+          "values-query-type": "list",
+          "values-source-config": {
+            "values": [
+              [
+                "Yes"
+              ],
+              [
+                "No"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 92,
+    "running_time": 1415
+  }
+}

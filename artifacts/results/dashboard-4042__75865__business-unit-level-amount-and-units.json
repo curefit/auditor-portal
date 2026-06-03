@@ -1,0 +1,827 @@
+{
+  "card_id": 75865,
+  "card_name": "Business Unit Level Amount and Units",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "start_date",
+      "slug": "start_date",
+      "value": "2023-04-01"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "end_date",
+      "slug": "end_date",
+      "value": "2026-03-31"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list",
+      "value": null
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "sub_category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "article_type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "747c9261-4dd3-4124-82e1-b4d02f4129fe",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "consider_purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "Cultfit Product",
+          694141359,
+          588063820,
+          3062055567,
+          302778,
+          -2473991747,
+          -4.207012339238962
+        ],
+        [
+          "Cultgear Pvt Ltd",
+          6289239004,
+          5469740671,
+          49283865857,
+          3559517.1100000003,
+          -43814125186,
+          -8.01027467687782
+        ],
+        [
+          "Cultsport Private Limited",
+          6483260221,
+          5803186382,
+          35055422122,
+          5878490.5,
+          -29252235740,
+          -5.04071966923774
+        ],
+        [
+          null,
+          -737289339,
+          -648873275,
+          -482635825,
+          -558584,
+          -166237450,
+          0.25619401569589995
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar",
+          "lib/deduplicated-name": "business_unit",
+          "lib/original-name": "business_unit",
+          "name": "business_unit",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "business_unit",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "business_unit",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "business_unit",
+          "display_name": "business_unit",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "total_amount",
+          "lib/original-name": "total_amount",
+          "name": "total_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_amount",
+          "display_name": "total_amount",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "base_amount",
+          "lib/original-name": "base_amount",
+          "name": "base_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "base_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "base_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "base_amount",
+          "display_name": "base_amount",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "total_nlc",
+          "lib/original-name": "total_nlc",
+          "name": "total_nlc",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_nlc",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_nlc",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_nlc",
+          "display_name": "total_nlc",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "units",
+          "lib/original-name": "units",
+          "name": "units",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "units",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "units",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "units",
+          "display_name": "units",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "gm",
+          "lib/original-name": "gm",
+          "name": "gm",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "gm",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "gm",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "gm",
+          "display_name": "gm",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "gm_percent",
+          "lib/original-name": "gm_percent",
+          "name": "gm_percent",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "gm_percent",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "gm_percent",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "gm_percent",
+          "display_name": "gm_percent",
+          "base_type": "type/Float"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2023-04-01",
+          "2026-03-31"
+        ],
+        "query-permissions/referenced-card-ids": [
+          75683
+        ],
+        "lib/type": "mbql.stage/native",
+        "query": "SELECT \n    business_unit, ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    ROUND(SUM(nlc)) AS total_nlc,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n   (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM (SELECT *\nFROM stage_dwh.dwh_d2c_metrics_bizfin_sales_data)\nWHERE 1 = 1 \n\n\n\n AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN ? AND ? \n\nGROUP BY 1\nORDER BY 1"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "varchar",
+            "semantic_type": null,
+            "lib/deduplicated-name": "business_unit",
+            "lib/original-name": "business_unit",
+            "name": "business_unit",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "business_unit",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "business_unit",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "business_unit",
+            "display_name": "business_unit",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.25
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 14
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_amount",
+            "lib/original-name": "total_amount",
+            "name": "total_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "total_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "total_amount",
+            "display_name": "total_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -737289339,
+                  "q1": -21573990,
+                  "q3": 6386249612.5,
+                  "max": 6483260221,
+                  "sd": 3746265801.153087,
+                  "avg": 3182337811.25
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "base_amount",
+            "lib/original-name": "base_amount",
+            "name": "base_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "base_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "base_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "base_amount",
+            "display_name": "base_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -648873275,
+                  "q1": -30404727.5,
+                  "q3": 5636463526.5,
+                  "max": 5803186382,
+                  "sd": 3313306280.126579,
+                  "avg": 2803029399.5
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_nlc",
+            "lib/original-name": "total_nlc",
+            "name": "total_nlc",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_nlc",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "total_nlc",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "total_nlc",
+            "display_name": "total_nlc",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -482635825,
+                  "q1": 1289709871,
+                  "q3": 42169643989.5,
+                  "max": 49283865857,
+                  "sd": 24349371912.67426,
+                  "avg": 21729676930.25
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "units",
+            "lib/original-name": "units",
+            "name": "units",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "units",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "units",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "units",
+            "display_name": "units",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -558584,
+                  "q1": -127903,
+                  "q3": 4719003.805,
+                  "max": 5878490.5,
+                  "sd": 2975023.6198301213,
+                  "avg": 2295550.4025
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "gm",
+            "lib/original-name": "gm",
+            "name": "gm",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "gm",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "gm",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "gm",
+            "display_name": "gm",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -43814125186,
+                  "q1": -36533180463,
+                  "q3": -1320114598.5,
+                  "max": -166237450,
+                  "sd": 21202572050.29647,
+                  "avg": -18926647530.75
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": "type/Share",
+            "lib/deduplicated-name": "gm_percent",
+            "lib/original-name": "gm_percent",
+            "name": "gm_percent",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "gm_percent",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "gm_percent",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "gm_percent",
+            "display_name": "gm_percent",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -8.01027467687782,
+                  "q1": -6.52549717305778,
+                  "q3": -1.9754091617715313,
+                  "max": 0.25619401569589995,
+                  "sd": 3.4191877624915765,
+                  "avg": -4.250453167414656
+                }
+              }
+            },
+            "base_type": "type/Float"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-02T14:37:36.119919369Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "start_date": {
+              "default": null,
+              "type": "date",
+              "name": "start_date",
+              "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+              "display-name": "Start Date",
+              "widget-type": null
+            },
+            "end_date": {
+              "default": null,
+              "type": "date",
+              "name": "end_date",
+              "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+              "display-name": "End Date",
+              "widget-type": null
+            },
+            "category": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "category",
+              "type": "dimension",
+              "id": "0c146900-863e-476b-929b-9e820d2bef98",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "00555c8d-2e80-4c4e-920c-ea3000f96d07",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535274
+              ],
+              "display-name": "Category",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "sub_category": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "sub_category",
+              "type": "dimension",
+              "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "ae12e362-5189-4e57-bf92-a6a854e85c10",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9615855
+              ],
+              "display-name": "Sub Category",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "article_type": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "article_type",
+              "type": "dimension",
+              "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "8b6ee806-e267-40f8-b3fb-1d6ec8de3554",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535281
+              ],
+              "display-name": "Article Type",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "#75683-raw-data": {
+              "display-name": "#75683 Raw Data",
+              "type": "card",
+              "name": "#75683-raw-data",
+              "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+              "card-id": 75683
+            },
+            "consider_purchase": {
+              "id": "747c9261-4dd3-4124-82e1-b4d02f4129fe",
+              "type": "text",
+              "name": "consider_purchase",
+              "display-name": "Consider Purchase"
+            }
+          },
+          "native": "SELECT \n    business_unit, ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    ROUND(SUM(nlc)) AS total_nlc,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n   (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n[[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\nGROUP BY 1\nORDER BY 1\n\n\n"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-05-26T12:03:28.113085Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "business_unit",
+        "table.cell_column": "unique_id",
+        "pie.metric": "total_amount",
+        "pie.dimension": [
+          "month"
+        ],
+        "column_settings": {
+          "[\"name\",\"gm_percent\"]": {
+            "number_style": "percent"
+          }
+        }
+      },
+      "lib.convert/converted?": true,
+      "database": 39,
+      "parameters": [
+        {
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "start_date"
+            ]
+          ],
+          "name": "start_date",
+          "slug": "start_date",
+          "value": "2023-04-01"
+        },
+        {
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "end_date"
+            ]
+          ],
+          "name": "end_date",
+          "slug": "end_date",
+          "value": "2026-03-31"
+        },
+        {
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "category"
+            ]
+          ],
+          "name": "category",
+          "slug": "category",
+          "options": {
+            "case-sensitive": false
+          },
+          "value": null,
+          "values-query-type": "list"
+        },
+        {
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "sub_category"
+            ]
+          ],
+          "name": "sub_category",
+          "slug": "sub_category",
+          "options": {
+            "case-sensitive": false
+          },
+          "values-query-type": "list"
+        },
+        {
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "article_type"
+            ]
+          ],
+          "name": "article_type",
+          "slug": "article_type",
+          "options": {
+            "case-sensitive": false
+          },
+          "values-query-type": "list"
+        },
+        {
+          "id": "747c9261-4dd3-4124-82e1-b4d02f4129fe",
+          "type": "category",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "consider_purchase"
+            ]
+          ],
+          "name": "consider_purchase",
+          "slug": "consider_purchase",
+          "values-source-type": "static-list",
+          "values-query-type": "list",
+          "values-source-config": {
+            "values": [
+              [
+                "Yes"
+              ],
+              [
+                "No"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 4,
+    "running_time": 3428
+  }
+}
