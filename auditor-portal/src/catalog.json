@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T10:13:38.059Z",
+  "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
   "count": 116,
   "entries": [
@@ -401,7 +401,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-79589__79589__adhoc-20-04-2026.csv",
+        "artifacts/results/question-79589__79589__adhoc-20-04-2026.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_mart.booking_fact",
@@ -622,7 +625,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75865__business-unit-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75865__business-unit-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -837,7 +843,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75869__category-itemcode-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75869__category-itemcode-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -1220,7 +1229,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__72328__coupon-article-type-wise-user-count.csv",
+        "artifacts/results/dashboard-3604__72328__coupon-article-type-wise-user-count.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -1273,7 +1285,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__72384__coupon-article-type-repeat-category-month-wise-user-count.csv",
+        "artifacts/results/dashboard-3604__72384__coupon-article-type-repeat-category-month-wise-user-count.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -1326,7 +1341,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__72383__coupon-article-type-repeat-purchase-category-user-count-with-average-values.csv",
+        "artifacts/results/dashboard-3604__72383__coupon-article-type-repeat-purchase-category-user-count-with-average-values.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -1379,7 +1397,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__72385__coupon-repeat-funnel.csv",
+        "artifacts/results/dashboard-3604__72385__coupon-repeat-funnel.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -2908,7 +2929,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75867__financial-year-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75867__financial-year-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -2955,7 +2979,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75876__financial-year-wise-summary.csv",
+        "artifacts/results/dashboard-4042__75876__financial-year-wise-summary.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -3002,7 +3029,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__76602__financial-year-wise-summary-category-and-channel-wise.csv",
+        "artifacts/results/dashboard-4042__76602__financial-year-wise-summary-category-and-channel-wise.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -3049,7 +3079,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75906__financial-year-wise-summary-category-wise.csv",
+        "artifacts/results/dashboard-4042__75906__financial-year-wise-summary-category-wise.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -3096,7 +3129,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__76604__financial-year-wise-summary-channel-type-wise.csv",
+        "artifacts/results/dashboard-4042__76604__financial-year-wise-summary-channel-type-wise.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -3255,7 +3291,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__63763__funnel-cross-sales.csv",
+        "artifacts/results/dashboard-3604__63763__funnel-cross-sales.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -3842,7 +3881,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-74738__74738__how-much-data-from-wearbles-v3.csv",
+        "artifacts/results/question-74738__74738__how-much-data-from-wearbles-v3.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_prod_curefit_prod.activitystores",
@@ -4200,7 +4242,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75854__month-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75854__month-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -4359,7 +4404,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75910__month-bill-to-customer-name-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75910__month-bill-to-customer-name-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -4406,7 +4454,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75864__month-business-unit-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75864__month-business-unit-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -4453,7 +4504,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75860__month-category-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75860__month-category-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -4500,7 +4554,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75868__month-category-itemcode-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75868__month-category-itemcode-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -4547,7 +4604,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75859__month-pincode-level-units.csv",
+        "artifacts/results/dashboard-4042__75859__month-pincode-level-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -4594,7 +4654,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75863__month-skucode-level-units.csv",
+        "artifacts/results/dashboard-4042__75863__month-skucode-level-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -4721,7 +4784,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75881__new-launch-sku.csv",
+        "artifacts/results/dashboard-4042__75881__new-launch-sku.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -4768,7 +4834,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75894__new-launch-style-id.csv",
+        "artifacts/results/dashboard-4042__75894__new-launch-style-id.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -5039,7 +5108,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__72323__no-of-people-who-have-purchased-another-item-with-coupon.csv",
+        "artifacts/results/dashboard-3604__72323__no-of-people-who-have-purchased-another-item-with-coupon.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -5092,7 +5164,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__72319__no-of-people-who-have-purchased-before-coupons.csv",
+        "artifacts/results/dashboard-3604__72319__no-of-people-who-have-purchased-before-coupons.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -5145,7 +5220,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__71753__no-of-users-who-used-coupons.csv",
+        "artifacts/results/dashboard-3604__71753__no-of-users-who-used-coupons.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -5290,7 +5368,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/question-75999__75999__page-ids-traffic.csv",
+        "artifacts/results/question-75999__75999__page-ids-traffic.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_curefit_app_events.page_view",
@@ -6004,7 +6085,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75866__quarter-level-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75866__quarter-level-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -6162,7 +6246,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75872__raw-data-2.csv",
+        "artifacts/results/dashboard-4042__75872__raw-data-2.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -6301,7 +6388,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__71754__repeat-count.csv",
+        "artifacts/results/dashboard-3604__71754__repeat-count.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -6354,7 +6444,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__72382__repeat-purchase-category-user-count.csv",
+        "artifacts/results/dashboard-3604__72382__repeat-purchase-category-user-count.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_metrics.cross_sell_orders",
@@ -7174,7 +7267,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75736__total-amount-and-units.csv",
+        "artifacts/results/dashboard-4042__75736__total-amount-and-units.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -7221,7 +7317,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75870__unique-pincodes.csv",
+        "artifacts/results/dashboard-4042__75870__unique-pincodes.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -7268,7 +7367,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-4042__75871__unique-sku-code.csv",
+        "artifacts/results/dashboard-4042__75871__unique-sku-code.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "pk_fitstore_unicommerce.item_details_summary",
@@ -7315,7 +7417,10 @@
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
-      "results": [],
+      "results": [
+        "artifacts/results/dashboard-3604__70058__user-count-fs-vs-d2c-with-filters.csv",
+        "artifacts/results/dashboard-3604__70058__user-count-fs-vs-d2c-with-filters.json"
+      ],
       "sqlLineageRelations": [
         {
           "relation": "dwh_fitness_mart.booking_fact",

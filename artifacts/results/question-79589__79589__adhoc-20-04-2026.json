@@ -1,0 +1,315 @@
+{
+  "card_id": 79589,
+  "card_name": "adhoc 20-04-2026",
+  "parameters": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "FY24",
+          324582,
+          9382031,
+          3.459613382219692
+        ],
+        [
+          "FY25",
+          367663,
+          9458482,
+          3.887124805016281
+        ],
+        [
+          "FY26",
+          422816,
+          10586111,
+          3.99406354231502
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar(4)",
+          "lib/deduplicated-name": "fiscal_year",
+          "lib/original-name": "fiscal_year",
+          "name": "fiscal_year",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "fiscal_year",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "fiscal_year",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "fiscal_year",
+          "display_name": "fiscal_year",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "bt_responses",
+          "lib/original-name": "bt_responses",
+          "name": "bt_responses",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "bt_responses",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "bt_responses",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "bt_responses",
+          "display_name": "bt_responses",
+          "base_type": "type/BigInteger"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "total_responses",
+          "lib/original-name": "total_responses",
+          "name": "total_responses",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_responses",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_responses",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "total_responses",
+          "display_name": "total_responses",
+          "base_type": "type/BigInteger"
+        },
+        {
+          "database_type": "decimal(38,15)",
+          "lib/deduplicated-name": "bt_pct",
+          "lib/original-name": "bt_pct",
+          "name": "bt_pct",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "bt_pct",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "bt_pct",
+            {
+              "base-type": "type/Decimal"
+            }
+          ],
+          "effective_type": "type/Decimal",
+          "lib/desired-column-alias": "bt_pct",
+          "display_name": "bt_pct",
+          "base_type": "type/Decimal"
+        }
+      ],
+      "native_form": {
+        "lib/type": "mbql.stage/native",
+        "query": "SELECT\n  CASE\n    WHEN bf.class_date >= DATE '2023-04-01' AND bf.class_date < DATE '2024-04-01' THEN 'FY24'\n    WHEN bf.class_date >= DATE '2024-04-01' AND bf.class_date < DATE '2025-04-01' THEN 'FY25'\n    WHEN bf.class_date >= DATE '2025-04-01' AND bf.class_date < DATE '2026-04-01' THEN 'FY26'\n  END AS fiscal_year,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END) AS bt_responses,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END) AS total_responses,\n  100.0 * COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END)\n    / NULLIF(COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END), 0) AS bt_pct\nFROM dwh_fitness_mart.booking_fact bf\nWHERE bf.class_date >= DATE '2023-04-01'\n  AND bf.class_date < DATE '2026-04-01'\nGROUP BY 1\nORDER BY 1 "
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "varchar(4)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "fiscal_year",
+            "lib/original-name": "fiscal_year",
+            "name": "fiscal_year",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "fiscal_year",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "fiscal_year",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "fiscal_year",
+            "display_name": "fiscal_year",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 4
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "bt_responses",
+            "lib/original-name": "bt_responses",
+            "name": "bt_responses",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "bt_responses",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "bt_responses",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "bt_responses",
+            "display_name": "bt_responses",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 324582,
+                  "q1": 335352.25,
+                  "q3": 409027.75,
+                  "max": 422816,
+                  "sd": 49240.472388067115,
+                  "avg": 371687
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_responses",
+            "lib/original-name": "total_responses",
+            "name": "total_responses",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_responses",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "total_responses",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "total_responses",
+            "display_name": "total_responses",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 9382031,
+                  "q1": 9401143.75,
+                  "q3": 10304203.75,
+                  "max": 10586111,
+                  "sd": 674190.9427160331,
+                  "avg": 9808874.666666666
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          },
+          {
+            "database_type": "decimal(38,15)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "bt_pct",
+            "lib/original-name": "bt_pct",
+            "name": "bt_pct",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "bt_pct",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "bt_pct",
+              {
+                "base-type": "type/Decimal"
+              }
+            ],
+            "effective_type": "type/Decimal",
+            "lib/desired-column-alias": "bt_pct",
+            "display_name": "bt_pct",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 3.459613382219692,
+                  "q1": 3.5664912379188394,
+                  "q3": 3.9673288579903354,
+                  "max": 3.99406354231502,
+                  "sd": 0.282795239169773,
+                  "avg": 3.780267243183664
+                }
+              }
+            },
+            "base_type": "type/Decimal"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-02T14:21:51.8180618Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "native": "SELECT\n  CASE\n    WHEN bf.class_date >= DATE '2023-04-01' AND bf.class_date < DATE '2024-04-01' THEN 'FY24'\n    WHEN bf.class_date >= DATE '2024-04-01' AND bf.class_date < DATE '2025-04-01' THEN 'FY25'\n    WHEN bf.class_date >= DATE '2025-04-01' AND bf.class_date < DATE '2026-04-01' THEN 'FY26'\n  END AS fiscal_year,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END) AS bt_responses,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END) AS total_responses,\n  100.0 * COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END)\n    / NULLIF(COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END), 0) AS bt_pct\nFROM dwh_fitness_mart.booking_fact bf\nWHERE bf.class_date >= DATE '2023-04-01'\n  AND bf.class_date < DATE '2026-04-01'\nGROUP BY 1\nORDER BY 1 "
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-05-26T12:03:39.917067Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "fiscal_year",
+        "table.cell_column": "bt_responses"
+      },
+      "lib.convert/converted?": true,
+      "database": 39
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 3,
+    "running_time": 71246
+  }
+}

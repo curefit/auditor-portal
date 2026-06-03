@@ -1,0 +1,386 @@
+{
+  "card_id": 75894,
+  "card_name": "New Launch Style Id",
+  "parameters": [
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list",
+      "value": null
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "sub_category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "article_type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "FY23",
+          1695
+        ],
+        [
+          "FY24",
+          1328
+        ],
+        [
+          "FY25",
+          1724
+        ],
+        [
+          "FY26",
+          2539
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar(4)",
+          "lib/deduplicated-name": "year",
+          "lib/original-name": "year",
+          "name": "year",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "year",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "year",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "year",
+          "display_name": "year",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "style_id_count",
+          "lib/original-name": "style_id_count",
+          "name": "style_id_count",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "style_id_count",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "style_id_count",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "style_id_count",
+          "display_name": "style_id_count",
+          "base_type": "type/BigInteger"
+        }
+      ],
+      "native_form": {
+        "params": [],
+        "query-permissions/referenced-card-ids": [
+          75683
+        ],
+        "lib/type": "mbql.stage/native",
+        "query": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM (SELECT *\nFROM stage_dwh.dwh_d2c_metrics_bizfin_sales_data)\n    WHERE 1 = 1\n        \n        \n        \n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "varchar(4)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "year",
+            "lib/original-name": "year",
+            "name": "year",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "year",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "year",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "year",
+            "display_name": "year",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 4
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": "type/Quantity",
+            "lib/deduplicated-name": "style_id_count",
+            "lib/original-name": "style_id_count",
+            "name": "style_id_count",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "style_id_count",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "style_id_count",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "style_id_count",
+            "display_name": "style_id_count",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 1328,
+                  "q1": 1511.5,
+                  "q3": 2131.5,
+                  "max": 2539,
+                  "sd": 511.16109658958464,
+                  "avg": 1821.5
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-02T14:38:23.739533658Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "category": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "category",
+              "type": "dimension",
+              "id": "0c146900-863e-476b-929b-9e820d2bef98",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "6b4bfc12-e659-42fc-ae0e-8d0ed5e30a3f",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535274
+              ],
+              "display-name": "Category",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "sub_category": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "sub_category",
+              "type": "dimension",
+              "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "9b8d3717-7d6d-4e12-9cb1-11d55fbfa8e8",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9615855
+              ],
+              "display-name": "Sub Category",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "article_type": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "article_type",
+              "type": "dimension",
+              "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "40baf9dd-5d32-4fb0-9a3b-36efce8e7ec6",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535281
+              ],
+              "display-name": "Article Type",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "#75683-raw-data": {
+              "display-name": "#75683 Raw Data",
+              "type": "card",
+              "name": "#75683-raw-data",
+              "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+              "card-id": 75683
+            }
+          },
+          "native": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM {{#75683-raw-data}}\n    WHERE 1 = 1\n        [[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n        [[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n        [[ AND bus_sub_category IN (SELECT bus_sub_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key\n\n"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-05-26T12:03:35.075528Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "business_unit",
+        "table.cell_column": "unique_id",
+        "pie.metric": "total_amount",
+        "pie.dimension": [
+          "month"
+        ]
+      },
+      "lib.convert/converted?": true,
+      "database": 39,
+      "parameters": [
+        {
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "category"
+            ]
+          ],
+          "name": "category",
+          "slug": "category",
+          "options": {
+            "case-sensitive": false
+          },
+          "value": null,
+          "values-query-type": "list"
+        },
+        {
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "sub_category"
+            ]
+          ],
+          "name": "sub_category",
+          "slug": "sub_category",
+          "options": {
+            "case-sensitive": false
+          },
+          "values-query-type": "list"
+        },
+        {
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "article_type"
+            ]
+          ],
+          "name": "article_type",
+          "slug": "article_type",
+          "options": {
+            "case-sensitive": false
+          },
+          "values-query-type": "list"
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 4,
+    "running_time": 1250
+  }
+}

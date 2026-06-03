@@ -1,0 +1,1230 @@
+{
+  "card_id": 75854,
+  "card_name": "Month Level Amount and Units",
+  "parameters": [
+    {
+      "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "start_date"
+        ]
+      ],
+      "name": "start_date",
+      "slug": "start_date",
+      "value": "2023-04-01"
+    },
+    {
+      "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "end_date",
+      "slug": "end_date",
+      "value": "2026-03-31"
+    },
+    {
+      "id": "0c146900-863e-476b-929b-9e820d2bef98",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "category"
+        ]
+      ],
+      "name": "category",
+      "slug": "category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list",
+      "value": null
+    },
+    {
+      "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "sub_category"
+        ]
+      ],
+      "name": "sub_category",
+      "slug": "sub_category",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+      "type": "string/contains",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "article_type"
+        ]
+      ],
+      "name": "article_type",
+      "slug": "article_type",
+      "options": {
+        "case-sensitive": false
+      },
+      "values_query_type": "list"
+    },
+    {
+      "id": "c1de00e5-4590-46be-927c-30b2f5d3df22",
+      "type": "category",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "consider_purchase"
+        ]
+      ],
+      "name": "consider_purchase",
+      "slug": "consider_purchase",
+      "values_query_type": "list",
+      "values_source_type": "static-list",
+      "values_source_config": {
+        "values": [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      }
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "2023-04-01T00:00:00Z",
+          130239423,
+          114065886,
+          3621490144,
+          81744,
+          -3507424258,
+          -30.74910809003842
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          258696982,
+          225658464,
+          10758814766,
+          135153.25,
+          -10533156302,
+          -46.67742620990277
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          212406474,
+          183758914,
+          1639172203,
+          56968,
+          -1455413289,
+          -7.920232315913665
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          205925403,
+          179490556,
+          6846908141,
+          64724.259999999995,
+          -6667417585,
+          -37.14634203372795
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          253052261,
+          218176995,
+          8827185698,
+          98833,
+          -8609008703,
+          -39.45882884215176
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          371389640,
+          320716887,
+          1567248929,
+          100214,
+          -1246532042,
+          -3.886705354557772
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          532416519,
+          458338087,
+          4513446851,
+          147311,
+          -4055108764,
+          -8.847418268340418
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          286063540,
+          249006575,
+          2789466216,
+          348721,
+          -2540459641,
+          -10.202379760454116
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          294437197,
+          252719180,
+          13478521495,
+          331842,
+          -13225802315,
+          -52.33398713544417
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          195268883,
+          168745584,
+          593333354,
+          43400,
+          -424587770,
+          -2.5161415187019056
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          -34698379,
+          -28639814,
+          763470839,
+          231535,
+          -792110653,
+          27.657674487690457
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          365091908,
+          312920570,
+          698859263,
+          263564,
+          -385938693,
+          -1.2333439537068465
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          289885111,
+          259032055,
+          196435737,
+          184625,
+          62596318,
+          0.2416547172125087
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          169725517,
+          149956781,
+          391733138,
+          259143,
+          -241776357,
+          -1.6123069286209872
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          219377650,
+          191621473,
+          192843224,
+          157543,
+          -1221751,
+          -0.006375856426069745
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          205260503,
+          178786030,
+          485234501,
+          281752.64,
+          -306448471,
+          -1.714051545302505
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          358434433,
+          310409202,
+          612991520,
+          304482,
+          -302582318,
+          -0.9747852707021231
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          562302202,
+          488133509,
+          1464047635,
+          454325.05,
+          -975914126,
+          -1.9992770584409931
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          595761235,
+          525192286,
+          740226541,
+          303221.55,
+          -215034255,
+          -0.4094390963693629
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          262515385,
+          230284033,
+          7845065049,
+          193448.36,
+          -7614781016,
+          -33.06690836007723
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          366655505,
+          321198995,
+          254096588,
+          205257,
+          67102407,
+          0.20891225702620894
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          189776617,
+          165630895,
+          394027590,
+          94395,
+          -228396695,
+          -1.3789498330006609
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          59503570,
+          42577114,
+          35121319,
+          -181575,
+          7455795,
+          0.17511273779617847
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          484118273,
+          424726771,
+          1979865261,
+          782156,
+          -1555138490,
+          -3.6615033385781093
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          442308075,
+          388013941,
+          2860054059,
+          924040,
+          -2472040118,
+          -6.371008504562984
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          423587506,
+          373554086,
+          302632628,
+          375884,
+          70921458,
+          0.18985592892162878
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          404240731,
+          356873271,
+          300213226,
+          287836,
+          56660045,
+          0.1587679706054534
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          450116023,
+          395409247,
+          286579596,
+          224541,
+          108829651,
+          0.2752329436544513
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          605848955,
+          534444687,
+          898820367,
+          537527,
+          -364375680,
+          -0.6817837072071034
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          575143794,
+          512163238,
+          489620944,
+          432327,
+          22542294,
+          0.04401388527616268
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          506955228,
+          462209553,
+          6236142761,
+          308729,
+          -5773933208,
+          -12.49202481974664
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          412912842,
+          371646696,
+          342493534,
+          232892,
+          29153162,
+          0.07844321586542505
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          460848559,
+          418331914,
+          348495092,
+          19247,
+          69836822,
+          0.166941176761379
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          508846586,
+          459448602,
+          567678162,
+          346146,
+          -108229560,
+          -0.23556402071716392
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          473414894,
+          429628095,
+          839017335,
+          286917,
+          -409389240,
+          -0.9528921519901998
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          631522204,
+          567887242,
+          2757354013,
+          263332.5,
+          -2189466771,
+          -3.8554603961326532
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "date",
+          "lib/deduplicated-name": "month",
+          "lib/original-name": "month",
+          "name": "month",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "month",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "month",
+            {
+              "base-type": "type/Date"
+            }
+          ],
+          "effective_type": "type/Date",
+          "lib/desired-column-alias": "month",
+          "display_name": "month",
+          "base_type": "type/Date"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "total_amount",
+          "lib/original-name": "total_amount",
+          "name": "total_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_amount",
+          "display_name": "total_amount",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "base_amount",
+          "lib/original-name": "base_amount",
+          "name": "base_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "base_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "base_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "base_amount",
+          "display_name": "base_amount",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "total_nlc",
+          "lib/original-name": "total_nlc",
+          "name": "total_nlc",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "total_nlc",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "total_nlc",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "total_nlc",
+          "display_name": "total_nlc",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "units",
+          "lib/original-name": "units",
+          "name": "units",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "units",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "units",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "units",
+          "display_name": "units",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "gm",
+          "lib/original-name": "gm",
+          "name": "gm",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "gm",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "gm",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "gm",
+          "display_name": "gm",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "gm_percent",
+          "lib/original-name": "gm_percent",
+          "name": "gm_percent",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "gm_percent",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "gm_percent",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "gm_percent",
+          "display_name": "gm_percent",
+          "base_type": "type/Float"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2023-04-01",
+          "2026-03-31"
+        ],
+        "query-permissions/referenced-card-ids": [
+          75683
+        ],
+        "lib/type": "mbql.stage/native",
+        "query": "SELECT \n    DATE_TRUNC('MONTH', DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS month, ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    ROUND(SUM(nlc)) AS total_nlc,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n    (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM (SELECT *\nFROM stage_dwh.dwh_d2c_metrics_bizfin_sales_data)\nWHERE 1 = 1 \n\n\n\n AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN ? AND ? \n\nGROUP BY 1\nORDER BY 1"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "date",
+            "semantic_type": null,
+            "lib/deduplicated-name": "month",
+            "lib/original-name": "month",
+            "name": "month",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "month",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "month",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "effective_type": "type/Date",
+            "lib/desired-column-alias": "month",
+            "display_name": "month",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2023-04-01",
+                  "latest": "2026-03-01"
+                }
+              }
+            },
+            "base_type": "type/Date"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_amount",
+            "lib/original-name": "total_amount",
+            "name": "total_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "total_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "total_amount",
+            "display_name": "total_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -34698379,
+                  "q1": 215892062,
+                  "q3": 478766583.5,
+                  "max": 631522204,
+                  "sd": 163673732.21906972,
+                  "avg": 353593090.25
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "base_amount",
+            "lib/original-name": "base_amount",
+            "name": "base_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "base_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "base_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "base_amount",
+            "display_name": "base_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -28639814,
+                  "q1": 187690193.5,
+                  "q3": 427177433,
+                  "max": 567887242,
+                  "sd": 146656752.0030799,
+                  "avg": 311447711.1111111
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "total_nlc",
+            "lib/original-name": "total_nlc",
+            "name": "total_nlc",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "total_nlc",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "total_nlc",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "total_nlc",
+            "display_name": "total_nlc",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 35121319,
+                  "q1": 370114115,
+                  "q3": 2824760137.5,
+                  "max": 13478521495,
+                  "sd": 3323790033.8521423,
+                  "avg": 2414408547.75
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "units",
+            "lib/original-name": "units",
+            "name": "units",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "units",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "units",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "units",
+            "display_name": "units",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -181575,
+                  "q1": 117683.625,
+                  "q3": 320285.5,
+                  "max": 924040,
+                  "sd": 203112.85892982397,
+                  "avg": 255061.15583333332
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "gm",
+            "lib/original-name": "gm",
+            "name": "gm",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "gm",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "gm",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "gm",
+            "display_name": "gm",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -13225802315,
+                  "q1": -2506249879.5,
+                  "q3": 3117022,
+                  "max": 108829651,
+                  "sd": 3343852935.404555,
+                  "avg": -2102960836.6388888
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": "type/Share",
+            "lib/deduplicated-name": "gm_percent",
+            "lib/original-name": "gm_percent",
+            "name": "gm_percent",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "gm_percent",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "gm_percent",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "gm_percent",
+            "display_name": "gm_percent",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 36,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": -52.33398713544417,
+                  "q1": -8.383825292127042,
+                  "q3": 0.06122855057079386,
+                  "max": 27.657674487690457,
+                  "sd": 16.008315359278722,
+                  "avg": -7.810767640277908
+                }
+              }
+            },
+            "base_type": "type/Float"
+          }
+        ]
+      },
+      "insights": [
+        {
+          "previous-value": 473414894,
+          "unit": "month",
+          "offset": -5759693162.508658,
+          "last-change": 0.3339719810336174,
+          "col": "total_amount",
+          "slope": 305948.1645461508,
+          "last-value": 631522204,
+          "best-fit": [
+            "+",
+            -5759693162.508658,
+            [
+              "*",
+              305948.1645461508,
+              "x"
+            ]
+          ]
+        },
+        {
+          "previous-value": 429628095,
+          "unit": "month",
+          "offset": -5347260909.659826,
+          "last-change": 0.3218112330386587,
+          "col": "base_amount",
+          "slope": 283198.176012959,
+          "last-value": 567887242,
+          "best-fit": [
+            "+",
+            -5347260909.659826,
+            [
+              "*",
+              283198.176012959,
+              "x"
+            ]
+          ]
+        },
+        {
+          "previous-value": 839017335,
+          "unit": "month",
+          "offset": 88668087200.3609,
+          "last-change": 2.2864088713971564,
+          "col": "total_nlc",
+          "slope": -4316688.860629018,
+          "last-value": 2757354013,
+          "best-fit": [
+            "*",
+            5.35887929247321e+158,
+            [
+              "pow",
+              "x",
+              -34.813273287573374
+            ]
+          ]
+        },
+        {
+          "previous-value": 286917,
+          "unit": "month",
+          "offset": -4171659.89969644,
+          "last-change": -0.08219973023557335,
+          "col": "units",
+          "slope": 221.5415941443893,
+          "last-value": 263332.5,
+          "best-fit": [
+            "+",
+            -43774701.24952539,
+            [
+              "*",
+              4446357.61803183,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": -409389240,
+          "unit": "month",
+          "offset": -94015348110.02074,
+          "last-change": -0.8130187471111887,
+          "col": "gm",
+          "slope": 4599887.036641978,
+          "last-value": -2189466771,
+          "best-fit": [
+            "+",
+            -916245534782.6752,
+            [
+              "*",
+              92314938250.43883,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        },
+        {
+          "previous-value": -0.9528921519901998,
+          "unit": "month",
+          "offset": -470.2736486135688,
+          "last-change": -0.7528460795639271,
+          "col": "gm_percent",
+          "slope": 0.02314461711009447,
+          "last-value": -3.8554603961326532,
+          "best-fit": [
+            "+",
+            -4610.622467833608,
+            [
+              "*",
+              464.8162004396788,
+              [
+                "log",
+                "x"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-02T14:37:59.034601292Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "template-tags": {
+            "start_date": {
+              "default": null,
+              "type": "date",
+              "name": "start_date",
+              "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+              "display-name": "Start Date",
+              "widget-type": null
+            },
+            "end_date": {
+              "default": null,
+              "type": "date",
+              "name": "end_date",
+              "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+              "display-name": "End Date",
+              "widget-type": null
+            },
+            "category": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "category",
+              "type": "dimension",
+              "id": "0c146900-863e-476b-929b-9e820d2bef98",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "f199f3bb-e6ca-46ca-adef-e289dcdfa17f",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535274
+              ],
+              "display-name": "Category",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "sub_category": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "sub_category",
+              "type": "dimension",
+              "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "a6a19418-3d0f-41ea-bedb-ed4c41f394fb",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9615855
+              ],
+              "display-name": "Sub Category",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "article_type": {
+              "widget-type": "string/contains",
+              "default": null,
+              "name": "article_type",
+              "type": "dimension",
+              "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+              "dimension": [
+                "field",
+                {
+                  "lib/uuid": "d3392e44-3e84-4b95-acb5-a81de26132a4",
+                  "lib/transformation-added-base-type": true,
+                  "base-type": "type/Text",
+                  "effective-type": "type/Text"
+                },
+                9535281
+              ],
+              "display-name": "Article Type",
+              "options": {
+                "case-sensitive": false
+              }
+            },
+            "#75683-raw-data": {
+              "display-name": "#75683 Raw Data",
+              "type": "card",
+              "name": "#75683-raw-data",
+              "id": "79346c92-c7f4-4698-9fe2-1b3736d1abf8",
+              "card-id": 75683
+            },
+            "consider_purchase": {
+              "id": "c1de00e5-4590-46be-927c-30b2f5d3df22",
+              "type": "text",
+              "name": "consider_purchase",
+              "display-name": "Consider Purchase"
+            }
+          },
+          "native": "SELECT \n    DATE_TRUNC('MONTH', DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS month, ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount, ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    ROUND(SUM(nlc)) AS total_nlc,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS units,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n    (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent\nFROM {{#75683-raw-data}}\nWHERE 1 = 1 \n[[ AND business_category IN (SELECT business_category FROM pk_fitstore_unicommerce.item_details_summary WHERE {{category}}) ]]\n[[ AND article_type IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{article_type}}) ]]\n[[ AND bus_sub_category IN (SELECT article_type FROM pk_fitstore_unicommerce.item_details_summary WHERE {{sub_category}}) ]]\n[[ AND DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN {{start_date}} AND {{end_date}} ]]\n[[ AND CASE WHEN {{consider_purchase}} = 'Yes' THEN TRUE ELSE is_purchase_data = 'NO' END]]\nGROUP BY 1\nORDER BY 1\n\n\n"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-05-26T12:03:24.439764Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "business_unit",
+        "table.cell_column": "unique_id",
+        "pie.metric": "total_amount",
+        "pie.dimension": [
+          "month"
+        ],
+        "column_settings": {
+          "[\"name\",\"gm_percent\"]": {
+            "number_style": "percent"
+          }
+        }
+      },
+      "lib.convert/converted?": true,
+      "database": 39,
+      "parameters": [
+        {
+          "id": "7cc68c92-5ae4-4905-b07b-8f7672b161b8",
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "start_date"
+            ]
+          ],
+          "name": "start_date",
+          "slug": "start_date",
+          "value": "2023-04-01"
+        },
+        {
+          "id": "c9d8b833-46b2-4abc-936a-399ddc63c3fb",
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "end_date"
+            ]
+          ],
+          "name": "end_date",
+          "slug": "end_date",
+          "value": "2026-03-31"
+        },
+        {
+          "id": "0c146900-863e-476b-929b-9e820d2bef98",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "category"
+            ]
+          ],
+          "name": "category",
+          "slug": "category",
+          "options": {
+            "case-sensitive": false
+          },
+          "value": null,
+          "values-query-type": "list"
+        },
+        {
+          "id": "a10479bb-c702-42b1-b627-22eef29ecc4f",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "sub_category"
+            ]
+          ],
+          "name": "sub_category",
+          "slug": "sub_category",
+          "options": {
+            "case-sensitive": false
+          },
+          "values-query-type": "list"
+        },
+        {
+          "id": "4fda902b-b48c-41a8-81bf-1ab9925f1f2f",
+          "type": "string/contains",
+          "target": [
+            "dimension",
+            [
+              "template-tag",
+              "article_type"
+            ]
+          ],
+          "name": "article_type",
+          "slug": "article_type",
+          "options": {
+            "case-sensitive": false
+          },
+          "values-query-type": "list"
+        },
+        {
+          "id": "c1de00e5-4590-46be-927c-30b2f5d3df22",
+          "type": "category",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "consider_purchase"
+            ]
+          ],
+          "name": "consider_purchase",
+          "slug": "consider_purchase",
+          "values-source-type": "static-list",
+          "values-query-type": "list",
+          "values-source-config": {
+            "values": [
+              [
+                "Yes"
+              ],
+              [
+                "No"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 36,
+    "running_time": 1108
+  }
+}
