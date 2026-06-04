@@ -1932,41 +1932,26 @@
       "sheetMetricVia": "dashboard"
     },
     {
-      "cardId": "76611",
-      "name": "Daily metrics - Tanmai v2 - With end date",
-      "rootKey": "question-76611",
+      "cardId": "83969",
+      "name": "12M Packs Sold Monthly Jun 2026",
+      "rootKey": "question-83969",
       "rootAssetName": null,
       "dashboardId": null,
       "dashboardName": null,
-      "metabaseCardUrl": "https://metabase.curefit.co/question/76611",
-      "metabaseRootSourceUrl": "https://metabase.curefit.co/question/76611-daily-metrics-tanmai-v2-with-end-date?Start_Date=2023-04-01&End_Date=2026-03-31",
+      "metabaseCardUrl": "https://metabase.curefit.co/question/83969",
+      "metabaseRootSourceUrl": "https://metabase.curefit.co/question/83969-12m-packs-sold-monthly-jun-2026?Start_Date=2023-04-01&End_Date=2026-03-31",
       "paths": {
-        "query": "artifacts/queries/76611__daily-metrics-tanmai-v2-with-end-date.sql",
-        "metadata": "artifacts/metadata/76611__daily-metrics-tanmai-v2-with-end-date.json",
-        "lineageMarkdown": "docs/lineage/question-76611.md",
+        "query": "artifacts/queries/83969__12m-packs-sold-monthly-jun-2026.sql",
+        "metadata": "artifacts/metadata/83969__12m-packs-sold-monthly-jun-2026.json",
+        "lineageMarkdown": "docs/lineage/question-83969.md",
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
       "results": [
-        "artifacts/results/question-76611__76611__daily-metrics-tanmai-v2-with-end-date.csv",
-        "artifacts/results/question-76611__76611__daily-metrics-tanmai-v2-with-end-date.json"
+        "artifacts/results/question-83969__83969__12m-packs-sold-monthly-jun-2026.csv",
+        "artifacts/results/question-83969__83969__12m-packs-sold-monthly-jun-2026.json"
       ],
       "sqlLineageRelations": [
-        {
-          "relation": "dwh_fitness.fitness_orders",
-          "dbtModelPaths": [],
-          "githubBlobUrls": [],
-          "localSqlUrls": [],
-          "fallbackModelPaths": [
-            "nbs/pinaka_data_models/dwh_fitness/dwh_fitness.fitness_orders.ipynb"
-          ],
-          "fallbackGithubBlobUrls": [
-            "https://github.com/curefit/cf-data-lab/blob/master/nbs/pinaka_data_models/dwh_fitness/dwh_fitness.fitness_orders.ipynb"
-          ],
-          "fallbackLocalUrls": [
-            "/dbt-notebooks/nbs/pinaka_data_models/dwh_fitness/dwh_fitness.fitness_orders.ipynb"
-          ]
-        },
         {
           "relation": "dwh_fitness_mart.center_dim",
           "dbtModelPaths": [
@@ -2004,15 +1989,6 @@
           "fallbackLocalUrls": []
         },
         {
-          "relation": "dwh_fitness_mart.membership_dim.order_key",
-          "dbtModelPaths": [],
-          "githubBlobUrls": [],
-          "localSqlUrls": [],
-          "fallbackModelPaths": [],
-          "fallbackGithubBlobUrls": [],
-          "fallbackLocalUrls": []
-        },
-        {
           "relation": "dwh_fitness_mart.orders_fact",
           "dbtModelPaths": [
             "transformatics/models/datalake/analytics/dwh_fitness_mart/orders_fact.sql",
@@ -2031,49 +2007,7 @@
           "fallbackLocalUrls": []
         },
         {
-          "relation": "dwh_fitness_mart.orders_fact.order_key",
-          "dbtModelPaths": [],
-          "githubBlobUrls": [],
-          "localSqlUrls": [],
-          "fallbackModelPaths": [],
-          "fallbackGithubBlobUrls": [],
-          "fallbackLocalUrls": []
-        },
-        {
           "relation": "pk_curefitplatforms_membershipdb.memberships",
-          "dbtModelPaths": [],
-          "githubBlobUrls": [],
-          "localSqlUrls": [],
-          "fallbackModelPaths": [],
-          "fallbackGithubBlobUrls": [],
-          "fallbackLocalUrls": []
-        },
-        {
-          "relation": "pk_prod_curefit_prod.orders",
-          "dbtModelPaths": [
-            "transformatics/models/datalake/analytics/dwh_fitness_metrics/cross_sell_orders.sql",
-            "transformatics/models/live_data_vault/real_time/rt_fitness/orders.sql",
-            "transformatics/models/ops/analytics/cf_gymfit/gymfit_orders.sql",
-            "transformatics/models/ops/analytics/cf_gymfit/gymfit_pt_orders.sql"
-          ],
-          "githubBlobUrls": [
-            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_metrics/cross_sell_orders.sql",
-            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/live_data_vault/real_time/rt_fitness/orders.sql",
-            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/ops/analytics/cf_gymfit/gymfit_orders.sql",
-            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/ops/analytics/cf_gymfit/gymfit_pt_orders.sql"
-          ],
-          "localSqlUrls": [
-            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_metrics/cross_sell_orders.sql",
-            "/dbt-sql/transformatics/models/live_data_vault/real_time/rt_fitness/orders.sql",
-            "/dbt-sql/transformatics/models/ops/analytics/cf_gymfit/gymfit_orders.sql",
-            "/dbt-sql/transformatics/models/ops/analytics/cf_gymfit/gymfit_pt_orders.sql"
-          ],
-          "fallbackModelPaths": [],
-          "fallbackGithubBlobUrls": [],
-          "fallbackLocalUrls": []
-        },
-        {
-          "relation": "pk_prod_curefit_prod.orders_payments",
           "dbtModelPaths": [],
           "githubBlobUrls": [],
           "localSqlUrls": [],
@@ -2096,7 +2030,7 @@
         "fy26": "85%",
         "nineMFy25": "",
         "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/question/76611-daily-metrics-tanmai-v2-with-end-date?Start_Date=2023-04-01&End_Date=2026-03-31;\nhttps://docs.google.com/spreadsheets/d/1fma57grgBcmMQHkLDKkCtcuz7WMoC6He/edit?usp=drive_web&ouid=116981787178806296143&rtpof=true",
+        "sourceRaw": "https://metabase.curefit.co/question/83969-12m-packs-sold-monthly-jun-2026?Start_Date=2023-04-01&End_Date=2026-03-31;\r\nhttps://docs.google.com/spreadsheets/d/1fma57grgBcmMQHkLDKkCtcuz7WMoC6He/edit?usp=drive_web&ouid=116981787178806296143&rtpof=true",
         "limitations": ""
       },
       "sheetMetricVia": "card"

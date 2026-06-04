@@ -6,7 +6,7 @@ source_row,normalized_source_url,asset_type,asset_id,duplicate_of_source_row
 5,https://metabase.curefit.co/question/75753-at-home-footfalls?grain=month,question,75753,
 6,https://metabase.curefit.co/question/47810-which-of-these-below-mentioned-statements-best-describes-your-fitness-history,question,47810,
 7,https://metabase.curefit.co/question/75630-gender-split?ed=2023-03-31,question,75630,
-8,https://metabase.curefit.co/question/76611-daily-metrics-tanmai-v2-with-end-date?Start_Date=2023-04-01&End_Date=2026-03-31,question,76611,
+8,https://metabase.curefit.co/question/83969-12m-packs-sold-monthly-jun-2026?Start_Date=2023-04-01&End_Date=2026-03-31,question,83969,
 9,https://metabase.curefit.co/question/75647-same-center-vs-other-center?Last_date=2026-02-09,question,75647,
 10,https://metabase.curefit.co/question/75650-same-city-vs-other-city-modified?Last_date=2026-02-09,question,75650,
 11,https://metabase.curefit.co/question/75654-gx-formats?Last_date=2025-12-31,question,75654,

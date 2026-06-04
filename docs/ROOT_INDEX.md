@@ -19,5 +19,5 @@
 | `75654` GX formats | `question` | 7 | 0 | `query_sql|metadata_json|result_blocked` | [question-75654.md](lineage/question-75654.md) |
 | `75753` 'At Home' footfalls | `question` | 2 | 0 | `query_sql|metadata_json|result_blocked` | [question-75753.md](lineage/question-75753.md) |
 | `75999` Page Ids Traffic | `question` | 2 | 0 | `query_sql|metadata_json|result_blocked` | [question-75999.md](lineage/question-75999.md) |
-| `76611` Daily metrics - Tanmai v2 - With end date | `question` | 6 | 0 | `query_sql|metadata_json|result_blocked` | [question-76611.md](lineage/question-76611.md) |
+| `83969` 12M Packs Sold Monthly Jun 2026 | `question` | 4 | 0 | `query_sql|metadata_json|raw_csv` | [question-83969.md](lineage/question-83969.md) |
 | `77280` Memberships by Each Business Line - End of Each Month - including all packs -city level | `question` | 3 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html` | [question-77280.md](lineage/question-77280.md) |

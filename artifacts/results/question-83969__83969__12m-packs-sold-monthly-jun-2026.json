@@ -1,0 +1,371 @@
+{
+  "card_id": 83969,
+  "card_name": "12M Packs Sold Monthly Jun 2026",
+  "parameters": [
+    {
+      "id": "8a411544-1566-bc67-62f6-25bc882b3a39",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Start_Date"
+        ]
+      ],
+      "name": "Start_Date",
+      "slug": "Start_Date",
+      "default": "2023-04-01",
+      "required": true,
+      "isMultiSelect": false,
+      "value": "2023-04-01"
+    },
+    {
+      "id": "db720572-1a42-4774-9a15-8452a07853a8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "End_Date"
+        ]
+      ],
+      "name": "End_Date",
+      "slug": "End_Date",
+      "default": "2026-03-31",
+      "required": true,
+      "isMultiSelect": false,
+      "value": "2026-03-31"
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "2023-04-01T00:00:00Z",
+          "FY24",
+          41216,
+          26517,
+          64.34
+        ],
+        [
+          "2023-05-01T00:00:00Z",
+          "FY24",
+          30094,
+          19914,
+          66.17
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "FY24",
+          33534,
+          22814,
+          68.03
+        ],
+        [
+          "2023-07-01T00:00:00Z",
+          "FY24",
+          44790,
+          31819,
+          71.04
+        ],
+        [
+          "2023-08-01T00:00:00Z",
+          "FY24",
+          39484,
+          28967,
+          73.36
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "FY24",
+          38145,
+          28295,
+          74.18
+        ],
+        [
+          "2023-10-01T00:00:00Z",
+          "FY24",
+          31440,
+          23543,
+          74.88
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "FY24",
+          33723,
+          25704,
+          76.22
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "FY24",
+          41446,
+          32071,
+          77.38
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "FY24",
+          45262,
+          34577,
+          76.39
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "FY24",
+          36189,
+          27501,
+          75.99
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "FY24",
+          37060,
+          28216,
+          76.14
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "FY25",
+          48189,
+          37315,
+          77.43
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "FY25",
+          34553,
+          24208,
+          70.06
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "FY25",
+          39814,
+          29465,
+          74.01
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "FY25",
+          48600,
+          37211,
+          76.57
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "FY25",
+          45913,
+          35851,
+          78.08
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "FY25",
+          45699,
+          35468,
+          77.61
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "FY25",
+          32648,
+          25667,
+          78.62
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "FY25",
+          41707,
+          32969,
+          79.05
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "FY25",
+          46963,
+          38853,
+          82.73
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "FY25",
+          51057,
+          42383,
+          83.01
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "FY25",
+          35392,
+          28733,
+          81.19
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "FY25",
+          44214,
+          36794,
+          83.22
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "FY26",
+          43135,
+          36590,
+          84.83
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "FY26",
+          57390,
+          49060,
+          85.49
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "FY26",
+          42568,
+          35033,
+          82.3
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "FY26",
+          50481,
+          42133,
+          83.46
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "FY26",
+          49584,
+          42235,
+          85.18
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "FY26",
+          47931,
+          40423,
+          84.34
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "FY26",
+          37070,
+          31249,
+          84.3
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "FY26",
+          45581,
+          38569,
+          84.62
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "FY26",
+          49752,
+          43186,
+          86.8
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "FY26",
+          54062,
+          46426,
+          85.88
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "FY26",
+          38143,
+          32533,
+          85.29
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "FY26",
+          67117,
+          59731,
+          89
+        ]
+      ],
+      "cols": [
+        {
+          "name": "month_start",
+          "display_name": "Month Start",
+          "base_type": "type/Date",
+          "effective_type": "type/Date",
+          "semantic_type": null,
+          "field_ref": [
+            "field",
+            "month_start",
+            {
+              "base-type": "type/Date"
+            }
+          ]
+        },
+        {
+          "name": "fiscal_year",
+          "display_name": "Fiscal Year",
+          "base_type": "type/Text",
+          "effective_type": "type/Text",
+          "semantic_type": "type/Category",
+          "field_ref": [
+            "field",
+            "fiscal_year",
+            {
+              "base-type": "type/Text"
+            }
+          ]
+        },
+        {
+          "name": "total_packs_sold",
+          "display_name": "Total Packs Sold",
+          "base_type": "type/Integer",
+          "effective_type": "type/Integer",
+          "semantic_type": null,
+          "field_ref": [
+            "field",
+            "total_packs_sold",
+            {
+              "base-type": "type/Integer"
+            }
+          ]
+        },
+        {
+          "name": "packs_12m_plus",
+          "display_name": "Packs 12m Plus",
+          "base_type": "type/Integer",
+          "effective_type": "type/Integer",
+          "semantic_type": null,
+          "field_ref": [
+            "field",
+            "packs_12m_plus",
+            {
+              "base-type": "type/Integer"
+            }
+          ]
+        },
+        {
+          "name": "pct_12m_plus",
+          "display_name": "Pct 12m Plus",
+          "base_type": "type/Decimal",
+          "effective_type": "type/Decimal",
+          "semantic_type": null,
+          "field_ref": [
+            "field",
+            "pct_12m_plus",
+            {
+              "base-type": "type/Decimal"
+            }
+          ]
+        }
+      ]
+    },
+    "row_count": 36
+  }
+}

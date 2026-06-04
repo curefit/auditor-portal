@@ -1,0 +1,231 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 7,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "name": "month_start",
+      "display_name": "Month Start",
+      "base_type": "type/Date",
+      "effective_type": "type/Date",
+      "semantic_type": null,
+      "field_ref": [
+        "field",
+        "month_start",
+        {
+          "base-type": "type/Date"
+        }
+      ]
+    },
+    {
+      "name": "fiscal_year",
+      "display_name": "Fiscal Year",
+      "base_type": "type/Text",
+      "effective_type": "type/Text",
+      "semantic_type": "type/Category",
+      "field_ref": [
+        "field",
+        "fiscal_year",
+        {
+          "base-type": "type/Text"
+        }
+      ]
+    },
+    {
+      "name": "total_packs_sold",
+      "display_name": "Total Packs Sold",
+      "base_type": "type/Integer",
+      "effective_type": "type/Integer",
+      "semantic_type": null,
+      "field_ref": [
+        "field",
+        "total_packs_sold",
+        {
+          "base-type": "type/Integer"
+        }
+      ]
+    },
+    {
+      "name": "packs_12m_plus",
+      "display_name": "Packs 12m Plus",
+      "base_type": "type/Integer",
+      "effective_type": "type/Integer",
+      "semantic_type": null,
+      "field_ref": [
+        "field",
+        "packs_12m_plus",
+        {
+          "base-type": "type/Integer"
+        }
+      ]
+    },
+    {
+      "name": "pct_12m_plus",
+      "display_name": "Pct 12m Plus",
+      "base_type": "type/Decimal",
+      "effective_type": "type/Decimal",
+      "semantic_type": null,
+      "field_ref": [
+        "field",
+        "pct_12m_plus",
+        {
+          "base-type": "type/Decimal"
+        }
+      ]
+    }
+  ],
+  "creator": {
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "common_name": "Shivalingesh",
+    "id": 2059
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 4841,
+  "query_type": "native",
+  "name": "12M Packs Sold Monthly Jun 2026",
+  "last_query_start": "2026-04-14T08:23:23.504577Z",
+  "dashboard_count": 0,
+  "last_used_at": "2026-04-14T08:23:23.513387Z",
+  "type": "question",
+  "warnings": [
+    null
+  ],
+  "average_query_time": 120023.5,
+  "creator_id": 2059,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-04T00:00:00.000000Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "database": 39,
+    "type": "native",
+    "native": {
+      "template-tags": {
+        "Start_Date": {
+          "id": "8a411544-1566-bc67-62f6-25bc882b3a39",
+          "name": "Start_Date",
+          "display-name": "Start date",
+          "type": "date",
+          "required": true,
+          "default": "2023-04-01"
+        },
+        "End_Date": {
+          "id": "db720572-1a42-4774-9a15-8452a07853a8",
+          "name": "End_Date",
+          "display-name": "End Date",
+          "type": "date",
+          "required": true,
+          "default": "2026-03-31"
+        }
+      },
+      "query": "-- Purpose: Compact monthly output for the % 12M/12M+ packs sold metric.\n-- Source: Optimized from Metabase card 76611 while preserving the original pack-count grain.\n-- Output: month_start, fiscal_year, total_packs_sold, packs_12m_plus, pct_12m_plus.\nWITH original_pack_grain AS (\n    SELECT\n        purchase_date,\n        CASE\n            WHEN LOWER(pack_name) LIKE '%12m%'\n              OR LOWER(pack_name) LIKE '%12%m%' THEN '2. 12 Months'\n            WHEN LOWER(pack_name) LIKE '%1m%'\n              OR LOWER(pack_name) LIKE '%1%m%'\n              OR LOWER(pack_name) LIKE '%monthly%' THEN '5. 1 Month'\n            WHEN LOWER(pack_name) LIKE '%3m%'\n              OR LOWER(pack_name) LIKE '%3%m%' THEN '4. 3 Months'\n            WHEN LOWER(pack_name) LIKE '%6m%'\n              OR LOWER(pack_name) LIKE '%6%m%'\n              OR LOWER(pack_name) = '4. 3 Months' THEN '3. 6 Months'\n            ELSE '6. >12 Months'\n        END AS pack_duration,\n        COUNT(DISTINCT CASE WHEN amount_paid > 0 THEN order_id END) AS packs\n    FROM (\n        SELECT\n            DATE_DIFF(\n                'day',\n                CASE\n                    WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'\n                      OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'\n                        THEN membership_mdb.\"start\"\n                    ELSE membership_dim.pack_start_date\n                END,\n                COALESCE(\n                    original_pack_end_date,\n                    CASE\n                        WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'\n                          OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'\n                            THEN membership_mdb.\"end\"\n                        ELSE membership_dim.pack_end_date\n                    END\n                )\n            ) AS day_difference,\n            DATE(\n                CASE\n                    WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'\n                      OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'\n                        THEN membership_mdb.created_date\n                    ELSE membership_dim.membership_created_date\n                END\n            ) AS purchase_date,\n            membership_dim.business_line,\n            membership_dim.amount_paid,\n            membership_dim.order_key AS order_id,\n            membership_dim.pack_name,\n            CASE\n                WHEN membership.previous_sku IS NULL\n                 AND (membership.membership_rank = 1 OR membership.membership_rank IS NULL) THEN 'New'\n                WHEN membership.membership_key IS NOT NULL\n                 AND membership.membership_rank > 1 THEN 'Repeat'\n                WHEN membership.previous_sku IS NOT NULL THEN 'Repeat'\n                ELSE 'Check'\n            END AS membership_type,\n            COALESCE(orders_fact.city_name, attributed_center.city_name, purchase_center.city_name) AS order_cityname,\n            membership_dim.is_select,\n            CASE\n                WHEN DATE(\n                    CASE\n                        WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'\n                          OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'\n                            THEN membership_mdb.created_date\n                        ELSE membership_dim.membership_created_date\n                    END\n                ) < DATE(purchase_center.center_launch_date) THEN 1\n                ELSE 0\n            END AS pre_sales_flag\n        FROM dwh_fitness_mart.membership_dim\n        LEFT JOIN pk_curefitplatforms_membershipdb.memberships membership_mdb\n            ON membership_mdb.id = membership_dim.membership_service_id\n        LEFT JOIN dwh_fitness_mart.orders_fact\n            ON dwh_fitness_mart.orders_fact.order_key = dwh_fitness_mart.membership_dim.order_key\n           AND DATE(orders_fact.purchase_date) >= DATE(current_date) - INTERVAL '3' YEAR\n        LEFT JOIN dwh_fitness_mart.center_dim purchase_center\n            ON purchase_center.center_key = membership_dim.purchase_center_key\n        LEFT JOIN (\n            SELECT\n                membership_key,\n                ROW_NUMBER() OVER (\n                    PARTITION BY membership_dim.user_id\n                    ORDER BY CASE\n                        WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'\n                          OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'\n                            THEN repeat_mdb.created_date\n                        ELSE membership_dim.membership_created_date\n                    END\n                ) AS membership_rank,\n                LAG(membership_dim.business_line) OVER (\n                    PARTITION BY membership_dim.user_id\n                    ORDER BY CASE\n                        WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'\n                          OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'\n                            THEN repeat_mdb.created_date\n                        ELSE membership_dim.membership_created_date\n                    END\n                ) AS previous_sku\n            FROM dwh_fitness_mart.membership_dim\n            LEFT JOIN pk_curefitplatforms_membershipdb.memberships repeat_mdb\n                ON repeat_mdb.id = membership_dim.membership_service_id\n            WHERE LOWER(COALESCE(membership_dim.status, 'xx')) NOT LIKE '%canc%'\n              AND (\n                    membership_dim.amount_paid > 0\n                 OR COALESCE(membership_dim.membership_type, 'xx') IN ('MEMBER_MIGRATION', 'ENTERPRISE', 'MIGRATION')\n                 OR COALESCE(membership_dim.pack_name, 'xx') IN ('Transferred Pack')\n                 OR COALESCE(membership_dim.status, 'xx') IN ('MEMBERSHIP_TRANSFERRED')\n                 OR COALESCE(membership_dim.source, 'xx') IN ('MIGRATION')\n              )\n        ) membership\n            ON membership.membership_key = membership_dim.membership_key\n        LEFT JOIN dwh_fitness_mart.center_dim attributed_center\n            ON membership_dim.final_center_key = attributed_center.center_key\n        WHERE membership_dim.business_line IN ('ELITE', 'PRO')\n          AND DATE(\n                CASE\n                    WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'\n                      OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'\n                        THEN membership_mdb.created_date\n                    ELSE membership_dim.membership_created_date\n                END\n            ) BETWEEN {{Start_Date}} AND {{End_Date}}\n          AND membership_dim.amount_paid IS NOT NULL\n          AND membership_dim.amount_paid > 0\n    )\n    WHERE day_difference > 0\n      AND LOWER(pack_name) NOT LIKE '%upgraded%'\n      AND LOWER(pack_name) NOT LIKE '%transfer%'\n    GROUP BY\n        purchase_date,\n        business_line,\n        CASE\n            WHEN is_select = 0 THEN 'Pass'\n            WHEN is_select = 1 THEN 'Select'\n        END,\n        CASE\n            WHEN membership_type = 'Repeat' THEN 'Repeat'\n            WHEN membership_type = 'New' THEN 'New'\n            ELSE 'Error'\n        END,\n        CASE\n            WHEN order_cityname IN ('Bangalore', 'Hyderabad', 'Gurgaon', 'Pune') THEN order_cityname\n            WHEN order_cityname IN ('Navi_Mum_And_Thane', 'Mumbai') THEN 'Mumbai'\n            WHEN order_cityname IS NULL THEN 'Empty City'\n            ELSE 'Others'\n        END,\n        CASE\n            WHEN LOWER(pack_name) LIKE '%12m%'\n              OR LOWER(pack_name) LIKE '%12%m%' THEN '2. 12 Months'\n            WHEN LOWER(pack_name) LIKE '%1m%'\n              OR LOWER(pack_name) LIKE '%1%m%'\n              OR LOWER(pack_name) LIKE '%monthly%' THEN '5. 1 Month'\n            WHEN LOWER(pack_name) LIKE '%3m%'\n              OR LOWER(pack_name) LIKE '%3%m%' THEN '4. 3 Months'\n            WHEN LOWER(pack_name) LIKE '%6m%'\n              OR LOWER(pack_name) LIKE '%6%m%'\n              OR LOWER(pack_name) = '4. 3 Months' THEN '3. 6 Months'\n            ELSE '6. >12 Months'\n        END,\n        pre_sales_flag\n),\nperiod_rollup AS (\n    SELECT\n        DATE_TRUNC('month', purchase_date) AS month_start,\n        CASE\n            WHEN MONTH(purchase_date) >= 4\n                THEN CONCAT('FY', SUBSTR(CAST(YEAR(purchase_date) + 1 AS VARCHAR), 3, 2))\n            ELSE CONCAT('FY', SUBSTR(CAST(YEAR(purchase_date) AS VARCHAR), 3, 2))\n        END AS fiscal_year,\n        SUM(packs) AS total_packs_sold,\n        SUM(CASE WHEN pack_duration IN ('2. 12 Months', '6. >12 Months') THEN packs ELSE 0 END) AS packs_12m_plus\n    FROM original_pack_grain\n    GROUP BY 1, 2\n)\nSELECT\n    month_start,\n    fiscal_year,\n    total_packs_sold,\n    packs_12m_plus,\n    ROUND(100.0 * packs_12m_plus / NULLIF(total_packs_sold, 0), 2) AS pct_12m_plus\nFROM period_rollup\nORDER BY month_start\n"
+    }
+  },
+  "id": 83969,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "fIF_1Kc0wQi2z1wxAGCd6",
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 2059,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-06-04T00:00:00.000000Z"
+  },
+  "visualization_settings": {
+    "table.columns": [
+      {
+        "name": "month_start",
+        "enabled": true
+      },
+      {
+        "name": "fiscal_year",
+        "enabled": true
+      },
+      {
+        "name": "total_packs_sold",
+        "enabled": true
+      },
+      {
+        "name": "packs_12m_plus",
+        "enabled": true
+      },
+      {
+        "name": "pct_12m_plus",
+        "enabled": true
+      }
+    ]
+  },
+  "collection": {
+    "authority_level": null,
+    "description": "Used for Automation. Do not Archive any of them",
+    "archived": false,
+    "slug": "audit-related-queries",
+    "archive_operation_id": null,
+    "name": "Audit Related Queries",
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 4841,
+    "archived_directly": null,
+    "entity_id": "kOljbwvvDFf5Edi6Aj8Z4",
+    "location": "/4226/4844/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2024-05-23T05:52:17.295893Z"
+  },
+  "metabase_version": "vUNKNOWN (?)",
+  "parameters": [
+    {
+      "id": "8a411544-1566-bc67-62f6-25bc882b3a39",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Start_Date"
+        ]
+      ],
+      "name": "Start_Date",
+      "slug": "Start_Date",
+      "default": "2023-04-01",
+      "required": true,
+      "isMultiSelect": false
+    },
+    {
+      "id": "db720572-1a42-4774-9a15-8452a07853a8",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "End_Date"
+        ]
+      ],
+      "name": "End_Date",
+      "slug": "End_Date",
+      "default": "2026-03-31",
+      "required": true,
+      "isMultiSelect": false
+    }
+  ],
+  "created_at": "2026-06-04T00:00:00.000000Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}
