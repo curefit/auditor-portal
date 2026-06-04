@@ -1,65 +1,83 @@
 {
   "card_id": 47810,
   "card_name": "Which of these below- mentioned statements best describes your fitness history.",
-  "parameters": [],
+  "parameters": [
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end_date"
+        ]
+      ],
+      "name": "end_date",
+      "slug": "end_date",
+      "value": "2026-03-31"
+    }
+  ],
   "query_response": {
     "data": {
       "rows": [
         [
           "This is my first paid gym/ centre membership.",
-          115993
+          119852
         ],
         [
           "Restarting fitness, previously had a gym/ fitness membership.",
-          72504
+          75451
         ],
         [
           "Switching from another gym/ fitness centre to cult.fit.",
-          42928
+          44683
         ],
         [
           "Engaged in DIY activities like walking, sports, etc.",
-          18673
+          19713
         ],
         [
           "Engaged in DIY activities like walking, sports, etc., This is my first paid gym/ centre membership.",
-          556
+          589
         ],
         [
           "Restarting fitness, previously had a gym/ fitness membership., This is my first paid gym/ centre membership.",
-          472
+          506
         ],
         [
           "Restarting fitness, previously had a gym/ fitness membership., Switching from another gym/ fitness centre to cult.fit.",
-          387
+          434
         ],
         [
           "Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
-          320
+          353
         ],
         [
           "Engaged in DIY activities like walking, sports, etc., Restarting fitness, previously had a gym/ fitness membership.",
-          268
+          283
         ],
         [
           "Engaged in DIY activities like walking, sports, etc., Switching from another gym/ fitness centre to cult.fit.",
-          54
-        ],
-        [
-          "Engaged in DIY activities like walking, sports, etc., Restarting fitness, previously had a gym/ fitness membership., This is my first paid gym/ centre membership.",
-          9
+          59
         ],
         [
           "Restarting fitness, previously had a gym/ fitness membership., Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
-          9
-        ],
-        [
-          "Engaged in DIY activities like walking, sports, etc., Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
-          3
+          13
         ],
         [
           "Engaged in DIY activities like walking, sports, etc., Restarting fitness, previously had a gym/ fitness membership., Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
+          10
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., Restarting fitness, previously had a gym/ fitness membership., This is my first paid gym/ centre membership.",
+          8
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., Switching from another gym/ fitness centre to cult.fit., This is my first paid gym/ centre membership.",
           2
+        ],
+        [
+          "Engaged in DIY activities like walking, sports, etc., Restarting fitness, previously had a gym/ fitness membership., Switching from another gym/ fitness centre to cult.fit.",
+          1
         ]
       ],
       "cols": [
@@ -105,8 +123,11 @@
         }
       ],
       "native_form": {
+        "params": [
+          "2026-03-31"
+        ],
         "lib/type": "mbql.stage/native",
-        "query": "SELECT answers,\n       COUNT(DISTINCT userid) users\nFROM(\nselect userid,\n      listagg(DISTINCT answer,', ') WITHIN GROUP (ORDER BY answer) answers\n       \nfrom pk_curefitprod_cfdb.npsresponses \nwhere formid = 'post_pack_purchase_onboarding'  \nand date(createddate) >= DATE('2024-01-01')\nand answer IS NOT NULL --and questiontext NOT IN ('What is your height?', 'Your age?', 'What is your date of birth?', 'What is your current weight (in kgs)?')\nand questiontext IN ('Which of these below-mentioned statements best describes your fitness history.')\nGROUP BY 1\nORDER BY 2 desc\n)\nGROUP BY 1\nORDER BY 2 desc"
+        "query": "SELECT answers,\n       COUNT(DISTINCT userid) users\nFROM(\nselect userid,\n      listagg(DISTINCT answer,', ') WITHIN GROUP (ORDER BY answer) answers\n       \nfrom pk_curefitprod_cfdb.npsresponses \nwhere formid = 'post_pack_purchase_onboarding'  \n-- Report end date keeps survey counts stable across future query runs.\nand date(createddate) between DATE('2023-04-01') and ?\nand answer IS NOT NULL --and questiontext NOT IN ('What is your height?', 'Your age?', 'What is your date of birth?', 'What is your current weight (in kgs)?')\nand questiontext IN ('Which of these below-mentioned statements best describes your fitness history.')\nGROUP BY 1\nORDER BY 2 desc\n)\nGROUP BY 1\nORDER BY 2 desc"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -138,7 +159,7 @@
             "display_name": "answers",
             "fingerprint": {
               "global": {
-                "distinct-count": 14,
+                "distinct-count": 15,
                 "nil%": 0
               },
               "type": {
@@ -147,7 +168,7 @@
                   "percent-url": 0,
                   "percent-email": 0,
                   "percent-state": 0,
-                  "average-length": 111.85714285714286
+                  "average-length": 115.86666666666666
                 }
               }
             },
@@ -174,17 +195,17 @@
             "display_name": "users",
             "fingerprint": {
               "global": {
-                "distinct-count": 13,
+                "distinct-count": 15,
                 "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 2,
-                  "q1": 21.057713659400527,
-                  "q3": 18673,
-                  "max": 115993,
-                  "sd": 35476.047085817845,
-                  "avg": 18012.714285714286
+                  "min": 1,
+                  "q1": 10.75,
+                  "q3": 14932,
+                  "max": 119852,
+                  "sd": 35725.90430366019,
+                  "avg": 17463.8
                 }
               }
             },
@@ -196,7 +217,7 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-05-13T10:50:04.05385496Z",
+    "started_at": "2026-06-03T12:50:22.286056859Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -207,7 +228,16 @@
       "stages": [
         {
           "lib/type": "mbql.stage/native",
-          "native": "SELECT answers,\n       COUNT(DISTINCT userid) users\nFROM(\nselect userid,\n      listagg(DISTINCT answer,', ') WITHIN GROUP (ORDER BY answer) answers\n       \nfrom pk_curefitprod_cfdb.npsresponses \nwhere formid = 'post_pack_purchase_onboarding'  \nand date(createddate) >= DATE('2024-01-01')\nand answer IS NOT NULL --and questiontext NOT IN ('What is your height?', 'Your age?', 'What is your date of birth?', 'What is your current weight (in kgs)?')\nand questiontext IN ('Which of these below-mentioned statements best describes your fitness history.')\nGROUP BY 1\nORDER BY 2 desc\n)\nGROUP BY 1\nORDER BY 2 desc"
+          "native": "SELECT answers,\n       COUNT(DISTINCT userid) users\nFROM(\nselect userid,\n      listagg(DISTINCT answer,', ') WITHIN GROUP (ORDER BY answer) answers\n       \nfrom pk_curefitprod_cfdb.npsresponses \nwhere formid = 'post_pack_purchase_onboarding'  \n-- Report end date keeps survey counts stable across future query runs.\nand date(createddate) between DATE('2023-04-01') and {{end_date}}\nand answer IS NOT NULL --and questiontext NOT IN ('What is your height?', 'Your age?', 'What is your date of birth?', 'What is your current weight (in kgs)?')\nand questiontext IN ('Which of these below-mentioned statements best describes your fitness history.')\nGROUP BY 1\nORDER BY 2 desc\n)\nGROUP BY 1\nORDER BY 2 desc",
+          "template-tags": {
+            "end_date": {
+              "display-name": "End Date",
+              "name": "end_date",
+              "id": "f894ff7c-3b24-4058-9d16-969d1351c7dd",
+              "type": "date",
+              "default": "2026-03-31"
+            }
+          }
         }
       ],
       "middleware": {
@@ -220,7 +250,8 @@
         "duration": 12,
         "unit": "hours",
         "type": "duration",
-        "refresh_automatically": false
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-03T12:32:30.063367Z"
       },
       "viz-settings": {
         "table.pivot_column": "questionid",
@@ -229,13 +260,27 @@
           598
         ]
       },
-      "lib.convert/converted?": true,
-      "database": 39
+      "database": 39,
+      "parameters": [
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "end_date"
+            ]
+          ],
+          "name": "end_date",
+          "slug": "end_date",
+          "value": "2026-03-31"
+        }
+      ]
     },
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
-    "row_count": 14,
-    "running_time": 131646
+    "row_count": 15,
+    "running_time": 30794
   }
 }
