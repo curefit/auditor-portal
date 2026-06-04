@@ -1089,35 +1089,31 @@
 - `table` `pk_curefit_app_events.page_view` via card `75999` (lineage: `unresolved`)
   Unresolved reason: Relation not found in local dbt manifest.
 
-## Daily metrics - Tanmai v2 - With end date (`question` 76611)
+## 12M Packs Sold Monthly Jun 2026 (`question` 83969)
 
 - Source rows: `8`
-- Source URL: `https://metabase.curefit.co/question/76611-daily-metrics-tanmai-v2-with-end-date?Start_Date=2023-04-01&End_Date=2026-03-31`
+- Source URL: `https://metabase.curefit.co/question/83969-12m-packs-sold-monthly-jun-2026?Start_Date=2023-04-01&End_Date=2026-03-31`
 - Direct cards: `1`
 - Nested cards: `0`
-- Tables: `6`
-- Upstream core objects: `31`
-- Evidence status: `query_sql|metadata_json|result_blocked`
-- Notes: Relation not found in local dbt manifest.
+- Tables: `4`
+- Upstream core objects: `4`
+- Evidence status: `query_sql|metadata_json|raw_csv`
+- Notes: Lineage reflects tables used by card 83969 SQL.
 
 ### Dependency Tree
 
-- Card `76611` `Daily metrics - Tanmai v2 - With end date` (role: `root_question`, parent: `root`)
+- Card `83969` `12M Packs Sold Monthly Jun 2026` (role: `root_question`, parent: `root`)
 
 ### Table Dependencies
 
-- `table` `dwh_fitness.fitness_orders` via card `76611` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `dwh_fitness_mart.center_dim` via card `76611` (lineage: `source_table`)
+- `table` `dwh_fitness_mart.center_dim` via card `83969` (lineage: `source_table`)
   Upstream core objects: `dwh_fitness_mart.center_dim`
-- `table` `dwh_fitness_mart.membership_dim` via card `76611` (lineage: `source_table`)
+- `table` `dwh_fitness_mart.membership_dim` via card `83969` (lineage: `source_table`)
   Upstream core objects: `dwh_fitness_mart.membership_dim`
-- `table` `dwh_fitness_mart.orders_fact` via card `76611` (lineage: `derived_model`)
-  Upstream core objects: `pk_cultprod_cultapp.address|pk_cultprod_cultapp.booking|pk_cultprod_cultapp.center|pk_cultprod_cultapp.city|pk_cultprod_cultapp.cultclass|pk_cultprod_cultapp.membership|pk_cultprod_cultapp.preregistrationoffer|pk_curefitplatforms_membershipdb.memberships|pk_curefitprod_center_service.center|pk_curefitprod_center_service.center_sku|pk_curefitprod_center_service.sku|pk_curefitprod_gymfit.addresses|pk_curefitprod_gymfit.centers|pk_curefitprod_gymfit.sellers|pk_oms_analytics.payment_success|pk_prod_curefit_prod.offers|pk_prod_curefit_prod.orders|pk_prod_curefit_prod.orders_offersinfo|pk_prod_curefit_prod.orders_payments|pk_prod_curefit_prod.orders_payments_onuspayments|pk_prod_curefit_prod.orders_payments_refunds|pk_prod_curefit_prod.orders_products|pk_prod_curefit_prod.orders_productsnapshots|pk_prod_curefit_prod.orders_productsnapshots_option_offersinfo|pk_prod_curefit_prod.orders_statushistory|pk_prod_curefit_prod.referrals|pk_prod_curefit_prod.referrals_refereerewards|pk_prod_curefit_prod.referrals_statushistory|pk_walletprod_wallet_prod.wallet_refund`
-- `table` `pk_prod_curefit_prod.orders` via card `76611` (lineage: `source_table`)
-  Upstream core objects: `pk_prod_curefit_prod.orders`
-- `table` `pk_prod_curefit_prod.orders_payments` via card `76611` (lineage: `source_table`)
-  Upstream core objects: `pk_prod_curefit_prod.orders_payments`
+- `table` `dwh_fitness_mart.orders_fact` via card `83969` (lineage: `derived_model`)
+  Upstream core objects: `dwh_fitness_mart.orders_fact`
+- `table` `pk_curefitplatforms_membershipdb.memberships` via card `83969` (lineage: `source_table`)
+  Upstream core objects: `pk_curefitplatforms_membershipdb.memberships`
 
 ## Memberships by Each Business Line - End of Each Month - including all packs -city level (`question` 77280)
 
