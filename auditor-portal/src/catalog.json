@@ -2030,7 +2030,7 @@
         "fy26": "85%",
         "nineMFy25": "",
         "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/question/83969-12m-packs-sold-monthly-jun-2026?Start_Date=2023-04-01&End_Date=2026-03-31;\r\nhttps://docs.google.com/spreadsheets/d/1fma57grgBcmMQHkLDKkCtcuz7WMoC6He/edit?usp=drive_web&ouid=116981787178806296143&rtpof=true",
+        "sourceRaw": "https://metabase.curefit.co/question/83969-12m-packs-sold-monthly-jun-2026?Start_Date=2023-04-01&End_Date=2026-03-31;\nhttps://docs.google.com/spreadsheets/d/1fma57grgBcmMQHkLDKkCtcuz7WMoC6He/edit?usp=drive_web&ouid=116981787178806296143&rtpof=true", 
         "limitations": ""
       },
       "sheetMetricVia": "card"
