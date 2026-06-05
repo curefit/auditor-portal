@@ -3,16 +3,7 @@
   "card_name": "'At Home' footfalls",
   "parameters": [
     {
-      "slug": "grain",
-      "values_query_type": "list",
-      "default": [
-        "quarter"
-      ],
-      "name": "grain",
-      "isMultiSelect": false,
       "type": "string/=",
-      "values_source_type": "static-list",
-      "id": "1f605ed0-53a7-4e17-a4b6-7f98318d4130",
       "target": [
         "variable",
         [
@@ -20,1990 +11,1301 @@
           "grain"
         ]
       ],
-      "values_source_config": {
-        "values": [
-          [
-            "day"
-          ],
-          [
-            "week"
-          ],
-          [
-            "quarter"
-          ],
-          [
-            "year"
-          ],
-          [
-            "month"
-          ]
+      "name": "grain",
+      "slug": "grain",
+      "value": [
+        "month"
+      ]
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Start_Date"
         ]
-      },
-      "value": "month"
+      ],
+      "name": "Start_Date",
+      "slug": "Start_Date",
+      "value": "2023-04-01"
+    },
+    {
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "End_Date"
+        ]
+      ],
+      "name": "End_Date",
+      "slug": "End_Date",
+      "value": "2026-03-31"
     }
   ],
   "query_response": {
     "data": {
       "rows": [
         [
-          "2026-02-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          28541
-        ],
-        [
-          "2021-08-01T00:00:00Z",
+          "2023-04-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          273169
+          15338
         ],
         [
-          "2021-09-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          49684
-        ],
-        [
-          "2021-11-01T00:00:00Z",
+          "2023-04-01T00:00:00Z",
           "Gurgaon",
           "At Home",
           "At Home",
-          54496
+          3987
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          2407
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          2776
+        ],
+        [
+          "2023-04-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          5484
         ],
         [
           "2023-05-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          123606
+          31363
         ],
         [
-          "2021-05-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          101822
-        ],
-        [
-          "2022-12-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          119742
-        ],
-        [
-          "2021-07-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          52674
-        ],
-        [
-          "2020-08-01T00:00:00Z",
+          "2023-05-01T00:00:00Z",
           "Gurgaon",
           "At Home",
           "At Home",
-          177214
+          9742
         ],
         [
-          "2026-01-01T00:00:00Z",
-          "Bangalore",
+          "2023-05-01T00:00:00Z",
+          "Hyderabad",
           "At Home",
           "At Home",
-          61275
+          5464
         ],
         [
-          "2024-04-01T00:00:00Z",
+          "2023-05-01T00:00:00Z",
           "Mumbai",
           "At Home",
           "At Home",
-          19882
+          5426
         ],
         [
-          "2026-01-01T00:00:00Z",
+          "2023-05-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          11821
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          43181
+        ],
+        [
+          "2023-06-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          12918
+        ],
+        [
+          "2023-06-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          13323
+          7571
         ],
         [
-          "2026-05-01T00:00:00Z",
-          "Bangalore",
+          "2023-06-01T00:00:00Z",
+          "Mumbai",
           "At Home",
           "At Home",
-          55320
+          8458
         ],
         [
-          "2024-05-01T00:00:00Z",
-          "Bangalore",
+          "2023-06-01T00:00:00Z",
+          "Others",
           "At Home",
           "At Home",
-          87343
-        ],
-        [
-          "2021-06-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          71673
-        ],
-        [
-          "2022-06-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          135136
+          15163
         ],
         [
           "2023-07-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          135152
+          56974
         ],
         [
-          "2021-05-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          212677
-        ],
-        [
-          "2024-07-01T00:00:00Z",
+          "2023-07-01T00:00:00Z",
           "Gurgaon",
           "At Home",
           "At Home",
-          32131
-        ],
-        [
-          "2021-04-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          57044
-        ],
-        [
-          "2023-12-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          25735
-        ],
-        [
-          "2024-04-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          29169
-        ],
-        [
-          "2025-03-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          15053
-        ],
-        [
-          "2024-10-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          23167
-        ],
-        [
-          "2023-12-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          14973
+          18211
         ],
         [
           "2023-07-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          22603
+          11507
         ],
         [
-          "2021-09-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          232749
-        ],
-        [
-          "2023-01-01T00:00:00Z",
+          "2023-07-01T00:00:00Z",
           "Mumbai",
           "At Home",
           "At Home",
-          23431
+          12675
         ],
         [
-          "2022-05-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          50864
-        ],
-        [
-          "2022-03-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          58421
-        ],
-        [
-          "2021-03-01T00:00:00Z",
+          "2023-07-01T00:00:00Z",
           "Others",
           "At Home",
           "At Home",
-          113492
+          20550
         ],
         [
-          "2025-08-01T00:00:00Z",
+          "2023-08-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          61986
+        ],
+        [
+          "2023-08-01T00:00:00Z",
           "Gurgaon",
           "At Home",
           "At Home",
-          23310
+          18700
         ],
         [
-          "2026-04-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          31436
-        ],
-        [
-          "2020-10-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          129128
-        ],
-        [
-          "2025-10-01T00:00:00Z",
+          "2023-08-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          12234
-        ],
-        [
-          "2024-05-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          33418
-        ],
-        [
-          "2026-05-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          20066
-        ],
-        [
-          "2025-03-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          17773
-        ],
-        [
-          "2026-01-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          17868
-        ],
-        [
-          "2026-06-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          770
-        ],
-        [
-          "2025-06-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          36722
-        ],
-        [
-          "2025-02-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          64524
-        ],
-        [
-          "2025-09-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          60715
-        ],
-        [
-          "2024-08-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          77725
-        ],
-        [
-          "2022-01-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          247945
-        ],
-        [
-          "2022-02-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          166809
-        ],
-        [
-          "2025-05-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          24292
-        ],
-        [
-          "2025-02-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          18750
-        ],
-        [
-          "2025-07-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          17508
-        ],
-        [
-          "2025-05-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          15168
-        ],
-        [
-          "2024-06-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          44238
-        ],
-        [
-          "2023-09-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          115397
-        ],
-        [
-          "2023-02-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          117690
+          10933
         ],
         [
           "2023-08-01T00:00:00Z",
           "Mumbai",
           "At Home",
           "At Home",
-          23675
+          12456
         ],
         [
-          "2023-07-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          38530
-        ],
-        [
-          "2022-11-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          126564
-        ],
-        [
-          "2022-11-01T00:00:00Z",
+          "2023-08-01T00:00:00Z",
           "Others",
           "At Home",
           "At Home",
-          48740
+          21490
         ],
         [
-          "2026-05-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          13576
-        ],
-        [
-          "2020-10-01T00:00:00Z",
+          "2023-09-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          233469
-        ],
-        [
-          "2020-12-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          204272
-        ],
-        [
-          "2020-11-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          81562
-        ],
-        [
-          "2021-02-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          44563
-        ],
-        [
-          "2024-05-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          21210
-        ],
-        [
-          "2025-04-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          17964
-        ],
-        [
-          "2025-05-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          65373
-        ],
-        [
-          "2025-07-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          43008
-        ],
-        [
-          "2024-12-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          61202
-        ],
-        [
-          "2024-03-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          17921
-        ],
-        [
-          "2024-11-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          22276
-        ],
-        [
-          "2020-09-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          87124
-        ],
-        [
-          "2024-02-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          27267
-        ],
-        [
-          "2024-09-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          29234
-        ],
-        [
-          "2022-02-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          34444
-        ],
-        [
-          "2021-10-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          43581
-        ],
-        [
-          "2022-05-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          21792
-        ],
-        [
-          "2020-05-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          10
-        ],
-        [
-          "2020-11-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          48836
-        ],
-        [
-          "2022-12-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          19384
-        ],
-        [
-          "2022-07-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          69106
-        ],
-        [
-          "2024-07-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          48862
-        ],
-        [
-          "2022-12-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          28353
-        ],
-        [
-          "2024-12-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          20540
-        ],
-        [
-          "2025-01-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          20660
-        ],
-        [
-          "2022-06-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          65213
-        ],
-        [
-          "2022-05-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          68436
-        ],
-        [
-          "2024-08-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          15820
-        ],
-        [
-          "2021-12-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          36055
-        ],
-        [
-          "2023-12-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          80228
-        ],
-        [
-          "2020-05-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          6
-        ],
-        [
-          "2024-03-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          88282
-        ],
-        [
-          "2021-11-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          27749
-        ],
-        [
-          "2022-08-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          60158
-        ],
-        [
-          "2021-01-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          136903
-        ],
-        [
-          "2025-08-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          60198
-        ],
-        [
-          "2021-12-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          57160
+          62946
         ],
         [
           "2023-09-01T00:00:00Z",
           "Gurgaon",
           "At Home",
           "At Home",
-          35669
+          21162
         ],
         [
-          "2023-02-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          20118
-        ],
-        [
-          "2022-09-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          57124
-        ],
-        [
-          "2020-10-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          168691
-        ],
-        [
-          "2020-07-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          220624
-        ],
-        [
-          "2021-09-01T00:00:00Z",
+          "2023-09-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          36779
-        ],
-        [
-          "2021-09-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          83556
-        ],
-        [
-          "2024-06-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          29252
-        ],
-        [
-          "2025-04-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          15527
-        ],
-        [
-          "2025-10-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          29348
-        ],
-        [
-          "2021-11-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          35615
-        ],
-        [
-          "2025-09-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          13379
-        ],
-        [
-          "2024-04-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          16207
-        ],
-        [
-          "2022-08-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          27410
-        ],
-        [
-          "2025-10-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          55808
-        ],
-        [
-          "2021-01-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          207213
-        ],
-        [
-          "2021-05-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          543280
-        ],
-        [
-          "2025-11-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          57163
-        ],
-        [
-          "2021-04-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          147928
-        ],
-        [
-          "2021-02-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          169235
-        ],
-        [
-          "2024-02-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          18296
-        ],
-        [
-          "2022-05-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          137983
-        ],
-        [
-          "2020-12-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          103421
-        ],
-        [
-          "2021-11-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          77988
-        ],
-        [
-          "2025-08-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          36108
-        ],
-        [
-          "2022-09-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          43089
-        ],
-        [
-          "2020-08-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          203378
-        ],
-        [
-          "2020-06-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          75002
-        ],
-        [
-          "2023-04-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          33080
-        ],
-        [
-          "2024-10-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          20184
-        ],
-        [
-          "2022-12-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          16634
-        ],
-        [
-          "2024-12-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          13916
-        ],
-        [
-          "2020-07-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          121236
-        ],
-        [
-          "2026-06-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          2261
-        ],
-        [
-          "2020-12-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          140523
-        ],
-        [
-          "2023-11-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          86575
+          11344
         ],
         [
           "2023-09-01T00:00:00Z",
           "Mumbai",
           "At Home",
           "At Home",
-          22040
+          12850
+        ],
+        [
+          "2023-09-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          23927
         ],
         [
           "2023-10-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          101113
+          58056
         ],
         [
-          "2025-09-01T00:00:00Z",
-          "Others",
+          "2023-10-01T00:00:00Z",
+          "Gurgaon",
           "At Home",
           "At Home",
-          35241
+          18608
         ],
         [
-          "2022-08-01T00:00:00Z",
+          "2023-10-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          19432
+          11009
         ],
         [
-          "2023-02-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          18698
-        ],
-        [
-          "2023-04-01T00:00:00Z",
+          "2023-10-01T00:00:00Z",
           "Mumbai",
           "At Home",
           "At Home",
-          21294
+          12376
         ],
         [
-          "2023-02-01T00:00:00Z",
+          "2023-10-01T00:00:00Z",
           "Others",
           "At Home",
           "At Home",
-          39480
+          23877
         ],
         [
-          "2025-12-01T00:00:00Z",
+          "2023-11-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          52312
+          51727
         ],
         [
-          "2022-11-01T00:00:00Z",
+          "2023-11-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          14851
+        ],
+        [
+          "2023-11-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          20794
+          10553
         ],
         [
-          "2022-07-01T00:00:00Z",
+          "2023-11-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          11099
+        ],
+        [
+          "2023-11-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          23238
+        ],
+        [
+          "2023-12-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          135479
+          50243
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          16616
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          10422
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          11747
+        ],
+        [
+          "2023-12-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          25423
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          67031
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          17999
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          13357
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          15066
+        ],
+        [
+          "2024-01-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          29140
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          65267
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          19392
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14310
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          14295
+        ],
+        [
+          "2024-02-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          30948
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          64630
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          21622
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14297
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          15174
+        ],
+        [
+          "2024-03-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          33271
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          60785
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          22557
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          13171
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          15223
+        ],
+        [
+          "2024-04-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          33464
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          68830
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          26678
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14741
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          17020
+        ],
+        [
+          "2024-05-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          38709
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          64457
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          23957
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14442
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          16592
+        ],
+        [
+          "2024-06-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          36700
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          70621
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          27076
+        ],
+        [
+          "2024-07-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          15461
         ],
         [
           "2024-07-01T00:00:00Z",
           "Mumbai",
           "At Home",
           "At Home",
-          24827
+          20621
         ],
         [
-          "2021-03-01T00:00:00Z",
-          "Gurgaon",
+          "2024-07-01T00:00:00Z",
+          "Others",
           "At Home",
           "At Home",
-          82741
+          41311
         ],
         [
-          "2023-01-01T00:00:00Z",
+          "2024-08-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          131702
+          64192
         ],
         [
-          "2021-03-01T00:00:00Z",
+          "2024-08-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          25038
+        ],
+        [
+          "2024-08-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          13963
+        ],
+        [
+          "2024-08-01T00:00:00Z",
           "Mumbai",
           "At Home",
           "At Home",
-          54814
+          19382
         ],
         [
-          "2022-03-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          28061
-        ],
-        [
-          "2021-09-01T00:00:00Z",
+          "2024-08-01T00:00:00Z",
           "Others",
           "At Home",
           "At Home",
-          113095
+          37809
         ],
         [
-          "2026-04-01T00:00:00Z",
+          "2024-09-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          63322
+        ],
+        [
+          "2024-09-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          24993
+        ],
+        [
+          "2024-09-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          13771
+          14283
         ],
         [
-          "2020-07-01T00:00:00Z",
+          "2024-09-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          18088
+        ],
+        [
+          "2024-09-01T00:00:00Z",
           "Others",
           "At Home",
           "At Home",
-          231506
+          38234
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          59873
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          19843
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          13011
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          17281
+        ],
+        [
+          "2024-10-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          34621
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          58604
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          19414
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          13076
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          16654
+        ],
+        [
+          "2024-11-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          33341
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          52838
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          18013
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          12648
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          15399
+        ],
+        [
+          "2024-12-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          30167
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          65524
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          20013
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14588
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          18317
+        ],
+        [
+          "2025-01-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          34209
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          58823
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          17032
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          12568
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          14023
+        ],
+        [
+          "2025-02-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          30329
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          64253
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          19530
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14214
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          16352
+        ],
+        [
+          "2025-03-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          33715
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          61329
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          21510
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14781
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          16729
+        ],
+        [
+          "2025-04-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          34330
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          61980
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          23100
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14633
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          16399
+        ],
+        [
+          "2025-05-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          35097
         ],
         [
           "2025-06-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          64950
+          62770
         ],
         [
-          "2025-12-01T00:00:00Z",
+          "2025-06-01T00:00:00Z",
           "Gurgaon",
+          "At Home",
+          "At Home",
+          22551
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          14842
+        ],
+        [
+          "2025-06-01T00:00:00Z",
+          "Mumbai",
           "At Home",
           "At Home",
           16793
         ],
         [
-          "2023-06-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          34513
-        ],
-        [
-          "2022-04-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          23095
-        ],
-        [
-          "2026-04-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          18869
-        ],
-        [
-          "2020-12-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          55063
-        ],
-        [
-          "2026-03-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          49723
-        ],
-        [
-          "2021-10-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          196922
-        ],
-        [
-          "2024-10-01T00:00:00Z",
+          "2025-06-01T00:00:00Z",
           "Others",
           "At Home",
           "At Home",
-          39575
-        ],
-        [
-          "2025-09-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          22305
-        ],
-        [
-          "2023-03-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          130726
-        ],
-        [
-          "2024-10-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          14510
-        ],
-        [
-          "2023-12-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          38361
-        ],
-        [
-          "2026-02-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          17475
-        ],
-        [
-          "2026-01-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          30620
-        ],
-        [
-          "2022-03-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          169638
-        ],
-        [
-          "2022-08-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          43651
-        ],
-        [
-          "2022-02-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          28471
-        ],
-        [
-          "2024-06-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          20277
-        ],
-        [
-          "2025-09-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          14677
-        ],
-        [
-          "2024-01-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          17799
-        ],
-        [
-          "2020-08-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          319541
-        ],
-        [
-          "2023-04-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          19146
-        ],
-        [
-          "2022-09-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          21345
-        ],
-        [
-          "2025-04-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          22963
-        ],
-        [
-          "2025-04-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          36416
-        ],
-        [
-          "2022-03-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          81894
-        ],
-        [
-          "2020-12-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          63009
+          35965
         ],
         [
           "2025-07-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          72181
+          70509
         ],
         [
-          "2020-08-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          100288
-        ],
-        [
-          "2023-06-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          19156
-        ],
-        [
-          "2024-05-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          17674
-        ],
-        [
-          "2023-06-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          22546
-        ],
-        [
-          "2020-06-01T00:00:00Z",
+          "2025-07-01T00:00:00Z",
           "Gurgaon",
           "At Home",
           "At Home",
-          146243
+          25346
         ],
         [
-          "2020-06-01T00:00:00Z",
+          "2025-07-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          17358
+        ],
+        [
+          "2025-07-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          18488
+        ],
+        [
+          "2025-07-01T00:00:00Z",
           "Others",
           "At Home",
           "At Home",
-          120478
+          42547
         ],
         [
-          "2023-02-01T00:00:00Z",
+          "2025-08-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          59354
+        ],
+        [
+          "2025-08-01T00:00:00Z",
           "Gurgaon",
           "At Home",
           "At Home",
-          31171
-        ],
-        [
-          "2023-05-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          42242
-        ],
-        [
-          "2026-02-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          11567
-        ],
-        [
-          "2022-01-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          102866
-        ],
-        [
-          "2023-03-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          47543
-        ],
-        [
-          "2021-03-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          181565
-        ],
-        [
-          "2024-02-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          92572
-        ],
-        [
-          "2024-11-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          37974
-        ],
-        [
-          "2024-11-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          14414
-        ],
-        [
-          "2024-11-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          68141
-        ],
-        [
-          "2024-10-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          70295
-        ],
-        [
-          "2024-09-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          43803
-        ],
-        [
-          "2021-10-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          31907
-        ],
-        [
-          "2021-12-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          30834
-        ],
-        [
-          "2021-01-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          61455
-        ],
-        [
-          "2021-08-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          43424
-        ],
-        [
-          "2022-04-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          30570
-        ],
-        [
-          "2022-01-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          48373
-        ],
-        [
-          "2026-06-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          1221
-        ],
-        [
-          "2025-06-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          17363
-        ],
-        [
-          "2025-02-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          13409
-        ],
-        [
-          "2022-06-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          21864
-        ],
-        [
-          "2022-08-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          124132
-        ],
-        [
-          "2023-06-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          127441
-        ],
-        [
-          "2024-02-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          20119
-        ],
-        [
-          "2025-12-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          28299
-        ],
-        [
-          "2021-12-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          78801
-        ],
-        [
-          "2021-08-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          130700
-        ],
-        [
-          "2021-06-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          76604
-        ],
-        [
-          "2025-10-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          12372
-        ],
-        [
-          "2026-02-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          54666
-        ],
-        [
-          "2023-10-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          16937
+          23021
         ],
         [
           "2025-08-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          14199
+          14120
         ],
         [
-          "2021-11-01T00:00:00Z",
+          "2025-08-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          14998
+        ],
+        [
+          "2025-08-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          35872
+        ],
+        [
+          "2025-09-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          164772
+          59982
         ],
         [
-          "2023-01-01T00:00:00Z",
+          "2025-09-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          22119
+        ],
+        [
+          "2025-09-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          20403
+          13296
         ],
         [
-          "2024-06-01T00:00:00Z",
+          "2025-09-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          14343
+        ],
+        [
+          "2025-09-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          35090
+        ],
+        [
+          "2025-10-01T00:00:00Z",
           "Bangalore",
           "At Home",
           "At Home",
-          80545
+          55289
         ],
         [
-          "2026-06-01T00:00:00Z",
+          "2025-10-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          17179
+        ],
+        [
+          "2025-10-01T00:00:00Z",
           "Hyderabad",
           "At Home",
           "At Home",
-          526
+          12144
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          12173
+        ],
+        [
+          "2025-10-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          29206
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          56636
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          17443
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          13284
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          13002
+        ],
+        [
+          "2025-11-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          30822
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          51904
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          16683
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          12950
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          11744
+        ],
+        [
+          "2025-12-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          28236
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          60893
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          17779
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          13220
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          12871
+        ],
+        [
+          "2026-01-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          30491
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          54389
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          17370
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          13162
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          11352
+        ],
+        [
+          "2026-02-01T00:00:00Z",
+          "Others",
+          "At Home",
+          "At Home",
+          28398
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Bangalore",
+          "At Home",
+          "At Home",
+          49430
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Gurgaon",
+          "At Home",
+          "At Home",
+          16135
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Hyderabad",
+          "At Home",
+          "At Home",
+          11268
+        ],
+        [
+          "2026-03-01T00:00:00Z",
+          "Mumbai",
+          "At Home",
+          "At Home",
+          10457
         ],
         [
           "2026-03-01T00:00:00Z",
           "Others",
           "At Home",
           "At Home",
-          26307
-        ],
-        [
-          "2024-11-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          19403
-        ],
-        [
-          "2022-04-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          50211
-        ],
-        [
-          "2021-10-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          95134
-        ],
-        [
-          "2023-10-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          40384
-        ],
-        [
-          "2025-12-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          13020
-        ],
-        [
-          "2025-06-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          15078
-        ],
-        [
-          "2023-07-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          45708
-        ],
-        [
-          "2024-12-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          17954
-        ],
-        [
-          "2023-08-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          42832
-        ],
-        [
-          "2025-12-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          11982
-        ],
-        [
-          "2025-01-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          74122
-        ],
-        [
-          "2020-09-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          84023
-        ],
-        [
-          "2021-07-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          325384
-        ],
-        [
-          "2023-08-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          126993
-        ],
-        [
-          "2024-09-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          21248
-        ],
-        [
-          "2020-07-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          404392
-        ],
-        [
-          "2023-04-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          120200
-        ],
-        [
-          "2025-06-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          23396
-        ],
-        [
-          "2026-04-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          12528
-        ],
-        [
-          "2021-06-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          140146
-        ],
-        [
-          "2023-03-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          19614
-        ],
-        [
-          "2024-07-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          17872
-        ],
-        [
-          "2021-07-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          109237
-        ],
-        [
-          "2025-11-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          30908
-        ],
-        [
-          "2022-10-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          44901
-        ],
-        [
-          "2025-01-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          22317
-        ],
-        [
-          "2025-01-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          37983
-        ],
-        [
-          "2022-11-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          36311
-        ],
-        [
-          "2021-02-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          108870
-        ],
-        [
-          "2022-02-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          77820
-        ],
-        [
-          "2025-04-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          65867
-        ],
-        [
-          "2022-02-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          56093
-        ],
-        [
-          "2021-01-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          98346
-        ],
-        [
-          "2024-01-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          26234
-        ],
-        [
-          "2021-07-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          66892
-        ],
-        [
-          "2020-09-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          151104
-        ],
-        [
-          "2024-08-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          23005
-        ],
-        [
-          "2023-01-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          43221
-        ],
-        [
-          "2025-05-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          36320
-        ],
-        [
-          "2023-09-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          18249
-        ],
-        [
-          "2024-01-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          100254
-        ],
-        [
-          "2020-11-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          174420
-        ],
-        [
-          "2020-11-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          202470
-        ],
-        [
-          "2024-03-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          44076
-        ],
-        [
-          "2024-09-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          15950
-        ],
-        [
-          "2024-08-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          44112
-        ],
-        [
-          "2026-05-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          30642
-        ],
-        [
-          "2025-11-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          13351
-        ],
-        [
-          "2022-01-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          90339
-        ],
-        [
-          "2022-10-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          107845
-        ],
-        [
-          "2022-11-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          23173
-        ],
-        [
-          "2025-03-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          69583
-        ],
-        [
-          "2022-01-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          41442
-        ],
-        [
-          "2023-09-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          41929
-        ],
-        [
-          "2024-08-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          29441
-        ],
-        [
-          "2023-11-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          15660
-        ],
-        [
-          "2020-05-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          25
-        ],
-        [
-          "2020-05-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          23
+          26202
         ],
         [
           null,
@@ -2011,636 +1313,6 @@
           "At Home",
           "At Home",
           0
-        ],
-        [
-          "2026-04-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          55151
-        ],
-        [
-          "2021-05-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          175691
-        ],
-        [
-          "2021-04-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          272089
-        ],
-        [
-          "2021-06-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          446337
-        ],
-        [
-          "2023-10-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          21303
-        ],
-        [
-          "2020-07-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          122660
-        ],
-        [
-          "2024-03-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          29175
-        ],
-        [
-          "2023-08-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          35527
-        ],
-        [
-          "2024-01-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          21840
-        ],
-        [
-          "2026-03-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          10633
-        ],
-        [
-          "2021-04-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          114019
-        ],
-        [
-          "2022-07-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          31436
-        ],
-        [
-          "2022-03-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          34838
-        ],
-        [
-          "2025-05-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          17227
-        ],
-        [
-          "2020-10-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          71365
-        ],
-        [
-          "2021-06-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          184686
-        ],
-        [
-          "2023-04-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          41854
-        ],
-        [
-          "2023-08-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          19646
-        ],
-        [
-          "2024-02-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          42865
-        ],
-        [
-          "2024-05-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          47415
-        ],
-        [
-          "2024-09-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          75588
-        ],
-        [
-          "2024-04-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          42521
-        ],
-        [
-          "2025-03-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          36277
-        ],
-        [
-          "2021-08-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          94197
-        ],
-        [
-          "2024-01-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          42201
-        ],
-        [
-          "2026-02-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          13226
-        ],
-        [
-          "2023-06-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          41426
-        ],
-        [
-          "2022-12-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          37937
-        ],
-        [
-          "2020-10-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          81002
-        ],
-        [
-          "2020-09-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          178019
-        ],
-        [
-          "2026-03-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          11344
-        ],
-        [
-          "2021-04-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          91413
-        ],
-        [
-          "2025-07-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          26077
-        ],
-        [
-          "2025-11-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          13212
-        ],
-        [
-          "2022-05-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          30079
-        ],
-        [
-          "2022-06-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          30582
-        ],
-        [
-          "2026-01-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          13095
-        ],
-        [
-          "2023-11-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          36894
-        ],
-        [
-          "2021-12-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          170624
-        ],
-        [
-          "2025-03-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          21211
-        ],
-        [
-          "2024-07-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          86473
-        ],
-        [
-          "2024-12-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          34143
-        ],
-        [
-          "2021-02-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          48843
-        ],
-        [
-          "2026-05-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          11801
-        ],
-        [
-          "2020-06-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          253428
-        ],
-        [
-          "2021-03-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          43322
-        ],
-        [
-          "2023-05-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          36386
-        ],
-        [
-          "2025-11-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          17570
-        ],
-        [
-          "2023-03-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          34244
-        ],
-        [
-          "2023-05-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          18983
-        ],
-        [
-          "2023-12-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          17979
-        ],
-        [
-          "2020-05-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          53
-        ],
-        [
-          "2021-05-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          95102
-        ],
-        [
-          "2025-10-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          17322
-        ],
-        [
-          "2021-07-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          209047
-        ],
-        [
-          "2020-06-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          75723
-        ],
-        [
-          "2023-07-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          26512
-        ],
-        [
-          "2022-06-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          47960
-        ],
-        [
-          "2022-04-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          70571
-        ],
-        [
-          "2023-05-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          21420
-        ],
-        [
-          "2024-06-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          16966
-        ],
-        [
-          "2023-11-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          17991
-        ],
-        [
-          "2020-11-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          53848
-        ],
-        [
-          "2023-01-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          32067
-        ],
-        [
-          "2025-08-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          15349
-        ],
-        [
-          "2025-02-01T00:00:00Z",
-          "Others",
-          "At Home",
-          "At Home",
-          33061
-        ],
-        [
-          "2025-02-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          15550
-        ],
-        [
-          "2025-01-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          15968
-        ],
-        [
-          "2021-02-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          81058
-        ],
-        [
-          "2024-04-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          79508
-        ],
-        [
-          "2022-04-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          138872
-        ],
-        [
-          "2021-01-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          55358
-        ],
-        [
-          "2021-10-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          65186
-        ],
-        [
-          "2022-10-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          19287
-        ],
-        [
-          "2022-07-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          22624
-        ],
-        [
-          "2022-09-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          130532
-        ],
-        [
-          "2020-08-01T00:00:00Z",
-          "Hyderabad",
-          "At Home",
-          "At Home",
-          96969
-        ],
-        [
-          "2020-09-01T00:00:00Z",
-          "Bangalore",
-          "At Home",
-          "At Home",
-          268129
-        ],
-        [
-          "2022-10-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          32296
-        ],
-        [
-          "2023-10-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          31321
-        ],
-        [
-          "2021-08-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          58888
-        ],
-        [
-          "2023-11-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          24252
-        ],
-        [
-          "2022-07-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          49651
-        ],
-        [
-          "2026-03-01T00:00:00Z",
-          "Gurgaon",
-          "At Home",
-          "At Home",
-          16217
-        ],
-        [
-          "2023-03-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          23707
-        ],
-        [
-          "2022-09-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          27844
-        ],
-        [
-          "2022-10-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          22229
-        ],
-        [
-          "2025-07-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          18936
-        ],
-        [
-          "2024-03-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          20574
-        ],
-        [
-          "2026-06-01T00:00:00Z",
-          "Mumbai",
-          "At Home",
-          "At Home",
-          501
         ]
       ],
       "cols": [
@@ -2747,10 +1419,14 @@
       ],
       "native_form": {
         "params": [
-          "month"
+          "month",
+          "2023-04-01",
+          "2026-03-31",
+          "2023-04-01",
+          "2026-03-31"
         ],
         "lib/type": "mbql.stage/native",
-        "query": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSelect\n  Date_Trunc(?, createddate_date) as \"Grain\",\n        CASE WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n                 WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN selectedcityid IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        -- dwh_fitness_mart.booking_fact.service_type,\n        'At Home' as service_type,\n        'At Home'  as sub_service_type,\n                 \n        COUNT(DISTINCT usersessionid) as footfalls\n        \n\n      from (\n        select\n          md.user_id,\n          md.business_line,\n          -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n          end as pack_start_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n          end as pack_end_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n          end as membership_created_date\n        from dwh_fitness_mart.membership_dim md\n        left join pk_curefitplatforms_membershipdb.memberships mdb\n          on mdb.id = md.membership_service_id\n      ) base\n      \n        left join dwh_live.live_bookings\n        -- add membership_dim here\n      on live_bookings.userid=base.user_id and date(createddate_date) between pack_start_date and pack_end_date\n      and\n        year(createddate_date) >= year(Date('2017-01-01'))\n        and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n        -- Count only sessions where the user completed enough of the live workout.\n        and live_bookings.userid_50_percent_completed is not Null\n        \n        where 1=1\n      AND base.membership_created_date >= date('2017-01-01')\n      -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n      and base.business_line in ('LIVE','TRANSFORM')\n    GROUP BY\n      1,\n      2,\n      3,\n      4"
+        "query": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSelect\n  Date_Trunc(?, createddate_date) as \"Grain\",\n        CASE WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n                 WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN selectedcityid IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        -- dwh_fitness_mart.booking_fact.service_type,\n        'At Home' as service_type,\n        'At Home'  as sub_service_type,\n                 \n        COUNT(DISTINCT usersessionid) as footfalls\n        \n\n      from (\n        select\n          md.user_id,\n          md.business_line,\n          -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n          end as pack_start_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n          end as pack_end_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n          end as membership_created_date\n        from dwh_fitness_mart.membership_dim md\n        left join pk_curefitplatforms_membershipdb.memberships mdb\n          on mdb.id = md.membership_service_id\n      ) base\n      \n        left join dwh_live.live_bookings\n        -- add membership_dim here\n      on live_bookings.userid=base.user_id and date(createddate_date) between pack_start_date and pack_end_date\n      and\n        year(createddate_date) >= year(Date('2017-01-01'))\n        -- Report window bounds at-home sessions, not just membership eligibility.\n        and date(createddate_date) between ? and ?\n        -- Report window bounds at-home sessions, not just membership eligibility.\n        and date(createddate_date) between ? and ?\n        and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n        -- Count only sessions where the user completed enough of the live workout.\n        and live_bookings.userid_50_percent_completed is not Null\n        \n        where 1=1\n      AND base.membership_created_date >= date('2017-01-01')\n      -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n      and base.business_line in ('LIVE','TRANSFORM')\n    GROUP BY\n      1,\n      2,\n      3,\n      4"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -2782,13 +1458,13 @@
             "display_name": "Grain",
             "fingerprint": {
               "global": {
-                "distinct-count": 75,
-                "nil%": 0.002695417789757412
+                "distinct-count": 37,
+                "nil%": 0.005524861878453039
               },
               "type": {
                 "type/DateTime": {
-                  "earliest": "2020-05-01",
-                  "latest": "2026-06-01"
+                  "earliest": "2023-04-01",
+                  "latest": "2026-03-01"
                 }
               }
             },
@@ -2824,7 +1500,7 @@
                   "percent-url": 0,
                   "percent-email": 0,
                   "percent-state": 0,
-                  "average-length": 7.39622641509434
+                  "average-length": 7.392265193370166
                 }
               }
             },
@@ -2923,17 +1599,17 @@
             "display_name": "footfalls",
             "fingerprint": {
               "global": {
-                "distinct-count": 370,
+                "distinct-count": 181,
                 "nil%": 0
               },
               "type": {
                 "type/Number": {
                   "min": 0,
-                  "q1": 20952.59427877012,
-                  "q3": 80811.25,
-                  "max": 543280,
-                  "sd": 68647.28786183236,
-                  "avg": 64034.99191374663
+                  "q1": 17786.608712126035,
+                  "q3": 42752.16497684922,
+                  "max": 135152,
+                  "sd": 26457.871394284946,
+                  "avg": 35823.08287292818
                 }
               }
             },
@@ -2943,23 +1619,20 @@
       },
       "insights": [
         {
-          "previous-value": null,
-          "unit": null,
-          "offset": 1161823.446999904,
-          "last-change": null,
+          "previous-value": 12372,
+          "unit": "year",
+          "offset": 494337.2097859821,
+          "last-change": 0.8725347559004203,
           "col": "footfalls",
-          "slope": -56.30400528355123,
-          "last-value": 501,
+          "slope": -22.93703596155231,
+          "last-value": 23167,
           "best-fit": [
-            "+",
-            10946037.514914388,
+            "*",
+            2.5171817926594797e+53,
             [
-              "*",
-              -1101697.662337349,
-              [
-                "log",
-                "x"
-              ]
+              "pow",
+              "x",
+              -11.378515004753078
             ]
           ]
         }
@@ -2967,7 +1640,7 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-06-02T10:07:12.945047419Z",
+    "started_at": "2026-06-03T12:31:46.801372788Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -2979,17 +1652,31 @@
         {
           "template-tags": {
             "grain": {
-              "id": "1f605ed0-53a7-4e17-a4b6-7f98318d4130",
-              "type": "text",
               "display-name": "Grain",
               "name": "grain",
+              "id": "1f605ed0-53a7-4e17-a4b6-7f98318d4130",
+              "type": "text",
               "default": [
                 "quarter"
               ]
+            },
+            "Start_Date": {
+              "display-name": "Start Date",
+              "name": "Start_Date",
+              "id": "79a43acb-d156-407b-bb85-b36e1014f23f",
+              "type": "date",
+              "default": "2023-04-01"
+            },
+            "End_Date": {
+              "display-name": "End Date",
+              "name": "End_Date",
+              "id": "dac2a996-d6da-48f4-9b97-ffd34aec53cc",
+              "type": "date",
+              "default": "2026-03-31"
             }
           },
           "lib/type": "mbql.stage/native",
-          "native": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSelect\n  Date_Trunc({{grain}}, createddate_date) as \"Grain\",\n        CASE WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n                 WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN selectedcityid IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        -- dwh_fitness_mart.booking_fact.service_type,\n        'At Home' as service_type,\n        'At Home'  as sub_service_type,\n                 \n        COUNT(DISTINCT usersessionid) as footfalls\n        \n\n      from (\n        select\n          md.user_id,\n          md.business_line,\n          -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n          end as pack_start_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n          end as pack_end_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n          end as membership_created_date\n        from dwh_fitness_mart.membership_dim md\n        left join pk_curefitplatforms_membershipdb.memberships mdb\n          on mdb.id = md.membership_service_id\n      ) base\n      \n        left join dwh_live.live_bookings\n        -- add membership_dim here\n      on live_bookings.userid=base.user_id and date(createddate_date) between pack_start_date and pack_end_date\n      and\n        year(createddate_date) >= year(Date('2017-01-01'))\n        and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n        -- Count only sessions where the user completed enough of the live workout.\n        and live_bookings.userid_50_percent_completed is not Null\n        \n        where 1=1\n      AND base.membership_created_date >= date('2017-01-01')\n      -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n      and base.business_line in ('LIVE','TRANSFORM')\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n"
+          "native": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSelect\n  Date_Trunc({{grain}}, createddate_date) as \"Grain\",\n        CASE WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n                 WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN selectedcityid IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        -- dwh_fitness_mart.booking_fact.service_type,\n        'At Home' as service_type,\n        'At Home'  as sub_service_type,\n                 \n        COUNT(DISTINCT usersessionid) as footfalls\n        \n\n      from (\n        select\n          md.user_id,\n          md.business_line,\n          -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n          end as pack_start_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n          end as pack_end_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n          end as membership_created_date\n        from dwh_fitness_mart.membership_dim md\n        left join pk_curefitplatforms_membershipdb.memberships mdb\n          on mdb.id = md.membership_service_id\n      ) base\n      \n        left join dwh_live.live_bookings\n        -- add membership_dim here\n      on live_bookings.userid=base.user_id and date(createddate_date) between pack_start_date and pack_end_date\n      and\n        year(createddate_date) >= year(Date('2017-01-01'))\n        -- Report window bounds at-home sessions, not just membership eligibility.\n        and date(createddate_date) between {{Start_Date}} and {{End_Date}}\n        -- Report window bounds at-home sessions, not just membership eligibility.\n        and date(createddate_date) between {{Start_Date}} and {{End_Date}}\n        and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n        -- Count only sessions where the user completed enough of the live workout.\n        and live_bookings.userid_50_percent_completed is not Null\n        \n        where 1=1\n      AND base.membership_created_date >= date('2017-01-01')\n      -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n      and base.business_line in ('LIVE','TRANSFORM')\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n"
         }
       ],
       "middleware": {
@@ -3003,7 +1690,7 @@
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-06-02T06:36:30.568326Z"
+        "invalidated-at": "2026-06-03T12:31:20.110578Z"
       },
       "viz-settings": {
         "table.pivot_column": "service_type",
@@ -3012,34 +1699,7 @@
       "database": 39,
       "parameters": [
         {
-          "slug": "grain",
-          "default": [
-            "quarter"
-          ],
-          "name": "grain",
-          "value": "month",
           "type": "string/=",
-          "values-source-config": {
-            "values": [
-              [
-                "day"
-              ],
-              [
-                "week"
-              ],
-              [
-                "quarter"
-              ],
-              [
-                "year"
-              ],
-              [
-                "month"
-              ]
-            ]
-          },
-          "ismultiselect": false,
-          "id": "1f605ed0-53a7-4e17-a4b6-7f98318d4130",
           "target": [
             "variable",
             [
@@ -3047,15 +1707,44 @@
               "grain"
             ]
           ],
-          "values-source-type": "static-list",
-          "values-query-type": "list"
+          "name": "grain",
+          "slug": "grain",
+          "value": [
+            "month"
+          ]
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "Start_Date"
+            ]
+          ],
+          "name": "Start_Date",
+          "slug": "Start_Date",
+          "value": "2023-04-01"
+        },
+        {
+          "type": "date/single",
+          "target": [
+            "variable",
+            [
+              "template-tag",
+              "End_Date"
+            ]
+          ],
+          "name": "End_Date",
+          "slug": "End_Date",
+          "value": "2026-03-31"
         }
       ]
     },
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
-    "row_count": 371,
-    "running_time": 26527
+    "row_count": 181,
+    "running_time": 14820
   }
 }
