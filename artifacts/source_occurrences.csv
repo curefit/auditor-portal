@@ -11,14 +11,11 @@ source_row,normalized_source_url,asset_type,asset_id,duplicate_of_source_row
 10,https://metabase.curefit.co/question/75650-same-city-vs-other-city-modified?Last_date=2026-02-09,question,75650,
 11,https://metabase.curefit.co/question/75654-gx-formats?Last_date=2025-12-31,question,75654,
 12,https://metabase.curefit.co/question/75628-pauses-extensions?ed=2025-12-31,question,75628,
-13,https://metabase.curefit.co/question/59428-nps-by-product-new?city_name=&end_date=2026-02-09&activity_status=actual-active&business_line=&service_type=&ownership_type=&center_name=&start_date=2025-12-01&sub_service_type=&center_service_id=,question,59428,
 14,https://metabase.curefit.co/dashboard/3324-pr-dashboard?business_line=&center_name=&center_service_id=&city_name=&ownership_type=&report_end_date=2025-12-31&report_start_date=2022-04-01&service_type=,dashboard,3324,
 15,https://metabase.curefit.co/question/67337-installs-by-type-source-duplicate?Time_Granularity=Month&From=2022-04-01&To=2025-12-31&City=&Campaign=&Value_Type=Users,question,67337,
 16,https://metabase.curefit.co/question/75999-page-ids-traffic?Start=2022-04-01&End=2025-12-31&Time_Granularity=Month,question,75999,
 17,https://metabase.curefit.co/question/67337-installs-by-type-source-duplicate?Time_Granularity=Month&From=2022-04-01&To=2025-12-31&City=&Campaign=&Value_Type=Users,question,67337,15
 18,https://metabase.curefit.co/question/75999-page-ids-traffic?Start=2022-04-01&End=2025-12-31&Time_Granularity=Month,question,75999,16
-19,https://metabase.curefit.co/question/30893-cst-class-data?start=2026-03-01&workout=&cluster=&center_name=&city=&end=2026-03-12,question,30893,
-20,https://metabase.curefit.co/question/30893-cst-class-data?start=2026-03-01&workout=&cluster=&center_name=&city=&end=2026-03-12,question,30893,19
 21,https://metabase.curefit.co/question/55566-footfalls-grained?Start_Date=2023-01-01&End_Date=2024-11-12&grain=quarter,question,55566,4
 22,https://metabase.curefit.co/question/75753-at-home-footfalls?grain=month,question,75753,5
 23,https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=,dashboard,4042,

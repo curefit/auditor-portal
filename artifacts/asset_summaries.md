@@ -695,56 +695,6 @@
 - `table` `stage_dwh.dwh_d2c_metrics_bizfin_sales_data` via card `75683` (lineage: `unresolved`)
   Unresolved reason: Relation not found in local dbt manifest.
 
-## CST - Class data (`question` 30893)
-
-- Source rows: `19|20`
-- Source URL: `https://metabase.curefit.co/question/30893-cst-class-data?start=2026-03-01&workout=&cluster=&center_name=&city=&end=2026-03-12`
-- Direct cards: `1`
-- Nested cards: `0`
-- Tables: `16`
-- Upstream core objects: `17`
-- Evidence status: `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html`
-- Notes: Relation not found in local dbt manifest.
-
-### Dependency Tree
-
-- Card `30893` `CST - Class data` (role: `root_question`, parent: `root`)
-
-### Table Dependencies
-
-- `table` `base` via card `30893` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `dwh_fitness.fitness_bookings` via card `30893` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `dwh_fitness_mart.employee_dim` via card `30893` (lineage: `derived_model`)
-  Upstream core objects: `pk_cultprod_cultapp.center|pk_cultprod_cultapp.cultemployee|pk_cultprod_cultapp.employeehomecentermapping|pk_curefitplatforms_identitydb.identity|pk_curefitplatforms_watchmen.membership|pk_hrms_neo_cult.designation|pk_hrms_neo_cult.employee|pk_hrms_neo_cult.exit_details|pk_hrms_neo_cult.job_details`
-- `table` `pk_cultprod_cultapp.Cultclassoos` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.cultclassoos`
-- `table` `pk_cultprod_cultapp.Toainstance` via card `30893` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `pk_cultprod_cultapp.WorkoutFamily` via card `30893` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `pk_cultprod_cultapp.WorkoutFamilyWorkoutMap` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.workoutfamilyworkoutmap`
-- `table` `pk_cultprod_cultapp.center` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.center`
-- `table` `pk_cultprod_cultapp.city` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.city`
-- `table` `pk_cultprod_cultapp.cultclass` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.cultclass`
-- `table` `pk_cultprod_cultapp.cultemployee` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.cultemployee`
-- `table` `pk_cultprod_cultapp.locationhierarchy` via card `30893` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `pk_cultprod_cultapp.trainercultclassmap` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.trainercultclassmap`
-- `table` `pk_cultprod_cultapp.waitlist` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.waitlist`
-- `table` `pk_cultprod_cultapp.workout` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_cultprod_cultapp.workout`
-- `table` `pk_curefitprod_center_service.center` via card `30893` (lineage: `source_table`)
-  Upstream core objects: `pk_curefitprod_center_service.center`
-
 ## Which of these below- mentioned statements best describes your fitness history. (`question` 47810)
 
 - Source rows: `6`
@@ -789,38 +739,6 @@
   Upstream core objects: `dwh_fitness_mart.center_dim`
 - `table` `dwh_fitness_mart.membership_dim` via card `55566` (lineage: `source_table`)
   Upstream core objects: `dwh_fitness_mart.membership_dim`
-
-## NPS by Product - New (`question` 59428)
-
-- Source rows: `13`
-- Source URL: `https://metabase.curefit.co/question/59428-nps-by-product-new?city_name=&end_date=2026-02-09&activity_status=actual-active&business_line=&service_type=&ownership_type=&center_name=&start_date=2025-12-01&sub_service_type=&center_service_id=`
-- Direct cards: `1`
-- Nested cards: `0`
-- Tables: `5`
-- Upstream core objects: `1`
-- Evidence status: `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html`
-- Notes: Relation not found in local dbt manifest.
-
-### Dependency Tree
-
-- Card `59428` `NPS by Product - New` (role: `root_question`, parent: `root`)
-
-### Table Dependencies
-
-- `cte` `individual_nps` via card `59428` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `cte` `platform_nps` via card `59428` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `combinations_base` via card `59428` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `dwh_fitness_mart.center_dim` via card `59428` (lineage: `source_table`)
-  Upstream core objects: `dwh_fitness_mart.center_dim`
-- `table` `dwh_fitness_metrics.footfall_by_service_type` via card `59428` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `dwh_fitness_metrics.nps_responses_base` via card `59428` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `nps_base` via card `59428` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
 
 ## # Installs by type & source - Duplicate (`question` 67337)
 

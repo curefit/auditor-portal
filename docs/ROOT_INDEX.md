@@ -5,10 +5,8 @@
 | `3324` PR DASHBOARD | `dashboard` | 2 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html` | [dashboard-3324.md](lineage/dashboard-3324.md) |
 | `3604` Cross Sell Dashboard | `dashboard` | 13 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html || query_sql|metadata_json|result_blocked` | [dashboard-3604.md](lineage/dashboard-3604.md) |
 | `4042` IPO Data | `dashboard` | 2 | 1 | `query_sql|metadata_json || query_sql|metadata_json|result_blocked` | [dashboard-4042.md](lineage/dashboard-4042.md) |
-| `30893` CST - Class data | `question` | 16 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html` | [question-30893.md](lineage/question-30893.md) |
 | `47810` Which of these below- mentioned statements best describes your fitness history. | `question` | 1 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html` | [question-47810.md](lineage/question-47810.md) |
 | `55566` #Footfalls - Grained | `question` | 4 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html` | [question-55566.md](lineage/question-55566.md) |
-| `59428` NPS by Product - New | `question` | 5 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html` | [question-59428.md](lineage/question-59428.md) |
 | `67337` # Installs by type & source - Duplicate | `question` | 1 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html` | [question-67337.md](lineage/question-67337.md) |
 | `75109` Memberships by Each Business Line - End of Each Month - including all packs | `question` | 2 | 0 | `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html` | [question-75109.md](lineage/question-75109.md) |
 | `75114` Monthly active memberships ELITE, PRO, PLAY, LUX | `question` | 2 | 0 | `query_sql|metadata_json|result_blocked` | [question-75114.md](lineage/question-75114.md) |
