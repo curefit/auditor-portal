@@ -3165,7 +3165,7 @@
         "nineMFy25": "32%",
         "nineMFy26": "34%",
         "sourceRaw": "https://metabase.curefit.co/question/75630-gender-split?ed=2023-03-31",
-        "limitations": "Lux not included"
+        "limitations": "Includes LUX"
       },
       "sheetMetricVia": "card"
     },
