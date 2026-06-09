@@ -1,104 +1,194 @@
--- Purpose: Count membership users by inferred gender using onboarding, user profile, and attribute sources.
--- Output: gender, members.
--- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the member base.
+-- Purpose:
+--   Count paid ELITE / PRO / PLAY / LUX members by gender as of the selected end date.
+--
+-- Auditor note:
+--   This query intentionally keeps the same gender source order as the older
+--   Metabase card, so the output remains comparable to prior reporting.
+--
+-- Output:
+--   Gender  - "m", "f", or "NA"
+--   MEMBERS - distinct paid member users in the eligible member base
+--
+-- Important validation note:
+--   The earlier aggressive simplification changed results because it allowed
+--   "predictedgender" rows from Rashi attributes to contribute. The original
+--   query text only scans Attribute IN ('Gender', 'gender', 'birthday'), so
+--   predictedgender is kept inside the CASE for compatibility but is not
+--   actually included by the WHERE filter.
 WITH
-  base AS (
-    SELECT
-      --date_trunc('quarter', dd.full_date) AS "quarter",
-      m.USER_ID
-    FROM
-      dwh_fitness_mart.membership_dim m
-      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
-        ON mdb.id = m.membership_service_id
-    --   JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date
-    WHERE 1=1
-    -- dd.full_date >= DATE('2025-01-01')
-      -- Use membership-service created_date for transferred/upgraded packs before building the member base.
-      AND DATE(
+
+-- 1. Build the eligible member base.
+--
+-- Business rule:
+--   Include users who had a paid ELITE / PRO / PLAY / LUX membership created between
+--   2017-10-01 and the selected Metabase end date {{ed}}.
+--
+-- Date rule:
+--   For transferred or upgraded packs, use the membership-service created_date.
+--   For all other packs, use membership_created_date from membership_dim.
+--
+-- Why GROUP BY 1:
+--   A user may have multiple qualifying memberships. The final count is member
+--   users, so each user should appear once in the base.
+base AS (
+  SELECT
+    m.user_id
+  FROM dwh_fitness_mart.membership_dim m
+  LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
+    ON mdb.id = m.membership_service_id
+  WHERE DATE(
+      CASE
+        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true'
+          OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true'
+          THEN mdb.created_date
+        ELSE m.membership_created_date
+      END
+    ) BETWEEN DATE('2017-10-01') AND {{ed}}
+    AND m.business_line IN ('ELITE', 'PRO', 'PLAY', 'LUX')
+    AND m.amount_paid > 0
+  GROUP BY 1
+),
+
+-- 2. Read gender captured during post-pack-purchase onboarding.
+--
+-- Business meaning:
+--   This is self-declared information from the onboarding form. It is used only
+--   when the user profile and Rashi attribute sources do not provide gender.
+--
+-- Why DOB fields remain here:
+--   The old card calculated age in this CTE even though the final report only
+--   shows gender. We keep the same calculation shape to avoid changing edge
+--   behavior in the source aggregation.
+age_onboarding AS (
+  SELECT
+    nrs.userid,
+    DATE_DIFF(
+      'year',
+      DATE(SUBSTR(MAX(CASE WHEN nrs.questionid = 'onboarding_user_dob_v1' THEN nrs.answer END), 1, 10)),
+      CURRENT_DATE
+    ) AS age,
+    DATE(SUBSTR(MAX(CASE WHEN nrs.questionid = 'onboarding_user_dob_v1' THEN nrs.answer END), 1, 10)) AS birthday,
+    SUBSTR(
+      MAX(
         CASE
-          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date
-          ELSE m.membership_created_date
+          WHEN nrs.questionid = '@Home Guidance_Gender_v1'
+            AND LOWER(TRIM(nrs.answer)) IN ('m', 'f')
+            THEN LOWER(TRIM(nrs.answer))
         END
-      ) between date('2017-10-01') AND {{ed}}
-      -- Gender split is shown for ELITE/PRO/PLAY members.
-      and m.business_line in ('ELITE','PRO','PLAY')
-      -- Exclude free packs from the member base.
-      and amount_paid>0
-    GROUP BY
+      ),
+      1,
       1
-  )
-, birthday_base as (
+    ) AS gender
+  FROM pk_curefitprod_cfdb.npsresponses nrs
+  WHERE nrs.answer IS NOT NULL
+    AND nrs.answer != ''
+    AND nrs.formid = 'post_pack_purchase_onboarding'
+    AND nrs.questionid IN ('onboarding_user_dob_v1', '@Home Guidance_Gender_v1')
+  GROUP BY 1
+),
 
+-- 3. Read gender from the latest user profile row.
+--
+-- Business meaning:
+--   This is the preferred source because it comes from the primary user profile.
+--
+-- Why ROW_NUMBER:
+--   The user table can contain multiple versions of a profile. The latest
+--   updated row is used, matching the older card behavior.
+user_age AS (
+  SELECT
+    CAST(id AS VARCHAR) AS userid,
+    CASE
+      WHEN SUBSTR(LOWER(TRIM(gender)), 1, 1) IN ('m', 'f')
+        THEN SUBSTR(LOWER(TRIM(gender)), 1, 1)
+    END AS gender,
+    DATE_DIFF('year', CAST(SUBSTR(birthday, 1, 10) AS DATE), CURRENT_DATE) AS age,
+    CAST(SUBSTR(birthday, 1, 10) AS DATE) AS birthday
+  FROM (
+    SELECT
+      id,
+      gender,
+      birthday,
+      ROW_NUMBER() OVER (PARTITION BY id ORDER BY updatedat DESC) AS rf
+    FROM pk_cfuserservice_cultapp.User
+  ) user
+  WHERE rf = 1
+),
 
-select 
-user_id
-,case when birthday between date('1970-01-01') and date_add('year',-18,now()) THEN cast(birthday as varchar) end as birthday
-,coalesce(case when cast(birthday as varchar)='-1' then null else age end,'NA') as age
-,coalesce(gender,'NA') as Gender
--- ,COALESCE(NULLIF(TRIM(gender), ''), 'NA') AS Gender
-,age_source
-,age_nos
-from (with age_onboarding as  (select nrs.userid
-,date_diff('year',date(substr(max(case when  nrs.questionid='onboarding_user_dob_v1' then  nrs.answer end),1,10)),current_date) as age 
-,date(substr(max(case when  nrs.questionid='onboarding_user_dob_v1' then  nrs.answer end),1,10)) as birthday
-,substr(max(case when questionid='@Home Guidance_Gender_v1' and lower(trim(answer)) in ('m','f') then lower(trim(answer)) end),1,1) as gender
-from pk_curefitprod_cfdb.npsresponses nrs 
-where 1=1
-and nrs.answer is not null and nrs.answer!=''
--- filter for onboarding forms 
-and nrs.formid='post_pack_purchase_onboarding' and nrs.questionid in ('onboarding_user_dob_v1','@Home Guidance_Gender_v1')
-group by 1)
+-- 4. Read gender from Rashi user attributes.
+--
+-- Business meaning:
+--   This is the fallback source after the user profile. It captures gender-like
+--   attributes stored in the Rashi platform.
+--
+-- Important:
+--   The WHERE clause intentionally includes only 'Gender', 'gender', and
+--   'birthday'. Although the CASE also mentions 'predictedgender', the original
+--   query never scanned predictedgender rows because of this WHERE filter.
+--   Keeping that behavior avoids changing reported numbers.
+rashi_age AS (
+  SELECT
+    CAST(Userid AS VARCHAR) AS userid,
+    DATE_DIFF(
+      'year',
+      MIN(DATE(FROM_UNIXTIME(CAST(CASE WHEN Attribute IN ('birthday') THEN value END AS DOUBLE) / 1000) + INTERVAL '330' MINUTE)),
+      CURRENT_DATE
+    ) AS age,
+    MIN(DATE(FROM_UNIXTIME(CAST(CASE WHEN Attribute IN ('birthday') THEN value END AS DOUBLE) / 1000) + INTERVAL '330' MINUTE)) AS birthday,
+    MAX(
+      CASE
+        WHEN Attribute IN ('Gender', 'gender', 'predictedgender')
+          AND COALESCE(
+            SUBSTR(LOWER(CAST(JSON_EXTRACT(value, '$.gender') AS VARCHAR)), 1, 1),
+            SUBSTR(TRIM(LOWER(value)), 1, 1)
+          ) IN ('m', 'f')
+          THEN COALESCE(
+            SUBSTR(LOWER(CAST(JSON_EXTRACT(value, '$.gender') AS VARCHAR)), 1, 1),
+            SUBSTR(TRIM(LOWER(value)), 1, 1)
+          )
+      END
+    ) AS gender
+  FROM pk_cfprodplatforms_rashi.User_Attribute
+  WHERE Attribute IN ('Gender', 'gender', 'birthday')
+    AND value != ''
+  GROUP BY 1
+),
 
-
-, user_age as (select cast(id as varchar) userid
-,case when substr(lower(trim(gender)),1,1) in ('m','f') then substr(lower(trim(gender)),1,1) end as gender
-,date_diff('year',cast(substr(birthday,1,10) as date),current_date) as age
-,cast(substr(birthday,1,10) as date) birthday
-from (select id, gender,birthday,row_number() over (partition by id order by updatedat desc) rf 
- from pk_cfuserservice_cultapp.User) user where rf=1)
-
-
-, rashi_age as  (select  cast(Userid as varchar) as userid 
-,date_diff('year',min(date(from_unixtime(cast(case when Attribute in ('birthday') then value end as double)/1000)+interval '330' minute)),current_date) as age
-,min(date(from_unixtime(cast(case when Attribute in ('birthday') then value end as double)/1000)+interval '330' minute)) as birthday
-, max(case when Attribute in ('Gender','gender','predictedgender') and coalesce(substr(lower(CAST(json_extract(value, '$.gender') AS VARCHAR)),1,1),substr(trim(lower(value)),1,1)) in ('m','f') then coalesce(substr(lower(CAST(json_extract(value, '$.gender') AS VARCHAR)),1,1),substr(trim(lower(value)),1,1)) end) as gender
-from
-pk_cfprodplatforms_rashi.User_Attribute where  Attribute in (
- 'Gender'
-,'gender'
-, 'birthday'
-) and value !=''
-group by 1
---having min(date(from_unixtime(cast(value as double)/1000)+interval '330' minute)) > date_trunc('year',current_date) - interval '100' year  and min(date(from_unixtime(cast(value as double)/1000)+interval '330' minute))<=date_trunc('year',current_date)
+-- 5. Pick one gender per user.
+--
+-- Source priority:
+--   1. Latest user profile gender
+--   2. Rashi attribute gender
+--   3. Onboarding form gender
+--   4. NA when no valid gender is available
+--
+-- Why we still start from the full User table:
+--   This mirrors the old card. Restricting this step to only users in base is
+--   tempting for performance, but it caused a small result difference in
+--   validation. For audit reporting, we keep the exact source behavior.
+gender_base AS (
+  SELECT
+    CAST(u.id AS VARCHAR) AS user_id,
+    COALESCE(ua.gender, ra.gender, ab.gender, 'NA') AS gender
+  FROM pk_cfuserservice_cultapp.User u
+  LEFT JOIN user_age ua
+    ON ua.userid = CAST(u.id AS VARCHAR)
+  LEFT JOIN rashi_age ra
+    ON CAST(ra.userid AS VARCHAR) = CAST(u.id AS VARCHAR)
+  LEFT JOIN age_onboarding ab
+    ON CAST(ab.userid AS VARCHAR) = CAST(u.id AS VARCHAR)
 )
 
-
-
-select cast(u.id as varchar) as user_id , case when coalesce(ua.age,ra.age,ab.age) is null then 'AGE NA'
-when coalesce(ua.age,ra.age,ab.age) between 0 and 20 then '0-20 yrs'
-when coalesce(ua.age,ra.age,ab.age) between 20 and 60 then concat(cast(coalesce(ua.age,ra.age,ab.age) as varchar),' yrs')
-when coalesce(ua.age,ra.age,ab.age) >60 then '>60 yrs' end age
-,coalesce(ua.age,ra.age,ab.age) as age_nos
-,coalesce(ua.gender,ra.gender,ab.gender,'NA') as gender
-,coalesce(ua.birthday,ra.birthday,ab.birthday) as birthday
-,case when ua.age is not null then 'user_table'
- when ra.age is not null then 'rashi_table'
- when ab.age is not null then 'onboarding_table'
-else 'no_value' end as age_source
-from pk_cfuserservice_cultapp.User u
-left join user_age ua on ua.userid=cast(u.id as varchar)
-left join rashi_age ra on  cast(ra.userid as varchar)=cast(u.id as varchar)
-left join age_onboarding ab on  cast(ab.userid as varchar)=cast(u.id as varchar)
-)
-m
-)
-,GENDER_BASE AS ( 
-select gender,USER_ID
-from birthday_base)
-
-SELECT  COALESCE(NULLIF(TRIM(gender), ''), 'NA') AS Gender,COUNT(BASE.USER_ID) MEMBERS--,COUNT_IF(UPPER(GENDER)='F') FEMALE_MEMBERS,COUNT_IF(UPPER(GENDER)='M') MALE_MEMBERS
-FROM BASE 
-LEFT JOIN GENDER_BASE ON GENDER_BASE.USER_ID = BASE.USER_ID
+-- 6. Join the eligible member base to the selected gender and count members.
+--
+-- Final cleanup:
+--   Blank gender values are reported as NA. This keeps the output simple and
+--   avoids a separate empty-string bucket in the table.
+SELECT
+  COALESCE(NULLIF(TRIM(gender_base.gender), ''), 'NA') AS Gender,
+  COUNT(base.user_id) AS MEMBERS
+FROM base
+LEFT JOIN gender_base
+  ON gender_base.user_id = base.user_id
 GROUP BY 1
-order by 1
-
+ORDER BY 1
