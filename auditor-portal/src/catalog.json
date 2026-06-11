@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 116,
+  "count": 123,
   "entries": [
     {
       "cardId": "75753",
@@ -5853,6 +5853,360 @@
         "limitations": ""
       },
       "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "84486",
+      "name": "Apparel New Launch Style Id",
+      "rootKey": "question-84486",
+      "rootAssetName": "Apparel New Launch Style Id",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84486",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84486__apparel-new-launch-style-id.sql",
+        "metadata": "artifacts/metadata/84486__apparel-new-launch-style-id.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84486__84486__apparel-new-launch-style-id.csv",
+        "artifacts/results/question-84486__84486__apparel-new-launch-style-id.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 23,
+        "slNo": "5",
+        "metricName": "# New designs in Apparel",
+        "definition": "Total number of unique style ID launched during the year in apparel category",
+        "status": "",
+        "poc": "",
+        "units": "#",
+        "fy23": "",
+        "fy24": "355",
+        "fy25": "1,013",
+        "fy26": "1445",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84486-apparel-new-launch-style-id",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "84562",
+      "name": "Financial Year Wise Cross Sell Percentage",
+      "rootKey": "question-84562",
+      "rootAssetName": "Financial Year Wise Cross Sell Percentage",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84562",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84562__financial-year-wise-cross-sell-percentage.sql",
+        "metadata": "artifacts/metadata/84562__financial-year-wise-cross-sell-percentage.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84562__84562__financial-year-wise-cross-sell-percentage.csv",
+        "artifacts/results/question-84562__84562__financial-year-wise-cross-sell-percentage.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_metrics.cross_sell_orders",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 27,
+        "slNo": "12",
+        "metricName": "Cross sell rev as % of Products rev",
+        "definition": "Product Revenue from Paid members on own channel expressed as a % of total product revenue on own channel during the period / year.",
+        "status": "",
+        "poc": "",
+        "units": "%",
+        "fy23": "",
+        "fy24": "29.07%",
+        "fy25": "32.37%",
+        "fy26": "31.75%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84562-financial-year-wise-cross-sell-percentage",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "84487",
+      "name": "Footwear New Launch Style Id",
+      "rootKey": "question-84487",
+      "rootAssetName": "Footwear New Launch Style Id",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84487",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84487__footwear-new-launch-style-id.sql",
+        "metadata": "artifacts/metadata/84487__footwear-new-launch-style-id.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84487__84487__footwear-new-launch-style-id.csv",
+        "artifacts/results/question-84487__84487__footwear-new-launch-style-id.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 24,
+        "slNo": "6",
+        "metricName": "# New designs in Footwear",
+        "definition": "Total number of unique style ID launched during the year in footwear category",
+        "status": "",
+        "poc": "",
+        "units": "#",
+        "fy23": "",
+        "fy24": "205",
+        "fy25": "212",
+        "fy26": "387",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84487-footwear-new-launch-style-id",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "84661",
+      "name": "Online Channel Percentage",
+      "rootKey": "question-84661",
+      "rootAssetName": "Online Channel Percentage",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84661",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84661__online-channel-percentage.sql",
+        "metadata": "artifacts/metadata/84661__online-channel-percentage.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84661__84661__online-channel-percentage.csv",
+        "artifacts/results/question-84661__84661__online-channel-percentage.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 25,
+        "slNo": "9",
+        "metricName": "Product sales - Online vs Offline in FY25",
+        "definition": "Product Sales (Online) - Total product sales through Company website, app, third party marketplaces divided by the total product sales during the period / year\n Product Sales (Offline) - All Product Sales less Product Sales (Online) during the period / year.",
+        "status": "",
+        "poc": "",
+        "units": "%",
+        "fy23": "",
+        "fy24": "76.55%",
+        "fy25": "75.63%",
+        "fy26": "75.31%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84661-online-channel-percentage",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:84661:drhp:25"
+    },
+    {
+      "cardId": "84661",
+      "name": "Online Channel Percentage",
+      "rootKey": "question-84661",
+      "rootAssetName": "Online Channel Percentage",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84661",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84661__online-channel-percentage.sql",
+        "metadata": "artifacts/metadata/84661__online-channel-percentage.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84661__84661__online-channel-percentage.csv",
+        "artifacts/results/question-84661__84661__online-channel-percentage.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 26,
+        "slNo": "11",
+        "metricName": "Own Channel %",
+        "definition": "Total product sales through Company website app and EBO stores",
+        "status": "",
+        "poc": "",
+        "units": "%",
+        "fy23": "",
+        "fy24": "",
+        "fy25": "7.43%",
+        "fy26": "23.90%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84661-online-channel-percentage",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:84661:drhp:26"
+    },
+    {
+      "cardId": "84483",
+      "name": "Summary",
+      "rootKey": "question-84483",
+      "rootAssetName": "Summary",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84483",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84483__summary.sql",
+        "metadata": "artifacts/metadata/84483__summary.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84483__84483__summary.csv",
+        "artifacts/results/question-84483__84483__summary.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 21,
+        "slNo": "2",
+        "metricName": "# Products sold annually",
+        "definition": "Total no. of products sold across all categories in the period / year through all channels.",
+        "status": "",
+        "poc": "",
+        "units": "In lacs",
+        "fy23": "",
+        "fy24": "19.0",
+        "fy25": "30.4",
+        "fy26": "42.39",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84483-summary",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:84483:drhp:21"
+    },
+    {
+      "cardId": "84483",
+      "name": "Summary",
+      "rootKey": "question-84483",
+      "rootAssetName": "Summary",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84483",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84483__summary.sql",
+        "metadata": "artifacts/metadata/84483__summary.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84483__84483__summary.csv",
+        "artifacts/results/question-84483__84483__summary.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 22,
+        "slNo": "4",
+        "metricName": "# SKUs sold",
+        "definition": "Total number of unique style ID sold during the year",
+        "status": "",
+        "poc": "",
+        "units": "#",
+        "fy23": "",
+        "fy24": "3,172",
+        "fy25": "4,586",
+        "fy26": "6457",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84483-summary",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:84483:drhp:22"
     }
   ],
   "dbt": {
