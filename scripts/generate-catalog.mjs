@@ -42,6 +42,7 @@ const PREVIEWS = join(ARTIFACTS, "previews");
 const QUERIES = join(ARTIFACTS, "queries");
 const METADATA = join(ARTIFACTS, "metadata");
 const RESULTS = join(ARTIFACTS, "results");
+const DUPLICATE_SHEET_CARD_IDS = new Set(["84483", "84661"]);
 
 function loadEnvFile() {
   const p = join(REPO_ROOT, ".env");
@@ -944,8 +945,11 @@ async function main() {
 
     const sheetCardMetrics = sheetCardMap.get(cardId);
     if (sheetCardMetrics?.length) {
-      const needsEntryKey = sheetCardMetrics.length > 1;
-      for (const sheetMetric of sheetCardMetrics) {
+      const metricsForCard = DUPLICATE_SHEET_CARD_IDS.has(cardId)
+        ? sheetCardMetrics
+        : [sheetCardMetrics[0]];
+      const needsEntryKey = metricsForCard.length > 1;
+      for (const sheetMetric of metricsForCard) {
         const entry = {
           ...baseEntry,
           sheetMetric,
