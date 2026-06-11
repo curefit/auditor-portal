@@ -42,6 +42,7 @@ const PREVIEWS = join(ARTIFACTS, "previews");
 const QUERIES = join(ARTIFACTS, "queries");
 const METADATA = join(ARTIFACTS, "metadata");
 const RESULTS = join(ARTIFACTS, "results");
+// Allow-list: these Metabase question IDs intentionally map to multiple DRHP rows in op_metrics_sheet.csv.
 const DUPLICATE_SHEET_CARD_IDS = new Set(["84483", "84661"]);
 
 function loadEnvFile() {
