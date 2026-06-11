@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 115,
+  "count": 116,
   "entries": [
     {
       "cardId": "75753",
@@ -5776,6 +5776,80 @@
         "nineMFy25": "",
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/84466-gx-class-cancellation-excludes-no-booking-classes",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "72394",
+      "name": "Spot Offer, Referral Discount, & NCE Orders",
+      "rootKey": "question-72394",
+      "rootAssetName": "Spot Offer, Referral Discount, & NCE Orders",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/72394",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/72394__spot-offer-referral-discount-nce-orders.sql",
+        "metadata": "artifacts/metadata/72394__spot-offer-referral-discount-nce-orders.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-72394__72394__spot-offer-referral-discount-nce-orders.csv",
+        "artifacts/results/question-72394__72394__spot-offer-referral-discount-nce-orders.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.membership_dim",
+          "dbtModelPaths": [
+            "transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "githubBlobUrls": [
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "localSqlUrls": [
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness_mart.offer_dim",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness_mart.orders_offer_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 48,
+        "slNo": "48",
+        "metricName": "Referrals",
+        "definition": "Referral orders as a percentage of new orders during the relevant period/year.",
+        "status": "Done",
+        "poc": "",
+        "units": "%",
+        "fy23": "",
+        "fy24": "24%",
+        "fy25": "29%",
+        "fy26": "39%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/72394-spot-offer-referral-discount-nce-orders",
         "limitations": ""
       },
       "sheetMetricVia": "card"
