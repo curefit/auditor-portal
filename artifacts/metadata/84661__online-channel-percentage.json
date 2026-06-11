@@ -1,0 +1,307 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 6,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(22)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "metric",
+      "lib/original-name": "metric",
+      "name": "metric",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "metric",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "metric",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "metric",
+      "display_name": "metric",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 19
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "FY23",
+      "lib/original-name": "FY23",
+      "name": "FY23",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "FY23",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "FY23",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "FY23",
+      "display_name": "FY23",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.3333333333333333
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.1479,
+            "q1": 0.1479,
+            "q3": 0.8521,
+            "max": 0.8521,
+            "sd": 0.4979445953115667,
+            "avg": 0.5
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "FY24",
+      "lib/original-name": "FY24",
+      "name": "FY24",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "FY24",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "FY24",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "FY24",
+      "display_name": "FY24",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.3333333333333333
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.2345,
+            "q1": 0.2345,
+            "q3": 0.7655,
+            "max": 0.7655,
+            "sd": 0.3754737008100567,
+            "avg": 0.5
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "FY25",
+      "lib/original-name": "FY25",
+      "name": "FY25",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "FY25",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "FY25",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "FY25",
+      "display_name": "FY25",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0743,
+            "q1": 0.11665,
+            "q3": 0.62815,
+            "max": 0.7563,
+            "sd": 0.35510071810684923,
+            "avg": 0.35810000000000003
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "FY26",
+      "lib/original-name": "FY26",
+      "name": "FY26",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "FY26",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "FY26",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "FY26",
+      "display_name": "FY26",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.239,
+            "q1": 0.240975,
+            "q3": 0.6265499999999999,
+            "max": 0.7531,
+            "sd": 0.2945617252801185,
+            "avg": 0.413
+          }
+        }
+      },
+      "base_type": "type/Float"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-02T07:19:11.458627Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": false,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7339,
+  "query_type": "native",
+  "name": "Online Channel Percentage",
+  "last_query_start": "2026-06-11T12:19:03.742172Z",
+  "is_remote_synced": false,
+  "dashboard_count": 1,
+  "document_id": null,
+  "last_used_at": "2026-06-11T12:19:03.746748Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 1521,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-11T12:17:04.197036Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "WITH base_data AS (\n    SELECT\n        DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) AS invoice_dt,\n        TRIM(manual_channel_type) AS manual_channel_type,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2026-03-31'\n),\n\nyearly_summary AS (\n    SELECT\n        CASE\n            WHEN invoice_dt BETWEEN DATE '2022-04-01' AND DATE '2023-03-31' THEN 'FY23'\n            WHEN invoice_dt BETWEEN DATE '2023-04-01' AND DATE '2024-03-31' THEN 'FY24'\n            WHEN invoice_dt BETWEEN DATE '2024-04-01' AND DATE '2025-03-31' THEN 'FY25'\n            WHEN invoice_dt BETWEEN DATE '2025-04-01' AND DATE '2026-03-31' THEN 'FY26'\n        END AS year,\n        ROUND(SUM(base_amount)) AS total_base_amount,\n        ROUND(SUM(CASE\n            WHEN manual_channel_type IN ('1P', '3P', 'B2B MP', 'Online', 'Others', 'To Check') THEN base_amount\n            ELSE 0\n        END)) AS online_base_amount,\n        ROUND(SUM(CASE\n            WHEN manual_channel_type IN ('B2B', 'Commerical', 'EBO', 'Liquidation', 'Offline')\n                OR manual_channel_type IS NULL THEN base_amount\n            ELSE 0\n        END)) AS offline_base_amount,\n        ROUND(SUM(CASE\n            WHEN invoice_dt BETWEEN DATE '2024-04-01' AND DATE '2026-03-31'\n                AND manual_channel_type IN ('1P', 'EBO') THEN base_amount\n        END)) AS ownchannel_base_amount\n    FROM base_data\n    GROUP BY 1\n),\n\nmetric_rows AS (\n    SELECT\n        1 AS sort_order,\n        'Online Percentage' AS metric,\n        year,\n        ROUND(online_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_order,\n        'Offline Percentage' AS metric,\n        year,\n        ROUND(offline_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_order,\n        'Own Channel Percentage' AS metric,\n        year,\n        ROUND(ownchannel_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n)\n\nSELECT\n    metric,\n    MAX(CASE WHEN year = 'FY23' THEN metric_value END) AS FY23,\n    MAX(CASE WHEN year = 'FY24' THEN metric_value END) AS FY24,\n    MAX(CASE WHEN year = 'FY25' THEN metric_value END) AS FY25,\n    MAX(CASE WHEN year = 'FY26' THEN metric_value END) AS FY26\nFROM metric_rows\nGROUP BY\n    sort_order,\n    metric\nORDER BY sort_order"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 84661,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "zSxV7r-EWzFgIvd8lRB5a",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-06-11T12:17:04.239218Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "year",
+    "table.cell_column": "total_amount",
+    "table.transpose": false,
+    "column_settings": {
+      "[\"name\",\"FY23\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"FY24\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"FY25\"]": {
+        "number_style": "percent"
+      },
+      "[\"name\",\"FY26\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "metebase_cards",
+    "archive_operation_id": null,
+    "name": "Metebase Cards",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7339,
+    "archived_directly": null,
+    "entity_id": "8E5u3Fi3zn6gnP5O8N-WX",
+    "location": "/4814/5587/6459/5602/6582/7338/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-06-11T07:26:42.808767Z"
+  },
+  "metabase_version": "v0.60.1 (0cf890b)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-11T12:17:04.197036Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

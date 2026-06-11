@@ -1,0 +1,185 @@
+{
+  "cache_invalidated_at": "2026-06-11T12:17:10.061083Z",
+  "description": null,
+  "archived": false,
+  "view_count": 31,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(4)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "year",
+      "lib/original-name": "year",
+      "name": "year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "year",
+      "display_name": "year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 4
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "bigint",
+      "semantic_type": "type/Quantity",
+      "lib/deduplicated-name": "style_id_count",
+      "lib/original-name": "style_id_count",
+      "name": "style_id_count",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "style_id_count",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "style_id_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "effective_type": "type/BigInteger",
+      "lib/desired-column-alias": "style_id_count",
+      "display_name": "style_id_count",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 355,
+            "q1": 684,
+            "q3": 1255,
+            "max": 1445,
+            "sd": 452.6672803137716,
+            "avg": 969.5
+          }
+        }
+      },
+      "base_type": "type/BigInteger"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-02T07:19:11.458627Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": false,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7339,
+  "query_type": "native",
+  "name": "Apparel New Launch Style Id",
+  "last_query_start": "2026-06-11T12:17:13.727721Z",
+  "is_remote_synced": false,
+  "dashboard_count": 2,
+  "document_id": null,
+  "last_used_at": "2026-06-11T12:17:13.735594Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 2666.1666666666665,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-11T12:17:10.072448Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category = 'Apparel'\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key\n\n"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 84486,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "UaJdvKR4VOBo6uiMrBDKF",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-06-11T08:29:13.019696Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "business_unit",
+    "table.cell_column": "unique_id",
+    "pie.metric": "total_amount",
+    "pie.dimension": [
+      "month"
+    ]
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "metebase_cards",
+    "archive_operation_id": null,
+    "name": "Metebase Cards",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7339,
+    "archived_directly": null,
+    "entity_id": "8E5u3Fi3zn6gnP5O8N-WX",
+    "location": "/4814/5587/6459/5602/6582/7338/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-06-11T07:26:42.808767Z"
+  },
+  "metabase_version": "v0.60.1 (0cf890b)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-10T12:17:26.089409Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

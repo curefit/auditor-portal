@@ -52,6 +52,7 @@ export type SheetMetric = {
 };
 
 export type CatalogEntry = {
+  entryKey?: string;
   cardId: string;
   name: string;
   rootKey: string;

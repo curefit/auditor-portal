@@ -402,10 +402,12 @@ function DashboardGroup({
       {open &&
         cards.map((card) => (
           <tr
-            key={card.cardId}
-            data-card-id={card.cardId}
+            key={card.entryKey ?? card.cardId}
+            data-card-id={card.entryKey ?? card.cardId}
             className={`border-b border-zinc-800/40 bg-zinc-950/40 hover:bg-zinc-900/60 ${
-              selected?.cardId === card.cardId ? "bg-emerald-950/20" : ""
+              (selected?.entryKey ?? selected?.cardId) === (card.entryKey ?? card.cardId)
+                ? "bg-emerald-950/20"
+                : ""
             }`}
           >
             <td className="py-3 pl-14 pr-4">
@@ -787,7 +789,7 @@ export default function MetricsPage() {
       const key =
         e.sheetMetricVia === "dashboard" && e.dashboardId
           ? `dash:${e.dashboardId}`
-          : `card:${e.cardId}`;
+          : (e.entryKey ?? `card:${e.cardId}`);
       seen.add(key);
     }
     return seen.size;
@@ -883,7 +885,8 @@ export default function MetricsPage() {
 
   useEffect(() => {
     if (!selected) return;
-    const row = tableScrollRef.current?.querySelector(`[data-card-id="${selected.cardId}"]`);
+    const selectedKey = selected.entryKey ?? selected.cardId;
+    const row = tableScrollRef.current?.querySelector(`[data-card-id="${selectedKey}"]`);
     row?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [selected]);
 
@@ -1021,10 +1024,12 @@ export default function MetricsPage() {
                 const e = row.entry;
                 return (
                   <tr
-                    key={e.cardId}
-                    data-card-id={e.cardId}
+                    key={e.entryKey ?? e.cardId}
+                    data-card-id={e.entryKey ?? e.cardId}
                     className={`border-b border-zinc-800/80 hover:bg-zinc-900/60 ${
-                      selected?.cardId === e.cardId ? "bg-emerald-950/20" : ""
+                      (selected?.entryKey ?? selected?.cardId) === (e.entryKey ?? e.cardId)
+                        ? "bg-emerald-950/20"
+                        : ""
                     }`}
                   >
                     <td className="px-6 py-4">

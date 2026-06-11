@@ -145,7 +145,7 @@ function parseCsvRows(csvText) {
 
 /**
  * Parses the DRHP op-metrics sheet CSV.
- * Returns a Map<cardId, sheetMetric> for every row whose Source column
+ * Returns one or more sheet metrics for every card ID whose Source column
  * contains at least one metabase.curefit.co/question/<id> link.
  *
  * CSV column layout (0-indexed):
@@ -156,7 +156,7 @@ function parseCsvRows(csvText) {
  */
 /**
  * Returns { cardMap, dashboardMap } where:
- * - cardMap: Map<questionCardId, sheetMetric>  (matched via /question/<id>)
+ * - cardMap: Map<questionCardId, sheetMetric[]> (matched via /question/<id>)
  * - dashboardMap: Map<dashboardId, sheetMetric> (matched via /dashboard/<id>)
  * sheetOrder is the 0-based position of the metric in the CSV (preserves DRHP list order).
  */
@@ -197,7 +197,8 @@ function parseOpMetricsSheet(csvText) {
     let m;
     QUESTION_RE.lastIndex = 0;
     while ((m = QUESTION_RE.exec(source))) {
-      if (!cardMap.has(m[1])) cardMap.set(m[1], metric);
+      const existing = cardMap.get(m[1]) ?? [];
+      cardMap.set(m[1], [...existing, metric]);
     }
     DASHBOARD_RE.lastIndex = 0;
     while ((m = DASHBOARD_RE.exec(source))) {
@@ -226,6 +227,10 @@ function firstMetadataFile(cardId) {
     (n) => n.startsWith(`${cardId}__`) && n.endsWith(".json"),
   );
   return names[0] ?? null;
+}
+
+function entryKeyFor(cardId, sheetMetric) {
+  return sheetMetric ? `card:${cardId}:drhp:${sheetMetric.sheetOrder}` : `card:${cardId}`;
 }
 
 function cardIdFromQueryFilename(name) {
@@ -915,7 +920,7 @@ async function main() {
       ),
     );
 
-    entries.push({
+    const baseEntry = {
       cardId,
       name,
       rootKey,
@@ -935,12 +940,34 @@ async function main() {
       },
       results: resultFilesFor(cardId),
       sqlLineageRelations,
-      ...(sheetCardMap.has(cardId)
-        ? { sheetMetric: sheetCardMap.get(cardId), sheetMetricVia: "card" }
-        : sheetDashboardMap.has(csv?.dashboard_id?.trim())
-          ? { sheetMetric: sheetDashboardMap.get(csv.dashboard_id.trim()), sheetMetricVia: "dashboard" }
-          : { sheetMetric: null, sheetMetricVia: null }),
-    });
+    };
+
+    const sheetCardMetrics = sheetCardMap.get(cardId);
+    if (sheetCardMetrics?.length) {
+      const needsEntryKey = sheetCardMetrics.length > 1;
+      for (const sheetMetric of sheetCardMetrics) {
+        const entry = {
+          ...baseEntry,
+          sheetMetric,
+          sheetMetricVia: "card",
+        };
+        if (needsEntryKey) entry.entryKey = entryKeyFor(cardId, sheetMetric);
+        entries.push(entry);
+      }
+    } else if (sheetDashboardMap.has(csv?.dashboard_id?.trim())) {
+      const sheetMetric = sheetDashboardMap.get(csv.dashboard_id.trim());
+      entries.push({
+        ...baseEntry,
+        sheetMetric,
+        sheetMetricVia: "dashboard",
+      });
+    } else {
+      entries.push({
+        ...baseEntry,
+        sheetMetric: null,
+        sheetMetricVia: null,
+      });
+    }
   }
 
   entries.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));

@@ -1,0 +1,263 @@
+{
+  "cache_invalidated_at": "2026-06-11T12:17:10.061083Z",
+  "description": null,
+  "archived": false,
+  "view_count": 67,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(4)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "year",
+      "lib/original-name": "year",
+      "name": "year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "year",
+      "display_name": "year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 4
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "base_amount",
+      "lib/original-name": "base_amount",
+      "name": "base_amount",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "base_amount",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "base_amount",
+      "display_name": "base_amount",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 2257453822,
+            "q1": 2412003109,
+            "q3": 4263579858,
+            "max": 5269610572,
+            "sd": 1354043699.03443,
+            "avg": 3337791483.5
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "total_units",
+      "lib/original-name": "total_units",
+      "name": "total_units",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "total_units",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "total_units",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "total_units",
+      "display_name": "total_units",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1320098,
+            "q1": 1612054,
+            "q3": 3639096.5,
+            "max": 4239419,
+            "sd": 1291014.086766775,
+            "avg": 2625575.25
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "total_unique_styleid",
+      "lib/original-name": "total_unique_styleid",
+      "name": "total_unique_styleid",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "total_unique_styleid",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "total_unique_styleid",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "effective_type": "type/BigInteger",
+      "lib/desired-column-alias": "total_unique_styleid",
+      "display_name": "total_unique_styleid",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1809,
+            "q1": 2490.5,
+            "q3": 5521.5,
+            "max": 6457,
+            "sd": 1988.8158956189652,
+            "avg": 4006
+          }
+        }
+      },
+      "base_type": "type/BigInteger"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-02T07:19:11.458627Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": false,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7339,
+  "query_type": "native",
+  "name": "Summary",
+  "last_query_start": "2026-06-11T12:17:10.250393Z",
+  "is_remote_synced": false,
+  "dashboard_count": 2,
+  "document_id": null,
+  "last_used_at": "2026-06-11T12:17:10.288884Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 1634.8333333333333,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-11T12:17:10.072448Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "native": "SELECT year,\n       -- total_amount,\n       base_amount,\n       -- total_nlc,\n       ROUND(total_units) AS total_units,\n       -- gm,\n       -- gm_percent,\n       -- total_unique_sku_code,\n       total_unique_styleid\n       -- total_unique_pincode\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key",
+        "lib/type": "mbql.stage/native"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 84483,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "EtlnE_sP3Pz4xZSFWwuM1",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-06-11T09:08:43.313068Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "year",
+    "table.cell_column": "total_amount",
+    "table.transpose": true,
+    "table.column_widths": [
+      null,
+      null,
+      null,
+      null,
+      209
+    ]
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "metebase_cards",
+    "archive_operation_id": null,
+    "name": "Metebase Cards",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7339,
+    "archived_directly": null,
+    "entity_id": "8E5u3Fi3zn6gnP5O8N-WX",
+    "location": "/4814/5587/6459/5602/6582/7338/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-06-11T07:26:42.808767Z"
+  },
+  "metabase_version": "v0.60.1 (0cf890b)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-10T12:05:16.06429Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

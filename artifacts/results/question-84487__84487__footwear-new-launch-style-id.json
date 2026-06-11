@@ -1,0 +1,203 @@
+{
+  "card_id": 84487,
+  "card_name": "Footwear New Launch Style Id",
+  "parameters": [],
+  "parameter_notes": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "FY23",
+          139
+        ],
+        [
+          "FY24",
+          205
+        ],
+        [
+          "FY25",
+          212
+        ],
+        [
+          "FY26",
+          387
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar(4)",
+          "lib/deduplicated-name": "year",
+          "lib/original-name": "year",
+          "name": "year",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "year",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "year",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "year",
+          "display_name": "year",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "style_id_count",
+          "lib/original-name": "style_id_count",
+          "name": "style_id_count",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "style_id_count",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "style_id_count",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "style_id_count",
+          "display_name": "style_id_count",
+          "base_type": "type/BigInteger"
+        }
+      ],
+      "native_form": {
+        "lib/type": "mbql.stage/native",
+        "query": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category IN ('CS Footwear', 'Avant Footwear')\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key\n\n"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "varchar(4)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "year",
+            "lib/original-name": "year",
+            "name": "year",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "year",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "year",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "year",
+            "display_name": "year",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 4
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": "type/Quantity",
+            "lib/deduplicated-name": "style_id_count",
+            "lib/original-name": "style_id_count",
+            "name": "style_id_count",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "style_id_count",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "style_id_count",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "style_id_count",
+            "display_name": "style_id_count",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 139,
+                  "q1": 172,
+                  "q3": 299.5,
+                  "max": 387,
+                  "sd": 106.06091017272418,
+                  "avg": 235.75
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-11T13:57:19.426485111Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "native": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category IN ('CS Footwear', 'Avant Footwear')\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key\n\n"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-11T12:17:10.061083Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "business_unit",
+        "table.cell_column": "unique_id",
+        "pie.metric": "total_amount",
+        "pie.dimension": [
+          "month"
+        ]
+      },
+      "database": 39
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 4,
+    "running_time": 737
+  }
+}

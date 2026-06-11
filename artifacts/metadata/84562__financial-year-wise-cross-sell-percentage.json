@@ -1,0 +1,181 @@
+{
+  "cache_invalidated_at": "2026-06-11T12:17:10.061083Z",
+  "description": null,
+  "archived": false,
+  "view_count": 15,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(4)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "financial_year",
+      "lib/original-name": "financial_year",
+      "name": "financial_year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "financial_year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "financial_year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "financial_year",
+      "display_name": "financial_year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 4
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": "type/Share",
+      "lib/deduplicated-name": "cross_sell_percentage",
+      "lib/original-name": "cross_sell_percentage",
+      "name": "cross_sell_percentage",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "cross_sell_percentage",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "cross_sell_percentage",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "cross_sell_percentage",
+      "display_name": "cross_sell_percentage",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 29.07,
+            "q1": 30.41,
+            "q3": 42.004999999999995,
+            "max": 51.64,
+            "sd": 10.387519354173707,
+            "avg": 36.207499999999996
+          }
+        }
+      },
+      "base_type": "type/Float"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-02T07:19:11.458627Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": false,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7339,
+  "query_type": "native",
+  "name": "Financial Year Wise Cross Sell Percentage",
+  "last_query_start": "2026-06-11T12:17:13.721815Z",
+  "is_remote_synced": false,
+  "dashboard_count": 1,
+  "document_id": null,
+  "last_used_at": "2026-06-11T12:17:13.727182Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 10987,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-11T12:17:10.072448Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "WITH base AS (\n    SELECT\n        CASE\n            WHEN order_date BETWEEN DATE('2022-04-01') AND DATE('2023-03-31') THEN 'FY23'\n            WHEN order_date BETWEEN DATE('2023-04-01') AND DATE('2024-03-31') THEN 'FY24'\n            WHEN order_date BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'\n            WHEN order_date BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'\n        END AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE('2022-04-01') AND DATE('2026-03-31')\n      AND is_fs_member IN (0, 1)\n),\ngrouped AS (\n    SELECT\n        fy,\n        cross_sell_vs_1p,\n        SUM(gmv) AS total_gmv\n    FROM base\n    WHERE fy IS NOT NULL\n    GROUP BY 1, 2\n)\n\nSELECT fy AS financial_year, pct_gmv AS cross_sell_percentage\nFROM \n(\nSELECT\n    fy,\n    cross_sell_vs_1p,\n    ROUND(total_gmv, 0) AS total_gmv,\n    ROUND(\n        100.0 * total_gmv / SUM(total_gmv) OVER (PARTITION BY fy),\n        2\n    ) AS pct_gmv\nFROM grouped\n)\nWHERE cross_sell_vs_1p = 'CROSS-SELL'\nORDER BY fy"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 84562,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "KJjahFngZ6sWA20ps9sqk",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-06-11T07:27:32.800342Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "financial_year",
+    "table.cell_column": "cross_sell_percentage"
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "metebase_cards",
+    "archive_operation_id": null,
+    "name": "Metebase Cards",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7339,
+    "archived_directly": null,
+    "entity_id": "8E5u3Fi3zn6gnP5O8N-WX",
+    "location": "/4814/5587/6459/5602/6582/7338/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-06-11T07:26:42.808767Z"
+  },
+  "metabase_version": "v0.60.1 (0cf890b)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-11T07:27:32.758667Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}
