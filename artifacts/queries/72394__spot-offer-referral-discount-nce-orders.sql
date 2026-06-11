@@ -46,9 +46,9 @@ WITH non_complimentary_memberships AS (
 
         Auditor note:
           This CTE is not date-bounded. That means it uses the full available
-          membership history to classify whether a user's membership is first
-          or repeat. This is useful for lifetime New/Repeat accuracy.
-		  Actual date-bounding is carried out in base CTE by defining Main reporting window for membership orders.
+        membership history to classify whether a user's membership is first
+        or repeat. This is useful for lifetime New/Repeat accuracy.
+        Actual date-bounding is carried out in the base CTE by defining the main reporting window for membership orders.
     */
     SELECT
         membership_dim.membership_key,
