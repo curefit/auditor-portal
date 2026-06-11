@@ -1,0 +1,375 @@
+{
+  "id": 83998,
+  "name": "Gx hourly utilization %",
+  "description": "Reconstructed locally from Metabase query response because OAuth scope could execute this card but could not read /api/card metadata.",
+  "display": "table",
+  "dataset_query": {
+    "type": "native",
+    "native": {
+      "query": "-- Purpose:\n--   Show GX class utilization by hour of day, split by financial year.\n--\n-- Business definition:\n--   Utilization % = total attended bookings / total scheduled capacity * 100\n--\n-- Plain-English summary:\n--   1. Take all uncancelled scheduled GX classes in the reporting period.\n--   2. Count attended bookings for each class.\n--   3. Capture each class's scheduled capacity.\n--   4. Aggregate attendance and capacity by financial year and class start hour.\n--   5. Calculate utilization as total attendance divided by total capacity.\n--\n-- Auditor note:\n--   This query uses weighted utilization:\n--     SUM(attendance) / SUM(capacity)\n--\n--   This is different from averaging each class's utilization percentage.\n--   Weighted utilization is the correct method when the definition is:\n--     total footfalls / total capacity\n\nWITH class_utilization AS (\n\n    SELECT\n        -- Financial year mapping.\n        --\n        -- FY24 = Apr 2023 to Mar 2024\n        -- FY25 = Apr 2024 to Mar 2025\n        -- FY26 = Apr 2025 to Mar 2026\n        CASE\n            WHEN DATE(a.date) BETWEEN DATE('2023-04-01') AND DATE('2024-03-31') THEN 'FY24'\n            WHEN DATE(a.date) BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'\n            WHEN DATE(a.date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'\n        END AS fy,\n\n        -- Class start hour.\n        -- Example: a class starting at 7:30 is grouped under hour 7.\n        EXTRACT(HOUR FROM a.startdatetimeutc) AS class_hour,\n\n        -- One row per scheduled class.\n        a.id AS class_id,\n\n        -- Attended bookings for this class.\n        -- DISTINCT protects against duplicate booking rows.\n        COUNT(\n            DISTINCT CASE\n                WHEN fb.attendance_time IS NOT NULL\n                THEN fb.elite_bookingid\n            END\n        ) AS attendance,\n\n        -- Scheduled capacity for this class.\n        -- MAX is used because joining bookings creates multiple rows per class.\n        -- Capacity itself is a class-level value, so MAX collapses it back to\n        -- one value per class.\n        MAX(a.totalseats) AS capacity\n\n    FROM pk_cultprod_cultapp.cultclass a\n\n    LEFT JOIN dwh_fitness.fitness_bookings fb\n        ON a.id = fb.class_id\n       AND fb.category = 'ELITE_CENTER'\n       AND DATE(fb.class_date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')\n\n    WHERE DATE(a.date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')\n      AND DATE(a.createdat_date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')\n\n      -- Exclude cancelled/deleted classes.\n      -- These should not contribute attendance or scheduled capacity.\n      AND a.deletedat IS NULL\n\n    GROUP BY 1,2,3\n),\n\nhourly_utilization AS (\n\n    SELECT\n        fy,\n        class_hour,\n\n        -- Total attended bookings for this FY-hour bucket.\n        SUM(attendance) AS total_attendance,\n\n        -- Total scheduled seats for uncancelled classes in this FY-hour bucket.\n        SUM(capacity) AS total_capacity,\n\n        -- Correct utilization definition:\n        -- total attendance divided by total capacity.\n        100.0 * SUM(attendance) / NULLIF(SUM(capacity), 0) AS utilization_pct\n\n    FROM class_utilization\n    WHERE fy IS NOT NULL\n    GROUP BY 1,2\n)\n\nSELECT\n    fy,\n\n    -- Each hourly column is:\n    --   total attendance in that FY-hour / total capacity in that FY-hour\n    ROUND(MAX(CASE WHEN class_hour = 5 THEN utilization_pct END),1)  AS hr_05,\n    ROUND(MAX(CASE WHEN class_hour = 6 THEN utilization_pct END),1)  AS hr_06,\n    ROUND(MAX(CASE WHEN class_hour = 7 THEN utilization_pct END),1)  AS hr_07,\n    ROUND(MAX(CASE WHEN class_hour = 8 THEN utilization_pct END),1)  AS hr_08,\n    ROUND(MAX(CASE WHEN class_hour = 9 THEN utilization_pct END),1)  AS hr_09,\n    ROUND(MAX(CASE WHEN class_hour = 10 THEN utilization_pct END),1) AS hr_10,\n    ROUND(MAX(CASE WHEN class_hour = 11 THEN utilization_pct END),1) AS hr_11,\n    ROUND(MAX(CASE WHEN class_hour = 12 THEN utilization_pct END),1) AS hr_12,\n    ROUND(MAX(CASE WHEN class_hour = 13 THEN utilization_pct END),1) AS hr_13,\n    ROUND(MAX(CASE WHEN class_hour = 14 THEN utilization_pct END),1) AS hr_14,\n    ROUND(MAX(CASE WHEN class_hour = 15 THEN utilization_pct END),1) AS hr_15,\n    ROUND(MAX(CASE WHEN class_hour = 16 THEN utilization_pct END),1) AS hr_16,\n    ROUND(MAX(CASE WHEN class_hour = 17 THEN utilization_pct END),1) AS hr_17,\n    ROUND(MAX(CASE WHEN class_hour = 18 THEN utilization_pct END),1) AS hr_18,\n    ROUND(MAX(CASE WHEN class_hour = 19 THEN utilization_pct END),1) AS hr_19,\n    ROUND(MAX(CASE WHEN class_hour = 20 THEN utilization_pct END),1) AS hr_20,\n    ROUND(MAX(CASE WHEN class_hour = 21 THEN utilization_pct END),1) AS hr_21\n\nFROM hourly_utilization\n\nGROUP BY fy\n\nORDER BY fy\n\n-- WITH class_utilization AS (\n\n--     SELECT\n--         CASE\n--             WHEN DATE(a.date) BETWEEN DATE('2023-04-01') AND DATE('2024-03-31') THEN 'FY24'\n--             WHEN DATE(a.date) BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'\n--             WHEN DATE(a.date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'\n--         END AS fy,\n\n--         EXTRACT(HOUR FROM a.startdatetimeutc) AS class_hour,\n\n--         a.id AS class_id,\n\n--         COUNT(\n--             DISTINCT CASE\n--                 WHEN fb.attendance_time IS NOT NULL\n--                 THEN fb.elite_bookingid\n--             END\n--         ) AS attendance,\n\n--         MAX(a.totalseats) AS capacity\n\n--     FROM pk_cultprod_cultapp.cultclass a\n\n--     LEFT JOIN dwh_fitness.fitness_bookings fb\n--         ON a.id = fb.class_id\n--        AND fb.category = 'ELITE_CENTER'\n--        AND DATE(fb.class_date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')\n\n--     WHERE DATE(a.date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')\n--       AND DATE(a.createdat_date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')\n--       AND a.deletedat IS NULL\n\n--     GROUP BY 1,2,3\n-- ),\n\n-- class_util_pct AS (\n\n--     SELECT\n--         fy,\n--         class_hour,\n--         class_id,\n--         100.0 * attendance / NULLIF(capacity,0) AS utilization_pct\n--     FROM class_utilization\n--     WHERE fy IS NOT NULL\n-- )\n\n-- SELECT\n--     fy,\n\n--     ROUND(AVG(CASE WHEN class_hour = 5 THEN utilization_pct END),1)  AS hr_05,\n--     ROUND(AVG(CASE WHEN class_hour = 6 THEN utilization_pct END),1)  AS hr_06,\n--     ROUND(AVG(CASE WHEN class_hour = 7 THEN utilization_pct END),1)  AS hr_07,\n--     ROUND(AVG(CASE WHEN class_hour = 8 THEN utilization_pct END),1)  AS hr_08,\n--     ROUND(AVG(CASE WHEN class_hour = 9 THEN utilization_pct END),1)  AS hr_09,\n--     ROUND(AVG(CASE WHEN class_hour = 10 THEN utilization_pct END),1) AS hr_10,\n--     ROUND(AVG(CASE WHEN class_hour = 11 THEN utilization_pct END),1) AS hr_11,\n--     ROUND(AVG(CASE WHEN class_hour = 12 THEN utilization_pct END),1) AS hr_12,\n--     ROUND(AVG(CASE WHEN class_hour = 13 THEN utilization_pct END),1) AS hr_13,\n--     ROUND(AVG(CASE WHEN class_hour = 14 THEN utilization_pct END),1) AS hr_14,\n--     ROUND(AVG(CASE WHEN class_hour = 15 THEN utilization_pct END),1) AS hr_15,\n--     ROUND(AVG(CASE WHEN class_hour = 16 THEN utilization_pct END),1) AS hr_16,\n--     ROUND(AVG(CASE WHEN class_hour = 17 THEN utilization_pct END),1) AS hr_17,\n--     ROUND(AVG(CASE WHEN class_hour = 18 THEN utilization_pct END),1) AS hr_18,\n--     ROUND(AVG(CASE WHEN class_hour = 19 THEN utilization_pct END),1) AS hr_19,\n--     ROUND(AVG(CASE WHEN class_hour = 20 THEN utilization_pct END),1) AS hr_20,\n--     ROUND(AVG(CASE WHEN class_hour = 21 THEN utilization_pct END),1) AS hr_21\n\n-- FROM class_util_pct\n\n-- GROUP BY fy\n\n-- ORDER BY fy"
+    }
+  },
+  "parameters": [],
+  "result_metadata": [
+    {
+      "database_type": "varchar(4)",
+      "lib/deduplicated-name": "fy",
+      "lib/original-name": "fy",
+      "name": "fy",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fy",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fy",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "fy",
+      "display_name": "fy",
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_05",
+      "lib/original-name": "hr_05",
+      "name": "hr_05",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_05",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_05",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_05",
+      "display_name": "hr_05",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_06",
+      "lib/original-name": "hr_06",
+      "name": "hr_06",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_06",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_06",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_06",
+      "display_name": "hr_06",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_07",
+      "lib/original-name": "hr_07",
+      "name": "hr_07",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_07",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_07",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_07",
+      "display_name": "hr_07",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_08",
+      "lib/original-name": "hr_08",
+      "name": "hr_08",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_08",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_08",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_08",
+      "display_name": "hr_08",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_09",
+      "lib/original-name": "hr_09",
+      "name": "hr_09",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_09",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_09",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_09",
+      "display_name": "hr_09",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_10",
+      "lib/original-name": "hr_10",
+      "name": "hr_10",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_10",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_10",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_10",
+      "display_name": "hr_10",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_11",
+      "lib/original-name": "hr_11",
+      "name": "hr_11",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_11",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_11",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_11",
+      "display_name": "hr_11",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_12",
+      "lib/original-name": "hr_12",
+      "name": "hr_12",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_12",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_12",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_12",
+      "display_name": "hr_12",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_13",
+      "lib/original-name": "hr_13",
+      "name": "hr_13",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_13",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_13",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_13",
+      "display_name": "hr_13",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_14",
+      "lib/original-name": "hr_14",
+      "name": "hr_14",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_14",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_14",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_14",
+      "display_name": "hr_14",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_15",
+      "lib/original-name": "hr_15",
+      "name": "hr_15",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_15",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_15",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_15",
+      "display_name": "hr_15",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_16",
+      "lib/original-name": "hr_16",
+      "name": "hr_16",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_16",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_16",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_16",
+      "display_name": "hr_16",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_17",
+      "lib/original-name": "hr_17",
+      "name": "hr_17",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_17",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_17",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_17",
+      "display_name": "hr_17",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_18",
+      "lib/original-name": "hr_18",
+      "name": "hr_18",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_18",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_18",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_18",
+      "display_name": "hr_18",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_19",
+      "lib/original-name": "hr_19",
+      "name": "hr_19",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_19",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_19",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_19",
+      "display_name": "hr_19",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_20",
+      "lib/original-name": "hr_20",
+      "name": "hr_20",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_20",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_20",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_20",
+      "display_name": "hr_20",
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "lib/deduplicated-name": "hr_21",
+      "lib/original-name": "hr_21",
+      "name": "hr_21",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "hr_21",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "hr_21",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "hr_21",
+      "display_name": "hr_21",
+      "base_type": "type/Decimal"
+    }
+  ]
+}

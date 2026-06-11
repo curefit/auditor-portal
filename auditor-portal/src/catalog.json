@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 113,
+  "count": 115,
   "entries": [
     {
       "cardId": "75753",
@@ -640,24 +640,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68052",
@@ -858,24 +842,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63781",
@@ -2606,24 +2574,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75876",
@@ -2656,24 +2608,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "76602",
@@ -2706,24 +2642,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75906",
@@ -2756,24 +2676,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "76604",
@@ -2806,24 +2710,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68065",
@@ -3919,24 +3807,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68061",
@@ -4081,24 +3953,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75864",
@@ -4131,24 +3987,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75860",
@@ -4181,24 +4021,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75868",
@@ -4231,24 +4055,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75859",
@@ -4281,24 +4089,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75863",
@@ -4331,24 +4123,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75114",
@@ -4461,24 +4237,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75894",
@@ -4511,24 +4271,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63791",
@@ -5670,24 +5414,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63795",
@@ -5831,24 +5559,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "71754",
@@ -6760,24 +6472,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75870",
@@ -6810,24 +6506,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75871",
@@ -6860,24 +6540,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 22,
-        "slNo": "3",
-        "metricName": "# Products shipped anually",
-        "definition": "# Product units sold during the period",
-        "status": "",
-        "poc": "",
-        "units": "In lacs",
-        "fy23": "",
-        "fy24": "19.0",
-        "fy25": "30.4",
-        "fy26": "42.39",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/4042-ipo-data?business_unit=&category=&end_date=&period=&start_date=",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "70058",
@@ -7042,6 +6706,133 @@
         "nineMFy26": "46%",
         "sourceRaw": "https://metabase.curefit.co/question/47810-which-of-these-below-mentioned-statements-best-describes-your-fitness-history",
         "limitations": "Lux not included"
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "83998",
+      "name": "Gx hourly utilization %",
+      "rootKey": "question-83998",
+      "rootAssetName": "Gx hourly utilization %",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/83998",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/83998__gx-hourly-utilization.sql",
+        "metadata": "artifacts/metadata/83998__gx-hourly-utilization.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-83998__83998__gx-hourly-utilization.csv",
+        "artifacts/results/question-83998__83998__gx-hourly-utilization.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "a.startdatetimeutc",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness.fitness_bookings",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cultprod_cultapp.cultclass",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 30,
+        "slNo": "30",
+        "metricName": "Gx class peak utilization %",
+        "definition": "Peak utilization percentage for GX classes during the relevant period/year.",
+        "status": "Done",
+        "poc": "Gx team",
+        "units": "%",
+        "fy23": "",
+        "fy24": "66.20%",
+        "fy25": "68.20%",
+        "fy26": "66.70%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/83998-gx-hourly-utilization",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "84466",
+      "name": "Gx class cancellation % - excludes no-booking classes",
+      "rootKey": "question-84466",
+      "rootAssetName": "Gx class cancellation % - excludes no-booking classes",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84466",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84466__gx-class-cancellation-excludes-no-booking-classes.sql",
+        "metadata": "artifacts/metadata/84466__gx-class-cancellation-excludes-no-booking-classes.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84466__84466__gx-class-cancellation-excludes-no-booking-classes.csv",
+        "artifacts/results/question-84466__84466__gx-class-cancellation-excludes-no-booking-classes.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness.fitness_bookings",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cultprod_cultapp.cultclass",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 29,
+        "slNo": "29",
+        "metricName": "Gx class cancellation rate %",
+        "definition": "Percentage of GX classes cancelled, excluding no-booking classes.",
+        "status": "Done",
+        "poc": "Gx team",
+        "units": "%",
+        "fy23": "",
+        "fy24": "3.36%",
+        "fy25": "1.38%",
+        "fy26": "0.71%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84466-gx-class-cancellation-excludes-no-booking-classes",
+        "limitations": ""
       },
       "sheetMetricVia": "card"
     }
