@@ -1,4 +1,6 @@
 root_key,root_asset_id,root_asset_name,dashboard_id,dashboard_name,dashcard_id,card_id,card_name,dashboard_tab_id,row,col
+question-83998,83998,Gx hourly utilization %,,,,83998,Gx hourly utilization %,,,
+question-84466,84466,Gx class cancellation % - excludes no-booking classes,,,,84466,Gx class cancellation % - excludes no-booking classes,,,
 question-74738,74738,How much data from wearbles v3,,,,74738,How much data from wearbles v3,,,
 question-79589,79589,adhoc 20-04-2026,,,,79589,adhoc 20-04-2026,,,
 dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26096,56424,PR BY PRODUCT,,0,0
