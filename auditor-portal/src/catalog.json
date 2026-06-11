@@ -310,24 +310,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "66134",
@@ -366,24 +350,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "79589",
@@ -478,24 +446,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63788",
@@ -534,24 +486,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68056",
@@ -590,24 +526,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75865",
@@ -680,24 +600,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63786",
@@ -736,24 +640,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63745",
@@ -792,24 +680,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75869",
@@ -882,24 +754,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63738",
@@ -938,24 +794,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68048",
@@ -994,24 +834,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63754",
@@ -1050,24 +874,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63748",
@@ -1106,24 +914,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63750",
@@ -1162,24 +954,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "72328",
@@ -1218,24 +994,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "72384",
@@ -1274,24 +1034,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "72383",
@@ -1330,24 +1074,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "72385",
@@ -1440,24 +1168,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65204",
@@ -1496,24 +1208,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63753",
@@ -1552,24 +1248,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "64443",
@@ -1608,24 +1288,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "83969",
@@ -1768,24 +1432,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65637",
@@ -1908,24 +1556,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65196",
@@ -1964,24 +1596,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65195",
@@ -2020,24 +1636,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65202",
@@ -2076,24 +1676,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "70149",
@@ -2132,24 +1716,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65198",
@@ -2188,24 +1756,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65138",
@@ -2244,24 +1796,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65159",
@@ -2300,24 +1836,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "64117",
@@ -2356,24 +1876,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65122",
@@ -2412,24 +1916,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65124",
@@ -2468,24 +1956,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "65123",
@@ -2524,24 +1996,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75867",
@@ -2750,24 +2206,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68064",
@@ -2806,24 +2246,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63763",
@@ -2940,24 +2364,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75630",
@@ -3094,24 +2502,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63761",
@@ -3150,24 +2542,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63746",
@@ -3206,24 +2582,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63774",
@@ -3262,24 +2622,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75654",
@@ -3520,24 +2864,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68066",
@@ -3576,24 +2904,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75109",
@@ -3847,24 +3159,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68059",
@@ -3903,24 +3199,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75910",
@@ -4311,24 +3591,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63760",
@@ -4367,24 +3631,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63735",
@@ -4423,24 +3671,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63733",
@@ -4479,24 +3711,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "72323",
@@ -4535,24 +3751,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "72319",
@@ -4591,24 +3791,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "71753",
@@ -4647,24 +3831,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75999",
@@ -4860,24 +4028,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "56868",
@@ -5478,24 +4630,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75683",
@@ -5599,24 +4735,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "72382",
@@ -5655,24 +4775,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "56872",
@@ -5974,24 +5078,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63731",
@@ -6030,24 +5118,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "68051",
@@ -6086,24 +5158,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63726",
@@ -6142,24 +5198,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "66102",
@@ -6198,24 +5238,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63734",
@@ -6254,24 +5278,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63729",
@@ -6310,24 +5318,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63767",
@@ -6366,24 +5358,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "63759",
@@ -6422,24 +5398,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "75736",
@@ -6640,24 +5600,8 @@
           "fallbackLocalUrls": []
         }
       ],
-      "sheetMetric": {
-        "sheetOrder": 24,
-        "slNo": "13",
-        "metricName": "Cross sell rev as % of Products rev",
-        "definition": "Total revenue generated from product sales to customers holding an active membership with the Company, divided by the total product sales revenue during the relevant period/year",
-        "status": "",
-        "poc": "",
-        "units": "%",
-        "fy23": "",
-        "fy24": "29.07%",
-        "fy25": "32.39%",
-        "fy26": "31.69%",
-        "nineMFy25": "",
-        "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/dashboard/3604-cross-sell-dashboard?active_end_date=2026-01-31&active_start_date=2025-04-01&business_line=&category=Indoor+Equipment&category=Indoor_Equipment-Strength&cohort=&compare_with_current_date=1&compare_with_current_month=1&consider_active_time=1&consider_city=0&coupon_code=&current_month_active_vs_expired=&current_month_trend=1&date_filter=Month&date_of_month_end_date=&date_of_month_start_date=&first_membership_created_end_date=&first_membership_created_start_date=&is_freebie_order=1&is_fs_member=1&membership_created_end_date=&membership_created_start_date=&month_end_date=&month_start_date=&no_of_month=2&order_end_date=2026-01-31&order_start_date=2026-01-01&service_type=&source=&store_name=&tab=207-visualization&twelve_month_trend=1",
-        "limitations": ""
-      },
-      "sheetMetricVia": "dashboard"
+      "sheetMetric": null,
+      "sheetMetricVia": null
     },
     {
       "cardId": "47810",
