@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 123,
+  "count": 124,
   "entries": [
     {
       "cardId": "75753",
@@ -6207,6 +6207,65 @@
       },
       "sheetMetricVia": "card",
       "entryKey": "card:84483:drhp:22"
+    },
+    {
+      "cardId": "84704",
+      "name": "Total Transacting Customer",
+      "rootKey": "question-84704",
+      "rootAssetName": "Total Transacting Customer",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84704",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84704__total-transacting-customer.sql",
+        "metadata": "artifacts/metadata/84704__total-transacting-customer.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84704__84704__total-transacting-customer.csv",
+        "artifacts/results/question-84704__84704__total-transacting-customer.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_d2c_metrics.d2c_bizfin_revenue",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 21,
+        "slNo": "1",
+        "metricName": "# Annual transacting customers",
+        "definition": "Total no. of estimated unique customers who have purchased active lifestyle products of Cult Brands in the period / year across all channels.",
+        "status": "",
+        "poc": "",
+        "units": "In lacs",
+        "fy23": "",
+        "fy24": "10.4",
+        "fy25": "13.2",
+        "fy26": "21.29",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84704-total-transacting-customer",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
     }
   ],
   "dbt": {
