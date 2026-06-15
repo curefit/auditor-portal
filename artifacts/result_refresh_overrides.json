@@ -609,16 +609,6 @@
         }
       }
     },
-    "67337": {
-      "params": {
-        "City": {
-          "action": "remove"
-        },
-        "Campaign": {
-          "action": "remove"
-        }
-      }
-    },
     "68048": {
       "params": {
         "month_start_date": {
