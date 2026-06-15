@@ -740,26 +740,6 @@
 - `table` `dwh_fitness_mart.membership_dim` via card `55566` (lineage: `source_table`)
   Upstream core objects: `dwh_fitness_mart.membership_dim`
 
-## # Installs by type & source - Duplicate (`question` 67337)
-
-- Source rows: `15|17`
-- Source URL: `https://metabase.curefit.co/question/67337-installs-by-type-source-duplicate?Time_Granularity=Month&From=2022-04-01&To=2025-12-31&City=&Campaign=&Value_Type=Users`
-- Direct cards: `1`
-- Nested cards: `0`
-- Tables: `1`
-- Upstream core objects: `0`
-- Evidence status: `query_sql|metadata_json|raw_csv|output_preview_html|lineage_preview_html`
-- Notes: Relation not found in local dbt manifest.
-
-### Dependency Tree
-
-- Card `67337` `# Installs by type & source - Duplicate` (role: `root_question`, parent: `root`)
-
-### Table Dependencies
-
-- `table` `dwh_growth_mart.growth_install_fact` via card `67337` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-
 ## Memberships by Each Business Line - End of Each Month - including all packs (`question` 75109)
 
 - Source rows: `1`
@@ -984,28 +964,6 @@
   Upstream core objects: `dwh_fitness_mart.membership_dim`
 - `table` `dwh_live.live_bookings` via card `75753` (lineage: `source_table`)
   Upstream core objects: `dwh_live.live_bookings`
-
-## Page Ids Traffic (`question` 75999)
-
-- Source rows: `16|18`
-- Source URL: `https://metabase.curefit.co/question/75999-page-ids-traffic?Start=2022-04-01&End=2025-12-31&Time_Granularity=Month`
-- Direct cards: `1`
-- Nested cards: `0`
-- Tables: `2`
-- Upstream core objects: `0`
-- Evidence status: `query_sql|metadata_json|result_blocked`
-- Notes: Relation not found in local dbt manifest.
-
-### Dependency Tree
-
-- Card `75999` `Page Ids Traffic` (role: `root_question`, parent: `root`)
-
-### Table Dependencies
-
-- `table` `base` via card `75999` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
-- `table` `pk_curefit_app_events.page_view` via card `75999` (lineage: `unresolved`)
-  Unresolved reason: Relation not found in local dbt manifest.
 
 ## 12M Packs Sold Monthly Jun 2026 (`question` 83969)
 
