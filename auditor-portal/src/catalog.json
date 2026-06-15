@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 122,
+  "count": 123,
   "entries": [
     {
       "cardId": "75753",
@@ -296,6 +296,101 @@
       ],
       "sheetMetric": null,
       "sheetMetricVia": null
+    },
+    {
+      "cardId": "84472",
+      "name": "Monthly Hometab Openers - Any Activity Or Purchase",
+      "rootKey": "question-84472",
+      "rootAssetName": "Monthly Hometab Openers - Any Activity Or Purchase",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/84472",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/84472__monthly-hometab-openers-any-activity-or-purchase.sql",
+        "metadata": "artifacts/metadata/84472__monthly-hometab-openers-any-activity-or-purchase.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-84472__84472__monthly-hometab-openers-any-activity-or-purchase.csv",
+        "artifacts/results/question-84472__84472__monthly-hometab-openers-any-activity-or-purchase.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_cultsports.item_view",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness_mart.booking_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness_mart.membership_dim",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefit_app_events.page_view",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_d2c_cultstore.order_placed",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 12,
+        "slNo": "23",
+        "metricName": "# Avg. Monthly users of app",
+        "definition": "Average no. of unique customers per month who have visited the app and have done any activity in the fitness services (booked session/purchased pack) and the fitness products segments (purchased product).",
+        "status": "Done",
+        "poc": "Analytics",
+        "units": "#",
+        "fy23": "",
+        "fy24": "368719",
+        "fy25": "461126",
+        "fy26": "545155",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/84472-monthly-hometab-openers-any-activity-or-purchase",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
     },
     {
       "cardId": "79589",

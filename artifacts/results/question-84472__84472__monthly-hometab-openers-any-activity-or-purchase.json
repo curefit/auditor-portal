@@ -1,0 +1,662 @@
+{
+  "card_id": 84472,
+  "card_name": "Monthly Hometab Openers - Any Activity Or Purchase",
+  "parameters": [],
+  "parameter_notes": [
+    "Results copied from the provided CSV; the Metabase query was intentionally not run because it is bulky."
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "April 1, 2023",
+          776939,
+          318330,
+          54999,
+          7177,
+          333482,
+          40.97,
+          7.08,
+          0.92,
+          42.92
+        ],
+        [
+          "May 1, 2023",
+          792578,
+          327635,
+          41214,
+          6172,
+          340463,
+          41.34,
+          5.2,
+          0.78,
+          42.96
+        ],
+        [
+          "June 1, 2023",
+          835828,
+          338994,
+          44481,
+          6407,
+          352679,
+          40.56,
+          5.32,
+          0.77,
+          42.2
+        ],
+        [
+          "July 1, 2023",
+          888600,
+          353190,
+          56224,
+          6956,
+          370114,
+          39.75,
+          6.33,
+          0.78,
+          41.65
+        ],
+        [
+          "August 1, 2023",
+          868061,
+          357939,
+          49580,
+          7156,
+          373966,
+          41.23,
+          5.71,
+          0.82,
+          43.08
+        ],
+        [
+          "September 1, 2023",
+          833844,
+          355482,
+          47075,
+          7045,
+          371840,
+          42.63,
+          5.65,
+          0.84,
+          44.59
+        ],
+        [
+          "October 1, 2023",
+          842580,
+          358888,
+          39741,
+          6185,
+          372826,
+          42.59,
+          4.72,
+          0.73,
+          44.25
+        ],
+        [
+          "November 1, 2023",
+          870134,
+          335423,
+          41263,
+          6227,
+          349835,
+          38.55,
+          4.74,
+          0.72,
+          40.2
+        ],
+        [
+          "December 1, 2023",
+          855567,
+          344311,
+          49702,
+          10190,
+          366049,
+          40.24,
+          5.81,
+          1.19,
+          42.78
+        ],
+        [
+          "January 1, 2024",
+          923766,
+          372696,
+          55278,
+          8033,
+          391243,
+          40.35,
+          5.98,
+          0.87,
+          42.35
+        ],
+        [
+          "February 1, 2024",
+          880359,
+          381438,
+          45140,
+          7424,
+          396087,
+          43.33,
+          5.13,
+          0.84,
+          44.99
+        ],
+        [
+          "March 1, 2024",
+          908611,
+          390279,
+          47518,
+          7302,
+          406042,
+          42.95,
+          5.23,
+          0.8,
+          44.69
+        ],
+        [
+          "April 1, 2024",
+          936575,
+          410336,
+          59182,
+          7533,
+          426546,
+          43.81,
+          6.32,
+          0.8,
+          45.54
+        ],
+        [
+          "May 1, 2024",
+          955451,
+          424878,
+          46189,
+          6502,
+          439009,
+          44.47,
+          4.83,
+          0.68,
+          45.95
+        ],
+        [
+          "June 1, 2024",
+          966110,
+          433703,
+          51264,
+          6062,
+          448173,
+          44.89,
+          5.31,
+          0.63,
+          46.39
+        ],
+        [
+          "July 1, 2024",
+          1001606,
+          447283,
+          60218,
+          8117,
+          464169,
+          44.66,
+          6.01,
+          0.81,
+          46.34
+        ],
+        [
+          "August 1, 2024",
+          989347,
+          451426,
+          56854,
+          8625,
+          468026,
+          45.63,
+          5.75,
+          0.87,
+          47.31
+        ],
+        [
+          "September 1, 2024",
+          988612,
+          456275,
+          56406,
+          8966,
+          472832,
+          46.15,
+          5.71,
+          0.91,
+          47.83
+        ],
+        [
+          "October 1, 2024",
+          945399,
+          436017,
+          41467,
+          7499,
+          449536,
+          46.12,
+          4.39,
+          0.79,
+          47.55
+        ],
+        [
+          "November 1, 2024",
+          936507,
+          431610,
+          50507,
+          8137,
+          446611,
+          46.09,
+          5.39,
+          0.87,
+          47.69
+        ],
+        [
+          "December 1, 2024",
+          925678,
+          423439,
+          55023,
+          7841,
+          445009,
+          45.74,
+          5.94,
+          0.85,
+          48.07
+        ],
+        [
+          "January 1, 2025",
+          1195838,
+          473045,
+          61880,
+          7571,
+          491025,
+          39.56,
+          5.17,
+          0.63,
+          41.06
+        ],
+        [
+          "February 1, 2025",
+          1493458,
+          467259,
+          45052,
+          5935,
+          480311,
+          31.29,
+          3.02,
+          0.4,
+          32.16
+        ],
+        [
+          "March 1, 2025",
+          1196630,
+          484932,
+          55598,
+          8023,
+          502261,
+          40.52,
+          4.65,
+          0.67,
+          41.97
+        ],
+        [
+          "April 1, 2025",
+          1169704,
+          501592,
+          54729,
+          8825,
+          516864,
+          42.88,
+          4.68,
+          0.75,
+          44.19
+        ],
+        [
+          "May 1, 2025",
+          1225779,
+          511070,
+          69253,
+          11829,
+          528961,
+          41.69,
+          5.65,
+          0.97,
+          43.15
+        ],
+        [
+          "June 1, 2025",
+          1236489,
+          526762,
+          54428,
+          9761,
+          541796,
+          42.6,
+          4.4,
+          0.79,
+          43.82
+        ],
+        [
+          "July 1, 2025",
+          1290727,
+          548202,
+          62646,
+          11220,
+          565216,
+          42.47,
+          4.85,
+          0.87,
+          43.79
+        ],
+        [
+          "August 1, 2025",
+          1245846,
+          530980,
+          61258,
+          10035,
+          550212,
+          42.62,
+          4.92,
+          0.81,
+          44.16
+        ],
+        [
+          "September 1, 2025",
+          1206520,
+          529900,
+          58615,
+          9613,
+          549120,
+          43.92,
+          4.86,
+          0.8,
+          45.51
+        ],
+        [
+          "October 1, 2025",
+          1211345,
+          502036,
+          46733,
+          10042,
+          517745,
+          41.44,
+          3.86,
+          0.83,
+          42.74
+        ],
+        [
+          "November 1, 2025",
+          1292914,
+          517885,
+          55389,
+          14869,
+          535685,
+          40.06,
+          4.28,
+          1.15,
+          41.43
+        ],
+        [
+          "December 1, 2025",
+          1341017,
+          504445,
+          60300,
+          12016,
+          528817,
+          37.62,
+          4.5,
+          0.9,
+          39.43
+        ],
+        [
+          "January 1, 2026",
+          1473966,
+          547270,
+          66039,
+          14048,
+          568474,
+          37.13,
+          4.48,
+          0.95,
+          38.57
+        ],
+        [
+          "February 1, 2026",
+          1335831,
+          538092,
+          49104,
+          11840,
+          553541,
+          40.28,
+          3.68,
+          0.89,
+          41.44
+        ],
+        [
+          "March 1, 2026",
+          1462961,
+          558962,
+          79850,
+          13724,
+          585431,
+          38.21,
+          5.46,
+          0.94,
+          40.02
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar",
+          "lib/deduplicated-name": "month",
+          "lib/original-name": "month",
+          "name": "month",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "month",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "month",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "month",
+          "display_name": "month",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "monthly_hometab_openers",
+          "lib/original-name": "monthly_hometab_openers",
+          "name": "monthly_hometab_openers",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "monthly_hometab_openers",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "monthly_hometab_openers",
+            {
+              "base-type": "type/Integer"
+            }
+          ],
+          "effective_type": "type/Integer",
+          "lib/desired-column-alias": "monthly_hometab_openers",
+          "display_name": "monthly_hometab_openers",
+          "base_type": "type/Integer"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "users_booked_class",
+          "lib/original-name": "users_booked_class",
+          "name": "users_booked_class",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "users_booked_class",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "users_booked_class",
+            {
+              "base-type": "type/Integer"
+            }
+          ],
+          "effective_type": "type/Integer",
+          "lib/desired-column-alias": "users_booked_class",
+          "display_name": "users_booked_class",
+          "base_type": "type/Integer"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "users_purchased_pack",
+          "lib/original-name": "users_purchased_pack",
+          "name": "users_purchased_pack",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "users_purchased_pack",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "users_purchased_pack",
+            {
+              "base-type": "type/Integer"
+            }
+          ],
+          "effective_type": "type/Integer",
+          "lib/desired-column-alias": "users_purchased_pack",
+          "display_name": "users_purchased_pack",
+          "base_type": "type/Integer"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "users_purchased_cultstore_via_app",
+          "lib/original-name": "users_purchased_cultstore_via_app",
+          "name": "users_purchased_cultstore_via_app",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "users_purchased_cultstore_via_app",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "users_purchased_cultstore_via_app",
+            {
+              "base-type": "type/Integer"
+            }
+          ],
+          "effective_type": "type/Integer",
+          "lib/desired-column-alias": "users_purchased_cultstore_via_app",
+          "display_name": "users_purchased_cultstore_via_app",
+          "base_type": "type/Integer"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "users_any_activity_or_purchase",
+          "lib/original-name": "users_any_activity_or_purchase",
+          "name": "users_any_activity_or_purchase",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "users_any_activity_or_purchase",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "users_any_activity_or_purchase",
+            {
+              "base-type": "type/Integer"
+            }
+          ],
+          "effective_type": "type/Integer",
+          "lib/desired-column-alias": "users_any_activity_or_purchase",
+          "display_name": "users_any_activity_or_purchase",
+          "base_type": "type/Integer"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "pct_users_booked_class",
+          "lib/original-name": "pct_users_booked_class",
+          "name": "pct_users_booked_class",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "pct_users_booked_class",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "pct_users_booked_class",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "pct_users_booked_class",
+          "display_name": "pct_users_booked_class",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "pct_users_purchased_pack",
+          "lib/original-name": "pct_users_purchased_pack",
+          "name": "pct_users_purchased_pack",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "pct_users_purchased_pack",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "pct_users_purchased_pack",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "pct_users_purchased_pack",
+          "display_name": "pct_users_purchased_pack",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "pct_users_purchased_cultstore_via_app",
+          "lib/original-name": "pct_users_purchased_cultstore_via_app",
+          "name": "pct_users_purchased_cultstore_via_app",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "pct_users_purchased_cultstore_via_app",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "pct_users_purchased_cultstore_via_app",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "pct_users_purchased_cultstore_via_app",
+          "display_name": "pct_users_purchased_cultstore_via_app",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "pct_users_any_activity_or_purchase",
+          "lib/original-name": "pct_users_any_activity_or_purchase",
+          "name": "pct_users_any_activity_or_purchase",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "pct_users_any_activity_or_purchase",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "pct_users_any_activity_or_purchase",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "pct_users_any_activity_or_purchase",
+          "display_name": "pct_users_any_activity_or_purchase",
+          "base_type": "type/Float"
+        }
+      ]
+    },
+    "cached": null,
+    "database_id": null,
+    "started_at": null,
+    "json_query": {
+      "type": "query",
+      "query": null,
+      "database": null,
+      "parameters": []
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 36,
+    "running_time": null
+  }
+}

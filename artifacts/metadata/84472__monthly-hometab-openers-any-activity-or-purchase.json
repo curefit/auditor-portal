@@ -1,0 +1,229 @@
+{
+  "description": null,
+  "archived": false,
+  "table_id": null,
+  "result_metadata": [
+    {
+      "database_type": "varchar",
+      "lib/deduplicated-name": "month",
+      "lib/original-name": "month",
+      "name": "month",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "month",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "month",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "month",
+      "display_name": "month",
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "bigint",
+      "lib/deduplicated-name": "monthly_hometab_openers",
+      "lib/original-name": "monthly_hometab_openers",
+      "name": "monthly_hometab_openers",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "monthly_hometab_openers",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "monthly_hometab_openers",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "effective_type": "type/Integer",
+      "lib/desired-column-alias": "monthly_hometab_openers",
+      "display_name": "monthly_hometab_openers",
+      "base_type": "type/Integer"
+    },
+    {
+      "database_type": "bigint",
+      "lib/deduplicated-name": "users_booked_class",
+      "lib/original-name": "users_booked_class",
+      "name": "users_booked_class",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "users_booked_class",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "users_booked_class",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "effective_type": "type/Integer",
+      "lib/desired-column-alias": "users_booked_class",
+      "display_name": "users_booked_class",
+      "base_type": "type/Integer"
+    },
+    {
+      "database_type": "bigint",
+      "lib/deduplicated-name": "users_purchased_pack",
+      "lib/original-name": "users_purchased_pack",
+      "name": "users_purchased_pack",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "users_purchased_pack",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "users_purchased_pack",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "effective_type": "type/Integer",
+      "lib/desired-column-alias": "users_purchased_pack",
+      "display_name": "users_purchased_pack",
+      "base_type": "type/Integer"
+    },
+    {
+      "database_type": "bigint",
+      "lib/deduplicated-name": "users_purchased_cultstore_via_app",
+      "lib/original-name": "users_purchased_cultstore_via_app",
+      "name": "users_purchased_cultstore_via_app",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "users_purchased_cultstore_via_app",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "users_purchased_cultstore_via_app",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "effective_type": "type/Integer",
+      "lib/desired-column-alias": "users_purchased_cultstore_via_app",
+      "display_name": "users_purchased_cultstore_via_app",
+      "base_type": "type/Integer"
+    },
+    {
+      "database_type": "bigint",
+      "lib/deduplicated-name": "users_any_activity_or_purchase",
+      "lib/original-name": "users_any_activity_or_purchase",
+      "name": "users_any_activity_or_purchase",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "users_any_activity_or_purchase",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "users_any_activity_or_purchase",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "effective_type": "type/Integer",
+      "lib/desired-column-alias": "users_any_activity_or_purchase",
+      "display_name": "users_any_activity_or_purchase",
+      "base_type": "type/Integer"
+    },
+    {
+      "database_type": "double",
+      "lib/deduplicated-name": "pct_users_booked_class",
+      "lib/original-name": "pct_users_booked_class",
+      "name": "pct_users_booked_class",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pct_users_booked_class",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pct_users_booked_class",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "pct_users_booked_class",
+      "display_name": "pct_users_booked_class",
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "lib/deduplicated-name": "pct_users_purchased_pack",
+      "lib/original-name": "pct_users_purchased_pack",
+      "name": "pct_users_purchased_pack",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pct_users_purchased_pack",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pct_users_purchased_pack",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "pct_users_purchased_pack",
+      "display_name": "pct_users_purchased_pack",
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "lib/deduplicated-name": "pct_users_purchased_cultstore_via_app",
+      "lib/original-name": "pct_users_purchased_cultstore_via_app",
+      "name": "pct_users_purchased_cultstore_via_app",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pct_users_purchased_cultstore_via_app",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pct_users_purchased_cultstore_via_app",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "pct_users_purchased_cultstore_via_app",
+      "display_name": "pct_users_purchased_cultstore_via_app",
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "lib/deduplicated-name": "pct_users_any_activity_or_purchase",
+      "lib/original-name": "pct_users_any_activity_or_purchase",
+      "name": "pct_users_any_activity_or_purchase",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pct_users_any_activity_or_purchase",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pct_users_any_activity_or_purchase",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "pct_users_any_activity_or_purchase",
+      "display_name": "pct_users_any_activity_or_purchase",
+      "base_type": "type/Float"
+    }
+  ],
+  "creator": null,
+  "database_id": null,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "Monthly Hometab Openers - Any Activity Or Purchase",
+  "dataset_query": {
+    "type": "native",
+    "native": {
+      "query": "/*\n    CISA Audit Note:\n\n    Primary audited output:\n        users_any_activity_or_purchase\n        or pct_users_any_activity_or_purchase\n\n    Supporting columns used for validation / traceability:\n        monthly_hometab_openers\n        users_booked_class\n        users_purchased_pack\n        users_purchased_cultstore_via_app\n\n    These supporting columns can be ignored for final auditing. \n\tCorresponding intermediate CTEs are required because the final metric is built from multiple activity sources. \n\n    Business logic:\n    A user is counted in users_any_activity_or_purchase for a month if they:\n        1. opened the home tab in that month, and\n        2. completed at least one of the following activities in the same month:\n            - booked a class\n            - purchased a paid pack\n            - purchased from Cultstore via the app\n    \n*/\n\nWITH monthly_hometab_openers AS (\n    SELECT DISTINCT\n        CAST(user_userid AS varchar) AS user_id,\n        DATE_TRUNC('month', ts_date) AS month\n    FROM pk_curefit_app_events.page_view\n    WHERE ts_date BETWEEN date('2023-04-01') AND date('2026-03-31') -- -- Restrict to the reporting window.\n      AND ts_date >= DATE('2023-01-01') -- Partition guard to avoid scanning very old app-event data.\n      AND LOWER(COALESCE(event_eventparams_pageid, '')) = 'hometab' -- Keep only app opens on the home tab; this is the base cohort.\n      AND user_userid IS NOT NULL -- User-level funnel needs a valid user id for downstream joins.\n),\n\nmonthly_class_bookers AS (\n    SELECT DISTINCT\n        o.user_id,\n        o.month\n    FROM dwh_fitness_mart.booking_fact bf\n    JOIN monthly_hometab_openers o\n        ON CAST(bf.user_id AS varchar) = o.user_id -- Same user as the hometab opener cohort.\n       AND DATE_TRUNC('month', bf.booking_date) = o.month -- Same-month attribution: only count bookings in the opener's month.\n    WHERE booking_date BETWEEN date('2023-04-01') AND date('2026-03-31') -- Use booking_date as the activity date requested by the business logic.\n      AND class_date >= DATE('2023-01-01') -- Partition guard: booking_fact is partitioned by class_date.\n      AND bf.user_id IS NOT NULL -- Prevent null-user bookings from inflating user counts.\n),\n\nmonthly_pack_purchasers AS (\n    SELECT DISTINCT\n        o.user_id,\n        o.month\n    FROM dwh_fitness_mart.membership_dim m\n    LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n        ON mdb.id = m.membership_service_id -- Required only for transferred/upgraded packs, where created_date from the membership service table is the true purchase date.\n    JOIN monthly_hometab_openers o\n        ON CAST(m.user_id AS varchar) = o.user_id -- Same user as the hometab opener cohort.\n       AND DATE_TRUNC(\n            'month',\n            CASE\n                WHEN LOWER(CAST(m.is_transferred_pack AS varchar)) = 'true'\n                  OR LOWER(CAST(m.is_upgrade_pack AS varchar)) = 'true'\n                THEN DATE(mdb.created_date)\n                ELSE m.membership_created_date\n            END\n        ) = o.month -- Same-month attribution based on the agreed pack-purchase date logic.\n    WHERE m.amount_paid > 0 -- Paid members only; excludes complimentary / zero-value packs.\n      AND m.user_id IS NOT NULL -- User-level aggregation requires a valid user id.\n      AND CASE\n              WHEN LOWER(CAST(m.is_transferred_pack AS varchar)) = 'true'\n                OR LOWER(CAST(m.is_upgrade_pack AS varchar)) = 'true'\n              THEN DATE(mdb.created_date)\n              ELSE m.membership_created_date\n          END BETWEEN date('2023-04-01') AND date('2026-03-31') -- Apply the reporting window..\n),\n\nmonthly_cultstore_shopify AS (\n    SELECT DISTINCT\n        o.user_id,\n        o.month\n    FROM pk_d2c_cultstore.order_placed shop\n    JOIN monthly_hometab_openers o\n        ON CAST(COALESCE(shop.user_userid, shop.event_eventparams_userid) AS varchar) = o.user_id -- Use whichever user id is populated in the Shopify app-origin event.\n       AND DATE_TRUNC('month', shop.ts_date) = o.month -- Same-month attribution using ts_date as the order event date.\n    WHERE event_eventparams_weborigin = 'CUREFIT_APP' -- Keep only Cultstore orders originating from the app.\n      AND ts_date BETWEEN date('2023-04-01') AND date('2026-03-31') -- User-selected reporting window.\n      AND ts_date >= DATE('2023-01-01') -- Partition guard on the Shopify event table.\n      AND COALESCE(user_userid, event_eventparams_userid) IS NOT NULL -- Drop events that cannot be mapped back to a user.\n),\n\nmonthly_cultstore_custom AS (\n    SELECT DISTINCT\n        o.user_id,\n        o.month\n    FROM dwh_cultsports.item_view iv\n    JOIN monthly_hometab_openers o\n        ON CAST(iv.userid AS varchar) = o.user_id -- Match the custom Cultstore user id to the opener cohort.\n       AND DATE_TRUNC('month', iv.order_created_at_date) = o.month -- Same-month attribution using order_created_at_date.\n    WHERE source = 'CUREFIT_APP' -- Keep only orders attributed to the app source.\n      AND order_created_at_date BETWEEN date('2023-04-01') AND date('2026-03-31') -- User-selected reporting window.\n      AND order_created_at_date >= DATE('2023-01-01') -- Partition guard on the custom order table.\n      AND userid IS NOT NULL -- Drop rows with no usable user id.\n),\n\nmonthly_cultstore_purchasers AS (\n    SELECT user_id, month\n    FROM monthly_cultstore_shopify\n    UNION\n    SELECT user_id, month\n    FROM monthly_cultstore_custom\n),\n\nmonthly_any_activity AS (\n    SELECT user_id, month\n    FROM monthly_class_bookers\n    UNION\n    SELECT user_id, month\n    FROM monthly_pack_purchasers\n    UNION\n    SELECT user_id, month\n    FROM monthly_cultstore_purchasers\n)\n\nSELECT\n    o.month,\n    COUNT(DISTINCT o.user_id) AS monthly_hometab_openers,\n    COUNT(DISTINCT cb.user_id) AS users_booked_class,\n    COUNT(DISTINCT pp.user_id) AS users_purchased_pack,\n    COUNT(DISTINCT cp.user_id) AS users_purchased_cultstore_via_app,\n    COUNT(DISTINCT aa.user_id) AS users_any_activity_or_purchase,\n    ROUND(100.0 * COUNT(DISTINCT cb.user_id) / NULLIF(COUNT(DISTINCT o.user_id), 0), 2) AS pct_users_booked_class,\n    ROUND(100.0 * COUNT(DISTINCT pp.user_id) / NULLIF(COUNT(DISTINCT o.user_id), 0), 2) AS pct_users_purchased_pack,\n    ROUND(100.0 * COUNT(DISTINCT cp.user_id) / NULLIF(COUNT(DISTINCT o.user_id), 0), 2) AS pct_users_purchased_cultstore_via_app,\n    ROUND(100.0 * COUNT(DISTINCT aa.user_id) / NULLIF(COUNT(DISTINCT o.user_id), 0), 2) AS pct_users_any_activity_or_purchase\nFROM monthly_hometab_openers o\nLEFT JOIN monthly_class_bookers cb\n    ON o.user_id = cb.user_id\n   AND o.month = cb.month \t\t-- Check whether the opener also booked a class in that same month.\nLEFT JOIN monthly_pack_purchasers pp\n    ON o.user_id = pp.user_id\n   AND o.month = pp.month \t\t-- Check whether the opener also purchased a paid pack in that same month.\nLEFT JOIN monthly_cultstore_purchasers cp\n    ON o.user_id = cp.user_id\n   AND o.month = cp.month \t\t-- Check whether the opener also purchased from Cultstore via app in that same month.\nLEFT JOIN monthly_any_activity aa\n    ON o.user_id = aa.user_id\n   AND o.month = aa.month \t\t-- Combined same-month flag for any of the three activities.\nGROUP BY 1\nORDER BY 1"
+    },
+    "database": null
+  },
+  "display": "table",
+  "id": 84472,
+  "parameters": [],
+  "visualization_settings": {},
+  "created_at": null,
+  "updated_at": null,
+  "collection": null,
+  "parameter_mappings": [],
+  "_note": "Reconstructed from user-provided SQL and result CSV because this query is bulky and was intentionally not run during portal artifact generation."
+}
