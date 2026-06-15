@@ -1,0 +1,329 @@
+{
+  "card_id": 84704,
+  "card_name": "Total Transacting Customer",
+  "parameters": [],
+  "parameter_notes": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "FY23",
+          2257453822,
+          2475,
+          912103
+        ],
+        [
+          "FY24",
+          2566552396,
+          2475,
+          1036991
+        ],
+        [
+          "FY25",
+          3257549144,
+          2475,
+          1316181
+        ],
+        [
+          "FY26",
+          5269610572,
+          2475,
+          2129136
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar(4)",
+          "lib/deduplicated-name": "year",
+          "lib/original-name": "year",
+          "name": "year",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "year",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "year",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "year",
+          "display_name": "year",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "base_amount",
+          "lib/original-name": "base_amount",
+          "name": "base_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "base_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "base_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "base_amount",
+          "display_name": "base_amount",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "aov",
+          "lib/original-name": "aov",
+          "name": "aov",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "aov",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "aov",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "aov",
+          "display_name": "aov",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "customers",
+          "lib/original-name": "customers",
+          "name": "customers",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "customers",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "customers",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "customers",
+          "display_name": "customers",
+          "base_type": "type/Float"
+        }
+      ],
+      "native_form": {
+        "lib/type": "mbql.stage/native",
+        "query": "WITH revenue_summary AS (\n    SELECT year, base_amount, sort_key\n    FROM (\n        SELECT\n            1 AS sort_key,\n            'FY23' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n        UNION ALL\n\n        SELECT\n            2 AS sort_key,\n            'FY24' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n        UNION ALL\n\n        SELECT\n            3 AS sort_key,\n            'FY25' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n        UNION ALL\n\n        SELECT\n            4 AS sort_key,\n            'FY26' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n    ) t\n),\nfy26_aov AS (\n    SELECT\n        ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov\n    FROM dwh_d2c_metrics.d2c_bizfin_revenue\n    WHERE filter_date IS NOT NULL\n      AND DATE(filter_date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31')\n      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')\n      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'\n      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))\n      AND channel_type IN ('3P', '1P', 'FBA', 'FBF')\n)\nSELECT\n    r.year,\n    r.base_amount,\n    a.aov,\n    ROUND(r.base_amount / NULLIF(a.aov, 0)) AS customers\nFROM revenue_summary r\nCROSS JOIN fy26_aov a\nORDER BY r.sort_key"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "varchar(4)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "year",
+            "lib/original-name": "year",
+            "name": "year",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "year",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "year",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "year",
+            "display_name": "year",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 4
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "base_amount",
+            "lib/original-name": "base_amount",
+            "name": "base_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "base_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "base_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "base_amount",
+            "display_name": "base_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2257453822,
+                  "q1": 2412003109,
+                  "q3": 4263579858,
+                  "max": 5269610572,
+                  "sd": 1354043699.03443,
+                  "avg": 3337791483.5
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "aov",
+            "lib/original-name": "aov",
+            "name": "aov",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "aov",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "aov",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "aov",
+            "display_name": "aov",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 2475,
+                  "q1": 2475,
+                  "q3": 2475,
+                  "max": 2475,
+                  "sd": 0,
+                  "avg": 2475
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "customers",
+            "lib/original-name": "customers",
+            "name": "customers",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "customers",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "customers",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "customers",
+            "display_name": "customers",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 912103,
+                  "q1": 974547,
+                  "q3": 1722658.5,
+                  "max": 2129136,
+                  "sd": 547088.4263434173,
+                  "avg": 1348602.75
+                }
+              }
+            },
+            "base_type": "type/Float"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-15T09:18:21.664946384Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "native": "WITH revenue_summary AS (\n    SELECT year, base_amount, sort_key\n    FROM (\n        SELECT\n            1 AS sort_key,\n            'FY23' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n        UNION ALL\n\n        SELECT\n            2 AS sort_key,\n            'FY24' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n        UNION ALL\n\n        SELECT\n            3 AS sort_key,\n            'FY25' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n        UNION ALL\n\n        SELECT\n            4 AS sort_key,\n            'FY26' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n    ) t\n),\nfy26_aov AS (\n    SELECT\n        ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov\n    FROM dwh_d2c_metrics.d2c_bizfin_revenue\n    WHERE filter_date IS NOT NULL\n      AND DATE(filter_date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31')\n      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')\n      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'\n      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))\n      AND channel_type IN ('3P', '1P', 'FBA', 'FBF')\n)\nSELECT\n    r.year,\n    r.base_amount,\n    a.aov,\n    ROUND(r.base_amount / NULLIF(a.aov, 0)) AS customers\nFROM revenue_summary r\nCROSS JOIN fy26_aov a\nORDER BY r.sort_key"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-15T00:18:10.076067Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "year",
+        "table.cell_column": "total_amount",
+        "table.transpose": true,
+        "table.column_widths": [
+          null,
+          null,
+          null,
+          null,
+          209
+        ]
+      },
+      "database": 39
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 4,
+    "running_time": 37280
+  }
+}
