@@ -1,263 +1,103 @@
 {
-  "cache_invalidated_at": null,
+  "cache_invalidated_at": "2026-06-19T06:02:15.35318Z",
   "description": null,
   "archived": false,
-  "view_count": 28,
+  "view_count": 60,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
-  "result_metadata": [
-    {
-      "display_name": "Grain",
-      "field_ref": [
-        "field",
-        "Grain",
-        {
-          "base-type": "type/Date"
-        }
-      ],
-      "base_type": "type/Date",
-      "effective_type": "type/Date",
-      "name": "Grain",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 39,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/DateTime": {
-            "earliest": "2023-01-01",
-            "latest": "2026-03-01"
-          }
-        }
-      }
-    },
-    {
-      "display_name": "city_name",
-      "field_ref": [
-        "field",
-        "city_name",
-        {
-          "base-type": "type/Text"
-        }
-      ],
-      "base_type": "type/Text",
-      "effective_type": "type/Text",
-      "name": "city_name",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 5,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 7.4
-          }
-        }
-      }
-    },
-    {
-      "display_name": "service_type",
-      "field_ref": [
-        "field",
-        "service_type",
-        {
-          "base-type": "type/Text"
-        }
-      ],
-      "base_type": "type/Text",
-      "effective_type": "type/Text",
-      "name": "service_type",
-      "semantic_type": "type/Category",
-      "fingerprint": {
-        "global": {
-          "distinct-count": 3,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 3.0
-          }
-        }
-      }
-    },
-    {
-      "display_name": "sub_service_type",
-      "field_ref": [
-        "field",
-        "sub_service_type",
-        {
-          "base-type": "type/Text"
-        }
-      ],
-      "base_type": "type/Text",
-      "effective_type": "type/Text",
-      "name": "sub_service_type",
-      "semantic_type": "type/Category",
-      "fingerprint": {
-        "global": {
-          "distinct-count": 1,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 3.0
-          }
-        }
-      }
-    },
-    {
-      "display_name": "footfalls",
-      "field_ref": [
-        "field",
-        "footfalls",
-        {
-          "base-type": "type/BigInteger"
-        }
-      ],
-      "base_type": "type/BigInteger",
-      "effective_type": "type/BigInteger",
-      "name": "footfalls",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 576,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 8.0,
-            "q1": 59631.52696172405,
-            "q3": 265665.2870824946,
-            "max": 1323938.0,
-            "sd": 258569.9276376735,
-            "avg": 225230.81025641024
-          }
-        }
-      }
-    }
-  ],
+  "result_metadata": [],
+  "embedding_type": null,
   "creator": {
     "email": "ruchir.pokharna@curefit.com",
     "first_name": "Ruchir",
-    "last_login": "2026-04-14T17:24:36.502104Z",
+    "is_data_analyst": false,
+    "last_login": "2026-06-16T08:09:20.485382Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 2002,
     "last_name": "Pokharna",
+    "tenant_id": null,
     "date_joined": "2021-11-11T09:31:51.890842Z",
     "common_name": "Ruchir Pokharna"
   },
   "initially_published_at": null,
   "can_write": true,
+  "card_schema": 23,
   "database_id": 39,
   "enable_embedding": false,
-  "collection_id": 4246,
+  "collection_id": 7263,
   "query_type": "native",
   "name": "#Footfalls - Grained",
-  "last_query_start": "2026-04-12T13:10:05.811374Z",
+  "last_query_start": "2026-06-19T06:04:20.554768Z",
+  "is_remote_synced": false,
   "dashboard_count": 0,
-  "last_used_at": "2026-04-12T13:10:05.819552Z",
+  "document_id": null,
+  "last_used_at": "2026-06-19T06:04:20.561594Z",
+  "dashboard": null,
   "type": "question",
-  "warnings": [
-    {
-      "id": 147613889,
-      "cardId": 55566,
-      "warnings": [
-        {
-          "warningCode": {
-            "code": -1,
-            "name": "HIGH_EXECUTION_TIME"
-          },
-          "message": "Execution time is 1.92m. Optimize Query to reduce execution time."
-        },
-        {
-          "warningCode": {
-            "code": -1,
-            "name": "HIGH_PEAK_TASK_MEMORY_USAGE"
-          },
-          "message": "Optimize query to reduce memory usage"
-        }
-      ],
-      "queryHash": "c945b2119f3b7e9910abc1bb82612d6c63f510cadc1d349cc0f2acf1619fd3f9",
-      "executionStartTime": "2026-04-14T10:08:46.098+0000",
-      "tables": [
-        "dwh_fitness_mart.booking_fact",
-        "dwh_fitness_mart.membership_dim",
-        "dwh_fitness_mart.center_dim"
-      ],
-      "archive": false
-    }
-  ],
-  "average_query_time": 115579.0,
+  "dimensions": null,
+  "average_query_time": 170848.5,
   "creator_id": 2002,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-02-06T06:45:29.504887Z",
+  "updated_at": "2026-06-19T06:02:15.346712Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
+    "lib/type": "mbql/query",
     "database": 39,
-    "type": "native",
-    "native": {
-      "template-tags": {
-        "Start_Date": {
-          "id": "b0643689-d3c4-6e8c-9608-7163a12aa058",
-          "name": "Start_Date",
-          "display-name": "Start date",
-          "type": "date"
+    "stages": [
+      {
+        "template-tags": {
+          "Start_Date": {
+            "id": "b0643689-d3c4-6e8c-9608-7163a12aa058",
+            "name": "Start_Date",
+            "display-name": "Start date",
+            "type": "date"
+          },
+          "End_Date": {
+            "id": "243de1c7-e5f0-40c9-f6c1-0f9b98dcfa9e",
+            "name": "End_Date",
+            "display-name": "End date",
+            "type": "date"
+          },
+          "grain": {
+            "id": "124c15bd-157b-26af-f4e4-edb17b50089b",
+            "name": "grain",
+            "display-name": "Grain",
+            "type": "text"
+          },
+          "gx_class_cuts": {
+            "type": "text",
+            "name": "gx_class_cuts",
+            "id": "1e3ea311-d0e2-4980-8cf6-f89bcd76fcff",
+            "display-name": "Gx Class Cuts"
+          }
         },
-        "End_Date": {
-          "id": "243de1c7-e5f0-40c9-f6c1-0f9b98dcfa9e",
-          "name": "End_Date",
-          "display-name": "End date",
-          "type": "date"
-        },
-        "grain": {
-          "id": "124c15bd-157b-26af-f4e4-edb17b50089b",
-          "name": "grain",
-          "display-name": "Grain",
-          "type": "text"
-        },
-        "gx_class_cuts": {
-          "type": "text",
-          "name": "gx_class_cuts",
-          "id": "1e3ea311-d0e2-4980-8cf6-f89bcd76fcff",
-          "display-name": "Gx Class Cuts"
-        }
-      },
-      "query": "with base as \n    (\n    Select\n        -- dwh_fitness_mart.membership_dim.business_line,\n        Date_Trunc({{grain}}, Class_date) as \"Grain\",\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        dwh_fitness_mart.booking_fact.service_type,\n        CASE WHEN {{gx_class_cuts}} = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\n                 \n        COUNT(DISTINCT booking_key) as footfalls\n        \n    From dwh_fitness_mart.membership_dim\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\n            and \n                coalesce(booking_type,'xx') != 'TRIAL'\n                and Date(class_date) between {{Start_Date}} and {{End_Date}}\n                and attendance_time IS NOT NULL\n                and date(class_date) >= date '1900-01-01'\n    Where\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\n        and dwh_fitness_mart.membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\n        and membership_type = 'PAID'\n        and Date(class_date) between {{Start_Date}} and {{End_Date}}\n    Group by\n        1,2,3,4\n) \n    \n    -- select ' overall',month, null, sum(footfalls) footfalls\n    -- from base\n    -- group by 1,2\n    -- union all\nselect * from base \nOrder by\n    1,2,3\n    "
-    }
+        "lib/type": "mbql.stage/native",
+        "native": "-- Purpose: Count attended in-center footfalls by grain, city, service type, and optional GX sub-service cut.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service start/end dates for class eligibility windows.\nwith base as \n    (\n    Select\n        -- dwh_fitness_mart.membership_fact.business_line,\n        Date_Trunc({{grain}}, Class_date) as \"Grain\",\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        dwh_fitness_mart.booking_fact.service_type,\n        CASE WHEN {{gx_class_cuts}} = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\n                 \n        COUNT(DISTINCT booking_key) as footfalls\n        \n    From (\n        Select\n            md.user_id,\n            md.business_line,\n            md.membership_type,\n            md.attributed_center_key,\n            md.purchase_center_key,\n            -- Transfers/upgrades should use membership-service dates so the active window follows the latest pack lifecycle.\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"start\"\n                Else md.pack_start_date\n            End as pack_start_date,\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"end\"\n                Else md.pack_end_date\n            End as pack_end_date\n        From dwh_fitness_mart.membership_fact md\n        Left join pk_curefitplatforms_membershipdb.memberships mdb\n            on mdb.id = md.membership_service_id\n\t\tWHERE\n\t\t-- Freeze to a single fact-table snapshot so results do not move because of\n\t    -- late-arriving tech changes or partition refreshes.\n\t\tmd.transaction_date = date '2026-06-16'\n    ) membership_dim\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\n            and \n                -- Trials are excluded so footfalls reflect paid/member usage.\n                coalesce(booking_type,'xx') != 'TRIAL'\n                and Date(class_date) between {{Start_Date}} and {{End_Date}}\n                -- Only attended bookings count as footfalls.\n                and attendance_time IS NOT NULL\n                and date(class_date) >= date '1900-01-01'\n    Where\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\n        -- Fitness membership lines covered in this footfall view.\n        and membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\n        -- Keep the base to paid memberships.\n        and membership_type = 'PAID'\n        and Date(class_date) between {{Start_Date}} and {{End_Date}}\n    Group by\n        1,2,3,4\n) \n    \n    -- select ' overall',month, null, sum(footfalls) footfalls\n    -- from base\n    -- group by 1,2\n    -- union all\nselect * from base \nOrder by\n    1,2,3\n\n"
+      }
+    ]
   },
+  "dimension_mappings": null,
   "id": 55566,
+  "legacy_query": "{\"database\":39,\"type\":\"native\",\"native\":{\"template-tags\":{\"Start_Date\":{\"id\":\"b0643689-d3c4-6e8c-9608-7163a12aa058\",\"name\":\"Start_Date\",\"display-name\":\"Start date\",\"type\":\"date\"},\"End_Date\":{\"id\":\"243de1c7-e5f0-40c9-f6c1-0f9b98dcfa9e\",\"name\":\"End_Date\",\"display-name\":\"End date\",\"type\":\"date\"},\"grain\":{\"id\":\"124c15bd-157b-26af-f4e4-edb17b50089b\",\"name\":\"grain\",\"display-name\":\"Grain\",\"type\":\"text\"},\"gx_class_cuts\":{\"type\":\"text\",\"name\":\"gx_class_cuts\",\"id\":\"1e3ea311-d0e2-4980-8cf6-f89bcd76fcff\",\"display-name\":\"Gx Class Cuts\"}},\"query\":\"with base as \\n    (\\n    Select\\n        -- dwh_fitness_mart.membership_dim.business_line,\\n        Date_Trunc({{grain}}, Class_date) as \\\"Grain\\\",\\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \\n        dwh_fitness_mart.booking_fact.service_type,\\n        CASE WHEN {{gx_class_cuts}} = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\\n                 \\n        COUNT(DISTINCT booking_key) as footfalls\\n        \\n    From dwh_fitness_mart.membership_dim\\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\\n            and \\n                coalesce(booking_type,'xx') != 'TRIAL'\\n                and Date(class_date) between {{Start_Date}} and {{End_Date}}\\n                and attendance_time IS NOT NULL\\n                and date(class_date) >= date '1900-01-01'\\n    Where\\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\\n        and dwh_fitness_mart.membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\\n        and membership_type = 'PAID'\\n        and Date(class_date) between {{Start_Date}} and {{End_Date}}\\n    Group by\\n        1,2,3,4\\n) \\n    \\n    -- select ' overall',month, null, sum(footfalls) footfalls\\n    -- from base\\n    -- group by 1,2\\n    -- union all\\nselect * from base \\nOrder by\\n    1,2,3\\n    \"}}",
   "parameter_mappings": [],
   "can_manage_db": false,
   "display": "table",
   "archived_directly": false,
   "entity_id": "yZ3OdLri9sWhrFegaZmuN",
+  "param_fields": {},
   "collection_preview": true,
   "last-edit-info": {
     "id": 3570,
     "email": "shivalingesh.aiholli@curefit.com",
     "first_name": "Shivalingesh",
     "last_name": "Aiholli",
-    "timestamp": "2026-02-06T06:45:29.806588Z"
+    "timestamp": "2026-06-19T06:02:15.41233Z"
   },
   "visualization_settings": {
     "graph.dimensions": [
@@ -284,19 +124,21 @@
     "authority_level": null,
     "description": null,
     "archived": false,
-    "slug": "yet_to_decide",
+    "workspace_id": null,
+    "slug": "audit_related_queries",
     "archive_operation_id": null,
-    "name": "Yet to decide",
+    "name": "Audit Related Queries",
+    "is_remote_synced": false,
     "personal_owner_id": null,
     "type": null,
     "is_sample": false,
-    "id": 4246,
+    "id": 7263,
     "archived_directly": null,
-    "entity_id": "KzagkJt6mOxqPicBkyC3W",
-    "location": "/4218/",
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
     "namespace": null,
     "is_personal": false,
-    "created_at": "2023-06-09T06:53:39.006025Z"
+    "created_at": "2026-05-26T11:14:34.781469Z"
   },
   "metabase_version": null,
   "parameters": [
@@ -311,7 +153,8 @@
         ]
       ],
       "name": "Start date",
-      "slug": "Start_Date"
+      "slug": "Start_Date",
+      "isMultiSelect": false
     },
     {
       "id": "243de1c7-e5f0-40c9-f6c1-0f9b98dcfa9e",
@@ -324,11 +167,17 @@
         ]
       ],
       "name": "End date",
-      "slug": "End_Date"
+      "slug": "End_Date",
+      "isMultiSelect": false
     },
     {
+      "slug": "grain",
+      "values_query_type": "list",
+      "name": "Grain",
+      "isMultiSelect": false,
+      "type": "string/=",
+      "values_source_type": "static-list",
       "id": "124c15bd-157b-26af-f4e4-edb17b50089b",
-      "type": "category",
       "target": [
         "variable",
         [
@@ -336,10 +185,6 @@
           "grain"
         ]
       ],
-      "name": "Grain",
-      "slug": "grain",
-      "values_query_type": "list",
-      "values_source_type": "static-list",
       "values_source_config": {
         "values": [
           "day",
@@ -351,8 +196,13 @@
       }
     },
     {
+      "slug": "gx_class_cuts",
+      "values_query_type": "list",
+      "name": "Gx Class Cuts",
+      "isMultiSelect": false,
+      "type": "string/=",
+      "values_source_type": "static-list",
       "id": "1e3ea311-d0e2-4980-8cf6-f89bcd76fcff",
-      "type": "category",
       "target": [
         "variable",
         [
@@ -360,10 +210,6 @@
           "gx_class_cuts"
         ]
       ],
-      "name": "Gx Class Cuts",
-      "slug": "gx_class_cuts",
-      "values_query_type": "list",
-      "values_source_type": "static-list",
       "values_source_config": {
         "values": [
           [
@@ -376,6 +222,7 @@
       }
     }
   ],
+  "dashboard_id": null,
   "created_at": "2024-11-12T06:16:33.486896Z",
   "parameter_usage_count": 0,
   "public_uuid": null,

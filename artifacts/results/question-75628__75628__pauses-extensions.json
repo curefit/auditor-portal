@@ -23,20 +23,20 @@
     "data": {
       "rows": [
         [
-          "Both used",
-          25524
-        ],
-        [
           "Unused",
-          3217928
+          3206571
         ],
         [
           "Transfer used",
-          35937
+          35825
+        ],
+        [
+          "Both used",
+          25636
         ],
         [
           "Pause used",
-          1251753
+          1263110
         ]
       ],
       "cols": [
@@ -90,7 +90,7 @@
           "2026-03-31"
         ],
         "lib/type": "mbql.stage/native",
-        "query": "-- Purpose: Classify memberships by pause usage, transfer usage, both, or neither.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the base cohort.\nWITH\n  base AS (\n    SELECT\n      m.membership_key,\n      fitness_next_membership\n    FROM\n      dwh_fitness_mart.membership_dim m\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n        ON mdb.id = m.membership_service_id\n    WHERE 1=1\n      -- Use membership-service created_date for transferred/upgraded packs before classifying pause/transfer usage.\n      AND DATE(\n        CASE\n          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n          ELSE m.membership_created_date\n        END\n      ) between date('2017-10-01') and ?\n      -- Pause/transfer usage is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n    GROUP BY\n      1,\n      2\n  ),\n\n  parent_child_map AS (\n    SELECT * FROM (\n      SELECT \n        DISTINCT CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS VARCHAR) AS parent_membership_id,\n        cast(m.id as VARCHAR) AS child_membership_id,\n        CASE \n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true' THEN 'Upgrade'\n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true' THEN 'Transfer'\n          ELSE 'Undefined' \n        END AS relationship,\n        md.membership_key, -- needed to join back to base\n        md.business_line,\n        DATE(m2.start) AS parent_pack_start_date,\n        DATE(m2.\"end\") AS parent_pack_end_date_latest,\n        DATE(m.start) AS child_pack_start_date,\n        DATE(m.\"end\") AS child_pack_end_date_latest, \n        COALESCE(COALESCE(CAST(of2.price AS DOUBLE),CAST(m2.price AS DOUBLE)),0) AS parent_amount_paid,\n        COALESCE(COALESCE(CAST(of.price AS DOUBLE),CAST(m.price AS DOUBLE)),0) AS child_amount_paid,\n        DATE(m.cancellation_date) AS child_cancellation_date,\n        DATE(m2.cancellation_date) AS parent_cancellation_date,\n        DATE(m2.created_date) AS parent_created_date,\n        DATE(m.created_date) AS child_created_date,\n        ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num\n      FROM pk_curefitplatforms_membershipdb.memberships m\n      LEFT JOIN dwh_fitness_mart.membership_dim md on m.id = md.membership_service_id\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id\n      LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= ?\n      LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= ?\n      WHERE TRUE\n        AND m.created_date between date('2017-10-01') and ?\n        AND (\n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true'\n          OR \n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true'\n        ) \n        AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')\n    )\n    WHERE row_num = 1\n    -- Only transfers are counted in the transfer-used bucket; upgrades are not part of this audit cut.\n    AND relationship = 'Transfer'\n  )\n\nSELECT\n  CASE \n    WHEN f.membership_key IS NOT NULL AND pcm.parent_membership_id IS NOT NULL THEN 'Both used'\n    WHEN f.membership_key IS NOT NULL THEN 'Pause used'\n    WHEN pcm.parent_membership_id IS NOT NULL THEN 'Transfer used'\n    ELSE 'Unused'\n  END AS type,\n  count(DISTINCT b.membership_key) AS memberships\nFROM base b\nLEFT JOIN dwh_fitness_bi.pause_and_extension_fact f \n  ON b.membership_key = f.membership_key\n  AND UPPER(event_type) = 'PAUSE'\n  AND event_date <= ? + interval '12' month\nLEFT JOIN parent_child_map pcm\n  ON b.membership_key = pcm.membership_key  -- join on parent's membership_key\n\nGROUP BY 1"
+        "query": "-- Purpose: Classify memberships by pause usage, transfer usage, both, or neither.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the base cohort.\nWITH\n  base AS (\n    SELECT\n      m.membership_key,\n      fitness_next_membership\n    FROM\n      dwh_fitness_mart.membership_fact m\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n        ON mdb.id = m.membership_service_id\n    WHERE 1=1\n      -- Use membership-service created_date for transferred/upgraded packs before classifying pause/transfer usage.\n      AND DATE(\n        CASE\n          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n          ELSE m.membership_created_date\n        END\n      ) between date('2017-10-01') and ?\n      -- Pause/transfer usage is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n\t  -- Freeze to a single fact-table snapshot so results do not move because of\n\t  -- late-arriving tech changes or partition refreshes.\n\t  AND m.transaction_date = date '2026-06-16'\n    GROUP BY\n      1,\n      2\n  ),\n\n  parent_child_map AS (\n    SELECT * FROM (\n      SELECT \n        DISTINCT CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS VARCHAR) AS parent_membership_id,\n        cast(m.id as VARCHAR) AS child_membership_id,\n        CASE \n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true' THEN 'Upgrade'\n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true' THEN 'Transfer'\n          ELSE 'Undefined' \n        END AS relationship,\n        md.membership_key, -- needed to join back to base\n        md.business_line,\n        DATE(m2.start) AS parent_pack_start_date,\n        DATE(m2.\"end\") AS parent_pack_end_date_latest,\n        DATE(m.start) AS child_pack_start_date,\n        DATE(m.\"end\") AS child_pack_end_date_latest, \n        COALESCE(COALESCE(CAST(of2.price AS DOUBLE),CAST(m2.price AS DOUBLE)),0) AS parent_amount_paid,\n        COALESCE(COALESCE(CAST(of.price AS DOUBLE),CAST(m.price AS DOUBLE)),0) AS child_amount_paid,\n        DATE(m.cancellation_date) AS child_cancellation_date,\n        DATE(m2.cancellation_date) AS parent_cancellation_date,\n        DATE(m2.created_date) AS parent_created_date,\n        DATE(m.created_date) AS child_created_date,\n        ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num\n      FROM pk_curefitplatforms_membershipdb.memberships m\n      LEFT JOIN dwh_fitness_mart.membership_fact md on m.id = md.membership_service_id and md.transaction_date = date '2026-06-16'\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id\n      LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= ?\n      LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= ?\n      WHERE TRUE\n        AND m.created_date between date('2017-10-01') and ?\n        AND (\n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true'\n          OR \n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true'\n        ) \n        AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')\n    )\n    WHERE row_num = 1\n    -- Only transfers are counted in the transfer-used bucket; upgrades are not part of this audit cut.\n    AND relationship = 'Transfer'\n  )\n\nSELECT\n  CASE \n    WHEN f.membership_key IS NOT NULL AND pcm.parent_membership_id IS NOT NULL THEN 'Both used'\n    WHEN f.membership_key IS NOT NULL THEN 'Pause used'\n    WHEN pcm.parent_membership_id IS NOT NULL THEN 'Transfer used'\n    ELSE 'Unused'\n  END AS type,\n  count(DISTINCT b.membership_key) AS memberships\nFROM base b\nLEFT JOIN dwh_fitness_bi.pause_and_extension_fact f \n  ON b.membership_key = f.membership_key\n  AND UPPER(event_type) = 'PAUSE'\n  AND event_date <= ? + interval '12' month\nLEFT JOIN parent_child_map pcm\n  ON b.membership_key = pcm.membership_key  -- join on parent's membership_key\n\nGROUP BY 1"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -123,14 +123,14 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 4,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
                   "average-length": 9.5
                 }
               }
@@ -159,15 +159,15 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 4,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Number": {
-                  "min": 25524,
+                  "min": 25636.0,
                   "q1": 30730.5,
                   "q3": 2234840.5,
-                  "max": 3217928,
-                  "sd": 1504557.207586006,
+                  "max": 3206571.0,
+                  "sd": 1499630.3021323844,
                   "avg": 1132785.5
                 }
               }
@@ -180,7 +180,7 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-06-02T10:04:36.279059195Z",
+    "started_at": "2026-06-19T07:17:27.443331583Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -190,17 +190,17 @@
       "lib/metadata": null,
       "stages": [
         {
-          "lib/type": "mbql.stage/native",
           "template-tags": {
             "ed": {
+              "id": "cb5c1038-64f9-4c0e-8b20-17cecf810cd2",
               "type": "date",
               "name": "ed",
               "display-name": "Ed",
-              "id": "cb5c1038-64f9-4c0e-8b20-17cecf810cd2",
               "default": "2026-03-31"
             }
           },
-          "native": "-- Purpose: Classify memberships by pause usage, transfer usage, both, or neither.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the base cohort.\nWITH\n  base AS (\n    SELECT\n      m.membership_key,\n      fitness_next_membership\n    FROM\n      dwh_fitness_mart.membership_dim m\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n        ON mdb.id = m.membership_service_id\n    WHERE 1=1\n      -- Use membership-service created_date for transferred/upgraded packs before classifying pause/transfer usage.\n      AND DATE(\n        CASE\n          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n          ELSE m.membership_created_date\n        END\n      ) between date('2017-10-01') and {{ed}}\n      -- Pause/transfer usage is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n    GROUP BY\n      1,\n      2\n  ),\n\n  parent_child_map AS (\n    SELECT * FROM (\n      SELECT \n        DISTINCT CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS VARCHAR) AS parent_membership_id,\n        cast(m.id as VARCHAR) AS child_membership_id,\n        CASE \n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true' THEN 'Upgrade'\n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true' THEN 'Transfer'\n          ELSE 'Undefined' \n        END AS relationship,\n        md.membership_key, -- needed to join back to base\n        md.business_line,\n        DATE(m2.start) AS parent_pack_start_date,\n        DATE(m2.\"end\") AS parent_pack_end_date_latest,\n        DATE(m.start) AS child_pack_start_date,\n        DATE(m.\"end\") AS child_pack_end_date_latest, \n        COALESCE(COALESCE(CAST(of2.price AS DOUBLE),CAST(m2.price AS DOUBLE)),0) AS parent_amount_paid,\n        COALESCE(COALESCE(CAST(of.price AS DOUBLE),CAST(m.price AS DOUBLE)),0) AS child_amount_paid,\n        DATE(m.cancellation_date) AS child_cancellation_date,\n        DATE(m2.cancellation_date) AS parent_cancellation_date,\n        DATE(m2.created_date) AS parent_created_date,\n        DATE(m.created_date) AS child_created_date,\n        ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num\n      FROM pk_curefitplatforms_membershipdb.memberships m\n      LEFT JOIN dwh_fitness_mart.membership_dim md on m.id = md.membership_service_id\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id\n      LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= {{ed}}\n      LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= {{ed}}\n      WHERE TRUE\n        AND m.created_date between date('2017-10-01') and {{ed}}\n        AND (\n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true'\n          OR \n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true'\n        ) \n        AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')\n    )\n    WHERE row_num = 1\n    -- Only transfers are counted in the transfer-used bucket; upgrades are not part of this audit cut.\n    AND relationship = 'Transfer'\n  )\n\nSELECT\n  CASE \n    WHEN f.membership_key IS NOT NULL AND pcm.parent_membership_id IS NOT NULL THEN 'Both used'\n    WHEN f.membership_key IS NOT NULL THEN 'Pause used'\n    WHEN pcm.parent_membership_id IS NOT NULL THEN 'Transfer used'\n    ELSE 'Unused'\n  END AS type,\n  count(DISTINCT b.membership_key) AS memberships\nFROM base b\nLEFT JOIN dwh_fitness_bi.pause_and_extension_fact f \n  ON b.membership_key = f.membership_key\n  AND UPPER(event_type) = 'PAUSE'\n  AND event_date <= {{ed}} + interval '12' month\nLEFT JOIN parent_child_map pcm\n  ON b.membership_key = pcm.membership_key  -- join on parent's membership_key\n\nGROUP BY 1\n"
+          "lib/type": "mbql.stage/native",
+          "native": "-- Purpose: Classify memberships by pause usage, transfer usage, both, or neither.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date before entering the base cohort.\nWITH\n  base AS (\n    SELECT\n      m.membership_key,\n      fitness_next_membership\n    FROM\n      dwh_fitness_mart.membership_fact m\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n        ON mdb.id = m.membership_service_id\n    WHERE 1=1\n      -- Use membership-service created_date for transferred/upgraded packs before classifying pause/transfer usage.\n      AND DATE(\n        CASE\n          WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n          ELSE m.membership_created_date\n        END\n      ) between date('2017-10-01') and {{ed}}\n      -- Pause/transfer usage is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n\t  -- Freeze to a single fact-table snapshot so results do not move because of\n\t  -- late-arriving tech changes or partition refreshes.\n\t  AND m.transaction_date = date '2026-06-16'\n    GROUP BY\n      1,\n      2\n  ),\n\n  parent_child_map AS (\n    SELECT * FROM (\n      SELECT \n        DISTINCT CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS VARCHAR) AS parent_membership_id,\n        cast(m.id as VARCHAR) AS child_membership_id,\n        CASE \n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true' THEN 'Upgrade'\n          WHEN CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true' THEN 'Transfer'\n          ELSE 'Undefined' \n        END AS relationship,\n        md.membership_key, -- needed to join back to base\n        md.business_line,\n        DATE(m2.start) AS parent_pack_start_date,\n        DATE(m2.\"end\") AS parent_pack_end_date_latest,\n        DATE(m.start) AS child_pack_start_date,\n        DATE(m.\"end\") AS child_pack_end_date_latest, \n        COALESCE(COALESCE(CAST(of2.price AS DOUBLE),CAST(m2.price AS DOUBLE)),0) AS parent_amount_paid,\n        COALESCE(COALESCE(CAST(of.price AS DOUBLE),CAST(m.price AS DOUBLE)),0) AS child_amount_paid,\n        DATE(m.cancellation_date) AS child_cancellation_date,\n        DATE(m2.cancellation_date) AS parent_cancellation_date,\n        DATE(m2.created_date) AS parent_created_date,\n        DATE(m.created_date) AS child_created_date,\n        ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num\n      FROM pk_curefitplatforms_membershipdb.memberships m\n      LEFT JOIN dwh_fitness_mart.membership_fact md on m.id = md.membership_service_id and md.transaction_date = date '2026-06-16'\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id\n      LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= {{ed}}\n      LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= {{ed}}\n      WHERE TRUE\n        AND m.created_date between date('2017-10-01') and {{ed}}\n        AND (\n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isTransferredPack') AS VARCHAR) = 'true'\n          OR \n          CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.isUpgradePack') AS VARCHAR) = 'true'\n        ) \n        AND (m.product_id LIKE 'CULTPACK%' OR m.product_id LIKE 'GYMFIT%')\n    )\n    WHERE row_num = 1\n    -- Only transfers are counted in the transfer-used bucket; upgrades are not part of this audit cut.\n    AND relationship = 'Transfer'\n  )\n\nSELECT\n  CASE \n    WHEN f.membership_key IS NOT NULL AND pcm.parent_membership_id IS NOT NULL THEN 'Both used'\n    WHEN f.membership_key IS NOT NULL THEN 'Pause used'\n    WHEN pcm.parent_membership_id IS NOT NULL THEN 'Transfer used'\n    ELSE 'Unused'\n  END AS type,\n  count(DISTINCT b.membership_key) AS memberships\nFROM base b\nLEFT JOIN dwh_fitness_bi.pause_and_extension_fact f \n  ON b.membership_key = f.membership_key\n  AND UPPER(event_type) = 'PAUSE'\n  AND event_date <= {{ed}} + interval '12' month\nLEFT JOIN parent_child_map pcm\n  ON b.membership_key = pcm.membership_key  -- join on parent's membership_key\n\nGROUP BY 1\n"
         }
       ],
       "middleware": {
@@ -214,7 +214,7 @@
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-06-02T06:37:46.685556Z"
+        "invalidated-at": "2026-06-18T10:07:28.950447Z"
       },
       "viz-settings": {
         "table.pivot_column": "type",
@@ -244,6 +244,6 @@
     "status": "completed",
     "context": "question",
     "row_count": 4,
-    "running_time": 26910
+    "running_time": 40646
   }
 }

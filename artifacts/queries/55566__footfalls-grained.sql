@@ -4,7 +4,7 @@
 with base as 
     (
     Select
-        -- dwh_fitness_mart.membership_dim.business_line,
+        -- dwh_fitness_mart.membership_fact.business_line,
         Date_Trunc({{grain}}, Class_date) as "Grain",
         CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'
                  WHEN city_name = 'Gurgaon' THEN 'Gurgaon'
@@ -31,9 +31,13 @@ with base as
                 When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb."end"
                 Else md.pack_end_date
             End as pack_end_date
-        From dwh_fitness_mart.membership_dim md
+        From dwh_fitness_mart.membership_fact md
         Left join pk_curefitplatforms_membershipdb.memberships mdb
             on mdb.id = md.membership_service_id
+		WHERE
+		-- Freeze to a single fact-table snapshot so results do not move because of
+	    -- late-arriving tech changes or partition refreshes.
+		md.transaction_date = date '2026-06-16'
     ) membership_dim
     LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)
     join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)
@@ -62,4 +66,3 @@ with base as
 select * from base 
 Order by
     1,2,3
-

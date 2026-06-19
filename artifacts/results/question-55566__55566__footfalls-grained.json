@@ -94,14 +94,14 @@
           "Bangalore",
           "GX",
           "all",
-          1315293
+          1315294
         ],
         [
           "2023-04-01T00:00:00Z",
           "Bangalore",
           "GYM",
           "all",
-          1504540
+          1504566
         ],
         [
           "2023-04-01T00:00:00Z",
@@ -115,14 +115,14 @@
           "Gurgaon",
           "GX",
           "all",
-          511082
+          511030
         ],
         [
           "2023-04-01T00:00:00Z",
           "Gurgaon",
           "GYM",
           "all",
-          695403
+          695374
         ],
         [
           "2023-04-01T00:00:00Z",
@@ -143,7 +143,7 @@
           "Hyderabad",
           "GYM",
           "all",
-          883872
+          883859
         ],
         [
           "2023-04-01T00:00:00Z",
@@ -164,7 +164,7 @@
           "Mumbai",
           "GYM",
           "all",
-          178690
+          178691
         ],
         [
           "2023-04-01T00:00:00Z",
@@ -185,7 +185,7 @@
           "Others",
           "GYM",
           "all",
-          410978
+          410976
         ],
         [
           "2023-04-01T00:00:00Z",
@@ -206,7 +206,7 @@
           "Bangalore",
           "GYM",
           "all",
-          1696100
+          1696072
         ],
         [
           "2023-07-01T00:00:00Z",
@@ -227,7 +227,7 @@
           "Gurgaon",
           "GYM",
           "all",
-          794927
+          794919
         ],
         [
           "2023-07-01T00:00:00Z",
@@ -248,7 +248,7 @@
           "Hyderabad",
           "GYM",
           "all",
-          1000958
+          1000994
         ],
         [
           "2023-07-01T00:00:00Z",
@@ -451,7 +451,7 @@
           "Hyderabad",
           "GX",
           "all",
-          668561
+          668555
         ],
         [
           "2024-01-01T00:00:00Z",
@@ -514,7 +514,7 @@
           "Bangalore",
           "GX",
           "all",
-          1695188
+          1695183
         ],
         [
           "2024-04-01T00:00:00Z",
@@ -556,7 +556,7 @@
           "Hyderabad",
           "GX",
           "all",
-          708060
+          708020
         ],
         [
           "2024-04-01T00:00:00Z",
@@ -619,7 +619,7 @@
           "Bangalore",
           "GX",
           "all",
-          1736863
+          1736852
         ],
         [
           "2024-07-01T00:00:00Z",
@@ -661,7 +661,7 @@
           "Hyderabad",
           "GX",
           "all",
-          717908
+          717880
         ],
         [
           "2024-07-01T00:00:00Z",
@@ -724,14 +724,14 @@
           "Bangalore",
           "GX",
           "all",
-          1572045
+          1572038
         ],
         [
           "2024-10-01T00:00:00Z",
           "Bangalore",
           "GYM",
           "all",
-          2677105
+          2677104
         ],
         [
           "2024-10-01T00:00:00Z",
@@ -766,7 +766,7 @@
           "Hyderabad",
           "GX",
           "all",
-          688891
+          688879
         ],
         [
           "2024-10-01T00:00:00Z",
@@ -829,14 +829,14 @@
           "Bangalore",
           "GX",
           "all",
-          1771795
+          1771749
         ],
         [
           "2025-01-01T00:00:00Z",
           "Bangalore",
           "GYM",
           "all",
-          3225181
+          3225156
         ],
         [
           "2025-01-01T00:00:00Z",
@@ -871,14 +871,14 @@
           "Hyderabad",
           "GX",
           "all",
-          732298
+          732274
         ],
         [
           "2025-01-01T00:00:00Z",
           "Hyderabad",
           "GYM",
           "all",
-          1983159
+          1983156
         ],
         [
           "2025-01-01T00:00:00Z",
@@ -934,14 +934,14 @@
           "Bangalore",
           "GX",
           "all",
-          1771895
+          1771735
         ],
         [
           "2025-04-01T00:00:00Z",
           "Bangalore",
           "GYM",
           "all",
-          3387936
+          3387864
         ],
         [
           "2025-04-01T00:00:00Z",
@@ -955,14 +955,14 @@
           "Gurgaon",
           "GX",
           "all",
-          628103
+          628064
         ],
         [
           "2025-04-01T00:00:00Z",
           "Gurgaon",
           "GYM",
           "all",
-          1305420
+          1305372
         ],
         [
           "2025-04-01T00:00:00Z",
@@ -976,14 +976,14 @@
           "Hyderabad",
           "GX",
           "all",
-          785343
+          785247
         ],
         [
           "2025-04-01T00:00:00Z",
           "Hyderabad",
           "GYM",
           "all",
-          2283643
+          2283515
         ],
         [
           "2025-04-01T00:00:00Z",
@@ -1004,7 +1004,7 @@
           "Mumbai",
           "GYM",
           "all",
-          360808
+          360789
         ],
         [
           "2025-04-01T00:00:00Z",
@@ -1025,7 +1025,7 @@
           "Others",
           "GYM",
           "all",
-          490784
+          490761
         ],
         [
           "2025-04-01T00:00:00Z",
@@ -1039,14 +1039,14 @@
           "Bangalore",
           "GX",
           "all",
-          1823647
+          1823458
         ],
         [
           "2025-07-01T00:00:00Z",
           "Bangalore",
           "GYM",
           "all",
-          3644229
+          3644130
         ],
         [
           "2025-07-01T00:00:00Z",
@@ -1060,35 +1060,35 @@
           "Gurgaon",
           "GX",
           "all",
-          634942
+          634837
         ],
         [
           "2025-07-01T00:00:00Z",
           "Gurgaon",
           "GYM",
           "all",
-          1474983
+          1474938
         ],
         [
           "2025-07-01T00:00:00Z",
           "Gurgaon",
           "PLAY",
           "all",
-          169572
+          169543
         ],
         [
           "2025-07-01T00:00:00Z",
           "Hyderabad",
           "GX",
           "all",
-          790534
+          790389
         ],
         [
           "2025-07-01T00:00:00Z",
           "Hyderabad",
           "GYM",
           "all",
-          2383771
+          2383646
         ],
         [
           "2025-07-01T00:00:00Z",
@@ -1109,7 +1109,7 @@
           "Mumbai",
           "GYM",
           "all",
-          361529
+          361474
         ],
         [
           "2025-07-01T00:00:00Z",
@@ -1123,14 +1123,14 @@
           "Others",
           "GX",
           "all",
-          367572
+          367591
         ],
         [
           "2025-07-01T00:00:00Z",
           "Others",
           "GYM",
           "all",
-          530295
+          530274
         ],
         [
           "2025-07-01T00:00:00Z",
@@ -1144,56 +1144,56 @@
           "Bangalore",
           "GX",
           "all",
-          1598916
+          1598759
         ],
         [
           "2025-10-01T00:00:00Z",
           "Bangalore",
           "GYM",
           "all",
-          3382906
+          3382804
         ],
         [
           "2025-10-01T00:00:00Z",
           "Bangalore",
           "PLAY",
           "all",
-          240519
+          240480
         ],
         [
           "2025-10-01T00:00:00Z",
           "Gurgaon",
           "GX",
           "all",
-          514856
+          514777
         ],
         [
           "2025-10-01T00:00:00Z",
           "Gurgaon",
           "GYM",
           "all",
-          1338689
+          1338645
         ],
         [
           "2025-10-01T00:00:00Z",
           "Gurgaon",
           "PLAY",
           "all",
-          93343
+          93310
         ],
         [
           "2025-10-01T00:00:00Z",
           "Hyderabad",
           "GX",
           "all",
-          728294
+          728126
         ],
         [
           "2025-10-01T00:00:00Z",
           "Hyderabad",
           "GYM",
           "all",
-          2408859
+          2408775
         ],
         [
           "2025-10-01T00:00:00Z",
@@ -1214,7 +1214,7 @@
           "Mumbai",
           "GYM",
           "all",
-          348396
+          348347
         ],
         [
           "2025-10-01T00:00:00Z",
@@ -1228,14 +1228,14 @@
           "Others",
           "GX",
           "all",
-          330265
+          330356
         ],
         [
           "2025-10-01T00:00:00Z",
           "Others",
           "GYM",
           "all",
-          558135
+          558167
         ],
         [
           "2025-10-01T00:00:00Z",
@@ -1249,56 +1249,56 @@
           "Bangalore",
           "GX",
           "all",
-          1710716
+          1710577
         ],
         [
           "2026-01-01T00:00:00Z",
           "Bangalore",
           "GYM",
           "all",
-          3868972
+          3868875
         ],
         [
           "2026-01-01T00:00:00Z",
           "Bangalore",
           "PLAY",
           "all",
-          271715
+          271649
         ],
         [
           "2026-01-01T00:00:00Z",
           "Gurgaon",
           "GX",
           "all",
-          504344
+          504237
         ],
         [
           "2026-01-01T00:00:00Z",
           "Gurgaon",
           "GYM",
           "all",
-          1378649
+          1378622
         ],
         [
           "2026-01-01T00:00:00Z",
           "Gurgaon",
           "PLAY",
           "all",
-          92673
+          92654
         ],
         [
           "2026-01-01T00:00:00Z",
           "Hyderabad",
           "GX",
           "all",
-          770351
+          770211
         ],
         [
           "2026-01-01T00:00:00Z",
           "Hyderabad",
           "GYM",
           "all",
-          2559744
+          2559606
         ],
         [
           "2026-01-01T00:00:00Z",
@@ -1312,14 +1312,14 @@
           "Mumbai",
           "GX",
           "all",
-          266576
+          266572
         ],
         [
           "2026-01-01T00:00:00Z",
           "Mumbai",
           "GYM",
           "all",
-          380180
+          380106
         ],
         [
           "2026-01-01T00:00:00Z",
@@ -1333,14 +1333,14 @@
           "Others",
           "GX",
           "all",
-          364681
+          364750
         ],
         [
           "2026-01-01T00:00:00Z",
           "Others",
           "GYM",
           "all",
-          689091
+          689255
         ],
         [
           "2026-01-01T00:00:00Z",
@@ -1462,7 +1462,7 @@
           "2026-03-31"
         ],
         "lib/type": "mbql.stage/native",
-        "query": "-- Purpose: Count attended in-center footfalls by grain, city, service type, and optional GX sub-service cut.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service start/end dates for class eligibility windows.\nwith base as \n    (\n    Select\n        -- dwh_fitness_mart.membership_dim.business_line,\n        Date_Trunc(?, Class_date) as \"Grain\",\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        dwh_fitness_mart.booking_fact.service_type,\n        CASE WHEN ? = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\n                 \n        COUNT(DISTINCT booking_key) as footfalls\n        \n    From (\n        Select\n            md.user_id,\n            md.business_line,\n            md.membership_type,\n            md.attributed_center_key,\n            md.purchase_center_key,\n            -- Transfers/upgrades should use membership-service dates so the active window follows the latest pack lifecycle.\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"start\"\n                Else md.pack_start_date\n            End as pack_start_date,\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"end\"\n                Else md.pack_end_date\n            End as pack_end_date\n        From dwh_fitness_mart.membership_dim md\n        Left join pk_curefitplatforms_membershipdb.memberships mdb\n            on mdb.id = md.membership_service_id\n    ) membership_dim\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\n            and \n                -- Trials are excluded so footfalls reflect paid/member usage.\n                coalesce(booking_type,'xx') != 'TRIAL'\n                and Date(class_date) between ? and ?\n                -- Only attended bookings count as footfalls.\n                and attendance_time IS NOT NULL\n                and date(class_date) >= date '1900-01-01'\n    Where\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\n        -- Fitness membership lines covered in this footfall view.\n        and membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\n        -- Keep the base to paid memberships.\n        and membership_type = 'PAID'\n        and Date(class_date) between ? and ?\n    Group by\n        1,2,3,4\n) \n    \n    -- select ' overall',month, null, sum(footfalls) footfalls\n    -- from base\n    -- group by 1,2\n    -- union all\nselect * from base \nOrder by\n    1,2,3"
+        "query": "-- Purpose: Count attended in-center footfalls by grain, city, service type, and optional GX sub-service cut.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service start/end dates for class eligibility windows.\nwith base as \n    (\n    Select\n        -- dwh_fitness_mart.membership_fact.business_line,\n        Date_Trunc(?, Class_date) as \"Grain\",\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        dwh_fitness_mart.booking_fact.service_type,\n        CASE WHEN ? = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\n                 \n        COUNT(DISTINCT booking_key) as footfalls\n        \n    From (\n        Select\n            md.user_id,\n            md.business_line,\n            md.membership_type,\n            md.attributed_center_key,\n            md.purchase_center_key,\n            -- Transfers/upgrades should use membership-service dates so the active window follows the latest pack lifecycle.\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"start\"\n                Else md.pack_start_date\n            End as pack_start_date,\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"end\"\n                Else md.pack_end_date\n            End as pack_end_date\n        From dwh_fitness_mart.membership_fact md\n        Left join pk_curefitplatforms_membershipdb.memberships mdb\n            on mdb.id = md.membership_service_id\n\t\tWHERE\n\t\t-- Freeze to a single fact-table snapshot so results do not move because of\n\t    -- late-arriving tech changes or partition refreshes.\n\t\tmd.transaction_date = date '2026-06-16'\n    ) membership_dim\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\n            and \n                -- Trials are excluded so footfalls reflect paid/member usage.\n                coalesce(booking_type,'xx') != 'TRIAL'\n                and Date(class_date) between ? and ?\n                -- Only attended bookings count as footfalls.\n                and attendance_time IS NOT NULL\n                and date(class_date) >= date '1900-01-01'\n    Where\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\n        -- Fitness membership lines covered in this footfall view.\n        and membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\n        -- Keep the base to paid memberships.\n        and membership_type = 'PAID'\n        and Date(class_date) between ? and ?\n    Group by\n        1,2,3,4\n) \n    \n    -- select ' overall',month, null, sum(footfalls) footfalls\n    -- from base\n    -- group by 1,2\n    -- union all\nselect * from base \nOrder by\n    1,2,3"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -1495,7 +1495,7 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 12,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/DateTime": {
@@ -1528,14 +1528,14 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 5,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
                   "average-length": 7.4
                 }
               }
@@ -1564,15 +1564,15 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 3,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
-                  "average-length": 3
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 3.0
                 }
               }
             },
@@ -1600,15 +1600,15 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 1,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
-                  "average-length": 3
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 3.0
                 }
               }
             },
@@ -1636,16 +1636,16 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 180,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Number": {
-                  "min": 74,
-                  "q1": 197633,
-                  "q3": 824303.5601724286,
-                  "max": 3868972,
-                  "sd": 793679.7042327153,
-                  "avg": 691731.9222222221
+                  "min": 74.0,
+                  "q1": 197633.25,
+                  "q3": 824273.1800639145,
+                  "max": 3868875.0,
+                  "sd": 793660.6912888875,
+                  "avg": 691716.0055555556
                 }
               }
             },
@@ -1657,18 +1657,18 @@
         {
           "previous-value": null,
           "unit": null,
-          "offset": -6976603.132979829,
+          "offset": -6975607.966664007,
           "last-change": null,
           "col": "footfalls",
-          "slope": 384.3600363493097,
+          "slope": 384.30935782664426,
           "last-value": 341,
           "best-fit": [
             "*",
-            0.000001298785680898727,
+            1.3145114859738146e-06,
             [
               "pow",
               "x",
-              2.5985448179164115
+              2.5973273254307156
             ]
           ]
         }
@@ -1676,7 +1676,7 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-06-02T10:02:09.088312971Z",
+    "started_at": "2026-06-19T07:07:14.437456053Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -1688,32 +1688,32 @@
         {
           "template-tags": {
             "Start_Date": {
+              "id": "b0643689-d3c4-6e8c-9608-7163a12aa058",
               "name": "Start_Date",
               "display-name": "Start date",
-              "id": "b0643689-d3c4-6e8c-9608-7163a12aa058",
               "type": "date"
             },
             "End_Date": {
+              "id": "243de1c7-e5f0-40c9-f6c1-0f9b98dcfa9e",
               "name": "End_Date",
               "display-name": "End date",
-              "id": "243de1c7-e5f0-40c9-f6c1-0f9b98dcfa9e",
               "type": "date"
             },
             "grain": {
+              "id": "124c15bd-157b-26af-f4e4-edb17b50089b",
               "name": "grain",
               "display-name": "Grain",
-              "id": "124c15bd-157b-26af-f4e4-edb17b50089b",
               "type": "text"
             },
             "gx_class_cuts": {
+              "type": "text",
               "name": "gx_class_cuts",
               "id": "1e3ea311-d0e2-4980-8cf6-f89bcd76fcff",
-              "type": "text",
               "display-name": "Gx Class Cuts"
             }
           },
           "lib/type": "mbql.stage/native",
-          "native": "-- Purpose: Count attended in-center footfalls by grain, city, service type, and optional GX sub-service cut.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service start/end dates for class eligibility windows.\nwith base as \n    (\n    Select\n        -- dwh_fitness_mart.membership_dim.business_line,\n        Date_Trunc({{grain}}, Class_date) as \"Grain\",\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        dwh_fitness_mart.booking_fact.service_type,\n        CASE WHEN {{gx_class_cuts}} = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\n                 \n        COUNT(DISTINCT booking_key) as footfalls\n        \n    From (\n        Select\n            md.user_id,\n            md.business_line,\n            md.membership_type,\n            md.attributed_center_key,\n            md.purchase_center_key,\n            -- Transfers/upgrades should use membership-service dates so the active window follows the latest pack lifecycle.\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"start\"\n                Else md.pack_start_date\n            End as pack_start_date,\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"end\"\n                Else md.pack_end_date\n            End as pack_end_date\n        From dwh_fitness_mart.membership_dim md\n        Left join pk_curefitplatforms_membershipdb.memberships mdb\n            on mdb.id = md.membership_service_id\n    ) membership_dim\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\n            and \n                -- Trials are excluded so footfalls reflect paid/member usage.\n                coalesce(booking_type,'xx') != 'TRIAL'\n                and Date(class_date) between {{Start_Date}} and {{End_Date}}\n                -- Only attended bookings count as footfalls.\n                and attendance_time IS NOT NULL\n                and date(class_date) >= date '1900-01-01'\n    Where\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\n        -- Fitness membership lines covered in this footfall view.\n        and membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\n        -- Keep the base to paid memberships.\n        and membership_type = 'PAID'\n        and Date(class_date) between {{Start_Date}} and {{End_Date}}\n    Group by\n        1,2,3,4\n) \n    \n    -- select ' overall',month, null, sum(footfalls) footfalls\n    -- from base\n    -- group by 1,2\n    -- union all\nselect * from base \nOrder by\n    1,2,3\n\n"
+          "native": "-- Purpose: Count attended in-center footfalls by grain, city, service type, and optional GX sub-service cut.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service start/end dates for class eligibility windows.\nwith base as \n    (\n    Select\n        -- dwh_fitness_mart.membership_fact.business_line,\n        Date_Trunc({{grain}}, Class_date) as \"Grain\",\n        CASE WHEN city_name = 'Bangalore' THEN 'Bangalore'\n                 WHEN city_name = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN city_name = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN city_name IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        dwh_fitness_mart.booking_fact.service_type,\n        CASE WHEN {{gx_class_cuts}} = 'yes' then dwh_fitness_mart.booking_fact.sub_service_type else 'all' end as sub_service_type,\n                 \n        COUNT(DISTINCT booking_key) as footfalls\n        \n    From (\n        Select\n            md.user_id,\n            md.business_line,\n            md.membership_type,\n            md.attributed_center_key,\n            md.purchase_center_key,\n            -- Transfers/upgrades should use membership-service dates so the active window follows the latest pack lifecycle.\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"start\"\n                Else md.pack_start_date\n            End as pack_start_date,\n            Case\n                When Lower(Cast(md.is_transferred_pack as Varchar)) = 'true' or Lower(Cast(md.is_upgrade_pack as Varchar)) = 'true' Then mdb.\"end\"\n                Else md.pack_end_date\n            End as pack_end_date\n        From dwh_fitness_mart.membership_fact md\n        Left join pk_curefitplatforms_membershipdb.memberships mdb\n            on mdb.id = md.membership_service_id\n\t\tWHERE\n\t\t-- Freeze to a single fact-table snapshot so results do not move because of\n\t    -- late-arriving tech changes or partition refreshes.\n\t\tmd.transaction_date = date '2026-06-16'\n    ) membership_dim\n    LEFT JOIN dwh_fitness_mart.center_dim ON center_key = coalesce(attributed_center_key,purchase_center_key)\n    join dwh_fitness_mart.booking_fact on  dwh_fitness_mart.booking_fact.user_id = membership_dim.user_id and DATE(Class_date) BETWEEN Date(pack_start_date) and Date(pack_end_date)\n            and \n                -- Trials are excluded so footfalls reflect paid/member usage.\n                coalesce(booking_type,'xx') != 'TRIAL'\n                and Date(class_date) between {{Start_Date}} and {{End_Date}}\n                -- Only attended bookings count as footfalls.\n                and attendance_time IS NOT NULL\n                and date(class_date) >= date '1900-01-01'\n    Where\n        DATE(Class_date) between Date(pack_start_date) and Date(pack_end_date)\n        -- Fitness membership lines covered in this footfall view.\n        and membership_dim.business_line in ('ELITE', 'PRO', 'PLAY','LUX')\n        -- Keep the base to paid memberships.\n        and membership_type = 'PAID'\n        and Date(class_date) between {{Start_Date}} and {{End_Date}}\n    Group by\n        1,2,3,4\n) \n    \n    -- select ' overall',month, null, sum(footfalls) footfalls\n    -- from base\n    -- group by 1,2\n    -- union all\nselect * from base \nOrder by\n    1,2,3\n\n"
         }
       ],
       "middleware": {
@@ -1727,7 +1727,7 @@
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-06-02T05:08:23.792911Z"
+        "invalidated-at": "2026-06-19T06:02:15.35318Z"
       },
       "viz-settings": {
         "graph.dimensions": [
@@ -1841,6 +1841,6 @@
     "status": "completed",
     "context": "question",
     "row_count": 180,
-    "running_time": 47852
+    "running_time": 113963
   }
 }

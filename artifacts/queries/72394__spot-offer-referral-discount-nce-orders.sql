@@ -46,13 +46,13 @@ WITH non_complimentary_memberships AS (
 
         Auditor note:
           This CTE is not date-bounded. That means it uses the full available
-        membership history to classify whether a user's membership is first
-        or repeat. This is useful for lifetime New/Repeat accuracy.
-        Actual date-bounding is carried out in the base CTE by defining the main reporting window for membership orders.
+          membership history to classify whether a user's membership is first
+          or repeat. This is useful for lifetime New/Repeat accuracy.
+		  Actual date-bounding is carried out in base CTE by defining Main reporting window for membership orders.
     */
     SELECT
-        membership_dim.membership_key,
-        membership_dim.user_id,
+        membership_fact.membership_key,
+        membership_fact.user_id,
 
         /*
             Rank each user's valid paid memberships in chronological order.
@@ -61,20 +61,21 @@ WITH non_complimentary_memberships AS (
             rank > 1 means the user had a prior valid paid membership.
         */
         row_number() OVER (
-            PARTITION BY membership_dim.user_id
+            PARTITION BY membership_fact.user_id
             ORDER BY
-                membership_dim.membership_created_date ASC,
-                membership_dim.membership_created_time ASC,
-                membership_dim.order_id ASC
+                membership_fact.membership_created_date ASC,
+                membership_fact.membership_created_time ASC,
+                membership_fact.order_id ASC
         ) AS non_complimentary_membership_rank
 
-    FROM dwh_fitness_mart.membership_dim
+    FROM dwh_fitness_mart.membership_fact
 
-    WHERE upper(COALESCE(membership_dim.membership_type, '')) NOT IN ('COMPLIMENTARY', 'COMPLIMENTORY')
+    WHERE upper(COALESCE(membership_fact.membership_type, '')) NOT IN ('COMPLIMENTARY', 'COMPLIMENTORY')
         AND status NOT LIKE '%CANCEL%'
         AND status NOT LIKE 'TRANSFER%'
         AND status NOT LIKE 'UPGRADE%'
         AND is_enterprise = 0
+		AND transaction_date = date '2026-06-16'
 ),
 
 membership_classified AS (
@@ -82,7 +83,7 @@ membership_classified AS (
         This CTE assigns each membership a New / Repeat classification.
 
         ELITE / PRO:
-          Uses membership_dim.fitness_membership_type because that field is
+          Uses membership_fact.fitness_membership_type because that field is
           already maintained for these business lines.
 
         Complimentary memberships:
@@ -95,18 +96,18 @@ membership_classified AS (
             rank > 1 => Repeat
     */
     SELECT
-        membership_dim.membership_key,
-        membership_dim.order_id,
-        membership_dim.user_id,
-        membership_dim.membership_created_date,
-        membership_dim.amount_paid,
-        membership_dim.business_line,
+        membership_fact.membership_key,
+        membership_fact.order_id,
+        membership_fact.user_id,
+        membership_fact.membership_created_date,
+        membership_fact.amount_paid,
+        membership_fact.business_line,
 
         CASE
-            WHEN membership_dim.business_line IN ('ELITE', 'PRO')
-                THEN COALESCE(membership_dim.fitness_membership_type, 'Repeat')
+            WHEN membership_fact.business_line IN ('ELITE', 'PRO')
+                THEN COALESCE(membership_fact.fitness_membership_type, 'Repeat')
 
-            WHEN upper(COALESCE(membership_dim.membership_type, '')) IN ('COMPLIMENTARY', 'COMPLIMENTORY')
+            WHEN upper(COALESCE(membership_fact.membership_type, '')) IN ('COMPLIMENTARY', 'COMPLIMENTORY')
                 THEN NULL
 
             WHEN ncm.non_complimentary_membership_rank = 1
@@ -118,12 +119,13 @@ membership_classified AS (
             ELSE NULL
         END AS derived_membership_type
 
-    FROM dwh_fitness_mart.membership_dim
+    FROM dwh_fitness_mart.membership_fact
 
     LEFT JOIN non_complimentary_memberships ncm
-        ON membership_dim.membership_key = ncm.membership_key
+        ON membership_fact.membership_key = ncm.membership_key
 
     WHERE 1 = 1
+	AND transaction_date = date '2026-06-16'
 ),
 
 base AS (

@@ -12,7 +12,7 @@ WITH
       final_center_key,
       c.city_name attributed_city
     FROM
-      dwh_fitness_mart.membership_dim m
+      dwh_fitness_mart.membership_fact m
     LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
       ON mdb.id = m.membership_service_id
     JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key
@@ -28,6 +28,9 @@ WITH
       and m.business_line in ('ELITE','PRO','PLAY')
       -- Keep customer-paid memberships excluding the complimentary packs etc.
       and amount_paid>2000
+	  -- Freeze to a single fact-table snapshot so results do not move because of
+	  -- late-arriving tech changes or partition refreshes.
+	  AND m.transaction_date = date '2026-06-16'
     GROUP BY
       1,
       2,

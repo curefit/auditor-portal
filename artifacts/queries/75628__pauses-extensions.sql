@@ -7,7 +7,7 @@ WITH
       m.membership_key,
       fitness_next_membership
     FROM
-      dwh_fitness_mart.membership_dim m
+      dwh_fitness_mart.membership_fact m
       LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
         ON mdb.id = m.membership_service_id
     WHERE 1=1
@@ -20,6 +20,9 @@ WITH
       ) between date('2017-10-01') and {{ed}}
       -- Pause/transfer usage is reviewed for the main fitness membership lines.
       and m.business_line in ('ELITE','PRO','PLAY')
+	  -- Freeze to a single fact-table snapshot so results do not move because of
+	  -- late-arriving tech changes or partition refreshes.
+	  AND m.transaction_date = date '2026-06-16'
     GROUP BY
       1,
       2
@@ -49,7 +52,7 @@ WITH
         DATE(m.created_date) AS child_created_date,
         ROW_NUMBER() OVER(PARTITION BY CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) ORDER BY m.created_date DESC) AS row_num
       FROM pk_curefitplatforms_membershipdb.memberships m
-      LEFT JOIN dwh_fitness_mart.membership_dim md on m.id = md.membership_service_id
+      LEFT JOIN dwh_fitness_mart.membership_fact md on m.id = md.membership_service_id and md.transaction_date = date '2026-06-16'
       LEFT JOIN pk_curefitplatforms_membershipdb.memberships m2 ON CAST(JSON_EXTRACT_SCALAR(m.metadata, '$.parentMembershipId') AS INT) = m2.id
       LEFT JOIN dwh_fitness_mart.orders_fact of ON of.order_id = m.order_id AND of.purchase_date >= date('2017-10-01') AND of.purchase_date <= {{ed}}
       LEFT JOIN dwh_fitness_mart.orders_fact of2 ON of2.order_id = m2.order_id AND of2.purchase_date >= date('2017-10-01') AND of2.purchase_date <= {{ed}}
