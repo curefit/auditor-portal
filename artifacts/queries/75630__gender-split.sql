@@ -115,7 +115,7 @@ user_age AS (
       birthday,
       ROW_NUMBER() OVER (PARTITION BY id ORDER BY updatedat DESC) AS rf
     FROM pk_cfuserservice_cultapp.User
-	WHERE coalesce(date(createdat), date('1900-01-01'))<= {{ed}} -- ensure no backfil 
+	WHERE coalesce(date(createdat), date('1900-01-01')) <= {{ed}} -- ensure no backfill
   ) user
   WHERE rf = 1
 ),
