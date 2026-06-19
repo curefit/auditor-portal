@@ -87,7 +87,7 @@ age_onboarding AS (
     AND nrs.answer != ''
     AND nrs.formid = 'post_pack_purchase_onboarding'
     AND nrs.questionid IN ('onboarding_user_dob_v1', '@Home Guidance_Gender_v1')
-	AND coalesce(date(created_at), date('1900-01-01')) <= {{ed}} -- ensure no backfil
+	AND coalesce(date(created_at), date('1900-01-01')) <= {{ed}} -- ensure no backfill
   GROUP BY 1
 ),
 
