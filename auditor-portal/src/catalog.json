@@ -6198,24 +6198,24 @@
       "entryKey": "card:84483:drhp:22"
     },
     {
-      "cardId": "84704",
-      "name": "Total Transacting Customer",
-      "rootKey": "question-84704",
-      "rootAssetName": "Total Transacting Customer",
+      "cardId": "85306",
+      "name": "Total End users of products",
+      "rootKey": "question-85306",
+      "rootAssetName": "Total End users of products",
       "dashboardId": null,
       "dashboardName": null,
-      "metabaseCardUrl": "https://metabase.curefit.co/question/84704",
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85306",
       "metabaseRootSourceUrl": null,
       "paths": {
-        "query": "artifacts/queries/84704__total-transacting-customer.sql",
-        "metadata": "artifacts/metadata/84704__total-transacting-customer.json",
+        "query": "artifacts/queries/85306__total-end-users-of-products-b2b2c.sql",
+        "metadata": "artifacts/metadata/85306__total-end-users-of-products-b2b2c.json",
         "lineageMarkdown": null,
         "outputPreviewHtml": null,
         "lineagePreviewHtml": null
       },
       "results": [
-        "artifacts/results/question-84704__84704__total-transacting-customer.csv",
-        "artifacts/results/question-84704__84704__total-transacting-customer.json"
+        "artifacts/results/question-85306__85306__total-end-users-of-products-b2b2c.csv",
+        "artifacts/results/question-85306__85306__total-end-users-of-products-b2b2c.json"
       ],
       "sqlLineageRelations": [
         {
@@ -6240,18 +6240,18 @@
       "sheetMetric": {
         "sheetOrder": 21,
         "slNo": "1",
-        "metricName": "# Annual transacting customers",
-        "definition": "Total no. of estimated unique customers who have purchased active lifestyle products of Cult Brands in the period / year across all channels.",
+        "metricName": "Total End users of products",
+        "definition": "Total no. of estimated unique customers who have purchased active lifestyle products of Cult Brands in the period / year across our B2B2C Channel",
         "status": "",
         "poc": "",
         "units": "In lacs",
         "fy23": "",
-        "fy24": "10.4",
-        "fy25": "13.2",
-        "fy26": "21.29",
+        "fy24": "4.4",
+        "fy25": "5.8",
+        "fy26": "10.53",
         "nineMFy25": "",
         "nineMFy26": "",
-        "sourceRaw": "https://metabase.curefit.co/question/84704-total-transacting-customer",
+        "sourceRaw": "https://metabase.curefit.co/question/85306-total-end-users-of-products-b2b2c",
         "limitations": ""
       },
       "sheetMetricVia": "card"

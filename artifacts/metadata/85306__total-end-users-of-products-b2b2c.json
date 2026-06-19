@@ -1,0 +1,300 @@
+{
+  "cache_invalidated_at": "2026-06-19T09:47:33.607451Z",
+  "description": null,
+  "archived": false,
+  "view_count": 10,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(4)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "year",
+      "lib/original-name": "year",
+      "name": "year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "year",
+      "display_name": "year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "base_amount",
+      "lib/original-name": "base_amount",
+      "name": "base_amount",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "base_amount",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "base_amount",
+      "display_name": "base_amount",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 1877115004.0,
+            "q1": 1899773485.0,
+            "q3": 3324471498.0,
+            "max": 4185968402.0,
+            "sd": 1082457862.6089444,
+            "avg": 2612122491.5
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "aov",
+      "lib/original-name": "aov",
+      "name": "aov",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "aov",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "aov",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "aov",
+      "display_name": "aov",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 3143.0,
+            "q1": 3330.038981333848,
+            "q3": 3654.0,
+            "max": 3654.0,
+            "sd": 255.5,
+            "avg": 3526.25
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "decimal(38,17)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "customer_to_order_ratio",
+      "lib/original-name": "customer_to_order_ratio",
+      "name": "customer_to_order_ratio",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "customer_to_order_ratio",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "customer_to_order_ratio",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "customer_to_order_ratio",
+      "display_name": "customer_to_order_ratio",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.7909,
+            "q1": 0.8173636366936149,
+            "q3": 0.8632,
+            "max": 0.8632,
+            "sd": 0.03614999999999996,
+            "avg": 0.845125
+          }
+        }
+      },
+      "base_type": "type/Decimal"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "customers",
+      "lib/original-name": "customers",
+      "name": "customers",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "customers",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "customers",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "customers",
+      "display_name": "customers",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 443439.0,
+            "q1": 448791.5,
+            "q3": 817595.0,
+            "max": 1053351.0,
+            "sd": 287074.38246138114,
+            "avg": 633193.25
+          }
+        }
+      },
+      "base_type": "type/Float"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-16T09:27:45.522093Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7263,
+  "query_type": "native",
+  "name": "Total End users of products - B2B2C",
+  "last_query_start": "2026-06-19T09:48:23.042364Z",
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-06-19T09:48:23.046977Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 4340.0,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-19T09:47:33.605279Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "WITH revenue_summary AS (\n    SELECT year, base_amount, sort_key\n    FROM (\n        SELECT\n            1 AS sort_key,\n            'FY23' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            2 AS sort_key,\n            'FY24' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            3 AS sort_key,\n            'FY25' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            4 AS sort_key,\n            'FY26' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n    ) t\n),\nfy_year_1p_metrics AS (\n    SELECT\n        fy_year,\n        ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,\n        ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0),4) AS customer_to_order_ratio\n    FROM (\n        SELECT\n            CASE\n                WHEN DATE(filter_date) BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'\n                WHEN DATE(filter_date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'\n            END AS fy_year,\n            total_price,\n            order_id,\n            billing_address_phone\n        FROM dwh_d2c_metrics.d2c_bizfin_revenue\n        WHERE filter_date IS NOT NULL\n          AND DATE(filter_date) BETWEEN DATE('2024-04-01') AND DATE('2026-03-31')\n          AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')\n          AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'\n          AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))\n          AND channel_type = '1P'\n    ) source\n    WHERE fy_year IS NOT NULL\n    GROUP BY 1\n),\nrevenue_metric_year_mapping AS (\n    SELECT\n        r.year,\n        r.base_amount,\n        r.sort_key,\n        CASE\n            WHEN r.year IN ('FY23', 'FY24', 'FY25') THEN 'FY25'\n            WHEN r.year = 'FY26' THEN 'FY26'\n        END AS metric_year\n    FROM revenue_summary r\n)\nSELECT\n    r.year,\n    r.base_amount,\n    m.aov,\n\tm.customer_to_order_ratio,\n    ROUND((r.base_amount / NULLIF(m.aov, 0)) * m.customer_to_order_ratio) AS customers\nFROM revenue_metric_year_mapping r\nJOIN fy_year_1p_metrics m\n  ON r.metric_year = m.fy_year\nORDER BY r.sort_key\n"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 85306,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "_ubIHU2lh6uBRHmc75ulc",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-06-19T09:47:33.635522Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "year",
+    "table.cell_column": "total_amount",
+    "table.transpose": true,
+    "table.column_widths": [
+      null,
+      null,
+      null,
+      null,
+      209
+    ]
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "audit_related_queries",
+    "archive_operation_id": null,
+    "name": "Audit Related Queries",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7263,
+    "archived_directly": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-05-26T11:14:34.781469Z"
+  },
+  "metabase_version": "v0.60.1 (feddd55)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-19T08:15:09.312154Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}
