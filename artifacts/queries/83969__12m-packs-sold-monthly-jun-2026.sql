@@ -23,33 +23,33 @@ WITH original_pack_grain AS (
             DATE_DIFF(
                 'day',
                 CASE
-                    WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'
-                      OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'
+                    WHEN LOWER(CAST(membership_fact.is_transferred_pack AS VARCHAR)) = 'true'
+                      OR LOWER(CAST(membership_fact.is_upgrade_pack AS VARCHAR)) = 'true'
                         THEN membership_mdb."start"
-                    ELSE membership_dim.pack_start_date
+                    ELSE membership_fact.pack_start_date
                 END,
                 COALESCE(
                     original_pack_end_date,
                     CASE
-                        WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'
-                          OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'
+                        WHEN LOWER(CAST(membership_fact.is_transferred_pack AS VARCHAR)) = 'true'
+                          OR LOWER(CAST(membership_fact.is_upgrade_pack AS VARCHAR)) = 'true'
                             THEN membership_mdb."end"
-                        ELSE membership_dim.pack_end_date
+                        ELSE membership_fact.pack_end_date
                     END
                 )
             ) AS day_difference,
             DATE(
                 CASE
-                    WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'
-                      OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'
+                    WHEN LOWER(CAST(membership_fact.is_transferred_pack AS VARCHAR)) = 'true'
+                      OR LOWER(CAST(membership_fact.is_upgrade_pack AS VARCHAR)) = 'true'
                         THEN membership_mdb.created_date
-                    ELSE membership_dim.membership_created_date
+                    ELSE membership_fact.membership_created_date
                 END
             ) AS purchase_date,
-            membership_dim.business_line,
-            membership_dim.amount_paid,
-            membership_dim.order_key AS order_id,
-            membership_dim.pack_name,
+            membership_fact.business_line,
+            membership_fact.amount_paid,
+            membership_fact.order_key AS order_id,
+            membership_fact.pack_name,
             CASE
                 WHEN membership.previous_sku IS NULL
                  AND (membership.membership_rank = 1 OR membership.membership_rank IS NULL) THEN 'New'
@@ -59,73 +59,79 @@ WITH original_pack_grain AS (
                 ELSE 'Check'
             END AS membership_type,
             COALESCE(orders_fact.city_name, attributed_center.city_name, purchase_center.city_name) AS order_cityname,
-            membership_dim.is_select,
+            membership_fact.is_select,
             CASE
                 WHEN DATE(
                     CASE
-                        WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'
-                          OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'
+                        WHEN LOWER(CAST(membership_fact.is_transferred_pack AS VARCHAR)) = 'true'
+                          OR LOWER(CAST(membership_fact.is_upgrade_pack AS VARCHAR)) = 'true'
                             THEN membership_mdb.created_date
-                        ELSE membership_dim.membership_created_date
+                        ELSE membership_fact.membership_created_date
                     END
                 ) < DATE(purchase_center.center_launch_date) THEN 1
                 ELSE 0
             END AS pre_sales_flag
-        FROM dwh_fitness_mart.membership_dim
+        FROM dwh_fitness_mart.membership_fact
         LEFT JOIN pk_curefitplatforms_membershipdb.memberships membership_mdb
-            ON membership_mdb.id = membership_dim.membership_service_id
+            ON membership_mdb.id = membership_fact.membership_service_id
         LEFT JOIN dwh_fitness_mart.orders_fact
-            ON dwh_fitness_mart.orders_fact.order_key = dwh_fitness_mart.membership_dim.order_key
+            ON dwh_fitness_mart.orders_fact.order_key = dwh_fitness_mart.membership_fact.order_key
            AND DATE(orders_fact.purchase_date) >= DATE(current_date) - INTERVAL '3' YEAR
         LEFT JOIN dwh_fitness_mart.center_dim purchase_center
-            ON purchase_center.center_key = membership_dim.purchase_center_key
-        LEFT JOIN (
-            SELECT
-                membership_key,
-                ROW_NUMBER() OVER (
-                    PARTITION BY membership_dim.user_id
-                    ORDER BY CASE
-                        WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'
-                          OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'
-                            THEN repeat_mdb.created_date
-                        ELSE membership_dim.membership_created_date
-                    END
-                ) AS membership_rank,
-                LAG(membership_dim.business_line) OVER (
-                    PARTITION BY membership_dim.user_id
-                    ORDER BY CASE
-                        WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'
-                          OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'
-                            THEN repeat_mdb.created_date
-                        ELSE membership_dim.membership_created_date
-                    END
-                ) AS previous_sku
-            FROM dwh_fitness_mart.membership_dim
-            LEFT JOIN pk_curefitplatforms_membershipdb.memberships repeat_mdb
-                ON repeat_mdb.id = membership_dim.membership_service_id
-            WHERE LOWER(COALESCE(membership_dim.status, 'xx')) NOT LIKE '%canc%'
-              AND (
-                    membership_dim.amount_paid > 0
-                 OR COALESCE(membership_dim.membership_type, 'xx') IN ('MEMBER_MIGRATION', 'ENTERPRISE', 'MIGRATION')
-                 OR COALESCE(membership_dim.pack_name, 'xx') IN ('Transferred Pack')
-                 OR COALESCE(membership_dim.status, 'xx') IN ('MEMBERSHIP_TRANSFERRED')
-                 OR COALESCE(membership_dim.source, 'xx') IN ('MIGRATION')
-              )
-        ) membership
-            ON membership.membership_key = membership_dim.membership_key
+            ON purchase_center.center_key = membership_fact.purchase_center_key
+	    LEFT JOIN (
+	            SELECT
+	                membership_key,
+	                ROW_NUMBER() OVER (
+	                    PARTITION BY membership_fact.user_id
+	                    ORDER BY CASE
+	                        WHEN LOWER(CAST(membership_fact.is_transferred_pack AS VARCHAR)) = 'true'
+	                          OR LOWER(CAST(membership_fact.is_upgrade_pack AS VARCHAR)) = 'true'
+	                            THEN repeat_mdb.created_date
+	                        ELSE membership_fact.membership_created_date
+	                    END
+	                ) AS membership_rank,
+	                LAG(membership_fact.business_line) OVER (
+	                    PARTITION BY membership_fact.user_id
+	                    ORDER BY CASE
+	                        WHEN LOWER(CAST(membership_fact.is_transferred_pack AS VARCHAR)) = 'true'
+	                          OR LOWER(CAST(membership_fact.is_upgrade_pack AS VARCHAR)) = 'true'
+	                            THEN repeat_mdb.created_date
+	                        ELSE membership_fact.membership_created_date
+	                    END
+	                ) AS previous_sku
+	            FROM dwh_fitness_mart.membership_fact
+	            LEFT JOIN pk_curefitplatforms_membershipdb.memberships repeat_mdb
+	                ON repeat_mdb.id = membership_fact.membership_service_id
+	            WHERE LOWER(COALESCE(membership_fact.status, 'xx')) NOT LIKE '%canc%'
+	              AND (
+	                    membership_fact.amount_paid > 0
+	                 OR COALESCE(membership_fact.membership_type, 'xx') IN ('MEMBER_MIGRATION', 'ENTERPRISE', 'MIGRATION')
+	                 OR COALESCE(membership_fact.pack_name, 'xx') IN ('Transferred Pack')
+	                 OR COALESCE(membership_fact.status, 'xx') IN ('MEMBERSHIP_TRANSFERRED')
+	                 OR COALESCE(membership_fact.source, 'xx') IN ('MIGRATION')
+	              )
+				  -- Freeze to a single fact-table snapshot so results do not move because of
+				    -- late-arriving tech changes or partition refreshes.
+					AND membership_fact.transaction_date = date '2026-06-16'
+	        ) membership
+	            ON membership.membership_key = membership_fact.membership_key
         LEFT JOIN dwh_fitness_mart.center_dim attributed_center
-            ON membership_dim.final_center_key = attributed_center.center_key
-        WHERE membership_dim.business_line IN ('ELITE', 'PRO')
+            ON membership_fact.final_center_key = attributed_center.center_key
+        WHERE membership_fact.business_line IN ('ELITE', 'PRO')
           AND DATE(
                 CASE
-                    WHEN LOWER(CAST(membership_dim.is_transferred_pack AS VARCHAR)) = 'true'
-                      OR LOWER(CAST(membership_dim.is_upgrade_pack AS VARCHAR)) = 'true'
+                    WHEN LOWER(CAST(membership_fact.is_transferred_pack AS VARCHAR)) = 'true'
+                      OR LOWER(CAST(membership_fact.is_upgrade_pack AS VARCHAR)) = 'true'
                         THEN membership_mdb.created_date
-                    ELSE membership_dim.membership_created_date
+                    ELSE membership_fact.membership_created_date
                 END
             ) BETWEEN {{Start_Date}} AND {{End_Date}}
-          AND membership_dim.amount_paid IS NOT NULL
-          AND membership_dim.amount_paid > 0
+          AND membership_fact.amount_paid IS NOT NULL
+          AND membership_fact.amount_paid > 0
+		  -- Freeze to a single fact-table snapshot so results do not move because of
+		  -- late-arriving tech changes or partition refreshes.
+		  AND membership_fact.transaction_date = date '2026-06-16'
     )
     WHERE day_difference > 0
       AND LOWER(pack_name) NOT LIKE '%upgraded%'

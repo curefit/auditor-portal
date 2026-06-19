@@ -1,255 +1,143 @@
 {
-  "cache_invalidated_at": null,
+  "cache_invalidated_at": "2026-06-19T06:07:10.961527Z",
   "description": null,
   "archived": false,
-  "view_count": 4,
+  "view_count": 37,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
-  "result_metadata": [
-    {
-      "display_name": "Grain",
-      "field_ref": [
-        "field",
-        "Grain",
-        {
-          "base-type": "type/Date"
-        }
-      ],
-      "base_type": "type/Date",
-      "effective_type": "type/Date",
-      "name": "Grain",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 73,
-          "nil%": 0.002770083102493075
-        },
-        "type": {
-          "type/DateTime": {
-            "earliest": "2020-05-01",
-            "latest": "2026-04-01"
-          }
-        }
-      }
-    },
-    {
-      "display_name": "city_name",
-      "field_ref": [
-        "field",
-        "city_name",
-        {
-          "base-type": "type/Text"
-        }
-      ],
-      "base_type": "type/Text",
-      "effective_type": "type/Text",
-      "name": "city_name",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 5,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 7.39612188365651
-          }
-        }
-      }
-    },
-    {
-      "display_name": "service_type",
-      "field_ref": [
-        "field",
-        "service_type",
-        {
-          "base-type": "type/Text"
-        }
-      ],
-      "base_type": "type/Text",
-      "effective_type": "type/Text",
-      "name": "service_type",
-      "semantic_type": "type/Category",
-      "fingerprint": {
-        "global": {
-          "distinct-count": 1,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 7.0
-          }
-        }
-      }
-    },
-    {
-      "display_name": "sub_service_type",
-      "field_ref": [
-        "field",
-        "sub_service_type",
-        {
-          "base-type": "type/Text"
-        }
-      ],
-      "base_type": "type/Text",
-      "effective_type": "type/Text",
-      "name": "sub_service_type",
-      "semantic_type": "type/Category",
-      "fingerprint": {
-        "global": {
-          "distinct-count": 1,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 7.0
-          }
-        }
-      }
-    },
-    {
-      "display_name": "footfalls",
-      "field_ref": [
-        "field",
-        "footfalls",
-        {
-          "base-type": "type/BigInteger"
-        }
-      ],
-      "base_type": "type/BigInteger",
-      "effective_type": "type/BigInteger",
-      "name": "footfalls",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 361,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 0.0,
-            "q1": 21199.365216323753,
-            "q3": 81763.3415769421,
-            "max": 543280.0,
-            "sd": 69147.20384996665,
-            "avg": 65202.27977839335
-          }
-        }
-      }
-    }
-  ],
+  "result_metadata": [],
+  "embedding_type": null,
   "creator": {
     "email": "mukul.yambal@curefit.com",
     "first_name": "Mukul",
-    "last_login": "2026-04-06T08:50:45.067276Z",
+    "is_data_analyst": false,
+    "last_login": "2026-06-15T09:20:36.37172Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3749,
     "last_name": "Yambal",
+    "tenant_id": null,
     "date_joined": "2025-03-07T10:30:17.035802Z",
     "common_name": "Mukul Yambal"
   },
   "initially_published_at": null,
   "can_write": true,
+  "card_schema": 23,
   "database_id": 39,
   "enable_embedding": false,
-  "collection_id": null,
+  "collection_id": 7263,
   "query_type": "native",
   "name": "'At Home' footfalls",
-  "last_query_start": "2026-04-12T13:26:37.617188Z",
+  "last_query_start": "2026-06-19T06:01:32.98311Z",
+  "is_remote_synced": false,
   "dashboard_count": 0,
-  "last_used_at": "2026-04-12T13:26:37.625394Z",
+  "document_id": null,
+  "last_used_at": "2026-06-19T06:01:32.990369Z",
+  "dashboard": null,
   "type": "question",
-  "warnings": [
-    {
-      "id": 147616940,
-      "cardId": 75753,
-      "warnings": [
-        {
-          "warningCode": {
-            "code": -1,
-            "name": "HIGH_PEAK_TASK_MEMORY_USAGE"
-          },
-          "message": "Optimize query to reduce memory usage"
-        }
-      ],
-      "queryHash": "d3bea23a5c992771dd0b8f42edb05d8d21a3b7cd1cdbf130d31b3d91e484c37b",
-      "executionStartTime": "2026-04-13T10:15:40.739+0000",
-      "tables": [
-        "dwh_live.live_bookings",
-        "dwh_fitness_mart.membership_dim"
-      ],
-      "archive": false
-    }
-  ],
-  "average_query_time": 29233.5,
+  "dimensions": null,
+  "average_query_time": 23829.14285714286,
   "creator_id": 3749,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-02-11T08:53:48.997047Z",
+  "updated_at": "2026-06-19T06:07:10.959564Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
+    "lib/type": "mbql/query",
     "database": 39,
-    "type": "native",
-    "native": {
-      "template-tags": {
-        "grain": {
-          "type": "text",
-          "name": "grain",
-          "id": "1f605ed0-53a7-4e17-a4b6-7f98318d4130",
-          "display-name": "Grain"
-        }
-      },
-      "query": "\n Select\n \n \n \n  Date_Trunc({{grain}}, createddate_date) as \"Grain\",\n        CASE WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n                 WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN selectedcityid IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        -- dwh_fitness_mart.booking_fact.service_type,\n        'At Home' as service_type,\n        'At Home'  as sub_service_type,\n                 \n        COUNT(DISTINCT usersessionid) as footfalls\n        \n        \n        \n        -- distinct\n        -- user_id,\n        -- usersessionid,\n        -- -- Case\n        -- --   When UPPER(packid) like '%DIYLIV01%' Then 400\n        -- --   When UPPER(packid) in ('DIYLIV06', 'DIYLIV04')\n        -- --   or UPPER(packid) in ('DIYPACK018', 'DIYPACK009') Then 350\n        -- --   Else 250\n        -- -- End,\n        -- createddate_date,\n        -- createddate,\n        -- -- Date_Trunc('Week', createddate_date) Weeks_Active,\n        -- -- Case\n        -- --   When extract(\n        -- --     Hour\n        -- --     From\n        -- --       createddate\n        -- --   ) <= 12 Then 'Morning'\n        -- --   Else 'Evening'\n        -- -- End as slot,\n        -- -- Round(((1.0 * user_duration) / 60000), 0) as minutes,\n        -- -- Extract(\n        -- --   DOW\n        -- --   FROM\n        -- --     createddate_date\n        -- -- ) as day_week,\n        -- Case\n        --   When UPPER(packid) LIKE '%DIY%' Then 'DIY'\n        --   When UPPER(packid) LIKE '%LIVE%' Then Split(UPPER(packid), '_') [ 1 ]\n        --   When UPPER(packid) LIKE '%MEDPACK%' Then 'MEDITATION'\n        --   When UPPER(packid) LIKE '%MMPACK%' Then 'MEDITATION'\n        --   When UPPER(packid) LIKE '%SNC%' Then 'STRENGTH'\n        --   Else UPPER(packid)\n        -- End as packid,\n        -- 'Live',\n        -- -- trainername, \n        -- -- null as center_name,\n        -- -- selectedcityid as city_name,\n        -- null as classid\n\n      from    dwh_fitness_mart.membership_dim base\n      \n        left join dwh_live.live_bookings\n        -- add membership_dim here\n      on live_bookings.userid=base.user_id and date(createddate_date) between pack_start_date and pack_end_date\n      and\n        year(createddate_date) >= year(Date('2017-01-01'))\n        and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n        and live_bookings.userid_50_percent_completed is not Null\n        -- and UPPER(packid) in (\n        --   'YOGA',\n        --   'STRENGTH',\n        --   'SNC',\n        --   'LIVE_YOGA',\n        --   'LIVE_SNC',\n        --   'LIVE_DANCE',\n        --   'HRX',\n        --   'DANCE',\n        --   'BOXING',\n        --   'CARDIO'\n        -- )\n        where 1=1\n      AND base.membership_created_date >= date('2017-01-01')\n      and base.business_line in ('LIVE','TRANSFORM')\n    --   and amount_paid>2000\n    GROUP BY\n      1,\n      2,\n      3,\n      4"
-    }
+    "stages": [
+      {
+        "template-tags": {
+          "grain": {
+            "display-name": "Grain",
+            "name": "grain",
+            "id": "1f605ed0-53a7-4e17-a4b6-7f98318d4130",
+            "type": "text",
+            "default": [
+              "quarter"
+            ]
+          },
+          "Start_Date": {
+            "display-name": "Start Date",
+            "name": "Start_Date",
+            "id": "79a43acb-d156-407b-bb85-b36e1014f23f",
+            "type": "date",
+            "default": "2023-04-01"
+          },
+          "End_Date": {
+            "display-name": "End Date",
+            "name": "End_Date",
+            "id": "dac2a996-d6da-48f4-9b97-ffd34aec53cc",
+            "type": "date",
+            "default": "2026-03-31"
+          }
+        },
+        "lib/type": "mbql.stage/native",
+        "native": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSELECT\n  Date_Trunc ({{grain}}, createddate_date) AS \"Grain\",\n  CASE\n    WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n    WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n    WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n    WHEN selectedcityid IN ('Mumbai', 'Navi_Mum_And_Thane') THEN 'Mumbai'\n    ELSE 'Others'\n  END city_name,\n  -- dwh_fitness_mart.booking_fact.service_type,\n  'At Home' AS service_type,\n  'At Home' AS sub_service_type,\n  COUNT(DISTINCT usersessionid) AS footfalls\nFROM\n  (\n    SELECT\n      md.user_id,\n      md.business_line,\n      -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.\"start\"\n        ELSE md.pack_start_date\n      END AS pack_start_date,\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.\"end\"\n        ELSE md.pack_end_date\n      END AS pack_end_date,\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.created_date\n        ELSE md.membership_created_date\n      END AS membership_created_date\n    FROM\n      dwh_fitness_mart.membership_fact md\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb ON mdb.id = md.membership_service_id\n\tWHERE\n\t  1 = 1\n\t  AND md.membership_created_date BETWEEN {{Start_Date}} AND {{End_Date}}\n\t  AND md.business_line IN ('LIVE', 'TRANSFORM') -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n\t  -- Freeze to a single fact-table snapshot so results do not move because of\n\t    -- late-arriving tech changes or partition refreshes.\n\t\tAND md.transaction_date = date '2026-06-16'\n  ) base\n  LEFT JOIN dwh_live.live_bookings\n  ON live_bookings.userid = base.user_id\n  AND date(createddate_date) BETWEEN pack_start_date AND pack_end_date -- Mapping sessions during the pack duration\n  AND date(createddate_date) BETWEEN {{Start_Date}} AND {{End_Date}} -- Report window bounds at-home sessions, not just membership eligibility.\n  AND coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n  AND live_bookings.userid_50_percent_completed IS NOT NULL -- Count only sessions where the user completed enough of the live workout.\n\nGROUP BY\n  1,\n  2,\n  3,\n  4\nORDER BY\n  1,\n  2"
+      }
+    ]
   },
+  "dimension_mappings": null,
   "id": 75753,
+  "legacy_query": "{\"database\":39,\"type\":\"native\",\"native\":{\"template-tags\":{\"grain\":{\"type\":\"text\",\"name\":\"grain\",\"id\":\"1f605ed0-53a7-4e17-a4b6-7f98318d4130\",\"display-name\":\"Grain\"}},\"query\":\"\\n Select\\n \\n \\n \\n  Date_Trunc({{grain}}, createddate_date) as \\\"Grain\\\",\\n        CASE WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\\n                 WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\\n                 WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\\n                 WHEN selectedcityid IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \\n        -- dwh_fitness_mart.booking_fact.service_type,\\n        'At Home' as service_type,\\n        'At Home'  as sub_service_type,\\n                 \\n        COUNT(DISTINCT usersessionid) as footfalls\\n        \\n        \\n        \\n        -- distinct\\n        -- user_id,\\n        -- usersessionid,\\n        -- -- Case\\n        -- --   When UPPER(packid) like '%DIYLIV01%' Then 400\\n        -- --   When UPPER(packid) in ('DIYLIV06', 'DIYLIV04')\\n        -- --   or UPPER(packid) in ('DIYPACK018', 'DIYPACK009') Then 350\\n        -- --   Else 250\\n        -- -- End,\\n        -- createddate_date,\\n        -- createddate,\\n        -- -- Date_Trunc('Week', createddate_date) Weeks_Active,\\n        -- -- Case\\n        -- --   When extract(\\n        -- --     Hour\\n        -- --     From\\n        -- --       createddate\\n        -- --   ) <= 12 Then 'Morning'\\n        -- --   Else 'Evening'\\n        -- -- End as slot,\\n        -- -- Round(((1.0 * user_duration) / 60000), 0) as minutes,\\n        -- -- Extract(\\n        -- --   DOW\\n        -- --   FROM\\n        -- --     createddate_date\\n        -- -- ) as day_week,\\n        -- Case\\n        --   When UPPER(packid) LIKE '%DIY%' Then 'DIY'\\n        --   When UPPER(packid) LIKE '%LIVE%' Then Split(UPPER(packid), '_') [ 1 ]\\n        --   When UPPER(packid) LIKE '%MEDPACK%' Then 'MEDITATION'\\n        --   When UPPER(packid) LIKE '%MMPACK%' Then 'MEDITATION'\\n        --   When UPPER(packid) LIKE '%SNC%' Then 'STRENGTH'\\n        --   Else UPPER(packid)\\n        -- End as packid,\\n        -- 'Live',\\n        -- -- trainername, \\n        -- -- null as center_name,\\n        -- -- selectedcityid as city_name,\\n        -- null as classid\\n\\n      from    dwh_fitness_mart.membership_dim base\\n      \\n        left join dwh_live.live_bookings\\n        -- add membership_dim here\\n      on live_bookings.userid=base.user_id and date(createddate_date) between pack_start_date and pack_end_date\\n      and\\n        year(createddate_date) >= year(Date('2017-01-01'))\\n        and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\\n        and live_bookings.userid_50_percent_completed is not Null\\n        -- and UPPER(packid) in (\\n        --   'YOGA',\\n        --   'STRENGTH',\\n        --   'SNC',\\n        --   'LIVE_YOGA',\\n        --   'LIVE_SNC',\\n        --   'LIVE_DANCE',\\n        --   'HRX',\\n        --   'DANCE',\\n        --   'BOXING',\\n        --   'CARDIO'\\n        -- )\\n        where 1=1\\n      AND base.membership_created_date >= date('2017-01-01')\\n      and base.business_line in ('LIVE','TRANSFORM')\\n    --   and amount_paid>2000\\n    GROUP BY\\n      1,\\n      2,\\n      3,\\n      4\"}}",
   "parameter_mappings": [],
   "can_manage_db": false,
   "display": "table",
   "archived_directly": false,
   "entity_id": "g5P9F-O8NxgtHYZoQFJIc",
+  "param_fields": {},
   "collection_preview": true,
   "last-edit-info": {
-    "id": 3412,
-    "email": "harsha.vardhan@curefit.com",
-    "first_name": "Harsha",
-    "last_name": "Vardhan",
-    "timestamp": "2026-02-11T08:53:49.21796Z"
+    "id": 3570,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-06-19T06:07:11.034132Z"
   },
   "visualization_settings": {
     "table.pivot_column": "service_type",
-    "table.cell_column": "footfalls"
+    "table.cell_column": "footfalls",
+    "table.column_widths": [
+      155
+    ]
   },
   "collection": {
-    "metabase.models.collection.root/is-root?": true,
     "authority_level": null,
-    "name": "Our analytics",
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "audit_related_queries",
+    "archive_operation_id": null,
+    "name": "Audit Related Queries",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7263,
+    "archived_directly": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
+    "namespace": null,
     "is_personal": false,
-    "id": "root",
-    "can_write": true
+    "created_at": "2026-05-26T11:14:34.781469Z"
   },
   "metabase_version": "vUNKNOWN (?)",
   "parameters": [
     {
+      "slug": "grain",
+      "values_query_type": "list",
+      "default": [
+        "quarter"
+      ],
+      "name": "Grain",
+      "isMultiSelect": false,
+      "type": "string/=",
+      "values_source_type": "static-list",
       "id": "1f605ed0-53a7-4e17-a4b6-7f98318d4130",
-      "type": "category",
       "target": [
         "variable",
         [
@@ -257,10 +145,6 @@
           "grain"
         ]
       ],
-      "name": "Grain",
-      "slug": "grain",
-      "values_query_type": "list",
-      "values_source_type": "static-list",
       "values_source_config": {
         "values": [
           [
@@ -280,8 +164,39 @@
           ]
         ]
       }
+    },
+    {
+      "id": "79a43acb-d156-407b-bb85-b36e1014f23f",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Start_Date"
+        ]
+      ],
+      "name": "Start Date",
+      "slug": "Start_Date",
+      "default": "2023-04-01",
+      "isMultiSelect": false
+    },
+    {
+      "id": "dac2a996-d6da-48f4-9b97-ffd34aec53cc",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "End_Date"
+        ]
+      ],
+      "name": "End Date",
+      "slug": "End_Date",
+      "default": "2026-03-31",
+      "isMultiSelect": false
     }
   ],
+  "dashboard_id": null,
   "created_at": "2026-02-10T11:07:21.711644Z",
   "parameter_usage_count": 0,
   "public_uuid": null,

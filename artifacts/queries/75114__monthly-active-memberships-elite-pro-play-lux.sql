@@ -35,9 +35,13 @@ left join (
             when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date
             else md.membership_created_date
         end as membership_created_date
-    from dwh_fitness_mart.membership_dim md
+    from dwh_fitness_mart.membership_fact md
     left join pk_curefitplatforms_membershipdb.memberships mdb
         on mdb.id = md.membership_service_id
+	where 
+	-- Freeze to a single fact-table snapshot so results do not move because of
+    -- late-arriving tech changes or partition refreshes.
+		md.transaction_date = date '2026-06-16'
 -- Live membership must cover the complete month.
 ) m on date(m.pack_start_date)<=weekstart.Weekstart and date(m.pack_end_date)>=date_add('month',1,weekstart.Weekstart)
 

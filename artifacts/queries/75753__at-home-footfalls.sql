@@ -36,12 +36,15 @@ FROM
         ELSE md.membership_created_date
       END AS membership_created_date
     FROM
-      dwh_fitness_mart.membership_dim md
+      dwh_fitness_mart.membership_fact md
       LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb ON mdb.id = md.membership_service_id
 	WHERE
 	  1 = 1
 	  AND md.membership_created_date BETWEEN {{Start_Date}} AND {{End_Date}}
 	  AND md.business_line IN ('LIVE', 'TRANSFORM') -- At-home footfalls are tied to LIVE and TRANSFORM memberships.
+	  -- Freeze to a single fact-table snapshot so results do not move because of
+	    -- late-arriving tech changes or partition refreshes.
+		AND md.transaction_date = date '2026-06-16'
   ) base
   LEFT JOIN dwh_live.live_bookings
   ON live_bookings.userid = base.user_id

@@ -24,11 +24,11 @@
       "rows": [
         [
           "Multi",
-          1315312
+          1308283
         ],
         [
           "Same",
-          754238
+          761603
         ]
       ],
       "cols": [
@@ -79,7 +79,7 @@
           "2026-03-31"
         ],
         "lib/type": "mbql.stage/native",
-        "query": "-- Purpose: Classify memberships as same-center or multi-center based on attended booking centers.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date for the membership cohort filter.\nWITH\n  base AS (\n    SELECT\n      date_trunc('quarter', CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city\n    FROM\n      dwh_fitness_mart.membership_dim m\n    LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n      ON mdb.id = m.membership_service_id\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      -- Use membership-service created_date for transferred/upgraded packs before bucketing memberships by quarter.\n      AND DATE(CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) between date('2017-01-01') and ?\n      -- Same-center behavior is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n      -- Keep customer-paid memberships excluding the complimentary packs etc.\n      and amount_paid>2000\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n  )\n  \n  SELECT  IF(other_center_checkins>0,'Multi','Same') type,count(membership_key) memberships\n  FROM (\n  select \n    b.membership_key,\n    COUNT_IF(bf.center_key = final_center_key) attributed_center_checkins,\n    COUNT_IF(bf.center_key <> final_center_key) other_center_checkins\n  from base b \n  JOIN dwh_fitness_mart.booking_fact bf \n  on b.membership_key=bf.membership_key\n  and bf.class_date between Date('2017-01-01') \n        and ?\n  -- Only attended classes are used to decide same vs multi-center.\n  and attendance_time is not null\n\n  group by 1)\n  group by 1 \n  order by 1,2"
+        "query": "-- Purpose: Classify memberships as same-center or multi-center based on attended booking centers.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date for the membership cohort filter.\nWITH\n  base AS (\n    SELECT\n      date_trunc('quarter', CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city\n    FROM\n      dwh_fitness_mart.membership_fact m\n    LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n      ON mdb.id = m.membership_service_id\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      -- Use membership-service created_date for transferred/upgraded packs before bucketing memberships by quarter.\n      AND DATE(CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) between date('2017-01-01') and ?\n      -- Same-center behavior is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n      -- Keep customer-paid memberships excluding the complimentary packs etc.\n      and amount_paid>2000\n\t  -- Freeze to a single fact-table snapshot so results do not move because of\n\t  -- late-arriving tech changes or partition refreshes.\n\t  AND m.transaction_date = date '2026-06-16'\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n  )\n  \n  SELECT  IF(other_center_checkins>0,'Multi','Same') type,count(membership_key) memberships\n  FROM (\n  select \n    b.membership_key,\n    COUNT_IF(bf.center_key = final_center_key) attributed_center_checkins,\n    COUNT_IF(bf.center_key <> final_center_key) other_center_checkins\n  from base b \n  JOIN dwh_fitness_mart.booking_fact bf \n  on b.membership_key=bf.membership_key\n  and bf.class_date between Date('2017-01-01') \n        and ?\n  -- Only attended classes are used to decide same vs multi-center.\n  and attendance_time is not null\n\n  group by 1)\n  group by 1 \n  order by 1,2"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -112,14 +112,14 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 2,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
                   "average-length": 4.5
                 }
               }
@@ -148,16 +148,16 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 2,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Number": {
-                  "min": 754238,
-                  "q1": 754238,
-                  "q3": 1315312,
-                  "max": 1315312,
-                  "sd": 396739.23014746094,
-                  "avg": 1034775
+                  "min": 761603.0,
+                  "q1": 761603.0,
+                  "q3": 1308283.0,
+                  "max": 1308283.0,
+                  "sd": 386561.1351390618,
+                  "avg": 1034943.0
                 }
               }
             },
@@ -169,7 +169,7 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-06-02T10:05:50.743164761Z",
+    "started_at": "2026-06-19T07:19:13.200557475Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -179,18 +179,18 @@
       "lib/metadata": null,
       "stages": [
         {
+          "lib/type": "mbql.stage/native",
           "template-tags": {
             "Last_date": {
-              "type": "date",
               "name": "Last_date",
               "id": "f9e0ed02-30d0-4b7e-8780-578a68e44520",
               "display-name": "Last Date",
               "default": "2026-03-31",
+              "type": "date",
               "widget-type": null
             }
           },
-          "lib/type": "mbql.stage/native",
-          "native": "-- Purpose: Classify memberships as same-center or multi-center based on attended booking centers.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date for the membership cohort filter.\nWITH\n  base AS (\n    SELECT\n      date_trunc('quarter', CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city\n    FROM\n      dwh_fitness_mart.membership_dim m\n    LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n      ON mdb.id = m.membership_service_id\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      -- Use membership-service created_date for transferred/upgraded packs before bucketing memberships by quarter.\n      AND DATE(CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) between date('2017-01-01') and {{Last_date}}\n      -- Same-center behavior is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n      -- Keep customer-paid memberships excluding the complimentary packs etc.\n      and amount_paid>2000\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n  )\n  \n  SELECT  IF(other_center_checkins>0,'Multi','Same') type,count(membership_key) memberships\n  FROM (\n  select \n    b.membership_key,\n    COUNT_IF(bf.center_key = final_center_key) attributed_center_checkins,\n    COUNT_IF(bf.center_key <> final_center_key) other_center_checkins\n  from base b \n  JOIN dwh_fitness_mart.booking_fact bf \n  on b.membership_key=bf.membership_key\n  and bf.class_date between Date('2017-01-01') \n        and {{Last_date}}\n  -- Only attended classes are used to decide same vs multi-center.\n  and attendance_time is not null\n\n  group by 1)\n  group by 1 \n  order by 1,2"
+          "native": "-- Purpose: Classify memberships as same-center or multi-center based on attended booking centers.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date for the membership cohort filter.\nWITH\n  base AS (\n    SELECT\n      date_trunc('quarter', CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city\n    FROM\n      dwh_fitness_mart.membership_fact m\n    LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n      ON mdb.id = m.membership_service_id\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      -- Use membership-service created_date for transferred/upgraded packs before bucketing memberships by quarter.\n      AND DATE(CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) between date('2017-01-01') and {{Last_date}}\n      -- Same-center behavior is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n      -- Keep customer-paid memberships excluding the complimentary packs etc.\n      and amount_paid>2000\n\t  -- Freeze to a single fact-table snapshot so results do not move because of\n\t  -- late-arriving tech changes or partition refreshes.\n\t  AND m.transaction_date = date '2026-06-16'\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n  )\n  \n  SELECT  IF(other_center_checkins>0,'Multi','Same') type,count(membership_key) memberships\n  FROM (\n  select \n    b.membership_key,\n    COUNT_IF(bf.center_key = final_center_key) attributed_center_checkins,\n    COUNT_IF(bf.center_key <> final_center_key) other_center_checkins\n  from base b \n  JOIN dwh_fitness_mart.booking_fact bf \n  on b.membership_key=bf.membership_key\n  and bf.class_date between Date('2017-01-01') \n        and {{Last_date}}\n  -- Only attended classes are used to decide same vs multi-center.\n  and attendance_time is not null\n\n  group by 1)\n  group by 1 \n  order by 1,2"
         }
       ],
       "middleware": {
@@ -204,7 +204,7 @@
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-06-02T06:37:17.146504Z"
+        "invalidated-at": "2026-06-18T09:27:26.772717Z"
       },
       "viz-settings": {
         "table.pivot_column": "type",
@@ -234,6 +234,6 @@
     "status": "completed",
     "context": "question",
     "row_count": 2,
-    "running_time": 64214
+    "running_time": 46504
   }
 }

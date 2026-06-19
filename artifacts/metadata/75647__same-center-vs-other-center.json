@@ -1,15 +1,22 @@
 {
-  "cache_invalidated_at": null,
+  "cache_invalidated_at": "2026-06-18T09:27:26.772717Z",
   "description": null,
   "archived": false,
-  "view_count": 6,
+  "view_count": 33,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "display_name": "type",
+      "database_type": "varchar(5)",
+      "semantic_type": "type/Category",
+      "lib/deduplicated-name": "type",
+      "lib/original-name": "type",
+      "name": "type",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "type",
+      "source": "native",
       "field_ref": [
         "field",
         "type",
@@ -17,10 +24,9 @@
           "base-type": "type/Text"
         }
       ],
-      "base_type": "type/Text",
       "effective_type": "type/Text",
-      "name": "type",
-      "semantic_type": "type/Category",
+      "lib/desired-column-alias": "type",
+      "display_name": "type",
       "fingerprint": {
         "global": {
           "distinct-count": 2,
@@ -35,10 +41,18 @@
             "average-length": 4.5
           }
         }
-      }
+      },
+      "base_type": "type/Text"
     },
     {
-      "display_name": "memberships",
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "memberships",
+      "lib/original-name": "memberships",
+      "name": "memberships",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "memberships",
+      "source": "native",
       "field_ref": [
         "field",
         "memberships",
@@ -46,10 +60,9 @@
           "base-type": "type/BigInteger"
         }
       ],
-      "base_type": "type/BigInteger",
       "effective_type": "type/BigInteger",
-      "name": "memberships",
-      "semantic_type": null,
+      "lib/desired-column-alias": "memberships",
+      "display_name": "memberships",
       "fingerprint": {
         "global": {
           "distinct-count": 2,
@@ -57,112 +70,116 @@
         },
         "type": {
           "type/Number": {
-            "min": 761602.0,
-            "q1": 761602.0,
-            "q3": 1308282.0,
-            "max": 1308282.0,
+            "min": 761603.0,
+            "q1": 761603.0,
+            "q3": 1308283.0,
+            "max": 1308283.0,
             "sd": 386561.1351390618,
-            "avg": 1034942.0
+            "avg": 1034943.0
           }
         }
-      }
+      },
+      "base_type": "type/BigInteger"
     }
   ],
+  "embedding_type": null,
   "creator": {
     "email": "mkn@curefit.com",
     "first_name": "Maragatham",
-    "last_login": "2026-04-14T11:53:08.85271Z",
+    "is_data_analyst": false,
+    "last_login": "2026-06-16T13:01:03.348495Z",
     "is_qbnewb": false,
     "is_superuser": true,
     "id": 1868,
     "last_name": "K N",
+    "tenant_id": null,
     "date_joined": "2021-09-13T10:20:46.362151Z",
     "common_name": "Maragatham K N"
   },
   "initially_published_at": null,
   "can_write": true,
+  "card_schema": 23,
   "database_id": 39,
   "enable_embedding": false,
-  "collection_id": null,
+  "collection_id": 7263,
   "query_type": "native",
   "name": "Same center vs other center",
-  "last_query_start": "2026-04-12T14:16:12.891541Z",
+  "last_query_start": "2026-06-18T09:29:45.001062Z",
+  "is_remote_synced": false,
   "dashboard_count": 0,
-  "last_used_at": "2026-04-12T14:16:12.897634Z",
+  "document_id": null,
+  "last_used_at": "2026-06-18T09:29:45.007249Z",
+  "dashboard": null,
   "type": "question",
-  "warnings": [
-    {
-      "id": 147633655,
-      "cardId": 75647,
-      "warnings": [
-        {
-          "warningCode": {
-            "code": -1,
-            "name": "HIGH_EXECUTION_TIME"
-          },
-          "message": "Execution time is 1.75m. Optimize Query to reduce execution time."
-        }
-      ],
-      "queryHash": "19a9171ceb8b7f7ade8b2b79ab1cece0d2d441ac2273cb963992b0a7f7ab14c6",
-      "executionStartTime": "2026-04-15T05:11:42.680+0000",
-      "tables": [
-        "dwh_fitness_mart.booking_fact",
-        "dwh_fitness_mart.membership_dim",
-        "dwh_fitness_mart.center_dim"
-      ],
-      "archive": false
-    }
-  ],
-  "average_query_time": 79836.5,
+  "dimensions": null,
+  "average_query_time": 66964.71428571429,
   "creator_id": 1868,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-02-09T10:27:08.520626Z",
+  "updated_at": "2026-06-18T09:27:26.765192Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
+    "lib/type": "mbql/query",
     "database": 39,
-    "type": "native",
-    "native": {
-      "template-tags": {
-        "Last_date": {
-          "type": "date",
-          "name": "Last_date",
-          "id": "f9e0ed02-30d0-4b7e-8780-578a68e44520",
-          "display-name": "Last Date",
-          "default": null,
-          "widget-type": null
-        }
-      },
-      "query": "WITH\n  base AS (\n    SELECT\n      date_trunc('quarter', membership_created_date) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city\n    FROM\n      dwh_fitness_mart.membership_dim m\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      AND m.membership_created_date >= date('2017-01-01')\n      and m.business_line in ('ELITE','PRO','PLAY')\n      and amount_paid>2000\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n  )\n  \n  SELECT  IF(other_center_checkins>0,'Multi','Same') type,count(membership_key) memberships\n  FROM (\n  select \n    b.membership_key,\n    COUNT_IF(bf.center_key = final_center_key) attributed_center_checkins,\n    COUNT_IF(bf.center_key <> final_center_key) other_center_checkins\n  from base b \n  JOIN dwh_fitness_mart.booking_fact bf \n  on b.membership_key=bf.membership_key\n  and bf.class_date between  Date('2017-01-01') \n        and {{Last_date}}\n  and attendance_time is not null\n\n  group by 1)\n  group by 1 \n  order by 1,2\n  "
-    }
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "template-tags": {
+          "Last_date": {
+            "name": "Last_date",
+            "id": "f9e0ed02-30d0-4b7e-8780-578a68e44520",
+            "display-name": "Last Date",
+            "default": "2026-03-31",
+            "type": "date",
+            "widget-type": null
+          }
+        },
+        "native": "-- Purpose: Classify memberships as same-center or multi-center based on attended booking centers.\n-- Output: type, memberships.\n-- Membership-date fix: transferred/upgraded packs use membership-service created_date for the membership cohort filter.\nWITH\n  base AS (\n    SELECT\n      date_trunc('quarter', CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) AS \"quarter\",\n      m.membership_key,\n      final_center_key,\n      c.city_name attributed_city\n    FROM\n      dwh_fitness_mart.membership_fact m\n    LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n      ON mdb.id = m.membership_service_id\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\n    WHERE\n     1=1\n      -- Use membership-service created_date for transferred/upgraded packs before bucketing memberships by quarter.\n      AND DATE(CASE\n        WHEN LOWER(CAST(m.is_transferred_pack AS VARCHAR)) = 'true' OR LOWER(CAST(m.is_upgrade_pack AS VARCHAR)) = 'true' THEN mdb.created_date\n        ELSE m.membership_created_date\n      END) between date('2017-01-01') and {{Last_date}}\n      -- Same-center behavior is reviewed for the main fitness membership lines.\n      and m.business_line in ('ELITE','PRO','PLAY')\n      -- Keep customer-paid memberships excluding the complimentary packs etc.\n      and amount_paid>2000\n\t  -- Freeze to a single fact-table snapshot so results do not move because of\n\t  -- late-arriving tech changes or partition refreshes.\n\t  AND m.transaction_date = date '2026-06-16'\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n  )\n  \n  SELECT  IF(other_center_checkins>0,'Multi','Same') type,count(membership_key) memberships\n  FROM (\n  select \n    b.membership_key,\n    COUNT_IF(bf.center_key = final_center_key) attributed_center_checkins,\n    COUNT_IF(bf.center_key <> final_center_key) other_center_checkins\n  from base b \n  JOIN dwh_fitness_mart.booking_fact bf \n  on b.membership_key=bf.membership_key\n  and bf.class_date between Date('2017-01-01') \n        and {{Last_date}}\n  -- Only attended classes are used to decide same vs multi-center.\n  and attendance_time is not null\n\n  group by 1)\n  group by 1 \n  order by 1,2"
+      }
+    ]
   },
+  "dimension_mappings": null,
   "id": 75647,
+  "legacy_query": "{\"database\":39,\"type\":\"native\",\"native\":{\"template-tags\":{\"Last_date\":{\"type\":\"date\",\"name\":\"Last_date\",\"id\":\"f9e0ed02-30d0-4b7e-8780-578a68e44520\",\"display-name\":\"Last Date\",\"default\":null,\"widget-type\":null}},\"query\":\"WITH\\n  base AS (\\n    SELECT\\n      date_trunc('quarter', membership_created_date) AS \\\"quarter\\\",\\n      m.membership_key,\\n      final_center_key,\\n      c.city_name attributed_city\\n    FROM\\n      dwh_fitness_mart.membership_dim m\\n    JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key\\n    --  JOIN dwh_curefit.dim_date dd ON dd.full_date BETWEEN m.pack_start_date AND m.pack_end_date\\n    WHERE\\n     1=1\\n      AND m.membership_created_date >= date('2017-01-01')\\n      and m.business_line in ('ELITE','PRO','PLAY')\\n      and amount_paid>2000\\n    GROUP BY\\n      1,\\n      2,\\n      3,\\n      4\\n  )\\n  \\n  SELECT  IF(other_center_checkins>0,'Multi','Same') type,count(membership_key) memberships\\n  FROM (\\n  select \\n    b.membership_key,\\n    COUNT_IF(bf.center_key = final_center_key) attributed_center_checkins,\\n    COUNT_IF(bf.center_key <> final_center_key) other_center_checkins\\n  from base b \\n  JOIN dwh_fitness_mart.booking_fact bf \\n  on b.membership_key=bf.membership_key\\n  and bf.class_date between  Date('2017-01-01') \\n        and {{Last_date}}\\n  and attendance_time is not null\\n\\n  group by 1)\\n  group by 1 \\n  order by 1,2\\n  \"}}",
   "parameter_mappings": [],
   "can_manage_db": false,
   "display": "table",
   "archived_directly": false,
   "entity_id": "TVgbNKxpQS3AZABWwXfXn",
+  "param_fields": {},
   "collection_preview": true,
   "last-edit-info": {
-    "id": 3412,
-    "email": "harsha.vardhan@curefit.com",
-    "first_name": "Harsha",
-    "last_name": "Vardhan",
-    "timestamp": "2026-02-09T10:27:08.611907Z"
+    "id": 3570,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-06-18T09:27:26.859908Z"
   },
   "visualization_settings": {
     "table.pivot_column": "type",
     "table.cell_column": "memberships"
   },
   "collection": {
-    "metabase.models.collection.root/is-root?": true,
     "authority_level": null,
-    "name": "Our analytics",
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "audit_related_queries",
+    "archive_operation_id": null,
+    "name": "Audit Related Queries",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7263,
+    "archived_directly": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
+    "namespace": null,
     "is_personal": false,
-    "id": "root",
-    "can_write": true
+    "created_at": "2026-05-26T11:14:34.781469Z"
   },
   "metabase_version": "vUNKNOWN (?)",
   "parameters": [
@@ -177,9 +194,12 @@
         ]
       ],
       "name": "Last Date",
-      "slug": "Last_date"
+      "slug": "Last_date",
+      "default": "2026-03-31",
+      "isMultiSelect": false
     }
   ],
+  "dashboard_id": null,
   "created_at": "2026-02-09T09:29:18.967014Z",
   "parameter_usage_count": 0,
   "public_uuid": null,

@@ -1426,7 +1426,7 @@
           "2026-03-31"
         ],
         "lib/type": "mbql.stage/native",
-        "query": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSelect\n  Date_Trunc(?, createddate_date) as \"Grain\",\n        CASE WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n                 WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN selectedcityid IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        -- dwh_fitness_mart.booking_fact.service_type,\n        'At Home' as service_type,\n        'At Home'  as sub_service_type,\n                 \n        COUNT(DISTINCT usersessionid) as footfalls\n        \n\n      from (\n        select\n          md.user_id,\n          md.business_line,\n          -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n          end as pack_start_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n          end as pack_end_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n          end as membership_created_date\n        from dwh_fitness_mart.membership_dim md\n        left join pk_curefitplatforms_membershipdb.memberships mdb\n          on mdb.id = md.membership_service_id\n      ) base\n      \n        left join dwh_live.live_bookings\n        -- add membership_dim here\n      on live_bookings.userid=base.user_id and date(createddate_date) between pack_start_date and pack_end_date\n      and\n        year(createddate_date) >= year(Date('2017-01-01'))\n        -- Report window bounds at-home sessions, not just membership eligibility.\n        and date(createddate_date) between ? and ?\n        -- Report window bounds at-home sessions, not just membership eligibility.\n        and date(createddate_date) between ? and ?\n        and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n        -- Count only sessions where the user completed enough of the live workout.\n        and live_bookings.userid_50_percent_completed is not Null\n        \n        where 1=1\n      AND base.membership_created_date >= date('2017-01-01')\n      -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n      and base.business_line in ('LIVE','TRANSFORM')\n    GROUP BY\n      1,\n      2,\n      3,\n      4"
+        "query": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSELECT\n  Date_Trunc (?, createddate_date) AS \"Grain\",\n  CASE\n    WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n    WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n    WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n    WHEN selectedcityid IN ('Mumbai', 'Navi_Mum_And_Thane') THEN 'Mumbai'\n    ELSE 'Others'\n  END city_name,\n  -- dwh_fitness_mart.booking_fact.service_type,\n  'At Home' AS service_type,\n  'At Home' AS sub_service_type,\n  COUNT(DISTINCT usersessionid) AS footfalls\nFROM\n  (\n    SELECT\n      md.user_id,\n      md.business_line,\n      -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.\"start\"\n        ELSE md.pack_start_date\n      END AS pack_start_date,\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.\"end\"\n        ELSE md.pack_end_date\n      END AS pack_end_date,\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.created_date\n        ELSE md.membership_created_date\n      END AS membership_created_date\n    FROM\n      dwh_fitness_mart.membership_fact md\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb ON mdb.id = md.membership_service_id\n\tWHERE\n\t  1 = 1\n\t  AND md.membership_created_date BETWEEN ? AND ?\n\t  AND md.business_line IN ('LIVE', 'TRANSFORM') -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n\t  -- Freeze to a single fact-table snapshot so results do not move because of\n\t    -- late-arriving tech changes or partition refreshes.\n\t\tAND md.transaction_date = date '2026-06-16'\n  ) base\n  LEFT JOIN dwh_live.live_bookings\n  ON live_bookings.userid = base.user_id\n  AND date(createddate_date) BETWEEN pack_start_date AND pack_end_date -- Mapping sessions during the pack duration\n  AND date(createddate_date) BETWEEN ? AND ? -- Report window bounds at-home sessions, not just membership eligibility.\n  AND coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n  AND live_bookings.userid_50_percent_completed IS NOT NULL -- Count only sessions where the user completed enough of the live workout.\n\nGROUP BY\n  1,\n  2,\n  3,\n  4\nORDER BY\n  1,\n  2"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -1492,14 +1492,14 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 5,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
                   "average-length": 7.392265193370166
                 }
               }
@@ -1528,15 +1528,15 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 1,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
-                  "average-length": 7
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.0
                 }
               }
             },
@@ -1564,15 +1564,15 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 1,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
-                  "average-length": 7
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 7.0
                 }
               }
             },
@@ -1600,16 +1600,16 @@
             "fingerprint": {
               "global": {
                 "distinct-count": 181,
-                "nil%": 0
+                "nil%": 0.0
               },
               "type": {
                 "type/Number": {
-                  "min": 0,
-                  "q1": 17786.608712126035,
-                  "q3": 42752.16497684922,
-                  "max": 135152,
-                  "sd": 26457.871394284946,
-                  "avg": 35823.08287292818
+                  "min": 0.0,
+                  "q1": 13927.687514831241,
+                  "q3": 34446.41108449675,
+                  "max": 70621.0,
+                  "sd": 18046.11594463332,
+                  "avg": 26661.93922651934
                 }
               }
             },
@@ -1619,20 +1619,20 @@
       },
       "insights": [
         {
-          "previous-value": 12372,
-          "unit": "year",
-          "offset": 494337.2097859821,
-          "last-change": 0.8725347559004203,
+          "previous-value": null,
+          "unit": null,
+          "offset": -117025.09565286801,
+          "last-change": null,
           "col": "footfalls",
-          "slope": -22.93703596155231,
-          "last-value": 23167,
+          "slope": 7.198436387514039,
+          "last-value": 0,
           "best-fit": [
             "*",
-            2.5171817926594797e+53,
+            2.0794671179038864e-36,
             [
               "pow",
               "x",
-              -11.378515004753078
+              9.305524335446533
             ]
           ]
         }
@@ -1640,7 +1640,7 @@
     },
     "cached": null,
     "database_id": 39,
-    "started_at": "2026-06-03T12:31:46.801372788Z",
+    "started_at": "2026-06-19T07:22:53.370043113Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -1676,7 +1676,7 @@
             }
           },
           "lib/type": "mbql.stage/native",
-          "native": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSelect\n  Date_Trunc({{grain}}, createddate_date) as \"Grain\",\n        CASE WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n                 WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n                 WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n                 WHEN selectedcityid IN ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai' ELSE 'Others' END city_name, \n        -- dwh_fitness_mart.booking_fact.service_type,\n        'At Home' as service_type,\n        'At Home'  as sub_service_type,\n                 \n        COUNT(DISTINCT usersessionid) as footfalls\n        \n\n      from (\n        select\n          md.user_id,\n          md.business_line,\n          -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n          end as pack_start_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n          end as pack_end_date,\n          case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n          end as membership_created_date\n        from dwh_fitness_mart.membership_dim md\n        left join pk_curefitplatforms_membershipdb.memberships mdb\n          on mdb.id = md.membership_service_id\n      ) base\n      \n        left join dwh_live.live_bookings\n        -- add membership_dim here\n      on live_bookings.userid=base.user_id and date(createddate_date) between pack_start_date and pack_end_date\n      and\n        year(createddate_date) >= year(Date('2017-01-01'))\n        -- Report window bounds at-home sessions, not just membership eligibility.\n        and date(createddate_date) between {{Start_Date}} and {{End_Date}}\n        -- Report window bounds at-home sessions, not just membership eligibility.\n        and date(createddate_date) between {{Start_Date}} and {{End_Date}}\n        and coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n        -- Count only sessions where the user completed enough of the live workout.\n        and live_bookings.userid_50_percent_completed is not Null\n        \n        where 1=1\n      AND base.membership_created_date >= date('2017-01-01')\n      -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n      and base.business_line in ('LIVE','TRANSFORM')\n    GROUP BY\n      1,\n      2,\n      3,\n      4\n"
+          "native": "-- Purpose: Count at-home live session footfalls by grain and city.\n-- Output: Grain, city_name, service_type, sub_service_type, footfalls.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live-session eligibility.\nSELECT\n  Date_Trunc ({{grain}}, createddate_date) AS \"Grain\",\n  CASE\n    WHEN selectedcityid = 'Bangalore' THEN 'Bangalore'\n    WHEN selectedcityid = 'Gurgaon' THEN 'Gurgaon'\n    WHEN selectedcityid = 'Hyderabad' THEN 'Hyderabad'\n    WHEN selectedcityid IN ('Mumbai', 'Navi_Mum_And_Thane') THEN 'Mumbai'\n    ELSE 'Others'\n  END city_name,\n  -- dwh_fitness_mart.booking_fact.service_type,\n  'At Home' AS service_type,\n  'At Home' AS sub_service_type,\n  COUNT(DISTINCT usersessionid) AS footfalls\nFROM\n  (\n    SELECT\n      md.user_id,\n      md.business_line,\n      -- Transfers/upgrades should use membership-service dates for at-home session eligibility windows.\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.\"start\"\n        ELSE md.pack_start_date\n      END AS pack_start_date,\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.\"end\"\n        ELSE md.pack_end_date\n      END AS pack_end_date,\n      CASE\n        WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.created_date\n        ELSE md.membership_created_date\n      END AS membership_created_date\n    FROM\n      dwh_fitness_mart.membership_fact md\n      LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb ON mdb.id = md.membership_service_id\n\tWHERE\n\t  1 = 1\n\t  AND md.membership_created_date BETWEEN {{Start_Date}} AND {{End_Date}}\n\t  AND md.business_line IN ('LIVE', 'TRANSFORM') -- At-home footfalls are tied to LIVE and TRANSFORM memberships.\n\t  -- Freeze to a single fact-table snapshot so results do not move because of\n\t    -- late-arriving tech changes or partition refreshes.\n\t\tAND md.transaction_date = date '2026-06-16'\n  ) base\n  LEFT JOIN dwh_live.live_bookings\n  ON live_bookings.userid = base.user_id\n  AND date(createddate_date) BETWEEN pack_start_date AND pack_end_date -- Mapping sessions during the pack duration\n  AND date(createddate_date) BETWEEN {{Start_Date}} AND {{End_Date}} -- Report window bounds at-home sessions, not just membership eligibility.\n  AND coalesce(usersessionid, 'xx') NOT LIKE '%FIT%FIVE%'\n  AND live_bookings.userid_50_percent_completed IS NOT NULL -- Count only sessions where the user completed enough of the live workout.\n\nGROUP BY\n  1,\n  2,\n  3,\n  4\nORDER BY\n  1,\n  2"
         }
       ],
       "middleware": {
@@ -1690,11 +1690,14 @@
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-06-03T12:31:20.110578Z"
+        "invalidated-at": "2026-06-19T06:07:10.961527Z"
       },
       "viz-settings": {
         "table.pivot_column": "service_type",
-        "table.cell_column": "footfalls"
+        "table.cell_column": "footfalls",
+        "table.column_widths": [
+          155
+        ]
       },
       "database": 39,
       "parameters": [
@@ -1745,6 +1748,6 @@
     "status": "completed",
     "context": "question",
     "row_count": 181,
-    "running_time": 14820
+    "running_time": 10158
   }
 }

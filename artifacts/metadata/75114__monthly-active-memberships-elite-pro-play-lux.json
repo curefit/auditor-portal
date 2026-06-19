@@ -1,326 +1,95 @@
 {
-  "cache_invalidated_at": null,
+  "cache_invalidated_at": "2026-06-19T05:51:55.916738Z",
   "description": null,
   "archived": false,
-  "view_count": 22,
+  "view_count": 42,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
-  "result_metadata": [
-    {
-      "display_name": "Year",
-      "field_ref": [
-        "field",
-        "Year",
-        {
-          "base-type": "type/BigInteger"
-        }
-      ],
-      "base_type": "type/BigInteger",
-      "effective_type": "type/BigInteger",
-      "name": "Year",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 3,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 2023.0,
-            "q1": 2023.3911649915626,
-            "q3": 2024.8125,
-            "max": 2025.0,
-            "sd": 0.8048150549829897,
-            "avg": 2024.090909090909
-          }
-        }
-      }
-    },
-    {
-      "display_name": "Month",
-      "field_ref": [
-        "field",
-        "Month",
-        {
-          "base-type": "type/BigInteger"
-        }
-      ],
-      "base_type": "type/BigInteger",
-      "effective_type": "type/BigInteger",
-      "name": "Month",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 12,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 1.0,
-            "q1": 4.25,
-            "q3": 9.75,
-            "max": 12.0,
-            "sd": 3.3574882386580702,
-            "avg": 6.909090909090909
-          }
-        }
-      }
-    },
-    {
-      "display_name": "month",
-      "field_ref": [
-        "field",
-        "month",
-        {
-          "base-type": "type/Date"
-        }
-      ],
-      "base_type": "type/Date",
-      "effective_type": "type/Date",
-      "name": "month",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 33,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/DateTime": {
-            "earliest": "2023-04-01",
-            "latest": "2025-12-01"
-          }
-        }
-      }
-    },
-    {
-      "display_name": "liveMemberships",
-      "field_ref": [
-        "field",
-        "liveMemberships",
-        {
-          "base-type": "type/BigInteger"
-        }
-      ],
-      "base_type": "type/BigInteger",
-      "effective_type": "type/BigInteger",
-      "name": "liveMemberships",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 33,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 322314.0,
-            "q1": 404721.5,
-            "q3": 539258.75,
-            "max": 592218.0,
-            "sd": 81470.49085395796,
-            "avg": 472837.2121212121
-          }
-        }
-      }
-    },
-    {
-      "display_name": "activeMemberships",
-      "field_ref": [
-        "field",
-        "activeMemberships",
-        {
-          "base-type": "type/BigInteger"
-        }
-      ],
-      "base_type": "type/BigInteger",
-      "effective_type": "type/BigInteger",
-      "name": "activeMemberships",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 33,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 188493.0,
-            "q1": 228520.0,
-            "q3": 330827.0,
-            "max": 359954.0,
-            "sd": 53815.51358307591,
-            "avg": 282048.0909090909
-          }
-        }
-      }
-    },
-    {
-      "display_name": "monthlyActiveMemberships",
-      "field_ref": [
-        "field",
-        "monthlyActiveMemberships",
-        {
-          "base-type": "type/Decimal"
-        }
-      ],
-      "base_type": "type/Decimal",
-      "effective_type": "type/Decimal",
-      "name": "monthlyActiveMemberships",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 32,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 54.66,
-            "q1": 58.3725,
-            "q3": 60.77770717334675,
-            "max": 63.7,
-            "sd": 1.8509931813963447,
-            "avg": 59.47515151515152
-          }
-        }
-      }
-    },
-    {
-      "display_name": "avg_sessions",
-      "field_ref": [
-        "field",
-        "avg_sessions",
-        {
-          "base-type": "type/Decimal"
-        }
-      ],
-      "base_type": "type/Decimal",
-      "effective_type": "type/Decimal",
-      "name": "avg_sessions",
-      "semantic_type": null,
-      "fingerprint": {
-        "global": {
-          "distinct-count": 33,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 9.091571289350226,
-            "q1": 9.731093529611353,
-            "q3": 10.257008023631492,
-            "max": 11.140120682087156,
-            "sd": 0.39601482252603176,
-            "avg": 10.01608313759938
-          }
-        }
-      }
-    }
-  ],
+  "result_metadata": [],
+  "embedding_type": null,
   "creator": {
     "email": "mukul.yambal@curefit.com",
     "first_name": "Mukul",
-    "last_login": "2026-04-06T08:50:45.067276Z",
+    "is_data_analyst": false,
+    "last_login": "2026-06-15T09:20:36.37172Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3749,
     "last_name": "Yambal",
+    "tenant_id": null,
     "date_joined": "2025-03-07T10:30:17.035802Z",
     "common_name": "Mukul Yambal"
   },
   "initially_published_at": null,
   "can_write": true,
+  "card_schema": 23,
   "database_id": 39,
   "enable_embedding": false,
-  "collection_id": 3142,
+  "collection_id": 7263,
   "query_type": "native",
   "name": "Monthly active memberships ELITE, PRO, PLAY, LUX",
-  "last_query_start": "2026-04-15T07:04:16.446618Z",
+  "last_query_start": "2026-06-02T10:03:08.9581Z",
+  "is_remote_synced": false,
   "dashboard_count": 0,
-  "last_used_at": "2026-04-15T07:04:16.456999Z",
+  "document_id": null,
+  "last_used_at": "2026-06-19T05:46:45.981455Z",
+  "dashboard": null,
   "type": "question",
-  "warnings": [
-    {
-      "id": 148673782,
-      "cardId": 75114,
-      "warnings": [
-        {
-          "warningCode": {
-            "code": -1,
-            "name": "HIGH_EXECUTION_TIME"
-          },
-          "message": "Execution time is 2.30m. Optimize Query to reduce execution time."
-        },
-        {
-          "warningCode": {
-            "code": -1,
-            "name": "HIGH_CUMULATIVE_MEMORY_USAGE"
-          },
-          "message": "Optimize query to reduce memory usage"
-        },
-        {
-          "warningCode": {
-            "code": -1,
-            "name": "HIGH_PEAK_TASK_MEMORY_USAGE"
-          },
-          "message": "Optimize query to reduce memory usage"
-        }
-      ],
-      "queryHash": "8de571671ac191e2a8bf49a8e8b8e2248f00cb777753cdc60d5d4658d353390b",
-      "executionStartTime": "2026-04-24T21:02:32.034+0000",
-      "tables": [
-        "dwh_fitness_mart.membership_dim",
-        "dwh_curefit.dim_date",
-        "dwh_fitness_mart.booking_fact",
-        "dwh_curefit.dim_date"
-      ],
-      "archive": false
-    }
-  ],
-  "average_query_time": 175577.75,
+  "dimensions": null,
+  "average_query_time": 163964.75,
   "creator_id": 3749,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-02-09T10:09:25.937024Z",
+  "updated_at": "2026-06-19T05:51:55.91321Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
+    "lib/type": "mbql/query",
     "database": 39,
-    "type": "native",
-    "native": {
-      "template-tags": {
-        "Start_Date": {
-          "id": "90e4791f-ad7f-654d-70b1-b79a4b1143b7",
-          "name": "Start_Date",
-          "display-name": "Start date",
-          "type": "date",
-          "required": true,
-          "default": "2023-01-01"
+    "stages": [
+      {
+        "template-tags": {
+          "Start_Date": {
+            "type": "date",
+            "required": true,
+            "id": "90e4791f-ad7f-654d-70b1-b79a4b1143b7",
+            "name": "Start_Date",
+            "display-name": "Start date",
+            "default": "2023-01-01"
+          },
+          "end_date": {
+            "type": "date",
+            "required": true,
+            "id": "01e4ebe1-c50a-c995-3ec0-56c59e66640b",
+            "name": "end_date",
+            "display-name": "End date",
+            "default": "2026-03-31"
+          }
         },
-        "end_date": {
-          "id": "01e4ebe1-c50a-c995-3ec0-56c59e66640b",
-          "name": "end_date",
-          "display-name": "End date",
-          "type": "date",
-          "required": true,
-          "default": "2025-07-31"
-        }
-      },
-      "query": "--------------- OLD QUERY--------------\nwith liveMemberships as(\nselect Weekstart.weekstart as weekstart,\nm.membership_key as membershipdb_id, -- Cult membership id\nm.user_id,\ndate(m.pack_start_date) as Startdate,\ndate(m.pack_end_date) as enddate\n\nfrom\n(\nSELECT distinct date_trunc('month',full_date) as Weekstart\nFROM \"dwh_curefit\".\"dim_date\" \nwhere full_date between {{Start_Date}} and {{end_date}}\n) weekstart\nleft join \"dwh_fitness_mart\".\"membership_dim\" m on date(m.pack_start_date)<=weekstart.Weekstart and date(m.pack_end_date)>=date_add('month',1,weekstart.Weekstart)\n\nwhere  m.business_line  is not null\nand m.business_line in ('ELITE','PRO','PLAY','LUX')\nand (m.amount_paid>2000 \n-- or is_enterprise = 1\n)\nand m.status not like ('%CANC%')\n\n)\n-- select * from liveMemberships\n,\n\nactiveMemberships as(\n\nselect weekstart.weekstart as weekstart,\nb.membership_key as membershipserviceid, --cult membershipid\nb.user_id,\nb.class_date,\nb.booking_key\n\nfrom\n\n(\nSELECT distinct date_trunc('month',full_date) as Weekstart\nFROM \"dwh_curefit\".\"dim_date\" \nwhere full_date between {{Start_Date}} and {{end_date}}\n) weekstart\n\nleft join\"dwh_fitness_mart\".\"booking_fact\" b on date(b.class_date)>= weekstart.Weekstart and date(b.class_date)< date_Add('month',1,weekstart.weekstart) and b.attendance_Time is not null\n\nand date(b.class_date)>=date('2022-01-01')\n)\n-- select * from activeMemberships\nselect year(l1.Weekstart) as Year,\nmonth(l1.weekstart) as Month,\ndate_trunc('month',l1.weekstart) month,\n-- CASE WHEN coalesce(city_name,city_name) in ('Bangalore') THEN 'Bangalore'\n--             WHEN coalesce(city_name,city_name) in ('Gurgaon') THEN 'Gurgaon'\n--             WHEN coalesce(city_name,city_name) in ('Hyderabad') THEN 'Hyderabad'\n--             WHEN coalesce(city_name,city_name) in ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai_Navi_Mum_And_Thane'\n--             WHEN coalesce(city_name,city_name) in ('Pune') THEN 'Pune'\n--             WHEN coalesce(city_name,city_name) in ('Chennai') THEN 'Chennai'\n--             ELSE 'Others' END as city_name,\ncount(distinct l1.membershipdb_id) as liveMemberships,\ncount(distinct am.user_id) as activeMemberships,\nround(count(distinct am.user_id)*100.00/count(distinct l1.membershipdb_id),2) as monthlyActiveMemberships,\n1.00*count(distinct booking_key)/nullif(count(distinct am.user_id),0) as avg_sessions\nfrom liveMemberships l1\nleft join activeMemberships am on l1.user_id=am.user_id and l1.weekstart=am.weekstart and am.class_date between l1.Startdate and l1.enddate\n\n\ngroup by 1,2,3\norder by 1,2,3\n--------------- NEW QUERY CHANGED ON 25 MARCH 2025 USING NEW database--------\n-- WITH\n--   MTD_dates AS (\n--     SELECT DISTINCT\n--       date_trunc ('month', full_date) AS monthstart,\n--       date_add('day',-1,date_add('month',1,date_trunc ('month', full_date))) as monthend\n--     --   ,\n--     --   date_add ('day',DAY ({{end_date}}) -1,date_trunc ('month', full_date)) AS monthend1\n--     FROM\n--       \"dwh_curefit\".\"dim_date\"\n--     WHERE\n--       full_date BETWEEN {{Start_Date}} AND {{end_date}}\n--   )\n  \n  \n-- --   select max(monthend), max(monthend1) from MTD_dates\n-- SELECT\n--   YEAR (monthstart) AS YEAR,\n--   MONTH (monthstart) AS MONTH,\n--   count(DISTINCT m.membership_id) AS liveMemberships,\n--   count(DISTINCT case when b.user_id is not null then  m.membership_id end) AS activeMemberships,\n--   round(  count(DISTINCT case when b.user_id is not null then  m.membership_id end)* 100.00 / count(DISTINCT m.membership_id),2) AS monthlyActiveMemberships\n-- FROM\n--   MTD_dates\n--   LEFT JOIN dwh_fitness.fitness_memberships m ON date(m.pack_start_date) <= MTD_dates.monthstart\n--   AND date(m.pack_end_date) > MTD_dates.monthend \n--   and m.category = 'ELITE'\n--     AND m.amount_paid > 2000\n--   AND m.status NOT LIKE ('%CANC%')\n  \n--  LEFT JOIN dwh_fitness.fitness_bookings b ON date(b.class_date) >= MTD_dates.monthstart\n--       AND date(b.class_date) <= MTD_dates.monthend\n--       AND b.attendance_Time IS NOT NULL\n--       and m.user_id=b.user_id\n\n--   group by 1,2\n--   order by 1 desc, 2 desc\n  \n-- SELECT\n--   YEAR (monthstart) AS YEAR,\n--   MONTH (monthstart) AS MONTH,\n-- --   count(DISTINCT m.membership_key) AS liveMemberships,\n-- --   count(DISTINCT case when b.user_id is not null then  m.membership_key end) AS activeMemberships,\n--   round(  count(DISTINCT case when b.user_id is not null then  m.membership_key end)* 100.00 / count(DISTINCT m.membership_key),2) AS monthlyActiveMemberships\n-- FROM\n--   MTD_dates\n--   LEFT JOIN dwh_fitness_mart.membership_dim m ON date(m.pack_start_date) <= MTD_dates.monthstart\n--   AND date(m.pack_end_date) > MTD_dates.monthend \n--   and m.business_line = 'ELITE'\n--     AND m.amount_paid > 2000\n--   AND m.status NOT LIKE ('%CANC%')\n  \n--  LEFT JOIN dwh_fitness_mart.booking_fact b ON date(b.class_date) >= MTD_dates.monthstart\n--       AND date(b.class_date) <= MTD_dates.monthend\n--       AND b.attendance_Time IS NOT NULL\n--       and m.user_id=b.user_id\n\n--   group by 1,2\n--   order by 1 desc, 2 desc\n"
-    }
+        "native": "-- Purpose: Count live and monthly active memberships for ELITE, PRO, PLAY, and LUX.\n-- Output: Year, Month, month, liveMemberships, activeMemberships, monthlyActiveMemberships, avg_sessions.\n-- Membership-date fix: transferred/upgraded packs use membership-service created/start/end dates for live and active windows.\nwith liveMemberships as(\nselect Weekstart.weekstart as weekstart,\nm.membership_key as membershipdb_id, -- Cult membership id\nm.user_id,\ndate(m.pack_start_date) as Startdate,\ndate(m.pack_end_date) as enddate,\ndate(m.membership_created_date) as membership_created_date\n\nfrom\n(\nSELECT distinct date_trunc('month',full_date) as Weekstart\nFROM \"dwh_curefit\".\"dim_date\" \nwhere full_date between {{Start_Date}} and {{end_date}}\n) weekstart\nleft join (\n    select\n        md.membership_key,\n        md.user_id,\n        md.business_line,\n        md.amount_paid,\n        md.status,\n        -- Transfers/upgrades should use membership-service dates so live and active windows use the corrected pack lifecycle.\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"start\"\n            else md.pack_start_date\n        end as pack_start_date,\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.\"end\"\n            else md.pack_end_date\n        end as pack_end_date,\n        case\n            when lower(cast(md.is_transferred_pack as varchar)) = 'true' or lower(cast(md.is_upgrade_pack as varchar)) = 'true' then mdb.created_date\n            else md.membership_created_date\n        end as membership_created_date\n    from dwh_fitness_mart.membership_fact md\n    left join pk_curefitplatforms_membershipdb.memberships mdb\n        on mdb.id = md.membership_service_id\n\twhere \n\t-- Freeze to a single fact-table snapshot so results do not move because of\n    -- late-arriving tech changes or partition refreshes.\n\t\tmd.transaction_date = date '2026-06-16'\n-- Live membership must cover the complete month.\n) m on date(m.pack_start_date)<=weekstart.Weekstart and date(m.pack_end_date)>=date_add('month',1,weekstart.Weekstart)\n\nwhere  m.business_line  is not null\n-- Fitness membership lines included in the active-membership report.\nand m.business_line in ('ELITE','PRO','PLAY','LUX')\n-- Keep customer-paid packs; enterprise packs are intentionally not included here.\nand (m.amount_paid>2000 \n-- or is_enterprise = 1\n)\n-- Cancelled memberships are not counted as live.\nand m.status not like ('%CANC%')\n\n)\n-- select * from liveMemberships\n,\n\nactiveMemberships as(\n\nselect weekstart.weekstart as weekstart,\nb.membership_key as membershipserviceid, --cult membershipid\nb.user_id,\nb.class_date,\nb.booking_key\n\nfrom\n\n(\nSELECT distinct date_trunc('month',full_date) as Weekstart\nFROM \"dwh_curefit\".\"dim_date\" \nwhere full_date between {{Start_Date}} and {{end_date}}\n) weekstart\n\nleft join\"dwh_fitness_mart\".\"booking_fact\" b on date(b.class_date)>= weekstart.Weekstart and date(b.class_date)< date_Add('month',1,weekstart.weekstart) and b.attendance_Time is not null -- Active users are counted only when they attended a class in the month.\nand date(b.class_date)>=date('2022-01-01') -- Partition \n)\n-- select * from activeMemberships\nselect year(l1.Weekstart) as Year,\nmonth(l1.weekstart) as Month,\ndate_trunc('month',l1.weekstart) month,\ncount(distinct l1.membershipdb_id) as liveMemberships,\ncount(distinct am.user_id) as activeMemberships,\nround(count(distinct am.user_id)*100.00/count(distinct l1.membershipdb_id),2) as monthlyActiveMemberships,\n1.00*count(distinct booking_key)/nullif(count(distinct am.user_id),0) as avg_sessions\nfrom liveMemberships l1\nleft join activeMemberships am on l1.user_id=am.user_id and l1.weekstart=am.weekstart and am.class_date between l1.Startdate and l1.enddate\n\ngroup by 1,2,3\norder by 1,2,3\n",
+        "lib/type": "mbql.stage/native"
+      }
+    ]
   },
+  "dimension_mappings": null,
   "id": 75114,
+  "legacy_query": "{\"database\":39,\"type\":\"native\",\"native\":{\"template-tags\":{\"Start_Date\":{\"id\":\"90e4791f-ad7f-654d-70b1-b79a4b1143b7\",\"name\":\"Start_Date\",\"display-name\":\"Start date\",\"type\":\"date\",\"required\":true,\"default\":\"2023-01-01\"},\"end_date\":{\"id\":\"01e4ebe1-c50a-c995-3ec0-56c59e66640b\",\"name\":\"end_date\",\"display-name\":\"End date\",\"type\":\"date\",\"required\":true,\"default\":\"2025-07-31\"}},\"query\":\"--------------- OLD QUERY--------------\\nwith liveMemberships as(\\nselect Weekstart.weekstart as weekstart,\\nm.membership_key as membershipdb_id, -- Cult membership id\\nm.user_id,\\ndate(m.pack_start_date) as Startdate,\\ndate(m.pack_end_date) as enddate\\n\\nfrom\\n(\\nSELECT distinct date_trunc('month',full_date) as Weekstart\\nFROM \\\"dwh_curefit\\\".\\\"dim_date\\\" \\nwhere full_date between {{Start_Date}} and {{end_date}}\\n) weekstart\\nleft join \\\"dwh_fitness_mart\\\".\\\"membership_dim\\\" m on date(m.pack_start_date)<=weekstart.Weekstart and date(m.pack_end_date)>=date_add('month',1,weekstart.Weekstart)\\n\\nwhere  m.business_line  is not null\\nand m.business_line in ('ELITE','PRO','PLAY','LUX')\\nand (m.amount_paid>2000 \\n-- or is_enterprise = 1\\n)\\nand m.status not like ('%CANC%')\\n\\n)\\n-- select * from liveMemberships\\n,\\n\\nactiveMemberships as(\\n\\nselect weekstart.weekstart as weekstart,\\nb.membership_key as membershipserviceid, --cult membershipid\\nb.user_id,\\nb.class_date,\\nb.booking_key\\n\\nfrom\\n\\n(\\nSELECT distinct date_trunc('month',full_date) as Weekstart\\nFROM \\\"dwh_curefit\\\".\\\"dim_date\\\" \\nwhere full_date between {{Start_Date}} and {{end_date}}\\n) weekstart\\n\\nleft join\\\"dwh_fitness_mart\\\".\\\"booking_fact\\\" b on date(b.class_date)>= weekstart.Weekstart and date(b.class_date)< date_Add('month',1,weekstart.weekstart) and b.attendance_Time is not null\\n\\nand date(b.class_date)>=date('2022-01-01')\\n)\\n-- select * from activeMemberships\\nselect year(l1.Weekstart) as Year,\\nmonth(l1.weekstart) as Month,\\ndate_trunc('month',l1.weekstart) month,\\n-- CASE WHEN coalesce(city_name,city_name) in ('Bangalore') THEN 'Bangalore'\\n--             WHEN coalesce(city_name,city_name) in ('Gurgaon') THEN 'Gurgaon'\\n--             WHEN coalesce(city_name,city_name) in ('Hyderabad') THEN 'Hyderabad'\\n--             WHEN coalesce(city_name,city_name) in ('Mumbai','Navi_Mum_And_Thane') THEN 'Mumbai_Navi_Mum_And_Thane'\\n--             WHEN coalesce(city_name,city_name) in ('Pune') THEN 'Pune'\\n--             WHEN coalesce(city_name,city_name) in ('Chennai') THEN 'Chennai'\\n--             ELSE 'Others' END as city_name,\\ncount(distinct l1.membershipdb_id) as liveMemberships,\\ncount(distinct am.user_id) as activeMemberships,\\nround(count(distinct am.user_id)*100.00/count(distinct l1.membershipdb_id),2) as monthlyActiveMemberships,\\n1.00*count(distinct booking_key)/nullif(count(distinct am.user_id),0) as avg_sessions\\nfrom liveMemberships l1\\nleft join activeMemberships am on l1.user_id=am.user_id and l1.weekstart=am.weekstart and am.class_date between l1.Startdate and l1.enddate\\n\\n\\ngroup by 1,2,3\\norder by 1,2,3\\n--------------- NEW QUERY CHANGED ON 25 MARCH 2025 USING NEW database--------\\n-- WITH\\n--   MTD_dates AS (\\n--     SELECT DISTINCT\\n--       date_trunc ('month', full_date) AS monthstart,\\n--       date_add('day',-1,date_add('month',1,date_trunc ('month', full_date))) as monthend\\n--     --   ,\\n--     --   date_add ('day',DAY ({{end_date}}) -1,date_trunc ('month', full_date)) AS monthend1\\n--     FROM\\n--       \\\"dwh_curefit\\\".\\\"dim_date\\\"\\n--     WHERE\\n--       full_date BETWEEN {{Start_Date}} AND {{end_date}}\\n--   )\\n  \\n  \\n-- --   select max(monthend), max(monthend1) from MTD_dates\\n-- SELECT\\n--   YEAR (monthstart) AS YEAR,\\n--   MONTH (monthstart) AS MONTH,\\n--   count(DISTINCT m.membership_id) AS liveMemberships,\\n--   count(DISTINCT case when b.user_id is not null then  m.membership_id end) AS activeMemberships,\\n--   round(  count(DISTINCT case when b.user_id is not null then  m.membership_id end)* 100.00 / count(DISTINCT m.membership_id),2) AS monthlyActiveMemberships\\n-- FROM\\n--   MTD_dates\\n--   LEFT JOIN dwh_fitness.fitness_memberships m ON date(m.pack_start_date) <= MTD_dates.monthstart\\n--   AND date(m.pack_end_date) > MTD_dates.monthend \\n--   and m.category = 'ELITE'\\n--     AND m.amount_paid > 2000\\n--   AND m.status NOT LIKE ('%CANC%')\\n  \\n--  LEFT JOIN dwh_fitness.fitness_bookings b ON date(b.class_date) >= MTD_dates.monthstart\\n--       AND date(b.class_date) <= MTD_dates.monthend\\n--       AND b.attendance_Time IS NOT NULL\\n--       and m.user_id=b.user_id\\n\\n--   group by 1,2\\n--   order by 1 desc, 2 desc\\n  \\n-- SELECT\\n--   YEAR (monthstart) AS YEAR,\\n--   MONTH (monthstart) AS MONTH,\\n-- --   count(DISTINCT m.membership_key) AS liveMemberships,\\n-- --   count(DISTINCT case when b.user_id is not null then  m.membership_key end) AS activeMemberships,\\n--   round(  count(DISTINCT case when b.user_id is not null then  m.membership_key end)* 100.00 / count(DISTINCT m.membership_key),2) AS monthlyActiveMemberships\\n-- FROM\\n--   MTD_dates\\n--   LEFT JOIN dwh_fitness_mart.membership_dim m ON date(m.pack_start_date) <= MTD_dates.monthstart\\n--   AND date(m.pack_end_date) > MTD_dates.monthend \\n--   and m.business_line = 'ELITE'\\n--     AND m.amount_paid > 2000\\n--   AND m.status NOT LIKE ('%CANC%')\\n  \\n--  LEFT JOIN dwh_fitness_mart.booking_fact b ON date(b.class_date) >= MTD_dates.monthstart\\n--       AND date(b.class_date) <= MTD_dates.monthend\\n--       AND b.attendance_Time IS NOT NULL\\n--       and m.user_id=b.user_id\\n\\n--   group by 1,2\\n--   order by 1 desc, 2 desc\\n\"}}",
   "parameter_mappings": [],
   "can_manage_db": false,
   "display": "table",
   "archived_directly": false,
   "entity_id": "XKrqDdywoUSvKm-eUmt9i",
+  "param_fields": {},
   "collection_preview": true,
   "last-edit-info": {
-    "id": 3412,
-    "email": "harsha.vardhan@curefit.com",
-    "first_name": "Harsha",
-    "last_name": "Vardhan",
-    "timestamp": "2026-02-09T10:09:26.039205Z"
+    "id": 3570,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-06-19T05:51:55.986119Z"
   },
   "visualization_settings": {
     "graph.show_trendline": true,
@@ -618,19 +387,21 @@
     "authority_level": null,
     "description": null,
     "archived": false,
-    "slug": "activity",
+    "workspace_id": null,
+    "slug": "audit_related_queries",
     "archive_operation_id": null,
-    "name": "Activity",
+    "name": "Audit Related Queries",
+    "is_remote_synced": false,
     "personal_owner_id": null,
     "type": null,
     "is_sample": false,
-    "id": 3142,
+    "id": 7263,
     "archived_directly": null,
-    "entity_id": null,
-    "location": "/1575/",
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
     "namespace": null,
     "is_personal": false,
-    "created_at": "2022-12-10T05:46:31.748106Z"
+    "created_at": "2026-05-26T11:14:34.781469Z"
   },
   "metabase_version": "vUNKNOWN (?)",
   "parameters": [
@@ -647,7 +418,8 @@
       "name": "Start date",
       "slug": "Start_Date",
       "default": "2023-01-01",
-      "required": true
+      "required": true,
+      "isMultiSelect": false
     },
     {
       "id": "01e4ebe1-c50a-c995-3ec0-56c59e66640b",
@@ -661,10 +433,12 @@
       ],
       "name": "End date",
       "slug": "end_date",
-      "default": "2025-07-31",
-      "required": true
+      "default": "2026-03-31",
+      "required": true,
+      "isMultiSelect": false
     }
   ],
+  "dashboard_id": null,
   "created_at": "2026-01-29T10:17:32.58508Z",
   "parameter_usage_count": 0,
   "public_uuid": null,

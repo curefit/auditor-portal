@@ -20,7 +20,7 @@ WITH
 -- 1. Build the eligible member base.
 --
 -- Business rule:
---   Include users who had a paid ELITE / PRO / PLAY / LUX membership created between
+--   Include users who had a paid ELITE / PRO / PLAY membership created between
 --   2017-10-01 and the selected Metabase end date {{ed}}.
 --
 -- Date rule:
@@ -33,7 +33,7 @@ WITH
 base AS (
   SELECT
     m.user_id
-  FROM dwh_fitness_mart.membership_dim m
+  FROM dwh_fitness_mart.membership_fact m
   LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
     ON mdb.id = m.membership_service_id
   WHERE DATE(
@@ -46,6 +46,9 @@ base AS (
     ) BETWEEN DATE('2017-10-01') AND {{ed}}
     AND m.business_line IN ('ELITE', 'PRO', 'PLAY', 'LUX')
     AND m.amount_paid > 0
+	-- Freeze to a single fact-table snapshot so results do not move because of
+    -- late-arriving tech changes or partition refreshes.
+	AND m.transaction_date = date '2026-06-16'
   GROUP BY 1
 ),
 
@@ -84,6 +87,7 @@ age_onboarding AS (
     AND nrs.answer != ''
     AND nrs.formid = 'post_pack_purchase_onboarding'
     AND nrs.questionid IN ('onboarding_user_dob_v1', '@Home Guidance_Gender_v1')
+	AND coalesce(date(created_at), date('1900-01-01')) <= {{ed}} -- ensure no backfil
   GROUP BY 1
 ),
 
@@ -111,6 +115,7 @@ user_age AS (
       birthday,
       ROW_NUMBER() OVER (PARTITION BY id ORDER BY updatedat DESC) AS rf
     FROM pk_cfuserservice_cultapp.User
+	WHERE coalesce(date(createdat), date('1900-01-01'))<= {{ed}} -- ensure no backfil 
   ) user
   WHERE rf = 1
 ),
@@ -149,7 +154,7 @@ rashi_age AS (
       END
     ) AS gender
   FROM pk_cfprodplatforms_rashi.User_Attribute
-  WHERE Attribute IN ('Gender', 'gender', 'birthday')
+  WHERE Attribute IN ('Gender', 'gender', 'birthday') -- Attribute itself is partition | so avoiding date filter
     AND value != ''
   GROUP BY 1
 ),

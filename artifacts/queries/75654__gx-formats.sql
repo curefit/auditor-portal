@@ -21,7 +21,7 @@ SELECT
         ELSE m.pack_end_date
       END AS pack_end_date
     FROM
-      dwh_fitness_mart.membership_dim m
+      dwh_fitness_mart.membership_fact m
     LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb
       ON mdb.id = m.membership_service_id
     JOIN dwh_fitness_mart.center_dim c on c.center_key = final_center_key
@@ -37,6 +37,9 @@ SELECT
       and m.business_line in ('ELITE','PRO','PLAY')
       -- Keep customer-paid memberships.
       and amount_paid>2000
+	  -- Freeze to a single fact-table snapshot so results do not move because of
+	  -- late-arriving tech changes or partition refreshes.
+	  AND m.transaction_date = date '2026-06-16'
     GROUP BY
       1,
       2,
@@ -132,4 +135,4 @@ User_classes as(
 select 
 count(distinct case when formats=1  then membership_key end ) as Single_format,
 count(distinct case when formats>1  then membership_key end ) as Multi_format
-from User_classes 
+from User_classes
