@@ -346,9 +346,11 @@ export default function App() {
             <tbody>
               {filtered.map((e) => (
                 <tr
-                  key={e.cardId}
+                  key={e.entryKey ?? e.cardId}
                   className={`border-b border-zinc-800/80 hover:bg-zinc-900/60 ${
-                    selected?.cardId === e.cardId ? "bg-emerald-950/20" : ""
+                    (selected?.entryKey ?? selected?.cardId) === (e.entryKey ?? e.cardId)
+                      ? "bg-emerald-950/20"
+                      : ""
                   }`}
                 >
                   <td className="px-6 py-3">
