@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 127,
+  "count": 129,
   "entries": [
     {
       "cardId": "75753",
@@ -449,6 +449,63 @@
       "sheetMetricVia": "card"
     },
     {
+      "cardId": "79589",
+      "name": "#Feedbacks received on session",
+      "rootKey": "question-79589",
+      "rootAssetName": "#Feedbacks received on session",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/79589",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/79589__adhoc-20-04-2026.sql",
+        "metadata": "artifacts/metadata/79589__adhoc-20-04-2026.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-79589__79589__adhoc-20-04-2026.csv",
+        "artifacts/results/question-79589__79589__adhoc-20-04-2026.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.booking_fact",
+          "dbtModelPaths": [
+            "transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "githubBlobUrls": [
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "localSqlUrls": [
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 19.1,
+        "slNo": "35",
+        "metricName": "#Feedbacks received on session",
+        "definition": "Total responses recieved on the feedback form during the year",
+        "status": "Done",
+        "poc": "Analytics",
+        "units": "#",
+        "fy23": "",
+        "fy24": "28%",
+        "fy25": "21%",
+        "fy26": "20%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/79589-adhoc-20-04-2026",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:79589:drhp:19-feedbacks-received-on-session"
+    },
+    {
       "cardId": "85263",
       "name": "Member retention rate",
       "rootKey": "question-85263",
@@ -530,6 +587,89 @@
         "nineMFy25": "",
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/85263-renewal-rate-for-each-visit-frequency-bucket-d365-financial-year",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "85463",
+      "name": "# Biometric centres",
+      "rootKey": "question-85463",
+      "rootAssetName": "# Biometric centres",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85463",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85463__biometric-center-count.sql",
+        "metadata": "artifacts/metadata/85463__biometric-center-count.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-85463__85463__biometric-center-count.csv",
+        "artifacts/results/question-85463__85463__biometric-center-count.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.booking_fact",
+          "dbtModelPaths": [
+            "transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "githubBlobUrls": [
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "localSqlUrls": [
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_metabase_starburst.model_41616_center_dim",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitprod_gymfit.checkins",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cultprod_cultapp.attendance",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 20.5,
+        "slNo": "51",
+        "metricName": "# Biometric centres",
+        "definition": "# centers with bio-metric entry",
+        "status": "",
+        "poc": "",
+        "units": "#",
+        "fy23": "",
+        "fy24": "",
+        "fy25": "",
+        "fy26": "198",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85463-biometric-center-count",
         "limitations": ""
       },
       "sheetMetricVia": "card"

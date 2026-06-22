@@ -1,0 +1,246 @@
+{
+  "card_id": 85463,
+  "card_name": "Biometric center count",
+  "parameters": [
+    {
+      "id": "09818008-17e3-4a09-b9c7-4c3932b620fe",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "startdate"
+        ]
+      ],
+      "name": "Startdate",
+      "slug": "startdate",
+      "default": "2026-03-31",
+      "isMultiSelect": false
+    },
+    {
+      "id": "294d87da-9249-424e-8839-59eac01c3f6e",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "enddate"
+        ]
+      ],
+      "name": "Enddate",
+      "slug": "enddate",
+      "default": "2026-03-31",
+      "isMultiSelect": false
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "2026-03-31T00:00:00Z",
+          198
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "date",
+          "lib/deduplicated-name": "date",
+          "lib/original-name": "date",
+          "name": "date",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "date",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "date",
+            {
+              "base-type": "type/Date"
+            }
+          ],
+          "effective_type": "type/Date",
+          "lib/desired-column-alias": "date",
+          "display_name": "date",
+          "base_type": "type/Date"
+        },
+        {
+          "database_type": "bigint",
+          "lib/deduplicated-name": "biometric_center_count",
+          "lib/original-name": "biometric_center_count",
+          "name": "biometric_center_count",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "biometric_center_count",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "biometric_center_count",
+            {
+              "base-type": "type/BigInteger"
+            }
+          ],
+          "effective_type": "type/BigInteger",
+          "lib/desired-column-alias": "biometric_center_count",
+          "display_name": "biometric_center_count",
+          "base_type": "type/BigInteger"
+        }
+      ],
+      "native_form": {
+        "params": [
+          "2026-03-31",
+          "2026-03-31",
+          "2026-03-31",
+          "2026-03-31"
+        ],
+        "lib/type": "mbql.stage/native",
+        "query": "WITH center_day AS (\n  SELECT\n    date(b.class_date) AS date,\n    c.hybrid_center_name,\n    c.hybrid_center_service_id,\n\n    count(distinct case \n      when b.service_type = 'GX' \n      then b.booking_key \n    end) as total_gx_sessions,\n\n    count(distinct case \n      when b.service_type = 'GX' \n       and a.source = 'BIOMETRIC' \n      then b.booking_key \n    end) as total_gx_biometric,\n\n    count(distinct case\n      when date(ch.createdat) between ? and ?\n       and ch.passcode = 'BiometricCheckin'\n       and ch.state = 'VALIDATED'\n       and ch.source = 'APP'\n      then ch.id\n    end) as total_gym_biometric_checkins\n\n  FROM dwh_fitness_mart.booking_fact b\n  INNER JOIN dwh_metabase_starburst.model_41616_center_dim c \n    ON c.center_key = b.center_key\n  LEFT JOIN pk_curefitprod_gymfit.checkins ch \n    ON ch.id = b.gym_checkin_id\n   AND date(ch.createdat) >= date('2023-01-01')\n   AND ch.createdat_date >= date('2023-01-01')\n  LEFT JOIN pk_cultprod_cultapp.attendance a \n    ON a.bookingid = b.elite_booking_id\n   AND a.createdat_date >= date('2023-01-01')\n\n  WHERE b.class_date BETWEEN ? AND ?\n    AND b.class_date >= date('2023-01-01')\n    AND b.attendance_time IS NOT NULL\n\n  GROUP BY 1,2,3\n)\n\nSELECT\n    date,\n\n    count(distinct case when total_gx_biometric + total_gym_biometric_checkins > 0\n                        then hybrid_center_service_id end)\n      as biometric_center_count\n\nFROM center_day\nGROUP BY 1\nORDER BY 1"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "date",
+            "semantic_type": null,
+            "lib/deduplicated-name": "date",
+            "lib/original-name": "date",
+            "name": "date",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "date",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "date",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "effective_type": "type/Date",
+            "lib/desired-column-alias": "date",
+            "display_name": "date",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2026-03-31",
+                  "latest": "2026-03-31"
+                }
+              }
+            },
+            "base_type": "type/Date"
+          },
+          {
+            "database_type": "bigint",
+            "semantic_type": "type/Quantity",
+            "lib/deduplicated-name": "biometric_center_count",
+            "lib/original-name": "biometric_center_count",
+            "name": "biometric_center_count",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "biometric_center_count",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "biometric_center_count",
+              {
+                "base-type": "type/BigInteger"
+              }
+            ],
+            "effective_type": "type/BigInteger",
+            "lib/desired-column-alias": "biometric_center_count",
+            "display_name": "biometric_center_count",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 198.0,
+                  "q1": 198.0,
+                  "q3": 198.0,
+                  "max": 198.0,
+                  "sd": null,
+                  "avg": 198.0
+                }
+              }
+            },
+            "base_type": "type/BigInteger"
+          }
+        ]
+      },
+      "insights": [
+        {
+          "previous-value": null,
+          "unit": null,
+          "offset": null,
+          "last-change": null,
+          "col": "biometric_center_count",
+          "slope": null,
+          "last-value": 198,
+          "best-fit": null
+        }
+      ]
+    },
+    "cached": "2026-06-22T10:17:45.908448389Z",
+    "database_id": 39,
+    "started_at": "2026-06-22T12:24:16.159151447Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "native": "WITH center_day AS (\n  SELECT\n    date(b.class_date) AS date,\n    c.hybrid_center_name,\n    c.hybrid_center_service_id,\n\n    count(distinct case \n      when b.service_type = 'GX' \n      then b.booking_key \n    end) as total_gx_sessions,\n\n    count(distinct case \n      when b.service_type = 'GX' \n       and a.source = 'BIOMETRIC' \n      then b.booking_key \n    end) as total_gx_biometric,\n\n    count(distinct case\n      when date(ch.createdat) between {{startdate}} and {{enddate}}\n       and ch.passcode = 'BiometricCheckin'\n       and ch.state = 'VALIDATED'\n       and ch.source = 'APP'\n      then ch.id\n    end) as total_gym_biometric_checkins\n\n  FROM dwh_fitness_mart.booking_fact b\n  INNER JOIN dwh_metabase_starburst.model_41616_center_dim c \n    ON c.center_key = b.center_key\n  LEFT JOIN pk_curefitprod_gymfit.checkins ch \n    ON ch.id = b.gym_checkin_id\n   AND date(ch.createdat) >= date('2023-01-01')\n   AND ch.createdat_date >= date('2023-01-01')\n  LEFT JOIN pk_cultprod_cultapp.attendance a \n    ON a.bookingid = b.elite_booking_id\n   AND a.createdat_date >= date('2023-01-01')\n\n  WHERE b.class_date BETWEEN {{startdate}} AND {{enddate}}\n    AND b.class_date >= date('2023-01-01')\n    AND b.attendance_time IS NOT NULL\n\n  GROUP BY 1,2,3\n)\n\nSELECT\n    date,\n\n    count(distinct case when total_gx_biometric + total_gym_biometric_checkins > 0\n                        then hybrid_center_service_id end)\n      as biometric_center_count\n\nFROM center_day\nGROUP BY 1\nORDER BY 1",
+          "template-tags": {
+            "startdate": {
+              "id": "09818008-17e3-4a09-b9c7-4c3932b620fe",
+              "display-name": "Startdate",
+              "type": "date",
+              "name": "startdate",
+              "default": "2026-03-31"
+            },
+            "enddate": {
+              "name": "enddate",
+              "display-name": "Enddate",
+              "id": "294d87da-9249-424e-8839-59eac01c3f6e",
+              "type": "date",
+              "default": "2026-03-31"
+            }
+          }
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false
+      },
+      "viz-settings": {
+        "table.pivot_column": "date",
+        "table.cell_column": "biometric_center_count"
+      },
+      "database": 39
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 1,
+    "running_time": 151
+  }
+}
