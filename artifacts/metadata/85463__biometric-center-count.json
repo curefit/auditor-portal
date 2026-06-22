@@ -1,0 +1,225 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 3,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "date",
+      "semantic_type": null,
+      "lib/deduplicated-name": "date",
+      "lib/original-name": "date",
+      "name": "date",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "date",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "date",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "effective_type": "type/Date",
+      "lib/desired-column-alias": "date",
+      "display_name": "date",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2026-03-31",
+            "latest": "2026-03-31"
+          }
+        }
+      },
+      "base_type": "type/Date"
+    },
+    {
+      "database_type": "bigint",
+      "semantic_type": "type/Quantity",
+      "lib/deduplicated-name": "biometric_center_count",
+      "lib/original-name": "biometric_center_count",
+      "name": "biometric_center_count",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "biometric_center_count",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "biometric_center_count",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "effective_type": "type/BigInteger",
+      "lib/desired-column-alias": "biometric_center_count",
+      "display_name": "biometric_center_count",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 198.0,
+            "q1": 198.0,
+            "q3": 198.0,
+            "max": 198.0,
+            "sd": null,
+            "avg": 198.0
+          }
+        }
+      },
+      "base_type": "type/BigInteger"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "is_data_analyst": false,
+    "last_login": "2026-06-17T14:56:00.844263Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3412,
+    "last_name": "Vardhan",
+    "tenant_id": null,
+    "date_joined": "2024-03-26T08:14:04.682555Z",
+    "common_name": "Harsha Vardhan"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7276,
+  "query_type": "native",
+  "name": "Biometric center count",
+  "last_query_start": "2026-06-22T12:14:53.451259Z",
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-06-22T12:14:53.458023Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 128268.0,
+  "creator_id": 3412,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-22T10:18:56.870358Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "WITH center_day AS (\n  SELECT\n    date(b.class_date) AS date,\n    c.hybrid_center_name,\n    c.hybrid_center_service_id,\n\n    count(distinct case \n      when b.service_type = 'GX' \n      then b.booking_key \n    end) as total_gx_sessions,\n\n    count(distinct case \n      when b.service_type = 'GX' \n       and a.source = 'BIOMETRIC' \n      then b.booking_key \n    end) as total_gx_biometric,\n\n    count(distinct case\n      when date(ch.createdat) between {{startdate}} and {{enddate}}\n       and ch.passcode = 'BiometricCheckin'\n       and ch.state = 'VALIDATED'\n       and ch.source = 'APP'\n      then ch.id\n    end) as total_gym_biometric_checkins\n\n  FROM dwh_fitness_mart.booking_fact b\n  INNER JOIN dwh_metabase_starburst.model_41616_center_dim c \n    ON c.center_key = b.center_key\n  LEFT JOIN pk_curefitprod_gymfit.checkins ch \n    ON ch.id = b.gym_checkin_id\n   AND date(ch.createdat) >= date('2023-01-01')\n   AND ch.createdat_date >= date('2023-01-01')\n  LEFT JOIN pk_cultprod_cultapp.attendance a \n    ON a.bookingid = b.elite_booking_id\n   AND a.createdat_date >= date('2023-01-01')\n\n  WHERE b.class_date BETWEEN {{startdate}} AND {{enddate}}\n    AND b.class_date >= date('2023-01-01')\n    AND b.attendance_time IS NOT NULL\n\n  GROUP BY 1,2,3\n)\n\nSELECT\n    date,\n\n    count(distinct case when total_gx_biometric + total_gym_biometric_checkins > 0\n                        then hybrid_center_service_id end)\n      as biometric_center_count\n\nFROM center_day\nGROUP BY 1\nORDER BY 1",
+        "template-tags": {
+          "startdate": {
+            "id": "09818008-17e3-4a09-b9c7-4c3932b620fe",
+            "display-name": "Startdate",
+            "type": "date",
+            "name": "startdate",
+            "default": "2026-03-31"
+          },
+          "enddate": {
+            "name": "enddate",
+            "display-name": "Enddate",
+            "id": "294d87da-9249-424e-8839-59eac01c3f6e",
+            "type": "date",
+            "default": "2026-03-31"
+          }
+        }
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 85463,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "54KOTuMpXxcy50mqd0q2x",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3412,
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "last_name": "Vardhan",
+    "timestamp": "2026-06-22T10:18:56.897831Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "date",
+    "table.cell_column": "biometric_center_count"
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "corpdev___harsha",
+    "archive_operation_id": null,
+    "name": "Corpdev - Harsha",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7276,
+    "archived_directly": null,
+    "entity_id": "Qs7W4IGmsoC2tyO2oY5bs",
+    "location": "/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-05-28T12:55:24.035837Z"
+  },
+  "metabase_version": "v0.60.1 (feddd55)",
+  "parameters": [
+    {
+      "id": "09818008-17e3-4a09-b9c7-4c3932b620fe",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "startdate"
+        ]
+      ],
+      "name": "Startdate",
+      "slug": "startdate",
+      "default": "2026-03-31",
+      "isMultiSelect": false
+    },
+    {
+      "id": "294d87da-9249-424e-8839-59eac01c3f6e",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "enddate"
+        ]
+      ],
+      "name": "Enddate",
+      "slug": "enddate",
+      "default": "2026-03-31",
+      "isMultiSelect": false
+    }
+  ],
+  "dashboard_id": null,
+  "created_at": "2026-06-22T10:18:56.870358Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}
