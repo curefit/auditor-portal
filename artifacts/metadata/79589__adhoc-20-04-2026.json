@@ -1,15 +1,22 @@
 {
-  "cache_invalidated_at": null,
+  "cache_invalidated_at": "2026-06-22T06:09:55.348637Z",
   "description": null,
   "archived": false,
-  "view_count": 6,
+  "view_count": 17,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "display_name": "fiscal_year",
+      "database_type": "varchar(4)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "fiscal_year",
+      "lib/original-name": "fiscal_year",
+      "name": "fiscal_year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fiscal_year",
+      "source": "native",
       "field_ref": [
         "field",
         "fiscal_year",
@@ -17,58 +24,72 @@
           "base-type": "type/Text"
         }
       ],
-      "base_type": "type/Text",
       "effective_type": "type/Text",
-      "name": "fiscal_year",
-      "semantic_type": null,
+      "lib/desired-column-alias": "fiscal_year",
+      "display_name": "fiscal_year",
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0
+          "nil%": 0.0
         },
         "type": {
           "type/Text": {
-            "percent-json": 0,
-            "percent-url": 0,
-            "percent-email": 0,
-            "percent-state": 0,
-            "average-length": 4
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.0
           }
         }
-      }
+      },
+      "base_type": "type/Text"
     },
     {
-      "display_name": "bt_responses",
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "positive_responses",
+      "lib/original-name": "positive_responses",
+      "name": "positive_responses",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "positive_responses",
+      "source": "native",
       "field_ref": [
         "field",
-        "bt_responses",
+        "positive_responses",
         {
           "base-type": "type/BigInteger"
         }
       ],
-      "base_type": "type/BigInteger",
       "effective_type": "type/BigInteger",
-      "name": "bt_responses",
-      "semantic_type": null,
+      "lib/desired-column-alias": "positive_responses",
+      "display_name": "positive_responses",
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0
+          "nil%": 0.0
         },
         "type": {
           "type/Number": {
-            "min": 324582,
-            "q1": 335352.25,
-            "q3": 409027.75,
-            "max": 422816,
-            "sd": 49240.472388067115,
-            "avg": 371687
+            "min": 9057449.0,
+            "q1": 9065791.5,
+            "q3": 9895176.0,
+            "max": 10163295.0,
+            "sd": 629048.7134279296,
+            "avg": 9437187.666666666
           }
         }
-      }
+      },
+      "base_type": "type/BigInteger"
     },
     {
-      "display_name": "total_responses",
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "total_responses",
+      "lib/original-name": "total_responses",
+      "name": "total_responses",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "total_responses",
+      "source": "native",
       "field_ref": [
         "field",
         "total_responses",
@@ -76,112 +97,129 @@
           "base-type": "type/BigInteger"
         }
       ],
-      "base_type": "type/BigInteger",
       "effective_type": "type/BigInteger",
-      "name": "total_responses",
-      "semantic_type": null,
+      "lib/desired-column-alias": "total_responses",
+      "display_name": "total_responses",
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0
+          "nil%": 0.0
         },
         "type": {
           "type/Number": {
-            "min": 9382031,
+            "min": 9382031.0,
             "q1": 9401143.75,
             "q3": 10304203.75,
-            "max": 10586111,
+            "max": 10586111.0,
             "sd": 674190.9427160331,
             "avg": 9808874.666666666
           }
         }
-      }
+      },
+      "base_type": "type/BigInteger"
     },
     {
-      "display_name": "bt_pct",
+      "database_type": "decimal(38,15)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "positive_pct",
+      "lib/original-name": "positive_pct",
+      "name": "positive_pct",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "positive_pct",
+      "source": "native",
       "field_ref": [
         "field",
-        "bt_pct",
+        "positive_pct",
         {
           "base-type": "type/Decimal"
         }
       ],
-      "base_type": "type/Decimal",
       "effective_type": "type/Decimal",
-      "name": "bt_pct",
-      "semantic_type": null,
+      "lib/desired-column-alias": "positive_pct",
+      "display_name": "positive_pct",
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0
+          "nil%": 0.0
         },
         "type": {
           "type/Number": {
-            "min": 3.459613382219692,
-            "q1": 3.5664912379188394,
-            "q3": 3.9673288579903354,
-            "max": 3.99406354231502,
-            "sd": 0.282795239169773,
-            "avg": 3.780267243183664
+            "min": 96.00593645768498,
+            "q1": 96.03267114200966,
+            "q3": 96.43350876208116,
+            "max": 96.54038661778031,
+            "sd": 0.2827952391697763,
+            "avg": 96.21973275681633
           }
         }
-      }
+      },
+      "base_type": "type/Decimal"
     }
   ],
+  "embedding_type": null,
   "creator": {
     "email": "priyal.saraogi@curefit.com",
     "first_name": "Priyal",
-    "last_login": "2026-04-28T10:19:37.81061Z",
+    "is_data_analyst": false,
+    "last_login": "2026-06-22T05:45:59.598856Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 4185,
     "last_name": "Saraogi",
+    "tenant_id": null,
     "date_joined": "2026-03-03T09:06:26.74454Z",
     "common_name": "Priyal Saraogi"
   },
   "initially_published_at": null,
   "can_write": true,
+  "card_schema": 23,
   "database_id": 39,
   "enable_embedding": false,
-  "collection_id": 6878,
+  "collection_id": 7263,
   "query_type": "native",
   "name": "BT-FY24/25/26",
-  "last_query_start": "2026-04-30T15:56:19.497161Z",
+  "last_query_start": "2026-06-22T06:13:05.008735Z",
+  "is_remote_synced": false,
   "dashboard_count": 0,
-  "last_used_at": "2026-04-30T15:56:19.506105Z",
+  "document_id": null,
+  "last_used_at": "2026-06-22T06:13:05.011997Z",
+  "dashboard": null,
   "type": "question",
-  "warnings": [
-    null
-  ],
-  "average_query_time": 33355,
+  "dimensions": null,
+  "average_query_time": 46136.4,
   "creator_id": 4185,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-04-24T05:50:03.71659Z",
+  "updated_at": "2026-06-22T06:09:55.344831Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
+    "lib/type": "mbql/query",
     "database": 39,
-    "type": "native",
-    "native": {
-      "template-tags": {},
-      "query": "SELECT\n  CASE\n    WHEN bf.class_date >= DATE '2023-04-01' AND bf.class_date < DATE '2024-04-01' THEN 'FY24'\n    WHEN bf.class_date >= DATE '2024-04-01' AND bf.class_date < DATE '2025-04-01' THEN 'FY25'\n    WHEN bf.class_date >= DATE '2025-04-01' AND bf.class_date < DATE '2026-04-01' THEN 'FY26'\n  END AS fiscal_year,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END) AS bt_responses,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END) AS total_responses,\n  100.0 * COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END)\n    / NULLIF(COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END), 0) AS bt_pct\nFROM dwh_fitness_mart.booking_fact bf\nWHERE bf.class_date >= DATE '2023-04-01'\n  AND bf.class_date < DATE '2026-04-01'\nGROUP BY 1\nORDER BY 1 "
-    }
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "SELECT\n  CASE\n    WHEN bf.class_date >= DATE '2023-04-01' AND bf.class_date < DATE '2024-04-01' THEN 'FY24'\n    WHEN bf.class_date >= DATE '2024-04-01' AND bf.class_date < DATE '2025-04-01' THEN 'FY25'\n    WHEN bf.class_date >= DATE '2025-04-01' AND bf.class_date < DATE '2026-04-01' THEN 'FY26'\n  END AS fiscal_year,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (3, 4) THEN bf.booking_key END) AS positive_responses,\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END) AS total_responses,\n  100.0 * COUNT(DISTINCT CASE WHEN bf.rating_value IN (3, 4) THEN bf.booking_key END)\n    / NULLIF(COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END), 0) AS positive_pct\nFROM dwh_fitness_mart.booking_fact bf\nWHERE bf.class_date >= DATE '2023-04-01'\n  AND bf.class_date < DATE '2026-04-01'\nGROUP BY 1\nORDER BY 1 "
+      }
+    ]
   },
+  "dimension_mappings": null,
   "id": 79589,
+  "legacy_query": "{\"database\":39,\"type\":\"native\",\"native\":{\"template-tags\":{},\"query\":\"SELECT\\n  CASE\\n    WHEN bf.class_date >= DATE '2023-04-01' AND bf.class_date < DATE '2024-04-01' THEN 'FY24'\\n    WHEN bf.class_date >= DATE '2024-04-01' AND bf.class_date < DATE '2025-04-01' THEN 'FY25'\\n    WHEN bf.class_date >= DATE '2025-04-01' AND bf.class_date < DATE '2026-04-01' THEN 'FY26'\\n  END AS fiscal_year,\\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END) AS bt_responses,\\n  COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END) AS total_responses,\\n  100.0 * COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2) THEN bf.booking_key END)\\n    / NULLIF(COUNT(DISTINCT CASE WHEN bf.rating_value IN (1, 2, 3, 4) THEN bf.booking_key END), 0) AS bt_pct\\nFROM dwh_fitness_mart.booking_fact bf\\nWHERE bf.class_date >= DATE '2023-04-01'\\n  AND bf.class_date < DATE '2026-04-01'\\nGROUP BY 1\\nORDER BY 1 \"}}",
   "parameter_mappings": [],
-  "can_manage_db": true,
+  "can_manage_db": false,
   "display": "table",
   "archived_directly": false,
   "entity_id": "ZUljM1Y5SEpthYw4xNDD8",
+  "param_fields": {},
   "collection_preview": true,
   "last-edit-info": {
-    "id": 4185,
-    "email": "priyal.saraogi@curefit.com",
-    "first_name": "Priyal",
-    "last_name": "Saraogi",
-    "timestamp": "2026-04-24T05:50:03.933569Z"
+    "id": 3412,
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "last_name": "Vardhan",
+    "timestamp": "2026-06-22T06:09:55.386058Z"
   },
   "visualization_settings": {
     "table.pivot_column": "fiscal_year",
@@ -191,22 +229,25 @@
     "authority_level": null,
     "description": null,
     "archived": false,
-    "slug": "adhocs",
+    "workspace_id": null,
+    "slug": "audit_related_queries",
     "archive_operation_id": null,
-    "name": "Adhocs",
+    "name": "Audit Related Queries",
+    "is_remote_synced": false,
     "personal_owner_id": null,
     "type": null,
     "is_sample": false,
-    "id": 6878,
+    "id": 7263,
     "archived_directly": null,
-    "entity_id": "dNxK80e96eFbNEQmkROHz",
-    "location": "/6801/",
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
     "namespace": null,
     "is_personal": false,
-    "created_at": "2026-04-21T07:31:07.61971Z"
+    "created_at": "2026-05-26T11:14:34.781469Z"
   },
   "metabase_version": "vUNKNOWN (?)",
   "parameters": [],
+  "dashboard_id": null,
   "created_at": "2026-04-20T08:20:51.767984Z",
   "parameter_usage_count": 0,
   "public_uuid": null,
