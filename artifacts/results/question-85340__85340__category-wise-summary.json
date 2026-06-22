@@ -1,0 +1,300 @@
+{
+  "card_id": 85340,
+  "card_name": "Category Wise Summary",
+  "parameters": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "FY23",
+          "Apparel",
+          176591559.0
+        ],
+        [
+          "FY23",
+          "Equipment and Accessories",
+          1975387161.0
+        ],
+        [
+          "FY23",
+          "Footwear",
+          105475102.0
+        ],
+        [
+          "FY24",
+          "Apparel",
+          91892761.0
+        ],
+        [
+          "FY24",
+          "Equipment and Accessories",
+          2232526086.0
+        ],
+        [
+          "FY24",
+          "Footwear",
+          242133549.0
+        ],
+        [
+          "FY25",
+          "Apparel",
+          171093288.0
+        ],
+        [
+          "FY25",
+          "Equipment and Accessories",
+          2805618843.0
+        ],
+        [
+          "FY25",
+          "Footwear",
+          280837013.0
+        ],
+        [
+          "FY26",
+          "Apparel",
+          700572998.0
+        ],
+        [
+          "FY26",
+          "Equipment and Accessories",
+          3994919441.0
+        ],
+        [
+          "FY26",
+          "Footwear",
+          574118134.0
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar(4)",
+          "lib/deduplicated-name": "year",
+          "lib/original-name": "year",
+          "name": "year",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "year",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "year",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "year",
+          "display_name": "year",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "varchar(25)",
+          "lib/deduplicated-name": "business_category",
+          "lib/original-name": "business_category",
+          "name": "business_category",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "business_category",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "business_category",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "business_category",
+          "display_name": "business_category",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "base_amount",
+          "lib/original-name": "base_amount",
+          "name": "base_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "base_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "base_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "base_amount",
+          "display_name": "base_amount",
+          "base_type": "type/Float"
+        }
+      ],
+      "native_form": {
+        "lib/type": "mbql.stage/native",
+        "query": "SELECT\n  year,\n  business_category,\n  base_amount\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN business_category = 'Apparel' THEN 'Apparel'\n      WHEN business_category IN ('CS Footwear', 'Avant Footwear') THEN 'Footwear'\n      ELSE 'Equipment and Accessories'\n    END AS business_category,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN business_category = 'Apparel' THEN 'Apparel'\n      WHEN business_category IN ('CS Footwear', 'Avant Footwear') THEN 'Footwear'\n      ELSE 'Equipment and Accessories'\n    END AS business_category,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN business_category = 'Apparel' THEN 'Apparel'\n      WHEN business_category IN ('CS Footwear', 'Avant Footwear') THEN 'Footwear'\n      ELSE 'Equipment and Accessories'\n    END AS business_category,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN business_category = 'Apparel' THEN 'Apparel'\n      WHEN business_category IN ('CS Footwear', 'Avant Footwear') THEN 'Footwear'\n      ELSE 'Equipment and Accessories'\n    END AS business_category,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n) t\nORDER BY sort_key, business_category"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "varchar(4)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "year",
+            "lib/original-name": "year",
+            "name": "year",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "year",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "year",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "year",
+            "display_name": "year",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 4.0
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "varchar(25)",
+            "semantic_type": null,
+            "lib/deduplicated-name": "business_category",
+            "lib/original-name": "business_category",
+            "name": "business_category",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "business_category",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "business_category",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "business_category",
+            "display_name": "business_category",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 3,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 13.333333333333334
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "base_amount",
+            "lib/original-name": "base_amount",
+            "name": "base_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "base_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "base_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "base_amount",
+            "display_name": "base_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 12,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 91892761.0,
+                  "q1": 173842423.5,
+                  "q3": 2103956623.5,
+                  "max": 3994919441.0,
+                  "sd": 1310817762.9196727,
+                  "avg": 1112597161.25
+                }
+              }
+            },
+            "base_type": "type/Float"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": "2026-06-22T05:48:33.939655107Z",
+    "database_id": 39,
+    "started_at": "2026-06-22T09:25:59.889693678Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "native": "SELECT\n  year,\n  business_category,\n  base_amount\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN business_category = 'Apparel' THEN 'Apparel'\n      WHEN business_category IN ('CS Footwear', 'Avant Footwear') THEN 'Footwear'\n      ELSE 'Equipment and Accessories'\n    END AS business_category,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN business_category = 'Apparel' THEN 'Apparel'\n      WHEN business_category IN ('CS Footwear', 'Avant Footwear') THEN 'Footwear'\n      ELSE 'Equipment and Accessories'\n    END AS business_category,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN business_category = 'Apparel' THEN 'Apparel'\n      WHEN business_category IN ('CS Footwear', 'Avant Footwear') THEN 'Footwear'\n      ELSE 'Equipment and Accessories'\n    END AS business_category,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN business_category = 'Apparel' THEN 'Apparel'\n      WHEN business_category IN ('CS Footwear', 'Avant Footwear') THEN 'Footwear'\n      ELSE 'Equipment and Accessories'\n    END AS business_category,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n) t\nORDER BY sort_key, business_category"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-22T05:06:46.880499Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "year",
+        "table.cell_column": "base_amount",
+        "table.transpose": false,
+        "table.pivot": true
+      },
+      "database": 39
+    },
+    "average_execution_time": 1481,
+    "status": "completed",
+    "context": "question",
+    "row_count": 12,
+    "running_time": 168
+  }
+}

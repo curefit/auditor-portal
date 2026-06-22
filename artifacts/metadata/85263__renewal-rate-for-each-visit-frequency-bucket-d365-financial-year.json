@@ -1,0 +1,291 @@
+{
+  "cache_invalidated_at": "2026-06-22T07:52:11.530904Z",
+  "description": "Financial-year D365 renewal rate by visit-frequency bucket, using membership_fact latest snapshot with transaction_date partition pruning.",
+  "archived": false,
+  "view_count": 59,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "financial_year",
+      "lib/original-name": "financial_year",
+      "name": "financial_year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "financial_year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "financial_year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "financial_year",
+      "display_name": "financial_year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "business_line",
+      "lib/original-name": "business_line",
+      "name": "business_line",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "business_line",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "business_line",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "business_line",
+      "display_name": "business_line",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "base",
+      "lib/original-name": "base",
+      "name": "base",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "base",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "base",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "effective_type": "type/BigInteger",
+      "lib/desired-column-alias": "base",
+      "display_name": "base",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 9,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 71400.0,
+            "q1": 82649.75,
+            "q3": 286534.5,
+            "max": 365588.0,
+            "sd": 106102.40472180638,
+            "avg": 192880.33333333334
+          }
+        }
+      },
+      "base_type": "type/BigInteger"
+    },
+    {
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "renewed_users",
+      "lib/original-name": "renewed_users",
+      "name": "renewed_users",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "renewed_users",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "renewed_users",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "effective_type": "type/BigInteger",
+      "lib/desired-column-alias": "renewed_users",
+      "display_name": "renewed_users",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 9,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 21910.0,
+            "q1": 25879.0,
+            "q3": 116197.25,
+            "max": 148659.0,
+            "sd": 46550.4801452144,
+            "avg": 77234.0
+          }
+        }
+      },
+      "base_type": "type/BigInteger"
+    },
+    {
+      "database_type": "decimal(38,15)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "d365_pct",
+      "lib/original-name": "d365_pct",
+      "name": "d365_pct",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "d365_pct",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "d365_pct",
+        {
+          "base-type": "type/Decimal"
+        }
+      ],
+      "effective_type": "type/Decimal",
+      "lib/desired-column-alias": "d365_pct",
+      "display_name": "d365_pct",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 9,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 29.88,
+            "q1": 32.19,
+            "q3": 43.095,
+            "max": 44.0,
+            "sd": 5.599053491439425,
+            "avg": 38.17333333333333
+          }
+        }
+      },
+      "base_type": "type/Decimal"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "mukul.yambal@curefit.com",
+    "first_name": "Mukul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-15T09:20:36.37172Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3749,
+    "last_name": "Yambal",
+    "tenant_id": null,
+    "date_joined": "2025-03-07T10:30:17.035802Z",
+    "common_name": "Mukul Yambal"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6778,
+  "query_type": "native",
+  "name": "Renewal rate for each visit-frequency bucket - D365 financial year",
+  "last_query_start": "2026-06-22T07:47:29.242554Z",
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-06-22T07:47:29.248858Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 212625.95454545456,
+  "creator_id": 3749,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-22T07:52:11.528974Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "native": "-- Purpose:\n-- This query measures D365 renewal performance by financial year for ELITE and PRO.\n-- \"D365\" means the user renewed within 365 days after their pack end date.\n--\n-- Important interpretation notes for auditors:\n-- 1. We are not using the live current state of memberships. We are using a fixed\n--    membership_fact snapshot dated 2026-06-16 so the same source cut is applied\n--    consistently every time the query runs.\n-- 2. The reporting period is hardcoded from 2022-04-01 to 2026-03-31, and\n--    it is applied on pack_end_date itself.\n--    In simple terms: FY24 means pack_end_date between 2022-04-01 and 2023-03-31,\n--    FY25 means pack_end_date between 2023-04-01 and 2024-03-31, and so on.\n-- 3. Enterprise/B2B memberships are excluded because this cut is intended to\n--    reflect consumer renewal behavior.\n\nWITH membership_fact_snapshot AS (\n  -- Step 1: Start from a fixed membership_fact snapshot.\n  -- Reason:\n  -- membership_fact is partitioned by transaction_date, so this fixed date keeps\n  -- the query stable and audit-friendly. We then keep only the latest record per\n  -- membership_key inside that fixed snapshot cut.\n  SELECT *\n  FROM (\n    SELECT\n      mf.*,\n      row_number() OVER (\n        PARTITION BY mf.membership_key\n        ORDER BY mf.transaction_date DESC, mf.membership_fact_ts_ms DESC\n      ) AS rn\n    FROM dwh_fitness_mart.membership_fact mf\n    WHERE mf.transaction_date = DATE('2026-06-16')\n      AND mf.business_line IN ('ELITE', 'PRO')\n  )\n  WHERE rn = 1\n),\n\nactive_center AS (\n  -- Step 2: Identify \"active\" centers.\n  -- Reason:\n  -- Some membership attribution logic depends on whether a center was genuinely\n  -- operational in that month. A center is treated as active if its attended\n  -- booking volume is sufficiently large (>1000), with a fallback to the prior\n  -- month when the current month looks artificially low.\n  SELECT class_month, center_service_id\n  FROM (\n    SELECT\n      class_month,\n      center_service_id,\n      CASE\n        WHEN classes < 1000 THEN lag(classes) OVER (\n          PARTITION BY center_service_id\n          ORDER BY class_month\n        )\n        ELSE classes\n      END AS actual_classes\n    FROM (\n      SELECT\n        date_trunc('month', date(bf.class_date)) AS class_month,\n        cd.center_service_id,\n        count(DISTINCT bf.booking_key) AS classes\n      FROM dwh_fitness_mart.booking_fact bf\n      JOIN dwh_fitness_mart.center_dim cd\n        ON cd.center_key = bf.center_key\n      WHERE bf.attendance_time IS NOT NULL\n        AND date(bf.class_date) BETWEEN DATE('2022-04-01') AND DATE('2026-03-31')\n        AND date(bf.class_date) >= date('2016-01-01')\n      GROUP BY 1,2\n    )\n  )\n  WHERE actual_classes > 1000\n),\n\nsame_device_flag AS (\n  -- Step 3: Detect likely renewals on the same device but under a different user id.\n  -- Reason:\n  -- This follows the renewal-side logic from card 85336. It is broader than the\n  -- base cohort and is used only to recover likely renewals that would be missed\n  -- by a direct user_id-only check.\n  SELECT\n    date_trunc('month', last_data.pack_end_date) AS date_month,\n    last_data.business_line,\n    last_data.userid AS user_id,\n    max(\n      CASE\n        WHEN last_data.userid <> first_data.userid\n         AND date_diff(\n               'day',\n               date(last_data.pack_end_date),\n               date(first_data.membership_created_time)\n             ) <= 60\n        THEN 1 ELSE 0\n      END\n    ) AS same_device_d60_flag\n  FROM (\n    SELECT\n      mf.user_id AS userid,\n      mf.business_line,\n      bf.device_id,\n      date(mf.pack_end_date) AS pack_end_date,\n      mf.membership_created_time\n    FROM dwh_fitness_mart.booking_fact bf\n    JOIN membership_fact_snapshot mf\n      ON bf.membership_key = mf.membership_key\n     AND date(bf.class_date)\n            BETWEEN date(mf.pack_end_date) - interval '30' day\n                AND date(mf.pack_end_date)\n    WHERE lower(coalesce(mf.status, 'xx')) NOT LIKE '%canc%'\n      AND mf.business_line IN ('ELITE', 'PRO')\n      AND bf.class_date > date('2017-01-01')\n      AND bf.device_id IS NOT NULL\n      AND date(mf.pack_end_date) BETWEEN DATE('2022-04-01') AND DATE('2026-03-31')\n  ) last_data\n  JOIN (\n    SELECT\n      mf.user_id AS userid,\n      mf.business_line,\n      bf.device_id,\n      mf.membership_created_time\n    FROM dwh_fitness_mart.booking_fact bf\n    JOIN membership_fact_snapshot mf\n      ON bf.membership_key = mf.membership_key\n     AND date(bf.class_date)\n            BETWEEN date(mf.pack_start_date)\n                AND date(mf.pack_start_date) + interval '30' day\n    WHERE lower(coalesce(mf.status, 'xx')) NOT LIKE '%canc%'\n      AND mf.business_line IN ('ELITE', 'PRO')\n      AND bf.class_date > date('2017-01-01')\n      AND bf.device_id IS NOT NULL\n  ) first_data\n    ON last_data.device_id = first_data.device_id\n   AND last_data.membership_created_time < first_data.membership_created_time\n   AND last_data.business_line = first_data.business_line\n  GROUP BY 1,2,3\n),\n\nrenewal_history AS (\n  -- Step 4: Build the broad renewal universe.\n  -- Reason:\n  -- This follows card 85336. It determines the \"next pack purchased time\" from\n  -- the broader membership universe so renewal identification is consistent with\n  -- the approved renewal logic.\n  SELECT\n    mf.membership_key,\n    lead(mf.membership_created_time) OVER (\n      PARTITION BY mf.user_id\n      ORDER BY mf.membership_created_time\n    ) AS next_pack_purchased_time\n  FROM membership_fact_snapshot mf\n  WHERE lower(coalesce(mf.status, 'xx')) NOT LIKE '%canc%'\n    AND mf.business_line IN ('ELITE', 'PRO')\n    AND coalesce(mf.attribution_reason, 'xx') NOT IN ('MANUAL_OVERRIDE_CENTER_SHUTDOWN')\n),\n\nmembership_history AS (\n  -- Step 5: Build the expiry cohort base exactly as in the existing 85263 logic.\n  -- Reason:\n  -- The user asked that the base should not change. So pack types included in\n  -- the cohort remain the same as before, while renewals are evaluated using the\n  -- broader renewal logic above.\n  SELECT\n    date_trunc('month', date(mf.pack_end_date)) AS date_month,\n    date_trunc('month', date(mf.pack_end_date)) AS retention_date_month,\n    mf.membership_key,\n    mf.user_id,\n    mf.business_line,\n    date(mf.pack_start_date) AS pack_start_date,\n    date(mf.pack_end_date) AS pack_end_date,\n    date_add('day', 365, date(mf.pack_end_date)) AS d365_date,\n    CASE\n      WHEN lower(cd.center_name) LIKE 'cure.fit%' THEN 'Curefit_Attributed'\n      ELSE cd.center_type\n    END AS derived_center_type,\n    cd.center_service_id AS attributed_centerservice_id,\n    cd.center_name AS attributed_centername,\n    mf.is_enterprise\n  FROM membership_fact_snapshot mf\n  LEFT JOIN dwh_fitness_mart.center_dim cd\n    ON mf.attributed_center_key = cd.center_key\n  WHERE lower(coalesce(mf.status, 'xx')) NOT LIKE '%canc%'\n    AND mf.business_line IN ('ELITE', 'PRO')\n    AND coalesce(mf.attribution_reason, 'xx') NOT IN ('MANUAL_OVERRIDE_CENTER_SHUTDOWN')\n    AND (\n      mf.amount_paid > 0\n      OR coalesce(mf.membership_type, 'xx') IN ('MEMBER_MIGRATION', 'ENTERPRISE', 'MIGRATION')\n      OR coalesce(mf.pack_name, 'xx') IN ('Transferred Pack')\n      OR coalesce(mf.status, 'xx') IN ('MEMBERSHIP_TRANSFERRED')\n      OR coalesce(mf.source, 'xx') IN ('MIGRATION')\n    )\n),\n\nmembership_base AS (\n  -- Step 6: Restrict the cohort to the hardcoded pack-end reporting window and B2C only.\n  SELECT *\n  FROM membership_history\n  WHERE pack_end_date BETWEEN DATE('2022-04-01') AND DATE('2025-03-31')\n    AND is_enterprise = 0\n),\n\nbase_membership AS (\n  -- Step 7: Classify whether each base membership renewed within 365 days.\n  -- Reason:\n  -- The base membership cohort stays unchanged, but the actual renewal signal\n  -- now uses the broader renewal universe from card 85336.\n  SELECT\n    mb.date_month,\n    mb.retention_date_month,\n    mb.membership_key,\n    mb.user_id,\n    mb.business_line,\n    CASE\n      WHEN rh.next_pack_purchased_time IS NOT NULL\n       AND date(rh.next_pack_purchased_time) <= mb.d365_date\n      THEN 1 ELSE 0\n    END AS direct_d365_flag,\n    CASE\n      WHEN mb.derived_center_type = 'Curefit_Attributed'\n      THEN mb.business_line || '_Curefit_Attributed'\n      ELSE mb.business_line || '_' || mb.derived_center_type\n    END AS category\n  FROM membership_base mb\n  LEFT JOIN renewal_history rh\n    ON mb.membership_key = rh.membership_key\n  LEFT JOIN active_center ac\n    ON ac.center_service_id = mb.attributed_centerservice_id\n   AND ac.class_month = mb.date_month\n  WHERE lower(mb.attributed_centername) LIKE 'cure.fit%'\n     OR ac.center_service_id IS NOT NULL\n),\n\nfiltered_membership AS (\n  -- Step 8: Keep only the allowed business-line x center-type combinations.\n  SELECT *\n  FROM base_membership\n  WHERE category IN (\n    'ELITE_GX',\n    'ELITE_GYM',\n    'ELITE_Curefit_Attributed',\n    'PRO_GX',\n    'PRO_GYM',\n    'PRO_Curefit_Attributed'\n  )\n),\n\nuser_month_base AS (\n  -- Step 9: Collapse to one record per user per month per business line.\n  SELECT\n    date_month,\n    retention_date_month,\n    user_id,\n    business_line,\n    max(direct_d365_flag) AS direct_d365_flag\n  FROM filtered_membership\n  GROUP BY 1,2,3,4\n),\n\nflagged AS (\n  -- Step 10: Final renewal flag at user level.\n  SELECT\n    umb.date_month,\n    umb.retention_date_month,\n    umb.user_id,\n    umb.business_line,\n    CASE\n      WHEN greatest(\n             coalesce(umb.direct_d365_flag, 0),\n             coalesce(sdf.same_device_d60_flag, 0)\n           ) = 1\n      THEN 1 ELSE 0\n    END AS renewed_flag\n  FROM user_month_base umb\n  LEFT JOIN same_device_flag sdf\n    ON sdf.user_id = umb.user_id\n   AND sdf.date_month = umb.date_month\n   AND sdf.business_line = umb.business_line\n),\n\nuser_detail AS (\n  -- Step 11: Convert cohort months into financial years and aggregate by business line.\n  SELECT\n   CASE\n      WHEN month(retention_date_month) >= 4\n      THEN concat('FY', cast(year(retention_date_month) +1 AS varchar), '-', substr(cast(year(retention_date_month) + 2 AS varchar), 3, 2))\n      ELSE concat('FY', cast(year(retention_date_month)  AS varchar), '-', substr(cast(year(retention_date_month) +1 AS varchar), 3, 2))\n    END AS financial_year,\n    CASE\n      WHEN month(retention_date_month) >= 4 THEN year(retention_date_month)\n      ELSE year(retention_date_month) - 1\n    END AS fy_start_year,\n    business_line,\n    count(DISTINCT user_id) AS base,\n    count(DISTINCT CASE WHEN renewed_flag = 1 THEN user_id END) AS renewed_users\n  FROM flagged\n  GROUP BY 1,2,3\n),\n\nuser_overall AS (\n  -- Step 12: Build the overall ELITE+PRO line.\n  SELECT\n     CASE\n      WHEN month(retention_date_month) >= 4\n      THEN concat('FY', cast(year(retention_date_month) +1 AS varchar), '-', substr(cast(year(retention_date_month) + 2 AS varchar), 3, 2))\n      ELSE concat('FY', cast(year(retention_date_month)  AS varchar), '-', substr(cast(year(retention_date_month) +1 AS varchar), 3, 2))\n    END AS financial_year,\n    CASE\n      WHEN month(retention_date_month) >= 4 THEN year(retention_date_month)\n      ELSE year(retention_date_month) - 1\n    END AS fy_start_year,\n    'OVERALL' AS business_line,\n    count(DISTINCT user_id) AS base,\n    count(DISTINCT CASE WHEN renewed_flag = 1 THEN user_id END) AS renewed_users\n  FROM flagged\n  GROUP BY 1,2,3\n),\n\nfinal_users AS (\n  SELECT * FROM user_detail\n  UNION ALL\n  SELECT * FROM user_overall\n)\n\nSELECT\n  financial_year,\n  business_line,\n  base,\n  renewed_users,\n  round(\n    100.0 * renewed_users / nullif(base, 0),\n    2\n  ) AS d365_pct\nFROM final_users\nORDER BY\n  fy_start_year DESC,\n  business_line\n",
+        "lib/type": "mbql.stage/native"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 85263,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "IhNVnHcGCirA6UjTgWc-q",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3749,
+    "email": "mukul.yambal@curefit.com",
+    "first_name": "Mukul",
+    "last_name": "Yambal",
+    "timestamp": "2026-06-22T07:52:11.609287Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "financial_year",
+    "table.cell_column": "base"
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "mukul",
+    "archive_operation_id": null,
+    "name": "Mukul",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 6778,
+    "archived_directly": null,
+    "entity_id": "ZhqzF1PhKD9iYp_j0KBT4",
+    "location": "/6757/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-03-31T12:14:06.379556Z"
+  },
+  "metabase_version": "v0.60.1 (feddd55)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-18T10:30:31.495884Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}
