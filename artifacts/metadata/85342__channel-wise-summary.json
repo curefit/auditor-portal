@@ -1,0 +1,224 @@
+{
+  "cache_invalidated_at": "2026-06-22T05:05:38.739932Z",
+  "description": null,
+  "archived": false,
+  "view_count": 8,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(4)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "year",
+      "lib/original-name": "year",
+      "name": "year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "year",
+      "display_name": "year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar(28)",
+      "semantic_type": "type/Category",
+      "lib/deduplicated-name": "channel_type",
+      "lib/original-name": "channel_type",
+      "name": "channel_type",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "channel_type",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "channel_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "channel_type",
+      "display_name": "channel_type",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 13.166666666666666
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": "type/Share",
+      "lib/deduplicated-name": "percentage",
+      "lib/original-name": "percentage",
+      "name": "percentage",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "percentage",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "percentage",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "percentage",
+      "display_name": "percentage",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 12,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0011151862456752549,
+            "q1": 0.13469598830211935,
+            "q3": 0.5,
+            "max": 0.6598975702104085,
+            "sd": 0.21386052769557562,
+            "avg": 0.3333333333333333
+          }
+        }
+      },
+      "base_type": "type/Float"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-16T09:27:45.522093Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7263,
+  "query_type": "native",
+  "name": "Channel Wise Summary",
+  "last_query_start": "2026-06-22T05:09:23.03148Z",
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-06-22T05:09:23.039746Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 2230.0,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-22T05:05:38.737426Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "SELECT\n  year,\n  channel_type,\n  base_amount * 1.000/ SUM(base_amount) OVER(PARTITION BY year) AS percentage\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n) t\nORDER BY sort_key, channel_type"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 85342,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "t_IsVs451zKMVvL6hHKto",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-06-22T05:05:38.775076Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "year",
+    "table.cell_column": "percentage",
+    "table.transpose": false,
+    "table.pivot": true,
+    "column_settings": {
+      "[\"name\",\"percentage\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "audit_related_queries",
+    "archive_operation_id": null,
+    "name": "Audit Related Queries",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7263,
+    "archived_directly": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-05-26T11:14:34.781469Z"
+  },
+  "metabase_version": "v0.60.1 (feddd55)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-20T13:37:06.108528Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

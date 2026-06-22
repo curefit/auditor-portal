@@ -1,8 +1,8 @@
 {
-  "cache_invalidated_at": "2026-05-20T12:17:39.881106Z",
+  "cache_invalidated_at": "2026-06-22T07:36:09.787631Z",
   "description": null,
   "archived": false,
-  "view_count": 16,
+  "view_count": 29,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
@@ -30,7 +30,7 @@
       "fingerprint": {
         "global": {
           "distinct-count": 7,
-          "nil%": 0
+          "nil%": 0.0
         },
         "type": {
           "type/DateTime": {
@@ -40,42 +40,6 @@
         }
       },
       "base_type": "type/Date"
-    },
-    {
-      "database_type": "varchar",
-      "semantic_type": null,
-      "lib/deduplicated-name": "business_line",
-      "lib/original-name": "business_line",
-      "name": "business_line",
-      "lib/source": "source/native",
-      "lib/source-column-alias": "business_line",
-      "source": "native",
-      "field_ref": [
-        "field",
-        "business_line",
-        {
-          "base-type": "type/Text"
-        }
-      ],
-      "effective_type": "type/Text",
-      "lib/desired-column-alias": "business_line",
-      "display_name": "business_line",
-      "fingerprint": {
-        "global": {
-          "distinct-count": 14,
-          "nil%": 0
-        },
-        "type": {
-          "type/Text": {
-            "percent-json": 0,
-            "percent-url": 0,
-            "percent-email": 0,
-            "percent-state": 0,
-            "average-length": 7.806236080178174
-          }
-        }
-      },
-      "base_type": "type/Text"
     },
     {
       "database_type": "varchar",
@@ -99,15 +63,15 @@
       "fingerprint": {
         "global": {
           "distinct-count": 55,
-          "nil%": 0.08240534521158129
+          "nil%": 0.01897018970189702
         },
         "type": {
           "type/Text": {
-            "percent-json": 0,
-            "percent-url": 0,
-            "percent-email": 0,
-            "percent-state": 0,
-            "average-length": 7.160356347438753
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.46070460704607
           }
         }
       },
@@ -134,17 +98,17 @@
       "display_name": "user_base",
       "fingerprint": {
         "global": {
-          "distinct-count": 528,
-          "nil%": 0
+          "distinct-count": 238,
+          "nil%": 0.0
         },
         "type": {
           "type/Number": {
-            "min": 1,
-            "q1": 55.71876294138889,
-            "q3": 1607.8323916823351,
-            "max": 223220,
-            "sd": 24856.307261955535,
-            "avg": 7356.053452115813
+            "min": 1.0,
+            "q1": 29.33855366495692,
+            "q3": 1378.9439680928713,
+            "max": 386709.0,
+            "sd": 61611.19057793207,
+            "avg": 17888.47967479675
           }
         }
       },
@@ -156,7 +120,7 @@
     "email": "mukul.yambal@curefit.com",
     "first_name": "Mukul",
     "is_data_analyst": false,
-    "last_login": "2026-05-18T09:18:42.221641Z",
+    "last_login": "2026-06-15T09:20:36.37172Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3749,
@@ -170,22 +134,22 @@
   "card_schema": 23,
   "database_id": 39,
   "enable_embedding": false,
-  "collection_id": null,
+  "collection_id": 7263,
   "query_type": "native",
   "name": "Memberships by Each Business Line - End of Each Month - including all packs -city level",
-  "last_query_start": "2026-05-21T10:07:23.446779Z",
+  "last_query_start": "2026-06-22T07:57:17.659023Z",
   "is_remote_synced": false,
   "dashboard_count": 0,
   "document_id": null,
-  "last_used_at": "2026-05-21T10:07:23.504545Z",
+  "last_used_at": "2026-06-22T07:57:17.666203Z",
   "dashboard": null,
   "type": "question",
   "dimensions": null,
-  "average_query_time": 18757.571428571428,
+  "average_query_time": 34675.0,
   "creator_id": 3749,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-05-20T12:17:39.87657Z",
+  "updated_at": "2026-06-22T07:36:09.785074Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
@@ -196,24 +160,24 @@
       {
         "template-tags": {
           "start_date": {
+            "name": "start_date",
+            "id": "a76b1cdc-1d22-4832-adcd-a4b15058e8cf",
             "display-name": "Start Date",
             "default": "2025-09-12",
             "type": "date",
-            "name": "start_date",
-            "id": "a76b1cdc-1d22-4832-adcd-a4b15058e8cf",
             "widget-type": null
           },
           "end_date": {
+            "name": "end_date",
+            "id": "ddf5f89d-5764-4594-9077-650163c1b069",
             "display-name": "End Date",
             "default": "2026-03-12",
             "type": "date",
-            "name": "end_date",
-            "id": "ddf5f89d-5764-4594-9077-650163c1b069",
             "widget-type": null
           }
         },
         "lib/type": "mbql.stage/native",
-        "native": "with dates as (\nselect date_trunc('month',full_date) as \"month\", min(full_date) as month_start_date, max(full_date) month_end_date, date_add('day',-1,min(full_date)) as prev_month_end_date\nfrom dwh_curefit.dim_date\nwhere full_date between {{start_date}} and {{end_date}}\ngroup by 1\n)\n\n-- select * from dates\n\nselect \nd.\"month\"\n, case when is_enterprise = 1 then md.business_line||' (B2B)' else md.business_line end as business_line\n,city_name\n,count(distinct user_id) as user_base\nfrom dates d\nleft join (\nselect membership_key, md.business_line, membership_created_date, pack_start_date, pack_end_date, is_enterprise, amount_paid, pack_name, user_id, cd.city_name, cancellation_date\nfrom dwh_fitness_mart.membership_dim md \nleft join dwh_fitness_mart.center_dim cd on cd.center_key=coalesce(attributed_center_key,final_center_key,purchase_center_key,last_30_days_preferred_center_key)\n\nwhere 1=1\nand UPPER(md.business_line) not like '%PT%' -- users of PT are counted in ELITE/PRO memberships\n\nand md.business_line is not null\n) md\non d.month_end_date between md.pack_start_date and least(coalesce(md.cancellation_date,pack_end_date),md.pack_end_date)\ngroup by 1,2,3\norder by 1 desc, 3 desc"
+        "native": "WITH dates AS (\n  -- Build one row per reporting month.\n  -- In the output, `month` is the first day of the month,\n  -- but the membership check is done on that month's last day.\n  SELECT\n    date_trunc('month', full_date) AS month,\n    min(full_date) AS month_start_date,\n    max(full_date) AS month_end_date,\n    date_add('day', -1, min(full_date)) AS prev_month_end_date\n  FROM dwh_curefit.dim_date\n  WHERE full_date BETWEEN {{start_date}} AND {{end_date}}\n  GROUP BY 1\n),\n\nbase_memberships AS (\n  -- Prepare the membership base used for the month-end snapshot.\n  --\n  -- Important audit rule:\n  -- For transferred / upgraded packs, the dates from the membership-service table\n  -- are treated as the source of truth. This avoids counting the user on the wrong\n  -- active window when pack dates changed because of a transfer or upgrade.\n  SELECT\n    membership_key,\n    md.business_line,\n    CASE\n      WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.created_date\n      ELSE md.membership_created_date\n    END AS membership_created_date,\n    CASE\n      WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.\"start\"\n      ELSE md.pack_start_date\n    END AS pack_start_date,\n    CASE\n      WHEN lower(cast(md.is_transferred_pack AS varchar)) = 'true'\n        OR lower(cast(md.is_upgrade_pack AS varchar)) = 'true' THEN mdb.\"end\"\n      ELSE md.pack_end_date\n    END AS pack_end_date,\n    md.is_enterprise,\n    md.user_id,\n    cd.city_name,\n    md.cancellation_date\n  FROM dwh_fitness_mart.membership_fact md\n  LEFT JOIN pk_curefitplatforms_membershipdb.memberships mdb\n    ON mdb.id = md.membership_service_id\n  LEFT JOIN dwh_fitness_mart.center_dim cd\n    ON cd.center_key = coalesce(\n      md.attributed_center_key,\n      md.final_center_key,\n      md.purchase_center_key,\n      md.last_30_days_preferred_center_key\n    )\n  WHERE 1 = 1\n    -- Freeze to a single fact-table snapshot so results do not move because of\n    -- late-arriving tech changes or partition refreshes.\n    AND md.transaction_date = date '2026-06-16'\n\n    -- PT users are excluded because they are already counted inside ELITE / PRO.\n    -- Keeping PT here would double count the membership base.\n    AND upper(md.business_line) NOT LIKE '%PT%'\n\n    -- Only keep memberships that have a mapped business line.\n    AND md.business_line IS NOT NULL\n),\n\nactive_memberships AS (\n  -- Keep only memberships that are active on the month-end date.\n  --\n  -- A pack is considered active if month_end_date falls between:\n  -- 1. the effective pack start date, and\n  -- 2. the earlier of cancellation_date and pack_end_date.\n  --\n  -- This means a cancelled pack stops contributing after cancellation,\n  -- even if the original pack_end_date is later.\n  SELECT\n    d.month,\n    CASE\n      WHEN md.is_enterprise = 1 THEN md.business_line || ' (B2B)'\n      ELSE md.business_line\n    END AS business_line,\n    md.user_id,\n    md.city_name,\n    md.membership_key,\n    md.membership_created_date,\n    md.pack_start_date,\n    md.pack_end_date\n  FROM dates d\n  JOIN base_memberships md\n    ON d.month_end_date BETWEEN md.pack_start_date AND least(\n      coalesce(md.cancellation_date, md.pack_end_date),\n      md.pack_end_date\n    )\n),\n\ndeduped_user_city AS (\n  -- Audit fix for city-level reporting:\n  -- The same user can appear in more than one city within the same month and business line\n  -- because different active membership rows can resolve to different centers / cities.\n  --\n  -- If we count distinct users separately inside each city bucket and later sum cities,\n  -- the same user gets counted multiple times.\n  --\n  -- To make city totals roll back exactly to the non-city monthly total,\n  -- assign each (month, business_line, user_id) to exactly one city.\n  --\n  -- Rule used:\n  -- pick the most recent active membership row for that user within the month/business line.\n  -- Ties are broken deterministically so the output is stable.\n  SELECT\n    month,\n    business_line,\n    city_name,\n    user_id,\n    row_number() OVER (\n      PARTITION BY month, business_line, user_id\n      ORDER BY\n        coalesce(membership_created_date, date '1900-01-01') DESC,\n        coalesce(pack_start_date, date '1900-01-01') DESC,\n        coalesce(pack_end_date, date '1900-01-01') DESC,\n        CASE WHEN city_name IS NULL THEN 1 ELSE 0 END,\n        membership_key DESC\n    ) AS city_rank\n  FROM active_memberships\n)\n\n-- Final city-level month-end base.\n-- Because each user is forced into one city only, summing city rows back to month\n-- will match the non-city query.\nSELECT\n  month,\n  city_name,\n  count(*) AS user_base\nFROM deduped_user_city\nWHERE city_rank = 1\nGROUP BY\n  month,\n  city_name\nORDER BY 1 DESC, 3 DESC"
       }
     ]
   },
@@ -228,11 +192,11 @@
   "param_fields": {},
   "collection_preview": true,
   "last-edit-info": {
-    "id": 3570,
-    "email": "shivalingesh.aiholli@curefit.com",
-    "first_name": "Shivalingesh",
-    "last_name": "Aiholli",
-    "timestamp": "2026-05-20T12:17:39.923056Z"
+    "id": 3412,
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "last_name": "Vardhan",
+    "timestamp": "2026-06-22T07:36:09.840185Z"
   },
   "visualization_settings": {
     "table.pivot_column": "month",
@@ -242,13 +206,24 @@
     ]
   },
   "collection": {
-    "metabase.collections.models.collection.root/is-root?": true,
     "authority_level": null,
-    "name": "Our analytics",
-    "is_personal": false,
-    "id": "root",
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "audit_related_queries",
+    "archive_operation_id": null,
+    "name": "Audit Related Queries",
     "is_remote_synced": false,
-    "can_write": true
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7263,
+    "archived_directly": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-05-26T11:14:34.781469Z"
   },
   "metabase_version": "vUNKNOWN (?)",
   "parameters": [

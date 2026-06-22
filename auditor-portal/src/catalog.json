@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 123,
+  "count": 127,
   "entries": [
     {
       "cardId": "75753",
@@ -394,9 +394,9 @@
     },
     {
       "cardId": "79589",
-      "name": "adhoc 20-04-2026",
+      "name": "Positive feedback rating",
       "rootKey": "question-79589",
-      "rootAssetName": "adhoc 20-04-2026",
+      "rootAssetName": "Positive feedback rating",
       "dashboardId": null,
       "dashboardName": null,
       "metabaseCardUrl": "https://metabase.curefit.co/question/79589",
@@ -432,18 +432,104 @@
       "sheetMetric": {
         "sheetOrder": 19,
         "slNo": "34",
-        "metricName": "BT rating",
-        "definition": "% Bad & Terrible ratings out of total responses recieved durng the period",
+        "metricName": "Positive feedback rating",
+        "definition": "3/4 & 4/4 ratings out of total ratings received during the period",
         "status": "Done",
         "poc": "Analytics",
         "units": "%",
         "fy23": "",
-        "fy24": "3%",
-        "fy25": "4%",
-        "fy26": "4%",
+        "fy24": "97%",
+        "fy25": "96%",
+        "fy26": "96%",
         "nineMFy25": "",
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/79589-adhoc-20-04-2026",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "85263",
+      "name": "Member retention rate",
+      "rootKey": "question-85263",
+      "rootAssetName": "Member retention rate",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85263",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85263__renewal-rate-for-each-visit-frequency-bucket-d365-financial-year.sql",
+        "metadata": "artifacts/metadata/85263__renewal-rate-for-each-visit-frequency-bucket-d365-financial-year.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-85263__85263__renewal-rate-for-each-visit-frequency-bucket-d365-financial-year.csv",
+        "artifacts/results/question-85263__85263__renewal-rate-for-each-visit-frequency-bucket-d365-financial-year.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.booking_fact",
+          "dbtModelPaths": [
+            "transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "githubBlobUrls": [
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "localSqlUrls": [
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/booking_fact.sql"
+          ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness_mart.center_dim",
+          "dbtModelPaths": [
+            "transformatics/models/datalake/analytics/dwh_finance/bizfin_month_x_center_dim.sql",
+            "transformatics/models/datalake/analytics/dwh_fitness_mart/center_dim.sql",
+            "transformatics/models/live_data_vault/real_time/rt_fitness/growth_center_dim.sql"
+          ],
+          "githubBlobUrls": [
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_finance/bizfin_month_x_center_dim.sql",
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_mart/center_dim.sql",
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/live_data_vault/real_time/rt_fitness/growth_center_dim.sql"
+          ],
+          "localSqlUrls": [
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_finance/bizfin_month_x_center_dim.sql",
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/center_dim.sql",
+            "/dbt-sql/transformatics/models/live_data_vault/real_time/rt_fitness/growth_center_dim.sql"
+          ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "dwh_fitness_mart.membership_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 20,
+        "slNo": "49",
+        "metricName": "Member retention rate",
+        "definition": "No. of members who renew their existing membership with us within 12 months of current membership expiry as a % of total members during the year / period.",
+        "status": "Done",
+        "poc": "Analytics",
+        "units": "%",
+        "fy23": "",
+        "fy24": "44.70%",
+        "fy25": "46.70%",
+        "fy26": "48.33%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85263-renewal-rate-for-each-visit-frequency-bucket-d365-financial-year",
         "limitations": ""
       },
       "sheetMetricVia": "card"
@@ -5944,6 +6030,57 @@
       "sheetMetricVia": "card"
     },
     {
+      "cardId": "85343",
+      "name": "Commercial Equipment Revenue",
+      "rootKey": "question-85343",
+      "rootAssetName": "Commercial Equipment Revenue",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85343",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85343__commercial-equipment-summary.sql",
+        "metadata": "artifacts/metadata/85343__commercial-equipment-summary.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-85343__85343__commercial-equipment-summary.csv",
+        "artifacts/results/question-85343__85343__commercial-equipment-summary.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 27,
+        "slNo": "16",
+        "metricName": "Commercial Equipment Revenue",
+        "definition": "% of product sales revenue from commercial Equipment",
+        "status": "",
+        "poc": "",
+        "units": "%",
+        "fy23": "",
+        "fy24": "Added in business section metrics sheet",
+        "fy25": "",
+        "fy26": "",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85343-commercial-equipment-summary",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:85343:drhp:27"
+    },
+    {
       "cardId": "84487",
       "name": "Footwear New Launch Style Id",
       "rootKey": "question-84487",
@@ -6045,6 +6182,57 @@
       "entryKey": "card:84661:drhp:25"
     },
     {
+      "cardId": "85342",
+      "name": "% of Revenue from own channel Online (1P), EBO, Ecommerce and others",
+      "rootKey": "question-85342",
+      "rootAssetName": "% of Revenue from own channel Online (1P), EBO, Ecommerce and others",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85342",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85342__channel-wise-summary.sql",
+        "metadata": "artifacts/metadata/85342__channel-wise-summary.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-85342__85342__channel-wise-summary.csv",
+        "artifacts/results/question-85342__85342__channel-wise-summary.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 25,
+        "slNo": "14",
+        "metricName": "% of Revenue from own channel Online (1P), EBO, Ecommerce and others",
+        "definition": "Total product sales through Company own channel Online (1P), EBO, Ecommerce and others",
+        "status": "",
+        "poc": "",
+        "units": "%",
+        "fy23": "",
+        "fy24": "Added in business section metrics sheet",
+        "fy25": "",
+        "fy26": "",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85342-channel-wise-summary",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:85342:drhp:25"
+    },
+    {
       "cardId": "84661",
       "name": "Online Channel Percentage",
       "rootKey": "question-84661",
@@ -6094,6 +6282,57 @@
       },
       "sheetMetricVia": "card",
       "entryKey": "card:84661:drhp:26"
+    },
+    {
+      "cardId": "85340",
+      "name": "% of product sales revenue from major categories ( 3 segments ) - Apparel, Footwear and Equipment and Accesories",
+      "rootKey": "question-85340",
+      "rootAssetName": "% of product sales revenue from major categories ( 3 segments ) - Apparel, Footwear and Equipment and Accesories",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85340",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85340__category-wise-summary.sql",
+        "metadata": "artifacts/metadata/85340__category-wise-summary.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-85340__85340__category-wise-summary.csv",
+        "artifacts/results/question-85340__85340__category-wise-summary.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 26,
+        "slNo": "15",
+        "metricName": "% of product sales revenue from major categories ( 3 segments ) - Apparel, Footwear and Equipment and Accesories",
+        "definition": "% of product sales revenue from 3 major category segment - Apparel, Footwear and Equipment and Accesories",
+        "status": "",
+        "poc": "",
+        "units": "%",
+        "fy23": "",
+        "fy24": "Added in business section metrics sheet",
+        "fy25": "",
+        "fy26": "",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85340-category-wise-summary",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:85340:drhp:26"
     },
     {
       "cardId": "84483",
@@ -6199,9 +6438,9 @@
     },
     {
       "cardId": "85306",
-      "name": "Total End users of products",
+      "name": "Total End buyer of products",
       "rootKey": "question-85306",
-      "rootAssetName": "Total End users of products",
+      "rootAssetName": "Total End buyer of products",
       "dashboardId": null,
       "dashboardName": null,
       "metabaseCardUrl": "https://metabase.curefit.co/question/85306",
@@ -6240,7 +6479,7 @@
       "sheetMetric": {
         "sheetOrder": 21,
         "slNo": "1",
-        "metricName": "Total End users of products",
+        "metricName": "Total End buyer of products",
         "definition": "Total no. of estimated unique customers who have purchased active lifestyle products of Cult Brands in the period / year across our B2B2C Channel",
         "status": "",
         "poc": "",

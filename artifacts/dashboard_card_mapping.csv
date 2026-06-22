@@ -7,9 +7,13 @@ question-84486,84486,Apparel New Launch Style Id,,,,84486,Apparel New Launch Sty
 question-84487,84487,Footwear New Launch Style Id,,,,84487,Footwear New Launch Style Id,,,
 question-84562,84562,Financial Year Wise Cross Sell Percentage,,,,84562,Financial Year Wise Cross Sell Percentage,,,
 question-84661,84661,Online Channel Percentage,,,,84661,Online Channel Percentage,,,
-question-85306,85306,Total End users of products,,,,85306,Total End users of products,,,
+question-85306,85306,Total End buyer of products,,,,85306,Total End buyer of products,,,
 question-74738,74738,How much data from wearbles v3,,,,74738,How much data from wearbles v3,,,
-question-79589,79589,adhoc 20-04-2026,,,,79589,adhoc 20-04-2026,,,
+question-79589,79589,Positive feedback rating,,,,79589,Positive feedback rating,,,
+question-85263,85263,Member retention rate,,,,85263,Member retention rate,,,
+question-85340,85340,% of product sales revenue from major categories ( 3 segments ) - Apparel, Footwear and Equipment and Accesories,,,,85340,% of product sales revenue from major categories ( 3 segments ) - Apparel, Footwear and Equipment and Accesories,,,
+question-85342,85342,% of Revenue from own channel Online (1P), EBO, Ecommerce and others,,,,85342,% of Revenue from own channel Online (1P), EBO, Ecommerce and others,,,
+question-85343,85343,Commercial Equipment Revenue,,,,85343,Commercial Equipment Revenue,,,
 dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26096,56424,PR BY PRODUCT,,0,0
 dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26097,56862,PR BY CITY,,10,0
 dashboard-3324,3324,PR DASHBOARD,3324,PR DASHBOARD,26098,56863,PR BY OWNERSHIP TYPE,,15,0

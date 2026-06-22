@@ -1,0 +1,225 @@
+{
+  "cache_invalidated_at": "2026-06-22T05:14:05.121681Z",
+  "description": null,
+  "archived": false,
+  "view_count": 9,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(4)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "year",
+      "lib/original-name": "year",
+      "name": "year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "year",
+      "display_name": "year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "base_amount",
+      "lib/original-name": "base_amount",
+      "name": "base_amount",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "base_amount",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "base_amount",
+      "display_name": "base_amount",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 119663994.0,
+            "q1": 236879398.0,
+            "q3": 511134319.5,
+            "max": 574317856.0,
+            "sd": 192075490.72003892,
+            "avg": 374006858.75
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": "type/Share",
+      "lib/deduplicated-name": "percentage",
+      "lib/original-name": "percentage",
+      "name": "percentage",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "percentage",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "percentage",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "percentage",
+      "display_name": "percentage",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 5.3,
+            "q1": 8.1,
+            "q3": 13.775,
+            "max": 13.8,
+            "sd": 3.9952836778715315,
+            "avg": 10.9375
+          }
+        }
+      },
+      "base_type": "type/Float"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-16T09:27:45.522093Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7263,
+  "query_type": "native",
+  "name": "Commercial Equipment Summary",
+  "last_query_start": "2026-06-22T05:14:10.214305Z",
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-06-22T05:14:10.226271Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 2276.5,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-22T05:14:05.119529Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "WITH base AS (\n  SELECT\n    CASE\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31' THEN 'FY23'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31' THEN 'FY24'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31' THEN 'FY25'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31' THEN 'FY26'\n    END AS year,\n    CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n    business_category\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2026-03-31'\n)\n\nSELECT\n  year,\n  ROUND(SUM(CASE WHEN business_category = 'Commercial Equipment' THEN base_amount_value ELSE 0 END)) AS base_amount,\n  ROUND(\n    100 * SUM(CASE WHEN business_category = 'Commercial Equipment' THEN base_amount_value ELSE 0 END)\n    / NULLIF(SUM(base_amount_value), 0),\n    2\n  ) AS percentage\nFROM base\nGROUP BY year\nORDER BY year"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 85343,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "nvDKae9s5F5eKMFtyQUsO",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-06-22T05:14:05.154211Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "base_amount",
+    "table.cell_column": "percentage",
+    "table.transpose": true,
+    "table.pivot": false,
+    "column_settings": {
+      "[\"name\",\"percentage\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "audit_related_queries",
+    "archive_operation_id": null,
+    "name": "Audit Related Queries",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7263,
+    "archived_directly": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "location": "/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-05-26T11:14:34.781469Z"
+  },
+  "metabase_version": "v0.60.1 (feddd55)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-20T13:40:32.702896Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}
