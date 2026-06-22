@@ -1,0 +1,139 @@
+{
+  "cache_invalidated_at": "2026-06-22T13:55:25.585087Z",
+  "description": null,
+  "archived": false,
+  "view_count": 13,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": null,
+  "embedding_type": null,
+  "creator": {
+    "email": "param.berawala@curefit.com",
+    "first_name": "Param",
+    "is_data_analyst": false,
+    "last_login": "2026-06-22T05:48:55.09905Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3772,
+    "last_name": "Berawala",
+    "tenant_id": null,
+    "date_joined": "2025-04-03T10:06:18.700974Z",
+    "common_name": "Param Berawala"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": null,
+  "query_type": "native",
+  "name": "Install - Shiva",
+  "last_query_start": "2026-06-22T14:11:59.624456Z",
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-06-22T14:11:59.630486Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 77703.11111111111,
+  "creator_id": 3772,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-22T13:55:25.582907Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "with base as (\n\t\tselect \n\t\t-- a.advertiserid as device_aid,\n\t\t-- b.advertising_id as install_aid , \n\t\t-- created_on , \n\t\tDATE(installdate) as installdate,\n\t\t-- installdate as installtimestamp, \n\t\ta.USERID,\n        -- mediasource,\n\t\t-- created_on_year,\n        channel, -- Ex: (youtube, facebook, Partnerships, Hotstar,...so on)\n        -- os,                \n        -- campaign,\n        -- ad,\n        -- adset,\n        -- placements,\n        -- b.city,\n        -- advertising_id,\n        -- keyword_id, \n\t\trow_number() over(partition by userid order by installdate) as rn\n        FROM  pk_cfuserservice_cultapp.devicedetail a \n\t\tJOIN dwh_curefit.branch_installs b \n\t\t\t\tON b.advertising_id =  CASE WHEN a.advertiserid like '%|%' then split_part(a.advertiserid,'|',1) else a.advertiserid end \n\t\t\t\tand installdate between date('2016-01-01') and {{End}}\n    where 1=1 \n\tand LOWER(osname) IN ('ios', 'android')\n\tand created_on_year>=2017\n\tAND LOWER(tenant) = 'curefit'\n)\n\nselect \n\tdate_trunc('month',installdate) as \"Month\", \n\tcase when channel='Organic' then 'Organic' else 'Paid' end as \"Source\",\n\tcase when rn=1 then 'New' else 'Re-Install' end as \"User Install Type\",\n\tcount(distinct userid) as \"#Installs\"\nfrom base \nwhere installdate between {{Start}} and {{End}}\ngroup by 1,2,3 \norder by 1,2,3 \n\n-- January 1, 2017 is min date | select min(installdate) from dwh_curefit.branch_installs where installdate > date '2000-01-01' and installdate <> date '2009-01-04' and installdate <> date '2012-01-01' and installdate <> date '2014-12-22' after excluding the glitch in data\n",
+        "template-tags": {
+          "Start": {
+            "name": "Start",
+            "id": "ab5e02a8-a5e3-4705-bdda-5daaa6b0a22b",
+            "type": "date",
+            "display-name": "Start"
+          },
+          "End": {
+            "name": "End",
+            "id": "dbd54113-85d7-4339-92e5-8d31544239ae",
+            "type": "date",
+            "display-name": "End"
+          }
+        }
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 83547,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "91qhM2D2Y1N20rTuBy9kG",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3570,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-06-22T13:55:25.614236Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "Source",
+    "table.cell_column": "#Installs"
+  },
+  "collection": {
+    "metabase.collections.models.collection.root/is-root?": true,
+    "authority_level": null,
+    "name": "Our analytics",
+    "is_personal": false,
+    "id": "root",
+    "is_remote_synced": false,
+    "can_write": true
+  },
+  "metabase_version": "v0.60.1 (0cf890b)",
+  "parameters": [
+    {
+      "id": "ab5e02a8-a5e3-4705-bdda-5daaa6b0a22b",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Start"
+        ]
+      ],
+      "name": "Start",
+      "slug": "Start",
+      "isMultiSelect": false
+    },
+    {
+      "id": "dbd54113-85d7-4339-92e5-8d31544239ae",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "End"
+        ]
+      ],
+      "name": "End",
+      "slug": "End",
+      "isMultiSelect": false
+    }
+  ],
+  "dashboard_id": null,
+  "created_at": "2026-06-01T08:31:19.208768Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

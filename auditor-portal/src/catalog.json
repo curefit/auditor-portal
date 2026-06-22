@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 129,
+  "count": 130,
   "entries": [
     {
       "cardId": "75753",
@@ -388,6 +388,65 @@
         "nineMFy25": "",
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/84472-monthly-hometab-openers-any-activity-or-purchase",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "83547",
+      "name": "# App installs (so far)",
+      "rootKey": "question-83547",
+      "rootAssetName": "# App installs (so far)",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/83547",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/83547__install-shiva.sql",
+        "metadata": "artifacts/metadata/83547__install-shiva.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-83547__83547__install-shiva.csv",
+        "artifacts/results/question-83547__83547__install-shiva.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_curefit.branch_installs",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cfuserservice_cultapp.devicedetail",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 12.5,
+        "slNo": "26",
+        "metricName": "# App installs (so far)",
+        "definition": "Total number of app downloads at the end of March 31, 2026",
+        "status": "Done",
+        "poc": "Analytics",
+        "units": "# mn",
+        "fy23": "",
+        "fy24": "",
+        "fy25": "",
+        "fy26": "38.3",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/83547-install-shiva?Start=2017-04-01&End=2026-03-31;\nhttps://docs.google.com/spreadsheets/d/1Xzyy4wumFrhylBOq6WqxOpd7KakDX7K8/edit?gid=2066262769#gid=2066262769",
         "limitations": ""
       },
       "sheetMetricVia": "card"
