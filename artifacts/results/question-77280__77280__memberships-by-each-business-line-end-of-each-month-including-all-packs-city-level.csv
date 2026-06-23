@@ -1,370 +1,371 @@
 month,city_name,user_base
-2026-03-01T00:00:00Z,Bangalore,386709
-2026-03-01T00:00:00Z,Hyderabad,192688
-2026-03-01T00:00:00Z,,149710
-2026-03-01T00:00:00Z,Gurgaon,133255
-2026-03-01T00:00:00Z,Mumbai,43680
-2026-03-01T00:00:00Z,Pune,37651
-2026-03-01T00:00:00Z,Chennai,9808
-2026-03-01T00:00:00Z,Navi_Mum_And_Thane,4389
-2026-03-01T00:00:00Z,Lucknow,3280
-2026-03-01T00:00:00Z,Mysore,2046
-2026-03-01T00:00:00Z,Bhubaneswar,1558
-2026-03-01T00:00:00Z,Chandigarh,1509
-2026-03-01T00:00:00Z,Jaipur,1383
-2026-03-01T00:00:00Z,Jammu,1355
-2026-03-01T00:00:00Z,Coimbatore,1349
-2026-03-01T00:00:00Z,Gulbarga,1124
-2026-03-01T00:00:00Z,Nagpur,1003
-2026-03-01T00:00:00Z,Visakhapatnam,1001
-2026-03-01T00:00:00Z,Kanpur,773
-2026-03-01T00:00:00Z,Jabalpur,701
-2026-03-01T00:00:00Z,Kota,693
-2026-03-01T00:00:00Z,Bhopal,611
-2026-03-01T00:00:00Z,Tumkur,608
-2026-03-01T00:00:00Z,Mangalore,524
-2026-03-01T00:00:00Z,Patna,510
-2026-03-01T00:00:00Z,Kochi,406
-2026-03-01T00:00:00Z,Bathinda,387
-2026-03-01T00:00:00Z,Moradabad,386
-2026-03-01T00:00:00Z,Indore,380
-2026-03-01T00:00:00Z,Siliguri,312
-2026-03-01T00:00:00Z,Belgaum,158
-2026-03-01T00:00:00Z,Ahmedabad,57
-2026-03-01T00:00:00Z,Kolkata,42
-2026-03-01T00:00:00Z,Dehradun,12
-2026-03-01T00:00:00Z,Amritsar,10
-2026-03-01T00:00:00Z,Ranchi,9
-2026-03-01T00:00:00Z,Jamshedpur,6
-2026-03-01T00:00:00Z,Allahabad,6
-2026-03-01T00:00:00Z,Ludhiana,5
-2026-03-01T00:00:00Z,Nashik,3
-2026-03-01T00:00:00Z,Guwahati,3
-2026-03-01T00:00:00Z,Roorkee,3
-2026-03-01T00:00:00Z,Agra,3
-2026-03-01T00:00:00Z,Khanna,3
-2026-03-01T00:00:00Z,Bareilly,2
-2026-03-01T00:00:00Z,Surat,1
-2026-03-01T00:00:00Z,Vadodara,1
-2026-03-01T00:00:00Z,Rourkela,1
-2026-03-01T00:00:00Z,Bilaspur,1
-2026-02-01T00:00:00Z,Bangalore,386630
-2026-02-01T00:00:00Z,Hyderabad,191532
-2026-02-01T00:00:00Z,,145894
-2026-02-01T00:00:00Z,Gurgaon,133259
-2026-02-01T00:00:00Z,Mumbai,43641
-2026-02-01T00:00:00Z,Pune,36974
-2026-02-01T00:00:00Z,Chennai,9603
-2026-02-01T00:00:00Z,Navi_Mum_And_Thane,4363
-2026-02-01T00:00:00Z,Lucknow,3189
-2026-02-01T00:00:00Z,Mysore,2011
-2026-02-01T00:00:00Z,Bhubaneswar,1552
-2026-02-01T00:00:00Z,Chandigarh,1517
-2026-02-01T00:00:00Z,Jaipur,1400
-2026-02-01T00:00:00Z,Jammu,1332
-2026-02-01T00:00:00Z,Coimbatore,1291
-2026-02-01T00:00:00Z,Gulbarga,1131
-2026-02-01T00:00:00Z,Visakhapatnam,1001
-2026-02-01T00:00:00Z,Nagpur,993
-2026-02-01T00:00:00Z,Kanpur,770
-2026-02-01T00:00:00Z,Jabalpur,717
-2026-02-01T00:00:00Z,Kota,711
-2026-02-01T00:00:00Z,Bhopal,616
-2026-02-01T00:00:00Z,Tumkur,610
-2026-02-01T00:00:00Z,Patna,529
-2026-02-01T00:00:00Z,Mangalore,518
-2026-02-01T00:00:00Z,Kochi,411
-2026-02-01T00:00:00Z,Moradabad,399
-2026-02-01T00:00:00Z,Indore,396
-2026-02-01T00:00:00Z,Bathinda,388
-2026-02-01T00:00:00Z,Siliguri,315
-2026-02-01T00:00:00Z,Belgaum,162
-2026-02-01T00:00:00Z,Ahmedabad,55
-2026-02-01T00:00:00Z,Kolkata,46
-2026-02-01T00:00:00Z,Dehradun,16
-2026-02-01T00:00:00Z,Ranchi,11
-2026-02-01T00:00:00Z,Amritsar,10
-2026-02-01T00:00:00Z,Allahabad,5
-2026-02-01T00:00:00Z,Jamshedpur,5
-2026-02-01T00:00:00Z,Roorkee,5
-2026-02-01T00:00:00Z,Nashik,5
-2026-02-01T00:00:00Z,Ludhiana,4
-2026-02-01T00:00:00Z,Agra,4
-2026-02-01T00:00:00Z,Rourkela,4
-2026-02-01T00:00:00Z,Khanna,3
-2026-02-01T00:00:00Z,Bareilly,3
-2026-02-01T00:00:00Z,Guwahati,3
-2026-02-01T00:00:00Z,Bilaspur,1
-2026-02-01T00:00:00Z,Surat,1
-2026-02-01T00:00:00Z,Vadodara,1
-2026-02-01T00:00:00Z,Muzaffarpur,1
-2026-02-01T00:00:00Z,Shillong,1
-2026-01-01T00:00:00Z,Bangalore,385765
-2026-01-01T00:00:00Z,Hyderabad,188605
-2026-01-01T00:00:00Z,,137035
-2026-01-01T00:00:00Z,Gurgaon,133371
-2026-01-01T00:00:00Z,Mumbai,43652
-2026-01-01T00:00:00Z,Pune,36160
-2026-01-01T00:00:00Z,Chennai,9212
-2026-01-01T00:00:00Z,Navi_Mum_And_Thane,4372
-2026-01-01T00:00:00Z,Lucknow,2961
-2026-01-01T00:00:00Z,Mysore,1963
-2026-01-01T00:00:00Z,Bhubaneswar,1605
-2026-01-01T00:00:00Z,Chandigarh,1547
-2026-01-01T00:00:00Z,Jaipur,1423
-2026-01-01T00:00:00Z,Jammu,1329
-2026-01-01T00:00:00Z,Coimbatore,1197
-2026-01-01T00:00:00Z,Gulbarga,1142
-2026-01-01T00:00:00Z,Nagpur,986
-2026-01-01T00:00:00Z,Visakhapatnam,966
-2026-01-01T00:00:00Z,Kanpur,767
-2026-01-01T00:00:00Z,Jabalpur,720
-2026-01-01T00:00:00Z,Kota,712
-2026-01-01T00:00:00Z,Bhopal,624
-2026-01-01T00:00:00Z,Tumkur,614
-2026-01-01T00:00:00Z,Patna,544
-2026-01-01T00:00:00Z,Mangalore,517
-2026-01-01T00:00:00Z,Indore,419
-2026-01-01T00:00:00Z,Kochi,402
-2026-01-01T00:00:00Z,Moradabad,397
-2026-01-01T00:00:00Z,Bathinda,377
-2026-01-01T00:00:00Z,Siliguri,317
-2026-01-01T00:00:00Z,Belgaum,167
-2026-01-01T00:00:00Z,Ahmedabad,53
-2026-01-01T00:00:00Z,Kolkata,48
-2026-01-01T00:00:00Z,Bilaspur,40
-2026-01-01T00:00:00Z,Dehradun,16
-2026-01-01T00:00:00Z,Ranchi,13
-2026-01-01T00:00:00Z,Amritsar,9
-2026-01-01T00:00:00Z,Roorkee,7
-2026-01-01T00:00:00Z,Ludhiana,6
-2026-01-01T00:00:00Z,Nashik,5
-2026-01-01T00:00:00Z,Guwahati,5
-2026-01-01T00:00:00Z,Jamshedpur,5
-2026-01-01T00:00:00Z,Rourkela,5
-2026-01-01T00:00:00Z,Bareilly,5
-2026-01-01T00:00:00Z,Agra,4
-2026-01-01T00:00:00Z,Allahabad,4
-2026-01-01T00:00:00Z,Khanna,3
-2026-01-01T00:00:00Z,Shillong,1
-2026-01-01T00:00:00Z,Rajahmundry,1
-2026-01-01T00:00:00Z,Surat,1
-2026-01-01T00:00:00Z,Vadodara,1
-2026-01-01T00:00:00Z,Muzaffarpur,1
-2025-12-01T00:00:00Z,Bangalore,373090
-2025-12-01T00:00:00Z,Hyderabad,182077
-2025-12-01T00:00:00Z,Gurgaon,132636
-2025-12-01T00:00:00Z,,125830
-2025-12-01T00:00:00Z,Mumbai,43090
-2025-12-01T00:00:00Z,Pune,33653
-2025-12-01T00:00:00Z,Chennai,8748
-2025-12-01T00:00:00Z,Navi_Mum_And_Thane,4259
-2025-12-01T00:00:00Z,Lucknow,2368
-2025-12-01T00:00:00Z,Mysore,1907
-2025-12-01T00:00:00Z,Bhubaneswar,1629
-2025-12-01T00:00:00Z,Chandigarh,1508
-2025-12-01T00:00:00Z,Jaipur,1437
-2025-12-01T00:00:00Z,Jammu,1307
-2025-12-01T00:00:00Z,Gulbarga,1144
-2025-12-01T00:00:00Z,Coimbatore,1087
-2025-12-01T00:00:00Z,Nagpur,1022
-2025-12-01T00:00:00Z,Visakhapatnam,957
-2025-12-01T00:00:00Z,Kanpur,759
-2025-12-01T00:00:00Z,Kota,733
-2025-12-01T00:00:00Z,Jabalpur,702
-2025-12-01T00:00:00Z,Bhopal,644
-2025-12-01T00:00:00Z,Tumkur,623
-2025-12-01T00:00:00Z,Patna,552
-2025-12-01T00:00:00Z,Mangalore,520
-2025-12-01T00:00:00Z,Kochi,416
-2025-12-01T00:00:00Z,Moradabad,405
-2025-12-01T00:00:00Z,Indore,400
-2025-12-01T00:00:00Z,Bathinda,384
-2025-12-01T00:00:00Z,Siliguri,319
-2025-12-01T00:00:00Z,Belgaum,176
-2025-12-01T00:00:00Z,Khanna,57
-2025-12-01T00:00:00Z,Ahmedabad,53
-2025-12-01T00:00:00Z,Kolkata,52
-2025-12-01T00:00:00Z,Bilaspur,40
-2025-12-01T00:00:00Z,Dehradun,17
-2025-12-01T00:00:00Z,Ranchi,9
-2025-12-01T00:00:00Z,Amritsar,7
-2025-12-01T00:00:00Z,Jamshedpur,6
-2025-12-01T00:00:00Z,Roorkee,6
-2025-12-01T00:00:00Z,Rourkela,6
-2025-12-01T00:00:00Z,Nashik,5
-2025-12-01T00:00:00Z,Bareilly,5
-2025-12-01T00:00:00Z,Ludhiana,5
-2025-12-01T00:00:00Z,Allahabad,4
-2025-12-01T00:00:00Z,Guwahati,4
-2025-12-01T00:00:00Z,Agra,4
-2025-12-01T00:00:00Z,Rajahmundry,4
-2025-12-01T00:00:00Z,Vadodara,2
-2025-12-01T00:00:00Z,Surat,1
-2025-12-01T00:00:00Z,Latur,1
-2025-12-01T00:00:00Z,Shillong,1
-2025-12-01T00:00:00Z,Muzaffarpur,1
-2025-12-01T00:00:00Z,Sangli,1
-2025-11-01T00:00:00Z,Bangalore,374825
-2025-11-01T00:00:00Z,Hyderabad,181047
-2025-11-01T00:00:00Z,Gurgaon,133931
-2025-11-01T00:00:00Z,,124850
-2025-11-01T00:00:00Z,Mumbai,43380
-2025-11-01T00:00:00Z,Pune,33302
-2025-11-01T00:00:00Z,Chennai,8400
-2025-11-01T00:00:00Z,Navi_Mum_And_Thane,4246
-2025-11-01T00:00:00Z,Lucknow,2324
-2025-11-01T00:00:00Z,Mysore,1887
-2025-11-01T00:00:00Z,Bhubaneswar,1684
-2025-11-01T00:00:00Z,Jaipur,1510
-2025-11-01T00:00:00Z,Chandigarh,1497
-2025-11-01T00:00:00Z,Jammu,1317
-2025-11-01T00:00:00Z,Gulbarga,1179
-2025-11-01T00:00:00Z,Coimbatore,1059
-2025-11-01T00:00:00Z,Nagpur,1033
-2025-11-01T00:00:00Z,Visakhapatnam,967
-2025-11-01T00:00:00Z,Kota,781
-2025-11-01T00:00:00Z,Kanpur,770
-2025-11-01T00:00:00Z,Jabalpur,704
-2025-11-01T00:00:00Z,Bhopal,665
-2025-11-01T00:00:00Z,Tumkur,656
-2025-11-01T00:00:00Z,Patna,580
-2025-11-01T00:00:00Z,Mangalore,520
-2025-11-01T00:00:00Z,Indore,437
-2025-11-01T00:00:00Z,Kochi,428
-2025-11-01T00:00:00Z,Moradabad,405
-2025-11-01T00:00:00Z,Bathinda,385
-2025-11-01T00:00:00Z,Siliguri,316
-2025-11-01T00:00:00Z,Belgaum,210
-2025-11-01T00:00:00Z,Kolkata,52
-2025-11-01T00:00:00Z,Ahmedabad,47
-2025-11-01T00:00:00Z,Bilaspur,41
-2025-11-01T00:00:00Z,Dehradun,15
-2025-11-01T00:00:00Z,Ranchi,9
-2025-11-01T00:00:00Z,Allahabad,7
-2025-11-01T00:00:00Z,Jamshedpur,7
-2025-11-01T00:00:00Z,Rourkela,7
-2025-11-01T00:00:00Z,Amritsar,6
-2025-11-01T00:00:00Z,Roorkee,6
-2025-11-01T00:00:00Z,Nashik,6
-2025-11-01T00:00:00Z,Bareilly,5
-2025-11-01T00:00:00Z,Rajahmundry,5
-2025-11-01T00:00:00Z,Ludhiana,4
-2025-11-01T00:00:00Z,Agra,4
-2025-11-01T00:00:00Z,Guwahati,4
-2025-11-01T00:00:00Z,Vadodara,2
-2025-11-01T00:00:00Z,Sangli,1
-2025-11-01T00:00:00Z,Shillong,1
-2025-11-01T00:00:00Z,Khanna,1
-2025-11-01T00:00:00Z,Muzaffarpur,1
-2025-11-01T00:00:00Z,Latur,1
-2025-11-01T00:00:00Z,Surat,1
-2025-10-01T00:00:00Z,Bangalore,372605
-2025-10-01T00:00:00Z,Hyderabad,179547
-2025-10-01T00:00:00Z,Gurgaon,135136
-2025-10-01T00:00:00Z,,120731
-2025-10-01T00:00:00Z,Mumbai,43478
-2025-10-01T00:00:00Z,Pune,32657
-2025-10-01T00:00:00Z,Chennai,8029
-2025-10-01T00:00:00Z,Navi_Mum_And_Thane,4223
-2025-10-01T00:00:00Z,Lucknow,2252
-2025-10-01T00:00:00Z,Mysore,1804
-2025-10-01T00:00:00Z,Bhubaneswar,1719
-2025-10-01T00:00:00Z,Jaipur,1501
-2025-10-01T00:00:00Z,Chandigarh,1476
-2025-10-01T00:00:00Z,Jammu,1381
-2025-10-01T00:00:00Z,Gulbarga,1241
-2025-10-01T00:00:00Z,Nagpur,1044
-2025-10-01T00:00:00Z,Coimbatore,1006
-2025-10-01T00:00:00Z,Visakhapatnam,954
-2025-10-01T00:00:00Z,Kota,807
-2025-10-01T00:00:00Z,Kanpur,786
-2025-10-01T00:00:00Z,Jabalpur,716
-2025-10-01T00:00:00Z,Tumkur,668
-2025-10-01T00:00:00Z,Bhopal,664
-2025-10-01T00:00:00Z,Patna,596
-2025-10-01T00:00:00Z,Mangalore,524
-2025-10-01T00:00:00Z,Indore,456
-2025-10-01T00:00:00Z,Kochi,423
-2025-10-01T00:00:00Z,Moradabad,407
-2025-10-01T00:00:00Z,Bathinda,393
-2025-10-01T00:00:00Z,Siliguri,314
-2025-10-01T00:00:00Z,Belgaum,249
-2025-10-01T00:00:00Z,Kolkata,52
-2025-10-01T00:00:00Z,Ahmedabad,48
-2025-10-01T00:00:00Z,Bilaspur,43
-2025-10-01T00:00:00Z,Dehradun,17
-2025-10-01T00:00:00Z,Ranchi,10
-2025-10-01T00:00:00Z,Rourkela,9
-2025-10-01T00:00:00Z,Allahabad,7
-2025-10-01T00:00:00Z,Jamshedpur,6
-2025-10-01T00:00:00Z,Nashik,6
-2025-10-01T00:00:00Z,Rajahmundry,6
-2025-10-01T00:00:00Z,Agra,5
-2025-10-01T00:00:00Z,Roorkee,5
-2025-10-01T00:00:00Z,Amritsar,5
-2025-10-01T00:00:00Z,Bareilly,5
-2025-10-01T00:00:00Z,Ludhiana,4
-2025-10-01T00:00:00Z,Guwahati,4
-2025-10-01T00:00:00Z,Vadodara,3
-2025-10-01T00:00:00Z,Sangli,2
-2025-10-01T00:00:00Z,Muzaffarpur,1
-2025-10-01T00:00:00Z,Latur,1
-2025-10-01T00:00:00Z,Surat,1
-2025-10-01T00:00:00Z,Shillong,1
-2025-10-01T00:00:00Z,Khanna,1
-2025-09-01T00:00:00Z,Bangalore,370852
-2025-09-01T00:00:00Z,Hyderabad,178001
-2025-09-01T00:00:00Z,Gurgaon,137307
-2025-09-01T00:00:00Z,,121628
-2025-09-01T00:00:00Z,Mumbai,44210
-2025-09-01T00:00:00Z,Pune,32602
-2025-09-01T00:00:00Z,Chennai,7770
-2025-09-01T00:00:00Z,Navi_Mum_And_Thane,4223
-2025-09-01T00:00:00Z,Lucknow,2102
-2025-09-01T00:00:00Z,Bhubaneswar,1726
-2025-09-01T00:00:00Z,Mysore,1665
-2025-09-01T00:00:00Z,Jaipur,1574
-2025-09-01T00:00:00Z,Chandigarh,1492
-2025-09-01T00:00:00Z,Jammu,1375
-2025-09-01T00:00:00Z,Gulbarga,1341
-2025-09-01T00:00:00Z,Nagpur,1058
-2025-09-01T00:00:00Z,Coimbatore,1033
-2025-09-01T00:00:00Z,Visakhapatnam,964
-2025-09-01T00:00:00Z,Kota,823
-2025-09-01T00:00:00Z,Kanpur,813
-2025-09-01T00:00:00Z,Jabalpur,733
-2025-09-01T00:00:00Z,Tumkur,673
-2025-09-01T00:00:00Z,Bhopal,657
-2025-09-01T00:00:00Z,Patna,605
-2025-09-01T00:00:00Z,Mangalore,532
-2025-09-01T00:00:00Z,Indore,482
-2025-09-01T00:00:00Z,Kochi,421
-2025-09-01T00:00:00Z,Moradabad,420
-2025-09-01T00:00:00Z,Bathinda,389
-2025-09-01T00:00:00Z,Siliguri,313
-2025-09-01T00:00:00Z,Belgaum,287
-2025-09-01T00:00:00Z,Kolkata,65
-2025-09-01T00:00:00Z,Ahmedabad,52
-2025-09-01T00:00:00Z,Bilaspur,44
-2025-09-01T00:00:00Z,Dehradun,21
-2025-09-01T00:00:00Z,Ranchi,12
-2025-09-01T00:00:00Z,Agra,12
-2025-09-01T00:00:00Z,Rourkela,10
-2025-09-01T00:00:00Z,Bareilly,9
-2025-09-01T00:00:00Z,Allahabad,9
-2025-09-01T00:00:00Z,Jamshedpur,9
-2025-09-01T00:00:00Z,Nashik,7
-2025-09-01T00:00:00Z,Guwahati,7
-2025-09-01T00:00:00Z,Rajahmundry,6
-2025-09-01T00:00:00Z,Ludhiana,6
-2025-09-01T00:00:00Z,Amritsar,5
-2025-09-01T00:00:00Z,Roorkee,5
-2025-09-01T00:00:00Z,Khanna,2
-2025-09-01T00:00:00Z,Sangli,2
-2025-09-01T00:00:00Z,Shillong,2
-2025-09-01T00:00:00Z,Vadodara,2
-2025-09-01T00:00:00Z,Muzaffarpur,2
-2025-09-01T00:00:00Z,Imphal,2
-2025-09-01T00:00:00Z,Latur,1
-2025-09-01T00:00:00Z,Surat,1
+"March 1, 2026",Bangalore,"385,430"
+"March 1, 2026",Hyderabad,"192,916"
+"March 1, 2026",,"155,871"
+"March 1, 2026",Gurgaon,"134,338"
+"March 1, 2026",Mumbai,"43,664"
+"March 1, 2026",Pune,"38,114"
+"March 1, 2026",Chennai,"9,972"
+"March 1, 2026",Navi_Mum_And_Thane,"4,404"
+"March 1, 2026",Lucknow,"3,404"
+"March 1, 2026",Mysore,"2,062"
+"March 1, 2026",Bhubaneswar,"1,561"
+"March 1, 2026",Chandigarh,"1,482"
+"March 1, 2026",Coimbatore,"1,388"
+"March 1, 2026",Jammu,"1,353"
+"March 1, 2026",Jaipur,"1,335"
+"March 1, 2026",Gulbarga,"1,099"
+"March 1, 2026",Nagpur,996
+"March 1, 2026",Visakhapatnam,995
+"March 1, 2026",Kanpur,781
+"March 1, 2026",Jabalpur,702
+"March 1, 2026",Kota,693
+"March 1, 2026",Bhopal,621
+"March 1, 2026",Tumkur,615
+"March 1, 2026",Patna,514
+"March 1, 2026",Mangalore,513
+"March 1, 2026",Kochi,403
+"March 1, 2026",Indore,393
+"March 1, 2026",Bathinda,391
+"March 1, 2026",Moradabad,380
+"March 1, 2026",Siliguri,300
+"March 1, 2026",Belgaum,149
+"March 1, 2026",Ahmedabad,62
+"March 1, 2026",Kolkata,41
+"March 1, 2026",Dehradun,12
+"March 1, 2026",Ranchi,11
+"March 1, 2026",Amritsar,10
+"March 1, 2026",Ludhiana,9
+"March 1, 2026",Jamshedpur,7
+"March 1, 2026",Allahabad,7
+"March 1, 2026",Khanna,3
+"March 1, 2026",Agra,3
+"March 1, 2026",Roorkee,3
+"March 1, 2026",Nashik,3
+"March 1, 2026",Guwahati,3
+"March 1, 2026",Bareilly,2
+"March 1, 2026",Rourkela,1
+"March 1, 2026",Bilaspur,1
+"March 1, 2026",Muzaffarpur,1
+"March 1, 2026",Vadodara,1
+"March 1, 2026",Surat,1
+"February 1, 2026",Bangalore,"386,630"
+"February 1, 2026",Hyderabad,"191,532"
+"February 1, 2026",,"145,894"
+"February 1, 2026",Gurgaon,"133,259"
+"February 1, 2026",Mumbai,"43,641"
+"February 1, 2026",Pune,"36,974"
+"February 1, 2026",Chennai,"9,603"
+"February 1, 2026",Navi_Mum_And_Thane,"4,363"
+"February 1, 2026",Lucknow,"3,189"
+"February 1, 2026",Mysore,"2,011"
+"February 1, 2026",Bhubaneswar,"1,552"
+"February 1, 2026",Chandigarh,"1,517"
+"February 1, 2026",Jaipur,"1,400"
+"February 1, 2026",Jammu,"1,332"
+"February 1, 2026",Coimbatore,"1,291"
+"February 1, 2026",Gulbarga,"1,131"
+"February 1, 2026",Visakhapatnam,"1,001"
+"February 1, 2026",Nagpur,993
+"February 1, 2026",Kanpur,770
+"February 1, 2026",Jabalpur,717
+"February 1, 2026",Kota,711
+"February 1, 2026",Bhopal,616
+"February 1, 2026",Tumkur,610
+"February 1, 2026",Patna,529
+"February 1, 2026",Mangalore,518
+"February 1, 2026",Kochi,411
+"February 1, 2026",Moradabad,399
+"February 1, 2026",Indore,396
+"February 1, 2026",Bathinda,388
+"February 1, 2026",Siliguri,315
+"February 1, 2026",Belgaum,162
+"February 1, 2026",Ahmedabad,55
+"February 1, 2026",Kolkata,46
+"February 1, 2026",Dehradun,16
+"February 1, 2026",Ranchi,11
+"February 1, 2026",Amritsar,10
+"February 1, 2026",Nashik,5
+"February 1, 2026",Roorkee,5
+"February 1, 2026",Jamshedpur,5
+"February 1, 2026",Allahabad,5
+"February 1, 2026",Ludhiana,4
+"February 1, 2026",Rourkela,4
+"February 1, 2026",Agra,4
+"February 1, 2026",Guwahati,3
+"February 1, 2026",Bareilly,3
+"February 1, 2026",Khanna,3
+"February 1, 2026",Muzaffarpur,1
+"February 1, 2026",Shillong,1
+"February 1, 2026",Vadodara,1
+"February 1, 2026",Surat,1
+"February 1, 2026",Bilaspur,1
+"January 1, 2026",Bangalore,"385,765"
+"January 1, 2026",Hyderabad,"188,605"
+"January 1, 2026",,"137,035"
+"January 1, 2026",Gurgaon,"133,371"
+"January 1, 2026",Mumbai,"43,652"
+"January 1, 2026",Pune,"36,160"
+"January 1, 2026",Chennai,"9,212"
+"January 1, 2026",Navi_Mum_And_Thane,"4,372"
+"January 1, 2026",Lucknow,"2,961"
+"January 1, 2026",Mysore,"1,963"
+"January 1, 2026",Bhubaneswar,"1,605"
+"January 1, 2026",Chandigarh,"1,547"
+"January 1, 2026",Jaipur,"1,423"
+"January 1, 2026",Jammu,"1,329"
+"January 1, 2026",Coimbatore,"1,197"
+"January 1, 2026",Gulbarga,"1,142"
+"January 1, 2026",Nagpur,986
+"January 1, 2026",Visakhapatnam,966
+"January 1, 2026",Kanpur,767
+"January 1, 2026",Jabalpur,720
+"January 1, 2026",Kota,712
+"January 1, 2026",Bhopal,624
+"January 1, 2026",Tumkur,614
+"January 1, 2026",Patna,544
+"January 1, 2026",Mangalore,517
+"January 1, 2026",Indore,419
+"January 1, 2026",Kochi,402
+"January 1, 2026",Moradabad,397
+"January 1, 2026",Bathinda,377
+"January 1, 2026",Siliguri,317
+"January 1, 2026",Belgaum,167
+"January 1, 2026",Ahmedabad,53
+"January 1, 2026",Kolkata,48
+"January 1, 2026",Bilaspur,40
+"January 1, 2026",Dehradun,16
+"January 1, 2026",Ranchi,13
+"January 1, 2026",Amritsar,9
+"January 1, 2026",Roorkee,7
+"January 1, 2026",Ludhiana,6
+"January 1, 2026",Guwahati,5
+"January 1, 2026",Rourkela,5
+"January 1, 2026",Nashik,5
+"January 1, 2026",Bareilly,5
+"January 1, 2026",Jamshedpur,5
+"January 1, 2026",Allahabad,4
+"January 1, 2026",Agra,4
+"January 1, 2026",Khanna,3
+"January 1, 2026",Vadodara,1
+"January 1, 2026",Shillong,1
+"January 1, 2026",Surat,1
+"January 1, 2026",Rajahmundry,1
+"January 1, 2026",Muzaffarpur,1
+"December 1, 2025",Bangalore,"373,090"
+"December 1, 2025",Hyderabad,"182,077"
+"December 1, 2025",Gurgaon,"132,636"
+"December 1, 2025",,"125,830"
+"December 1, 2025",Mumbai,"43,090"
+"December 1, 2025",Pune,"33,653"
+"December 1, 2025",Chennai,"8,748"
+"December 1, 2025",Navi_Mum_And_Thane,"4,259"
+"December 1, 2025",Lucknow,"2,368"
+"December 1, 2025",Mysore,"1,907"
+"December 1, 2025",Bhubaneswar,"1,629"
+"December 1, 2025",Chandigarh,"1,508"
+"December 1, 2025",Jaipur,"1,437"
+"December 1, 2025",Jammu,"1,307"
+"December 1, 2025",Gulbarga,"1,144"
+"December 1, 2025",Coimbatore,"1,087"
+"December 1, 2025",Nagpur,"1,022"
+"December 1, 2025",Visakhapatnam,957
+"December 1, 2025",Kanpur,759
+"December 1, 2025",Kota,733
+"December 1, 2025",Jabalpur,702
+"December 1, 2025",Bhopal,644
+"December 1, 2025",Tumkur,623
+"December 1, 2025",Patna,552
+"December 1, 2025",Mangalore,520
+"December 1, 2025",Kochi,416
+"December 1, 2025",Moradabad,405
+"December 1, 2025",Indore,400
+"December 1, 2025",Bathinda,384
+"December 1, 2025",Siliguri,319
+"December 1, 2025",Belgaum,176
+"December 1, 2025",Khanna,57
+"December 1, 2025",Ahmedabad,53
+"December 1, 2025",Kolkata,52
+"December 1, 2025",Bilaspur,40
+"December 1, 2025",Dehradun,17
+"December 1, 2025",Ranchi,9
+"December 1, 2025",Amritsar,7
+"December 1, 2025",Rourkela,6
+"December 1, 2025",Jamshedpur,6
+"December 1, 2025",Roorkee,6
+"December 1, 2025",Ludhiana,5
+"December 1, 2025",Nashik,5
+"December 1, 2025",Bareilly,5
+"December 1, 2025",Allahabad,4
+"December 1, 2025",Rajahmundry,4
+"December 1, 2025",Guwahati,4
+"December 1, 2025",Agra,4
+"December 1, 2025",Vadodara,2
+"December 1, 2025",Muzaffarpur,1
+"December 1, 2025",Surat,1
+"December 1, 2025",Shillong,1
+"December 1, 2025",Latur,1
+"December 1, 2025",Sangli,1
+"November 1, 2025",Bangalore,"374,825"
+"November 1, 2025",Hyderabad,"181,047"
+"November 1, 2025",Gurgaon,"133,931"
+"November 1, 2025",,"124,850"
+"November 1, 2025",Mumbai,"43,380"
+"November 1, 2025",Pune,"33,302"
+"November 1, 2025",Chennai,"8,400"
+"November 1, 2025",Navi_Mum_And_Thane,"4,246"
+"November 1, 2025",Lucknow,"2,324"
+"November 1, 2025",Mysore,"1,887"
+"November 1, 2025",Bhubaneswar,"1,684"
+"November 1, 2025",Jaipur,"1,510"
+"November 1, 2025",Chandigarh,"1,497"
+"November 1, 2025",Jammu,"1,317"
+"November 1, 2025",Gulbarga,"1,179"
+"November 1, 2025",Coimbatore,"1,059"
+"November 1, 2025",Nagpur,"1,033"
+"November 1, 2025",Visakhapatnam,967
+"November 1, 2025",Kota,781
+"November 1, 2025",Kanpur,770
+"November 1, 2025",Jabalpur,704
+"November 1, 2025",Bhopal,665
+"November 1, 2025",Tumkur,656
+"November 1, 2025",Patna,580
+"November 1, 2025",Mangalore,520
+"November 1, 2025",Indore,437
+"November 1, 2025",Kochi,428
+"November 1, 2025",Moradabad,405
+"November 1, 2025",Bathinda,385
+"November 1, 2025",Siliguri,316
+"November 1, 2025",Belgaum,210
+"November 1, 2025",Kolkata,52
+"November 1, 2025",Ahmedabad,47
+"November 1, 2025",Bilaspur,41
+"November 1, 2025",Dehradun,15
+"November 1, 2025",Ranchi,9
+"November 1, 2025",Allahabad,7
+"November 1, 2025",Jamshedpur,7
+"November 1, 2025",Rourkela,7
+"November 1, 2025",Amritsar,6
+"November 1, 2025",Roorkee,6
+"November 1, 2025",Nashik,6
+"November 1, 2025",Bareilly,5
+"November 1, 2025",Rajahmundry,5
+"November 1, 2025",Agra,4
+"November 1, 2025",Ludhiana,4
+"November 1, 2025",Guwahati,4
+"November 1, 2025",Vadodara,2
+"November 1, 2025",Surat,1
+"November 1, 2025",Latur,1
+"November 1, 2025",Muzaffarpur,1
+"November 1, 2025",Sangli,1
+"November 1, 2025",Khanna,1
+"November 1, 2025",Shillong,1
+"October 1, 2025",Bangalore,"372,605"
+"October 1, 2025",Hyderabad,"179,547"
+"October 1, 2025",Gurgaon,"135,136"
+"October 1, 2025",,"120,731"
+"October 1, 2025",Mumbai,"43,478"
+"October 1, 2025",Pune,"32,657"
+"October 1, 2025",Chennai,"8,029"
+"October 1, 2025",Navi_Mum_And_Thane,"4,223"
+"October 1, 2025",Lucknow,"2,252"
+"October 1, 2025",Mysore,"1,804"
+"October 1, 2025",Bhubaneswar,"1,719"
+"October 1, 2025",Jaipur,"1,501"
+"October 1, 2025",Chandigarh,"1,476"
+"October 1, 2025",Jammu,"1,381"
+"October 1, 2025",Gulbarga,"1,241"
+"October 1, 2025",Nagpur,"1,044"
+"October 1, 2025",Coimbatore,"1,006"
+"October 1, 2025",Visakhapatnam,954
+"October 1, 2025",Kota,807
+"October 1, 2025",Kanpur,786
+"October 1, 2025",Jabalpur,716
+"October 1, 2025",Tumkur,668
+"October 1, 2025",Bhopal,664
+"October 1, 2025",Patna,596
+"October 1, 2025",Mangalore,524
+"October 1, 2025",Indore,456
+"October 1, 2025",Kochi,423
+"October 1, 2025",Moradabad,407
+"October 1, 2025",Bathinda,393
+"October 1, 2025",Siliguri,314
+"October 1, 2025",Belgaum,249
+"October 1, 2025",Kolkata,52
+"October 1, 2025",Ahmedabad,48
+"October 1, 2025",Bilaspur,43
+"October 1, 2025",Dehradun,17
+"October 1, 2025",Ranchi,10
+"October 1, 2025",Rourkela,9
+"October 1, 2025",Allahabad,7
+"October 1, 2025",Rajahmundry,6
+"October 1, 2025",Nashik,6
+"October 1, 2025",Jamshedpur,6
+"October 1, 2025",Agra,5
+"October 1, 2025",Bareilly,5
+"October 1, 2025",Amritsar,5
+"October 1, 2025",Roorkee,5
+"October 1, 2025",Guwahati,4
+"October 1, 2025",Ludhiana,4
+"October 1, 2025",Vadodara,3
+"October 1, 2025",Sangli,2
+"October 1, 2025",Khanna,1
+"October 1, 2025",Muzaffarpur,1
+"October 1, 2025",Latur,1
+"October 1, 2025",Surat,1
+"October 1, 2025",Shillong,1
+"September 1, 2025",Bangalore,"370,852"
+"September 1, 2025",Hyderabad,"178,001"
+"September 1, 2025",Gurgaon,"137,307"
+"September 1, 2025",,"121,628"
+"September 1, 2025",Mumbai,"44,210"
+"September 1, 2025",Pune,"32,602"
+"September 1, 2025",Chennai,"7,770"
+"September 1, 2025",Navi_Mum_And_Thane,"4,223"
+"September 1, 2025",Lucknow,"2,102"
+"September 1, 2025",Bhubaneswar,"1,726"
+"September 1, 2025",Mysore,"1,665"
+"September 1, 2025",Jaipur,"1,574"
+"September 1, 2025",Chandigarh,"1,492"
+"September 1, 2025",Jammu,"1,375"
+"September 1, 2025",Gulbarga,"1,341"
+"September 1, 2025",Nagpur,"1,058"
+"September 1, 2025",Coimbatore,"1,033"
+"September 1, 2025",Visakhapatnam,964
+"September 1, 2025",Kota,823
+"September 1, 2025",Kanpur,813
+"September 1, 2025",Jabalpur,733
+"September 1, 2025",Tumkur,673
+"September 1, 2025",Bhopal,657
+"September 1, 2025",Patna,605
+"September 1, 2025",Mangalore,532
+"September 1, 2025",Indore,482
+"September 1, 2025",Kochi,421
+"September 1, 2025",Moradabad,420
+"September 1, 2025",Bathinda,389
+"September 1, 2025",Siliguri,313
+"September 1, 2025",Belgaum,287
+"September 1, 2025",Kolkata,65
+"September 1, 2025",Ahmedabad,52
+"September 1, 2025",Bilaspur,44
+"September 1, 2025",Dehradun,21
+"September 1, 2025",Agra,12
+"September 1, 2025",Ranchi,12
+"September 1, 2025",Rourkela,10
+"September 1, 2025",Bareilly,9
+"September 1, 2025",Allahabad,9
+"September 1, 2025",Jamshedpur,9
+"September 1, 2025",Guwahati,7
+"September 1, 2025",Nashik,7
+"September 1, 2025",Ludhiana,6
+"September 1, 2025",Rajahmundry,6
+"September 1, 2025",Roorkee,5
+"September 1, 2025",Amritsar,5
+"September 1, 2025",Vadodara,2
+"September 1, 2025",Shillong,2
+"September 1, 2025",Muzaffarpur,2
+"September 1, 2025",Sangli,2
+"September 1, 2025",Khanna,2
+"September 1, 2025",Imphal,2
+"September 1, 2025",Surat,1
+"September 1, 2025",Latur,1

@@ -7059,50 +7059,6 @@
       "entryKey": "card:85108:milestone:5"
     },
     {
-      "cardId": "85114",
-      "name": "Category level first launch date",
-      "rootKey": "question-85114",
-      "rootAssetName": "Category level first launch date",
-      "dashboardId": null,
-      "dashboardName": null,
-      "metabaseCardUrl": "https://metabase.curefit.co/question/85114",
-      "metabaseRootSourceUrl": null,
-      "paths": {
-        "query": "artifacts/queries/85114__category-level-first-launch-date.sql",
-        "metadata": "artifacts/metadata/85114__category-level-first-launch-date.json",
-        "lineageMarkdown": null,
-        "outputPreviewHtml": null,
-        "lineagePreviewHtml": null
-      },
-      "results": [],
-      "sqlLineageRelations": [
-        {
-          "relation": "dwh_d2c_metrics.bizfin_sales_data",
-          "dbtModelPaths": [],
-          "githubBlobUrls": [],
-          "localSqlUrls": [],
-          "fallbackModelPaths": [],
-          "fallbackGithubBlobUrls": [],
-          "fallbackLocalUrls": []
-        }
-      ],
-      "sheetMetric": null,
-      "sheetMetricVia": null,
-      "milestone": {
-        "milestoneOrder": 6,
-        "slNo": "7",
-        "particulars": "Launch of massager category in products",
-        "milestoneYear": "2024",
-        "milestoneDate": "",
-        "status": "",
-        "poc": "",
-        "sourceRaw": "https://metabase.curefit.co/question/85114-category-level-first-launch-date",
-        "limitations": ""
-      },
-      "milestoneVia": "card",
-      "entryKey": "card:85114:milestone:6"
-    },
-    {
       "cardId": "85262",
       "name": "Initiation of corporate memberships for fitness services",
       "rootKey": "question-85262",
