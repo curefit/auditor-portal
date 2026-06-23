@@ -1017,17 +1017,34 @@ async function main() {
       sqlLineageRelations,
     };
 
-    const milestoneCardRows = milestoneCardMap.get(cardId);
-    const milestone =
-      milestoneCardRows?.[0] ??
-      (milestoneDashboardMap.has(csv?.dashboard_id?.trim())
+    const milestoneCardRows = milestoneCardMap.get(cardId) ?? [];
+    const dashboardMilestone =
+      milestoneDashboardMap.has(csv?.dashboard_id?.trim())
         ? milestoneDashboardMap.get(csv.dashboard_id.trim())
-        : null);
-    const milestoneVia = milestone
-      ? milestoneCardRows?.length
+        : null;
+    const milestoneRows = milestoneCardRows.length
+      ? milestoneCardRows
+      : dashboardMilestone
+        ? [dashboardMilestone]
+        : [];
+    const milestoneVia = milestoneRows.length
+      ? milestoneCardRows.length
         ? "card"
         : "dashboard"
       : null;
+
+    const pushMilestoneEntries = (sheetMetric = null, sheetMetricVia = null) => {
+      for (const milestone of milestoneRows) {
+        entries.push({
+          ...baseEntry,
+          entryKey: milestoneEntryKeyFor(cardId, milestone),
+          sheetMetric,
+          sheetMetricVia,
+          milestone,
+          milestoneVia,
+        });
+      }
+    };
 
     const sheetCardMetrics = sheetCardMap.get(cardId);
     if (sheetCardMetrics?.length) {
@@ -1040,45 +1057,33 @@ async function main() {
           ...baseEntry,
           sheetMetric,
           sheetMetricVia: "card",
-          milestone,
-          milestoneVia,
+          milestone: null,
+          milestoneVia: null,
         };
         if (needsEntryKey) entry.entryKey = entryKeyFor(cardId, sheetMetric);
-        if (!needsEntryKey && milestoneCardRows && milestoneCardRows.length > 1) {
-          entry.entryKey = milestoneEntryKeyFor(cardId, milestone);
-        }
         entries.push(entry);
       }
+      pushMilestoneEntries();
     } else if (sheetDashboardMap.has(csv?.dashboard_id?.trim())) {
       const sheetMetric = sheetDashboardMap.get(csv.dashboard_id.trim());
       entries.push({
         ...baseEntry,
         sheetMetric,
         sheetMetricVia: "dashboard",
-        milestone,
-        milestoneVia,
+        milestone: null,
+        milestoneVia: null,
       });
+      pushMilestoneEntries();
     } else {
-      const milestonesForCard = milestoneCardRows?.length ? milestoneCardRows : [milestone];
-      const materialMilestones = milestonesForCard.filter(Boolean);
-      if (materialMilestones.length > 1) {
-        for (const milestoneRow of materialMilestones) {
-          entries.push({
-            ...baseEntry,
-            entryKey: milestoneEntryKeyFor(cardId, milestoneRow),
-            sheetMetric: null,
-            sheetMetricVia: null,
-            milestone: milestoneRow,
-            milestoneVia,
-          });
-        }
+      if (milestoneRows.length) {
+        pushMilestoneEntries();
       } else {
         entries.push({
           ...baseEntry,
           sheetMetric: null,
           sheetMetricVia: null,
-          milestone,
-          milestoneVia,
+          milestone: null,
+          milestoneVia: null,
         });
       }
     }

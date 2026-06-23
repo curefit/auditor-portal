@@ -317,7 +317,7 @@ function DetailPanel({
                   <a
                     href={handoffUrl(result)}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="text-emerald-400 hover:underline"
                   >
                     {result.replace(/^artifacts\/results\//, "")}
