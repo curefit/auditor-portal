@@ -1,0 +1,140 @@
+{
+  "archived": false,
+  "archived_directly": false,
+  "average_query_time": 30611.5,
+  "cache_invalidated_at": "2026-06-18T10:24:19.662876Z",
+  "cache_ttl": null,
+  "can_delete": false,
+  "can_manage_db": false,
+  "can_restore": false,
+  "can_run_adhoc_query": true,
+  "can_write": true,
+  "card_schema": 23,
+  "collection": {
+    "archive_operation_id": null,
+    "archived": false,
+    "archived_directly": null,
+    "authority_level": null,
+    "created_at": "2026-05-26T11:14:34.781469Z",
+    "description": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "id": 7263,
+    "is_personal": false,
+    "is_remote_synced": false,
+    "is_sample": false,
+    "location": "/",
+    "name": "Audit Related Queries",
+    "namespace": null,
+    "personal_owner_id": null,
+    "slug": "audit_related_queries",
+    "type": null,
+    "workspace_id": null
+  },
+  "collection_id": 7263,
+  "collection_position": null,
+  "collection_preview": true,
+  "created_at": "2026-06-18T10:23:10.433471Z",
+  "creator": {
+    "common_name": "Shivalingesh Aiholli",
+    "date_joined": "2024-09-03T12:09:06.853723Z",
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "id": 3570,
+    "is_data_analyst": false,
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "last_login": "2026-06-22T13:18:57.866742Z",
+    "last_name": "Aiholli",
+    "tenant_id": null
+  },
+  "creator_id": 3570,
+  "dashboard": null,
+  "dashboard_count": 0,
+  "dashboard_id": null,
+  "database_id": 39,
+  "dataset_query": {
+    "database": 39,
+    "lib/type": "mbql/query",
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "select \nmin(createddate_date) \nfrom pk_prod_enterprise_prod.Employeeregistrations \nwhere createddate_date is not null -- avoiding partion date\nand cfuserid is not null -- curefit cuserid gets assigned only after membership"
+      }
+    ]
+  },
+  "description": null,
+  "dimension_mappings": null,
+  "dimensions": null,
+  "display": "table",
+  "document_id": null,
+  "embedding_params": null,
+  "embedding_type": null,
+  "enable_embedding": false,
+  "entity_id": "q9J7C0dEa0jfj1QEIGi6f",
+  "id": 85262,
+  "initially_published_at": null,
+  "is_remote_synced": false,
+  "last-edit-info": {
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "id": 3570,
+    "last_name": "Aiholli",
+    "timestamp": "2026-06-18T10:24:19.688217Z"
+  },
+  "last_query_start": "2026-06-22T05:37:58.585886Z",
+  "last_used_at": "2026-06-22T05:37:58.592589Z",
+  "legacy_query": null,
+  "made_public_by_id": null,
+  "metabase_version": "v0.60.1 (feddd55)",
+  "moderation_reviews": [],
+  "name": "Initiation of corporate memberships for fitness services",
+  "param_fields": {},
+  "parameter_mappings": [],
+  "parameter_usage_count": 0,
+  "parameters": [],
+  "public_uuid": null,
+  "query_type": "native",
+  "result_metadata": [
+    {
+      "base_type": "type/Date",
+      "database_type": "date",
+      "display_name": "_col0",
+      "effective_type": "type/Date",
+      "field_ref": [
+        "field",
+        "_col0",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2020-04-04",
+            "latest": "2020-04-04"
+          }
+        }
+      },
+      "lib/deduplicated-name": "_col0",
+      "lib/desired-column-alias": "_col0",
+      "lib/original-name": "_col0",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "_col0",
+      "name": "_col0",
+      "semantic_type": null,
+      "source": "native"
+    }
+  ],
+  "source_card_id": null,
+  "table_id": null,
+  "type": "question",
+  "updated_at": "2026-06-18T10:24:19.660451Z",
+  "view_count": 3,
+  "visualization_settings": {
+    "table.pivot_column": "_col0"
+  }
+}

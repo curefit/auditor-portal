@@ -37,6 +37,7 @@ const DOCS = join(REPO_ROOT, "docs");
 const MAPPING_CSV = join(ARTIFACTS, "dashboard_card_mapping.csv");
 const ROOT_SUMMARY_CSV = join(ARTIFACTS, "root_asset_summary.csv");
 const OP_METRICS_CSV = join(ARTIFACTS, "op_metrics_sheet.csv");
+const DRHP_MILESTONES_CSV = join(ARTIFACTS, "drhp_milestones.csv");
 const LINEAGE_DIR = join(DOCS, "lineage");
 const PREVIEWS = join(ARTIFACTS, "previews");
 const QUERIES = join(ARTIFACTS, "queries");
@@ -210,6 +211,55 @@ function parseOpMetricsSheet(csvText) {
   return { cardMap, dashboardMap };
 }
 
+/**
+ * Parses DRHP milestone rows.
+ *
+ * CSV column layout:
+ *   0: Sl.No  1: Particulars  2: Milestone Year  3: Milestone Date
+ *   4: Status  5: PoC  6: Source  7: Data limitations
+ */
+function parseDrhpMilestones(csvText) {
+  const cardMap = new Map();
+  const dashboardMap = new Map();
+  const rows = parseCsvRows(csvText);
+  const QUESTION_RE = /metabase\.curefit\.co\/question\/(\d+)/g;
+  const DASHBOARD_RE = /metabase\.curefit\.co\/dashboard\/(\d+)/g;
+
+  let milestoneOrder = 0;
+
+  for (const cols of rows) {
+    const source = (cols[6] ?? "").trim();
+    if (!source.includes("metabase.curefit.co")) continue;
+
+    const slNo = (cols[0] ?? "").trim();
+    if (!slNo || isNaN(Number(slNo))) continue;
+
+    const milestone = {
+      milestoneOrder: milestoneOrder++,
+      slNo,
+      particulars: (cols[1] ?? "").trim(),
+      milestoneYear: (cols[2] ?? "").trim(),
+      milestoneDate: (cols[3] ?? "").trim(),
+      status: (cols[4] ?? "").trim(),
+      poc: (cols[5] ?? "").trim(),
+      sourceRaw: source,
+      limitations: (cols[7] ?? "").trim(),
+    };
+
+    let m;
+    QUESTION_RE.lastIndex = 0;
+    while ((m = QUESTION_RE.exec(source))) {
+      const existing = cardMap.get(m[1]) ?? [];
+      cardMap.set(m[1], [...existing, milestone]);
+    }
+    DASHBOARD_RE.lastIndex = 0;
+    while ((m = DASHBOARD_RE.exec(source))) {
+      if (!dashboardMap.has(m[1])) dashboardMap.set(m[1], milestone);
+    }
+  }
+  return { cardMap, dashboardMap };
+}
+
 function listMatching(dir, pred) {
   if (!existsSync(dir)) return [];
   return readdirSync(dir).filter(pred);
@@ -233,6 +283,12 @@ function firstMetadataFile(cardId) {
 
 function entryKeyFor(cardId, sheetMetric) {
   return sheetMetric ? `card:${cardId}:drhp:${sheetMetric.sheetOrder}` : `card:${cardId}`;
+}
+
+function milestoneEntryKeyFor(cardId, milestone) {
+  return milestone
+    ? `card:${cardId}:milestone:${milestone.milestoneOrder}`
+    : `card:${cardId}`;
 }
 
 function cardIdFromQueryFilename(name) {
@@ -850,6 +906,22 @@ async function main() {
     }
   }
 
+  // Load DRHP milestones sheet for milestone metadata + filtering
+  let milestoneCardMap = new Map();
+  let milestoneDashboardMap = new Map();
+  if (existsSync(DRHP_MILESTONES_CSV)) {
+    try {
+      ({ cardMap: milestoneCardMap, dashboardMap: milestoneDashboardMap } = parseDrhpMilestones(
+        readFileSync(DRHP_MILESTONES_CSV, "utf8"),
+      ));
+      console.log(
+        `[generate-catalog] DRHP milestones: ${milestoneCardMap.size} question IDs, ${milestoneDashboardMap.size} dashboard IDs mapped`,
+      );
+    } catch (e) {
+      console.warn(`[generate-catalog] Could not parse drhp_milestones.csv: ${e.message}`);
+    }
+  }
+
   const cardToRootLineage = buildCardToRootFromLineage();
   const csvRows = existsSync(MAPPING_CSV)
     ? parseCsv(readFileSync(MAPPING_CSV, "utf8"))
@@ -868,6 +940,7 @@ async function main() {
     if (id) cardIds.add(id);
   }
   for (const id of csvByCard.keys()) cardIds.add(id);
+  for (const id of milestoneCardMap.keys()) cardIds.add(id);
 
   const entries = [];
 
@@ -944,6 +1017,18 @@ async function main() {
       sqlLineageRelations,
     };
 
+    const milestoneCardRows = milestoneCardMap.get(cardId);
+    const milestone =
+      milestoneCardRows?.[0] ??
+      (milestoneDashboardMap.has(csv?.dashboard_id?.trim())
+        ? milestoneDashboardMap.get(csv.dashboard_id.trim())
+        : null);
+    const milestoneVia = milestone
+      ? milestoneCardRows?.length
+        ? "card"
+        : "dashboard"
+      : null;
+
     const sheetCardMetrics = sheetCardMap.get(cardId);
     if (sheetCardMetrics?.length) {
       const metricsForCard = DUPLICATE_SHEET_CARD_IDS.has(cardId)
@@ -955,8 +1040,13 @@ async function main() {
           ...baseEntry,
           sheetMetric,
           sheetMetricVia: "card",
+          milestone,
+          milestoneVia,
         };
         if (needsEntryKey) entry.entryKey = entryKeyFor(cardId, sheetMetric);
+        if (!needsEntryKey && milestoneCardRows && milestoneCardRows.length > 1) {
+          entry.entryKey = milestoneEntryKeyFor(cardId, milestone);
+        }
         entries.push(entry);
       }
     } else if (sheetDashboardMap.has(csv?.dashboard_id?.trim())) {
@@ -965,13 +1055,32 @@ async function main() {
         ...baseEntry,
         sheetMetric,
         sheetMetricVia: "dashboard",
+        milestone,
+        milestoneVia,
       });
     } else {
-      entries.push({
-        ...baseEntry,
-        sheetMetric: null,
-        sheetMetricVia: null,
-      });
+      const milestonesForCard = milestoneCardRows?.length ? milestoneCardRows : [milestone];
+      const materialMilestones = milestonesForCard.filter(Boolean);
+      if (materialMilestones.length > 1) {
+        for (const milestoneRow of materialMilestones) {
+          entries.push({
+            ...baseEntry,
+            entryKey: milestoneEntryKeyFor(cardId, milestoneRow),
+            sheetMetric: null,
+            sheetMetricVia: null,
+            milestone: milestoneRow,
+            milestoneVia,
+          });
+        }
+      } else {
+        entries.push({
+          ...baseEntry,
+          sheetMetric: null,
+          sheetMetricVia: null,
+          milestone,
+          milestoneVia,
+        });
+      }
     }
   }
 

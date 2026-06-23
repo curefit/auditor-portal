@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 130,
+  "count": 138,
   "entries": [
     {
       "cardId": "75753",
@@ -6693,6 +6693,368 @@
         "limitations": ""
       },
       "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "85140",
+      "name": "100k paid users reached date",
+      "rootKey": "question-85140",
+      "rootAssetName": "100k paid users reached date",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85140",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85140__100k-paid-users-reached-date.sql",
+        "metadata": "artifacts/metadata/85140__100k-paid-users-reached-date.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.membership_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": null,
+      "sheetMetricVia": null,
+      "milestone": {
+        "milestoneOrder": 0,
+        "slNo": "1",
+        "particulars": "100k customers [prefer live/active customers; timestamp on system]",
+        "milestoneYear": "2019",
+        "milestoneDate": "",
+        "status": "",
+        "poc": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85140-100k-paid-users-reached-date",
+        "limitations": ""
+      },
+      "milestoneVia": "card"
+    },
+    {
+      "cardId": "85141",
+      "name": "500k paid users reached date",
+      "rootKey": "question-85141",
+      "rootAssetName": "500k paid users reached date",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85141",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85141__500k-paid-users-reached-date.sql",
+        "metadata": "artifacts/metadata/85141__500k-paid-users-reached-date.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.membership_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": null,
+      "sheetMetricVia": null,
+      "milestone": {
+        "milestoneOrder": 1,
+        "slNo": "2",
+        "particulars": "500k customers [prefer live/active customers; timestamp on system]",
+        "milestoneYear": "2021",
+        "milestoneDate": "",
+        "status": "",
+        "poc": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85141-500k-paid-users-reached-date",
+        "limitations": ""
+      },
+      "milestoneVia": "card"
+    },
+    {
+      "cardId": "85107",
+      "name": "First paid Elite membership created date",
+      "rootKey": "question-85107",
+      "rootAssetName": "First paid Elite membership created date",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85107",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85107__first-paid-elite-membership-created-date.sql",
+        "metadata": "artifacts/metadata/85107__first-paid-elite-membership-created-date.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.membership_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": null,
+      "sheetMetricVia": null,
+      "milestone": {
+        "milestoneOrder": 2,
+        "slNo": "3",
+        "particulars": "Launch of Elite offering",
+        "milestoneYear": "2016",
+        "milestoneDate": "",
+        "status": "",
+        "poc": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85107-first-paid-elite-membership-created-date",
+        "limitations": ""
+      },
+      "milestoneVia": "card"
+    },
+    {
+      "cardId": "85142",
+      "name": "1 million downloads reached date",
+      "rootKey": "question-85142",
+      "rootAssetName": "1 million downloads reached date",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85142",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85142__1-million-downloads-reached-date.sql",
+        "metadata": "artifacts/metadata/85142__1-million-downloads-reached-date.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_curefit.branch_installs",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cfuserservice_cultapp.devicedetail",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": null,
+      "sheetMetricVia": null,
+      "milestone": {
+        "milestoneOrder": 3,
+        "slNo": "4",
+        "particulars": "1Mn app downloads",
+        "milestoneYear": "2019",
+        "milestoneDate": "",
+        "status": "",
+        "poc": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85142-1-million-downloads-reached-date",
+        "limitations": ""
+      },
+      "milestoneVia": "card"
+    },
+    {
+      "cardId": "85143",
+      "name": "2 million downloads reached date",
+      "rootKey": "question-85143",
+      "rootAssetName": "2 million downloads reached date",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85143",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85143__2-million-downloads-reached-date.sql",
+        "metadata": "artifacts/metadata/85143__2-million-downloads-reached-date.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_curefit.branch_installs",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cfuserservice_cultapp.devicedetail",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": null,
+      "sheetMetricVia": null,
+      "milestone": {
+        "milestoneOrder": 4,
+        "slNo": "5",
+        "particulars": "2Mn app downloads",
+        "milestoneYear": "2020",
+        "milestoneDate": "",
+        "status": "",
+        "poc": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85143-2-million-downloads-reached-date",
+        "limitations": ""
+      },
+      "milestoneVia": "card"
+    },
+    {
+      "cardId": "85108",
+      "name": "First paid Live membership created date",
+      "rootKey": "question-85108",
+      "rootAssetName": "First paid Live membership created date",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85108",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85108__first-paid-live-membership-created-date.sql",
+        "metadata": "artifacts/metadata/85108__first-paid-live-membership-created-date.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_fitness_mart.membership_fact",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": null,
+      "sheetMetricVia": null,
+      "milestone": {
+        "milestoneOrder": 5,
+        "slNo": "6",
+        "particulars": "Launch of Digital Fitness - Live",
+        "milestoneYear": "2020",
+        "milestoneDate": "",
+        "status": "",
+        "poc": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85108-first-paid-live-membership-created-date",
+        "limitations": ""
+      },
+      "milestoneVia": "card"
+    },
+    {
+      "cardId": "85114",
+      "name": "Category level first launch date",
+      "rootKey": "question-85114",
+      "rootAssetName": "Category level first launch date",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85114",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85114__category-level-first-launch-date.sql",
+        "metadata": "artifacts/metadata/85114__category-level-first-launch-date.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": null,
+      "sheetMetricVia": null,
+      "milestone": {
+        "milestoneOrder": 6,
+        "slNo": "7",
+        "particulars": "Launch of massager category in products",
+        "milestoneYear": "2024",
+        "milestoneDate": "",
+        "status": "",
+        "poc": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85114-category-level-first-launch-date",
+        "limitations": ""
+      },
+      "milestoneVia": "card"
+    },
+    {
+      "cardId": "85262",
+      "name": "Initiation of corporate memberships for fitness services",
+      "rootKey": "question-85262",
+      "rootAssetName": "Initiation of corporate memberships for fitness services",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85262",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85262__initiation-of-corporate-memberships-for-fitness-services.sql",
+        "metadata": "artifacts/metadata/85262__initiation-of-corporate-memberships-for-fitness-services.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [],
+      "sqlLineageRelations": [
+        {
+          "relation": "pk_prod_enterprise_prod.employeeregistrations",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": null,
+      "sheetMetricVia": null,
+      "milestone": {
+        "milestoneOrder": 7,
+        "slNo": "8",
+        "particulars": "Initiation of corporate memberships for fitness services",
+        "milestoneYear": "2020",
+        "milestoneDate": "",
+        "status": "",
+        "poc": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85262-initiation-of-corporate-memberships-for-fitness-services",
+        "limitations": ""
+      },
+      "milestoneVia": "card"
     }
   ],
   "dbt": {

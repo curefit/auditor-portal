@@ -23,6 +23,9 @@ export default function RootLayout() {
         <NavLink to="/" className={navCls} end>
           Metrics
         </NavLink>
+        <NavLink to="/milestones" className={navCls}>
+          Milestones
+        </NavLink>
         <NavLink to="/dbt-models" className={navCls}>
           Model Source Code
         </NavLink>

@@ -1,0 +1,138 @@
+{
+  "archived": false,
+  "archived_directly": false,
+  "average_query_time": 308248,
+  "cache_invalidated_at": null,
+  "cache_ttl": null,
+  "can_delete": false,
+  "can_manage_db": false,
+  "can_restore": false,
+  "can_run_adhoc_query": true,
+  "can_write": true,
+  "card_schema": 23,
+  "collection": {
+    "archive_operation_id": null,
+    "archived": false,
+    "archived_directly": null,
+    "authority_level": null,
+    "created_at": "2026-05-26T11:14:34.781469Z",
+    "description": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "id": 7263,
+    "is_personal": false,
+    "is_remote_synced": false,
+    "is_sample": false,
+    "location": "/",
+    "name": "Audit Related Queries",
+    "namespace": null,
+    "personal_owner_id": null,
+    "slug": "audit_related_queries",
+    "type": null,
+    "workspace_id": null
+  },
+  "collection_id": 7263,
+  "collection_position": null,
+  "collection_preview": true,
+  "created_at": "2026-06-18T01:35:53.239117Z",
+  "creator": {
+    "common_name": "Maragatham K N",
+    "date_joined": "2021-09-13T10:20:46.362151Z",
+    "email": "mkn@curefit.com",
+    "first_name": "Maragatham",
+    "id": 1868,
+    "is_data_analyst": false,
+    "is_qbnewb": false,
+    "is_superuser": true,
+    "last_login": "2026-06-16T13:01:03.348495Z",
+    "last_name": "K N",
+    "tenant_id": null
+  },
+  "creator_id": 1868,
+  "dashboard": null,
+  "dashboard_count": 0,
+  "dashboard_id": null,
+  "database_id": 39,
+  "dataset_query": {
+    "database": 39,
+    "lib/type": "mbql/query",
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "WITH base AS (\n    SELECT\n        a.advertiserid AS device_aid,\n        b.advertising_id AS install_aid,\n        created_on,\n        DATE(installdate) AS installdate,\n        installdate AS installtimestamp,\n        a.userid,\n        mediasource,\n        created_on_year,\n        ROW_NUMBER() OVER (PARTITION BY userid ORDER BY installdate) AS rn,\n        ROW_NUMBER() OVER (ORDER BY installdate) AS install_rn\n    FROM pk_cfuserservice_cultapp.devicedetail a\n    JOIN dwh_curefit.branch_installs b\n        ON b.advertising_id = CASE\n            WHEN a.advertiserid LIKE '%|%' THEN split_part(a.advertiserid, '|', 1)\n            ELSE a.advertiserid\n        END\n       AND installdate >= DATE('2016-01-01')\n    WHERE LOWER(osname) IN ('ios', 'android')\n      AND created_on_year >= 2016\n      AND LOWER(tenant) = 'curefit'\n)\nSELECT\n    installdate AS date_1_million_downloads_reached\nFROM base\nWHERE install_rn = 1000000"
+      }
+    ]
+  },
+  "description": "Returns the install date corresponding to install_rn = 1,000,000 from the provided device-to-install join logic.",
+  "dimension_mappings": null,
+  "dimensions": null,
+  "display": "table",
+  "document_id": null,
+  "embedding_params": null,
+  "embedding_type": null,
+  "enable_embedding": false,
+  "entity_id": "PwMXyf0seCu3wu8rPfF7m",
+  "id": 85142,
+  "initially_published_at": null,
+  "is_remote_synced": false,
+  "last-edit-info": {
+    "email": "mkn@curefit.com",
+    "first_name": "Maragatham",
+    "id": 1868,
+    "last_name": "K N",
+    "timestamp": "2026-06-18T01:35:53.270214Z"
+  },
+  "last_query_start": "2026-06-18T01:36:06.010344Z",
+  "last_used_at": "2026-06-18T01:36:06.01552Z",
+  "legacy_query": null,
+  "made_public_by_id": null,
+  "metabase_version": "v0.60.1 (feddd55)",
+  "moderation_reviews": [],
+  "name": "1 Million Downloads Reached Date",
+  "param_fields": {},
+  "parameter_mappings": [],
+  "parameter_usage_count": 0,
+  "parameters": [],
+  "public_uuid": null,
+  "query_type": "native",
+  "result_metadata": [
+    {
+      "base_type": "type/Date",
+      "database_type": "date",
+      "display_name": "date_1_million_downloads_reached",
+      "effective_type": "type/Date",
+      "field_ref": [
+        "field",
+        "date_1_million_downloads_reached",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2019-09-14",
+            "latest": "2019-09-14"
+          }
+        }
+      },
+      "lib/deduplicated-name": "date_1_million_downloads_reached",
+      "lib/desired-column-alias": "date_1_million_downloads_reached",
+      "lib/original-name": "date_1_million_downloads_reached",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "date_1_million_downloads_reached",
+      "name": "date_1_million_downloads_reached",
+      "semantic_type": null,
+      "source": "native"
+    }
+  ],
+  "source_card_id": null,
+  "table_id": null,
+  "type": "question",
+  "updated_at": "2026-06-18T01:35:53.239117Z",
+  "view_count": 1,
+  "visualization_settings": {}
+}
