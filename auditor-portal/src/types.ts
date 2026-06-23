@@ -51,6 +51,20 @@ export type SheetMetric = {
   sourceRaw: string;
 };
 
+/** Metadata sourced from the DRHP milestones sheet */
+export type DrhpMilestone = {
+  /** 0-based position in the sheet — used to sort the milestones list */
+  milestoneOrder: number;
+  slNo: string;
+  particulars: string;
+  milestoneYear: string;
+  milestoneDate: string;
+  status: string;
+  poc: string;
+  limitations: string;
+  sourceRaw: string;
+};
+
 export type CatalogEntry = {
   entryKey?: string;
   cardId: string;
@@ -70,6 +84,10 @@ export type CatalogEntry = {
   sheetMetric?: SheetMetric | null;
   /** How sheetMetric was matched: 'card' = direct question ID, 'dashboard' = via dashboard ID */
   sheetMetricVia?: "card" | "dashboard" | null;
+  /** Present when this card appears in the DRHP milestones sheet with a Metabase link */
+  milestone?: DrhpMilestone | null;
+  /** How milestone was matched: 'card' = direct question ID, 'dashboard' = via dashboard ID */
+  milestoneVia?: "card" | "dashboard" | null;
 };
 
 export type Catalog = {

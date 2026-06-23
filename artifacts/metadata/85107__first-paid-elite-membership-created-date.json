@@ -1,0 +1,140 @@
+{
+  "archived": false,
+  "archived_directly": false,
+  "average_query_time": 1248.75,
+  "cache_invalidated_at": "2026-06-18T03:43:13.366843Z",
+  "cache_ttl": null,
+  "can_delete": false,
+  "can_manage_db": false,
+  "can_restore": false,
+  "can_run_adhoc_query": true,
+  "can_write": true,
+  "card_schema": 23,
+  "collection": {
+    "archive_operation_id": null,
+    "archived": false,
+    "archived_directly": null,
+    "authority_level": null,
+    "created_at": "2026-05-26T11:14:34.781469Z",
+    "description": null,
+    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
+    "id": 7263,
+    "is_personal": false,
+    "is_remote_synced": false,
+    "is_sample": false,
+    "location": "/",
+    "name": "Audit Related Queries",
+    "namespace": null,
+    "personal_owner_id": null,
+    "slug": "audit_related_queries",
+    "type": null,
+    "workspace_id": null
+  },
+  "collection_id": 7263,
+  "collection_position": null,
+  "collection_preview": true,
+  "created_at": "2026-06-17T11:48:58.096275Z",
+  "creator": {
+    "common_name": "Maragatham K N",
+    "date_joined": "2021-09-13T10:20:46.362151Z",
+    "email": "mkn@curefit.com",
+    "first_name": "Maragatham",
+    "id": 1868,
+    "is_data_analyst": false,
+    "is_qbnewb": false,
+    "is_superuser": true,
+    "last_login": "2026-06-16T13:01:03.348495Z",
+    "last_name": "K N",
+    "tenant_id": null
+  },
+  "creator_id": 1868,
+  "dashboard": null,
+  "dashboard_count": 0,
+  "dashboard_id": null,
+  "database_id": 39,
+  "dataset_query": {
+    "database": 39,
+    "lib/type": "mbql/query",
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "SELECT\n    MIN(membership_created_date) AS first_paid_elite_membership_created_date\nFROM dwh_fitness_mart.membership_fact\n  WHERE business_line = 'ELITE'\n  AND COALESCE(amount_paid, 0) > 0\n  AND transaction_date = date('2026-06-16')"
+      }
+    ]
+  },
+  "description": "Returns the earliest membership_created_date in membership_dim for paid ELITE memberships where amount_paid > 0.",
+  "dimension_mappings": null,
+  "dimensions": null,
+  "display": "table",
+  "document_id": null,
+  "embedding_params": null,
+  "embedding_type": null,
+  "enable_embedding": false,
+  "entity_id": "2B1Qjq8A4vPZbQwELjErK",
+  "id": 85107,
+  "initially_published_at": null,
+  "is_remote_synced": false,
+  "last-edit-info": {
+    "email": "mkn@curefit.com",
+    "first_name": "Maragatham",
+    "id": 1868,
+    "last_name": "K N",
+    "timestamp": "2026-06-18T03:43:13.390976Z"
+  },
+  "last_query_start": "2026-06-22T05:37:29.487404Z",
+  "last_used_at": "2026-06-22T05:37:29.494739Z",
+  "legacy_query": null,
+  "made_public_by_id": null,
+  "metabase_version": "v0.60.1 (feddd55)",
+  "moderation_reviews": [],
+  "name": "First Paid ELITE Membership Created Date",
+  "param_fields": {},
+  "parameter_mappings": [],
+  "parameter_usage_count": 0,
+  "parameters": [],
+  "public_uuid": null,
+  "query_type": "native",
+  "result_metadata": [
+    {
+      "base_type": "type/Date",
+      "database_type": "date",
+      "display_name": "first_paid_elite_membership_created_date",
+      "effective_type": "type/Date",
+      "field_ref": [
+        "field",
+        "first_paid_elite_membership_created_date",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2016-02-20",
+            "latest": "2016-02-20"
+          }
+        }
+      },
+      "lib/deduplicated-name": "first_paid_elite_membership_created_date",
+      "lib/desired-column-alias": "first_paid_elite_membership_created_date",
+      "lib/original-name": "first_paid_elite_membership_created_date",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "first_paid_elite_membership_created_date",
+      "name": "first_paid_elite_membership_created_date",
+      "semantic_type": "type/CreationDate",
+      "source": "native"
+    }
+  ],
+  "source_card_id": null,
+  "table_id": null,
+  "type": "question",
+  "updated_at": "2026-06-18T03:43:13.364945Z",
+  "view_count": 9,
+  "visualization_settings": {
+    "table.pivot_column": "first_paid_elite_membership_created_date"
+  }
+}
