@@ -3309,7 +3309,89 @@
         "sourceRaw": "https://metabase.curefit.co/question/75109-memberships-by-each-business-line-end-of-each-month-including-all-packs?start_date=2025-09-01&end_date=2026-01-31;\nhttps://docs.google.com/spreadsheets/d/1g3Qe9kRqUWMEIENNAjYpx-aJpZabPx99/edit?gid=1209808351#gid=1209808351\nhttps://docs.google.com/spreadsheets/d/1g3Qe9kRqUWMEIENNAjYpx-aJpZabPx99/edit?gid=1209808351#gid=1209808351https://docs.google.com/spreadsheets/d/1eVGGUyReQgXWPsQ0a7QRLidKy3EsqC2azaFeI3GByqk/edit?gid=0#gid=0",
         "limitations": ""
       },
-      "sheetMetricVia": "card"
+      "sheetMetricVia": "card",
+      "entryKey": "card:75109:drhp:7-subscribers"
+    },
+    {
+      "cardId": "75109",
+      "name": "# Corporate paid members",
+      "rootKey": "question-75109",
+      "rootAssetName": "# Corporate paid members",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/75109",
+      "metabaseRootSourceUrl": "https://metabase.curefit.co/question/75109-memberships-by-each-business-line-end-of-each-month-including-all-packs?start_date=2025-09-01&end_date=2026-01-31",
+      "paths": {
+        "query": "artifacts/queries/75109__memberships-by-each-business-line-end-of-each-month-including-all-packs.sql",
+        "metadata": "artifacts/metadata/75109__memberships-by-each-business-line-end-of-each-month-including-all-packs.json",
+        "lineageMarkdown": "docs/lineage/question-75109.md",
+        "outputPreviewHtml": "artifacts/previews/question-75109__75109__memberships-by-each-business-line-end-of-each-month-including-all-packs.html",
+        "lineagePreviewHtml": "artifacts/previews/question-75109__75109__memberships-by-each-business-line-end-of-each-month-including-all-packs__lineage.html"
+      },
+      "results": [
+        "artifacts/results/question-75109__75109__memberships-by-each-business-line-end-of-each-month-including-all-packs.csv",
+        "artifacts/results/question-75109__75109__memberships-by-each-business-line-end-of-each-month-including-all-packs.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_curefit.dim_date",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [
+            "nbs/pinaka_data_models/dwh_curefit/dwh_curefit.dim_date.ipynb"
+          ],
+          "fallbackGithubBlobUrls": [
+            "https://github.com/curefit/cf-data-lab/blob/master/nbs/pinaka_data_models/dwh_curefit/dwh_curefit.dim_date.ipynb"
+          ],
+          "fallbackLocalUrls": [
+            "/dbt-notebooks/nbs/pinaka_data_models/dwh_curefit/dwh_curefit.dim_date.ipynb"
+          ]
+        },
+        {
+          "relation": "dwh_fitness_mart.membership_dim",
+          "dbtModelPaths": [
+            "transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "githubBlobUrls": [
+            "https://github.com/curefit/dbt-data-models/blob/master/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "localSqlUrls": [
+            "/dbt-sql/transformatics/models/datalake/analytics/dwh_fitness_mart/membership_dim.sql"
+          ],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitplatforms_membershipdb.memberships",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 19.6,
+        "slNo": "46",
+        "metricName": "# Corporate paid members",
+        "definition": "Total number of corporate members, with a paid membership for fitness services valid as at the end of the year.",
+        "status": "",
+        "poc": "Analytics",
+        "units": "#",
+        "fy23": "59,815",
+        "fy24": "52,699",
+        "fy25": "137,345",
+        "fy26": "256,330",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/75109-memberships-by-each-business-line-end-of-each-month-including-all-packs?start_date=2025-09-01&end_date=2026-01-31",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:75109:drhp:46-corporate-paid-members"
     },
     {
       "cardId": "77280",
