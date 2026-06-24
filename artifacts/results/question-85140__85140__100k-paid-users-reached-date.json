@@ -1,0 +1,124 @@
+{
+  "card_id": 85140,
+  "card_name": "100k Paid Users Reached Date",
+  "parameters": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "2019-02-03T00:00:00Z"
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "date",
+          "lib/deduplicated-name": "date_100k_paid_users_reached",
+          "lib/original-name": "date_100k_paid_users_reached",
+          "name": "date_100k_paid_users_reached",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "date_100k_paid_users_reached",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "date_100k_paid_users_reached",
+            {
+              "base-type": "type/Date"
+            }
+          ],
+          "effective_type": "type/Date",
+          "lib/desired-column-alias": "date_100k_paid_users_reached",
+          "display_name": "date_100k_paid_users_reached",
+          "base_type": "type/Date"
+        }
+      ],
+      "native_form": {
+        "lib/type": "mbql.stage/native",
+        "query": "WITH first_paid_user_date AS (\n    SELECT\n        user_id,\n        MIN(membership_created_date) AS first_paid_membership_created_date\n    FROM dwh_fitness_mart.membership_fact\n    WHERE COALESCE(amount_paid, 0) > 0\n      AND user_id IS NOT NULL\n\t  AND transaction_date = date('2026-06-16')\n    GROUP BY 1\n),\ndaily_new_paid_users AS (\n    SELECT\n        first_paid_membership_created_date AS milestone_date,\n        COUNT(DISTINCT user_id) AS new_paid_users\n    FROM first_paid_user_date\n    GROUP BY 1\n),\nrunning_paid_users AS (\n    SELECT\n        milestone_date,\n        new_paid_users,\n        SUM(new_paid_users) OVER (\n            ORDER BY milestone_date\n            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW\n        ) AS cumulative_paid_users\n    FROM daily_new_paid_users\n)\nSELECT\n    MIN(milestone_date) AS date_100k_paid_users_reached\nFROM running_paid_users\nWHERE cumulative_paid_users >= 100000"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "date",
+            "semantic_type": null,
+            "lib/deduplicated-name": "date_100k_paid_users_reached",
+            "lib/original-name": "date_100k_paid_users_reached",
+            "name": "date_100k_paid_users_reached",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "date_100k_paid_users_reached",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "date_100k_paid_users_reached",
+              {
+                "base-type": "type/Date"
+              }
+            ],
+            "effective_type": "type/Date",
+            "lib/desired-column-alias": "date_100k_paid_users_reached",
+            "display_name": "date_100k_paid_users_reached",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 1,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/DateTime": {
+                  "earliest": "2019-02-03",
+                  "latest": "2019-02-03"
+                }
+              }
+            },
+            "base_type": "type/Date"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": "2026-06-24T13:04:59.487485872Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "native": "WITH first_paid_user_date AS (\n    SELECT\n        user_id,\n        MIN(membership_created_date) AS first_paid_membership_created_date\n    FROM dwh_fitness_mart.membership_fact\n    WHERE COALESCE(amount_paid, 0) > 0\n      AND user_id IS NOT NULL\n\t  AND transaction_date = date('2026-06-16')\n    GROUP BY 1\n),\ndaily_new_paid_users AS (\n    SELECT\n        first_paid_membership_created_date AS milestone_date,\n        COUNT(DISTINCT user_id) AS new_paid_users\n    FROM first_paid_user_date\n    GROUP BY 1\n),\nrunning_paid_users AS (\n    SELECT\n        milestone_date,\n        new_paid_users,\n        SUM(new_paid_users) OVER (\n            ORDER BY milestone_date\n            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW\n        ) AS cumulative_paid_users\n    FROM daily_new_paid_users\n)\nSELECT\n    MIN(milestone_date) AS date_100k_paid_users_reached\nFROM running_paid_users\nWHERE cumulative_paid_users >= 100000",
+          "lib/type": "mbql.stage/native"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": false,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-18T03:41:56.467826Z"
+      },
+      "viz-settings": {
+        "table.pivot_column": "date_100k_paid_users_reached"
+      },
+      "database": 39
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 1,
+    "running_time": 1765
+  }
+}
