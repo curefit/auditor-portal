@@ -1,7 +1,8 @@
 SELECT
   year,
   business_category,
-  base_amount
+  base_amount,
+  (base_amount * 100)/SUM(base_amount) OVER(PARTITION BY YEAR) AS percentage
 FROM (
   SELECT
     1 AS sort_key,
