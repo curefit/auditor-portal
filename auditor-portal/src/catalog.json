@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 138,
+  "count": 139,
   "entries": [
     {
       "cardId": "75753",
@@ -1280,6 +1280,74 @@
       ],
       "sheetMetric": null,
       "sheetMetricVia": null
+    },
+    {
+      "cardId": "85742",
+      "name": "Corporate member retention",
+      "rootKey": "question-85742",
+      "rootAssetName": "Corporate member retention",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/85742",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/85742__b2b-retention-query.sql",
+        "metadata": "artifacts/metadata/85742__b2b-retention-query.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-85742__85742__b2b-retention-query.csv",
+        "artifacts/results/question-85742__85742__b2b-retention-query.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "pk_curefit_salesforce.account",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefit_salesforce.opportunity",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefit_salesforce.sales_split__c",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 19.8,
+        "slNo": "47",
+        "metricName": "Corporate member retention",
+        "definition": "% of memberships corresponding to corporate clients who transacted with Cult in both the current & previous yrs divided by memberships corresponding to clients who transacted with Cult in previous yr",
+        "status": "Done",
+        "poc": "Soumya, Piyush",
+        "units": "%",
+        "fy23": "",
+        "fy24": "79%",
+        "fy25": "91%",
+        "fy26": "87%",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/85742-b2b-retention-query",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
     },
     {
       "cardId": "72328",
