@@ -1,0 +1,88 @@
+{
+  "card_id": 86014,
+  "card_name": "Retention_all_overall",
+  "parameters": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "FY2023-24",
+          40.85
+        ],
+        [
+          "FY2024-25",
+          45.87
+        ],
+        [
+          "FY2025-26",
+          50.88
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar",
+          "name": "financial_year",
+          "display_name": "financial_year",
+          "base_type": "type/Text",
+          "effective_type": "type/Text",
+          "semantic_type": null
+        },
+        {
+          "database_type": "double",
+          "name": "d365_pct",
+          "display_name": "d365_pct",
+          "base_type": "type/Float",
+          "effective_type": "type/Float",
+          "semantic_type": null
+        }
+      ],
+      "native_form": null,
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "varchar",
+            "name": "financial_year",
+            "display_name": "financial_year",
+            "base_type": "type/Text",
+            "effective_type": "type/Text",
+            "semantic_type": null
+          },
+          {
+            "database_type": "double",
+            "name": "d365_pct",
+            "display_name": "d365_pct",
+            "base_type": "type/Float",
+            "effective_type": "type/Float",
+            "semantic_type": null
+          }
+        ]
+      },
+      "insights": []
+    },
+    "cached": null,
+    "database_id": 39,
+    "started_at": null,
+    "json_query": {
+      "lib/type": "mbql/query",
+      "database": 39,
+      "stages": [
+        {
+          "native": "-- Purpose:\n-- Combined D365 retention query \n\n\nWITH membership_fact_snapshot AS (\n\n  SELECT *\n  FROM (\n    SELECT\n      mf.*,\n      row_number() OVER (\n        PARTITION BY mf.membership_key\n        ORDER BY mf.transaction_date DESC, mf.membership_fact_ts_ms DESC\n      ) AS rn\n    FROM dwh_fitness_mart.membership_fact mf\n    WHERE mf.transaction_date = DATE('2026-06-16')\n      AND mf.business_line IN ('ELITE', 'PRO', 'LUX', 'PLAY', 'LIVE', 'TRANSFORM', 'PLAY_ACADEMY', 'GOLDs', 'SGT')\n  )\n  WHERE rn = 1\n),\n\nmembership_fact_enriched AS (\n  SELECT\n    mf.*,\n    date(coalesce(mf.membership_created_time, CAST(mf.membership_created_date AS timestamp))) AS membership_purchase_date,\n    CASE\n      WHEN mf.cancellation_date IS NOT NULL\n      THEN least(date(mf.pack_end_date), date(mf.cancellation_date))\n      ELSE date(mf.pack_end_date)\n    END AS effective_pack_end_date\n  FROM membership_fact_snapshot mf\n),\n\nsame_device_flag_core AS (\n  SELECT\n    date_trunc('month', last_data.effective_pack_end_date) AS date_month,\n    last_data.business_line,\n    last_data.userid AS user_id,\n    max(\n      CASE\n        WHEN last_data.userid <> first_data.userid\n         AND date_diff(\n               'day',\n               date(last_data.effective_pack_end_date),\n               date(first_data.membership_created_time)\n             ) <= 365\n        THEN 1 ELSE 0\n      END\n    ) AS same_device_d365_flag\n  FROM (\n    SELECT\n      mf.user_id AS userid,\n      mf.business_line,\n      bf.device_id,\n      mf.effective_pack_end_date,\n      mf.membership_created_time\n    FROM dwh_fitness_mart.booking_fact bf\n    JOIN membership_fact_enriched mf\n      ON bf.membership_key = mf.membership_key\n     AND date(bf.class_date)\n            BETWEEN mf.effective_pack_end_date - interval '365' day\n                AND mf.effective_pack_end_date\n    WHERE mf.business_line IN ('ELITE', 'PRO', 'LUX')\n      AND bf.class_date > date('2017-01-01')\n      AND bf.device_id IS NOT NULL\n      AND mf.effective_pack_end_date BETWEEN DATE('2022-04-01') AND DATE('2026-03-31')\n      AND (\n        mf.cancellation_date IS NULL\n        OR mf.membership_purchase_date <> date(mf.cancellation_date)\n      )\n\t\n  ) last_data\n  JOIN (\n    SELECT\n      mf.user_id AS userid,\n      mf.business_line,\n      bf.device_id,\n      mf.membership_created_time\n    FROM dwh_fitness_mart.booking_fact bf\n    JOIN membership_fact_enriched mf\n      ON bf.membership_key = mf.membership_key\n     AND date(bf.class_date)\n            BETWEEN date(mf.pack_start_date)\n                AND date(mf.pack_start_date) + interval '365' day\n    WHERE mf.business_line IN ('ELITE', 'PRO', 'LUX')\n      AND bf.class_date > date('2017-01-01')\n      AND bf.device_id IS NOT NULL\n      AND (\n        mf.cancellation_date IS NULL\n        OR mf.membership_purchase_date <> date(mf.cancellation_date)\n      )\n\t\n  ) first_data\n    ON last_data.device_id = first_data.device_id\n   AND last_data.membership_created_time < first_data.membership_created_time\n   AND last_data.business_line = first_data.business_line\n  GROUP BY 1,2,3\n),\n\nrenewal_history_core AS (\n  SELECT\n    mf.membership_key,\n    lead(mf.membership_created_time) OVER (\n      PARTITION BY mf.user_id\n      ORDER BY mf.membership_created_time, membership_key\n    ) AS next_pack_purchased_time\n  FROM membership_fact_enriched mf\n  WHERE mf.business_line IN ('ELITE', 'PRO', 'LUX')\n    -- AND coalesce(mf.attribution_reason, 'xx') NOT IN ('MANUAL_OVERRIDE_CENTER_SHUTDOWN')\n    AND (\n      mf.cancellation_date IS NULL\n      OR mf.membership_purchase_date <> date(mf.cancellation_date)\n    )\n),\n\nmembership_history_core AS (\n  SELECT\n    date_trunc('month', mf.effective_pack_end_date) AS date_month,\n    mf.membership_key,\n    CAST(mf.user_id AS varchar) AS user_id,\n    mf.business_line,\n    mf.effective_pack_end_date AS pack_end_date,\n    date_add('day', 365, mf.effective_pack_end_date) AS d365_date,\n    mf.is_enterprise,cancellation_date\n  FROM membership_fact_enriched mf\n  LEFT JOIN dwh_fitness_mart.center_dim cd\n    ON mf.attributed_center_key = cd.center_key\n  WHERE mf.business_line IN ('ELITE', 'PRO', 'LUX')\n    -- AND coalesce(mf.attribution_reason, 'xx') NOT IN ('MANUAL_OVERRIDE_CENTER_SHUTDOWN')\n    AND (\n      mf.cancellation_date IS NULL\n      OR mf.membership_purchase_date <> date(mf.cancellation_date)\n    )\n),\n\nmembership_base_core AS (\n  SELECT *\n  FROM membership_history_core\n  WHERE  LEAST(COALESCE(cancellation_date, pack_end_date), pack_end_date) BETWEEN DATE('2022-04-01') AND DATE('2025-03-31')\n    -- AND is_enterprise = 0\n),\n\nbase_membership_core AS (\n  SELECT\n    mb.date_month,\n    mb.membership_key,\n    mb.user_id,\n    mb.business_line,\n    CASE\n      WHEN rh.next_pack_purchased_time IS NOT NULL\n       AND date(rh.next_pack_purchased_time) <= mb.d365_date\n      THEN 1 ELSE 0\n    END AS direct_d365_flag\n  FROM membership_base_core mb\n  LEFT JOIN renewal_history_core rh\n    ON mb.membership_key = rh.membership_key\n),\n\nuser_month_base_core AS (\n  SELECT\n    date_month,\n    membership_key,\n    user_id,\n    business_line,\n    max(direct_d365_flag) AS direct_d365_flag\n  FROM base_membership_core\n  GROUP BY 1,2,3,4\n),\n\nflagged_core AS (\n  SELECT\n    umb.date_month,\n    umb.membership_key,\n    umb.user_id,\n    umb.business_line,\n    CASE\n      WHEN greatest(\n             coalesce(umb.direct_d365_flag, 0),\n             coalesce(sdf.same_device_d365_flag, 0)\n           ) = 1\n      THEN 1 ELSE 0\n    END AS renewed_flag\n  FROM user_month_base_core umb\n  LEFT JOIN same_device_flag_core sdf\n    ON sdf.user_id = umb.user_id\n   AND sdf.date_month = umb.date_month\n   AND sdf.business_line = umb.business_line\n),\n\nplay_live_history AS (\n  SELECT\n    date_trunc('month', mf.effective_pack_end_date) AS date_month,\n    mf.membership_key,\n    CAST(mf.user_id AS varchar) AS user_id,\n    mf.business_line,\n    mf.effective_pack_end_date AS pack_end_date,\n    date_add('day', 365, mf.effective_pack_end_date) AS d365_date,\n    mf.membership_created_time,\n    lead(mf.membership_created_time) OVER (\n      PARTITION BY mf.user_id, mf.business_line\n      ORDER BY mf.membership_created_time, mf.effective_pack_end_date, mf.membership_key\n    ) AS next_same_line_purchase_time,effective_pack_end_date,is_enterprise\n  FROM membership_fact_enriched mf\n  WHERE mf.business_line IN ('PLAY', 'LIVE', 'TRANSFORM', 'PLAY_ACADEMY', 'GOLDs', 'SGT')\n    AND (\n      mf.cancellation_date IS NULL\n      OR mf.membership_purchase_date <> date(mf.cancellation_date)\n    )\n\t\n\tAND (\n      mf.cancellation_date IS NULL\n      OR mf.pack_start_date <> date(mf.cancellation_date)\n    )\n\t\n),\n\nflagged_play_live AS (\n  SELECT\n    date_month,\n    membership_key,\n    user_id,\n    business_line,\n    CASE\n      WHEN next_same_line_purchase_time IS NOT NULL\n       AND date(next_same_line_purchase_time) <= d365_date\n      THEN 1 ELSE 0\n    END AS renewed_flag\n  FROM play_live_history\n  WHERE effective_pack_end_date BETWEEN DATE('2022-04-01') AND DATE('2025-03-31')\n    -- AND coalesce(is_enterprise,0) = 0\n),\n\ncombined_flagged AS (\n  SELECT * FROM flagged_core\n  UNION ALL\n  SELECT * FROM flagged_play_live\n),\n\nuser_overall AS (\n  SELECT\n    CASE\n      WHEN month(date_month) >= 4\n      THEN concat('FY', cast(year(date_month) + 1 AS varchar), '-', substr(cast(year(date_month) + 2 AS varchar), 3, 2))\n      ELSE concat('FY', cast(year(date_month) AS varchar), '-', substr(cast(year(date_month) + 1 AS varchar), 3, 2))\n    END AS financial_year,\n    CASE\n      WHEN month(date_month) >= 4 THEN year(date_month)\n      ELSE year(date_month) - 1\n    END AS fy_start_year,\n    count(DISTINCT membership_key) AS base,\n    count(DISTINCT CASE WHEN renewed_flag = 1 THEN membership_key END) AS renewed_users\n  FROM combined_flagged\n  GROUP BY 1,2\n),\n\nfinal_users AS (\n  SELECT * FROM user_overall\n)\n\nSELECT\n  financial_year,\n  round(100.0 * renewed_users / nullif(base, 0), 2) AS d365_pct\nFROM final_users\nORDER BY fy_start_year DESC\n",
+          "lib/type": "mbql.stage/native"
+        }
+      ]
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 3,
+    "running_time": null
+  }
+}
