@@ -75,8 +75,8 @@
   },
   "visualization_settings": {
     "table.pivot_column": "financial_year",
-    "table.cell_column": "base"
-  },
+    "table.cell_column": "d365_pct"
+  }
   "collection": {
     "authority_level": null,
     "description": null,
