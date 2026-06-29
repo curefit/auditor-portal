@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 139,
+  "count": 141,
   "entries": [
     {
       "cardId": "75753",
@@ -6428,6 +6428,108 @@
       },
       "sheetMetricVia": "card",
       "entryKey": "card:85343:drhp:27"
+    },
+    {
+      "cardId": "86149",
+      "name": "Avant Footwear ASP",
+      "rootKey": "question-86149",
+      "rootAssetName": "Avant Footwear ASP",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/86149",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/86149__footwear-sub-category-asp.sql",
+        "metadata": "artifacts/metadata/86149__footwear-sub-category-asp.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-86149__86149__footwear-sub-category-asp.csv",
+        "artifacts/results/question-86149__86149__footwear-sub-category-asp.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 36,
+        "slNo": "17",
+        "metricName": "Avant Footwear ASP",
+        "definition": "ASP of Footwear Portfolio on Sub Category level ( Avant Footwear ) across our own channel and Marketplace",
+        "status": "",
+        "poc": "",
+        "units": "INR",
+        "fy23": "",
+        "fy24": "",
+        "fy25": "",
+        "fy26": "845",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/86149-footwear-sub-category-asp",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:86149:drhp:36"
+    },
+    {
+      "cardId": "86149",
+      "name": "CultSport Footwear ASP",
+      "rootKey": "question-86149",
+      "rootAssetName": "CultSport Footwear ASP",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/86149",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/86149__footwear-sub-category-asp.sql",
+        "metadata": "artifacts/metadata/86149__footwear-sub-category-asp.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-86149__86149__footwear-sub-category-asp.csv",
+        "artifacts/results/question-86149__86149__footwear-sub-category-asp.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_d2c_metrics.bizfin_sales_data",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 37,
+        "slNo": "18",
+        "metricName": "CultSport Footwear ASP",
+        "definition": "ASP of Footwear Portfolio on Sub Category level ( CultSport Footwear ) across our own channel and Marketplace",
+        "status": "",
+        "poc": "",
+        "units": "INR",
+        "fy23": "",
+        "fy24": "",
+        "fy25": "",
+        "fy26": "2,075",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/86149-footwear-sub-category-asp",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card",
+      "entryKey": "card:86149:drhp:37"
     },
     {
       "cardId": "84487",
