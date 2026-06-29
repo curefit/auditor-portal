@@ -1,0 +1,225 @@
+{
+  "cache_invalidated_at": "2026-06-29T13:38:41.281107Z",
+  "description": null,
+  "archived": false,
+  "view_count": 14,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(4)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "year",
+      "lib/original-name": "year",
+      "name": "year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "year",
+      "display_name": "year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 4
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "business_category",
+      "lib/original-name": "business_category",
+      "name": "business_category",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "business_category",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "business_category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "business_category",
+      "display_name": "business_category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 12.5
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "asp",
+      "lib/original-name": "asp",
+      "name": "asp",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "asp",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "asp",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "asp",
+      "display_name": "asp",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 845,
+            "q1": 845,
+            "q3": 2075,
+            "max": 2075,
+            "sd": 869.7413408594534,
+            "avg": 1460
+          }
+        }
+      },
+      "base_type": "type/Float"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-06-16T09:27:45.522093Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": false,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 6597,
+  "query_type": "native",
+  "name": "Footwear Sub Category ASP",
+  "last_query_start": "2026-06-29T14:25:36.840465Z",
+  "is_remote_synced": false,
+  "dashboard_count": 1,
+  "document_id": null,
+  "last_used_at": "2026-06-29T14:25:36.846075Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 3078.0000000000000000,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-06-29T13:38:41.272124Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": 345600,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "native": "SELECT\n    year,\n\tbusiness_category,\n\tROUND(base_amount * 1.000/total_units) AS asp\nFROM \n(\n    SELECT\n        business_category,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n         AND business_category IN ('Avant Footwear','CS Footwear')\n\t\tAND manual_channel_type IN ('1P','3P','EBO')\n    GROUP BY 1\n) t\nWHERE 1 = 1\nORDER BY business_category",
+        "lib/type": "mbql.stage/native"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 86149,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "-92ewxYhBxV0Ip16Cyb4R",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-06-29T13:38:41.328952Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "year",
+    "table.cell_column": "asp",
+    "table.transpose": false,
+    "pie.metric": "base_amount",
+    "pie.dimension": [
+      "business_category"
+    ],
+    "pie.percent_visibility": "off",
+    "table.pivot": true,
+    "column_settings": {}
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "sales_data",
+    "archive_operation_id": null,
+    "name": "Sales Data",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 6597,
+    "archived_directly": null,
+    "entity_id": "tw8Fq_0wBJSD8gmTKgYtX",
+    "location": "/4814/5587/6459/5602/6582/6583/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-02-12T04:21:56.850528Z"
+  },
+  "metabase_version": "v0.60.1 (feddd55)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-06-29T12:22:14.737665Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

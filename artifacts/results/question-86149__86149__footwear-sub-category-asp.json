@@ -1,0 +1,83 @@
+{
+  "card_id": 86149,
+  "card_name": "Footwear Sub Category ASP",
+  "parameters": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "FY26",
+          "Avant Footwear",
+          845.0
+        ],
+        [
+          "FY26",
+          "CS Footwear",
+          2075.0
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "varchar(4)",
+          "lib/deduplicated-name": "year",
+          "lib/original-name": "year",
+          "name": "year",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "year",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "year",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "year",
+          "display_name": "year",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "varchar",
+          "lib/deduplicated-name": "business_category",
+          "lib/original-name": "business_category",
+          "name": "business_category",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "business_category",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "business_category",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "business_category",
+          "display_name": "business_category",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "double",
+          "lib/deduplicated-name": "asp",
+          "lib/original-name": "asp",
+          "name": "asp",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "asp",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "asp",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "asp",
+          "display_name": "asp",
+          "base_type": "type/Float"
+        }
+      ]
+    }
+  }
+}
