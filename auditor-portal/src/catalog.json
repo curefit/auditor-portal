@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 141,
+  "count": 142,
   "entries": [
     {
       "cardId": "75753",
@@ -729,6 +729,119 @@
         "nineMFy25": "",
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/85463-biometric-center-count",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "86193",
+      "name": "# users from whom weight, bmi, bca data is collected",
+      "rootKey": "question-86193",
+      "rootAssetName": "# users from whom weight, bmi, bca data is collected",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/86193",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/86193__unique-users-all-health-activities-bmi-wieght.sql",
+        "metadata": "artifacts/metadata/86193__unique-users-all-health-activities-bmi-wieght.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-86193__86193__unique-users-all-health-activities-bmi-wieght.csv",
+        "artifacts/results/question-86193__86193__unique-users-all-health-activities-bmi-wieght.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "pk_cultprod_user_fitness.user_assessment",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cultprod_user_fitness.user_stage",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cultprod_user_fitness.user_step",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cultprod_user_fitness.step",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_cultprod_user_fitness.stage",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_prod_curefit_prod.activitystores",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitprod_metric_service.user_metric",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_curefitprod_metric_service.metric",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 24,
+        "slNo": "52",
+        "metricName": "# users from whom weight, bmi, bca data is collected",
+        "definition": "# of unique users from whom the data on weight, BMI, BCA, other health data is collected till 31st Mar 2026",
+        "status": "Done",
+        "poc": "",
+        "units": "# Mn",
+        "fy23": "",
+        "fy24": "",
+        "fy25": "",
+        "fy26": "2.73",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/86193-unique-users-all-health-activities-bmi-wieght?Start=2016-01-01&end=2026-03-31",
         "limitations": ""
       },
       "sheetMetricVia": "card"

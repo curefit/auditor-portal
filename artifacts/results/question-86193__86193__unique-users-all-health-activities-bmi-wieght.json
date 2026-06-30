@@ -1,0 +1,51 @@
+{
+  "card_id": 86193,
+  "card_name": "Unique users - all health activities - BMI + Wieght",
+  "parameters": [
+    {
+      "id": "b27f9d76-7088-466c-adb8-e40e4ef985f0",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "Start"
+        ]
+      ],
+      "name": "Start",
+      "slug": "Start",
+      "value": "2016-01-01"
+    },
+    {
+      "id": "64343020-f1c3-462d-bcf2-fef36a52acbb",
+      "type": "date/single",
+      "target": [
+        "variable",
+        [
+          "template-tag",
+          "end"
+        ]
+      ],
+      "name": "End",
+      "slug": "end",
+      "value": "2026-03-31"
+    }
+  ],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          2730995
+        ]
+      ],
+      "cols": [
+        {
+          "name": "total_unique_users",
+          "display_name": "total_unique_users",
+          "base_type": "type/BigInteger",
+          "effective_type": "type/BigInteger"
+        }
+      ]
+    }
+  }
+}
