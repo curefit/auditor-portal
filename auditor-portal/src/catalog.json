@@ -868,7 +868,7 @@
       ],
       "sqlLineageRelations": [
         {
-          "relation": "stage_dwh.dwh_finance_consolidated_ledger_v2",
+          "relation": "dwh_finance.consolidated_ledger_v2",
           "dbtModelPaths": [],
           "githubBlobUrls": [],
           "localSqlUrls": [],
