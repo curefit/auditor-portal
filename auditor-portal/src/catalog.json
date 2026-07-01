@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-02T15:28:21.637Z",
   "basePath": "/handoff/",
-  "count": 141,
+  "count": 142,
   "entries": [
     {
       "cardId": "75753",
@@ -729,6 +729,56 @@
         "nineMFy25": "",
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/85463-biometric-center-count",
+        "limitations": ""
+      },
+      "sheetMetricVia": "card"
+    },
+    {
+      "cardId": "86316",
+      "name": "Pack Pricing",
+      "rootKey": "question-86316",
+      "rootAssetName": "Pack Pricing",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/86316",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/86316__pack-pricing-dump-31st-march.sql",
+        "metadata": "artifacts/metadata/86316__pack-pricing-dump-31st-march.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-86316__86316__pack-pricing-dump-31st-march.csv",
+        "artifacts/results/question-86316__86316__pack-pricing-dump-31st-march.json"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "stage_dwh.dwh_finance_consolidated_ledger_v2",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 21,
+        "slNo": "20",
+        "metricName": "Pack Pricing",
+        "definition": "12 month Pack price range for each SKU, representing the prevailing membership fees charged across its centres",
+        "status": "",
+        "poc": "",
+        "units": "INR",
+        "fy23": "",
+        "fy24": "Refer to \"Business section metrics - Responses\" sheet",
+        "fy25": "",
+        "fy26": "",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/86316-pack-pricing-dump-31st-march",
         "limitations": ""
       },
       "sheetMetricVia": "card"

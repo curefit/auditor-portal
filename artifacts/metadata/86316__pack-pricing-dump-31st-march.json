@@ -1,0 +1,2462 @@
+{
+  "cache_invalidated_at": null,
+  "description": null,
+  "archived": false,
+  "view_count": 1,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Category",
+      "lib/deduplicated-name": "sales_type",
+      "lib/original-name": "sales_type",
+      "name": "sales_type",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "sales_type",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "sales_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "sales_type",
+      "display_name": "sales_type",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 8,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 32.0066
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "category",
+      "lib/original-name": "category",
+      "name": "category",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "category",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "category",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "category",
+      "display_name": "category",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 12,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.9854
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "order_id",
+      "lib/original-name": "order_id",
+      "name": "order_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "order_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "order_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "order_id",
+      "display_name": "order_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4996,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 10.057
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "date",
+      "semantic_type": "type/CreationDate",
+      "lib/deduplicated-name": "order_created_date",
+      "lib/original-name": "order_created_date",
+      "name": "order_created_date",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "order_created_date",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "order_created_date",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "effective_type": "type/Date",
+      "lib/desired-column-alias": "order_created_date",
+      "display_name": "order_created_date",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2026-03-31",
+            "latest": "2026-03-31"
+          }
+        }
+      },
+      "base_type": "type/Date"
+    },
+    {
+      "database_type": "date",
+      "semantic_type": null,
+      "lib/deduplicated-name": "order_month",
+      "lib/original-name": "order_month",
+      "name": "order_month",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "order_month",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "order_month",
+        {
+          "base-type": "type/Date"
+        }
+      ],
+      "effective_type": "type/Date",
+      "lib/desired-column-alias": "order_month",
+      "display_name": "order_month",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2026-03-01",
+            "latest": "2026-03-01"
+          }
+        }
+      },
+      "base_type": "type/Date"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "user_id",
+      "lib/original-name": "user_id",
+      "name": "user_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "user_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "user_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "user_id",
+      "display_name": "user_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4907,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.375
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "fitso_user_id",
+      "lib/original-name": "fitso_user_id",
+      "name": "fitso_user_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fitso_user_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fitso_user_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "fitso_user_id",
+      "display_name": "fitso_user_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 206,
+          "nil%": 0.959
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.3144
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Source",
+      "lib/deduplicated-name": "source",
+      "lib/original-name": "source",
+      "name": "source",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "source",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "source",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "source",
+      "display_name": "source",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 9,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 11.9594
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pack_id",
+      "lib/original-name": "pack_id",
+      "name": "pack_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pack_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pack_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "pack_id",
+      "display_name": "pack_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 640,
+          "nil%": 0.015
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 13.81
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pack_name",
+      "lib/original-name": "pack_name",
+      "name": "pack_name",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pack_name",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pack_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "pack_name",
+      "display_name": "pack_name",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 207,
+          "nil%": 0.0078
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 26.0576
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "membership_service_id",
+      "lib/original-name": "membership_service_id",
+      "name": "membership_service_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "membership_service_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "membership_service_id",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "effective_type": "type/BigInteger",
+      "lib/desired-column-alias": "membership_service_id",
+      "display_name": "membership_service_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4079,
+          "nil%": 0.1842
+        },
+        "type": {
+          "type/Number": {
+            "min": 89754582.0,
+            "q1": 90883837.1874261,
+            "q3": 90892232.57121207,
+            "max": 90897086.0,
+            "sd": 22835.462308525053,
+            "avg": 90887393.09340525
+          }
+        }
+      },
+      "base_type": "type/BigInteger"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Category",
+      "lib/deduplicated-name": "revenue_type",
+      "lib/original-name": "revenue_type",
+      "name": "revenue_type",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "revenue_type",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "revenue_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "revenue_type",
+      "display_name": "revenue_type",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.9972
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "mrp",
+      "lib/original-name": "mrp",
+      "name": "mrp",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "mrp",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "mrp",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "mrp",
+      "display_name": "mrp",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 326,
+          "nil%": 0.0308
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 24009.64935232779,
+            "q3": 46138.27634725728,
+            "max": 199999.0,
+            "sd": 19676.923987003363,
+            "avg": 39231.459966983064
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "price",
+      "lib/original-name": "price",
+      "name": "price",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "price",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "price",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "price",
+      "display_name": "price",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 736,
+          "nil%": 0.0134
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 11826.284320561517,
+            "q3": 15813.254761153446,
+            "max": 226800.0,
+            "sd": 12269.401797577602,
+            "avg": 15617.918848570851
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": "type/Discount",
+      "lib/deduplicated-name": "instant_discount",
+      "lib/original-name": "instant_discount",
+      "name": "instant_discount",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "instant_discount",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "instant_discount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "instant_discount",
+      "display_name": "instant_discount",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 169,
+          "nil%": 0.8376
+        },
+        "type": {
+          "type/Number": {
+            "min": 178.0,
+            "q1": 696.9516613454487,
+            "q3": 1689.2641942950913,
+            "max": 5425.0,
+            "sd": 575.4515236192906,
+            "avg": 1133.6949753694582
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "fitcash",
+      "lib/original-name": "fitcash",
+      "name": "fitcash",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fitcash",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fitcash",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "fitcash",
+      "display_name": "fitcash",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 29,
+          "nil%": 0.0202
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 0.5997505724630652,
+            "max": 17349.0,
+            "sd": 248.8367819846671,
+            "avg": 4.507858746682997
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "platform_fee",
+      "lib/original-name": "platform_fee",
+      "name": "platform_fee",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "platform_fee",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "platform_fee",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "platform_fee",
+      "display_name": "platform_fee",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 6,
+          "nil%": 0.2076
+        },
+        "type": {
+          "type/Number": {
+            "min": 46.0,
+            "q1": 125.99427252221724,
+            "q3": 162.2358119870459,
+            "max": 223.0,
+            "sd": 16.890909160723783,
+            "avg": 136.29404341241798
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "total_amount_payable",
+      "lib/original-name": "total_amount_payable",
+      "name": "total_amount_payable",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "total_amount_payable",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "total_amount_payable",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "total_amount_payable",
+      "display_name": "total_amount_payable",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 761,
+          "nil%": 0.0028
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 11680.62109411585,
+            "q3": 15932.779063859494,
+            "max": 226800.0,
+            "sd": 12229.465704009966,
+            "avg": 15532.193782591256
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "fitcash_refunded",
+      "lib/original-name": "fitcash_refunded",
+      "name": "fitcash_refunded",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fitcash_refunded",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fitcash_refunded",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "fitcash_refunded",
+      "display_name": "fitcash_refunded",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Number": {
+            "min": null,
+            "q1": null,
+            "q3": null,
+            "max": null,
+            "sd": null,
+            "avg": null
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "total_refund",
+      "lib/original-name": "total_refund",
+      "name": "total_refund",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "total_refund",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "total_refund",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "total_refund",
+      "display_name": "total_refund",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 15,
+          "nil%": 0.9972
+        },
+        "type": {
+          "type/Number": {
+            "min": 400.0,
+            "q1": 10000.0,
+            "q3": 15310.0,
+            "max": 125500.0,
+            "sd": 30687.225903000675,
+            "avg": 21291.52571428571
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "gmv",
+      "lib/original-name": "gmv",
+      "name": "gmv",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "gmv",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "gmv",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "gmv",
+      "display_name": "gmv",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 735,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": -125500.0,
+            "q1": 11618.300541781578,
+            "q3": 15963.872043642245,
+            "max": 226800.0,
+            "sd": 12441.208257341994,
+            "avg": 15576.3259
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Source",
+      "lib/deduplicated-name": "max_payment_channel",
+      "lib/original-name": "max_payment_channel",
+      "name": "max_payment_channel",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "max_payment_channel",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "max_payment_channel",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "max_payment_channel",
+      "display_name": "max_payment_channel",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 16,
+          "nil%": 0.0078
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.3194
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "selected_payment_mode",
+      "lib/original-name": "selected_payment_mode",
+      "name": "selected_payment_mode",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "selected_payment_mode",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "selected_payment_mode",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "selected_payment_mode",
+      "display_name": "selected_payment_mode",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 22,
+          "nil%": 0.0264
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.5036
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Source",
+      "lib/deduplicated-name": "group_order_payment_channel",
+      "lib/original-name": "group_order_payment_channel",
+      "name": "group_order_payment_channel",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "group_order_payment_channel",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "group_order_payment_channel",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "group_order_payment_channel",
+      "display_name": "group_order_payment_channel",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 15,
+          "nil%": 0.0078
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.265
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "group_order_payment_mode",
+      "lib/original-name": "group_order_payment_mode",
+      "name": "group_order_payment_mode",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "group_order_payment_mode",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "group_order_payment_mode",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "group_order_payment_mode",
+      "display_name": "group_order_payment_mode",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 21,
+          "nil%": 0.0264
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.3676
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "integer",
+      "semantic_type": null,
+      "lib/deduplicated-name": "is_gift_card_used",
+      "lib/original-name": "is_gift_card_used",
+      "name": "is_gift_card_used",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "is_gift_card_used",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "is_gift_card_used",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "effective_type": "type/Integer",
+      "lib/desired-column-alias": "is_gift_card_used",
+      "display_name": "is_gift_card_used",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0186
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 0.30997053422810933,
+            "max": 1.0,
+            "sd": 0.12819874807671355,
+            "avg": 0.016710821275728552
+          }
+        }
+      },
+      "base_type": "type/Integer"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "gift_card_amount",
+      "lib/original-name": "gift_card_amount",
+      "name": "gift_card_amount",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "gift_card_amount",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "gift_card_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "gift_card_amount",
+      "display_name": "gift_card_amount",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 45,
+          "nil%": 0.9836
+        },
+        "type": {
+          "type/Number": {
+            "min": 10.0,
+            "q1": 9544.3223563717,
+            "q3": 14867.267448582994,
+            "max": 42845.0,
+            "sd": 7046.462309305212,
+            "avg": 12607.783170731707
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "final_center_name",
+      "lib/original-name": "final_center_name",
+      "name": "final_center_name",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "final_center_name",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "final_center_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "final_center_name",
+      "display_name": "final_center_name",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 766,
+          "nil%": 0.0178
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 23.1804
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "final_center_service_id",
+      "lib/original-name": "final_center_service_id",
+      "name": "final_center_service_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "final_center_service_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "final_center_service_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "final_center_service_id",
+      "display_name": "final_center_service_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 714,
+          "nil%": 0.0178
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 3.6696
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Category",
+      "lib/deduplicated-name": "fin_cen_type",
+      "lib/original-name": "fin_cen_type",
+      "name": "fin_cen_type",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fin_cen_type",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fin_cen_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "fin_cen_type",
+      "display_name": "fin_cen_type",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0354
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.858
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "fin_cen_city",
+      "lib/original-name": "fin_cen_city",
+      "name": "fin_cen_city",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fin_cen_city",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fin_cen_city",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "fin_cen_city",
+      "display_name": "fin_cen_city",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 26,
+          "nil%": 0.0354
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.9662
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "fin_cen_state",
+      "lib/original-name": "fin_cen_state",
+      "name": "fin_cen_state",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fin_cen_state",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fin_cen_state",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "fin_cen_state",
+      "display_name": "fin_cen_state",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 22,
+          "nil%": 0.3192
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 6.2092
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Category",
+      "lib/deduplicated-name": "fin_cen_ownership_type",
+      "lib/original-name": "fin_cen_ownership_type",
+      "name": "fin_cen_ownership_type",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fin_cen_ownership_type",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fin_cen_ownership_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "fin_cen_ownership_type",
+      "display_name": "fin_cen_ownership_type",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0354
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.2892
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "purchase_center_name",
+      "lib/original-name": "purchase_center_name",
+      "name": "purchase_center_name",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "purchase_center_name",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "purchase_center_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "purchase_center_name",
+      "display_name": "purchase_center_name",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 886,
+          "nil%": 0.0178
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 32.0426
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "purchase_center_service_id",
+      "lib/original-name": "purchase_center_service_id",
+      "name": "purchase_center_service_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "purchase_center_service_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "purchase_center_service_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "purchase_center_service_id",
+      "display_name": "purchase_center_service_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 743,
+          "nil%": 0.0178
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 3.6232
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Category",
+      "lib/deduplicated-name": "pur_cen_type",
+      "lib/original-name": "pur_cen_type",
+      "name": "pur_cen_type",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pur_cen_type",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pur_cen_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "pur_cen_type",
+      "display_name": "pur_cen_type",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.1842
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.0508
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pur_cen_city",
+      "lib/original-name": "pur_cen_city",
+      "name": "pur_cen_city",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pur_cen_city",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pur_cen_city",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "pur_cen_city",
+      "display_name": "pur_cen_city",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 25,
+          "nil%": 0.1842
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 6.7482
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pur_cen_state",
+      "lib/original-name": "pur_cen_state",
+      "name": "pur_cen_state",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pur_cen_state",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pur_cen_state",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "pur_cen_state",
+      "display_name": "pur_cen_state",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 22,
+          "nil%": 0.3334
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 6.0634
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "attribution_status",
+      "lib/original-name": "attribution_status",
+      "name": "attribution_status",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "attribution_status",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "attribution_status",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "attribution_status",
+      "display_name": "attribution_status",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.173
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.4124
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "timestamp(3) with time zone",
+      "semantic_type": null,
+      "lib/deduplicated-name": "attribution_date",
+      "lib/original-name": "attribution_date",
+      "name": "attribution_date",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "attribution_date",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "attribution_date",
+        {
+          "base-type": "type/DateTimeWithTZ"
+        }
+      ],
+      "effective_type": "type/DateTimeWithTZ",
+      "lib/desired-column-alias": "attribution_date",
+      "display_name": "attribution_date",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 358,
+          "nil%": 0.2342
+        },
+        "type": {
+          "type/DateTime": {
+            "earliest": "2025-04-10T00:00:00Z",
+            "latest": "2030-01-01T05:30:00Z"
+          }
+        }
+      },
+      "base_type": "type/DateTimeWithTZ"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "attributed_centername",
+      "lib/original-name": "attributed_centername",
+      "name": "attributed_centername",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "attributed_centername",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "attributed_centername",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "attributed_centername",
+      "display_name": "attributed_centername",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 629,
+          "nil%": 0.1844
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 18.832
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "attributed_centerservice_id",
+      "lib/original-name": "attributed_centerservice_id",
+      "name": "attributed_centerservice_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "attributed_centerservice_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "attributed_centerservice_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "attributed_centerservice_id",
+      "display_name": "attributed_centerservice_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 631,
+          "nil%": 0.1844
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 2.9728
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "payment_gateway",
+      "lib/original-name": "payment_gateway",
+      "name": "payment_gateway",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "payment_gateway",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "payment_gateway",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "payment_gateway",
+      "display_name": "payment_gateway",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 15,
+          "nil%": 0.0204
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 6.4296
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pg_method",
+      "lib/original-name": "pg_method",
+      "name": "pg_method",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pg_method",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pg_method",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "pg_method",
+      "display_name": "pg_method",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 15,
+          "nil%": 0.0206
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.9244
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "method_detail",
+      "lib/original-name": "method_detail",
+      "name": "method_detail",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "method_detail",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "method_detail",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "method_detail",
+      "display_name": "method_detail",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 14,
+          "nil%": 0.0206
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.9264
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pg_charges",
+      "lib/original-name": "pg_charges",
+      "name": "pg_charges",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pg_charges",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pg_charges",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "pg_charges",
+      "display_name": "pg_charges",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 888,
+          "nil%": 0.291
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 3.2123473917458014,
+            "q3": 195.44774091668225,
+            "max": 2581.9199999999996,
+            "sd": 145.41693035373072,
+            "avg": 125.66178208208736
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "juspay_charges",
+      "lib/original-name": "juspay_charges",
+      "name": "juspay_charges",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "juspay_charges",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "juspay_charges",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "juspay_charges",
+      "display_name": "juspay_charges",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 527,
+          "nil%": 0.3744
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0198,
+            "q1": 14.552859802286129,
+            "q3": 17.09128149114427,
+            "max": 174.24,
+            "sd": 7.8198622494365555,
+            "avg": 16.197496388427158
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "integer",
+      "semantic_type": null,
+      "lib/deduplicated-name": "is_ppc",
+      "lib/original-name": "is_ppc",
+      "name": "is_ppc",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "is_ppc",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "is_ppc",
+        {
+          "base-type": "type/Integer"
+        }
+      ],
+      "effective_type": "type/Integer",
+      "lib/desired-column-alias": "is_ppc",
+      "display_name": "is_ppc",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.0,
+            "q1": 0.0,
+            "q3": 0.3007724338093988,
+            "max": 1.0,
+            "sd": 0.08798129427115928,
+            "avg": 0.0078
+          }
+        }
+      },
+      "base_type": "type/Integer"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "gst_base_amt",
+      "lib/original-name": "gst_base_amt",
+      "name": "gst_base_amt",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "gst_base_amt",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "gst_base_amt",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "gst_base_amt",
+      "display_name": "gst_base_amt",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 812,
+          "nil%": 0.0082
+        },
+        "type": {
+          "type/Number": {
+            "min": -119523.80952380953,
+            "q1": 10742.779827497083,
+            "q3": 14978.993928273137,
+            "max": 216000.0,
+            "sd": 11865.176493354149,
+            "avg": 14398.442430354495
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "gst%",
+      "lib/original-name": "gst%",
+      "name": "gst%",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "gst%",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "gst%",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "gst%",
+      "display_name": "gst%",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 22,
+          "nil%": 0.0082
+        },
+        "type": {
+          "type/Number": {
+            "min": 4.999980188682984,
+            "q1": 4.999999750680843,
+            "q3": 5.000000893318011,
+            "max": 18.0,
+            "sd": 3.065485135116031,
+            "avg": 5.768098402035932
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "gst_amt",
+      "lib/original-name": "gst_amt",
+      "name": "gst_amt",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "gst_amt",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "gst_amt",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "gst_amt",
+      "display_name": "gst_amt",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 811,
+          "nil%": 0.0082
+        },
+        "type": {
+          "type/Number": {
+            "min": -5976.190476190476,
+            "q1": 561.8739752332265,
+            "q3": 772.5347133672225,
+            "max": 10800.0,
+            "sd": 654.4103559542472,
+            "avg": 786.7211226251137
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "cgst",
+      "lib/original-name": "cgst",
+      "name": "cgst",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "cgst",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "cgst",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "cgst",
+      "display_name": "cgst",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 791,
+          "nil%": 0.0162
+        },
+        "type": {
+          "type/Number": {
+            "min": -2259.6101694915255,
+            "q1": 282.0277586377633,
+            "q3": 387.16179878699313,
+            "max": 5400.0,
+            "sd": 322.7261760318949,
+            "avg": 396.8893857402232
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "sgst",
+      "lib/original-name": "sgst",
+      "name": "sgst",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "sgst",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "sgst",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "sgst",
+      "display_name": "sgst",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 791,
+          "nil%": 0.0162
+        },
+        "type": {
+          "type/Number": {
+            "min": -2259.6101694915255,
+            "q1": 282.0277586377633,
+            "q3": 387.16179878699313,
+            "max": 5400.0,
+            "sd": 322.7261760318949,
+            "avg": 396.8893857402232
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pfgst_base",
+      "lib/original-name": "pfgst_base",
+      "name": "pfgst_base",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pfgst_base",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pfgst_base",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "pfgst_base",
+      "display_name": "pfgst_base",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 6,
+          "nil%": 0.209
+        },
+        "type": {
+          "type/Number": {
+            "min": 38.98,
+            "q1": 106.7745143763884,
+            "q3": 137.48800468359715,
+            "max": 188.98,
+            "sd": 14.320232578423735,
+            "avg": 115.50135018963337
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "bigint",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pfgst%",
+      "lib/original-name": "pfgst%",
+      "name": "pfgst%",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pfgst%",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pfgst%",
+        {
+          "base-type": "type/BigInteger"
+        }
+      ],
+      "effective_type": "type/BigInteger",
+      "lib/desired-column-alias": "pfgst%",
+      "display_name": "pfgst%",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.209
+        },
+        "type": {
+          "type/Number": {
+            "min": 18.0,
+            "q1": 18.0,
+            "q3": 18.0,
+            "max": 18.0,
+            "sd": 0.0,
+            "avg": 18.0
+          }
+        }
+      },
+      "base_type": "type/BigInteger"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "pfgst_amt",
+      "lib/original-name": "pfgst_amt",
+      "name": "pfgst_amt",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "pfgst_amt",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "pfgst_amt",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "pfgst_amt",
+      "display_name": "pfgst_amt",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 6,
+          "nil%": 0.209
+        },
+        "type": {
+          "type/Number": {
+            "min": 7.02,
+            "q1": 19.22373252764376,
+            "q3": 24.75231929619477,
+            "max": 34.02,
+            "sd": 2.5776778668234943,
+            "avg": 20.79498356510746
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "sellerdetails_gstinno",
+      "lib/original-name": "sellerdetails_gstinno",
+      "name": "sellerdetails_gstinno",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "sellerdetails_gstinno",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "sellerdetails_gstinno",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "sellerdetails_gstinno",
+      "display_name": "sellerdetails_gstinno",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 30,
+          "nil%": 0.0162
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 14.613
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "sellerdetails_sellerid",
+      "lib/original-name": "sellerdetails_sellerid",
+      "name": "sellerdetails_sellerid",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "sellerdetails_sellerid",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "sellerdetails_sellerid",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "sellerdetails_sellerid",
+      "display_name": "sellerdetails_sellerid",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 33,
+          "nil%": 0.0162
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 19.1324
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "sellerdetails_name",
+      "lib/original-name": "sellerdetails_name",
+      "name": "sellerdetails_name",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "sellerdetails_name",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "sellerdetails_name",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "sellerdetails_name",
+      "display_name": "sellerdetails_name",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 8,
+          "nil%": 0.0162
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 31.5242
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "invoice_no",
+      "lib/original-name": "invoice_no",
+      "name": "invoice_no",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "invoice_no",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "invoice_no",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "invoice_no",
+      "display_name": "invoice_no",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4920,
+          "nil%": 0.0162
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 9.8546
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "extrachargeinvoiceid",
+      "lib/original-name": "extrachargeinvoiceid",
+      "name": "extrachargeinvoiceid",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "extrachargeinvoiceid",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "extrachargeinvoiceid",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "extrachargeinvoiceid",
+      "display_name": "extrachargeinvoiceid",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3957,
+          "nil%": 0.0162
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 7.91
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": "type/Subscription",
+      "lib/deduplicated-name": "subscription_id",
+      "lib/original-name": "subscription_id",
+      "name": "subscription_id",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "subscription_id",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "subscription_id",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "subscription_id",
+      "display_name": "subscription_id",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 206,
+          "nil%": 0.959
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.246
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "purchase_token",
+      "lib/original-name": "purchase_token",
+      "name": "purchase_token",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "purchase_token",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "purchase_token",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "purchase_token",
+      "display_name": "purchase_token",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "test_flag",
+      "lib/original-name": "test_flag",
+      "name": "test_flag",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "test_flag",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "test_flag",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "test_flag",
+      "display_name": "test_flag",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar",
+      "semantic_type": null,
+      "lib/deduplicated-name": "bill_details",
+      "lib/original-name": "bill_details",
+      "name": "bill_details",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "bill_details",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "bill_details",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "bill_details",
+      "display_name": "bill_details",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 1,
+          "nil%": 1.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 0.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "is_data_analyst": false,
+    "last_login": "2026-06-17T14:56:00.844263Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3412,
+    "last_name": "Vardhan",
+    "tenant_id": null,
+    "date_joined": "2024-03-26T08:14:04.682555Z",
+    "common_name": "Harsha Vardhan"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7276,
+  "query_type": "native",
+  "name": "Pack pricing dump - 31st march",
+  "last_query_start": null,
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-07-01T12:08:19.921788Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": null,
+  "creator_id": 3412,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-07-01T12:08:19.921788Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "native": "SELECT * FROM stage_dwh.dwh_finance_consolidated_ledger_v2 WHERE order_created_date = DATE '2026-03-31'\n",
+        "lib/type": "mbql.stage/native"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 86316,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "u9t87TZYVVZW8Xi3jiONh",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3412,
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "last_name": "Vardhan",
+    "timestamp": "2026-07-01T12:08:19.959303Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "pur_cen_type",
+    "table.cell_column": "mrp"
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "corpdev___harsha",
+    "archive_operation_id": null,
+    "name": "Corpdev - Harsha",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7276,
+    "archived_directly": null,
+    "entity_id": "Qs7W4IGmsoC2tyO2oY5bs",
+    "location": "/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-05-28T12:55:24.035837Z"
+  },
+  "metabase_version": "v0.60.1 (feddd55)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-07-01T12:08:19.921788Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}
