@@ -201,6 +201,7 @@ function parseOpMetricsSheet(csvText) {
       h1Fy27: "",
       h1SourceUrl: null,
       h1ResultCsvUrl: null,
+      h1ResultCsvUrls: [],
       lifecycle: "active",
     };
 
@@ -245,18 +246,22 @@ function parseH1MetricsOverlay(csvText, mapping) {
   }
 
   const excluded = new Set((mapping.excludedSourceCardIds ?? []).map(String));
-  const h1ResultFiles = mapping.h1ResultFiles ?? {};
-  if (Object.keys(h1ResultFiles).length !== 7) {
-    throw new Error("H1 result CSV mapping must contain exactly the seven supplied files.");
-  }
-  for (const [targetKey, resultPath] of Object.entries(h1ResultFiles)) {
-    if (typeof resultPath !== "string" || !resultPath.startsWith("results/h1/")) {
-      throw new Error(`H1 result CSV mapping for ${targetKey} must be an artifacts/results/h1 path.`);
+  const h1ResultFiles = new Map();
+  for (const [targetKey, resultPaths] of Object.entries(mapping.h1ResultFiles ?? {})) {
+    const paths = Array.isArray(resultPaths) ? resultPaths : [resultPaths];
+    if (paths.length === 0) {
+      throw new Error(`H1 result CSV mapping for ${targetKey} must include at least one file.`);
     }
-    const fullPath = join(ARTIFACTS, resultPath);
-    if (!existsSync(fullPath) || !statSync(fullPath).isFile()) {
-      throw new Error(`H1 result CSV file is missing for ${targetKey}: ${resultPath}`);
+    for (const resultPath of paths) {
+      if (typeof resultPath !== "string" || !resultPath.startsWith("results/h1/")) {
+        throw new Error(`H1 result CSV mapping for ${targetKey} must be an artifacts/results/h1 path.`);
+      }
+      const fullPath = join(ARTIFACTS, resultPath);
+      if (!existsSync(fullPath) || !statSync(fullPath).isFile()) {
+        throw new Error(`H1 result CSV file is missing for ${targetKey}: ${resultPath}`);
+      }
     }
+    h1ResultFiles.set(targetKey, paths);
   }
   const targetToOverlay = new Map();
   const usedMappingKeys = new Set();
@@ -301,6 +306,7 @@ function parseH1MetricsOverlay(csvText, mapping) {
       h1ResultCsvUrl: index.has("H1 Result CSV")
         ? (row[index.get("H1 Result CSV")] ?? "").trim() || null
         : null,
+      h1ResultCsvUrls: [],
       lifecycle,
     };
 
@@ -309,10 +315,14 @@ function parseH1MetricsOverlay(csvText, mapping) {
       if (targetToOverlay.has(targetKey)) {
         throw new Error(`H1 metrics map targets ${targetKey} more than once.`);
       }
-      const h1ResultFile = h1ResultFiles[targetKey] ?? null;
-      const h1ResultCsvUrl = h1ResultFile ? `artifacts/${h1ResultFile}` : null;
-      if (h1ResultFile) usedH1ResultTargets.add(targetKey);
-      targetToOverlay.set(targetKey, { ...overlay, h1ResultCsvUrl });
+      const h1ResultFilesForTarget = h1ResultFiles.get(targetKey) ?? [];
+      const h1ResultCsvUrls = h1ResultFilesForTarget.map((path) => `artifacts/${path}`);
+      if (h1ResultCsvUrls.length > 0) usedH1ResultTargets.add(targetKey);
+      targetToOverlay.set(targetKey, {
+        ...overlay,
+        h1ResultCsvUrl: h1ResultCsvUrls[0] ?? null,
+        h1ResultCsvUrls,
+      });
     }
   }
 
@@ -324,7 +334,7 @@ function parseH1MetricsOverlay(csvText, mapping) {
   if (usedMappingKeys.size !== Object.keys(mapping.rows ?? {}).length) {
     throw new Error("H1 metrics map contains a row that is absent from the supplied CSV.");
   }
-  if (usedH1ResultTargets.size !== Object.keys(h1ResultFiles).length) {
+  if (usedH1ResultTargets.size !== h1ResultFiles.size) {
     throw new Error("H1 result CSV mapping targets a metric that is absent from the supplied CSV.");
   }
 

@@ -41,6 +41,14 @@ function handoffUrl(rel: string) {
   return `${HANDOFF}${rel.replace(/^\//, "")}`;
 }
 
+function h1ResultLabel(path: string, index: number, total: number) {
+  if (total === 1) return "Open H1 result CSV";
+  const filename = decodeURIComponent(path.split("/").at(-1) ?? `H1 result CSV ${index + 1}`)
+    .replace(/\.csv$/i, "")
+    .replace(/[-_]+/g, " ");
+  return `Open: ${filename}`;
+}
+
 function metabaseUrlFor(entry: CatalogEntry) {
   return (
     entry.sheetMetric?.h1SourceUrl ??
@@ -657,15 +665,29 @@ function DetailPanel({
         {entry.sheetMetric && (
           <section>
             <h3 className="mb-2 text-base font-semibold text-zinc-300">H1 result CSV</h3>
-            {entry.sheetMetric.h1ResultCsvUrl ? (
-              <a
-                href={handoffUrl(entry.sheetMetric.h1ResultCsvUrl)}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm text-emerald-400 hover:underline"
-              >
-                Open H1 result CSV
-              </a>
+            {(entry.sheetMetric.h1ResultCsvUrls?.length
+              ? entry.sheetMetric.h1ResultCsvUrls
+              : entry.sheetMetric.h1ResultCsvUrl
+                ? [entry.sheetMetric.h1ResultCsvUrl]
+                : []
+            ).length > 0 ? (
+              <ul className="space-y-2 text-sm">
+                {(entry.sheetMetric.h1ResultCsvUrls?.length
+                  ? entry.sheetMetric.h1ResultCsvUrls
+                  : [entry.sheetMetric.h1ResultCsvUrl!]
+                ).map((url, index, urls) => (
+                  <li key={url}>
+                    <a
+                      href={handoffUrl(url)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-emerald-400 hover:underline"
+                    >
+                      {h1ResultLabel(url, index, urls.length)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             ) : (
               <p className="text-sm text-zinc-500">Not available yet.</p>
             )}
