@@ -38,6 +38,8 @@ curefit-auditor-handoff-repo/
 ├── artifacts/
 │   ├── dashboard_card_mapping.csv   # maps every Metabase card to its dashboard
 │   ├── op_metrics_sheet.csv         # DRHP op-metrics sheet (re-export from Google Sheets)
+│   ├── drhp_metrics_h1.csv          # FY/H1 overlay for existing Metabase-backed metrics
+│   ├── drhp_metrics_h1_map.json     # reviewed mapping to existing portal card identities
 │   ├── queries/                     # exported SQL per card (*.sql)
 │   ├── metadata/                    # Metabase card metadata JSON per card
 │   ├── results/                     # sample result CSVs
@@ -101,8 +103,8 @@ npm run generate     # if configured in package.json
 **1. Reads `artifacts/dashboard_card_mapping.csv`**
 Every row is one Metabase card. Columns: `root_key`, `root_asset_id`, `dashboard_id`, `dashboard_name`, `card_id`, `card_name`.
 
-**2. Reads `artifacts/op_metrics_sheet.csv`**
-The DRHP op-metrics Google Sheet, exported as CSV. Rows with a `metabase.curefit.co` URL in the Source column are parsed into a `sheetMetric` object with: official metric name, definition, units, FY23–FY26 values, 9M FY25/FY26, PoC, status, and data limitations. Card IDs and dashboard IDs are extracted from the URLs and stored in lookup maps.
+**2. Reads `artifacts/op_metrics_sheet.csv` and the H1 overlay**
+The DRHP op-metrics Google Sheet provides the existing metric labels, definitions, units, and card mappings. `artifacts/drhp_metrics_h1.csv` overlays FY24–FY26 and H1 FY26/FY27 values for Metabase-backed metrics only. Its reviewed map preserves portal card IDs, identifies removed metrics, and excludes source-only rows without portal artifacts.
 
 **3. Fetches dbt model file tree from GitHub**
 Using the GitHub API and `GITHUB_TOKEN`, fetches the full recursive file tree of `DBT_GITHUB_REPO` at `DBT_MODELS_PATH`. Produces a flat list of `.sql` file paths.
@@ -140,12 +142,12 @@ cp .env.example .env
 # 3. Generate the catalog (downloads dbt SQL + notebooks, writes catalog.json)
 node scripts/generate-catalog.mjs
 
-# 4. Start the dev server
+# 4. Start the dev server (does not regenerate tracked files)
 cd auditor-portal && npm run dev
 # → http://localhost:5173
 ```
 
-Re-run step 3 whenever you want to refresh the dbt source files or pick up new cards added to `dashboard_card_mapping.csv` or `op_metrics_sheet.csv`.
+Re-run step 3 deliberately whenever tracked artifacts or the H1 overlay change. `npm run dev` and `npm run build` do not generate tracked files.
 
 ---
 
