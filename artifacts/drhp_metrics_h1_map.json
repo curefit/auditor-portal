@@ -52,8 +52,8 @@
     "86193|52": "results/h1/health-measurements.csv",
     "83969|14": "results/h1/12m-packs-sold.csv",
     "56424|21": [
-      "results/h1/session-rating.csv",
-      "results/h1/fy25-h1-session-rating.csv"
+      "results/h1/fy27-h1-session-rating.csv",
+      "results/h1/fy26-h1-session-rating.csv"
     ]
   }
 }
