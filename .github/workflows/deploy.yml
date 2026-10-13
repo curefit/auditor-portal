@@ -37,8 +37,11 @@ jobs:
 
       - name: Generate catalog + build portal
         # VITE_VISITOR_WEBHOOK_URL is baked into the JS bundle at build time.
-        # npm run build already runs generate-catalog.mjs first (see auditor-portal/package.json)
-        run: npm run build -w curefit-auditor-portal
+        # Generation is explicit: dev/build remain non-mutating, while Pages
+        # receives the copied handoff artifacts used by all result-file links.
+        run: |
+          npm run generate -w curefit-auditor-portal
+          npm run build -w curefit-auditor-portal
         env:
           # PAT with read access to curefit/dbt-data-models and curefit/cf-data-lab
           # Add this in: GitHub repo → Settings → Secrets → Actions → New secret
