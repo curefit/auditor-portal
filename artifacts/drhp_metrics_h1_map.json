@@ -43,5 +43,14 @@
     "removed|28|Cultpass data on % members using multiple cities": [{ "cardId": "75650", "sheetMetricSlNo": "16" }],
     "removed|44|# Health activities tracked": [{ "cardId": "74738", "sheetMetricSlNo": "33" }],
     "removed|42|Corporate clients retention %": [{ "cardId": "85742", "sheetMetricSlNo": "47" }]
+  },
+  "h1ResultFiles": {
+    "47810|11": "results/h1/first-time-user-percentage.csv",
+    "75630|12": "results/h1/female-ratio.csv",
+    "85463|51": "results/h1/biometric-centres.csv",
+    "75628|18": "results/h1/pause-option-usage.csv",
+    "86193|52": "results/h1/health-measurements.csv",
+    "83969|14": "results/h1/12m-packs-sold.csv",
+    "56424|21": "results/h1/session-rating.csv"
   }
 }

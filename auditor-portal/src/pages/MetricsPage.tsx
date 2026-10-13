@@ -659,7 +659,7 @@ function DetailPanel({
             <h3 className="mb-2 text-base font-semibold text-zinc-300">H1 result CSV</h3>
             {entry.sheetMetric.h1ResultCsvUrl ? (
               <a
-                href={entry.sheetMetric.h1ResultCsvUrl}
+                href={handoffUrl(entry.sheetMetric.h1ResultCsvUrl)}
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-emerald-400 hover:underline"
