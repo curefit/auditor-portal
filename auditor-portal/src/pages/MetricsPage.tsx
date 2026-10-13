@@ -41,6 +41,22 @@ function handoffUrl(rel: string) {
   return `${HANDOFF}${rel.replace(/^\//, "")}`;
 }
 
+function h1ResultLabel(path: string, index: number, total: number) {
+  if (total === 1) return "Open H1 result CSV";
+  const filename = decodeURIComponent(path.split("/").at(-1) ?? `H1 result CSV ${index + 1}`)
+    .replace(/\.csv$/i, "")
+    .replace(/[-_]+/g, " ");
+  return `Open: ${filename}`;
+}
+
+function metabaseUrlFor(entry: CatalogEntry) {
+  return (
+    entry.sheetMetric?.h1SourceUrl ??
+    entry.metabaseCardUrl ??
+    `https://metabase.curefit.co/question/${entry.cardId}`
+  );
+}
+
 async function fetchText(path: string): Promise<string> {
   const res = await fetch(handoffUrl(path));
   if (!res.ok) throw new Error(`${res.status} ${path}`);
@@ -55,12 +71,11 @@ async function fetchJson(path: string): Promise<unknown> {
 
 function SheetMetricSection({ metric }: { metric: SheetMetric }) {
   const fyRows = [
-    { label: "FY23", value: metric.fy23 },
     { label: "FY24", value: metric.fy24 },
     { label: "FY25", value: metric.fy25 },
     { label: "FY26", value: metric.fy26 },
-    { label: "9M FY25", value: metric.nineMFy25 },
-    { label: "9M FY26", value: metric.nineMFy26 },
+    { label: "H1 FY26", value: metric.h1Fy26 },
+    { label: "H1 FY27", value: metric.h1Fy27 },
   ].filter((r) => r.value);
 
   return (
@@ -426,7 +441,7 @@ function DashboardGroup({
             <td className="px-4 py-3">
               <div className="flex flex-wrap gap-2">
                 <a
-                  href={card.metabaseCardUrl ?? `https://metabase.curefit.co/question/${card.cardId}`}
+                  href={metabaseUrlFor(card)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-md border border-zinc-700 px-2.5 py-1 text-xs text-zinc-300 hover:bg-zinc-800"
@@ -566,7 +581,7 @@ function DetailPanel({
           )}
           <div className="mt-3 flex flex-wrap gap-2">
             <a
-              href={entry.metabaseCardUrl ?? `https://metabase.curefit.co/question/${entry.cardId}`}
+              href={metabaseUrlFor(entry)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-lg bg-emerald-700 px-3 py-2 text-sm font-medium text-white hover:bg-emerald-600"
@@ -644,6 +659,38 @@ function DetailPanel({
                 </li>
               ))}
             </ul>
+          </section>
+        )}
+
+        {entry.sheetMetric && (
+          <section>
+            <h3 className="mb-2 text-base font-semibold text-zinc-300">H1 result CSV</h3>
+            {(entry.sheetMetric.h1ResultCsvUrls?.length
+              ? entry.sheetMetric.h1ResultCsvUrls
+              : entry.sheetMetric.h1ResultCsvUrl
+                ? [entry.sheetMetric.h1ResultCsvUrl]
+                : []
+            ).length > 0 ? (
+              <ul className="space-y-2 text-sm">
+                {(entry.sheetMetric.h1ResultCsvUrls?.length
+                  ? entry.sheetMetric.h1ResultCsvUrls
+                  : [entry.sheetMetric.h1ResultCsvUrl!]
+                ).map((url, index, urls) => (
+                  <li key={url}>
+                    <a
+                      href={handoffUrl(url)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-emerald-400 hover:underline"
+                    >
+                      {h1ResultLabel(url, index, urls.length)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-zinc-500">Not available yet.</p>
+            )}
           </section>
         )}
       </div>
@@ -756,6 +803,7 @@ export default function MetricsPage() {
   const [q, setQ] = useState("");
   const [dash, setDash] = useState("");
   const [drhpOnly, setDrhpOnly] = useState(true);
+  const [removedOpen, setRemovedOpen] = useState(false);
   const [selected, setSelected] = useState<CatalogEntry | null>(null);
   const [sqlOpen, setSqlOpen] = useState(false);
   const [sqlBody, setSqlBody] = useState<string | null>(null);
@@ -785,7 +833,7 @@ export default function MetricsPage() {
   const drhpCount = useMemo(() => {
     const seen = new Set<string>();
     for (const e of catalog.entries) {
-      if (!e.sheetMetric) continue;
+      if (!e.sheetMetric || e.sheetMetric.lifecycle === "removed") continue;
       const key =
         e.sheetMetricVia === "dashboard" && e.dashboardId
           ? `dash:${e.dashboardId}`
@@ -795,10 +843,19 @@ export default function MetricsPage() {
     return seen.size;
   }, []);
 
+  const removedEntries = useMemo(
+    () =>
+      catalog.entries
+        .filter((entry) => entry.sheetMetric?.lifecycle === "removed")
+        .sort((a, b) => (a.sheetMetric?.sheetOrder ?? 999) - (b.sheetMetric?.sheetOrder ?? 999)),
+    [],
+  );
+
   const displayRows = useMemo((): DisplayRow[] => {
     const qq = q.trim().toLowerCase();
 
     const matchEntry = (e: CatalogEntry) => {
+      if (e.sheetMetric?.lifecycle === "removed") return false;
       if (drhpOnly && !e.sheetMetric) return false;
       if (dash && e.dashboardName !== dash) return false;
       if (!qq) return true;
@@ -1066,10 +1123,7 @@ export default function MetricsPage() {
                     <td className="px-4 py-4">
                       <div className="flex flex-wrap gap-2">
                         <a
-                          href={
-                            e.metabaseCardUrl ??
-                            `https://metabase.curefit.co/question/${e.cardId}`
-                          }
+                          href={metabaseUrlFor(e)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="rounded-md border border-emerald-700/80 bg-emerald-950/40 px-3 py-1.5 text-sm font-medium text-emerald-200 hover:bg-emerald-900/50"
@@ -1104,6 +1158,67 @@ export default function MetricsPage() {
               No metrics match your filters.
             </p>
           )}
+
+          <section className="border-t border-zinc-800 bg-zinc-950/30">
+            <button
+              type="button"
+              onClick={() => setRemovedOpen((open) => !open)}
+              className="flex w-full items-center gap-2 px-6 py-4 text-left text-sm font-semibold text-zinc-400 hover:bg-zinc-900/60 hover:text-zinc-200"
+              aria-expanded={removedOpen}
+            >
+              <span className="text-zinc-500">{removedOpen ? "▾" : "▸"}</span>
+              Removed Metrics ({removedEntries.length})
+            </button>
+            {removedOpen && (
+              <table className="w-full border-collapse text-left text-base">
+                <tbody>
+                  {removedEntries.map((entry) => (
+                    <tr key={entry.entryKey ?? entry.cardId} className="border-t border-zinc-800/80 bg-zinc-950/40">
+                      <td className="px-6 py-4">
+                        <button
+                          type="button"
+                          onClick={() => setSelected(entry)}
+                          className="text-left text-lg font-medium text-zinc-300 hover:text-emerald-400"
+                        >
+                          {entry.sheetMetric?.metricName ?? entry.name}
+                        </button>
+                      </td>
+                      <td className="hidden px-3 py-4 font-mono text-sm text-zinc-500 md:table-cell">{entry.cardId}</td>
+                      <td className="hidden px-3 py-4 lg:table-cell" />
+                      <td className="px-4 py-4">
+                        <div className="flex flex-wrap gap-2">
+                          <a
+                            href={metabaseUrlFor(entry)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-md border border-emerald-700/80 bg-emerald-950/40 px-3 py-1.5 text-sm font-medium text-emerald-200 hover:bg-emerald-900/50"
+                          >
+                            Metabase
+                          </a>
+                          <button
+                            type="button"
+                            onClick={() => setSelected(entry)}
+                            className="rounded-md border border-zinc-700 px-3 py-1.5 text-sm text-zinc-300 hover:bg-zinc-800"
+                          >
+                            Overview
+                          </button>
+                          {entry.paths.query && (
+                            <button
+                              type="button"
+                              onClick={() => handleOpenSql(entry)}
+                              className="rounded-md bg-emerald-700/80 px-3 py-1.5 text-sm text-white hover:bg-emerald-600"
+                            >
+                              SQL
+                            </button>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </section>
         </div>
       </div>
 

@@ -49,6 +49,15 @@ export type SheetMetric = {
   nineMFy26: string;
   limitations: string;
   sourceRaw: string;
+  h1Fy26: string;
+  h1Fy27: string;
+  /** H1 Metabase card URL, when the supplied H1 source has one. */
+  h1SourceUrl: string | null;
+  /** Reserved for a per-metric H1 result CSV supplied in a later refresh. */
+  h1ResultCsvUrl: string | null;
+  /** H1 result CSV files. Supports multiple files for a single metric. */
+  h1ResultCsvUrls: string[];
+  lifecycle: "active" | "removed";
 };
 
 /** Metadata sourced from the DRHP milestones sheet */

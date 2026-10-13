@@ -37,6 +37,8 @@ const DOCS = join(REPO_ROOT, "docs");
 const MAPPING_CSV = join(ARTIFACTS, "dashboard_card_mapping.csv");
 const ROOT_SUMMARY_CSV = join(ARTIFACTS, "root_asset_summary.csv");
 const OP_METRICS_CSV = join(ARTIFACTS, "op_metrics_sheet.csv");
+const H1_METRICS_CSV = join(ARTIFACTS, "drhp_metrics_h1.csv");
+const H1_METRICS_MAP = join(ARTIFACTS, "drhp_metrics_h1_map.json");
 const DRHP_MILESTONES_CSV = join(ARTIFACTS, "drhp_milestones.csv");
 const LINEAGE_DIR = join(DOCS, "lineage");
 const PREVIEWS = join(ARTIFACTS, "previews");
@@ -195,6 +197,12 @@ function parseOpMetricsSheet(csvText) {
       nineMFy26: (cols[15] ?? "").trim(),
       sourceRaw: source,
       limitations: (cols[17] ?? "").trim(),
+      h1Fy26: "",
+      h1Fy27: "",
+      h1SourceUrl: null,
+      h1ResultCsvUrl: null,
+      h1ResultCsvUrls: [],
+      lifecycle: "active",
     };
 
     let m;
@@ -209,6 +217,128 @@ function parseOpMetricsSheet(csvText) {
     }
   }
   return { cardMap, dashboardMap };
+}
+
+function firstMetabaseQuestionUrl(value) {
+  const match = String(value ?? "").match(/https:\/\/metabase\.curefit\.co\/question\/\d+[^\s;]*/i);
+  return match ? match[0] : null;
+}
+
+function metabaseQuestionIds(value) {
+  return [...String(value ?? "").matchAll(/metabase\.curefit\.co\/question\/(\d+)/gi)].map((m) => m[1]);
+}
+
+/**
+ * Reads the H1 overlay supplied by Finance/DRHP. Its columns are located by
+ * header name because the source has an introductory row and can change column
+ * order. The explicit mapping preserves the portal's existing card identities.
+ */
+function parseH1MetricsOverlay(csvText, mapping) {
+  const rows = parseCsvRows(csvText);
+  const headerIndex = rows.findIndex((row) => row.some((cell) => cell.trim() === "S.no"));
+  if (headerIndex < 0) throw new Error("H1 metrics CSV is missing the S.no header row.");
+
+  const header = rows[headerIndex];
+  const index = new Map(header.map((name, i) => [name.trim(), i]));
+  const required = ["S.no", "Metric", "FY24", "FY25", "FY26", "H1 FY26", "H1 FY27", "Source", "Source (H1 no.s)"];
+  for (const name of required) {
+    if (!index.has(name)) throw new Error(`H1 metrics CSV is missing required column: ${name}`);
+  }
+
+  const excluded = new Set((mapping.excludedSourceCardIds ?? []).map(String));
+  const h1ResultFiles = new Map();
+  for (const [targetKey, resultPaths] of Object.entries(mapping.h1ResultFiles ?? {})) {
+    const paths = Array.isArray(resultPaths) ? resultPaths : [resultPaths];
+    if (paths.length === 0) {
+      throw new Error(`H1 result CSV mapping for ${targetKey} must include at least one file.`);
+    }
+    for (const resultPath of paths) {
+      if (typeof resultPath !== "string" || !resultPath.startsWith("results/h1/")) {
+        throw new Error(`H1 result CSV mapping for ${targetKey} must be an artifacts/results/h1 path.`);
+      }
+      const fullPath = join(ARTIFACTS, resultPath);
+      if (!existsSync(fullPath) || !statSync(fullPath).isFile()) {
+        throw new Error(`H1 result CSV file is missing for ${targetKey}: ${resultPath}`);
+      }
+    }
+    h1ResultFiles.set(targetKey, paths);
+  }
+  const targetToOverlay = new Map();
+  const usedMappingKeys = new Set();
+  const usedH1ResultTargets = new Set();
+  const stats = { active: 0, removed: 0, h1Links: 0, excluded: 0 };
+  let lifecycle = "active";
+
+  for (const row of rows.slice(headerIndex + 1)) {
+    if (row.some((cell) => cell.trim().toLowerCase() === "removed metrics")) {
+      lifecycle = "removed";
+      continue;
+    }
+
+    const slNo = (row[index.get("S.no")] ?? "").trim();
+    const metricName = (row[index.get("Metric")] ?? "").trim();
+    const sourceRaw = (row[index.get("Source")] ?? "").trim();
+    if (!slNo || Number.isNaN(Number(slNo)) || !sourceRaw.includes("metabase.curefit.co")) continue;
+
+    const sourceIds = metabaseQuestionIds(sourceRaw);
+    const key = `${lifecycle}|${slNo}|${metricName}`;
+    const targets = mapping.rows?.[key];
+    stats[lifecycle] += 1;
+    if (!targets) {
+      if (sourceIds.length > 0 && sourceIds.every((id) => excluded.has(id))) {
+        stats.excluded += 1;
+        continue;
+      }
+      throw new Error(`H1 metrics row has no portal mapping: ${key}`);
+    }
+
+    const h1SourceUrl = firstMetabaseQuestionUrl(row[index.get("Source (H1 no.s)")] ?? "");
+    if (h1SourceUrl) stats.h1Links += 1;
+    usedMappingKeys.add(key);
+
+    const overlay = {
+      fy24: (row[index.get("FY24")] ?? "").trim(),
+      fy25: (row[index.get("FY25")] ?? "").trim(),
+      fy26: (row[index.get("FY26")] ?? "").trim(),
+      h1Fy26: (row[index.get("H1 FY26")] ?? "").trim(),
+      h1Fy27: (row[index.get("H1 FY27")] ?? "").trim(),
+      h1SourceUrl,
+      h1ResultCsvUrl: index.has("H1 Result CSV")
+        ? (row[index.get("H1 Result CSV")] ?? "").trim() || null
+        : null,
+      h1ResultCsvUrls: [],
+      lifecycle,
+    };
+
+    for (const target of targets) {
+      const targetKey = `${target.cardId}|${target.sheetMetricSlNo}`;
+      if (targetToOverlay.has(targetKey)) {
+        throw new Error(`H1 metrics map targets ${targetKey} more than once.`);
+      }
+      const h1ResultFilesForTarget = h1ResultFiles.get(targetKey) ?? [];
+      const h1ResultCsvUrls = h1ResultFilesForTarget.map((path) => `artifacts/${path}`);
+      if (h1ResultCsvUrls.length > 0) usedH1ResultTargets.add(targetKey);
+      targetToOverlay.set(targetKey, {
+        ...overlay,
+        h1ResultCsvUrl: h1ResultCsvUrls[0] ?? null,
+        h1ResultCsvUrls,
+      });
+    }
+  }
+
+  if (stats.active !== 38 || stats.removed !== 4 || stats.h1Links !== 13 || stats.excluded !== 3) {
+    throw new Error(
+      `Unexpected H1 metrics summary: ${JSON.stringify(stats)}. Expected 38 active, 4 removed, 13 H1 links, and 3 exclusions.`,
+    );
+  }
+  if (usedMappingKeys.size !== Object.keys(mapping.rows ?? {}).length) {
+    throw new Error("H1 metrics map contains a row that is absent from the supplied CSV.");
+  }
+  if (usedH1ResultTargets.size !== h1ResultFiles.size) {
+    throw new Error("H1 result CSV mapping targets a metric that is absent from the supplied CSV.");
+  }
+
+  return targetToOverlay;
 }
 
 /**
@@ -789,6 +919,40 @@ function writeDbtArtifacts(dbt, modelPaths, fetchNote, fallbackDbt, fallbackPath
   );
 }
 
+function readJsonIfPresent(path) {
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function loadCachedDbtArtifacts() {
+  const config = readJsonIfPresent(join(PUBLIC_ROOT, "dbt-config.json"));
+  const models = readJsonIfPresent(join(PUBLIC_ROOT, "dbt-models-index.json"));
+  const notebooks = readJsonIfPresent(join(PUBLIC_ROOT, "dbt-notebooks-index.json"));
+  return {
+    dbt:
+      config?.enabled && config.owner && config.repo && config.ref && Array.isArray(models?.paths)
+        ? { owner: config.owner, repo: config.repo, ref: config.ref, paths: models.paths }
+        : null,
+    fallback:
+      config?.fallback?.enabled &&
+      config.fallback.owner &&
+      config.fallback.repo &&
+      config.fallback.ref &&
+      Array.isArray(notebooks?.paths)
+        ? {
+            owner: config.fallback.owner,
+            repo: config.fallback.repo,
+            ref: config.fallback.ref,
+            paths: notebooks.paths,
+          }
+        : null,
+  };
+}
+
 /**
  * Accepts `owner/repo`, `https://github.com/owner/repo`, or `https://github.com/owner/repo.git`.
  * Returns { owner, repo } or null.
@@ -841,6 +1005,7 @@ async function main() {
   let modelPaths = [];
   let dbt = null;
   let dbtFetchNote;
+  let usingCachedDbt = false;
   let resolvedDbtRef = ref;
 
   if (repoSlug) {
@@ -870,6 +1035,7 @@ async function main() {
   let fallbackPaths = [];
   let fallbackDbt = null;
   let fallbackFetchNote;
+  let usingCachedFallback = false;
   let resolvedFallbackRef = fallbackRef;
   if (fallbackRepoSlug) {
     const parsed = parseGithubRepoSlug(fallbackRepoSlug);
@@ -888,7 +1054,35 @@ async function main() {
     }
   }
 
-  writeDbtArtifacts(dbt, modelPaths, dbtFetchNote, fallbackDbt, fallbackPaths, fallbackFetchNote);
+  const cachedDbtArtifacts = loadCachedDbtArtifacts();
+  if (!dbt && cachedDbtArtifacts.dbt) {
+    dbt = {
+      owner: cachedDbtArtifacts.dbt.owner,
+      repo: cachedDbtArtifacts.dbt.repo,
+      ref: cachedDbtArtifacts.dbt.ref,
+    };
+    modelPaths = cachedDbtArtifacts.dbt.paths;
+    usingCachedDbt = true;
+    dbtFetchNote = [dbtFetchNote, "Using the existing cached dbt index."].filter(Boolean).join(" ");
+    console.warn("[generate-catalog] Preserving the existing cached dbt index after an unavailable fetch.");
+  }
+  if (!fallbackDbt && cachedDbtArtifacts.fallback) {
+    fallbackDbt = {
+      owner: cachedDbtArtifacts.fallback.owner,
+      repo: cachedDbtArtifacts.fallback.repo,
+      ref: cachedDbtArtifacts.fallback.ref,
+    };
+    fallbackPaths = cachedDbtArtifacts.fallback.paths;
+    usingCachedFallback = true;
+    fallbackFetchNote = [fallbackFetchNote, "Using the existing cached notebook index."].filter(Boolean).join(" ");
+    console.warn("[generate-catalog] Preserving the existing cached notebook index after an unavailable fetch.");
+  }
+
+  if (usingCachedDbt || usingCachedFallback) {
+    console.log("[generate-catalog] Existing dbt artifacts retained without rewriting their configuration.");
+  } else {
+    writeDbtArtifacts(dbt, modelPaths, dbtFetchNote, fallbackDbt, fallbackPaths, fallbackFetchNote);
+  }
 
   // Load DRHP op-metrics sheet for metric metadata + filtering
   let sheetCardMap = new Map();
@@ -904,6 +1098,20 @@ async function main() {
     } catch (e) {
       console.warn(`[generate-catalog] Could not parse op_metrics_sheet.csv: ${e.message}`);
     }
+  }
+
+  let h1OverlayByTarget = new Map();
+  if (!existsSync(H1_METRICS_CSV) || !existsSync(H1_METRICS_MAP)) {
+    throw new Error("H1 metrics overlay or its reviewed portal mapping is missing.");
+  }
+  try {
+    h1OverlayByTarget = parseH1MetricsOverlay(
+      readFileSync(H1_METRICS_CSV, "utf8"),
+      JSON.parse(readFileSync(H1_METRICS_MAP, "utf8")),
+    );
+    console.log(`[generate-catalog] H1 metrics overlay: ${h1OverlayByTarget.size} mapped portal entries`);
+  } catch (e) {
+    throw new Error(`Could not apply H1 metrics overlay: ${e instanceof Error ? e.message : String(e)}`);
   }
 
   // Load DRHP milestones sheet for milestone metadata + filtering
@@ -943,6 +1151,7 @@ async function main() {
   for (const id of milestoneCardMap.keys()) cardIds.add(id);
 
   const entries = [];
+  const appliedH1Targets = new Set();
 
   for (const cardId of cardIds) {
     const csv = csvByCard.get(cardId);
@@ -1046,6 +1255,14 @@ async function main() {
       }
     };
 
+    const overlaySheetMetric = (sheetMetric) => {
+      const targetKey = `${cardId}|${sheetMetric.slNo}`;
+      const overlay = h1OverlayByTarget.get(targetKey);
+      if (!overlay) return sheetMetric;
+      appliedH1Targets.add(targetKey);
+      return { ...sheetMetric, ...overlay };
+    };
+
     const sheetCardMetrics = sheetCardMap.get(cardId);
     if (sheetCardMetrics?.length) {
       const metricsForCard = DUPLICATE_SHEET_CARD_IDS.has(cardId)
@@ -1053,19 +1270,20 @@ async function main() {
         : [sheetCardMetrics[0]];
       const needsEntryKey = metricsForCard.length > 1;
       for (const sheetMetric of metricsForCard) {
+        const metric = overlaySheetMetric(sheetMetric);
         const entry = {
           ...baseEntry,
-          sheetMetric,
+          sheetMetric: metric,
           sheetMetricVia: "card",
           milestone: null,
           milestoneVia: null,
         };
-        if (needsEntryKey) entry.entryKey = entryKeyFor(cardId, sheetMetric);
+        if (needsEntryKey) entry.entryKey = entryKeyFor(cardId, metric);
         entries.push(entry);
       }
       pushMilestoneEntries();
     } else if (sheetDashboardMap.has(csv?.dashboard_id?.trim())) {
-      const sheetMetric = sheetDashboardMap.get(csv.dashboard_id.trim());
+      const sheetMetric = overlaySheetMetric(sheetDashboardMap.get(csv.dashboard_id.trim()));
       entries.push({
         ...baseEntry,
         sheetMetric,
@@ -1089,10 +1307,15 @@ async function main() {
     }
   }
 
+  if (appliedH1Targets.size !== h1OverlayByTarget.size) {
+    const missing = [...h1OverlayByTarget.keys()].filter((key) => !appliedH1Targets.has(key));
+    throw new Error(`H1 metrics map targets not found in the existing portal catalog: ${missing.join(", ")}`);
+  }
+
   entries.sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
 
   // Collect unique matched dbt model paths and download them for static serving
-  if (dbt && token) {
+  if (dbt && token && !usingCachedDbt) {
     const uniquePaths = new Set();
     for (const entry of entries) {
       for (const rel of entry.sqlLineageRelations ?? []) {
@@ -1107,7 +1330,7 @@ async function main() {
   }
 
   // Download matched fallback notebooks for static serving
-  if (fallbackDbt && token) {
+  if (fallbackDbt && token && !usingCachedFallback) {
     const uniqueNotebookPaths = new Set();
     for (const entry of entries) {
       for (const rel of entry.sqlLineageRelations ?? []) {

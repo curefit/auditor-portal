@@ -1,0 +1,59 @@
+{
+  "excludedSourceCardIds": ["91948", "93808", "92047"],
+  "rows": {
+    "active|12|# Paid Members": [{ "cardId": "75109", "sheetMetricSlNo": "7" }],
+    "active|13|# Paid members split by city": [{ "cardId": "77280", "sheetMetricSlNo": "8" }],
+    "active|14|# Sessions attended": [
+      { "cardId": "55566", "sheetMetricSlNo": "10" },
+      { "cardId": "75753", "sheetMetricSlNo": "10" }
+    ],
+    "active|17|# Sessions/MAU/month": [{ "cardId": "75114", "sheetMetricSlNo": "9" }],
+    "active|18|Session rating out of 4": [{ "cardId": "56424", "sheetMetricSlNo": "21" }],
+    "active|19|Positive feebdback rating": [{ "cardId": "79589", "sheetMetricSlNo": "34" }],
+    "active|20|% sessions received feedback": [{ "cardId": "79589", "sheetMetricSlNo": "35" }],
+    "active|24|Membership retention rate": [{ "cardId": "86014", "sheetMetricSlNo": "49" }],
+    "active|25|first-time gym goers": [{ "cardId": "47810", "sheetMetricSlNo": "11" }],
+    "active|26|Female Ratio %": [{ "cardId": "75630", "sheetMetricSlNo": "12" }],
+    "active|27|Cultpass data on % members using multiple centers": [{ "cardId": "75647", "sheetMetricSlNo": "15" }],
+    "active|29|Cultpass data on % members using multiple formats": [{ "cardId": "75654", "sheetMetricSlNo": "17" }],
+    "active|30|% of users who have availed pause option": [{ "cardId": "75628", "sheetMetricSlNo": "18" }],
+    "active|31|Gx class cancellation rate %": [{ "cardId": "84466", "sheetMetricSlNo": "29" }],
+    "active|32|Gx class peak utilization %": [{ "cardId": "83998", "sheetMetricSlNo": "30" }],
+    "active|35|# Avg. Monthly transacting users of app": [{ "cardId": "84472", "sheetMetricSlNo": "23" }],
+    "active|37|% 12M packs sold": [{ "cardId": "83969", "sheetMetricSlNo": "14" }],
+    "active|38|Pack Pricing": [{ "cardId": "86316", "sheetMetricSlNo": "20" }],
+    "active|39|Referrals %": [{ "cardId": "72394", "sheetMetricSlNo": "48" }],
+    "active|41|# Corporate paid memebers": [{ "cardId": "75109", "sheetMetricSlNo": "46" }],
+    "active|44|# users from whom weight, bmi, bca data is collected": [{ "cardId": "86193", "sheetMetricSlNo": "52" }],
+    "active|51|# Centres with biometric entry": [{ "cardId": "85463", "sheetMetricSlNo": "51" }],
+    "active|1|Total End Buyer of products": [{ "cardId": "85306", "sheetMetricSlNo": "2" }],
+    "active|2|Number of units sold": [{ "cardId": "84483", "sheetMetricSlNo": "3" }],
+    "active|4|# SKUs sold": [{ "cardId": "84483", "sheetMetricSlNo": "4" }],
+    "active|5|# New designs in Apparel": [{ "cardId": "84486", "sheetMetricSlNo": "5" }],
+    "active|6|# New designs in Footwear": [{ "cardId": "84487", "sheetMetricSlNo": "6" }],
+    "active|9|Product sales - Online vs Offline in FY25": [{ "cardId": "84661", "sheetMetricSlNo": "9" }],
+    "active|11|Own Channel %": [{ "cardId": "84661", "sheetMetricSlNo": "11" }],
+    "active|12|Cross sell rev as % of Products rev": [{ "cardId": "84562", "sheetMetricSlNo": "12" }],
+    "active|13|% of Revenue from own channel Online (1P), EBO, Ecommerce and others": [{ "cardId": "85342", "sheetMetricSlNo": "14" }],
+    "active|14|% of product sales revenue from major categories ( 3 segments ) - Apparel, Footwear and Equipment and Accesories": [{ "cardId": "85340", "sheetMetricSlNo": "15" }],
+    "active|15|Commercial Equipment Revenue": [{ "cardId": "85343", "sheetMetricSlNo": "16" }],
+    "active|16|Avant Footwear ASP": [{ "cardId": "86149", "sheetMetricSlNo": "17" }],
+    "active|17|CultSport Footwear ASP": [{ "cardId": "86149", "sheetMetricSlNo": "18" }],
+    "removed|19|# App installs (so far)": [{ "cardId": "83547", "sheetMetricSlNo": "25" }],
+    "removed|28|Cultpass data on % members using multiple cities": [{ "cardId": "75650", "sheetMetricSlNo": "16" }],
+    "removed|44|# Health activities tracked": [{ "cardId": "74738", "sheetMetricSlNo": "33" }],
+    "removed|42|Corporate clients retention %": [{ "cardId": "85742", "sheetMetricSlNo": "47" }]
+  },
+  "h1ResultFiles": {
+    "47810|11": "results/h1/first-time-user-percentage.csv",
+    "75630|12": "results/h1/female-ratio.csv",
+    "85463|51": "results/h1/biometric-centres.csv",
+    "75628|18": "results/h1/pause-option-usage.csv",
+    "86193|52": "results/h1/health-measurements.csv",
+    "83969|14": "results/h1/12m-packs-sold.csv",
+    "56424|21": [
+      "results/h1/session-rating.csv",
+      "results/h1/fy25-h1-session-rating.csv"
+    ]
+  }
+}
