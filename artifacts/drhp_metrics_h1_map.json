@@ -48,7 +48,11 @@
     "47810|11": "results/h1/first-time-user-percentage.csv",
     "75630|12": "results/h1/female-ratio.csv",
     "85463|51": "results/h1/biometric-centres.csv",
+    "75647|15": "results/h1/cultpass-multiple-centers.csv",
+    "75654|17": "results/h1/cultpass-multiple-formats.csv",
     "75628|18": "results/h1/pause-option-usage.csv",
+    "84466|29": "results/h1/gx-class-cancellation-rate.csv",
+    "83998|30": "results/h1/gx-class-peak-utilization.csv",
     "86193|52": "results/h1/health-measurements.csv",
     "83969|14": "results/h1/12m-packs-sold.csv",
     "56424|21": [
