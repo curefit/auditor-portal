@@ -48,67 +48,27 @@
         [
           "FY26",
           "1P",
-          0.1961517203475462
+          0.19616373830141234
         ],
         [
           "FY26",
           "EBO",
-          0.04282991272463005
+          0.0428325368561661
         ],
         [
           "FY26",
           "Ecommerce",
-          0.3890061180209219
+          0.38902995190609885
         ],
         [
           "FY26",
           "Other Offline/Online Channel",
-          0.3720122489069019
-        ],
-        [
-          "H1-FY26",
-          "1P",
-          0.16679795161840683
-        ],
-        [
-          "H1-FY26",
-          "EBO",
-          0.03282825555846645
-        ],
-        [
-          "H1-FY26",
-          "Ecommerce",
-          0.4399136991274848
-        ],
-        [
-          "H1-FY26",
-          "Other Offline/Online Channel",
-          0.3604600936956419
-        ],
-        [
-          "H1-FY27",
-          "1P",
-          0.21306770874603947
-        ],
-        [
-          "H1-FY27",
-          "EBO",
-          0.057356167992083734
-        ],
-        [
-          "H1-FY27",
-          "Ecommerce",
-          0.2743734392941431
-        ],
-        [
-          "H1-FY27",
-          "Other Offline/Online Channel",
-          0.45520268396773367
+          0.3719737729363227
         ]
       ],
       "cols": [
         {
-          "database_type": "STRING",
+          "database_type": "varchar(4)",
           "lib/deduplicated-name": "year",
           "lib/original-name": "year",
           "name": "year",
@@ -128,7 +88,7 @@
           "base_type": "type/Text"
         },
         {
-          "database_type": "STRING",
+          "database_type": "varchar(28)",
           "lib/deduplicated-name": "channel_type",
           "lib/original-name": "channel_type",
           "name": "channel_type",
@@ -148,7 +108,7 @@
           "base_type": "type/Text"
         },
         {
-          "database_type": "DOUBLE",
+          "database_type": "double",
           "lib/deduplicated-name": "percentage",
           "lib/original-name": "percentage",
           "name": "percentage",
@@ -170,7 +130,7 @@
       ],
       "native_form": {
         "lib/type": "mbql.stage/native",
-        "query": "SELECT\n  year,\n  channel_type,\n  base_amount * 1.000/ SUM(base_amount) OVER(PARTITION BY year) AS percentage\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    5 AS sort_key,\n    'H1-FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    6 AS sort_key,\n    'H1-FY27' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n  GROUP BY 3\n) t\nORDER BY sort_key, channel_type"
+        "query": "SELECT\n  year,\n  channel_type,\n  base_amount * 1.000/ SUM(base_amount) OVER(PARTITION BY year) AS percentage\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n) t\nORDER BY sort_key, channel_type"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -182,7 +142,7 @@
       "results_metadata": {
         "columns": [
           {
-            "database_type": "STRING",
+            "database_type": "varchar(4)",
             "semantic_type": null,
             "lib/deduplicated-name": "year",
             "lib/original-name": "year",
@@ -202,7 +162,7 @@
             "display_name": "year",
             "fingerprint": {
               "global": {
-                "distinct-count": 6,
+                "distinct-count": 4,
                 "nil%": 0.0
               },
               "type": {
@@ -211,14 +171,14 @@
                   "percent-url": 0.0,
                   "percent-email": 0.0,
                   "percent-state": 0.0,
-                  "average-length": 5.2
+                  "average-length": 4.0
                 }
               }
             },
             "base_type": "type/Text"
           },
           {
-            "database_type": "STRING",
+            "database_type": "varchar(28)",
             "semantic_type": "type/Category",
             "lib/deduplicated-name": "channel_type",
             "lib/original-name": "channel_type",
@@ -247,14 +207,14 @@
                   "percent-url": 0.0,
                   "percent-email": 0.0,
                   "percent-state": 0.0,
-                  "average-length": 12.1
+                  "average-length": 13.166666666666666
                 }
               }
             },
             "base_type": "type/Text"
           },
           {
-            "database_type": "DOUBLE",
+            "database_type": "double",
             "semantic_type": "type/Share",
             "lib/deduplicated-name": "percentage",
             "lib/original-name": "percentage",
@@ -274,17 +234,17 @@
             "display_name": "percentage",
             "fingerprint": {
               "global": {
-                "distinct-count": 20,
+                "distinct-count": 12,
                 "nil%": 0.0
               },
               "type": {
                 "type/Number": {
                   "min": 0.0011151862456752549,
-                  "q1": 0.12001309496061659,
-                  "q3": 0.44755819154760923,
+                  "q1": 0.13469598830211935,
+                  "q3": 0.5,
                   "max": 0.6598975702104085,
-                  "sd": 0.19466174347718015,
-                  "avg": 0.3
+                  "sd": 0.21386052769557562,
+                  "avg": 0.3333333333333333
                 }
               }
             },
@@ -294,9 +254,9 @@
       },
       "insights": null
     },
-    "cached": null,
-    "database_id": 108,
-    "started_at": "2026-10-14T12:31:26.932844452Z",
+    "cached": "2026-06-22T05:09:23.464592913Z",
+    "database_id": 39,
+    "started_at": "2026-06-22T09:25:58.91051099Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -307,21 +267,21 @@
       "stages": [
         {
           "lib/type": "mbql.stage/native",
-          "native": "SELECT\n  year,\n  channel_type,\n  base_amount * 1.000/ SUM(base_amount) OVER(PARTITION BY year) AS percentage\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    5 AS sort_key,\n    'H1-FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    6 AS sort_key,\n    'H1-FY27' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n  GROUP BY 3\n) t\nORDER BY sort_key, channel_type"
+          "native": "SELECT\n  year,\n  channel_type,\n  base_amount * 1.000/ SUM(base_amount) OVER(PARTITION BY year) AS percentage\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n) t\nORDER BY sort_key, channel_type"
         }
       ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": true,
+        "ignore-cached-results?": false,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "duration": 2500,
+        "duration": 12,
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-10-14T10:44:15.600078Z"
+        "invalidated-at": "2026-06-22T05:05:38.739932Z"
       },
       "viz-settings": {
         "table.pivot_column": "year",
@@ -334,12 +294,12 @@
           }
         }
       },
-      "database": 108
+      "database": 39
     },
-    "average_execution_time": null,
+    "average_execution_time": 1488,
     "status": "completed",
     "context": "question",
-    "row_count": 20,
-    "running_time": 1389
+    "row_count": 12,
+    "running_time": 162
   }
 }

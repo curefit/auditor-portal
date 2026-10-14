@@ -2,6 +2,7 @@
   "card_id": 84487,
   "card_name": "Footwear New Launch Style Id",
   "parameters": [],
+  "parameter_notes": [],
   "query_response": {
     "data": {
       "rows": [
@@ -20,19 +21,11 @@
         [
           "FY26",
           387
-        ],
-        [
-          "H1-FY26",
-          207
-        ],
-        [
-          "H1-FY27",
-          161
         ]
       ],
       "cols": [
         {
-          "database_type": "STRING",
+          "database_type": "varchar(4)",
           "lib/deduplicated-name": "year",
           "lib/original-name": "year",
           "name": "year",
@@ -52,7 +45,7 @@
           "base_type": "type/Text"
         },
         {
-          "database_type": "BIGINT",
+          "database_type": "bigint",
           "lib/deduplicated-name": "style_id_count",
           "lib/original-name": "style_id_count",
           "name": "style_id_count",
@@ -74,7 +67,7 @@
       ],
       "native_form": {
         "lib/type": "mbql.stage/native",
-        "query": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(TO_DATE(invoice_date, 'dd-MM-yyyy')) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category IN ('CS Footwear', 'Avant Footwear','CultSport Footwear')\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n) t\nORDER BY sort_key\n\n"
+        "query": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category IN ('CS Footwear', 'Avant Footwear')\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key\n\n"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -86,7 +79,7 @@
       "results_metadata": {
         "columns": [
           {
-            "database_type": "STRING",
+            "database_type": "varchar(4)",
             "semantic_type": null,
             "lib/deduplicated-name": "year",
             "lib/original-name": "year",
@@ -106,23 +99,23 @@
             "display_name": "year",
             "fingerprint": {
               "global": {
-                "distinct-count": 6,
-                "nil%": 0.0
+                "distinct-count": 4,
+                "nil%": 0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0.0,
-                  "percent-url": 0.0,
-                  "percent-email": 0.0,
-                  "percent-state": 0.0,
-                  "average-length": 5.0
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 4
                 }
               }
             },
             "base_type": "type/Text"
           },
           {
-            "database_type": "BIGINT",
+            "database_type": "bigint",
             "semantic_type": "type/Quantity",
             "lib/deduplicated-name": "style_id_count",
             "lib/original-name": "style_id_count",
@@ -142,17 +135,17 @@
             "display_name": "style_id_count",
             "fingerprint": {
               "global": {
-                "distinct-count": 6,
-                "nil%": 0.0
+                "distinct-count": 4,
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
-                  "min": 139.0,
-                  "q1": 161.0,
-                  "q3": 212.0,
-                  "max": 387.0,
-                  "sd": 87.60764806796266,
-                  "avg": 218.5
+                  "min": 139,
+                  "q1": 172,
+                  "q3": 299.5,
+                  "max": 387,
+                  "sd": 106.06091017272418,
+                  "avg": 235.75
                 }
               }
             },
@@ -163,8 +156,8 @@
       "insights": null
     },
     "cached": null,
-    "database_id": 108,
-    "started_at": "2026-10-14T12:31:20.99867232Z",
+    "database_id": 39,
+    "started_at": "2026-06-11T13:57:19.426485111Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -175,7 +168,7 @@
       "stages": [
         {
           "lib/type": "mbql.stage/native",
-          "native": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(TO_DATE(invoice_date, 'dd-MM-yyyy')) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category IN ('CS Footwear', 'Avant Footwear','CultSport Footwear')\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n) t\nORDER BY sort_key\n\n"
+          "native": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category IN ('CS Footwear', 'Avant Footwear')\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key\n\n"
         }
       ],
       "middleware": {
@@ -185,11 +178,11 @@
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "invalidated-at": "2026-10-14T11:15:33.526012Z",
-        "avg-execution-ms": 1370
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-11T12:17:10.061083Z"
       },
       "viz-settings": {
         "table.pivot_column": "business_unit",
@@ -199,12 +192,12 @@
           "month"
         ]
       },
-      "database": 108
+      "database": 39
     },
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
-    "row_count": 6,
-    "running_time": 1343
+    "row_count": 4,
+    "running_time": 737
   }
 }

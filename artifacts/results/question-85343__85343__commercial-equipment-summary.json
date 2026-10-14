@@ -7,32 +7,28 @@
       "rows": [
         [
           "FY23",
+          119663994.0,
           5.3
         ],
         [
           "FY24",
+          354094802.0,
           13.8
         ],
         [
           "FY25",
+          447950783.0,
           13.75
         ],
         [
           "FY26",
+          574317856.0,
           10.9
-        ],
-        [
-          "H1-FY26",
-          9.89
-        ],
-        [
-          "H1-FY27",
-          10.17
         ]
       ],
       "cols": [
         {
-          "database_type": "STRING",
+          "database_type": "varchar(4)",
           "lib/deduplicated-name": "year",
           "lib/original-name": "year",
           "name": "year",
@@ -52,7 +48,27 @@
           "base_type": "type/Text"
         },
         {
-          "database_type": "DOUBLE",
+          "database_type": "double",
+          "lib/deduplicated-name": "base_amount",
+          "lib/original-name": "base_amount",
+          "name": "base_amount",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "base_amount",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "base_amount",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "base_amount",
+          "display_name": "base_amount",
+          "base_type": "type/Float"
+        },
+        {
+          "database_type": "double",
           "lib/deduplicated-name": "percentage",
           "lib/original-name": "percentage",
           "name": "percentage",
@@ -74,7 +90,7 @@
       ],
       "native_form": {
         "lib/type": "mbql.stage/native",
-        "query": "WITH base AS (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n)\nSELECT\n  year,\n  ROUND(\n    100 * SUM(CASE WHEN business_category = 'Commercial Equipment' THEN base_amount_value ELSE 0 END)\n    / NULLIF(SUM(base_amount_value), 0),\n    2\n  ) AS percentage\nFROM base\nGROUP BY sort_key, year\nORDER BY sort_key"
+        "query": "WITH base AS (\n  SELECT\n    CASE\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31' THEN 'FY23'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31' THEN 'FY24'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31' THEN 'FY25'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31' THEN 'FY26'\n    END AS year,\n    CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n    business_category\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2026-03-31'\n)\n\nSELECT\n  year,\n  ROUND(SUM(CASE WHEN business_category = 'Commercial Equipment' THEN base_amount_value ELSE 0 END)) AS base_amount,\n  ROUND(\n    100 * SUM(CASE WHEN business_category = 'Commercial Equipment' THEN base_amount_value ELSE 0 END)\n    / NULLIF(SUM(base_amount_value), 0),\n    2\n  ) AS percentage\nFROM base\nGROUP BY year\nORDER BY year"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -86,7 +102,7 @@
       "results_metadata": {
         "columns": [
           {
-            "database_type": "STRING",
+            "database_type": "varchar(4)",
             "semantic_type": null,
             "lib/deduplicated-name": "year",
             "lib/original-name": "year",
@@ -106,7 +122,7 @@
             "display_name": "year",
             "fingerprint": {
               "global": {
-                "distinct-count": 6,
+                "distinct-count": 4,
                 "nil%": 0.0
               },
               "type": {
@@ -115,14 +131,51 @@
                   "percent-url": 0.0,
                   "percent-email": 0.0,
                   "percent-state": 0.0,
-                  "average-length": 5.0
+                  "average-length": 4.0
                 }
               }
             },
             "base_type": "type/Text"
           },
           {
-            "database_type": "DOUBLE",
+            "database_type": "double",
+            "semantic_type": null,
+            "lib/deduplicated-name": "base_amount",
+            "lib/original-name": "base_amount",
+            "name": "base_amount",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "base_amount",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "base_amount",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "base_amount",
+            "display_name": "base_amount",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 119663994.0,
+                  "q1": 236879398.0,
+                  "q3": 511134319.5,
+                  "max": 574317856.0,
+                  "sd": 192075490.72003892,
+                  "avg": 374006858.75
+                }
+              }
+            },
+            "base_type": "type/Float"
+          },
+          {
+            "database_type": "double",
             "semantic_type": "type/Share",
             "lib/deduplicated-name": "percentage",
             "lib/original-name": "percentage",
@@ -142,17 +195,17 @@
             "display_name": "percentage",
             "fingerprint": {
               "global": {
-                "distinct-count": 6,
+                "distinct-count": 4,
                 "nil%": 0.0
               },
               "type": {
                 "type/Number": {
                   "min": 5.3,
-                  "q1": 9.89,
-                  "q3": 13.75,
+                  "q1": 8.1,
+                  "q3": 13.775,
                   "max": 13.8,
-                  "sd": 3.131266516922506,
-                  "avg": 10.635
+                  "sd": 3.9952836778715315,
+                  "avg": 10.9375
                 }
               }
             },
@@ -162,9 +215,9 @@
       },
       "insights": null
     },
-    "cached": null,
-    "database_id": 108,
-    "started_at": "2026-10-14T12:31:28.91314786Z",
+    "cached": "2026-06-22T05:14:10.594713073Z",
+    "database_id": 39,
+    "started_at": "2026-06-22T09:26:00.870081307Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -175,39 +228,39 @@
       "stages": [
         {
           "lib/type": "mbql.stage/native",
-          "native": "WITH base AS (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n        business_category\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n)\nSELECT\n  year,\n  ROUND(\n    100 * SUM(CASE WHEN business_category = 'Commercial Equipment' THEN base_amount_value ELSE 0 END)\n    / NULLIF(SUM(base_amount_value), 0),\n    2\n  ) AS percentage\nFROM base\nGROUP BY sort_key, year\nORDER BY sort_key"
+          "native": "WITH base AS (\n  SELECT\n    CASE\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31' THEN 'FY23'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31' THEN 'FY24'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31' THEN 'FY25'\n      WHEN DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31' THEN 'FY26'\n    END AS year,\n    CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount_value,\n    business_category\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2026-03-31'\n)\n\nSELECT\n  year,\n  ROUND(SUM(CASE WHEN business_category = 'Commercial Equipment' THEN base_amount_value ELSE 0 END)) AS base_amount,\n  ROUND(\n    100 * SUM(CASE WHEN business_category = 'Commercial Equipment' THEN base_amount_value ELSE 0 END)\n    / NULLIF(SUM(base_amount_value), 0),\n    2\n  ) AS percentage\nFROM base\nGROUP BY year\nORDER BY year"
         }
       ],
       "middleware": {
         "js-int-to-string?": true,
-        "ignore-cached-results?": true,
+        "ignore-cached-results?": false,
         "process-viz-settings?": false,
         "userland-query?": true
       },
       "cache-strategy": {
-        "duration": 2500,
+        "duration": 12,
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-10-14T11:41:46.498626Z"
+        "invalidated-at": "2026-06-22T05:14:05.121681Z"
       },
       "viz-settings": {
         "table.pivot_column": "base_amount",
         "table.cell_column": "percentage",
-        "table.transpose": false,
+        "table.transpose": true,
         "table.pivot": false,
         "column_settings": {
           "[\"name\",\"percentage\"]": {
-            "number_style": "decimal"
+            "number_style": "percent"
           }
         }
       },
-      "database": 108
+      "database": 39
     },
-    "average_execution_time": null,
+    "average_execution_time": 1902,
     "status": "completed",
     "context": "question",
-    "row_count": 6,
-    "running_time": 1344
+    "row_count": 4,
+    "running_time": 169
   }
 }

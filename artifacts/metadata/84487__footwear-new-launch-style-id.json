@@ -1,15 +1,15 @@
 {
-  "cache_invalidated_at": "2026-10-14T11:15:33.526012Z",
+  "cache_invalidated_at": "2026-06-11T12:17:10.061083Z",
   "description": null,
   "archived": false,
-  "view_count": 103,
+  "view_count": 33,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "database_type": "STRING",
+      "database_type": "varchar(4)",
       "semantic_type": null,
       "lib/deduplicated-name": "year",
       "lib/original-name": "year",
@@ -29,23 +29,23 @@
       "display_name": "year",
       "fingerprint": {
         "global": {
-          "distinct-count": 6,
-          "nil%": 0.0
+          "distinct-count": 4,
+          "nil%": 0
         },
         "type": {
           "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 5.0
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 4
           }
         }
       },
       "base_type": "type/Text"
     },
     {
-      "database_type": "BIGINT",
+      "database_type": "bigint",
       "semantic_type": "type/Quantity",
       "lib/deduplicated-name": "style_id_count",
       "lib/original-name": "style_id_count",
@@ -65,17 +65,17 @@
       "display_name": "style_id_count",
       "fingerprint": {
         "global": {
-          "distinct-count": 6,
-          "nil%": 0.0
+          "distinct-count": 4,
+          "nil%": 0
         },
         "type": {
           "type/Number": {
-            "min": 139.0,
-            "q1": 161.0,
-            "q3": 212.0,
-            "max": 387.0,
-            "sd": 87.60764806796266,
-            "avg": 218.5
+            "min": 139,
+            "q1": 172,
+            "q3": 299.5,
+            "max": 387,
+            "sd": 106.06091017272418,
+            "avg": 235.75
           }
         }
       },
@@ -87,7 +87,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "is_data_analyst": false,
-    "last_login": "2026-09-30T12:44:17.891253Z",
+    "last_login": "2026-06-02T07:19:11.458627Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3781,
@@ -97,36 +97,36 @@
     "common_name": "Gokul Lakshmanan"
   },
   "initially_published_at": null,
-  "can_write": true,
+  "can_write": false,
   "card_schema": 23,
-  "database_id": 108,
+  "database_id": 39,
   "enable_embedding": false,
   "collection_id": 7339,
   "query_type": "native",
   "name": "Footwear New Launch Style Id",
-  "last_query_start": "2026-10-14T11:35:43.251493Z",
+  "last_query_start": "2026-06-11T12:17:10.289129Z",
   "is_remote_synced": false,
   "dashboard_count": 2,
   "document_id": null,
-  "last_used_at": "2026-10-14T11:35:43.25927Z",
+  "last_used_at": "2026-06-11T12:17:13.735594Z",
   "dashboard": null,
   "type": "question",
   "dimensions": null,
-  "average_query_time": 1569.2307692307693,
+  "average_query_time": 2074.1666666666665,
   "creator_id": 3781,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-10-14T11:15:33.518875Z",
+  "updated_at": "2026-06-11T12:17:10.072448Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
     "lib/type": "mbql/query",
-    "database": 108,
+    "database": 39,
     "stages": [
       {
         "lib/type": "mbql.stage/native",
-        "native": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(TO_DATE(invoice_date, 'dd-MM-yyyy')) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category IN ('CS Footwear', 'Avant Footwear','CultSport Footwear')\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n) t\nORDER BY sort_key\n\n"
+        "native": "WITH sku_launch_date AS (\n    SELECT\n        style_id AS style_id,\n        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE 1 = 1\n        AND business_category IN ('CS Footwear', 'Avant Footwear')\n    GROUP BY 1\n)\n\nSELECT year, style_id_count\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        COUNT(DISTINCT style_id) AS style_id_count\n    FROM sku_launch_date\n    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key\n\n"
       }
     ]
   },
@@ -145,7 +145,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "last_name": "Lakshmanan",
-    "timestamp": "2026-10-14T11:15:33.58311Z"
+    "timestamp": "2026-06-11T08:40:46.512442Z"
   },
   "visualization_settings": {
     "table.pivot_column": "business_unit",

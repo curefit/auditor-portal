@@ -1,15 +1,15 @@
 {
-  "cache_invalidated_at": "2026-10-14T11:19:17.78386Z",
+  "cache_invalidated_at": null,
   "description": null,
   "archived": false,
-  "view_count": 74,
+  "view_count": 6,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "database_type": "STRING",
+      "database_type": "varchar(22)",
       "semantic_type": null,
       "lib/deduplicated-name": "metric",
       "lib/original-name": "metric",
@@ -30,22 +30,22 @@
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0.0
+          "nil%": 0
         },
         "type": {
           "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 19.0
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 19
           }
         }
       },
       "base_type": "type/Text"
     },
     {
-      "database_type": "DOUBLE",
+      "database_type": "double",
       "semantic_type": null,
       "lib/deduplicated-name": "FY23",
       "lib/original-name": "FY23",
@@ -66,23 +66,23 @@
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0.0
+          "nil%": 0.3333333333333333
         },
         "type": {
           "type/Number": {
-            "min": 0.0,
-            "q1": 0.036975,
-            "q3": 0.6760499999999999,
+            "min": 0.1479,
+            "q1": 0.1479,
+            "q3": 0.8521,
             "max": 0.8521,
-            "sd": 0.4553106009454791,
-            "avg": 0.3333333333333333
+            "sd": 0.4979445953115667,
+            "avg": 0.5
           }
         }
       },
       "base_type": "type/Float"
     },
     {
-      "database_type": "DOUBLE",
+      "database_type": "double",
       "semantic_type": null,
       "lib/deduplicated-name": "FY24",
       "lib/original-name": "FY24",
@@ -103,23 +103,23 @@
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0.0
+          "nil%": 0.3333333333333333
         },
         "type": {
           "type/Number": {
-            "min": 0.0,
-            "q1": 0.058625,
-            "q3": 0.6327499999999999,
+            "min": 0.2345,
+            "q1": 0.2345,
+            "q3": 0.7655,
             "max": 0.7655,
-            "sd": 0.3922034973496964,
-            "avg": 0.3333333333333333
+            "sd": 0.3754737008100567,
+            "avg": 0.5
           }
         }
       },
       "base_type": "type/Float"
     },
     {
-      "database_type": "DOUBLE",
+      "database_type": "double",
       "semantic_type": null,
       "lib/deduplicated-name": "FY25",
       "lib/original-name": "FY25",
@@ -140,7 +140,7 @@
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0.0
+          "nil%": 0
         },
         "type": {
           "type/Number": {
@@ -156,7 +156,7 @@
       "base_type": "type/Float"
     },
     {
-      "database_type": "DOUBLE",
+      "database_type": "double",
       "semantic_type": null,
       "lib/deduplicated-name": "FY26",
       "lib/original-name": "FY26",
@@ -177,90 +177,16 @@
       "fingerprint": {
         "global": {
           "distinct-count": 3,
-          "nil%": 0.0
+          "nil%": 0
         },
         "type": {
           "type/Number": {
-            "min": 0.2257,
-            "q1": 0.229025,
-            "q3": 0.626975,
-            "max": 0.7563,
-            "sd": 0.3025757591083595,
-            "avg": 0.40700000000000003
-          }
-        }
-      },
-      "base_type": "type/Float"
-    },
-    {
-      "database_type": "DOUBLE",
-      "semantic_type": null,
-      "lib/deduplicated-name": "H1-FY26",
-      "lib/original-name": "H1-FY26",
-      "name": "H1-FY26",
-      "lib/source": "source/native",
-      "lib/source-column-alias": "H1-FY26",
-      "source": "native",
-      "field_ref": [
-        "field",
-        "H1-FY26",
-        {
-          "base-type": "type/Float"
-        }
-      ],
-      "effective_type": "type/Float",
-      "lib/desired-column-alias": "H1-FY26",
-      "display_name": "H1-FY26",
-      "fingerprint": {
-        "global": {
-          "distinct-count": 3,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 0.1996,
-            "q1": 0.201375,
-            "q3": 0.64665,
-            "max": 0.7933,
-            "sd": 0.34074175460799244,
-            "avg": 0.39986666666666665
-          }
-        }
-      },
-      "base_type": "type/Float"
-    },
-    {
-      "database_type": "DOUBLE",
-      "semantic_type": null,
-      "lib/deduplicated-name": "H1-FY27",
-      "lib/original-name": "H1-FY27",
-      "name": "H1-FY27",
-      "lib/source": "source/native",
-      "lib/source-column-alias": "H1-FY27",
-      "source": "native",
-      "field_ref": [
-        "field",
-        "H1-FY27",
-        {
-          "base-type": "type/Float"
-        }
-      ],
-      "effective_type": "type/Float",
-      "lib/desired-column-alias": "H1-FY27",
-      "display_name": "H1-FY27",
-      "fingerprint": {
-        "global": {
-          "distinct-count": 3,
-          "nil%": 0.0
-        },
-        "type": {
-          "type/Number": {
-            "min": 0.2704,
-            "q1": 0.28115,
-            "q3": 0.5798,
-            "max": 0.6686,
-            "sd": 0.21854796574970295,
-            "avg": 0.41746666666666665
+            "min": 0.239,
+            "q1": 0.240975,
+            "q3": 0.6265499999999999,
+            "max": 0.7531,
+            "sd": 0.2945617252801185,
+            "avg": 0.413
           }
         }
       },
@@ -272,7 +198,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "is_data_analyst": false,
-    "last_login": "2026-09-30T12:44:17.891253Z",
+    "last_login": "2026-06-02T07:19:11.458627Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3781,
@@ -282,36 +208,36 @@
     "common_name": "Gokul Lakshmanan"
   },
   "initially_published_at": null,
-  "can_write": true,
+  "can_write": false,
   "card_schema": 23,
-  "database_id": 108,
+  "database_id": 39,
   "enable_embedding": false,
-  "collection_id": 7263,
+  "collection_id": 7339,
   "query_type": "native",
   "name": "Online Channel Percentage",
-  "last_query_start": "2026-10-14T11:38:44.664061Z",
+  "last_query_start": "2026-06-11T12:19:03.742172Z",
   "is_remote_synced": false,
   "dashboard_count": 1,
   "document_id": null,
-  "last_used_at": "2026-10-14T11:38:44.671106Z",
+  "last_used_at": "2026-06-11T12:19:03.746748Z",
   "dashboard": null,
   "type": "question",
   "dimensions": null,
-  "average_query_time": 1613.7777777777778,
+  "average_query_time": 1521,
   "creator_id": 3781,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-10-14T11:19:17.778823Z",
+  "updated_at": "2026-06-11T12:17:04.197036Z",
   "made_public_by_id": null,
   "embedding_params": null,
-  "cache_ttl": 345600,
+  "cache_ttl": null,
   "dataset_query": {
     "lib/type": "mbql/query",
-    "database": 108,
+    "database": 39,
     "stages": [
       {
         "lib/type": "mbql.stage/native",
-        "native": "WITH yearly_summary AS (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS total_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', '3P', 'B2B MP', 'Online', 'Others', 'To Check') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS online_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('B2B', 'Commerical', 'EBO', 'Liquidation', 'Offline')\n                OR manual_channel_type IS NULL THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS offline_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', 'EBO') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS ownchannel_base_amount\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS total_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', '3P', 'B2B MP', 'Online', 'Others', 'To Check') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS online_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('B2B', 'Commerical', 'EBO', 'Liquidation', 'Offline')\n                OR manual_channel_type IS NULL THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS offline_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', 'EBO') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS ownchannel_base_amount\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS total_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', '3P', 'B2B MP', 'Online', 'Others', 'To Check') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS online_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('B2B', 'Commerical', 'EBO', 'Liquidation', 'Offline')\n                OR manual_channel_type IS NULL THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS offline_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', 'EBO') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS ownchannel_base_amount\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS total_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', '3P', 'B2B MP', 'Online', 'Others', 'To Check') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS online_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('B2B', 'Commerical', 'EBO', 'Liquidation', 'Offline')\n                OR manual_channel_type IS NULL THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS offline_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', 'EBO') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS ownchannel_base_amount\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS total_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', '3P', 'B2B MP', 'Online', 'Others', 'To Check') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS online_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('B2B', 'Commerical', 'EBO', 'Liquidation', 'Offline')\n                OR manual_channel_type IS NULL THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS offline_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', 'EBO') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS ownchannel_base_amount\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS total_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', '3P', 'B2B MP', 'Online', 'Others', 'To Check') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS online_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('B2B', 'Commerical', 'EBO', 'Liquidation', 'Offline')\n                OR manual_channel_type IS NULL THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS offline_base_amount,\n        ROUND(SUM(CASE\n            WHEN TRIM(manual_channel_type) IN ('1P', 'EBO') THEN CAST(REPLACE(base_amount, ',', '') AS DOUBLE)\n            ELSE 0\n        END)) AS ownchannel_base_amount\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n),\nmetric_rows AS (\n    SELECT 1 AS sort_order, 'Online Percentage' AS metric, year,\n           ROUND(online_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n    UNION ALL\n    SELECT 2 AS sort_order, 'Offline Percentage' AS metric, year,\n           ROUND(offline_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n    UNION ALL\n    SELECT 3 AS sort_order, 'Own Channel Percentage' AS metric, year,\n           ROUND(ownchannel_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n)\nSELECT\n    metric,\n    MAX(CASE WHEN year = 'FY23' THEN metric_value END) AS FY23,\n    MAX(CASE WHEN year = 'FY24' THEN metric_value END) AS FY24,\n    MAX(CASE WHEN year = 'FY25' THEN metric_value END) AS FY25,\n    MAX(CASE WHEN year = 'FY26' THEN metric_value END) AS FY26,\n    MAX(CASE WHEN year = 'H1-FY26' THEN metric_value END) AS `H1-FY26`,\n    MAX(CASE WHEN year = 'H1-FY27' THEN metric_value END) AS `H1-FY27`\nFROM metric_rows\nGROUP BY sort_order, metric\nORDER BY sort_order"
+        "native": "WITH base_data AS (\n    SELECT\n        DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) AS invoice_dt,\n        TRIM(manual_channel_type) AS manual_channel_type,\n        CAST(REPLACE(base_amount, ',', '') AS DOUBLE) AS base_amount\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2026-03-31'\n),\n\nyearly_summary AS (\n    SELECT\n        CASE\n            WHEN invoice_dt BETWEEN DATE '2022-04-01' AND DATE '2023-03-31' THEN 'FY23'\n            WHEN invoice_dt BETWEEN DATE '2023-04-01' AND DATE '2024-03-31' THEN 'FY24'\n            WHEN invoice_dt BETWEEN DATE '2024-04-01' AND DATE '2025-03-31' THEN 'FY25'\n            WHEN invoice_dt BETWEEN DATE '2025-04-01' AND DATE '2026-03-31' THEN 'FY26'\n        END AS year,\n        ROUND(SUM(base_amount)) AS total_base_amount,\n        ROUND(SUM(CASE\n            WHEN manual_channel_type IN ('1P', '3P', 'B2B MP', 'Online', 'Others', 'To Check') THEN base_amount\n            ELSE 0\n        END)) AS online_base_amount,\n        ROUND(SUM(CASE\n            WHEN manual_channel_type IN ('B2B', 'Commerical', 'EBO', 'Liquidation', 'Offline')\n                OR manual_channel_type IS NULL THEN base_amount\n            ELSE 0\n        END)) AS offline_base_amount,\n        ROUND(SUM(CASE\n            WHEN invoice_dt BETWEEN DATE '2024-04-01' AND DATE '2026-03-31'\n                AND manual_channel_type IN ('1P', 'EBO') THEN base_amount\n        END)) AS ownchannel_base_amount\n    FROM base_data\n    GROUP BY 1\n),\n\nmetric_rows AS (\n    SELECT\n        1 AS sort_order,\n        'Online Percentage' AS metric,\n        year,\n        ROUND(online_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_order,\n        'Offline Percentage' AS metric,\n        year,\n        ROUND(offline_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_order,\n        'Own Channel Percentage' AS metric,\n        year,\n        ROUND(ownchannel_base_amount / NULLIF(total_base_amount, 0), 4) AS metric_value\n    FROM yearly_summary\n)\n\nSELECT\n    metric,\n    MAX(CASE WHEN year = 'FY23' THEN metric_value END) AS FY23,\n    MAX(CASE WHEN year = 'FY24' THEN metric_value END) AS FY24,\n    MAX(CASE WHEN year = 'FY25' THEN metric_value END) AS FY25,\n    MAX(CASE WHEN year = 'FY26' THEN metric_value END) AS FY26\nFROM metric_rows\nGROUP BY\n    sort_order,\n    metric\nORDER BY sort_order"
       }
     ]
   },
@@ -330,7 +256,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "last_name": "Lakshmanan",
-    "timestamp": "2026-10-14T11:19:17.849857Z"
+    "timestamp": "2026-06-11T12:17:04.239218Z"
   },
   "visualization_settings": {
     "table.pivot_column": "year",
@@ -348,12 +274,6 @@
       },
       "[\"name\",\"FY26\"]": {
         "number_style": "percent"
-      },
-      "[\"name\",\"H1-FY26\"]": {
-        "number_style": "percent"
-      },
-      "[\"name\",\"H1-FY27\"]": {
-        "number_style": "percent"
       }
     }
   },
@@ -362,20 +282,20 @@
     "description": null,
     "archived": false,
     "workspace_id": null,
-    "slug": "audit_related_queries",
+    "slug": "metebase_cards",
     "archive_operation_id": null,
-    "name": "Audit Related Queries",
+    "name": "Metebase Cards",
     "is_remote_synced": false,
     "personal_owner_id": null,
     "type": null,
     "is_sample": false,
-    "id": 7263,
+    "id": 7339,
     "archived_directly": null,
-    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
-    "location": "/",
+    "entity_id": "8E5u3Fi3zn6gnP5O8N-WX",
+    "location": "/4814/5587/6459/5602/6582/7338/",
     "namespace": null,
     "is_personal": false,
-    "created_at": "2026-05-26T11:14:34.781469Z"
+    "created_at": "2026-06-11T07:26:42.808767Z"
   },
   "metabase_version": "v0.60.1 (0cf890b)",
   "parameters": [],

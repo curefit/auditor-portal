@@ -1,7 +1,7 @@
 WITH sku_launch_date AS (
     SELECT
         style_id AS style_id,
-        MIN(TO_DATE(invoice_date, 'dd-MM-yyyy')) AS launch_date
+        MIN(DATE(DATE_PARSE(invoice_date, '%d-%m-%Y'))) AS launch_date
     FROM  dwh_d2c_metrics.bizfin_sales_data
     WHERE 1 = 1
         AND business_category = 'Apparel'
@@ -38,28 +38,10 @@ FROM (
     UNION ALL
 
     SELECT
-        4 AS sort_key,
+        5 AS sort_key,
         'FY26' AS year,
         COUNT(DISTINCT style_id) AS style_id_count
     FROM sku_launch_date
     WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'
-
-    UNION ALL
-
-    SELECT
-        5 AS sort_key,
-        'H1-FY26' AS year,
-        COUNT(DISTINCT style_id) AS style_id_count
-    FROM sku_launch_date
-    WHERE launch_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'
-
-    UNION ALL
-
-    SELECT
-        6 AS sort_key,
-        'H1-FY27' AS year,
-        COUNT(DISTINCT style_id) AS style_id_count
-    FROM sku_launch_date
-    WHERE launch_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'
 ) t
 ORDER BY sort_key

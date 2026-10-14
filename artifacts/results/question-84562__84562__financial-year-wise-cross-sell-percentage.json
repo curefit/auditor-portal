@@ -2,6 +2,7 @@
   "card_id": 84562,
   "card_name": "Financial Year Wise Cross Sell Percentage",
   "parameters": [],
+  "parameter_notes": [],
   "query_response": {
     "data": {
       "rows": [
@@ -20,19 +21,11 @@
         [
           "FY26",
           31.75
-        ],
-        [
-          "H1-FY26",
-          33.75
-        ],
-        [
-          "H1-FY27",
-          29.73
         ]
       ],
       "cols": [
         {
-          "database_type": "STRING",
+          "database_type": "varchar(4)",
           "lib/deduplicated-name": "financial_year",
           "lib/original-name": "financial_year",
           "name": "financial_year",
@@ -52,7 +45,7 @@
           "base_type": "type/Text"
         },
         {
-          "database_type": "DOUBLE",
+          "database_type": "double",
           "lib/deduplicated-name": "cross_sell_percentage",
           "lib/original-name": "cross_sell_percentage",
           "name": "cross_sell_percentage",
@@ -74,7 +67,7 @@
       ],
       "native_form": {
         "lib/type": "mbql.stage/native",
-        "query": "WITH base AS (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n),\ngrouped AS (\n    SELECT sort_key, fy, cross_sell_vs_1p, SUM(gmv) AS total_gmv\n    FROM base\n    WHERE cross_sell_vs_1p IS NOT NULL\n    GROUP BY 1, 2, 3\n)\nSELECT financial_year, cross_sell_percentage\nFROM (\n    SELECT\n        sort_key,\n        fy AS financial_year,\n        cross_sell_vs_1p,\n        ROUND(100.0 * total_gmv / SUM(total_gmv) OVER (PARTITION BY fy), 2) AS cross_sell_percentage\n    FROM grouped\n)\nWHERE cross_sell_vs_1p = 'CROSS-SELL'\nORDER BY sort_key"
+        "query": "WITH base AS (\n    SELECT\n        CASE\n            WHEN order_date BETWEEN DATE('2022-04-01') AND DATE('2023-03-31') THEN 'FY23'\n            WHEN order_date BETWEEN DATE('2023-04-01') AND DATE('2024-03-31') THEN 'FY24'\n            WHEN order_date BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'\n            WHEN order_date BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'\n        END AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE('2022-04-01') AND DATE('2026-03-31')\n      AND is_fs_member IN (0, 1)\n),\ngrouped AS (\n    SELECT\n        fy,\n        cross_sell_vs_1p,\n        SUM(gmv) AS total_gmv\n    FROM base\n    WHERE fy IS NOT NULL\n    GROUP BY 1, 2\n)\n\nSELECT fy AS financial_year, pct_gmv AS cross_sell_percentage\nFROM \n(\nSELECT\n    fy,\n    cross_sell_vs_1p,\n    ROUND(total_gmv, 0) AS total_gmv,\n    ROUND(\n        100.0 * total_gmv / SUM(total_gmv) OVER (PARTITION BY fy),\n        2\n    ) AS pct_gmv\nFROM grouped\n)\nWHERE cross_sell_vs_1p = 'CROSS-SELL'\nORDER BY fy"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -86,7 +79,7 @@
       "results_metadata": {
         "columns": [
           {
-            "database_type": "STRING",
+            "database_type": "varchar(4)",
             "semantic_type": null,
             "lib/deduplicated-name": "financial_year",
             "lib/original-name": "financial_year",
@@ -106,23 +99,23 @@
             "display_name": "financial_year",
             "fingerprint": {
               "global": {
-                "distinct-count": 6,
-                "nil%": 0.0
+                "distinct-count": 4,
+                "nil%": 0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0.0,
-                  "percent-url": 0.0,
-                  "percent-email": 0.0,
-                  "percent-state": 0.0,
-                  "average-length": 5.0
+                  "percent-json": 0,
+                  "percent-url": 0,
+                  "percent-email": 0,
+                  "percent-state": 0,
+                  "average-length": 4
                 }
               }
             },
             "base_type": "type/Text"
           },
           {
-            "database_type": "DOUBLE",
+            "database_type": "double",
             "semantic_type": "type/Share",
             "lib/deduplicated-name": "cross_sell_percentage",
             "lib/original-name": "cross_sell_percentage",
@@ -142,17 +135,17 @@
             "display_name": "cross_sell_percentage",
             "fingerprint": {
               "global": {
-                "distinct-count": 6,
-                "nil%": 0.0
+                "distinct-count": 4,
+                "nil%": 0
               },
               "type": {
                 "type/Number": {
                   "min": 29.07,
-                  "q1": 29.73,
-                  "q3": 33.75,
+                  "q1": 30.41,
+                  "q3": 42.004999999999995,
                   "max": 51.64,
-                  "sd": 8.466324861866964,
-                  "avg": 34.718333333333334
+                  "sd": 10.387519354173707,
+                  "avg": 36.207499999999996
                 }
               }
             },
@@ -163,8 +156,8 @@
       "insights": null
     },
     "cached": null,
-    "database_id": 108,
-    "started_at": "2026-10-14T12:31:23.083662214Z",
+    "database_id": 39,
+    "started_at": "2026-06-11T13:57:20.907622475Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -175,7 +168,7 @@
       "stages": [
         {
           "lib/type": "mbql.stage/native",
-          "native": "WITH base AS (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n),\ngrouped AS (\n    SELECT sort_key, fy, cross_sell_vs_1p, SUM(gmv) AS total_gmv\n    FROM base\n    WHERE cross_sell_vs_1p IS NOT NULL\n    GROUP BY 1, 2, 3\n)\nSELECT financial_year, cross_sell_percentage\nFROM (\n    SELECT\n        sort_key,\n        fy AS financial_year,\n        cross_sell_vs_1p,\n        ROUND(100.0 * total_gmv / SUM(total_gmv) OVER (PARTITION BY fy), 2) AS cross_sell_percentage\n    FROM grouped\n)\nWHERE cross_sell_vs_1p = 'CROSS-SELL'\nORDER BY sort_key"
+          "native": "WITH base AS (\n    SELECT\n        CASE\n            WHEN order_date BETWEEN DATE('2022-04-01') AND DATE('2023-03-31') THEN 'FY23'\n            WHEN order_date BETWEEN DATE('2023-04-01') AND DATE('2024-03-31') THEN 'FY24'\n            WHEN order_date BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'\n            WHEN order_date BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'\n        END AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE('2022-04-01') AND DATE('2026-03-31')\n      AND is_fs_member IN (0, 1)\n),\ngrouped AS (\n    SELECT\n        fy,\n        cross_sell_vs_1p,\n        SUM(gmv) AS total_gmv\n    FROM base\n    WHERE fy IS NOT NULL\n    GROUP BY 1, 2\n)\n\nSELECT fy AS financial_year, pct_gmv AS cross_sell_percentage\nFROM \n(\nSELECT\n    fy,\n    cross_sell_vs_1p,\n    ROUND(total_gmv, 0) AS total_gmv,\n    ROUND(\n        100.0 * total_gmv / SUM(total_gmv) OVER (PARTITION BY fy),\n        2\n    ) AS pct_gmv\nFROM grouped\n)\nWHERE cross_sell_vs_1p = 'CROSS-SELL'\nORDER BY fy"
         }
       ],
       "middleware": {
@@ -185,22 +178,22 @@
         "userland-query?": true
       },
       "cache-strategy": {
-        "multiplier": 10,
-        "min_duration_ms": 60000,
-        "type": "ttl",
-        "invalidated-at": "2026-10-14T10:44:14.381151Z",
-        "avg-execution-ms": 1160
+        "duration": 12,
+        "unit": "hours",
+        "type": "duration",
+        "refresh_automatically": false,
+        "invalidated-at": "2026-06-11T12:17:10.061083Z"
       },
       "viz-settings": {
         "table.pivot_column": "financial_year",
         "table.cell_column": "cross_sell_percentage"
       },
-      "database": 108
+      "database": 39
     },
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
-    "row_count": 6,
-    "running_time": 1187
+    "row_count": 4,
+    "running_time": 4409
   }
 }

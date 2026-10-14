@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T13:06:05.074Z",
+  "generatedAt": "2026-10-14T15:00:30.846Z",
   "basePath": "/handoff/",
   "count": 144,
   "entries": [
@@ -1265,8 +1265,10 @@
         "h1Fy26": "706",
         "h1Fy27": "759",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/apparel-new-designs.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/apparel-new-designs.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -1527,8 +1529,10 @@
         "h1Fy26": "Apparel: 13.60%, Footwear: 11.07%, Equipment and Accessories: 75.33%",
         "h1Fy27": "Apparel: 10.58%, Footwear: 7.47%, Equipment and Accessories: 81.95%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/major-categories-split.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/major-categories-split.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -1621,8 +1625,10 @@
         "h1Fy26": "1P: 16.68%, EBO: 3.28%, Ecommerce: 43.99%, Others: 36.05%",
         "h1Fy27": "1P: 21.31%, EBO: 5.74%, Ecommerce: 27.44%, Others: 45.52%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/channel-wise-split.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/channel-wise-split.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -1931,8 +1937,10 @@
         "h1Fy26": "9.89%",
         "h1Fy27": "10.17%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/commercial-equipment-percentage.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/commercial-equipment-percentage.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -2371,8 +2379,10 @@
         "h1Fy26": "674",
         "h1Fy27": "804",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/footwear-sub-category-asp.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/footwear-sub-category-asp.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -2430,8 +2440,10 @@
         "h1Fy26": "1520",
         "h1Fy27": "1927",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/footwear-sub-category-asp.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/footwear-sub-category-asp.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -3212,8 +3224,10 @@
         "h1Fy26": "33.75%",
         "h1Fy27": "29.73%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/cross-sell-percentage.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/cross-sell-percentage.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -3604,8 +3618,10 @@
         "h1Fy26": "207",
         "h1Fy27": "161",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/footwear-new-designs.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/footwear-new-designs.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -6030,8 +6046,10 @@
         "h1Fy26": "19.96%",
         "h1Fy27": "27.04%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/own-channel-percentage.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/own-channel-percentage.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -7006,8 +7024,10 @@
         "h1Fy26": "North: 23.40%, South: 66.80%, East: 2.89%, West: 6.92%",
         "h1Fy27": "North: 23.62%, South: 66.44%, East: 1.49%, West: 8.44%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/region-wise-revenue.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/region-wise-revenue.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -7837,8 +7857,10 @@
         "h1Fy26": "27.82",
         "h1Fy27": "29.32",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/product-sales-summary.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/product-sales-summary.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -7896,8 +7918,10 @@
         "h1Fy26": "4921",
         "h1Fy27": "6523",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/product-sales-summary.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/product-sales-summary.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -8090,8 +8114,10 @@
         "h1Fy26": "5.30",
         "h1Fy27": "6.48",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/total-end-buyers.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/total-end-buyers.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",

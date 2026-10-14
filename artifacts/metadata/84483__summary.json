@@ -1,15 +1,15 @@
 {
-  "cache_invalidated_at": "2026-10-14T11:34:12.669764Z",
+  "cache_invalidated_at": "2026-06-11T12:17:10.061083Z",
   "description": null,
   "archived": false,
-  "view_count": 183,
+  "view_count": 67,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "database_type": "STRING",
+      "database_type": "varchar(4)",
       "semantic_type": null,
       "lib/deduplicated-name": "year",
       "lib/original-name": "year",
@@ -29,23 +29,60 @@
       "display_name": "year",
       "fingerprint": {
         "global": {
-          "distinct-count": 6,
-          "nil%": 0.0
+          "distinct-count": 4,
+          "nil%": 0
         },
         "type": {
           "type/Text": {
-            "percent-json": 0.0,
-            "percent-url": 0.0,
-            "percent-email": 0.0,
-            "percent-state": 0.0,
-            "average-length": 5.0
+            "percent-json": 0,
+            "percent-url": 0,
+            "percent-email": 0,
+            "percent-state": 0,
+            "average-length": 4
           }
         }
       },
       "base_type": "type/Text"
     },
     {
-      "database_type": "DOUBLE",
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "base_amount",
+      "lib/original-name": "base_amount",
+      "name": "base_amount",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "base_amount",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "base_amount",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "base_amount",
+      "display_name": "base_amount",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0
+        },
+        "type": {
+          "type/Number": {
+            "min": 2257453822,
+            "q1": 2412003109,
+            "q3": 4263579858,
+            "max": 5269610572,
+            "sd": 1354043699.03443,
+            "avg": 3337791483.5
+          }
+        }
+      },
+      "base_type": "type/Float"
+    },
+    {
+      "database_type": "double",
       "semantic_type": null,
       "lib/deduplicated-name": "total_units",
       "lib/original-name": "total_units",
@@ -65,24 +102,24 @@
       "display_name": "total_units",
       "fingerprint": {
         "global": {
-          "distinct-count": 6,
-          "nil%": 0.0
+          "distinct-count": 4,
+          "nil%": 0
         },
         "type": {
           "type/Number": {
-            "min": 1320098.0,
-            "q1": 1904010.0,
-            "q3": 3038774.0,
-            "max": 4239455.0,
-            "sd": 1008269.5671481412,
-            "avg": 2702781.5
+            "min": 1320098,
+            "q1": 1612054,
+            "q3": 3639096.5,
+            "max": 4239419,
+            "sd": 1291014.086766775,
+            "avg": 2625575.25
           }
         }
       },
       "base_type": "type/Float"
     },
     {
-      "database_type": "BIGINT",
+      "database_type": "bigint",
       "semantic_type": null,
       "lib/deduplicated-name": "total_unique_styleid",
       "lib/original-name": "total_unique_styleid",
@@ -102,17 +139,17 @@
       "display_name": "total_unique_styleid",
       "fingerprint": {
         "global": {
-          "distinct-count": 6,
-          "nil%": 0.0
+          "distinct-count": 4,
+          "nil%": 0
         },
         "type": {
           "type/Number": {
-            "min": 1809.0,
-            "q1": 3172.0,
-            "q3": 6457.0,
-            "max": 6523.0,
-            "sd": 1848.0030303005458,
-            "avg": 4578.0
+            "min": 1809,
+            "q1": 2490.5,
+            "q3": 5521.5,
+            "max": 6457,
+            "sd": 1988.8158956189652,
+            "avg": 4006
           }
         }
       },
@@ -124,7 +161,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "is_data_analyst": false,
-    "last_login": "2026-09-30T12:44:17.891253Z",
+    "last_login": "2026-06-02T07:19:11.458627Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3781,
@@ -134,35 +171,35 @@
     "common_name": "Gokul Lakshmanan"
   },
   "initially_published_at": null,
-  "can_write": true,
+  "can_write": false,
   "card_schema": 23,
-  "database_id": 108,
+  "database_id": 39,
   "enable_embedding": false,
-  "collection_id": 7263,
+  "collection_id": 7339,
   "query_type": "native",
   "name": "Summary",
-  "last_query_start": "2026-10-14T11:33:32.279552Z",
+  "last_query_start": "2026-06-11T12:17:10.250393Z",
   "is_remote_synced": false,
   "dashboard_count": 2,
   "document_id": null,
-  "last_used_at": "2026-10-14T11:33:32.291674Z",
+  "last_used_at": "2026-06-11T12:17:10.288884Z",
   "dashboard": null,
   "type": "question",
   "dimensions": null,
-  "average_query_time": 1680.875,
+  "average_query_time": 1634.8333333333333,
   "creator_id": 3781,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-10-14T11:34:12.663954Z",
+  "updated_at": "2026-06-11T12:17:10.072448Z",
   "made_public_by_id": null,
   "embedding_params": null,
-  "cache_ttl": 345600,
+  "cache_ttl": null,
   "dataset_query": {
     "lib/type": "mbql/query",
-    "database": 108,
+    "database": 39,
     "stages": [
       {
-        "native": "SELECT year,\n       ROUND(total_units) AS total_units,\n       total_unique_styleid\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n) t\nORDER BY sort_key",
+        "native": "SELECT year,\n       -- total_amount,\n       base_amount,\n       -- total_nlc,\n       ROUND(total_units) AS total_units,\n       -- gm,\n       -- gm_percent,\n       -- total_unique_sku_code,\n       total_unique_styleid\n       -- total_unique_pincode\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key",
         "lib/type": "mbql.stage/native"
       }
     ]
@@ -182,7 +219,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "last_name": "Lakshmanan",
-    "timestamp": "2026-10-14T11:34:12.723589Z"
+    "timestamp": "2026-06-11T09:08:43.313068Z"
   },
   "visualization_settings": {
     "table.pivot_column": "year",
@@ -201,20 +238,20 @@
     "description": null,
     "archived": false,
     "workspace_id": null,
-    "slug": "audit_related_queries",
+    "slug": "metebase_cards",
     "archive_operation_id": null,
-    "name": "Audit Related Queries",
+    "name": "Metebase Cards",
     "is_remote_synced": false,
     "personal_owner_id": null,
     "type": null,
     "is_sample": false,
-    "id": 7263,
+    "id": 7339,
     "archived_directly": null,
-    "entity_id": "oWwtg-LOoS9PZhUPjcQ1H",
-    "location": "/",
+    "entity_id": "8E5u3Fi3zn6gnP5O8N-WX",
+    "location": "/4814/5587/6459/5602/6582/7338/",
     "namespace": null,
     "is_personal": false,
-    "created_at": "2026-05-26T11:14:34.781469Z"
+    "created_at": "2026-06-11T07:26:42.808767Z"
   },
   "metabase_version": "v0.60.1 (0cf890b)",
   "parameters": [],
