@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T09:45:28.191Z",
+  "generatedAt": "2026-10-14T10:04:46.079Z",
   "basePath": "/handoff/",
   "count": 143,
   "entries": [
@@ -4079,11 +4079,13 @@
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/84466-gx-class-cancellation-excludes-no-booking-classes",
         "limitations": "",
-        "h1Fy26": "",
-        "h1Fy27": "",
+        "h1Fy26": "0.78%",
+        "h1Fy27": "0.81%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/gx-class-cancellation-rate.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/gx-class-cancellation-rate.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -4231,10 +4233,12 @@
         "sourceRaw": "https://metabase.curefit.co/question/75654-gx-formats?Last_date=2025-12-31",
         "limitations": "Lux not included",
         "h1Fy26": "",
-        "h1Fy27": "47.54%",
-        "h1SourceUrl": "https://metabase.curefit.co/question/75654-gx-formats?Last_date=2026-09-30",
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1Fy27": "46.43%",
+        "h1SourceUrl": "https://metabase.curefit.co/question/97053-gx-formats-single-vs-multi-hybrid-audited-to-mar26-live-apr26?Last_date=2026-09-30",
+        "h1ResultCsvUrl": "artifacts/results/h1/cultpass-multiple-formats.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/cultpass-multiple-formats.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -4305,18 +4309,20 @@
         "poc": "Gx team",
         "units": "%",
         "fy23": "",
-        "fy24": "66%",
-        "fy25": "68%",
-        "fy26": "67%",
+        "fy24": "66.20%",
+        "fy25": "68.20%",
+        "fy26": "66.7%",
         "nineMFy25": "",
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/83998-gx-hourly-utilization",
         "limitations": "",
-        "h1Fy26": "",
-        "h1Fy27": "",
+        "h1Fy26": "70.20%",
+        "h1Fy27": "63.2%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/gx-class-peak-utilization.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/gx-class-peak-utilization.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -7205,10 +7211,12 @@
         "sourceRaw": "https://metabase.curefit.co/question/75647-same-center-vs-other-center?Last_date=2026-02-09",
         "limitations": "Lux not included",
         "h1Fy26": "",
-        "h1Fy27": "64.77%",
-        "h1SourceUrl": "https://metabase.curefit.co/question/75647-same-center-vs-other-center?Last_date=2026-09-30",
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1Fy27": "63.64%",
+        "h1SourceUrl": "https://metabase.curefit.co/question/97041-same-vs-multi-center-hybrid-audited-to-mar26-live-apr26?Last_date=2026-09-30",
+        "h1ResultCsvUrl": "artifacts/results/h1/cultpass-multiple-centers.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/cultpass-multiple-centers.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
