@@ -69,6 +69,36 @@ async function fetchJson(path: string): Promise<unknown> {
   return res.json();
 }
 
+type BreakdownPairs = Array<[string, string]>;
+
+/**
+ * Parses a "Label: value, Label: value" cell (channel / region / category splits)
+ * into label-value pairs. Returns null when the value is a plain metric value.
+ */
+function parseBreakdownValue(value?: string | null): BreakdownPairs | null {
+  const v = (value ?? "").trim();
+  if (!v || !v.includes(":")) return null;
+  const parts = v.split(",").map((p) => p.trim()).filter(Boolean);
+  if (parts.length < 2) return null;
+  const pairs: BreakdownPairs = [];
+  for (const part of parts) {
+    const idx = part.indexOf(":");
+    if (idx <= 0) return null;
+    const label = part.slice(0, idx).trim();
+    const val = part.slice(idx + 1).trim();
+    if (!label || !val) return null;
+    pairs.push([label, val]);
+  }
+  return pairs;
+}
+
+/** Compact list-view summary: split cells become "4-segment split". */
+function summarizeFyValue(value?: string | null): string {
+  const pairs = parseBreakdownValue(value);
+  if (!pairs) return value ?? "";
+  return `${pairs.length}-segment split`;
+}
+
 function SheetMetricSection({ metric }: { metric: SheetMetric }) {
   const fyRows = [
     { label: "FY24", value: metric.fy24 },
@@ -77,6 +107,23 @@ function SheetMetricSection({ metric }: { metric: SheetMetric }) {
     { label: "H1 FY26", value: metric.h1Fy26 },
     { label: "H1 FY27", value: metric.h1Fy27 },
   ].filter((r) => r.value);
+
+  const breakdownCells = fyRows.map((r) => ({
+    label: r.label,
+    pairs: parseBreakdownValue(r.value),
+  }));
+  const isBreakdown =
+    breakdownCells.some((c) => c.pairs !== null) &&
+    breakdownCells.every((c) => c.pairs !== null);
+
+  // Segment row order: order of appearance in the latest period, then labels
+  // that only exist in earlier periods appended at the end.
+  const breakdownLabels: string[] = [];
+  for (let i = breakdownCells.length - 1; i >= 0; i -= 1) {
+    for (const [label] of breakdownCells[i].pairs ?? []) {
+      if (!breakdownLabels.includes(label)) breakdownLabels.push(label);
+    }
+  }
 
   return (
     <div className="rounded-xl border border-indigo-700/50 bg-indigo-950/30 p-5">
@@ -104,7 +151,48 @@ function SheetMetricSection({ metric }: { metric: SheetMetric }) {
         <p className="mt-2 text-sm leading-relaxed text-zinc-300">{metric.definition}</p>
       )}
 
-      {fyRows.length > 0 && (
+      {fyRows.length > 0 && isBreakdown && (
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-indigo-800/60">
+                <th className="px-3 py-1.5 text-left text-xs font-semibold uppercase tracking-wide text-indigo-400">
+                  Segment
+                </th>
+                {fyRows.map((r) => (
+                  <th
+                    key={r.label}
+                    className="px-3 py-1.5 text-left text-xs font-semibold uppercase tracking-wide text-indigo-400"
+                  >
+                    {r.label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {breakdownLabels.map((label) => (
+                <tr key={label} className="border-b border-zinc-800/40 last:border-b-0">
+                  <td className="px-3 py-1.5 text-sm text-zinc-300">{label}</td>
+                  {fyRows.map((r) => {
+                    const cell = breakdownCells.find((c) => c.label === r.label);
+                    const pair = cell?.pairs?.find(([l]) => l === label);
+                    return (
+                      <td key={r.label} className="px-3 py-1.5 font-mono text-sm text-zinc-200">
+                        {pair ? pair[1] : "—"}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {metric.units && (
+            <p className="mt-2 text-xs text-zinc-500">All values in {metric.units}.</p>
+          )}
+        </div>
+      )}
+
+      {fyRows.length > 0 && !isBreakdown && (
         <div className="mt-4 overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <thead>
@@ -393,7 +481,7 @@ function DashboardGroup({
                 )}
                 {metric.fy26 && (
                   <span className="text-xs text-zinc-400">
-                    FY26: <span className="font-medium text-zinc-200">{metric.fy26}</span>
+                    FY26: <span className="font-medium text-zinc-200">{summarizeFyValue(metric.fy26)}</span>
                   </span>
                 )}
               </div>
@@ -1108,7 +1196,9 @@ export default function MetricsPage() {
                           {e.sheetMetric.fy26 && (
                             <span className="text-xs text-zinc-400">
                               FY26:{" "}
-                              <span className="font-medium text-zinc-200">{e.sheetMetric.fy26}</span>
+                              <span className="font-medium text-zinc-200">
+                                {summarizeFyValue(e.sheetMetric.fy26)}
+                              </span>
                             </span>
                           )}
                         </div>

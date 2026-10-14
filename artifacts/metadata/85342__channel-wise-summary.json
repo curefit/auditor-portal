@@ -1,15 +1,15 @@
 {
-  "cache_invalidated_at": "2026-06-22T05:05:38.739932Z",
+  "cache_invalidated_at": "2026-10-14T10:44:15.600078Z",
   "description": null,
   "archived": false,
-  "view_count": 8,
+  "view_count": 39,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "database_type": "varchar(4)",
+      "database_type": "STRING",
       "semantic_type": null,
       "lib/deduplicated-name": "year",
       "lib/original-name": "year",
@@ -29,7 +29,7 @@
       "display_name": "year",
       "fingerprint": {
         "global": {
-          "distinct-count": 4,
+          "distinct-count": 6,
           "nil%": 0.0
         },
         "type": {
@@ -38,14 +38,14 @@
             "percent-url": 0.0,
             "percent-email": 0.0,
             "percent-state": 0.0,
-            "average-length": 4.0
+            "average-length": 5.2
           }
         }
       },
       "base_type": "type/Text"
     },
     {
-      "database_type": "varchar(28)",
+      "database_type": "STRING",
       "semantic_type": "type/Category",
       "lib/deduplicated-name": "channel_type",
       "lib/original-name": "channel_type",
@@ -74,14 +74,14 @@
             "percent-url": 0.0,
             "percent-email": 0.0,
             "percent-state": 0.0,
-            "average-length": 13.166666666666666
+            "average-length": 12.1
           }
         }
       },
       "base_type": "type/Text"
     },
     {
-      "database_type": "double",
+      "database_type": "DOUBLE",
       "semantic_type": "type/Share",
       "lib/deduplicated-name": "percentage",
       "lib/original-name": "percentage",
@@ -101,17 +101,17 @@
       "display_name": "percentage",
       "fingerprint": {
         "global": {
-          "distinct-count": 12,
+          "distinct-count": 20,
           "nil%": 0.0
         },
         "type": {
           "type/Number": {
             "min": 0.0011151862456752549,
-            "q1": 0.13469598830211935,
-            "q3": 0.5,
+            "q1": 0.12001309496061659,
+            "q3": 0.44755819154760923,
             "max": 0.6598975702104085,
-            "sd": 0.21386052769557562,
-            "avg": 0.3333333333333333
+            "sd": 0.19466174347718015,
+            "avg": 0.3
           }
         }
       },
@@ -123,7 +123,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "is_data_analyst": false,
-    "last_login": "2026-06-16T09:27:45.522093Z",
+    "last_login": "2026-09-30T12:44:17.891253Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3781,
@@ -135,34 +135,34 @@
   "initially_published_at": null,
   "can_write": true,
   "card_schema": 23,
-  "database_id": 39,
+  "database_id": 108,
   "enable_embedding": false,
   "collection_id": 7263,
   "query_type": "native",
   "name": "Channel Wise Summary",
-  "last_query_start": "2026-06-22T05:09:23.03148Z",
+  "last_query_start": "2026-10-14T11:40:27.20366Z",
   "is_remote_synced": false,
   "dashboard_count": 0,
   "document_id": null,
-  "last_used_at": "2026-06-22T05:09:23.039746Z",
+  "last_used_at": "2026-10-14T11:40:27.215882Z",
   "dashboard": null,
   "type": "question",
   "dimensions": null,
-  "average_query_time": 2230.0,
+  "average_query_time": 992.6666666666666,
   "creator_id": 3781,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-06-22T05:05:38.737426Z",
+  "updated_at": "2026-10-14T10:44:15.596908Z",
   "made_public_by_id": null,
   "embedding_params": null,
-  "cache_ttl": null,
+  "cache_ttl": 345600,
   "dataset_query": {
     "lib/type": "mbql/query",
-    "database": 39,
+    "database": 108,
     "stages": [
       {
         "lib/type": "mbql.stage/native",
-        "native": "SELECT\n  year,\n  channel_type,\n  base_amount * 1.000/ SUM(base_amount) OVER(PARTITION BY year) AS percentage\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n) t\nORDER BY sort_key, channel_type"
+        "native": "SELECT\n  year,\n  channel_type,\n  base_amount * 1.000/ SUM(base_amount) OVER(PARTITION BY year) AS percentage\nFROM (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    5 AS sort_key,\n    'H1-FY26' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    6 AS sort_key,\n    'H1-FY27' AS year,\n    CASE \n      WHEN manual_channel_type = '1P' THEN '1P'\n      WHEN manual_channel_type = 'EBO' THEN 'EBO'\n\t  WHEN manual_channel_type = '3P' THEN 'Ecommerce'\n      ELSE 'Other Offline/Online Channel'\n    END AS channel_type,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n    SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n  GROUP BY 3\n) t\nORDER BY sort_key, channel_type"
       }
     ]
   },
@@ -181,7 +181,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "last_name": "Lakshmanan",
-    "timestamp": "2026-06-22T05:05:38.775076Z"
+    "timestamp": "2026-10-14T10:44:15.648364Z"
   },
   "visualization_settings": {
     "table.pivot_column": "year",

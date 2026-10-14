@@ -1,15 +1,15 @@
 {
-  "cache_invalidated_at": "2026-06-29T13:38:41.281107Z",
+  "cache_invalidated_at": "2026-10-14T11:19:48.982517Z",
   "description": null,
   "archived": false,
-  "view_count": 14,
+  "view_count": 57,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "database_type": "varchar(4)",
+      "database_type": "STRING",
       "semantic_type": null,
       "lib/deduplicated-name": "year",
       "lib/original-name": "year",
@@ -29,23 +29,23 @@
       "display_name": "year",
       "fingerprint": {
         "global": {
-          "distinct-count": 1,
-          "nil%": 0
+          "distinct-count": 6,
+          "nil%": 0.0
         },
         "type": {
           "type/Text": {
-            "percent-json": 0,
-            "percent-url": 0,
-            "percent-email": 0,
-            "percent-state": 0,
-            "average-length": 4
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.0
           }
         }
       },
       "base_type": "type/Text"
     },
     {
-      "database_type": "varchar",
+      "database_type": "STRING",
       "semantic_type": null,
       "lib/deduplicated-name": "business_category",
       "lib/original-name": "business_category",
@@ -66,14 +66,14 @@
       "fingerprint": {
         "global": {
           "distinct-count": 2,
-          "nil%": 0
+          "nil%": 0.0
         },
         "type": {
           "type/Text": {
-            "percent-json": 0,
-            "percent-url": 0,
-            "percent-email": 0,
-            "percent-state": 0,
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
             "average-length": 12.5
           }
         }
@@ -81,7 +81,7 @@
       "base_type": "type/Text"
     },
     {
-      "database_type": "double",
+      "database_type": "DOUBLE",
       "semantic_type": null,
       "lib/deduplicated-name": "asp",
       "lib/original-name": "asp",
@@ -101,17 +101,17 @@
       "display_name": "asp",
       "fingerprint": {
         "global": {
-          "distinct-count": 2,
-          "nil%": 0
+          "distinct-count": 12,
+          "nil%": 0.0
         },
         "type": {
           "type/Number": {
-            "min": 845,
-            "q1": 845,
-            "q3": 2075,
-            "max": 2075,
-            "sd": 869.7413408594534,
-            "avg": 1460
+            "min": 319.0,
+            "q1": 597.0,
+            "q3": 1424.0,
+            "max": 2075.0,
+            "sd": 569.4067819523519,
+            "avg": 1051.4166666666667
           }
         }
       },
@@ -123,7 +123,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "is_data_analyst": false,
-    "last_login": "2026-06-16T09:27:45.522093Z",
+    "last_login": "2026-09-30T12:44:17.891253Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3781,
@@ -133,35 +133,35 @@
     "common_name": "Gokul Lakshmanan"
   },
   "initially_published_at": null,
-  "can_write": false,
+  "can_write": true,
   "card_schema": 23,
-  "database_id": 39,
+  "database_id": 108,
   "enable_embedding": false,
   "collection_id": 6597,
   "query_type": "native",
   "name": "Footwear Sub Category ASP",
-  "last_query_start": "2026-06-29T14:25:36.840465Z",
+  "last_query_start": "2026-10-14T11:42:53.009961Z",
   "is_remote_synced": false,
   "dashboard_count": 1,
   "document_id": null,
-  "last_used_at": "2026-06-29T14:25:36.846075Z",
+  "last_used_at": "2026-10-14T11:42:53.016362Z",
   "dashboard": null,
   "type": "question",
   "dimensions": null,
-  "average_query_time": 3078.0000000000000000,
+  "average_query_time": 2146.076923076923,
   "creator_id": 3781,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-06-29T13:38:41.272124Z",
+  "updated_at": "2026-10-14T11:19:48.9787Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": 345600,
   "dataset_query": {
     "lib/type": "mbql/query",
-    "database": 39,
+    "database": 108,
     "stages": [
       {
-        "native": "SELECT\n    year,\n\tbusiness_category,\n\tROUND(base_amount * 1.000/total_units) AS asp\nFROM \n(\n    SELECT\n        business_category,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n         AND business_category IN ('Avant Footwear','CS Footwear')\n\t\tAND manual_channel_type IN ('1P','3P','EBO')\n    GROUP BY 1\n) t\nWHERE 1 = 1\nORDER BY business_category",
+        "native": "SELECT\n    year,\n    CASE \n\t\tWHEN business_category = 'Avant Footwear' THEN business_category\n\t\tELSE  'CS Footwear'\n\tEND AS business_category,\n    ROUND(base_amount * 1.000 / total_units) AS asp\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        business_category,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n        AND business_category IN ('Avant Footwear', 'CS Footwear', 'CultSport Footwear')\n        AND manual_channel_type IN ('1P','3P','EBO')\n    GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        business_category,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n        AND business_category IN ('Avant Footwear', 'CS Footwear', 'CultSport Footwear')\n        AND manual_channel_type IN ('1P','3P','EBO')\n    GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        business_category,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n        AND business_category IN ('Avant Footwear', 'CS Footwear', 'CultSport Footwear')\n        AND manual_channel_type IN ('1P','3P','EBO')\n    GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        business_category,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n        AND business_category IN ('Avant Footwear', 'CS Footwear', 'CultSport Footwear')\n        AND manual_channel_type IN ('1P','3P','EBO')\n    GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        business_category,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n        AND business_category IN ('Avant Footwear', 'CS Footwear', 'CultSport Footwear')\n        AND manual_channel_type IN ('1P','3P','EBO')\n    GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        business_category,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units\n    FROM dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n        AND business_category IN ('Avant Footwear', 'CS Footwear', 'CultSport Footwear')\n        AND manual_channel_type IN ('1P','3P','EBO')\n    GROUP BY 3\n) t\nORDER BY sort_key, business_category",
         "lib/type": "mbql.stage/native"
       }
     ]
@@ -181,7 +181,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "last_name": "Lakshmanan",
-    "timestamp": "2026-06-29T13:38:41.328952Z"
+    "timestamp": "2026-10-14T11:19:49.014192Z"
   },
   "visualization_settings": {
     "table.pivot_column": "year",

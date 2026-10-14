@@ -1,0 +1,364 @@
+{
+  "card_id": 92047,
+  "card_name": "Bill from Region wise Summary",
+  "parameters": [],
+  "query_response": {
+    "data": {
+      "rows": [
+        [
+          "FY23",
+          "East",
+          0.08378454241125118
+        ],
+        [
+          "FY23",
+          "North",
+          0.16405713824152887
+        ],
+        [
+          "FY23",
+          "South",
+          0.6429884747318533
+        ],
+        [
+          "FY23",
+          "West",
+          0.10916984461536677
+        ],
+        [
+          "FY24",
+          "East",
+          0.10745864131214602
+        ],
+        [
+          "FY24",
+          "North",
+          0.2651064702162233
+        ],
+        [
+          "FY24",
+          "South",
+          0.559504208199376
+        ],
+        [
+          "FY24",
+          "West",
+          0.06793068027225474
+        ],
+        [
+          "FY25",
+          "East",
+          0.057056699486659895
+        ],
+        [
+          "FY25",
+          "North",
+          0.2674498673067685
+        ],
+        [
+          "FY25",
+          "South",
+          0.5950762647962915
+        ],
+        [
+          "FY25",
+          "West",
+          0.08041716841028006
+        ],
+        [
+          "FY26",
+          "East",
+          0.02345357739509842
+        ],
+        [
+          "FY26",
+          "North",
+          0.22290286919879956
+        ],
+        [
+          "FY26",
+          "South",
+          0.6738650748975307
+        ],
+        [
+          "FY26",
+          "West",
+          0.0797784785085714
+        ],
+        [
+          "H1-FY26",
+          "East",
+          0.028873214349580303
+        ],
+        [
+          "H1-FY26",
+          "North",
+          0.23401650477424676
+        ],
+        [
+          "H1-FY26",
+          "South",
+          0.6679562198698019
+        ],
+        [
+          "H1-FY26",
+          "West",
+          0.06915406100637102
+        ],
+        [
+          "H1-FY27",
+          "East",
+          0.014907063142138388
+        ],
+        [
+          "H1-FY27",
+          "North",
+          0.23622332534285664
+        ],
+        [
+          "H1-FY27",
+          "South",
+          0.6644414919733154
+        ],
+        [
+          "H1-FY27",
+          "West",
+          0.08442811954168962
+        ]
+      ],
+      "cols": [
+        {
+          "database_type": "STRING",
+          "lib/deduplicated-name": "year",
+          "lib/original-name": "year",
+          "name": "year",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "year",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "year",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "year",
+          "display_name": "year",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "STRING",
+          "lib/deduplicated-name": "region",
+          "lib/original-name": "region",
+          "name": "region",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "region",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "region",
+            {
+              "base-type": "type/Text"
+            }
+          ],
+          "effective_type": "type/Text",
+          "lib/desired-column-alias": "region",
+          "display_name": "region",
+          "base_type": "type/Text"
+        },
+        {
+          "database_type": "DOUBLE",
+          "lib/deduplicated-name": "percentage",
+          "lib/original-name": "percentage",
+          "name": "percentage",
+          "lib/source": "source/native",
+          "lib/source-column-alias": "percentage",
+          "source": "native",
+          "field_ref": [
+            "field",
+            "percentage",
+            {
+              "base-type": "type/Float"
+            }
+          ],
+          "effective_type": "type/Float",
+          "lib/desired-column-alias": "percentage",
+          "display_name": "percentage",
+          "base_type": "type/Float"
+        }
+      ],
+      "native_form": {
+        "lib/type": "mbql.stage/native",
+        "query": "WITH source_by_state AS (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    5 AS sort_key,\n    'H1-FY26' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    6 AS sort_key,\n    'H1-FY27' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n  GROUP BY 3\n),\nclassified AS (\n  SELECT\n    sort_key,\n    year,\n    bill_from_state,\n    base_amount,\n    CASE\n      WHEN bill_from_state IN ('Andhra Pradesh', 'Karnataka', 'Tamil Nadu', 'Tamilnadu', 'Telangana', 'Pondicherry', 'Hyderabad') THEN 'South'\n      WHEN bill_from_state IN ('Delhi', 'Haryana', 'Punjab', 'Uttar Pradesh', 'Rajasthan', 'Jammu and Kashmir', 'Uttarakhand', 'Chandigarh', 'Himachal Pradesh', 'Jammu') THEN 'North'\n      WHEN bill_from_state IN ('Madhya Pradesh', 'Maharashtra', 'Gujarat', 'Goa', 'Daman and Diu') THEN 'West'\n      WHEN bill_from_state IN ('Bihar', 'West Bengal', 'Odisha', 'Assam', 'Jharkhand', 'Chhattisgarh', 'Mizoram', 'Meghalaya', 'Arunachal Pradesh', 'Manipur', 'Tripura', 'Nagaland', 'Sikkim', 'Andaman and Nicobar') THEN 'East'\n      WHEN bill_from_state IS NULL THEN NULL\n      ELSE 'Unmapped state'\n    END AS region\n  FROM source_by_state\n),\nmapped AS (\n   SELECT\n    year,\n    region,\n    SUM(base_amount) AS mapped_amount\n  FROM classified\n  WHERE region IS NOT NULL\n  GROUP BY year, region\n),\nnull_pool AS (\n  SELECT\n    year,\n    COALESCE(SUM(base_amount), 0) AS null_amount\n  FROM classified\n  WHERE bill_from_state IS NULL\n  GROUP BY 1\n),\nfy_totals AS (\n  SELECT\n    year,\n    SUM(base_amount) AS total_amount\n  FROM classified\n  GROUP BY 1\n),\nregion_output AS (\n  SELECT\n    m.year,\n    m.region,\n    m.mapped_amount + COALESCE(n.null_amount * m.mapped_amount / NULLIF(SUM(m.mapped_amount) OVER (PARTITION BY m.year), 0), 0) AS base_amount,\n    t.total_amount\n  FROM mapped m\n  LEFT JOIN null_pool n ON n.year = m.year\n  JOIN fy_totals t ON t.year = m.year\n)\n\nSELECT\n  year,\n  region,\n  (base_amount * 1.000) / NULLIF(total_amount, 0) AS percentage\nFROM region_output\nORDER BY year, region"
+      },
+      "pivot-export-options": {
+        "show-row-totals": true,
+        "show-column-totals": true
+      },
+      "results_timezone": "UTC",
+      "requested_timezone": "UTC",
+      "format-rows?": true,
+      "results_metadata": {
+        "columns": [
+          {
+            "database_type": "STRING",
+            "semantic_type": null,
+            "lib/deduplicated-name": "year",
+            "lib/original-name": "year",
+            "name": "year",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "year",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "year",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "year",
+            "display_name": "year",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 6,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 5.0
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "STRING",
+            "semantic_type": null,
+            "lib/deduplicated-name": "region",
+            "lib/original-name": "region",
+            "name": "region",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "region",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "region",
+              {
+                "base-type": "type/Text"
+              }
+            ],
+            "effective_type": "type/Text",
+            "lib/desired-column-alias": "region",
+            "display_name": "region",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 4,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Text": {
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 4.5
+                }
+              }
+            },
+            "base_type": "type/Text"
+          },
+          {
+            "database_type": "DOUBLE",
+            "semantic_type": "type/Share",
+            "lib/deduplicated-name": "percentage",
+            "lib/original-name": "percentage",
+            "name": "percentage",
+            "lib/source": "source/native",
+            "lib/source-column-alias": "percentage",
+            "source": "native",
+            "field_ref": [
+              "field",
+              "percentage",
+              {
+                "base-type": "type/Float"
+              }
+            ],
+            "effective_type": "type/Float",
+            "lib/desired-column-alias": "percentage",
+            "display_name": "percentage",
+            "fingerprint": {
+              "global": {
+                "distinct-count": 24,
+                "nil%": 0.0
+              },
+              "type": {
+                "type/Number": {
+                  "min": 0.014907063142138388,
+                  "q1": 0.0744662697574712,
+                  "q3": 0.4134770377530722,
+                  "max": 0.6738650748975307,
+                  "sd": 0.23920308955531158,
+                  "avg": 0.25
+                }
+              }
+            },
+            "base_type": "type/Float"
+          }
+        ]
+      },
+      "insights": null
+    },
+    "cached": null,
+    "database_id": 108,
+    "started_at": "2026-10-14T12:31:33.313663917Z",
+    "json_query": {
+      "constraints": {
+        "max-results": 10000,
+        "max-results-bare-rows": 5000
+      },
+      "lib/type": "mbql/query",
+      "lib/metadata": null,
+      "stages": [
+        {
+          "lib/type": "mbql.stage/native",
+          "native": "WITH source_by_state AS (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    5 AS sort_key,\n    'H1-FY26' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    6 AS sort_key,\n    'H1-FY27' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n  GROUP BY 3\n),\nclassified AS (\n  SELECT\n    sort_key,\n    year,\n    bill_from_state,\n    base_amount,\n    CASE\n      WHEN bill_from_state IN ('Andhra Pradesh', 'Karnataka', 'Tamil Nadu', 'Tamilnadu', 'Telangana', 'Pondicherry', 'Hyderabad') THEN 'South'\n      WHEN bill_from_state IN ('Delhi', 'Haryana', 'Punjab', 'Uttar Pradesh', 'Rajasthan', 'Jammu and Kashmir', 'Uttarakhand', 'Chandigarh', 'Himachal Pradesh', 'Jammu') THEN 'North'\n      WHEN bill_from_state IN ('Madhya Pradesh', 'Maharashtra', 'Gujarat', 'Goa', 'Daman and Diu') THEN 'West'\n      WHEN bill_from_state IN ('Bihar', 'West Bengal', 'Odisha', 'Assam', 'Jharkhand', 'Chhattisgarh', 'Mizoram', 'Meghalaya', 'Arunachal Pradesh', 'Manipur', 'Tripura', 'Nagaland', 'Sikkim', 'Andaman and Nicobar') THEN 'East'\n      WHEN bill_from_state IS NULL THEN NULL\n      ELSE 'Unmapped state'\n    END AS region\n  FROM source_by_state\n),\nmapped AS (\n   SELECT\n    year,\n    region,\n    SUM(base_amount) AS mapped_amount\n  FROM classified\n  WHERE region IS NOT NULL\n  GROUP BY year, region\n),\nnull_pool AS (\n  SELECT\n    year,\n    COALESCE(SUM(base_amount), 0) AS null_amount\n  FROM classified\n  WHERE bill_from_state IS NULL\n  GROUP BY 1\n),\nfy_totals AS (\n  SELECT\n    year,\n    SUM(base_amount) AS total_amount\n  FROM classified\n  GROUP BY 1\n),\nregion_output AS (\n  SELECT\n    m.year,\n    m.region,\n    m.mapped_amount + COALESCE(n.null_amount * m.mapped_amount / NULLIF(SUM(m.mapped_amount) OVER (PARTITION BY m.year), 0), 0) AS base_amount,\n    t.total_amount\n  FROM mapped m\n  LEFT JOIN null_pool n ON n.year = m.year\n  JOIN fy_totals t ON t.year = m.year\n)\n\nSELECT\n  year,\n  region,\n  (base_amount * 1.000) / NULLIF(total_amount, 0) AS percentage\nFROM region_output\nORDER BY year, region"
+        }
+      ],
+      "middleware": {
+        "js-int-to-string?": true,
+        "ignore-cached-results?": true,
+        "process-viz-settings?": false,
+        "userland-query?": true
+      },
+      "cache-strategy": {
+        "multiplier": 10,
+        "min_duration_ms": 60000,
+        "type": "ttl",
+        "invalidated-at": "2026-10-14T10:44:18.743104Z",
+        "avg-execution-ms": 1568
+      },
+      "viz-settings": {
+        "table.pivot": true,
+        "table.pivot_column": "year",
+        "table.cell_column": "percentage",
+        "column_settings": {
+          "[\"name\",\"percentage\"]": {
+            "number_style": "percent"
+          }
+        }
+      },
+      "database": 108
+    },
+    "average_execution_time": null,
+    "status": "completed",
+    "context": "question",
+    "row_count": 24,
+    "running_time": 1207
+  }
+}

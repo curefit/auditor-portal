@@ -2,38 +2,43 @@
   "card_id": 84483,
   "card_name": "Summary",
   "parameters": [],
-  "parameter_notes": [],
   "query_response": {
     "data": {
       "rows": [
         [
           "FY23",
-          2257453822,
-          1320098,
+          1320098.0,
           1809
         ],
         [
           "FY24",
-          2566552396,
-          1904010,
+          1904010.0,
           3172
         ],
         [
           "FY25",
-          3257549144,
-          3038774,
+          3038774.0,
           4586
         ],
         [
           "FY26",
-          5269610572,
-          4239419,
+          4239455.0,
           6457
+        ],
+        [
+          "H1-FY26",
+          2782155.0,
+          4921
+        ],
+        [
+          "H1-FY27",
+          2932197.0,
+          6523
         ]
       ],
       "cols": [
         {
-          "database_type": "varchar(4)",
+          "database_type": "STRING",
           "lib/deduplicated-name": "year",
           "lib/original-name": "year",
           "name": "year",
@@ -53,27 +58,7 @@
           "base_type": "type/Text"
         },
         {
-          "database_type": "double",
-          "lib/deduplicated-name": "base_amount",
-          "lib/original-name": "base_amount",
-          "name": "base_amount",
-          "lib/source": "source/native",
-          "lib/source-column-alias": "base_amount",
-          "source": "native",
-          "field_ref": [
-            "field",
-            "base_amount",
-            {
-              "base-type": "type/Float"
-            }
-          ],
-          "effective_type": "type/Float",
-          "lib/desired-column-alias": "base_amount",
-          "display_name": "base_amount",
-          "base_type": "type/Float"
-        },
-        {
-          "database_type": "double",
+          "database_type": "DOUBLE",
           "lib/deduplicated-name": "total_units",
           "lib/original-name": "total_units",
           "name": "total_units",
@@ -93,7 +78,7 @@
           "base_type": "type/Float"
         },
         {
-          "database_type": "bigint",
+          "database_type": "BIGINT",
           "lib/deduplicated-name": "total_unique_styleid",
           "lib/original-name": "total_unique_styleid",
           "name": "total_unique_styleid",
@@ -115,7 +100,7 @@
       ],
       "native_form": {
         "lib/type": "mbql.stage/native",
-        "query": "SELECT year,\n       -- total_amount,\n       base_amount,\n       -- total_nlc,\n       ROUND(total_units) AS total_units,\n       -- gm,\n       -- gm_percent,\n       -- total_unique_sku_code,\n       total_unique_styleid\n       -- total_unique_pincode\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key"
+        "query": "SELECT year,\n       ROUND(total_units) AS total_units,\n       total_unique_styleid\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n) t\nORDER BY sort_key"
       },
       "pivot-export-options": {
         "show-row-totals": true,
@@ -127,7 +112,7 @@
       "results_metadata": {
         "columns": [
           {
-            "database_type": "varchar(4)",
+            "database_type": "STRING",
             "semantic_type": null,
             "lib/deduplicated-name": "year",
             "lib/original-name": "year",
@@ -147,60 +132,23 @@
             "display_name": "year",
             "fingerprint": {
               "global": {
-                "distinct-count": 4,
-                "nil%": 0
+                "distinct-count": 6,
+                "nil%": 0.0
               },
               "type": {
                 "type/Text": {
-                  "percent-json": 0,
-                  "percent-url": 0,
-                  "percent-email": 0,
-                  "percent-state": 0,
-                  "average-length": 4
+                  "percent-json": 0.0,
+                  "percent-url": 0.0,
+                  "percent-email": 0.0,
+                  "percent-state": 0.0,
+                  "average-length": 5.0
                 }
               }
             },
             "base_type": "type/Text"
           },
           {
-            "database_type": "double",
-            "semantic_type": null,
-            "lib/deduplicated-name": "base_amount",
-            "lib/original-name": "base_amount",
-            "name": "base_amount",
-            "lib/source": "source/native",
-            "lib/source-column-alias": "base_amount",
-            "source": "native",
-            "field_ref": [
-              "field",
-              "base_amount",
-              {
-                "base-type": "type/Float"
-              }
-            ],
-            "effective_type": "type/Float",
-            "lib/desired-column-alias": "base_amount",
-            "display_name": "base_amount",
-            "fingerprint": {
-              "global": {
-                "distinct-count": 4,
-                "nil%": 0
-              },
-              "type": {
-                "type/Number": {
-                  "min": 2257453822,
-                  "q1": 2412003109,
-                  "q3": 4263579858,
-                  "max": 5269610572,
-                  "sd": 1354043699.03443,
-                  "avg": 3337791483.5
-                }
-              }
-            },
-            "base_type": "type/Float"
-          },
-          {
-            "database_type": "double",
+            "database_type": "DOUBLE",
             "semantic_type": null,
             "lib/deduplicated-name": "total_units",
             "lib/original-name": "total_units",
@@ -220,24 +168,24 @@
             "display_name": "total_units",
             "fingerprint": {
               "global": {
-                "distinct-count": 4,
-                "nil%": 0
+                "distinct-count": 6,
+                "nil%": 0.0
               },
               "type": {
                 "type/Number": {
-                  "min": 1320098,
-                  "q1": 1612054,
-                  "q3": 3639096.5,
-                  "max": 4239419,
-                  "sd": 1291014.086766775,
-                  "avg": 2625575.25
+                  "min": 1320098.0,
+                  "q1": 1904010.0,
+                  "q3": 3038774.0,
+                  "max": 4239455.0,
+                  "sd": 1008269.5671481412,
+                  "avg": 2702781.5
                 }
               }
             },
             "base_type": "type/Float"
           },
           {
-            "database_type": "bigint",
+            "database_type": "BIGINT",
             "semantic_type": null,
             "lib/deduplicated-name": "total_unique_styleid",
             "lib/original-name": "total_unique_styleid",
@@ -257,17 +205,17 @@
             "display_name": "total_unique_styleid",
             "fingerprint": {
               "global": {
-                "distinct-count": 4,
-                "nil%": 0
+                "distinct-count": 6,
+                "nil%": 0.0
               },
               "type": {
                 "type/Number": {
-                  "min": 1809,
-                  "q1": 2490.5,
-                  "q3": 5521.5,
-                  "max": 6457,
-                  "sd": 1988.8158956189652,
-                  "avg": 4006
+                  "min": 1809.0,
+                  "q1": 3172.0,
+                  "q3": 6457.0,
+                  "max": 6523.0,
+                  "sd": 1848.0030303005458,
+                  "avg": 4578.0
                 }
               }
             },
@@ -278,8 +226,8 @@
       "insights": null
     },
     "cached": null,
-    "database_id": 39,
-    "started_at": "2026-06-11T13:57:14.622061144Z",
+    "database_id": 108,
+    "started_at": "2026-10-14T12:31:16.688981262Z",
     "json_query": {
       "constraints": {
         "max-results": 10000,
@@ -289,7 +237,7 @@
       "lib/metadata": null,
       "stages": [
         {
-          "native": "SELECT year,\n       -- total_amount,\n       base_amount,\n       -- total_nlc,\n       ROUND(total_units) AS total_units,\n       -- gm,\n       -- gm_percent,\n       -- total_unique_sku_code,\n       total_unique_styleid\n       -- total_unique_pincode\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(total_amount, ',', '') AS DOUBLE))) AS total_amount,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        ROUND(SUM(nlc)) AS total_nlc,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc)) AS gm,\n        (ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) - ROUND(SUM(nlc))) * 1.000/ ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS gm_percent,\n        COUNT(DISTINCT item_code) AS total_unique_sku_code,\n        COUNT(DISTINCT style_id) AS total_unique_styleid,\n        COUNT(DISTINCT bill_to_pincode) AS total_unique_pincode\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n) t\nORDER BY sort_key",
+          "native": "SELECT year,\n       ROUND(total_units) AS total_units,\n       total_unique_styleid\nFROM (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n    FROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS year,\n        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,\n        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,\n        COUNT(DISTINCT style_id) AS total_unique_styleid\n\tFROM  dwh_d2c_metrics.bizfin_sales_data\n    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n) t\nORDER BY sort_key",
           "lib/type": "mbql.stage/native"
         }
       ],
@@ -300,11 +248,11 @@
         "userland-query?": true
       },
       "cache-strategy": {
-        "duration": 12,
+        "duration": 2500,
         "unit": "hours",
         "type": "duration",
         "refresh_automatically": false,
-        "invalidated-at": "2026-06-11T12:17:10.061083Z"
+        "invalidated-at": "2026-10-14T11:34:12.669764Z"
       },
       "viz-settings": {
         "table.pivot_column": "year",
@@ -318,12 +266,12 @@
           209
         ]
       },
-      "database": 39
+      "database": 108
     },
     "average_execution_time": null,
     "status": "completed",
     "context": "question",
-    "row_count": 4,
-    "running_time": 2322
+    "row_count": 6,
+    "running_time": 1426
   }
 }

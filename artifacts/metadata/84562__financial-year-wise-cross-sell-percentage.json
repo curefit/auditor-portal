@@ -1,15 +1,15 @@
 {
-  "cache_invalidated_at": "2026-06-11T12:17:10.061083Z",
+  "cache_invalidated_at": "2026-10-14T10:44:14.381151Z",
   "description": null,
   "archived": false,
-  "view_count": 15,
+  "view_count": 60,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
   "can_run_adhoc_query": true,
   "result_metadata": [
     {
-      "database_type": "varchar(4)",
+      "database_type": "STRING",
       "semantic_type": null,
       "lib/deduplicated-name": "financial_year",
       "lib/original-name": "financial_year",
@@ -29,23 +29,23 @@
       "display_name": "financial_year",
       "fingerprint": {
         "global": {
-          "distinct-count": 4,
-          "nil%": 0
+          "distinct-count": 6,
+          "nil%": 0.0
         },
         "type": {
           "type/Text": {
-            "percent-json": 0,
-            "percent-url": 0,
-            "percent-email": 0,
-            "percent-state": 0,
-            "average-length": 4
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.0
           }
         }
       },
       "base_type": "type/Text"
     },
     {
-      "database_type": "double",
+      "database_type": "DOUBLE",
       "semantic_type": "type/Share",
       "lib/deduplicated-name": "cross_sell_percentage",
       "lib/original-name": "cross_sell_percentage",
@@ -65,17 +65,17 @@
       "display_name": "cross_sell_percentage",
       "fingerprint": {
         "global": {
-          "distinct-count": 4,
-          "nil%": 0
+          "distinct-count": 6,
+          "nil%": 0.0
         },
         "type": {
           "type/Number": {
             "min": 29.07,
-            "q1": 30.41,
-            "q3": 42.004999999999995,
+            "q1": 29.73,
+            "q3": 33.75,
             "max": 51.64,
-            "sd": 10.387519354173707,
-            "avg": 36.207499999999996
+            "sd": 8.466324861866964,
+            "avg": 34.718333333333334
           }
         }
       },
@@ -87,7 +87,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "is_data_analyst": false,
-    "last_login": "2026-06-02T07:19:11.458627Z",
+    "last_login": "2026-09-30T12:44:17.891253Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3781,
@@ -97,36 +97,36 @@
     "common_name": "Gokul Lakshmanan"
   },
   "initially_published_at": null,
-  "can_write": false,
+  "can_write": true,
   "card_schema": 23,
-  "database_id": 39,
+  "database_id": 108,
   "enable_embedding": false,
   "collection_id": 7339,
   "query_type": "native",
   "name": "Financial Year Wise Cross Sell Percentage",
-  "last_query_start": "2026-06-11T12:17:13.721815Z",
+  "last_query_start": "2026-10-14T11:39:52.971778Z",
   "is_remote_synced": false,
   "dashboard_count": 1,
   "document_id": null,
-  "last_used_at": "2026-06-11T12:17:13.727182Z",
+  "last_used_at": "2026-10-14T11:39:52.980536Z",
   "dashboard": null,
   "type": "question",
   "dimensions": null,
-  "average_query_time": 10987,
+  "average_query_time": 6522.0,
   "creator_id": 3781,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-06-11T12:17:10.072448Z",
+  "updated_at": "2026-10-14T10:44:14.377791Z",
   "made_public_by_id": null,
   "embedding_params": null,
   "cache_ttl": null,
   "dataset_query": {
     "lib/type": "mbql/query",
-    "database": 39,
+    "database": 108,
     "stages": [
       {
         "lib/type": "mbql.stage/native",
-        "native": "WITH base AS (\n    SELECT\n        CASE\n            WHEN order_date BETWEEN DATE('2022-04-01') AND DATE('2023-03-31') THEN 'FY23'\n            WHEN order_date BETWEEN DATE('2023-04-01') AND DATE('2024-03-31') THEN 'FY24'\n            WHEN order_date BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'\n            WHEN order_date BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'\n        END AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE('2022-04-01') AND DATE('2026-03-31')\n      AND is_fs_member IN (0, 1)\n),\ngrouped AS (\n    SELECT\n        fy,\n        cross_sell_vs_1p,\n        SUM(gmv) AS total_gmv\n    FROM base\n    WHERE fy IS NOT NULL\n    GROUP BY 1, 2\n)\n\nSELECT fy AS financial_year, pct_gmv AS cross_sell_percentage\nFROM \n(\nSELECT\n    fy,\n    cross_sell_vs_1p,\n    ROUND(total_gmv, 0) AS total_gmv,\n    ROUND(\n        100.0 * total_gmv / SUM(total_gmv) OVER (PARTITION BY fy),\n        2\n    ) AS pct_gmv\nFROM grouped\n)\nWHERE cross_sell_vs_1p = 'CROSS-SELL'\nORDER BY fy"
+        "native": "WITH base AS (\n    SELECT\n        1 AS sort_key,\n        'FY23' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\n    UNION ALL\n\n    SELECT\n        2 AS sort_key,\n        'FY24' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\n    UNION ALL\n\n    SELECT\n        3 AS sort_key,\n        'FY25' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\n    UNION ALL\n\n    SELECT\n        4 AS sort_key,\n        'FY26' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\n    UNION ALL\n\n    SELECT\n        5 AS sort_key,\n        'H1-FY26' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\n    UNION ALL\n\n    SELECT\n        6 AS sort_key,\n        'H1-FY27' AS fy,\n        CASE\n            WHEN is_fs_member = 1 THEN 'CROSS-SELL'\n            WHEN is_fs_member = 0 THEN 'NON-FS-MEMBER'\n        END AS cross_sell_vs_1p,\n        gmv\n    FROM dwh_fitness_metrics.cross_sell_orders\n    WHERE is_cancelled = 0\n      AND order_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n),\ngrouped AS (\n    SELECT sort_key, fy, cross_sell_vs_1p, SUM(gmv) AS total_gmv\n    FROM base\n    WHERE cross_sell_vs_1p IS NOT NULL\n    GROUP BY 1, 2, 3\n)\nSELECT financial_year, cross_sell_percentage\nFROM (\n    SELECT\n        sort_key,\n        fy AS financial_year,\n        cross_sell_vs_1p,\n        ROUND(100.0 * total_gmv / SUM(total_gmv) OVER (PARTITION BY fy), 2) AS cross_sell_percentage\n    FROM grouped\n)\nWHERE cross_sell_vs_1p = 'CROSS-SELL'\nORDER BY sort_key"
       }
     ]
   },
@@ -145,7 +145,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "last_name": "Lakshmanan",
-    "timestamp": "2026-06-11T07:27:32.800342Z"
+    "timestamp": "2026-10-14T10:44:14.418428Z"
   },
   "visualization_settings": {
     "table.pivot_column": "financial_year",

@@ -1,8 +1,8 @@
 {
-  "cache_invalidated_at": "2026-06-19T09:47:33.607451Z",
+  "cache_invalidated_at": "2026-10-14T11:33:11.199498Z",
   "description": null,
   "archived": false,
-  "view_count": 10,
+  "view_count": 44,
   "collection_position": null,
   "source_card_id": null,
   "table_id": null,
@@ -198,7 +198,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "is_data_analyst": false,
-    "last_login": "2026-06-16T09:27:45.522093Z",
+    "last_login": "2026-09-30T12:44:17.891253Z",
     "is_qbnewb": false,
     "is_superuser": false,
     "id": 3781,
@@ -210,34 +210,34 @@
   "initially_published_at": null,
   "can_write": true,
   "card_schema": 23,
-  "database_id": 39,
+  "database_id": 108,
   "enable_embedding": false,
   "collection_id": 7263,
   "query_type": "native",
-  "name": "Total End users of products - B2B2C",
-  "last_query_start": "2026-06-19T09:48:23.042364Z",
+  "name": "Total End Buyer of products ",
+  "last_query_start": "2026-10-14T11:12:33.05931Z",
   "is_remote_synced": false,
   "dashboard_count": 0,
   "document_id": null,
-  "last_used_at": "2026-06-19T09:48:23.046977Z",
+  "last_used_at": "2026-10-14T11:12:33.07842Z",
   "dashboard": null,
   "type": "question",
   "dimensions": null,
-  "average_query_time": 4340.0,
+  "average_query_time": 3741.714285714286,
   "creator_id": 3781,
   "can_restore": false,
   "moderation_reviews": [],
-  "updated_at": "2026-06-19T09:47:33.605279Z",
+  "updated_at": "2026-10-14T11:33:11.195855Z",
   "made_public_by_id": null,
   "embedding_params": null,
-  "cache_ttl": null,
+  "cache_ttl": 345600,
   "dataset_query": {
     "lib/type": "mbql/query",
-    "database": 39,
+    "database": 108,
     "stages": [
       {
-        "lib/type": "mbql.stage/native",
-        "native": "WITH revenue_summary AS (\n    SELECT year, base_amount, sort_key\n    FROM (\n        SELECT\n            1 AS sort_key,\n            'FY23' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            2 AS sort_key,\n            'FY24' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            3 AS sort_key,\n            'FY25' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            4 AS sort_key,\n            'FY26' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n    ) t\n),\nfy_year_1p_metrics AS (\n    SELECT\n        fy_year,\n        ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,\n        ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0),4) AS customer_to_order_ratio\n    FROM (\n        SELECT\n            CASE\n                WHEN DATE(filter_date) BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'\n                WHEN DATE(filter_date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'\n            END AS fy_year,\n            total_price,\n            order_id,\n            billing_address_phone\n        FROM dwh_d2c_metrics.d2c_bizfin_revenue\n        WHERE filter_date IS NOT NULL\n          AND DATE(filter_date) BETWEEN DATE('2024-04-01') AND DATE('2026-03-31')\n          AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')\n          AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'\n          AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))\n          AND channel_type = '1P'\n    ) source\n    WHERE fy_year IS NOT NULL\n    GROUP BY 1\n),\nrevenue_metric_year_mapping AS (\n    SELECT\n        r.year,\n        r.base_amount,\n        r.sort_key,\n        CASE\n            WHEN r.year IN ('FY23', 'FY24', 'FY25') THEN 'FY25'\n            WHEN r.year = 'FY26' THEN 'FY26'\n        END AS metric_year\n    FROM revenue_summary r\n)\nSELECT\n    r.year,\n    r.base_amount,\n    m.aov,\n\tm.customer_to_order_ratio,\n    ROUND((r.base_amount / NULLIF(m.aov, 0)) * m.customer_to_order_ratio) AS customers\nFROM revenue_metric_year_mapping r\nJOIN fy_year_1p_metrics m\n  ON r.metric_year = m.fy_year\nORDER BY r.sort_key\n"
+        "native": "WITH revenue_summary AS (\n    SELECT year, base_amount, sort_key\n    FROM (\n        SELECT\n            1 AS sort_key,\n            'FY23' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            2 AS sort_key,\n            'FY24' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            3 AS sort_key,\n            'FY25' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n        UNION ALL\n\n        SELECT\n            4 AS sort_key,\n            'FY26' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n    UNION ALL\n\n    SELECT\n            5 AS sort_key,\n            'H1-FY26' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n\n    UNION ALL\n\n    SELECT\n            6 AS sort_key,\n            'H1-FY27' AS year,\n            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n        FROM dwh_d2c_metrics.bizfin_sales_data\n        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n\t\tAND manual_channel_type IN ('1P','3P','EBO','B2B MP')\n    ) t\n),\nfy_year_1p_metrics AS (\n    SELECT 'FY25' AS fy_year,\n           ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,\n           ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0), 4) AS customer_to_order_ratio\n    FROM dwh_d2c_metrics.d2c_bizfin_revenue\n    WHERE filter_date IS NOT NULL\n      AND DATE(filter_date) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')\n      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'\n      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))\n      AND channel_type = '1P'\n\n    UNION ALL\n\n    SELECT 'FY26' AS fy_year,\n           ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,\n           ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0), 4) AS customer_to_order_ratio\n    FROM dwh_d2c_metrics.d2c_bizfin_revenue\n    WHERE filter_date IS NOT NULL\n      AND DATE(filter_date) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')\n      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'\n      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))\n      AND channel_type = '1P'\n\n    UNION ALL\n\n    SELECT 'H1-FY26' AS fy_year,\n           ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,\n           ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0), 4) AS customer_to_order_ratio\n    FROM dwh_d2c_metrics.d2c_bizfin_revenue\n    WHERE filter_date IS NOT NULL\n      AND DATE(filter_date) BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')\n      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'\n      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))\n      AND channel_type = '1P'\n\n    UNION ALL\n\n    SELECT 'H1-FY27' AS fy_year,\n           ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,\n           ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0), 4) AS customer_to_order_ratio\n    FROM dwh_d2c_metrics.d2c_bizfin_revenue\n    WHERE filter_date IS NOT NULL\n      AND DATE(filter_date) BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')\n      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'\n      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))\n      AND channel_type = '1P'\n),\nrevenue_metric_year_mapping AS (\n    SELECT\n        r.year,\n        r.base_amount,\n        r.sort_key,\n        CASE\n            WHEN r.year IN ('FY23', 'FY24', 'FY25') THEN 'FY25'\n            WHEN r.year = 'FY26' THEN 'FY26'\n            WHEN r.year = 'H1-FY26' THEN 'H1-FY26'\n            WHEN r.year = 'H1-FY27' THEN 'H1-FY27'\n        END AS metric_year\n    FROM revenue_summary r\n)\nSELECT\n    r.year,\n    m.aov,\n\tm.customer_to_order_ratio,\n    ROUND((r.base_amount / NULLIF(m.aov, 0)) * m.customer_to_order_ratio) AS customers\nFROM revenue_metric_year_mapping r\nJOIN fy_year_1p_metrics m\n  ON r.metric_year = m.fy_year\nORDER BY r.sort_key\n",
+        "lib/type": "mbql.stage/native"
       }
     ]
   },
@@ -256,7 +256,7 @@
     "email": "gokul.lakshmanan@curefit.com",
     "first_name": "Gokul",
     "last_name": "Lakshmanan",
-    "timestamp": "2026-06-19T09:47:33.635522Z"
+    "timestamp": "2026-10-14T11:33:11.248479Z"
   },
   "visualization_settings": {
     "table.pivot_column": "year",
