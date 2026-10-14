@@ -1,5 +1,5 @@
 {
-  "excludedSourceCardIds": ["91948", "93808", "92047"],
+  "excludedSourceCardIds": ["91948", "93808"],
   "rows": {
     "active|12|# Paid Members": [{ "cardId": "75109", "sheetMetricSlNo": "7" }],
     "active|13|# Paid members split by city": [{ "cardId": "77280", "sheetMetricSlNo": "8" }],
@@ -39,6 +39,7 @@
     "active|15|Commercial Equipment Revenue": [{ "cardId": "85343", "sheetMetricSlNo": "16" }],
     "active|16|Avant Footwear ASP": [{ "cardId": "86149", "sheetMetricSlNo": "17" }],
     "active|17|CultSport Footwear ASP": [{ "cardId": "86149", "sheetMetricSlNo": "18" }],
+    "active|18|Region wise Revenue": [{ "cardId": "92047", "sheetMetricSlNo": "19" }],
     "removed|19|# App installs (so far)": [{ "cardId": "83547", "sheetMetricSlNo": "25" }],
     "removed|28|Cultpass data on % members using multiple cities": [{ "cardId": "75650", "sheetMetricSlNo": "16" }],
     "removed|44|# Health activities tracked": [{ "cardId": "74738", "sheetMetricSlNo": "33" }],
@@ -58,6 +59,20 @@
     "56424|21": [
       "results/h1/fy27-h1-session-rating.csv",
       "results/h1/fy26-h1-session-rating.csv"
-    ]
+    ],
+    "85306|2": "results/h1/total-end-buyers.csv",
+    "84483|3": "results/h1/product-sales-summary.csv",
+    "84483|4": "results/h1/product-sales-summary.csv",
+    "84486|5": "results/h1/apparel-new-designs.csv",
+    "84487|6": "results/h1/footwear-new-designs.csv",
+    "84661|9": "results/h1/channel-percentages.csv",
+    "84661|11": "results/h1/channel-percentages.csv",
+    "84562|12": "results/h1/cross-sell-percentage.csv",
+    "85342|14": "results/h1/channel-wise-split.csv",
+    "85340|15": "results/h1/major-categories-split.csv",
+    "85343|16": "results/h1/commercial-equipment-percentage.csv",
+    "86149|17": "results/h1/footwear-sub-category-asp.csv",
+    "86149|18": "results/h1/footwear-sub-category-asp.csv",
+    "92047|19": "results/h1/region-wise-revenue.csv"
   }
 }

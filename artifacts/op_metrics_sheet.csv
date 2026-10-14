@@ -92,6 +92,7 @@ https://drive.google.com/file/d/1lGVaoL-e6jRSMUgh3Huuvt9FLLORCvGj/view?usp=shari
 ,16,Commercial Equipment Revenue,% of product sales revenue from commercial Equipment,% of product sales revenue from commercial Equipment,,,,,%,,"Added in business section metrics sheet",,,,,https://metabase.curefit.co/question/85343-commercial-equipment-summary,
 ,17,Avant Footwear ASP,,ASP of Footwear Portfolio on Sub Category level ( Avant Footwear ) across our own channel and Marketplace,,,,,INR,,,,845,,,https://metabase.curefit.co/question/86149-footwear-sub-category-asp,
 ,18,CultSport Footwear ASP,,ASP of Footwear Portfolio on Sub Category level ( CultSport Footwear ) across our own channel and Marketplace,,,,,INR,,,,"2,075",,,https://metabase.curefit.co/question/86149-footwear-sub-category-asp,
+,19,Region wise Revenue,,"Revenue of the fitness products categorised into region North,East, West, South",,,,,%,,"Added in business section metrics sheet",,,,,https://metabase.curefit.co/question/92047-bill-from-region-wise-summary,
 ,48,Referrals,Referral orders as a percentage of new orders during the relevant period/year.,Referral orders as a percentage of new orders during the relevant period/year.,Done,Done,,,%,,24%,29%,39%,,,https://metabase.curefit.co/question/72394-spot-offer-referral-discount-nce-orders,
 
 ,,,,,,,,,,,,,,,,,

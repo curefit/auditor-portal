@@ -326,9 +326,9 @@ function parseH1MetricsOverlay(csvText, mapping) {
     }
   }
 
-  if (stats.active !== 38 || stats.removed !== 4 || stats.h1Links !== 13 || stats.excluded !== 3) {
+  if (stats.active !== 38 || stats.removed !== 4 || stats.h1Links !== 13 || stats.excluded !== 2) {
     throw new Error(
-      `Unexpected H1 metrics summary: ${JSON.stringify(stats)}. Expected 38 active, 4 removed, 13 H1 links, and 3 exclusions.`,
+      `Unexpected H1 metrics summary: ${JSON.stringify(stats)}. Expected 38 active, 4 removed, 13 H1 links, and 2 exclusions.`,
     );
   }
   if (usedMappingKeys.size !== Object.keys(mapping.rows ?? {}).length) {

@@ -1,0 +1,223 @@
+{
+  "cache_invalidated_at": "2026-10-14T10:44:18.743104Z",
+  "description": null,
+  "archived": false,
+  "view_count": 32,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "STRING",
+      "semantic_type": null,
+      "lib/deduplicated-name": "year",
+      "lib/original-name": "year",
+      "name": "year",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "year",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "year",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "year",
+      "display_name": "year",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 6,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 5.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "STRING",
+      "semantic_type": null,
+      "lib/deduplicated-name": "region",
+      "lib/original-name": "region",
+      "name": "region",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "region",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "region",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "region",
+      "display_name": "region",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.5
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "DOUBLE",
+      "semantic_type": "type/Share",
+      "lib/deduplicated-name": "percentage",
+      "lib/original-name": "percentage",
+      "name": "percentage",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "percentage",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "percentage",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "percentage",
+      "display_name": "percentage",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 0.014907063142138388,
+            "q1": 0.0744662697574712,
+            "q3": 0.4134770377530722,
+            "max": 0.6738650748975307,
+            "sd": 0.23920308955531158,
+            "avg": 0.25
+          }
+        }
+      },
+      "base_type": "type/Float"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "is_data_analyst": false,
+    "last_login": "2026-09-30T12:44:17.891253Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3781,
+    "last_name": "Lakshmanan",
+    "tenant_id": null,
+    "date_joined": "2025-04-10T08:17:50.035401Z",
+    "common_name": "Gokul Lakshmanan"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 108,
+  "enable_embedding": false,
+  "collection_id": 7339,
+  "query_type": "native",
+  "name": "Bill from Region wise Summary",
+  "last_query_start": "2026-10-14T11:44:59.51563Z",
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-10-14T11:44:59.522326Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 10710.615384615385,
+  "creator_id": 3781,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-10-14T10:44:18.740359Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 108,
+    "stages": [
+      {
+        "lib/type": "mbql.stage/native",
+        "native": "WITH source_by_state AS (\n  SELECT\n    1 AS sort_key,\n    'FY23' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    2 AS sort_key,\n    'FY24' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    3 AS sort_key,\n    'FY25' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'\n  GROUP BY 3\n\n  UNION ALL\n\n  SELECT\n    4 AS sort_key,\n    'FY26' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    5 AS sort_key,\n    'H1-FY26' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'\n  GROUP BY 3\n\n    UNION ALL\n\n    SELECT\n    6 AS sort_key,\n    'H1-FY27' AS year,\n    bill_from_state,\n    ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount\n  FROM dwh_d2c_metrics.bizfin_sales_data\n  WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'\n  GROUP BY 3\n),\nclassified AS (\n  SELECT\n    sort_key,\n    year,\n    bill_from_state,\n    base_amount,\n    CASE\n      WHEN bill_from_state IN ('Andhra Pradesh', 'Karnataka', 'Tamil Nadu', 'Tamilnadu', 'Telangana', 'Pondicherry', 'Hyderabad') THEN 'South'\n      WHEN bill_from_state IN ('Delhi', 'Haryana', 'Punjab', 'Uttar Pradesh', 'Rajasthan', 'Jammu and Kashmir', 'Uttarakhand', 'Chandigarh', 'Himachal Pradesh', 'Jammu') THEN 'North'\n      WHEN bill_from_state IN ('Madhya Pradesh', 'Maharashtra', 'Gujarat', 'Goa', 'Daman and Diu') THEN 'West'\n      WHEN bill_from_state IN ('Bihar', 'West Bengal', 'Odisha', 'Assam', 'Jharkhand', 'Chhattisgarh', 'Mizoram', 'Meghalaya', 'Arunachal Pradesh', 'Manipur', 'Tripura', 'Nagaland', 'Sikkim', 'Andaman and Nicobar') THEN 'East'\n      WHEN bill_from_state IS NULL THEN NULL\n      ELSE 'Unmapped state'\n    END AS region\n  FROM source_by_state\n),\nmapped AS (\n   SELECT\n    year,\n    region,\n    SUM(base_amount) AS mapped_amount\n  FROM classified\n  WHERE region IS NOT NULL\n  GROUP BY year, region\n),\nnull_pool AS (\n  SELECT\n    year,\n    COALESCE(SUM(base_amount), 0) AS null_amount\n  FROM classified\n  WHERE bill_from_state IS NULL\n  GROUP BY 1\n),\nfy_totals AS (\n  SELECT\n    year,\n    SUM(base_amount) AS total_amount\n  FROM classified\n  GROUP BY 1\n),\nregion_output AS (\n  SELECT\n    m.year,\n    m.region,\n    m.mapped_amount + COALESCE(n.null_amount * m.mapped_amount / NULLIF(SUM(m.mapped_amount) OVER (PARTITION BY m.year), 0), 0) AS base_amount,\n    t.total_amount\n  FROM mapped m\n  LEFT JOIN null_pool n ON n.year = m.year\n  JOIN fy_totals t ON t.year = m.year\n)\n\nSELECT\n  year,\n  region,\n  (base_amount * 1.000) / NULLIF(total_amount, 0) AS percentage\nFROM region_output\nORDER BY year, region"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 92047,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "39soNVY0n5dBQaDUkBaS5",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3781,
+    "email": "gokul.lakshmanan@curefit.com",
+    "first_name": "Gokul",
+    "last_name": "Lakshmanan",
+    "timestamp": "2026-10-14T10:44:18.798292Z"
+  },
+  "visualization_settings": {
+    "table.pivot": true,
+    "table.pivot_column": "year",
+    "table.cell_column": "percentage",
+    "column_settings": {
+      "[\"name\",\"percentage\"]": {
+        "number_style": "percent"
+      }
+    }
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "metebase_cards",
+    "archive_operation_id": null,
+    "name": "Metebase Cards",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7339,
+    "archived_directly": null,
+    "entity_id": "8E5u3Fi3zn6gnP5O8N-WX",
+    "location": "/4814/5587/6459/5602/6582/7338/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-06-11T07:26:42.808767Z"
+  },
+  "metabase_version": "v0.60.1 (1e336fb)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-08-19T05:29:54.469464Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}
