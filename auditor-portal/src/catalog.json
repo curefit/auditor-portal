@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T15:00:30.846Z",
+  "generatedAt": "2026-10-14T15:26:22.074Z",
   "basePath": "/handoff/",
   "count": 144,
   "entries": [
@@ -5977,18 +5977,20 @@
         "poc": "",
         "units": "%",
         "fy23": "",
-        "fy24": "76.55%",
-        "fy25": "75.63%",
-        "fy26": "75.31%",
+        "fy24": "Online: 76.55%, Offline: 23.45%",
+        "fy25": "Online: 75.63%, Offline: 24.37%",
+        "fy26": "Online: 75.63%, Offline: 22.57%",
         "nineMFy25": "",
         "nineMFy26": "",
         "sourceRaw": "https://metabase.curefit.co/question/84661-online-channel-percentage",
         "limitations": "",
-        "h1Fy26": "",
-        "h1Fy27": "",
+        "h1Fy26": "Online: 79.33%, Offline: 20.67%",
+        "h1Fy27": "Online: 66.86%, Offline: 31.34%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/channel-percentages.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/channel-percentages.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -6046,9 +6048,9 @@
         "h1Fy26": "19.96%",
         "h1Fy27": "27.04%",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": "artifacts/results/h1/own-channel-percentage.csv",
+        "h1ResultCsvUrl": "artifacts/results/h1/channel-percentages.csv",
         "h1ResultCsvUrls": [
-          "artifacts/results/h1/own-channel-percentage.csv"
+          "artifacts/results/h1/channel-percentages.csv"
         ],
         "lifecycle": "active"
       },
