@@ -1,5 +1,4 @@
 SELECT year,
-       base_amount,
        ROUND(total_units) AS total_units,
        total_unique_styleid
 FROM (
@@ -10,7 +9,7 @@ FROM (
         SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,
         COUNT(DISTINCT style_id) AS total_unique_styleid
     FROM  dwh_d2c_metrics.bizfin_sales_data
-    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'
+    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'
 
     UNION ALL
 
@@ -20,8 +19,8 @@ FROM (
         ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,
         SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,
         COUNT(DISTINCT style_id) AS total_unique_styleid
-    FROM  dwh_d2c_metrics.bizfin_sales_data
-    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'
+	FROM  dwh_d2c_metrics.bizfin_sales_data
+    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'
 
     UNION ALL
 
@@ -31,8 +30,8 @@ FROM (
         ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,
         SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,
         COUNT(DISTINCT style_id) AS total_unique_styleid
-    FROM  dwh_d2c_metrics.bizfin_sales_data
-    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'
+	FROM  dwh_d2c_metrics.bizfin_sales_data
+    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'
 
     UNION ALL
 
@@ -42,7 +41,29 @@ FROM (
         ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,
         SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,
         COUNT(DISTINCT style_id) AS total_unique_styleid
-    FROM  dwh_d2c_metrics.bizfin_sales_data
-    WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'
+	FROM  dwh_d2c_metrics.bizfin_sales_data
+    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'
+
+    UNION ALL
+
+    SELECT
+        5 AS sort_key,
+        'H1-FY26' AS year,
+        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,
+        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,
+        COUNT(DISTINCT style_id) AS total_unique_styleid
+	FROM  dwh_d2c_metrics.bizfin_sales_data
+    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'
+
+    UNION ALL
+
+    SELECT
+        6 AS sort_key,
+        'H1-FY27' AS year,
+        ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount,
+        SUM(CAST(REPLACE(quantity_invoiced, ',', '') AS DOUBLE)) AS total_units,
+        COUNT(DISTINCT style_id) AS total_unique_styleid
+	FROM  dwh_d2c_metrics.bizfin_sales_data
+    WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'
 ) t
 ORDER BY sort_key

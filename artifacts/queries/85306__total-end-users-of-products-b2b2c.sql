@@ -6,7 +6,7 @@ WITH revenue_summary AS (
             'FY23' AS year,
             ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount
         FROM dwh_d2c_metrics.bizfin_sales_data
-        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'
+        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2022-04-01' AND DATE '2023-03-31'
 		AND manual_channel_type IN ('1P','3P','EBO','B2B MP')
 
         UNION ALL
@@ -16,7 +16,7 @@ WITH revenue_summary AS (
             'FY24' AS year,
             ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount
         FROM dwh_d2c_metrics.bizfin_sales_data
-        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'
+        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2023-04-01' AND DATE '2024-03-31'
 		AND manual_channel_type IN ('1P','3P','EBO','B2B MP')
 
         UNION ALL
@@ -26,7 +26,7 @@ WITH revenue_summary AS (
             'FY25' AS year,
             ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount
         FROM dwh_d2c_metrics.bizfin_sales_data
-        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'
+        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'
 		AND manual_channel_type IN ('1P','3P','EBO','B2B MP')
 
         UNION ALL
@@ -36,34 +36,80 @@ WITH revenue_summary AS (
             'FY26' AS year,
             ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount
         FROM dwh_d2c_metrics.bizfin_sales_data
-        WHERE DATE(DATE_PARSE(invoice_date, '%d-%m-%Y')) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'
+        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'
+		AND manual_channel_type IN ('1P','3P','EBO','B2B MP')
+
+    UNION ALL
+
+    SELECT
+            5 AS sort_key,
+            'H1-FY26' AS year,
+            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount
+        FROM dwh_d2c_metrics.bizfin_sales_data
+        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'
+		AND manual_channel_type IN ('1P','3P','EBO','B2B MP')
+
+    UNION ALL
+
+    SELECT
+            6 AS sort_key,
+            'H1-FY27' AS year,
+            ROUND(SUM(CAST(REPLACE(base_amount, ',', '') AS DOUBLE))) AS base_amount
+        FROM dwh_d2c_metrics.bizfin_sales_data
+        WHERE TO_DATE(invoice_date, 'dd-MM-yyyy') BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'
 		AND manual_channel_type IN ('1P','3P','EBO','B2B MP')
     ) t
 ),
 fy_year_1p_metrics AS (
-    SELECT
-        fy_year,
-        ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,
-        ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0),4) AS customer_to_order_ratio
-    FROM (
-        SELECT
-            CASE
-                WHEN DATE(filter_date) BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'
-                WHEN DATE(filter_date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'
-            END AS fy_year,
-            total_price,
-            order_id,
-            billing_address_phone
-        FROM dwh_d2c_metrics.d2c_bizfin_revenue
-        WHERE filter_date IS NOT NULL
-          AND DATE(filter_date) BETWEEN DATE('2024-04-01') AND DATE('2026-03-31')
-          AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')
-          AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'
-          AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))
-          AND channel_type = '1P'
-    ) source
-    WHERE fy_year IS NOT NULL
-    GROUP BY 1
+    SELECT 'FY25' AS fy_year,
+           ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,
+           ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0), 4) AS customer_to_order_ratio
+    FROM dwh_d2c_metrics.d2c_bizfin_revenue
+    WHERE filter_date IS NOT NULL
+      AND DATE(filter_date) BETWEEN DATE '2024-04-01' AND DATE '2025-03-31'
+      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')
+      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'
+      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))
+      AND channel_type = '1P'
+
+    UNION ALL
+
+    SELECT 'FY26' AS fy_year,
+           ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,
+           ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0), 4) AS customer_to_order_ratio
+    FROM dwh_d2c_metrics.d2c_bizfin_revenue
+    WHERE filter_date IS NOT NULL
+      AND DATE(filter_date) BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'
+      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')
+      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'
+      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))
+      AND channel_type = '1P'
+
+    UNION ALL
+
+    SELECT 'H1-FY26' AS fy_year,
+           ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,
+           ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0), 4) AS customer_to_order_ratio
+    FROM dwh_d2c_metrics.d2c_bizfin_revenue
+    WHERE filter_date IS NOT NULL
+      AND DATE(filter_date) BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'
+      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')
+      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'
+      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))
+      AND channel_type = '1P'
+
+    UNION ALL
+
+    SELECT 'H1-FY27' AS fy_year,
+           ROUND(SUM(total_price) / NULLIF(COUNT(DISTINCT order_id), 0)) AS aov,
+           ROUND(COUNT(DISTINCT billing_address_phone) * 1.0 / NULLIF(COUNT(DISTINCT order_id), 0), 4) AS customer_to_order_ratio
+    FROM dwh_d2c_metrics.d2c_bizfin_revenue
+    WHERE filter_date IS NOT NULL
+      AND DATE(filter_date) BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'
+      AND LOWER(shipment_type) NOT IN ('exchange', 'amazon_exchange')
+      AND LOWER(channel_to_be_considered_for_bizfin) = 'yes'
+      AND (coupon_detail IS NULL OR LOWER(coupon_detail) NOT IN ('freebie', 'influencer', 'b2b'))
+      AND channel_type = '1P'
 ),
 revenue_metric_year_mapping AS (
     SELECT
@@ -73,12 +119,13 @@ revenue_metric_year_mapping AS (
         CASE
             WHEN r.year IN ('FY23', 'FY24', 'FY25') THEN 'FY25'
             WHEN r.year = 'FY26' THEN 'FY26'
+            WHEN r.year = 'H1-FY26' THEN 'H1-FY26'
+            WHEN r.year = 'H1-FY27' THEN 'H1-FY27'
         END AS metric_year
     FROM revenue_summary r
 )
 SELECT
     r.year,
-    r.base_amount,
     m.aov,
 	m.customer_to_order_ratio,
     ROUND((r.base_amount / NULLIF(m.aov, 0)) * m.customer_to_order_ratio) AS customers
