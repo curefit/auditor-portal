@@ -42,9 +42,9 @@ WITH eligible_classes AS (
        Required booking date filter.
        This keeps the scan limited to the FY24-FY26 reporting window.
        */
-       AND b.class_date BETWEEN DATE '2023-04-01' AND DATE '2026-03-31'
+       AND b.class_date BETWEEN DATE '2023-04-01' AND DATE '2026-09-30'
 
-    WHERE DATE(a.date) BETWEEN DATE '2023-04-01' AND DATE '2026-03-31'
+    WHERE DATE(a.date) BETWEEN DATE '2023-04-01' AND DATE '2026-09-30'
 
       /*
       Exclude deleted class records.
@@ -152,6 +152,48 @@ SELECT
             0
         ),
         2
-    ) AS FY26_Cancelled_Pct
+    ) AS FY26_Cancelled_Pct,
+
+	/*
+    FY27-H1 cancellation %.
+    */
+    ROUND(
+        100.0 *
+        COUNT(DISTINCT CASE
+            WHEN isactive = 0
+             AND class_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'
+            THEN id
+        END)
+        /
+        NULLIF(
+            COUNT(DISTINCT CASE
+                WHEN class_date BETWEEN DATE '2025-04-01' AND DATE '2025-09-30'
+                THEN id
+            END),
+            0
+        ),
+        2
+    ) AS FY26H1_Cancelled_Pct,
+
+	/*
+    FY27-H1 cancellation %.
+    */
+    ROUND(
+        100.0 *
+        COUNT(DISTINCT CASE
+            WHEN isactive = 0
+             AND class_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'
+            THEN id
+        END)
+        /
+        NULLIF(
+            COUNT(DISTINCT CASE
+                WHEN class_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'
+                THEN id
+            END),
+            0
+        ),
+        2
+    ) AS FY27H1_Cancelled_Pct
 
 FROM eligible_classes
