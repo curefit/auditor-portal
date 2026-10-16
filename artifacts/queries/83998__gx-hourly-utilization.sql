@@ -28,9 +28,11 @@ WITH class_utilization AS (
         -- FY25 = Apr 2024 to Mar 2025
         -- FY26 = Apr 2025 to Mar 2026
         CASE
-            WHEN DATE(a.date) BETWEEN DATE('2023-04-01') AND DATE('2024-03-31') THEN 'FY24'
-            WHEN DATE(a.date) BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'
-            WHEN DATE(a.date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'
+            -- WHEN DATE(a.date) BETWEEN DATE('2023-04-01') AND DATE('2024-03-31') THEN 'FY24'
+            -- WHEN DATE(a.date) BETWEEN DATE('2024-04-01') AND DATE('2025-03-31') THEN 'FY25'
+			WHEN DATE(a.date) BETWEEN DATE('2025-04-01') AND DATE('2025-09-30') THEN 'FY26-h1'
+            -- WHEN DATE(a.date) BETWEEN DATE('2025-04-01') AND DATE('2026-03-31') THEN 'FY26'
+			WHEN DATE(a.date) BETWEEN DATE('2026-04-01') AND DATE('2026-09-30') THEN 'FY27-h1'
         END AS fy,
 
         -- Class start hour.
@@ -60,10 +62,10 @@ WITH class_utilization AS (
     LEFT JOIN dwh_fitness.fitness_bookings fb
         ON a.id = fb.class_id
        AND fb.category = 'ELITE_CENTER'
-       AND DATE(fb.class_date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')
+       AND DATE(fb.class_date) BETWEEN DATE('2023-04-01') AND DATE('2026-09-30')
 
-    WHERE DATE(a.date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')
-      AND DATE(a.createdat_date) BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')
+    WHERE DATE(a.date) BETWEEN DATE('2023-04-01') AND DATE('2026-09-30')
+      AND DATE(a.createdat_date) BETWEEN DATE('2023-04-01') AND DATE('2026-09-30')
 
       -- Exclude cancelled/deleted classes.
       -- These should not contribute attendance or scheduled capacity.
