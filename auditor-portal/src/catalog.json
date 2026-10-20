@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T05:31:19.243Z",
+  "generatedAt": "2026-10-20T07:52:10.984Z",
   "basePath": "/handoff/",
   "count": 144,
   "entries": [
@@ -8116,8 +8116,10 @@
         "h1Fy26": "5.30",
         "h1Fy27": "6.48",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/total-end-buyers.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/total-end-buyers.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
