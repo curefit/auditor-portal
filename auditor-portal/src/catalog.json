@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T07:52:10.984Z",
+  "generatedAt": "2026-10-22T07:35:58.148Z",
   "basePath": "/handoff/",
   "count": 144,
   "entries": [
@@ -91,9 +91,11 @@
         "limitations": "Lux not included",
         "h1Fy26": "",
         "h1Fy27": "",
-        "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1SourceUrl": "https://metabase.curefit.co/question/96599-at-home-footfalls?grain=quarter&Start_Date=2026-04-01&End_Date=2026-09-30",
+        "h1ResultCsvUrl": "artifacts/results/h1/at-home-footfalls.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/at-home-footfalls.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -667,9 +669,11 @@
         "limitations": "Lux not included",
         "h1Fy26": "",
         "h1Fy27": "",
-        "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1SourceUrl": "https://metabase.curefit.co/question/96598-footfalls-grained?Start_Date=2026-04-01&End_Date=2026-09-30&grain=quarter&gx_class_cuts=no",
+        "h1ResultCsvUrl": "artifacts/results/h1/footfalls-grained.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/footfalls-grained.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -5432,9 +5436,11 @@
         "limitations": "Lux not included; Analytics working oin including Athome no.s",
         "h1Fy26": "",
         "h1Fy27": "",
-        "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1SourceUrl": "https://metabase.curefit.co/question/96504-monthly-active-memberships-elite-pro-play-lux?Start_Date=2026-04-01&end_date=2026-09-30",
+        "h1ResultCsvUrl": "artifacts/results/h1/monthly-active-memberships.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/monthly-active-memberships.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
