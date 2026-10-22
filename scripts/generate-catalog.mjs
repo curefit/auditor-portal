@@ -246,6 +246,7 @@ function parseH1MetricsOverlay(csvText, mapping) {
   }
 
   const excluded = new Set((mapping.excludedSourceCardIds ?? []).map(String));
+  const h1SourceUrls = new Map(Object.entries(mapping.h1SourceUrls ?? {}));
   const h1ResultFiles = new Map();
   for (const [targetKey, resultPaths] of Object.entries(mapping.h1ResultFiles ?? {})) {
     const paths = Array.isArray(resultPaths) ? resultPaths : [resultPaths];
@@ -320,15 +321,16 @@ function parseH1MetricsOverlay(csvText, mapping) {
       if (h1ResultCsvUrls.length > 0) usedH1ResultTargets.add(targetKey);
       targetToOverlay.set(targetKey, {
         ...overlay,
+        h1SourceUrl: h1SourceUrls.get(targetKey) ?? overlay.h1SourceUrl,
         h1ResultCsvUrl: h1ResultCsvUrls[0] ?? null,
         h1ResultCsvUrls,
       });
     }
   }
 
-  if (stats.active !== 38 || stats.removed !== 4 || stats.h1Links !== 13 || stats.excluded !== 2) {
+  if (stats.active !== 38 || stats.removed !== 4 || stats.h1Links !== 15 || stats.excluded !== 2) {
     throw new Error(
-      `Unexpected H1 metrics summary: ${JSON.stringify(stats)}. Expected 38 active, 4 removed, 13 H1 links, and 2 exclusions.`,
+      `Unexpected H1 metrics summary: ${JSON.stringify(stats)}. Expected 38 active, 4 removed, 15 H1 links, and 2 exclusions.`,
     );
   }
   if (usedMappingKeys.size !== Object.keys(mapping.rows ?? {}).length) {

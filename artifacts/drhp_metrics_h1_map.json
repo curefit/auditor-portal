@@ -46,6 +46,9 @@
     "removed|42|Corporate clients retention %": [{ "cardId": "85742", "sheetMetricSlNo": "47" }]
   },
   "h1ResultFiles": {
+    "75753|10": "results/h1/at-home-footfalls.csv",
+    "55566|10": "results/h1/footfalls-grained.csv",
+    "75114|9": "results/h1/monthly-active-memberships.csv",
     "47810|11": "results/h1/first-time-user-percentage.csv",
     "75630|12": "results/h1/female-ratio.csv",
     "85463|51": "results/h1/biometric-centres.csv",
@@ -74,5 +77,10 @@
     "86149|17": "results/h1/footwear-sub-category-asp.csv",
     "86149|18": "results/h1/footwear-sub-category-asp.csv",
     "92047|19": "results/h1/region-wise-revenue.csv"
+  },
+  "h1SourceUrls": {
+    "75753|10": "https://metabase.curefit.co/question/96599-at-home-footfalls?grain=quarter&Start_Date=2026-04-01&End_Date=2026-09-30",
+    "55566|10": "https://metabase.curefit.co/question/96598-footfalls-grained?Start_Date=2026-04-01&End_Date=2026-09-30&grain=quarter&gx_class_cuts=no",
+    "75114|9": "https://metabase.curefit.co/question/96504-monthly-active-memberships-elite-pro-play-lux?Start_Date=2026-04-01&end_date=2026-09-30"
   }
 }
