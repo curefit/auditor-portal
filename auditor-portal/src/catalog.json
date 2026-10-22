@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T07:35:58.148Z",
+  "generatedAt": "2026-10-22T10:27:17.486Z",
   "basePath": "/handoff/",
   "count": 144,
   "entries": [
@@ -89,8 +89,8 @@
         "nineMFy26": "44,511,344",
         "sourceRaw": "https://metabase.curefit.co/question/55566-footfalls-grained?Start_Date=2023-01-01&End_Date=2024-11-12&grain=quarter; \r\nhttps://metabase.curefit.co/question/75753-at-home-footfalls?grain=month",
         "limitations": "Lux not included",
-        "h1Fy26": "",
-        "h1Fy27": "",
+        "h1Fy26": "26,085,367",
+        "h1Fy27": "27,552,310",
         "h1SourceUrl": "https://metabase.curefit.co/question/96599-at-home-footfalls?grain=quarter&Start_Date=2026-04-01&End_Date=2026-09-30",
         "h1ResultCsvUrl": "artifacts/results/h1/at-home-footfalls.csv",
         "h1ResultCsvUrls": [
@@ -452,9 +452,11 @@
         "limitations": "",
         "h1Fy26": "",
         "h1Fy27": "95.61%",
-        "h1SourceUrl": "https://metabase.curefit.co/question/96593-bt-fy24-25-26-audited-apr23-mar26-live-apr26-79589",
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1SourceUrl": "https://metabase.curefit.co/question/96593-feedbacks-received-on-session",
+        "h1ResultCsvUrl": "artifacts/results/h1/feedbacks-received-on-session.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/feedbacks-received-on-session.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -517,9 +519,11 @@
         "limitations": "",
         "h1Fy26": "",
         "h1Fy27": "",
-        "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1SourceUrl": "https://metabase.curefit.co/question/96593-feedbacks-received-on-session",
+        "h1ResultCsvUrl": "artifacts/results/h1/feedbacks-received-on-session.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/feedbacks-received-on-session.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -667,8 +671,8 @@
         "nineMFy26": "44,511,344",
         "sourceRaw": "https://metabase.curefit.co/question/55566-footfalls-grained?Start_Date=2023-01-01&End_Date=2024-11-12&grain=quarter; \r\nhttps://metabase.curefit.co/question/75753-at-home-footfalls?grain=month",
         "limitations": "Lux not included",
-        "h1Fy26": "",
-        "h1Fy27": "",
+        "h1Fy26": "26,085,367",
+        "h1Fy27": "27,552,310",
         "h1SourceUrl": "https://metabase.curefit.co/question/96598-footfalls-grained?Start_Date=2026-04-01&End_Date=2026-09-30&grain=quarter&gx_class_cuts=no",
         "h1ResultCsvUrl": "artifacts/results/h1/footfalls-grained.csv",
         "h1ResultCsvUrls": [
@@ -5434,8 +5438,8 @@
         "nineMFy26": "10.09",
         "sourceRaw": "https://metabase.curefit.co/question/75114-monthly-active-memberships-elite-pro-play-lux?Start_Date=2023-04-01&end_date=2025-12-31",
         "limitations": "Lux not included; Analytics working oin including Athome no.s",
-        "h1Fy26": "",
-        "h1Fy27": "",
+        "h1Fy26": "10.31",
+        "h1Fy27": "10.45",
         "h1SourceUrl": "https://metabase.curefit.co/question/96504-monthly-active-memberships-elite-pro-play-lux?Start_Date=2026-04-01&end_date=2026-09-30",
         "h1ResultCsvUrl": "artifacts/results/h1/monthly-active-memberships.csv",
         "h1ResultCsvUrls": [
