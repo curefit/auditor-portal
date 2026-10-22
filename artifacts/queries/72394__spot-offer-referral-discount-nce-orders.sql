@@ -20,6 +20,7 @@
       FY23-24 = 2023-04-01 to 2024-03-31
       FY24-25 = 2024-04-01 to 2025-03-31
       FY25-26 = 2025-04-01 to 2026-03-31
+	  FY26-27 = 2026-04-01 to 2026-09-30
 */
 
 WITH non_complimentary_memberships AS (
@@ -149,6 +150,9 @@ base AS (
 
             WHEN membership_classified.membership_created_date BETWEEN DATE '2025-04-01' AND DATE '2026-03-31'
                 THEN 'FY25-26'
+
+			WHEN membership_classified.membership_created_date BETWEEN DATE '2026-04-01' AND DATE '2026-09-30'
+                THEN 'FY26-27'
         END AS FY,
 
         membership_classified.order_id,
@@ -198,7 +202,7 @@ base AS (
             FROM dwh_fitness_mart.offer_dim
             WHERE lower(title) LIKE '%refer%'
         )
-            AND purchase_date BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')
+            AND purchase_date BETWEEN DATE('2023-04-01') AND DATE('2026-09-30')
     ) AS orders_offer_fact
         ON orders_offer_fact.order_id = membership_classified.order_id
 
@@ -207,7 +211,7 @@ base AS (
         /*
             Main reporting window for membership orders.
         */
-        AND membership_classified.membership_created_date BETWEEN DATE('2023-04-01') AND DATE('2026-03-31')
+        AND membership_classified.membership_created_date BETWEEN DATE('2023-04-01') AND DATE('2026-09-30')
         AND membership_classified.business_line IN ('ELITE', 'PRO', 'PLAY', 'LIVE', 'LUX')
 
         /*
