@@ -1,4 +1,3 @@
--- Purpose:
 -- Combined D365 retention query 
 
 
@@ -63,7 +62,7 @@ same_device_flag_core AS (
     WHERE mf.business_line IN ('ELITE', 'PRO', 'LUX')
       AND bf.class_date > date('2017-01-01')
       AND bf.device_id IS NOT NULL
-      AND mf.effective_pack_end_date BETWEEN DATE('2022-04-01') AND DATE('2026-03-31')
+      AND mf.effective_pack_end_date BETWEEN DATE('2022-04-01') AND DATE('2026-09-30')
       AND (
         mf.cancellation_date IS NULL
         OR mf.membership_purchase_date <> date(mf.cancellation_date)
@@ -136,7 +135,7 @@ membership_history_core AS (
 membership_base_core AS (
   SELECT *
   FROM membership_history_core
-  WHERE  LEAST(COALESCE(cancellation_date, pack_end_date), pack_end_date) BETWEEN DATE('2022-04-01') AND DATE('2025-03-31')
+  WHERE  LEAST(COALESCE(cancellation_date, pack_end_date), pack_end_date) BETWEEN DATE('2022-04-01') AND DATE('2025-09-30')
     -- AND is_enterprise = 0
 ),
 
@@ -226,7 +225,7 @@ flagged_play_live AS (
       THEN 1 ELSE 0
     END AS renewed_flag
   FROM play_live_history
-  WHERE effective_pack_end_date BETWEEN DATE('2022-04-01') AND DATE('2025-03-31')
+  WHERE effective_pack_end_date BETWEEN DATE('2022-04-01') AND DATE('2025-09-30')
     -- AND coalesce(is_enterprise,0) = 0
 ),
 
@@ -252,9 +251,32 @@ user_overall AS (
   FROM combined_flagged
   GROUP BY 1,2
 ),
+user_overall_H1 AS (
+  SELECT
+    concat(
+      CASE
+        WHEN month(date_month) >= 4
+        THEN concat('FY', cast(year(date_month) + 1 AS STRING), '-', substr(cast(year(date_month) + 2 AS STRING), 3, 2))
+        ELSE concat('FY', cast(year(date_month) AS STRING), '-', substr(cast(year(date_month) + 1 AS STRING), 3, 2))
+      END,
+      ': H1'
+    ) AS financial_year,
+    CASE
+      WHEN month(date_month) >= 4 THEN year(date_month)
+      ELSE year(date_month) - 1
+    END AS fy_start_year,
+    count(DISTINCT membership_key) AS base,
+    count(DISTINCT CASE WHEN renewed_flag = 1 THEN membership_key END) AS renewed_users
+  FROM combined_flagged
+  where month(date_month) <= 9 and month(date_month)>=4
+  and cast(year(date_month) + 1 AS STRING) IN ('2025', '2026')
+  GROUP BY 1,2
+),
 
 final_users AS (
   SELECT * FROM user_overall
+  UNION ALL
+  SELECT * FROM user_overall_H1
 )
 
 SELECT
