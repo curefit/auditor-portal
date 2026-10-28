@@ -1,0 +1,253 @@
+{
+  "cache_invalidated_at": "2026-10-27T15:01:30.469527Z",
+  "description": null,
+  "archived": false,
+  "view_count": 23,
+  "collection_position": null,
+  "source_card_id": null,
+  "table_id": null,
+  "can_run_adhoc_query": true,
+  "result_metadata": [
+    {
+      "database_type": "varchar(8)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "fy",
+      "lib/original-name": "fy",
+      "name": "fy",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "fy",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "fy",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "fy",
+      "display_name": "fy",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 2,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 8.0
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar(9)",
+      "semantic_type": null,
+      "lib/deduplicated-name": "business_line",
+      "lib/original-name": "business_line",
+      "name": "business_line",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "business_line",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "business_line",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "business_line",
+      "display_name": "business_line",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 4,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.5
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "varchar(6)",
+      "semantic_type": "type/Category",
+      "lib/deduplicated-name": "order_payment_type",
+      "lib/original-name": "order_payment_type",
+      "name": "order_payment_type",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "order_payment_type",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "order_payment_type",
+        {
+          "base-type": "type/Text"
+        }
+      ],
+      "effective_type": "type/Text",
+      "lib/desired-column-alias": "order_payment_type",
+      "display_name": "order_payment_type",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 3,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Text": {
+            "percent-json": 0.0,
+            "percent-url": 0.0,
+            "percent-email": 0.0,
+            "percent-state": 0.0,
+            "average-length": 4.333333333333333
+          }
+        }
+      },
+      "base_type": "type/Text"
+    },
+    {
+      "database_type": "double",
+      "semantic_type": null,
+      "lib/deduplicated-name": "earned",
+      "lib/original-name": "earned",
+      "name": "earned",
+      "lib/source": "source/native",
+      "lib/source-column-alias": "earned",
+      "source": "native",
+      "field_ref": [
+        "field",
+        "earned",
+        {
+          "base-type": "type/Float"
+        }
+      ],
+      "effective_type": "type/Float",
+      "lib/desired-column-alias": "earned",
+      "display_name": "earned",
+      "fingerprint": {
+        "global": {
+          "distinct-count": 24,
+          "nil%": 0.0
+        },
+        "type": {
+          "type/Number": {
+            "min": 587336.12,
+            "q1": 41432148.224999994,
+            "q3": 447028219.8950001,
+            "max": 2588363707.3300104,
+            "sd": 665803226.1092623,
+            "avg": 401146989.70833343
+          }
+        }
+      },
+      "base_type": "type/Float"
+    }
+  ],
+  "embedding_type": null,
+  "creator": {
+    "email": "harsha.vardhan@curefit.com",
+    "first_name": "Harsha",
+    "is_data_analyst": false,
+    "last_login": "2026-10-22T11:11:11.500863Z",
+    "is_qbnewb": false,
+    "is_superuser": false,
+    "id": 3412,
+    "last_name": "Vardhan",
+    "tenant_id": null,
+    "date_joined": "2024-03-26T08:14:04.682555Z",
+    "common_name": "Harsha Vardhan"
+  },
+  "initially_published_at": null,
+  "can_write": true,
+  "card_schema": 23,
+  "database_id": 39,
+  "enable_embedding": false,
+  "collection_id": 7276,
+  "query_type": "native",
+  "name": "Rev by source",
+  "last_query_start": "2026-10-28T09:58:47.319589Z",
+  "is_remote_synced": false,
+  "dashboard_count": 0,
+  "document_id": null,
+  "last_used_at": "2026-10-28T09:58:47.328192Z",
+  "dashboard": null,
+  "type": "question",
+  "dimensions": null,
+  "average_query_time": 144466.0,
+  "creator_id": 3412,
+  "can_restore": false,
+  "moderation_reviews": [],
+  "updated_at": "2026-10-27T15:01:30.46703Z",
+  "made_public_by_id": null,
+  "embedding_params": null,
+  "cache_ttl": null,
+  "dataset_query": {
+    "lib/type": "mbql/query",
+    "database": 39,
+    "stages": [
+      {
+        "native": "WITH b2c_union AS (\n\n --    /* Elite & Pro - legacy */\n --    SELECT\n --        fy,\n --        order_id,\n --        CAST(earned AS DOUBLE) AS earned,\n --        'elite-pro' AS business_line\n --    FROM pk_revenue_analysis.consolidated_b2c_elite_and_pro\n --    WHERE COALESCE(fy, '') NOT LIKE '%25-26%'\n --      AND COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n --    UNION ALL\n\n --    /* Elite & Pro - 2026 */\n --    SELECT\n --        fy,\n --        order_id,\n --        CAST(earned AS DOUBLE) AS earned,\n --        'elite-pro' AS business_line\n --    FROM pk_revenue_analysis.consolidated_b2c_elite_and_pro_2026\n --    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\t-- UNION ALL\n\t/* Elite & Pro - 2025 H1 */\n    SELECT\n        '25-26 H1' fy,\n        order_id,\n        CAST(earned AS DOUBLE) AS earned,\n        'elite-pro' AS business_line\n    FROM pk_revenue_analysis.consolidated_b2c_elitepro_h1\n    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\tUNION ALL\n\n    /* Elite & Pro - 2026 H1 */\n    SELECT\n        '26-27 H1' fy,\n        order_id,\n        CAST(earned AS DOUBLE) AS earned,\n        'elite-pro' AS business_line\n    FROM pk_revenue_analysis.consolidated_b2c_elitepro_fy27h1\n    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n    UNION ALL\n\n    -- /* PT - legacy */\n    -- SELECT\n    --     fy,\n    --     order_id,\n    --     CAST(earned AS DOUBLE) AS earned,\n    --     'pt' AS business_line\n    -- FROM pk_revenue_analysis.consolidated_b2c_pt\n    -- WHERE COALESCE(fy, '') NOT LIKE '%25-26%'\n\n    -- UNION ALL\n\n --    /* PT - 2026 */\n --    SELECT\n --        fy,\n --        order_id,\n --        CAST(earned AS DOUBLE) AS earned,\n --        'pt' AS business_line\n --    FROM pk_revenue_analysis.consolidated_b2c_pt_2026 \n --    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\t-- UNION ALL\n\n    /* PT - 2025 H1 */\n    SELECT\n        '25-26 H1' fy,\n        CAST(order_id AS VARCHAR) order_id,\n        CAST(earned AS DOUBLE) AS earned,\n        'pt' AS business_line\n    FROM pk_revenue_analysis.consolidated_b2c_pt_h1\n    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\tUNION ALL\n\n    /* PT - 2026 H1*/\n    SELECT\n        '26-27 H1' fy,\n        CAST(order_id AS VARCHAR) order_id,\n        CAST(earned AS DOUBLE) AS earned,\n        'pt' AS business_line\n    FROM pk_revenue_analysis.consolidated_b2c_pt_fy27h1\n    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n    -- UNION ALL\n\n    -- /* Play - legacy */\n    -- SELECT\n    --     fy,\n    --     order_id,\n    --     CAST(earned AS DOUBLE) AS earned,\n    --     'play' AS business_line\n    -- FROM pk_revenue_analysis.consolidated_b2c_play\n    -- WHERE COALESCE(fy, '') NOT LIKE '%25-26%'\n\n    -- UNION ALL\n\n    -- /* Play - 2026 */\n    -- SELECT\n    --     fy,\n    --     order_id,\n    --     CAST(earned AS DOUBLE) AS earned,\n    --     'play' AS business_line\n    -- FROM pk_revenue_analysis.consolidated_b2c_play_2026\n    -- WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\tUNION ALL\n\n    /* Play - 2025 H1 */\n    SELECT\n        '25-26 H1' fy,\n        order_id,\n        CAST(earned AS DOUBLE) AS earned,\n        'play' AS business_line\n    FROM pk_revenue_analysis.consolidated_b2c_play_h1\n    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\tUNION ALL\n\n    /* Play - 2026 H1 */\n    SELECT\n        '26-27 H1' fy,\n        order_id,\n        CAST(earned AS DOUBLE) AS earned,\n        'play' AS business_line\n    FROM pk_revenue_analysis.consolidated_b2c_play_fy27h1\n    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n    -- UNION ALL\n\n    /* Lux\n       Replace the table below with the Lux source table if it is separate.\n       The current query you provided does not contain a Lux table.\n    */\n\t\n    -- SELECT\n    --     fy,\n    --     order_id,\n    --     CAST(earned AS DOUBLE) AS earned,\n    --     'lux' AS business_line\n    -- FROM pk_revenue_analysis.consolidated_b2c_lux\n    -- WHERE COALESCE(fy, '') NOT LIKE '%25-26%'\n    --   AND COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\t-- UNION ALL\n\t--  /* Lux - 2026 */\n --    SELECT\n --        fy,\n --        order_id,\n --        CAST(earned AS DOUBLE) AS earned,\n --        'lux' AS business_line\n --    FROM pk_revenue_analysis.consolidated_b2c_lux_2026\n --    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\tUNION ALL\n\t /* Lux - 2025 H1 */\n    SELECT\n        '25-26 H1' fy,\n        order_id,\n        CAST(earned AS DOUBLE) AS earned,\n        'lux' AS business_line\n    FROM pk_revenue_analysis.consolidated_b2c_lux_h1\n    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n\n\tUNION ALL\n\t /* Lux - 2026 H1 */\n    SELECT\n        '26-27 H1' fy,\n        order_id,\n        CAST(earned AS DOUBLE) AS earned,\n        'lux' AS business_line\n    FROM pk_revenue_analysis.consolidated_b2c_lux_fy27h1\n    WHERE COALESCE(purchase_date, DATE '2022-01-01') >= DATE '1900-01-01'\n),\n\n\nledger_credit AS (\n    SELECT\n        CAST(order_id AS VARCHAR) AS order_id,\n\n      CASE\n    WHEN MAX(\n        CASE\n            WHEN LOWER(\n                COALESCE(\n                    selected_payment_mode,\n                    group_order_payment_mode,\n                    max_payment_channel,\n                    group_order_payment_channel,\n                    payment_gateway,\n                    pg_method,\n                    method_detail\n                )\n            ) LIKE '%cash%'\n            OR LOWER(\n                COALESCE(\n                    selected_payment_mode,\n                    group_order_payment_mode,\n                    max_payment_channel,\n                    group_order_payment_channel,\n                    payment_gateway,\n                    pg_method,\n                    method_detail\n                )\n            ) LIKE '%manual%'\n            THEN 1\n            ELSE 0\n        END\n    ) = 1\n    THEN 'cash'\n\n    WHEN MAX(\n        CASE\n            WHEN LOWER(\n                COALESCE(\n                    selected_payment_mode,\n                    group_order_payment_mode,\n                    max_payment_channel,\n                    group_order_payment_channel,\n                    payment_gateway,\n                    pg_method,\n                    method_detail\n                )\n            ) LIKE '%pos%'\n            THEN 1\n            ELSE 0\n        END\n    ) = 1\n    THEN 'pos'\n\n    ELSE 'online'\nEND AS order_payment_type\n\n    FROM dwh_finance.consolidated_ledger_v2\n    WHERE revenue_type = 'Credit'\n      AND order_id IS NOT NULL\n    GROUP BY CAST(order_id AS VARCHAR)\n)\n\nSELECT\n    b.fy,\n    b.business_line,\n    COALESCE(l.order_payment_type, 'online') AS order_payment_type,\n    SUM(b.earned) AS earned\nFROM b2c_union b\nLEFT JOIN ledger_credit l\n    ON CAST(b.order_id AS VARCHAR) = l.order_id\nGROUP BY\n    b.fy,\n    b.business_line,\n    COALESCE(l.order_payment_type, 'online')\nORDER BY\n    b.fy,\n    b.business_line,\n    order_payment_type",
+        "lib/type": "mbql.stage/native"
+      }
+    ]
+  },
+  "dimension_mappings": null,
+  "id": 91948,
+  "legacy_query": null,
+  "parameter_mappings": [],
+  "can_manage_db": false,
+  "display": "table",
+  "archived_directly": false,
+  "entity_id": "5rQI-0PUExwyjkpSk0iti",
+  "param_fields": {},
+  "collection_preview": true,
+  "last-edit-info": {
+    "id": 3570,
+    "email": "shivalingesh.aiholli@curefit.com",
+    "first_name": "Shivalingesh",
+    "last_name": "Aiholli",
+    "timestamp": "2026-10-27T15:01:30.504988Z"
+  },
+  "visualization_settings": {
+    "table.pivot_column": "fy",
+    "table.cell_column": "earned"
+  },
+  "collection": {
+    "authority_level": null,
+    "description": null,
+    "archived": false,
+    "workspace_id": null,
+    "slug": "corpdev___harsha",
+    "archive_operation_id": null,
+    "name": "Corpdev - Harsha",
+    "is_remote_synced": false,
+    "personal_owner_id": null,
+    "type": null,
+    "is_sample": false,
+    "id": 7276,
+    "archived_directly": null,
+    "entity_id": "Qs7W4IGmsoC2tyO2oY5bs",
+    "location": "/",
+    "namespace": null,
+    "is_personal": false,
+    "created_at": "2026-05-28T12:55:24.035837Z"
+  },
+  "metabase_version": "v0.60.1 (1e336fb)",
+  "parameters": [],
+  "dashboard_id": null,
+  "created_at": "2026-08-18T06:07:23.751476Z",
+  "parameter_usage_count": 0,
+  "public_uuid": null,
+  "can_delete": false
+}

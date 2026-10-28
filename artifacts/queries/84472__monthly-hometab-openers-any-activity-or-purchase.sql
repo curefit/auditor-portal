@@ -29,7 +29,7 @@ WITH monthly_hometab_openers AS (
         CAST(user_userid AS varchar) AS user_id,
         DATE_TRUNC('month', ts_date) AS month
     FROM pk_curefit_app_events.page_view
-    WHERE ts_date BETWEEN date('2023-04-01') AND date('2026-03-31') -- -- Restrict to the reporting window.
+    WHERE ts_date BETWEEN date('2023-04-01') AND date('2026-09-30') -- -- Restrict to the reporting window.
       AND ts_date >= DATE('2023-01-01') -- Partition guard to avoid scanning very old app-event data.
       AND LOWER(COALESCE(event_eventparams_pageid, '')) = 'hometab' -- Keep only app opens on the home tab; this is the base cohort.
       AND user_userid IS NOT NULL -- User-level funnel needs a valid user id for downstream joins.
@@ -43,7 +43,7 @@ monthly_class_bookers AS (
     JOIN monthly_hometab_openers o
         ON CAST(bf.user_id AS varchar) = o.user_id -- Same user as the hometab opener cohort.
        AND DATE_TRUNC('month', bf.booking_date) = o.month -- Same-month attribution: only count bookings in the opener's month.
-    WHERE booking_date BETWEEN date('2023-04-01') AND date('2026-03-31') -- Use booking_date as the activity date requested by the business logic.
+    WHERE booking_date BETWEEN date('2023-04-01') AND date('2026-09-30') -- Use booking_date as the activity date requested by the business logic.
       AND class_date >= DATE('2023-01-01') -- Partition guard: booking_fact is partitioned by class_date.
       AND bf.user_id IS NOT NULL -- Prevent null-user bookings from inflating user counts.
 ),
@@ -73,7 +73,7 @@ monthly_pack_purchasers AS (
                 OR LOWER(CAST(m.is_upgrade_pack AS varchar)) = 'true'
               THEN DATE(mdb.created_date)
               ELSE m.membership_created_date
-          END BETWEEN date('2023-04-01') AND date('2026-03-31') -- Apply the reporting window..
+          END BETWEEN date('2023-04-01') AND date('2026-09-30') -- Apply the reporting window..
 ),
 
 monthly_cultstore_shopify AS (
@@ -85,7 +85,7 @@ monthly_cultstore_shopify AS (
         ON CAST(COALESCE(shop.user_userid, shop.event_eventparams_userid) AS varchar) = o.user_id -- Use whichever user id is populated in the Shopify app-origin event.
        AND DATE_TRUNC('month', shop.ts_date) = o.month -- Same-month attribution using ts_date as the order event date.
     WHERE event_eventparams_weborigin = 'CUREFIT_APP' -- Keep only Cultstore orders originating from the app.
-      AND ts_date BETWEEN date('2023-04-01') AND date('2026-03-31') -- User-selected reporting window.
+      AND ts_date BETWEEN date('2023-04-01') AND date('2026-09-30') -- User-selected reporting window.
       AND ts_date >= DATE('2023-01-01') -- Partition guard on the Shopify event table.
       AND COALESCE(user_userid, event_eventparams_userid) IS NOT NULL -- Drop events that cannot be mapped back to a user.
 ),
@@ -99,7 +99,7 @@ monthly_cultstore_custom AS (
         ON CAST(iv.userid AS varchar) = o.user_id -- Match the custom Cultstore user id to the opener cohort.
        AND DATE_TRUNC('month', iv.order_created_at_date) = o.month -- Same-month attribution using order_created_at_date.
     WHERE source = 'CUREFIT_APP' -- Keep only orders attributed to the app source.
-      AND order_created_at_date BETWEEN date('2023-04-01') AND date('2026-03-31') -- User-selected reporting window.
+      AND order_created_at_date BETWEEN date('2023-04-01') AND date('2026-09-30') -- User-selected reporting window.
       AND order_created_at_date >= DATE('2023-01-01') -- Partition guard on the custom order table.
       AND userid IS NOT NULL -- Drop rows with no usable user id.
 ),
