@@ -1,5 +1,5 @@
 {
-  "excludedSourceCardIds": ["91948", "93808"],
+  "excludedSourceCardIds": ["93808"],
   "rows": {
     "active|12|# Paid Members": [{ "cardId": "75109", "sheetMetricSlNo": "7" }],
     "active|13|# Paid members split by city": [{ "cardId": "77280", "sheetMetricSlNo": "8" }],
@@ -26,6 +26,7 @@
     "active|41|# Corporate paid memebers": [{ "cardId": "75109", "sheetMetricSlNo": "46" }],
     "active|44|# users from whom weight, bmi, bca data is collected": [{ "cardId": "86193", "sheetMetricSlNo": "52" }],
     "active|51|# Centres with biometric entry": [{ "cardId": "85463", "sheetMetricSlNo": "51" }],
+    "active|52|Online vs Offline split of revenue": [{ "cardId": "91948", "sheetMetricSlNo": "52" }],
     "active|1|Total End Buyer of products": [{ "cardId": "85306", "sheetMetricSlNo": "2" }],
     "active|2|Number of units sold": [{ "cardId": "84483", "sheetMetricSlNo": "3" }],
     "active|4|# SKUs sold": [{ "cardId": "84483", "sheetMetricSlNo": "4" }],
@@ -83,7 +84,9 @@
     "85343|16": "results/h1/commercial-equipment-percentage.csv",
     "86149|17": "results/h1/footwear-sub-category-asp.csv",
     "86149|18": "results/h1/footwear-sub-category-asp.csv",
-    "92047|19": "results/h1/region-wise-revenue.csv"
+    "92047|19": "results/h1/region-wise-revenue.csv",
+    "84472|23": "results/h1/avg-monthly-users-of-app.csv",
+    "91948|52": "results/h1/online-vs-offline-revenue.csv"
   },
   "h1SourceUrls": {
     "75753|10": "https://metabase.curefit.co/question/96599-at-home-footfalls?grain=quarter&Start_Date=2026-04-01&End_Date=2026-09-30",

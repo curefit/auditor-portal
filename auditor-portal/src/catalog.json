@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-23T09:29:20.628Z",
+  "generatedAt": "2026-10-28T10:16:33.452Z",
   "basePath": "/handoff/",
-  "count": 144,
+  "count": 145,
   "entries": [
     {
       "cardId": "75753",
@@ -149,7 +149,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 13,
+        "sheetOrder": 14,
         "slNo": "25",
         "metricName": "# App installs (so far)",
         "definition": "Total number of app downloads at the end of March 31, 2026",
@@ -246,7 +246,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 24,
+        "sheetOrder": 25,
         "slNo": "51",
         "metricName": "# Biometric centres",
         "definition": "# centers with bio-metric entry",
@@ -369,7 +369,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 25,
+        "sheetOrder": 26,
         "slNo": "52",
         "metricName": "# users from whom weight, bmi, bca data is collected",
         "definition": "# of unique users from whom the data on weight, BMI, BCA, other health data is collected till 31st Mar 2026",
@@ -435,7 +435,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 19,
+        "sheetOrder": 20,
         "slNo": "34",
         "metricName": "Positive feedback rating",
         "definition": "3/4 & 4/4 ratings out of total ratings received during the period",
@@ -462,7 +462,7 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:79589:drhp:19"
+      "entryKey": "card:79589:drhp:20"
     },
     {
       "cardId": "79589",
@@ -502,7 +502,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 20,
+        "sheetOrder": 21,
         "slNo": "35",
         "metricName": "#Feedbacks received on session",
         "definition": "Total responses recieved on the feedback form during the year",
@@ -529,7 +529,7 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:79589:drhp:20"
+      "entryKey": "card:79589:drhp:21"
     },
     {
       "cardId": "55566",
@@ -1255,7 +1255,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 30,
+        "sheetOrder": 31,
         "slNo": "5",
         "metricName": "# New designs in Apparel",
         "definition": "Total number of unique style ID launched during the year in apparel category",
@@ -1519,7 +1519,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 36,
+        "sheetOrder": 37,
         "slNo": "15",
         "metricName": "% of product sales revenue from major categories ( 3 segments ) - Apparel, Footwear and Equipment and Accesories",
         "definition": "% of product sales revenue from 3 major category segment - Apparel, Footwear and Equipment and Accesories",
@@ -1615,7 +1615,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 35,
+        "sheetOrder": 36,
         "slNo": "14",
         "metricName": "% of Revenue from own channel Online (1P), EBO, Ecommerce and others",
         "definition": "Total product sales through Company own channel Online (1P), EBO, Ecommerce and others",
@@ -1927,7 +1927,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 37,
+        "sheetOrder": 38,
         "slNo": "16",
         "metricName": "Commercial Equipment Revenue",
         "definition": "% of product sales revenue from commercial Equipment",
@@ -2005,7 +2005,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 22,
+        "sheetOrder": 23,
         "slNo": "47",
         "metricName": "Corporate client retention",
         "definition": "% of memberships corresponding to corporate clients who transacted with Cult in both the current & previous yrs divided by memberships corresponding to clients who transacted with Cult in previous yr",
@@ -2369,7 +2369,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 38,
+        "sheetOrder": 39,
         "slNo": "17",
         "metricName": "Avant Footwear ASP",
         "definition": "ASP of Footwear Portfolio on Sub Category level ( Avant Footwear ) across our own channel and Marketplace",
@@ -2396,7 +2396,7 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:86149:drhp:38"
+      "entryKey": "card:86149:drhp:39"
     },
     {
       "cardId": "86149",
@@ -2430,7 +2430,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 39,
+        "sheetOrder": 40,
         "slNo": "18",
         "metricName": "CultSport Footwear ASP",
         "definition": "ASP of Footwear Portfolio on Sub Category level ( CultSport Footwear ) across our own channel and Marketplace",
@@ -2457,7 +2457,7 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:86149:drhp:39"
+      "entryKey": "card:86149:drhp:40"
     },
     {
       "cardId": "64443",
@@ -3214,7 +3214,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 34,
+        "sheetOrder": 35,
         "slNo": "12",
         "metricName": "Cross sell rev as % of Products rev",
         "definition": "Product Revenue from Paid members on own channel expressed as a % of total product revenue on own channel during the period / year.",
@@ -3608,7 +3608,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 31,
+        "sheetOrder": 32,
         "slNo": "6",
         "metricName": "# New designs in Footwear",
         "definition": "Total number of unique style ID launched during the year in footwear category",
@@ -4088,7 +4088,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 16,
+        "sheetOrder": 17,
         "slNo": "29",
         "metricName": "Gx class cancellation rate %",
         "definition": "Percentage of GX classes cancelled, excluding no-booking classes.",
@@ -4325,7 +4325,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 17,
+        "sheetOrder": 18,
         "slNo": "30",
         "metricName": "Gx class peak utilization %",
         "definition": "Peak utilization percentage for GX classes during the relevant period/year.",
@@ -4403,7 +4403,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 18,
+        "sheetOrder": 19,
         "slNo": "33",
         "metricName": "# Health activities tracked",
         "definition": "# users whose health activities* (Heart rate, Calories burnt, etc)*# days for which these activities are tracked",
@@ -4592,7 +4592,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 26,
+        "sheetOrder": 27,
         "slNo": "49",
         "metricName": "Member retention rate",
         "definition": "Percentage of members who renew their Cultpass membership within 12 months of expiry of current membership during the relevant year",
@@ -4875,7 +4875,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 23,
+        "sheetOrder": 24,
         "slNo": "46",
         "metricName": "# Corporate paid members",
         "definition": "Total number of corporate members, with a paid membership for fitness services valid as at the end of the year.",
@@ -4902,7 +4902,7 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:75109:drhp:23"
+      "entryKey": "card:75109:drhp:24"
     },
     {
       "cardId": "77280",
@@ -5579,10 +5579,12 @@
         "sourceRaw": "https://metabase.curefit.co/question/84472-monthly-hometab-openers-any-activity-or-purchase",
         "limitations": "",
         "h1Fy26": "",
-        "h1Fy27": "",
+        "h1Fy27": "585175",
         "h1SourceUrl": null,
-        "h1ResultCsvUrl": null,
-        "h1ResultCsvUrls": [],
+        "h1ResultCsvUrl": "artifacts/results/h1/avg-monthly-users-of-app.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/avg-monthly-users-of-app.csv"
+        ],
         "lifecycle": "active"
       },
       "sheetMetricVia": "card",
@@ -5987,7 +5989,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 32,
+        "sheetOrder": 33,
         "slNo": "9",
         "metricName": "Product sales - Online vs Offline in FY25",
         "definition": "Product Sales (Online) - Total product sales through Company website, app, third party marketplaces divided by the total product sales during the period / year\r\n Product Sales (Offline) - All Product Sales less Product Sales (Online) during the period / year.",
@@ -6014,7 +6016,7 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:84661:drhp:32"
+      "entryKey": "card:84661:drhp:33"
     },
     {
       "cardId": "84661",
@@ -6048,7 +6050,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 33,
+        "sheetOrder": 34,
         "slNo": "11",
         "metricName": "Own Channel %",
         "definition": "Total product sales through Company website app and EBO stores",
@@ -6075,7 +6077,138 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:84661:drhp:33"
+      "entryKey": "card:84661:drhp:34"
+    },
+    {
+      "cardId": "91948",
+      "name": "Online vs Offline split of revenue",
+      "rootKey": "question-91948",
+      "rootAssetName": "Rev by source",
+      "dashboardId": null,
+      "dashboardName": null,
+      "metabaseCardUrl": "https://metabase.curefit.co/question/91948",
+      "metabaseRootSourceUrl": null,
+      "paths": {
+        "query": "artifacts/queries/91948__online-vs-offline-revenue.sql",
+        "metadata": "artifacts/metadata/91948__online-vs-offline-revenue.json",
+        "lineageMarkdown": null,
+        "outputPreviewHtml": null,
+        "lineagePreviewHtml": null
+      },
+      "results": [
+        "artifacts/results/question-91948__91948__online-vs-offline-revenue.csv"
+      ],
+      "sqlLineageRelations": [
+        {
+          "relation": "dwh_finance.consolidated_ledger_v2",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_revenue_analysis.consolidated_b2c_elitepro_fy27h1",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_revenue_analysis.consolidated_b2c_elitepro_h1",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_revenue_analysis.consolidated_b2c_lux_fy27h1",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_revenue_analysis.consolidated_b2c_lux_h1",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_revenue_analysis.consolidated_b2c_play_fy27h1",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_revenue_analysis.consolidated_b2c_play_h1",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_revenue_analysis.consolidated_b2c_pt_fy27h1",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        },
+        {
+          "relation": "pk_revenue_analysis.consolidated_b2c_pt_h1",
+          "dbtModelPaths": [],
+          "githubBlobUrls": [],
+          "localSqlUrls": [],
+          "fallbackModelPaths": [],
+          "fallbackGithubBlobUrls": [],
+          "fallbackLocalUrls": []
+        }
+      ],
+      "sheetMetric": {
+        "sheetOrder": 13,
+        "slNo": "52",
+        "metricName": "Online vs Offline split of revenue",
+        "definition": "Kindly disclose revenue generated from online applications and offline stores separately for 3PY WRT all the products and services in absolute and % terms",
+        "status": "Done",
+        "poc": "Analytics",
+        "units": "INR",
+        "fy23": "",
+        "fy24": "",
+        "fy25": "",
+        "fy26": "",
+        "nineMFy25": "",
+        "nineMFy26": "",
+        "sourceRaw": "https://metabase.curefit.co/question/91948-rev-by-source",
+        "limitations": "",
+        "h1Fy26": "",
+        "h1Fy27": "",
+        "h1SourceUrl": null,
+        "h1ResultCsvUrl": "artifacts/results/h1/online-vs-offline-revenue.csv",
+        "h1ResultCsvUrls": [
+          "artifacts/results/h1/online-vs-offline-revenue.csv"
+        ],
+        "lifecycle": "active"
+      },
+      "sheetMetricVia": "card",
+      "milestone": null,
+      "milestoneVia": null
     },
     {
       "cardId": "86316",
@@ -6109,7 +6242,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 21,
+        "sheetOrder": 22,
         "slNo": "20",
         "metricName": "Pack Pricing",
         "definition": "12 month Pack price range for each SKU, representing the prevailing membership fees charged across its centres",
@@ -7026,7 +7159,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 40,
+        "sheetOrder": 41,
         "slNo": "19",
         "metricName": "Region wise Revenue",
         "definition": "Revenue of the fitness products categorised into region North,East, West, South",
@@ -7759,7 +7892,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 41,
+        "sheetOrder": 42,
         "slNo": "48",
         "metricName": "Referrals",
         "definition": "Referral orders as a percentage of new orders during the relevant period/year.",
@@ -7861,7 +7994,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 28,
+        "sheetOrder": 29,
         "slNo": "3",
         "metricName": "# Products sold annually",
         "definition": "Total no. of products sold across all categories in the period / year through all channels.",
@@ -7888,7 +8021,7 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:84483:drhp:28"
+      "entryKey": "card:84483:drhp:29"
     },
     {
       "cardId": "84483",
@@ -7922,7 +8055,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 29,
+        "sheetOrder": 30,
         "slNo": "4",
         "metricName": "# SKUs sold",
         "definition": "Total number of unique style ID sold during the year",
@@ -7949,7 +8082,7 @@
       "sheetMetricVia": "card",
       "milestone": null,
       "milestoneVia": null,
-      "entryKey": "card:84483:drhp:29"
+      "entryKey": "card:84483:drhp:30"
     },
     {
       "cardId": "63767",
@@ -8118,7 +8251,7 @@
         }
       ],
       "sheetMetric": {
-        "sheetOrder": 27,
+        "sheetOrder": 28,
         "slNo": "2",
         "metricName": "Total End buyer of products",
         "definition": "Total no. of estimated unique customers who have purchased active lifestyle products of Cult Brands in the period / year across our B2B2C Channel",
@@ -8387,6 +8520,6 @@
     "repo": "dbt-data-models",
     "ref": "main",
     "modelSqlFileCount": 274,
-    "fetchNote": "Set DBT_GITHUB_REPO (e.g. curefit/dbt-data-models or the repo HTTPS URL) in repo-root .env to index dbt SQL at build time (read-only). Using the existing cached dbt index."
+    "fetchNote": "GitHub branch main: 401 — repo lookup also failed: 401 {\r\n  \"message\": \"Bad credentials\",\r\n  \"documentation_url\": \"https://docs.github.com/rest\",\r\n  \"status\": \"401\"\r\n} Using the existing cached dbt index."
   }
 }
